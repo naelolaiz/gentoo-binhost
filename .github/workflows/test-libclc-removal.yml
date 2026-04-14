@@ -79,30 +79,36 @@ jobs:
           echo "✓ libclc is not masked"
 
       - name: Verify dependency resolution for libclc + mesa_clc
+        shell: bash
         run: |
           # Use --pretend + --deep to check the dependency graph resolves
           # without conflicts for packages that depend on libclc
+          set +e
           emerge --pretend --verbose --deep --newuse \
             llvm-core/libclc \
             2>&1 | tee /tmp/depcheck.log
+          rc=${PIPESTATUS[0]}
+          set -e
 
-          if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+          if [ "$rc" -ne 0 ]; then
             echo "::error::Dependency resolution failed for libclc"
-            cat /tmp/depcheck.log
             exit 1
           fi
           echo "✓ Dependency graph for libclc resolves cleanly"
 
       - name: Verify dependency resolution for mesa
+        shell: bash
         run: |
           # Also verify mesa itself resolves — it pulls in mesa_clc and libclc
+          set +e
           emerge --pretend --verbose --deep --newuse \
             media-libs/mesa \
             2>&1 | tee /tmp/mesa-depcheck.log
+          rc=${PIPESTATUS[0]}
+          set -e
 
-          if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+          if [ "$rc" -ne 0 ]; then
             echo "::error::Dependency resolution failed for mesa (which pulls libclc via mesa_clc)"
-            cat /tmp/mesa-depcheck.log
             exit 1
           fi
           echo "✓ Dependency graph for mesa resolves cleanly"
