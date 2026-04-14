@@ -7,6 +7,14 @@ sci-libs/fftw threads
 dev-python/pyqt6 pdfium quick
 sys-process/htop hwloc lm-sensors
 dev-vcs/git doc subversion tk
+# subversion needs perl when git[perl,subversion] is satisfied
+dev-vcs/subversion perl
+# Break circular buildtime dependency: ffmpeg → openal → pipewire → ffmpeg
+# openal works fine with ALSA/PulseAudio backends without pipewire
+media-libs/openal -pipewire
+# Pin libclc to LLVM slot 21 to match mesa 26.x which uses LLVM_SLOT=21
+# (libclc-22 conflicts with dev-util/mesa_clc which requires =libclc-21*)
+llvm-core/libclc llvm_slot_21
 dev-libs/boost python
 x11-libs/wxGTK gstreamer
 sci-libs/opencascade json
