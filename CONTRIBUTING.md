@@ -86,7 +86,7 @@ contrib/amd64/23.0/desktop/plasma/openrc/znver3/dev-qt/qtbase-6.7.0.gpkg.tar
 ## Contributing Configuration Changes
 
 For changes to `make.conf`, `package.use`, `package.accept_keywords`,
-`package.mask`, or the package lists (`packages/*.txt`):
+`package.mask`, `package.license`, or the package lists (`packages/*.txt`):
 
 1. Fork the repository
 2. Create a branch: `git checkout -b my-change`

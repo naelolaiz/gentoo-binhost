@@ -95,6 +95,13 @@ apply_profile() {
     log "  Installed package.mask files"
   fi
 
+  # package.license
+  mkdir -p /etc/portage/package.license
+  if [[ -d "${PROFILE_DIR}/package.license" ]]; then
+    cp "${PROFILE_DIR}/package.license/"* /etc/portage/package.license/ 2>/dev/null || true
+    log "  Installed package.license files"
+  fi
+
   # Set the Gentoo profile
   eselect profile set default/linux/amd64/23.0/desktop/plasma || true
   log "  eselect profile set"

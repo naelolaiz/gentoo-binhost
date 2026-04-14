@@ -1,0 +1,3 @@
+# Accept MPEG-4 license for faac — required by media-video/avidemux
+# (dependency chain: avidemux → avidemux-plugins[aac] → faac)
+media-libs/faac MPEG-4

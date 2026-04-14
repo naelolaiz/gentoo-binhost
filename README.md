@@ -56,7 +56,8 @@ gentoo-binhost/
 │       ├── make.conf
 │       ├── package.use/
 │       ├── package.accept_keywords/
-│       └── package.mask/
+│       ├── package.mask/
+│       └── package.license/
 ├── packages/
 │   ├── tier1-monsters.txt            # compile monsters (hours each)
 │   ├── tier2-heavy.txt               # heavy packages (30 min – 2 h)
