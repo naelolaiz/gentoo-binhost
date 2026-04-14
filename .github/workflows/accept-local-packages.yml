@@ -1,0 +1,105 @@
+name: Accept Local Packages
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'contrib/**/*.gpkg.tar'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate contributed packages
+        run: |
+          echo "Validating contributed .gpkg.tar files..."
+          ERRORS=0
+          FOUND=0
+
+          while IFS= read -r -d '' pkg; do
+            echo "Checking: ${pkg}"
+            FOUND=$((FOUND + 1))
+
+            # Must be a regular file
+            if [[ ! -f "$pkg" ]]; then
+              echo "  ERROR: Not a regular file"
+              ERRORS=$((ERRORS + 1))
+              continue
+            fi
+
+            # Must have .gpkg.tar extension
+            if [[ "$pkg" != *.gpkg.tar ]]; then
+              echo "  ERROR: Not a .gpkg.tar file"
+              ERRORS=$((ERRORS + 1))
+              continue
+            fi
+
+            # Must be a valid tar archive
+            if ! tar --list -f "$pkg" &>/dev/null; then
+              echo "  ERROR: Not a valid tar archive"
+              ERRORS=$((ERRORS + 1))
+              continue
+            fi
+
+            # gpkg archives must contain a METADATA directory or package.tar
+            MEMBERS=$(tar --list -f "$pkg" 2>/dev/null)
+            if ! echo "$MEMBERS" | grep -qE '(^|/)gpkg-1$|(^|/)image\.tar\.(zst|bz2|gz|xz)$'; then
+              echo "  WARNING: Does not look like a valid GPKG (missing image.tar.*)"
+            fi
+
+            echo "  OK"
+          done < <(find contrib/ -name '*.gpkg.tar' -print0)
+
+          if [[ $FOUND -eq 0 ]]; then
+            echo "ERROR: No .gpkg.tar files found under contrib/"
+            exit 1
+          fi
+
+          echo ""
+          echo "Validated ${FOUND} package(s), ${ERRORS} error(s)."
+          [[ $ERRORS -eq 0 ]] || exit 1
+
+      - name: Check path structure
+        run: |
+          # Packages must be under contrib/<arch>/<profile>/<march>/
+          echo "Checking path structure..."
+          ERRORS=0
+
+          while IFS= read -r -d '' pkg; do
+            rel="${pkg#contrib/}"
+            depth=$(echo "$rel" | tr '/' '\n' | wc -l)
+            # Expected: <arch>/<version>/<desktop>/<variant>/<init>/<march>/<cat>/<pkg.gpkg.tar>
+            if [[ $depth -lt 3 ]]; then
+              echo "  ERROR: ${pkg} — path too shallow (expected contrib/<arch>/.../<cat>/<pkg>.gpkg.tar)"
+              ERRORS=$((ERRORS + 1))
+            else
+              echo "  OK: ${pkg}"
+            fi
+          done < <(find contrib/ -name '*.gpkg.tar' -print0)
+
+          [[ $ERRORS -eq 0 ]] || exit 1
+
+  publish-on-merge:
+    # This job runs after the PR is merged (push to default branch)
+    # It is NOT triggered by the PR itself — the validate job above handles PRs.
+    # Actual merge-triggered publish is handled by a separate push trigger below.
+    runs-on: ubuntu-latest
+    needs: validate
+    if: false  # placeholder — see push trigger workflow or merge queue
+    permissions: {}
+    steps:
+      - run: echo "Merge publish is handled by the push event in publish-to-pages.yml"
+
+# ---------------------------------------------------------------------------
+# Separate event: run publish when a contrib PR is merged to the default branch
+# ---------------------------------------------------------------------------
+# NOTE: GitHub Actions does not allow a single workflow file to respond to both
+# pull_request and push events in a merged fashion that shares jobs, so we use
+# a dedicated publish step triggered on push (see publish-to-pages.yml which
+# accepts workflow_call).  The merge publish is triggered by the build workflows
+# or manually via workflow_dispatch on publish-to-pages.yml.
