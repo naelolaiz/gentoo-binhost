@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
-      - 'contrib/**'
+      - 'contrib/**/*.gpkg.tar'
 
 permissions:
   contents: read
