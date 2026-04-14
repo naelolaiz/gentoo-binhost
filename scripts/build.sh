@@ -103,7 +103,7 @@ apply_profile() {
   # Evaluate any $(nproc) placeholders now that we're running under bash.
   if [[ -f /etc/portage/make.conf ]]; then
     local nproc_val
-    nproc_val="$(nproc 2>/dev/null || echo 2)"
+    nproc_val="$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)"
     sed -i "s/\$(nproc)/${nproc_val}/g" /etc/portage/make.conf
     log "  Evaluated \$(nproc) → ${nproc_val} in make.conf"
   fi
