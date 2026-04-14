@@ -1,0 +1,254 @@
+name: Check Workarounds
+
+on:
+  schedule:
+    # Weekly on Wednesday at 06:00 UTC
+    - cron: '0 6 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container:
+      image: gentoo/stage3:latest
+    outputs:
+      removable: ${{ steps.summary.outputs.removable }}
+    steps:
+      - name: Sync portage tree
+        run: |
+          emerge-webrsync --quiet 2>/dev/null \
+            || emerge --sync --quiet \
+            || emaint sync -a
+
+      # ── Helper function ──────────────────────────────────────────────
+      - name: Create USE flag check helper
+        id: helpers
+        run: |
+          cat > /tmp/check-iuse.sh << 'SCRIPT'
+          #!/usr/bin/env bash
+          # Usage: check-iuse.sh <category/package> <use_flag>
+          # Exit 0 if the USE flag is referenced in ebuilds, 1 if absent, 2 if pkg missing
+          PKG_DIR="/var/db/repos/gentoo/$1"
+          FLAG="$2"
+          if [ ! -d "$PKG_DIR" ]; then
+            echo "  Package directory $PKG_DIR not found"
+            exit 2
+          fi
+          if ! find "$PKG_DIR" -maxdepth 1 -name '*.ebuild' | grep -q .; then
+            echo "  No ebuilds found in $PKG_DIR"
+            exit 2
+          fi
+          # Search for the flag anywhere in ebuild files. Covers IUSE (including
+          # IUSE+=, +flag/-flag prefixes, multiline) and use conditionals
+          # (use flag, usex flag, flag? deps). A missing flag means the
+          # workaround is stale.
+          if grep -rqlw "$FLAG" "$PKG_DIR"/ --include='*.ebuild'; then
+            echo "  $1 still references '$FLAG'"
+            exit 0
+          fi
+          echo "  $1 no longer references '$FLAG'"
+          exit 1
+          SCRIPT
+          chmod +x /tmp/check-iuse.sh
+
+      # ── 1. libclc-22 mask ───────────────────────────────────────────
+      - name: "Check: libclc-22 mask (mesa_clc requires =libclc-21*)"
+        id: check-libclc
+        run: |
+          MESA_CLC_DIR="/var/db/repos/gentoo/dev-util/mesa_clc"
+          if [ ! -d "$MESA_CLC_DIR" ]; then
+            echo "status=unknown" >> "$GITHUB_OUTPUT"
+            echo "::notice::dev-util/mesa_clc not found in portage tree — skipping"
+            exit 0
+          fi
+          if ! find "$MESA_CLC_DIR" -maxdepth 1 -name '*.ebuild' | grep -q .; then
+            echo "status=unknown" >> "$GITHUB_OUTPUT"
+            echo "::notice::No ebuilds found in $MESA_CLC_DIR — skipping"
+            exit 0
+          fi
+          if grep -rql '=llvm-core/libclc-21' "$MESA_CLC_DIR"/ --include='*.ebuild'; then
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::>=llvm-core/libclc-22 mask is still needed (mesa_clc requires =libclc-21*)"
+          else
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::>=llvm-core/libclc-22 mask may no longer be needed"
+          fi
+
+      # ── 2. pipewire -ffmpeg ─────────────────────────────────────────
+      - name: "Check: pipewire -ffmpeg (cycle: ffmpeg→openal→libsdl2→pipewire→ffmpeg)"
+        id: check-pipewire-ffmpeg
+        run: |
+          if /tmp/check-iuse.sh media-video/pipewire ffmpeg; then
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::pipewire -ffmpeg workaround still needed (ffmpeg USE flag exists)"
+          else
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::pipewire -ffmpeg workaround may no longer be needed"
+          fi
+
+      # ── 3. openal -pipewire ─────────────────────────────────────────
+      - name: "Check: openal -pipewire (cycle: ffmpeg→openal→pipewire→ffmpeg)"
+        id: check-openal-pipewire
+        run: |
+          if /tmp/check-iuse.sh media-libs/openal pipewire; then
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::openal -pipewire workaround still needed (pipewire USE flag exists)"
+          else
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::openal -pipewire workaround may no longer be needed"
+          fi
+
+      # ── 4. pillow -truetype ─────────────────────────────────────────
+      - name: "Check: pillow -truetype (cycle: glib→docutils→pillow→harfbuzz→glib)"
+        id: check-pillow-truetype
+        run: |
+          if /tmp/check-iuse.sh dev-python/pillow truetype; then
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::pillow -truetype workaround still needed (truetype USE flag exists)"
+          else
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::pillow -truetype workaround may no longer be needed"
+          fi
+
+      # ── 5. python:3.12 -bluetooth ──────────────────────────────────
+      - name: "Check: python:3.12 -bluetooth (cycle: docutils→python-3.12→bluez→glib→docutils)"
+        id: check-python-bluetooth
+        run: |
+          if /tmp/check-iuse.sh dev-lang/python bluetooth; then
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::python:3.12 -bluetooth workaround still needed (bluetooth USE flag exists)"
+          else
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::python:3.12 -bluetooth workaround may no longer be needed"
+          fi
+
+      # ── Collect results ─────────────────────────────────────────────
+      - name: Summarise removable workarounds
+        id: summary
+        run: |
+          REMOVABLE=""
+          if [ "${{ steps.check-libclc.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}libclc-mask,"
+          fi
+          if [ "${{ steps.check-pipewire-ffmpeg.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}pipewire-ffmpeg,"
+          fi
+          if [ "${{ steps.check-openal-pipewire.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}openal-pipewire,"
+          fi
+          if [ "${{ steps.check-pillow-truetype.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}pillow-truetype,"
+          fi
+          if [ "${{ steps.check-python-bluetooth.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}python-bluetooth,"
+          fi
+          # Trim trailing comma
+          REMOVABLE="${REMOVABLE%,}"
+          echo "removable=${REMOVABLE}" >> "$GITHUB_OUTPUT"
+          if [ -n "$REMOVABLE" ]; then
+            echo "::warning::Workarounds that may be removable: ${REMOVABLE}"
+          else
+            echo "::notice::All workarounds are still needed"
+          fi
+
+  notify:
+    needs: check
+    if: needs.check.outputs.removable != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create issues for removable workarounds
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const removable = '${{ needs.check.outputs.removable }}'.split(',').filter(Boolean);
+            const repoUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}`;
+            const workflowLink = `[check-workarounds](${repoUrl}/actions/workflows/check-workarounds.yml)`;
+
+            const workarounds = {
+              'libclc-mask': {
+                title: 'Remove >=llvm-core/libclc-22 mask — workaround may no longer be needed',
+                body: [
+                  'The `>=llvm-core/libclc-22` mask in `package.mask/00-binhost` was added because',
+                  '`dev-util/mesa_clc` required `=llvm-core/libclc-21*`.',
+                  '',
+                  'The latest ebuilds **no longer appear to have this constraint**.',
+                  '',
+                  'Please verify and remove:',
+                  '- `>=llvm-core/libclc-22` from `package.mask/00-binhost`',
+                  '- `llvm_slot_21` USE flag from `package.use/00-profile-defaults` (`llvm-core/libclc` line)',
+                ].join('\n'),
+              },
+              'pipewire-ffmpeg': {
+                title: 'Remove pipewire -ffmpeg workaround — USE flag may no longer exist',
+                body: [
+                  'The `-ffmpeg` USE flag on `media-video/pipewire` in `package.use/00-profile-defaults`',
+                  'was added to break: `ffmpeg → openal[sdl] → libsdl2[pipewire] → pipewire[ffmpeg]`.',
+                  '',
+                  '`media-video/pipewire` **no longer appears to have an `ffmpeg` USE flag**.',
+                  '',
+                  'Please verify and remove `-ffmpeg` from the `media-video/pipewire` line.',
+                ].join('\n'),
+              },
+              'openal-pipewire': {
+                title: 'Remove openal -pipewire workaround — USE flag may no longer exist',
+                body: [
+                  'The `-pipewire` USE flag on `media-libs/openal` in `package.use/00-profile-defaults`',
+                  'was added to break: `ffmpeg → openal → pipewire → ffmpeg`.',
+                  '',
+                  '`media-libs/openal` **no longer appears to have a `pipewire` USE flag**.',
+                  '',
+                  'Please verify and remove `-pipewire` from the `media-libs/openal` line.',
+                ].join('\n'),
+              },
+              'pillow-truetype': {
+                title: 'Remove pillow -truetype workaround — USE flag may no longer exist',
+                body: [
+                  'The `-truetype` USE flag on `dev-python/pillow` in `package.use/00-profile-defaults`',
+                  'was added to break: `glib → docutils → pillow[truetype] → harfbuzz → glib`.',
+                  '',
+                  '`dev-python/pillow` **no longer appears to have a `truetype` USE flag**.',
+                  '',
+                  'Please verify and remove `-truetype` from the `dev-python/pillow` line.',
+                ].join('\n'),
+              },
+              'python-bluetooth': {
+                title: 'Remove python:3.12 -bluetooth workaround — USE flag may no longer exist',
+                body: [
+                  'The `-bluetooth` USE flag on `dev-lang/python:3.12` in `package.use/00-profile-defaults`',
+                  'was added to break: `docutils → python-3.12[bluetooth] → bluez → glib → docutils`.',
+                  '',
+                  '`dev-lang/python` **no longer appears to have a `bluetooth` USE flag**.',
+                  '',
+                  'Please verify and remove the `dev-lang/python:3.12 -bluetooth` line.',
+                ].join('\n'),
+              },
+            };
+
+            // Fetch existing open issues with our label once
+            const { data: existingIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'workaround-check',
+            });
+
+            for (const key of removable) {
+              const w = workarounds[key];
+              if (!w) continue;
+              if (existingIssues.some(i => i.title === w.title)) {
+                console.log(`Issue already exists for ${key}, skipping`);
+                continue;
+              }
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: w.title,
+                body: w.body + `\n\n_Created automatically by the ${workflowLink} workflow._`,
+                labels: ['workaround-check'],
+              });
+              console.log(`Created issue for ${key}`);
+            }
