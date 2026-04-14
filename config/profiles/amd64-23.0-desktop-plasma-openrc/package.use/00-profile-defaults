@@ -9,7 +9,7 @@ sys-process/htop hwloc lm-sensors
 dev-vcs/git doc subversion tk
 # subversion needs perl when git[perl,subversion] is satisfied
 dev-vcs/subversion perl
-# Break circular buildtime dependency: ffmpeg → openal → pipewire → ffmpeg
+# Break circular buildtime dependency: ffmpeg → openal → libsdl2 → pipewire → ffmpeg
 # openal works fine with ALSA/PulseAudio backends without pipewire
 media-libs/openal -pipewire
 # Break circular buildtime dependency: glib → docutils → pillow[truetype] → harfbuzz → glib
@@ -35,7 +35,9 @@ kde-frameworks/kimageformats raw openexr
 media-libs/libde265 dec265 enc265 tools
 media-libs/libheif ffmpeg gdk-pixbuf openh264 tools
 media-gfx/imagemagick fontconfig djvu graphviz openexr raw wmf lzma zip
-media-video/pipewire extra
+# Break circular dependency: ffmpeg → openal[sdl] → libsdl2[pipewire] → pipewire[ffmpeg]
+# pipewire does not need ffmpeg for core audio routing; ffmpeg support is optional
+media-video/pipewire extra -ffmpeg
 media-gfx/inkscape imagemagick postscript sourceview svg2 wpg
 app-text/calibre unrar
 media-video/ffmpeg bluray lame libaom liblc3 lzma ocr openal opencl openh264 opus rav1e svt-av1
