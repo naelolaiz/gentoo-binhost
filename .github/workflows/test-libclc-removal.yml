@@ -31,9 +31,12 @@ jobs:
 
           eselect profile set default/linux/amd64/23.0/desktop/plasma || true
 
-          # Install make.conf
+          # Install make.conf and evaluate $(nproc) placeholders
+          # (Portage's Python config parser does not support shell substitutions)
           if [ -f "${PROFILE_DIR}/make.conf" ]; then
             cp "${PROFILE_DIR}/make.conf" /etc/portage/make.conf
+            NPROC_VAL="$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)"
+            sed -i "s/\$(nproc)/${NPROC_VAL}/g" /etc/portage/make.conf
           fi
 
           # Install package.use
