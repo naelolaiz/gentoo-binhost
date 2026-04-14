@@ -18,9 +18,6 @@ dev-python/pillow -truetype
 # Break circular buildtime dependency: docutils → python-3.12[bluetooth] → bluez → glib → docutils
 # bluetooth USE on python-3.12 pulls bluez which needs glib which needs docutils at build time
 dev-lang/python:3.12 -bluetooth
-# Pin libclc to LLVM slot 21 to match mesa 26.x which uses LLVM_SLOT=21
-# (libclc-22 conflicts with dev-util/mesa_clc which requires =libclc-21*)
-llvm-core/libclc llvm_slot_21
 dev-libs/boost python
 x11-libs/wxGTK gstreamer
 sci-libs/opencascade json

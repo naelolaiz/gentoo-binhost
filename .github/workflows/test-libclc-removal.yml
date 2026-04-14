@@ -1,0 +1,108 @@
+name: Test libclc mask removal
+
+on:
+  pull_request:
+    paths:
+      - 'config/profiles/**/package.mask/**'
+      - 'config/profiles/**/package.use/**'
+      - '.github/workflows/test-libclc-removal.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-depgraph:
+    runs-on: ubuntu-latest
+    container:
+      image: gentoo/stage3:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync portage tree
+        run: |
+          emerge-webrsync --quiet 2>/dev/null \
+            || emerge --sync --quiet \
+            || emaint sync -a
+
+      - name: Apply profile configuration
+        run: |
+          PROFILE_DIR="config/profiles/amd64-23.0-desktop-plasma-openrc"
+
+          eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+
+          # Install make.conf
+          if [ -f "${PROFILE_DIR}/make.conf" ]; then
+            cp "${PROFILE_DIR}/make.conf" /etc/portage/make.conf
+          fi
+
+          # Install package.use
+          mkdir -p /etc/portage/package.use
+          if [ -d "${PROFILE_DIR}/package.use" ]; then
+            cp "${PROFILE_DIR}/package.use/"* /etc/portage/package.use/ 2>/dev/null || true
+          fi
+
+          # Install package.mask
+          mkdir -p /etc/portage/package.mask
+          if [ -d "${PROFILE_DIR}/package.mask" ]; then
+            cp "${PROFILE_DIR}/package.mask/"* /etc/portage/package.mask/ 2>/dev/null || true
+          fi
+
+          # Install package.accept_keywords
+          mkdir -p /etc/portage/package.accept_keywords
+          if [ -d "${PROFILE_DIR}/package.accept_keywords" ]; then
+            cp "${PROFILE_DIR}/package.accept_keywords/"* /etc/portage/package.accept_keywords/ 2>/dev/null || true
+          fi
+
+      - name: Verify mesa_clc no longer requires =libclc-21*
+        run: |
+          MESA_CLC_DIR="/var/db/repos/gentoo/dev-util/mesa_clc"
+          if [ -d "$MESA_CLC_DIR" ]; then
+            if grep -rql '=llvm-core/libclc-21' "$MESA_CLC_DIR"/ --include='*.ebuild'; then
+              echo "::error::mesa_clc still requires =libclc-21* — mask removal is premature"
+              exit 1
+            else
+              echo "✓ mesa_clc no longer requires =libclc-21*"
+            fi
+          else
+            echo "::warning::dev-util/mesa_clc not found — cannot verify constraint removal"
+          fi
+
+      - name: Verify libclc is not masked
+        run: |
+          # Ensure >=libclc-22 is installable (not masked)
+          if emerge --pretend --verbose llvm-core/libclc 2>&1 | grep -q 'masked'; then
+            echo "::error::libclc appears to still be masked"
+            emerge --pretend --verbose llvm-core/libclc
+            exit 1
+          fi
+          echo "✓ libclc is not masked"
+
+      - name: Verify dependency resolution for libclc + mesa_clc
+        run: |
+          # Use --pretend + --deep to check the dependency graph resolves
+          # without conflicts for packages that depend on libclc
+          emerge --pretend --verbose --deep --newuse \
+            llvm-core/libclc \
+            2>&1 | tee /tmp/depcheck.log
+
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+            echo "::error::Dependency resolution failed for libclc"
+            cat /tmp/depcheck.log
+            exit 1
+          fi
+          echo "✓ Dependency graph for libclc resolves cleanly"
+
+      - name: Verify dependency resolution for mesa
+        run: |
+          # Also verify mesa itself resolves — it pulls in mesa_clc and libclc
+          emerge --pretend --verbose --deep --newuse \
+            media-libs/mesa \
+            2>&1 | tee /tmp/mesa-depcheck.log
+
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then
+            echo "::error::Dependency resolution failed for mesa (which pulls libclc via mesa_clc)"
+            cat /tmp/mesa-depcheck.log
+            exit 1
+          fi
+          echo "✓ Dependency graph for mesa resolves cleanly"
