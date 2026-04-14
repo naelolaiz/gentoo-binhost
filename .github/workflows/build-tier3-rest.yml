@@ -51,7 +51,7 @@ jobs:
 
       - name: Install build tools
         run: |
-          emerge --oneshot --quiet sys-apps/ccache app-portage/gentoolkit
+          emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
 
       - name: Build tier3 packages
         run: |
