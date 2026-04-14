@@ -112,7 +112,11 @@ setup_ccache() {
 # ---------- sync ----------
 sync_tree() {
   log "Syncing portage tree"
-  emerge --sync --quiet || emaint sync -a
+  # emerge-webrsync is faster in CI (downloads a compressed snapshot over HTTPS)
+  # Fall back to emerge --sync (rsync) or emaint sync if webrsync is unavailable
+  emerge-webrsync --quiet 2>/dev/null \
+    || emerge --sync --quiet \
+    || emaint sync -a
 }
 
 # ---------- build ----------
