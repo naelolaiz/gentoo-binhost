@@ -1,0 +1,25 @@
+# Build artifacts
+*.o
+*.a
+*.so
+*.pyc
+__pycache__/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Portage local state (not part of the repo)
+/var/
+
+# ccache (managed by CI)
+/var/cache/ccache/
+
+# Temporary files
+/tmp/

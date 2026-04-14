@@ -1,0 +1,99 @@
+name: Build Tier 1 - Monsters
+
+on:
+  schedule:
+    # Every Sunday at 00:00 UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Single package to build (leave empty to build all tier1 packages)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build package matrix
+        id: set-matrix
+        run: |
+          if [[ -n "${{ github.event.inputs.package }}" ]]; then
+            # Single package override from workflow_dispatch
+            PACKAGES='["${{ github.event.inputs.package }}"]'
+          else
+            # Read tier1 list, strip comments/blanks
+            PACKAGES=$(grep -v '^\s*#' packages/tier1-monsters.txt \
+                        | grep -v '^\s*$' \
+                        | jq -R . | jq -sc .)
+          fi
+          echo "matrix={\"package\":${PACKAGES}}" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+
+    container:
+      image: gentoo/stage3:latest
+      options: --privileged
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore ccache
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/ccache
+          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          restore-keys: |
+            ccache-tier1-${{ matrix.package }}-
+            ccache-tier1-
+
+      - name: Import GPG signing key
+        if: ${{ secrets.GPG_PRIVATE_KEY != '' }}
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" \
+            | gpg --batch --passphrase "${{ secrets.GPG_PASSPHRASE }}" \
+                  --import
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Install build tools
+        run: |
+          emerge --oneshot --quiet sys-apps/ccache app-portage/gentoolkit
+
+      - name: Apply profile configuration
+        run: |
+          bash scripts/build.sh \
+            --profile amd64-23.0-desktop-plasma-openrc \
+            --single-package "${{ matrix.package }}" \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
+            --output-dir /tmp/binpkgs
+
+      - name: Upload packages as artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: binpkgs-tier1-${{ strategy.job-index }}
+          path: /tmp/binpkgs/**/*.gpkg.tar
+          if-no-files-found: warn
+          retention-days: 7
+
+  publish:
+    needs: build
+    if: ${{ always() && needs.build.result != 'cancelled' }}
+    uses: ./.github/workflows/publish-to-pages.yml
+    secrets: inherit
