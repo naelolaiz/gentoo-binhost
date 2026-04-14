@@ -1,0 +1,91 @@
+name: Check Workarounds
+
+on:
+  schedule:
+    # Weekly on Wednesday at 06:00 UTC
+    - cron: '0 6 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container:
+      image: gentoo/stage3:latest
+    outputs:
+      libclc-mask-needed: ${{ steps.check-libclc.outputs.status }}
+    steps:
+      - name: Sync portage tree
+        run: |
+          emerge-webrsync --quiet 2>/dev/null \
+            || emerge --sync --quiet \
+            || emaint sync -a
+
+      - name: Check if libclc-22 mask is still needed
+        id: check-libclc
+        run: |
+          # The >=llvm-core/libclc-22 mask was added because dev-util/mesa_clc
+          # depends on =llvm-core/libclc-21*. Once mesa_clc supports libclc-22+,
+          # the mask (and llvm_slot_21 USE flag) can be removed.
+          MESA_CLC_DIR="/var/db/repos/gentoo/dev-util/mesa_clc"
+          if [ ! -d "$MESA_CLC_DIR" ]; then
+            echo "status=unknown" >> "$GITHUB_OUTPUT"
+            echo "::notice::dev-util/mesa_clc not found in portage tree — skipping check"
+            exit 0
+          fi
+          if ! find "$MESA_CLC_DIR" -maxdepth 1 -name '*.ebuild' | grep -q .; then
+            echo "status=unknown" >> "$GITHUB_OUTPUT"
+            echo "::notice::No ebuilds found in $MESA_CLC_DIR — skipping check"
+            exit 0
+          fi
+          if grep -rql '=llvm-core/libclc-21' "$MESA_CLC_DIR"/ --include='*.ebuild'; then
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::>=llvm-core/libclc-22 mask is still needed (mesa_clc requires =libclc-21*)"
+          else
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::>=llvm-core/libclc-22 mask may no longer be needed — mesa_clc no longer requires =libclc-21*"
+          fi
+
+  notify:
+    needs: check
+    if: needs.check.outputs.libclc-mask-needed == 'removable'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create issue to remove libclc mask
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Remove >=llvm-core/libclc-22 mask — workaround no longer needed';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'workaround-check',
+            });
+            if (issues.some(i => i.title === title)) {
+              console.log('Issue already exists, skipping creation');
+              return;
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body: [
+                'The `>=llvm-core/libclc-22` mask in `config/profiles/amd64-23.0-desktop-plasma-openrc/package.mask/00-binhost`',
+                'was added because `dev-util/mesa_clc` required `=llvm-core/libclc-21*`.',
+                '',
+                'The latest `mesa_clc` ebuilds in the Gentoo tree **no longer appear to have this constraint**.',
+                '',
+                'Please verify and remove:',
+                '- The `>=llvm-core/libclc-22` line from `package.mask/00-binhost`',
+                '- The `llvm_slot_21` USE flag from `package.use/00-profile-defaults` (line with `llvm-core/libclc`)',
+                '',
+                '_This issue was created automatically by the [check-workarounds](' +
+                  `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}` +
+                  '/actions/workflows/check-workarounds.yml) workflow._',
+              ].join('\n'),
+              labels: ['workaround-check'],
+            });
