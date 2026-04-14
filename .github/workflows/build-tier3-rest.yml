@@ -42,6 +42,13 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
+      - name: Sync portage tree
+        run: |
+          emerge-webrsync --quiet 2>/dev/null \
+            || emerge --sync --quiet \
+            || emaint sync -a
+          eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+
       - name: Install build tools
         run: |
           emerge --oneshot --quiet sys-apps/ccache app-portage/gentoolkit

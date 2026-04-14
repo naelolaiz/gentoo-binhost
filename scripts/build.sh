@@ -111,6 +111,10 @@ setup_ccache() {
 
 # ---------- sync ----------
 sync_tree() {
+  if [[ -f /var/db/repos/gentoo/metadata/timestamp.chk ]]; then
+    log "Portage tree already synced, skipping"
+    return 0
+  fi
   log "Syncing portage tree"
   # emerge-webrsync is faster in CI (downloads a compressed snapshot over HTTPS)
   # Fall back to emerge --sync (rsync) or emaint sync if webrsync is unavailable
