@@ -98,6 +98,15 @@ apply_profile() {
   # Set the Gentoo profile
   eselect profile set default/linux/amd64/23.0/desktop/plasma || true
   log "  eselect profile set"
+
+  # Portage's config parser doesn't support $(cmd) command substitutions.
+  # Evaluate any $(nproc) placeholders now that we're running under bash.
+  if [[ -f /etc/portage/make.conf ]]; then
+    local nproc_val
+    nproc_val="$(nproc 2>/dev/null || echo 2)"
+    sed -i "s/\$(nproc)/${nproc_val}/g" /etc/portage/make.conf
+    log "  Evaluated \$(nproc) → ${nproc_val} in make.conf"
+  fi
 }
 
 # ---------- ccache ----------
