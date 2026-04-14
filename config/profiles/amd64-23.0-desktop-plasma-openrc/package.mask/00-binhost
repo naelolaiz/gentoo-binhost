@@ -1,0 +1,6 @@
+# Binhost-specific package masks
+# Mask packages that are known to be problematic in the CI environment
+# or that should not be served from the binhost
+
+# Example: mask broken package versions
+# =some-category/some-package-1.2.3

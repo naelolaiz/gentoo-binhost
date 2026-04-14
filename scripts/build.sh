@@ -1,0 +1,177 @@
+#!/usr/bin/env bash
+# scripts/build.sh — main build script for the Gentoo binhost CI
+#
+# Usage:
+#   build.sh --profile <profile-name> --package-list <file>
+#   build.sh --profile <profile-name> --single-package <atom>
+#
+# Options:
+#   --profile <name>         Profile directory under config/profiles/ (required)
+#   --package-list <file>    Path to a newline-separated package list file
+#   --single-package <atom>  Build a single package atom
+#   --sign                   GPG-sign all produced .gpkg.tar files
+#   --gpg-key <fingerprint>  GPG key fingerprint to use for signing
+#   --output-dir <dir>       Directory to copy finished packages into (default: /var/cache/binpkgs)
+#   --help                   Show this help message
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# ---------- defaults ----------
+PROFILE=""
+PACKAGE_LIST=""
+SINGLE_PACKAGE=""
+SIGN=false
+GPG_KEY=""
+OUTPUT_DIR="/var/cache/binpkgs"
+
+# ---------- helpers ----------
+die() { echo "ERROR: $*" >&2; exit 1; }
+log() { echo "[build.sh] $*"; }
+
+usage() {
+  sed -n '/^# Usage:/,/^$/p' "$0" | sed 's/^# \?//'
+  exit 0
+}
+
+# ---------- argument parsing ----------
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --profile)        PROFILE="$2";        shift 2 ;;
+    --package-list)   PACKAGE_LIST="$2";   shift 2 ;;
+    --single-package) SINGLE_PACKAGE="$2"; shift 2 ;;
+    --sign)           SIGN=true;           shift   ;;
+    --gpg-key)        GPG_KEY="$2";        shift 2 ;;
+    --output-dir)     OUTPUT_DIR="$2";     shift 2 ;;
+    --help|-h)        usage ;;
+    *) die "Unknown argument: $1" ;;
+  esac
+done
+
+# ---------- validation ----------
+[[ -n "$PROFILE" ]] || die "--profile is required"
+[[ -n "$PACKAGE_LIST" || -n "$SINGLE_PACKAGE" ]] \
+  || die "One of --package-list or --single-package is required"
+[[ -z "$PACKAGE_LIST" || -z "$SINGLE_PACKAGE" ]] \
+  || die "--package-list and --single-package are mutually exclusive"
+
+PROFILE_DIR="${REPO_ROOT}/config/profiles/${PROFILE}"
+[[ -d "$PROFILE_DIR" ]] || die "Profile directory not found: ${PROFILE_DIR}"
+
+if [[ -n "$PACKAGE_LIST" ]]; then
+  [[ -f "$PACKAGE_LIST" ]] || die "Package list not found: ${PACKAGE_LIST}"
+fi
+
+# ---------- portage configuration ----------
+apply_profile() {
+  log "Applying profile: ${PROFILE}"
+
+  # make.conf
+  if [[ -f "${PROFILE_DIR}/make.conf" ]]; then
+    cp "${PROFILE_DIR}/make.conf" /etc/portage/make.conf
+    log "  Installed make.conf"
+  fi
+
+  # package.use
+  mkdir -p /etc/portage/package.use
+  if [[ -d "${PROFILE_DIR}/package.use" ]]; then
+    cp "${PROFILE_DIR}/package.use/"* /etc/portage/package.use/ 2>/dev/null || true
+    log "  Installed package.use files"
+  fi
+
+  # package.accept_keywords
+  mkdir -p /etc/portage/package.accept_keywords
+  if [[ -d "${PROFILE_DIR}/package.accept_keywords" ]]; then
+    cp "${PROFILE_DIR}/package.accept_keywords/"* /etc/portage/package.accept_keywords/ 2>/dev/null || true
+    log "  Installed package.accept_keywords files"
+  fi
+
+  # package.mask
+  mkdir -p /etc/portage/package.mask
+  if [[ -d "${PROFILE_DIR}/package.mask" ]]; then
+    cp "${PROFILE_DIR}/package.mask/"* /etc/portage/package.mask/ 2>/dev/null || true
+    log "  Installed package.mask files"
+  fi
+
+  # Set the Gentoo profile
+  eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+  log "  eselect profile set"
+}
+
+# ---------- ccache ----------
+setup_ccache() {
+  if command -v ccache &>/dev/null; then
+    log "Configuring ccache (dir: ${CCACHE_DIR:-/var/cache/ccache})"
+    mkdir -p "${CCACHE_DIR:-/var/cache/ccache}"
+    ccache --max-size="${CCACHE_SIZE:-10G}" 2>/dev/null || true
+  fi
+}
+
+# ---------- sync ----------
+sync_tree() {
+  log "Syncing portage tree"
+  emerge --sync --quiet || emaint sync -a
+}
+
+# ---------- build ----------
+build_packages() {
+  local packages=()
+
+  if [[ -n "$SINGLE_PACKAGE" ]]; then
+    packages=("$SINGLE_PACKAGE")
+  else
+    # Read package list, stripping comments and blank lines
+    while IFS= read -r line; do
+      line="${line%%#*}"   # strip inline comments
+      line="$(echo "$line" | xargs)"  # strip leading/trailing whitespace
+      [[ -n "$line" ]] && packages+=("$line")
+    done < "$PACKAGE_LIST"
+  fi
+
+  [[ ${#packages[@]} -gt 0 ]] || die "No packages to build"
+  log "Packages to build: ${packages[*]}"
+
+  emerge \
+    --buildpkg \
+    --usepkg \
+    --keep-going \
+    --verbose \
+    "${packages[@]}"
+}
+
+# ---------- signing ----------
+sign_packages() {
+  [[ "$SIGN" == true ]] || return 0
+  [[ -n "$GPG_KEY" ]] || die "--gpg-key must be specified when --sign is used"
+
+  log "Signing packages in ${OUTPUT_DIR}"
+  find "${OUTPUT_DIR}" -name '*.gpkg.tar' | while read -r pkg; do
+    gpg --batch --yes \
+        --local-user "$GPG_KEY" \
+        --detach-sign --armor \
+        "$pkg"
+    log "  Signed: $(basename "$pkg")"
+  done
+}
+
+# ---------- collect output ----------
+collect_packages() {
+  if [[ "$OUTPUT_DIR" != "/var/cache/binpkgs" ]]; then
+    log "Copying packages to ${OUTPUT_DIR}"
+    mkdir -p "$OUTPUT_DIR"
+    rsync -a --include='*/' --include='*.gpkg.tar' --exclude='*' \
+      /var/cache/binpkgs/ "${OUTPUT_DIR}/"
+  fi
+}
+
+# ---------- main ----------
+apply_profile
+setup_ccache
+sync_tree
+build_packages
+collect_packages
+sign_packages
+
+log "Build complete."

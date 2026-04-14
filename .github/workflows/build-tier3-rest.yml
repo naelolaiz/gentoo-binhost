@@ -1,0 +1,69 @@
+name: Build Tier 3 - Rest
+
+on:
+  schedule:
+    # Every Tuesday and Friday at 02:00 UTC
+    - cron: '0 2 * * 2,5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    container:
+      image: gentoo/stage3:latest
+      options: --privileged
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore ccache
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/ccache
+          key: ccache-tier3-${{ github.sha }}
+          restore-keys: |
+            ccache-tier3-
+
+      - name: Import GPG signing key
+        run: |
+          if [[ -n "${GPG_PRIVATE_KEY:-}" ]]; then
+            echo "$GPG_PRIVATE_KEY" \
+              | gpg --batch --passphrase "${GPG_PASSPHRASE:-}" \
+                    --import
+          fi
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Install build tools
+        run: |
+          emerge --oneshot --quiet sys-apps/ccache app-portage/gentoolkit
+
+      - name: Build tier3 packages
+        run: |
+          bash scripts/build.sh \
+            --profile amd64-23.0-desktop-plasma-openrc \
+            --package-list packages/tier3-rest.txt \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
+            --output-dir /tmp/binpkgs
+
+      - name: Upload packages as artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: binpkgs-tier3
+          path: /tmp/binpkgs/**/*.gpkg.tar
+          if-no-files-found: warn
+          retention-days: 7
+
+  publish:
+    needs: build
+    if: ${{ always() && needs.build.result != 'cancelled' }}
+    uses: ./.github/workflows/publish-to-pages.yml
+    secrets: inherit

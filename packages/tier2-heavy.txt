@@ -1,0 +1,39 @@
+# Tier 2: Heavy packages - batched together in CI
+
+# KDE Plasma Desktop
+kde-plasma/plasma-meta
+
+# Qt ecosystem
+dev-qt/qtbase
+dev-qt/qtdeclarative
+dev-qt/qttools
+dev-qt/qtwayland
+dev-qt/qtmultimedia
+dev-qt/qtwebchannel
+dev-qt/qtwebsockets
+dev-qt/qtsvg
+dev-qt/qt5compat
+dev-qt/qtshadertools
+dev-qt/qtlocation
+dev-qt/qtconnectivity
+dev-qt/qtcharts
+dev-qt/qtspeech
+dev-qt/qtquick3d
+
+# Multimedia
+media-video/ffmpeg
+media-libs/opencv
+media-video/pipewire
+media-video/wireplumber
+media-libs/mesa
+
+# Heavy libraries
+sci-libs/vtk
+sci-libs/opencascade
+
+# Heavy applications (from source)
+media-gfx/gimp
+media-gfx/inkscape
+media-sound/ardour
+media-sound/musescore
+media-video/avidemux

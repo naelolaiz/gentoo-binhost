@@ -1,0 +1,105 @@
+name: Publish to GitHub Pages
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+# Only one publish job runs at a time to avoid index corruption
+concurrency:
+  group: pages-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fetch existing GitHub Pages content so we can do an incremental update
+      - name: Fetch existing Pages content
+        run: |
+          mkdir -p /tmp/pages-site
+          # Try to download existing packages from Pages; ignore errors on first run
+          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          # We'll rebuild from all artifacts; existing packages that aren't
+          # in the current artifact set are preserved from the previous deployment.
+          echo "Pages URL: ${PAGES_URL}"
+
+      # Download all binpkg artifacts produced by the current or recent runs
+      - name: Download all build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: /tmp/artifacts
+          pattern: binpkgs-*
+          merge-multiple: false
+        continue-on-error: true  # OK if no artifacts exist yet (first run)
+
+      # Organise packages into the standard binhost directory layout
+      - name: Organise packages
+        run: |
+          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          DEST="/tmp/pages-site/${BINHOST_PATH}"
+          mkdir -p "$DEST"
+
+          # Copy every .gpkg.tar (and optional .asc signatures) we found
+          find /tmp/artifacts -name '*.gpkg.tar' | while read -r pkg; do
+            # Preserve category/name-version subdirectory structure
+            # Artifacts are stored as category/name/name-version.gpkg.tar
+            rel_dir="$(dirname "$pkg" | sed 's|.*/binpkgs-[^/]*/||')"
+            target="${DEST}/${rel_dir}"
+            mkdir -p "$target"
+            cp "$pkg" "$target/"
+            # Copy matching .asc signature if present
+            [[ -f "${pkg}.asc" ]] && cp "${pkg}.asc" "$target/"
+          done
+
+          echo "Package tree:"
+          find "$DEST" -type f | sort
+
+      # Generate/refresh the Packages index
+      - name: Generate Packages index
+        run: |
+          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          DEST="/tmp/pages-site/${BINHOST_PATH}"
+          bash scripts/generate-packages-index.sh "$DEST"
+
+      # Add a minimal index.html so GitHub Pages serves something at the root
+      - name: Create root index
+        run: |
+          cat > /tmp/pages-site/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head><meta charset="utf-8"><title>Gentoo Binhost</title></head>
+          <body>
+          <h1>Gentoo Binhost</h1>
+          <p>Binary packages for <code>default/linux/amd64/23.0/desktop/plasma</code>
+             (OpenRC, ~amd64, x86-64-v3).</p>
+          <p>See the <a href="https://github.com/naelolaiz/gentoo-binhost">repository</a>
+             for usage instructions.</p>
+          <pre>
+          PORTAGE_BINHOST="https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          </pre>
+          </body>
+          </html>
+          EOF
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/pages-site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

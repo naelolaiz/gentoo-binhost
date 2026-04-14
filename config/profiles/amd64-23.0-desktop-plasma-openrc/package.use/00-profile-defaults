@@ -1,0 +1,60 @@
+dev-qt/qtpositioning geoclue
+x11-libs/libdrm video_cards_radeon video_cards_intel video_cards_nouveau
+sys-boot/grub mount
+dev-libs/libdbusmenu gtk3
+media-gfx/graphviz gtk2
+sci-libs/fftw threads
+dev-python/pyqt6 pdfium quick
+sys-process/htop hwloc lm-sensors
+dev-vcs/git doc subversion tk
+dev-libs/boost python
+x11-libs/wxGTK gstreamer
+sci-libs/opencascade json
+dev-python/pyside uitools
+sci-libs/cgnslib hdf5
+media-libs/gegl introspection ffmpeg sdl2
+media-libs/babl introspection
+dev-qt/qt-creator designer doc keyring plugin-dev qmldesigner serialterminal
+dev-qt/qttools designer qdoc qtattributionsscanner pixeltool custom-cflags qtdiag qtplugininfo clang
+media-sound/linuxsampler sf2
+kde-frameworks/kimageformats raw openexr
+media-libs/libde265 dec265 enc265 tools
+media-libs/libheif ffmpeg gdk-pixbuf openh264 tools
+media-gfx/imagemagick fontconfig djvu graphviz openexr raw wmf lzma zip
+media-video/pipewire extra
+media-gfx/inkscape imagemagick postscript sourceview svg2 wpg
+app-text/calibre unrar
+media-video/ffmpeg bluray lame libaom liblc3 lzma ocr openal opencl openh264 opus rav1e svt-av1
+app-misc/tmux vim-syntax
+kde-plasma/plasma-meta grub oxygen-theme wacom
+x11-base/xorg-drivers input_device_wacom input_device_evdev input_device_joystick
+sci-visualization/gnuplot bitmap gpic latex
+media-gfx/mandelbulber opencl openexr
+dev-python/pyqtgraph qt5 qt6
+media-sound/audacity vamp id3tag mpg123 opus twolame
+media-sound/alsa-tools fltk
+media-sound/carla gtk2 sf2
+media-libs/zita-resampler tools
+media-sound/csound beats double-precision examples lua portaudio portmidi samples vim-syntax -osc
+media-sound/drumstick fluidsynth
+sys-apps/etckeeper cron
+www-apps/gitea sqlite gogit
+acct-user/git gitea
+sci-libs/libsigrok ftdi hidapi
+net-dns/avahi mdnsresponder-compat
+net-libs/webkit-gtk keyring
+dev-qt/qtwebengine bindist
+dev-libs/libxmlb introspection
+sys-apps/fwupd amdgpu bash-completion flashrom gnutls introspection nvme synaptics uefi verify-sig
+net-analyzer/nmap zenmap
+net-firewall/iptables nftables
+media-libs/tiff jpeg
+media-libs/mesa video_cards_intel video_cards_radeon video_cards_nouveau -opencl
+app-editors/gvim cscope
+dev-python/pillow -jpeg2k
+media-libs/libwebp -tiff
+media-sound/lame -frontend
+media-video/ffmpeg -sdl
+sys-libs/ncurses -gpm
+sys-apps/attr -nls
+sys-apps/acl -nls
