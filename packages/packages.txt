@@ -1,0 +1,122 @@
+# All packages built by the Gentoo binhost CI.
+#
+# emerge processes these respecting dependency order automatically.
+# The build workflow handles timeout (--max-build-time) and resume (--resume)
+# so that the full list completes across multiple build phases if needed.
+
+# LLVM toolchain
+llvm-core/llvm
+llvm-core/clang
+
+# Web engines
+dev-qt/qtwebengine
+net-libs/webkit-gtk
+
+# KDE Plasma Desktop
+kde-plasma/plasma-meta
+
+# Qt ecosystem
+dev-qt/qtbase
+dev-qt/qtdeclarative
+dev-qt/qttools
+dev-qt/qtwayland
+dev-qt/qtmultimedia
+dev-qt/qtwebchannel
+dev-qt/qtwebsockets
+dev-qt/qtsvg
+dev-qt/qt5compat
+dev-qt/qtshadertools
+dev-qt/qtlocation
+dev-qt/qtconnectivity
+dev-qt/qtcharts
+dev-qt/qtspeech
+dev-qt/qtquick3d
+
+# Multimedia
+media-video/ffmpeg
+media-libs/opencv
+media-video/pipewire
+media-video/wireplumber
+media-libs/mesa
+
+# Heavy libraries
+sci-libs/vtk
+sci-libs/opencascade
+
+# Heavy applications
+media-gfx/gimp
+media-gfx/inkscape
+media-sound/ardour
+media-sound/musescore
+media-video/avidemux
+
+# Audio production stack
+media-sound/csound
+media-sound/hydrogen
+media-sound/guitarix
+media-sound/rosegarden
+media-sound/qtractor
+media-sound/audacity
+media-sound/qjackctl
+media-sound/qsynth
+media-sound/qsampler
+media-sound/jack2
+media-sound/fluidsynth
+media-sound/linuxsampler
+media-sound/lilypond
+media-plugins/calf
+media-plugins/zam-plugins
+
+# Development tools
+dev-vcs/git
+dev-vcs/subversion
+dev-debug/valgrind
+dev-build/cmake
+dev-lang/go
+
+# KDE applications
+kde-apps/kdenlive
+kde-apps/kate
+kde-apps/konsole
+kde-apps/dolphin
+kde-apps/okular
+kde-apps/gwenview
+kde-apps/ark
+kde-misc/kdiff3
+kde-misc/kdeconnect
+
+# Science / CAD / 3D
+media-gfx/openscad
+media-gfx/mandelbulber
+sci-electronics/pulseview
+sci-electronics/ngspice
+sci-electronics/gtkwave
+
+# Graphics
+media-gfx/imagemagick
+media-gfx/graphviz
+
+# Networking
+net-analyzer/wireshark
+net-analyzer/nmap
+www-apps/gitea
+
+# System tools
+sys-apps/fwupd
+sys-process/htop
+app-emulation/qemu
+# Provides /usr/src/linux for any *-modules ebuild going through
+# linux-mod-r1.eclass (e.g. app-emulation/virtualbox-modules, which is
+# PDEPENDed by app-emulation/virtualbox).  Without real kernel sources in
+# the CI container, those ebuilds die in pkg_setup with "kernel sources are
+# required to build kernel modules".  Portage handles the merge order, and
+# gentoo-kernel-bin's pkg_postinst runs `eselect kernel set` itself; the
+# explicit eselect call in scripts/build.sh is belt-and-suspenders for
+# resume attempts.
+sys-kernel/gentoo-kernel-bin
+app-emulation/virtualbox
+
+# Misc
+app-misc/mc
+app-misc/tmux
+dev-util/gource

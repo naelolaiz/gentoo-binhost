@@ -21,7 +21,7 @@ jobs:
 
       - name: Sync portage tree
         run: |
-          emerge-webrsync --quiet 2>/dev/null \
+          emerge-webrsync --quiet \
             || emerge --sync --quiet \
             || emaint sync -a
 
@@ -29,32 +29,40 @@ jobs:
         run: |
           PROFILE_DIR="config/profiles/amd64-23.0-desktop-plasma-openrc"
 
-          eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+          # No `|| true`: a missing/typo'd profile must fail RED.
+          eselect profile set default/linux/amd64/23.0/desktop/plasma
 
           # Install make.conf and evaluate $(nproc) placeholders
           # (Portage's Python config parser does not support shell substitutions)
           if [ -f "${PROFILE_DIR}/make.conf" ]; then
             cp "${PROFILE_DIR}/make.conf" /etc/portage/make.conf
-            NPROC_VAL="$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)"
+            NPROC_VAL="$(nproc || getconf _NPROCESSORS_ONLN || echo 1)"
             sed -i "s/\$(nproc)/${NPROC_VAL}/g" /etc/portage/make.conf
           fi
 
-          # Install package.use
+          # Install package.use.  Use shopt -s nullglob so an empty source
+          # directory expands to nothing instead of a literal "*" — avoids
+          # the `cp ... 2>/dev/null || true` antipattern that hides real
+          # cp errors (perm denied, bad source path, etc).
+          shopt -s nullglob
           mkdir -p /etc/portage/package.use
           if [ -d "${PROFILE_DIR}/package.use" ]; then
-            cp "${PROFILE_DIR}/package.use/"* /etc/portage/package.use/ 2>/dev/null || true
+            files=( "${PROFILE_DIR}/package.use/"* )
+            [[ ${#files[@]} -gt 0 ]] && cp "${files[@]}" /etc/portage/package.use/
           fi
 
           # Install package.mask
           mkdir -p /etc/portage/package.mask
           if [ -d "${PROFILE_DIR}/package.mask" ]; then
-            cp "${PROFILE_DIR}/package.mask/"* /etc/portage/package.mask/ 2>/dev/null || true
+            files=( "${PROFILE_DIR}/package.mask/"* )
+            [[ ${#files[@]} -gt 0 ]] && cp "${files[@]}" /etc/portage/package.mask/
           fi
 
           # Install package.accept_keywords
           mkdir -p /etc/portage/package.accept_keywords
           if [ -d "${PROFILE_DIR}/package.accept_keywords" ]; then
-            cp "${PROFILE_DIR}/package.accept_keywords/"* /etc/portage/package.accept_keywords/ 2>/dev/null || true
+            files=( "${PROFILE_DIR}/package.accept_keywords/"* )
+            [[ ${#files[@]} -gt 0 ]] && cp "${files[@]}" /etc/portage/package.accept_keywords/
           fi
 
       - name: Verify mesa_clc no longer requires =libclc-21*
