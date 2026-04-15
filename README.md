@@ -46,7 +46,7 @@ gpg --import keys/binhost-signing-key.asc
 ```
 gentoo-binhost/
 ├── .github/workflows/
-│   ├── build-tier1-monsters.yml      # qtwebengine, webkit-gtk, llvm/clang, gcc — weekly
+│   ├── build-tier1-monsters.yml      # qtwebengine, webkit-gtk, llvm/clang — weekly
 │   ├── build-tier2-heavy.yml         # KDE plasma, Qt, ffmpeg, mesa — twice-weekly
 │   ├── build-tier3-rest.yml          # remaining world packages — twice-weekly
 │   ├── publish-to-pages.yml          # deploys binpkgs to GitHub Pages
@@ -78,7 +78,7 @@ gentoo-binhost/
 
 | Tier | Contents | Schedule |
 |------|----------|----------|
-| **Tier 1** | qtwebengine, webkit-gtk, gcc, llvm, clang | Weekly (Sun) |
+| **Tier 1** | qtwebengine, webkit-gtk, llvm, clang | Weekly (Sun) |
 | **Tier 2** | KDE Plasma, Qt modules, ffmpeg, mesa, OpenCV, VTK | Mon & Thu |
 | **Tier 3** | Audio tools, KDE apps, dev tools, system utilities | Tue & Fri |
 
