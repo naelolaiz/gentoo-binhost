@@ -25,10 +25,6 @@ jobs:
             || emerge --sync --quiet \
             || emaint sync -a
 
-      - name: Update Portage
-        run: |
-          emerge --oneshot --quiet sys-apps/portage
-
       - name: Apply profile configuration
         run: |
           PROFILE_DIR="config/profiles/amd64-23.0-desktop-plasma-openrc"

@@ -88,10 +88,6 @@ jobs:
             || emaint sync -a
           eselect profile set default/linux/amd64/23.0/desktop/plasma || true
 
-      - name: Update Portage
-        run: |
-          emerge --oneshot --quiet sys-apps/portage
-
       - name: Install build tools
         run: |
           emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
@@ -194,11 +190,6 @@ jobs:
             || emerge --sync --quiet \
             || emaint sync -a
           eselect profile set default/linux/amd64/23.0/desktop/plasma || true
-
-      - name: Update Portage
-        if: steps.restore-state.outputs.cache-hit == 'true'
-        run: |
-          emerge --oneshot --quiet sys-apps/portage
 
       - name: Install build tools
         if: steps.restore-state.outputs.cache-hit == 'true'
@@ -305,11 +296,6 @@ jobs:
             || emerge --sync --quiet \
             || emaint sync -a
           eselect profile set default/linux/amd64/23.0/desktop/plasma || true
-
-      - name: Update Portage
-        if: steps.restore-state.outputs.cache-hit == 'true'
-        run: |
-          emerge --oneshot --quiet sys-apps/portage
 
       - name: Install build tools
         if: steps.restore-state.outputs.cache-hit == 'true'
