@@ -82,6 +82,20 @@ if [[ -n "$MAX_BUILD_TIME" ]]; then
     || die "--max-build-time must be a positive integer (minutes), got: ${MAX_BUILD_TIME}"
 fi
 
+if [[ -n "$BINHOST_URL" ]]; then
+  # Validate every space-separated URL before any of them are written into make.conf.
+  # A quote or newline in the value can break the config file or inject extra settings.
+  [[ "$BINHOST_URL" != *'"'* && "$BINHOST_URL" != *"'"* ]] \
+    || die "--binhost-url must not contain quote characters"
+  [[ "$BINHOST_URL" != *$'\n'* ]] \
+    || die "--binhost-url must not contain newlines"
+  for _url in $BINHOST_URL; do
+    [[ "$_url" =~ ^https?:// ]] \
+      || die "--binhost-url entries must start with http:// or https://, got: ${_url}"
+  done
+  unset _url
+fi
+
 # ---------- portage configuration ----------
 apply_profile() {
   log "Applying profile: ${PROFILE}"
