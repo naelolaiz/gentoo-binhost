@@ -168,22 +168,19 @@ jobs:
             echo "::warning::faac MPEG-4 license workaround may no longer be needed"
           fi
 
-      # ── 8. Portage _elog bug (stage3 ships broken Scheduler) ──────
-      - name: "Check: Portage _elog bug (Scheduler missing _elog method)"
+      # ── 8. Portage update workaround (stage3 ships broken emerge) ─
+      - name: "Check: Portage update workaround (emerge --pretend works without updating portage)"
         id: check-portage-elog
         run: |
-          # The gentoo/stage3:latest image may ship a Portage version where
-          # Scheduler._elog was removed but _run_pkg_pretend still calls it.
-          # We test the *pre-installed* Portage (from the image, not from the
-          # synced tree) because the workaround is
-          #   emerge --oneshot sys-apps/portage
-          # in every build workflow.
-          if python3 -c "from _emerge.Scheduler import Scheduler; assert hasattr(Scheduler, '_elog')" 2>/dev/null; then
+          # The workaround is `emerge --oneshot sys-apps/portage` before any
+          # build step.  We test whether `emerge --pretend` works *without*
+          # that update — if it succeeds the workaround is removable.
+          if emerge --pretend --quiet sys-apps/portage 2>/dev/null; then
             echo "status=removable" >> "$GITHUB_OUTPUT"
-            echo "::warning::Portage _elog workaround may no longer be needed (Scheduler._elog exists in stage3 image)"
+            echo "::warning::Portage update workaround may no longer be needed (emerge --pretend works with stage3 portage)"
           else
             echo "status=needed" >> "$GITHUB_OUTPUT"
-            echo "::notice::Portage _elog workaround still needed (Scheduler._elog missing in stage3 image)"
+            echo "::notice::Portage update workaround still needed (emerge --pretend fails with stage3 portage)"
           fi
 
       # ── Collect results ─────────────────────────────────────────────
@@ -320,16 +317,14 @@ jobs:
                 ].join('\n'),
               },
               'portage-elog': {
-                title: 'Remove Portage update workaround — stage3 image now ships fixed Portage',
+                title: 'Remove Portage update workaround — stage3 image now ships working Portage',
                 body: [
                   'The `emerge --oneshot sys-apps/portage` step was added to every build workflow',
-                  'because `gentoo/stage3:latest` shipped a Portage version where `Scheduler._elog`',
-                  'was removed but `_run_pkg_pretend` still referenced it, causing:',
-                  '```',
-                  "AttributeError: 'Scheduler' object has no attribute '_elog'",
-                  '```',
+                  'because `gentoo/stage3:latest` shipped a broken Portage where `emerge --pretend`',
+                  'crashed with an `AttributeError`.',
                   '',
-                  'The `gentoo/stage3:latest` image **now appears to include a fixed Portage**.',
+                  'The `gentoo/stage3:latest` image **now appears to ship a working Portage** —',
+                  '`emerge --pretend` succeeds without updating portage first.',
                   '',
                   'Please verify and remove the "Update Portage" step from:',
                   '- `build-tier1-monsters.yml` (all 3 phases)',
