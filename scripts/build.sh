@@ -74,6 +74,11 @@ if [[ -n "$PACKAGE_LIST" ]]; then
   [[ -f "$PACKAGE_LIST" ]] || die "Package list not found: ${PACKAGE_LIST}"
 fi
 
+if [[ -n "$MAX_BUILD_TIME" ]]; then
+  [[ "$MAX_BUILD_TIME" =~ ^[1-9][0-9]*$ ]] \
+    || die "--max-build-time must be a positive integer (minutes), got: ${MAX_BUILD_TIME}"
+fi
+
 # ---------- portage configuration ----------
 apply_profile() {
   log "Applying profile: ${PROFILE}"
@@ -159,7 +164,7 @@ restore_build_state() {
   if [[ -d "$STATE_DIR" ]] && [[ -n "$(ls -A "$STATE_DIR" 2>/dev/null)" ]]; then
     log "Restoring build state from ${STATE_DIR}"
     mkdir -p /var/tmp/portage
-    rsync -a "${STATE_DIR}/" /var/tmp/portage/
+    rsync -a --delete "${STATE_DIR}/" /var/tmp/portage/
     log "  Build state restored"
   else
     log "No saved build state found at ${STATE_DIR}, starting fresh"
@@ -170,7 +175,7 @@ save_build_state() {
   log "Saving build state to ${STATE_DIR}"
   mkdir -p "$STATE_DIR"
   if [[ -d /var/tmp/portage ]] && [[ -n "$(ls -A /var/tmp/portage 2>/dev/null)" ]]; then
-    rsync -a /var/tmp/portage/ "${STATE_DIR}/"
+    rsync -a --delete /var/tmp/portage/ "${STATE_DIR}/"
     log "  Build state saved"
   else
     log "  No intermediate build state found in /var/tmp/portage"
@@ -215,7 +220,9 @@ build_packages() {
     local limit_secs=$(( MAX_BUILD_TIME * 60 ))
     local warn_secs=$(( limit_secs * 9 / 10 ))
 
-    emerge \
+    # Launch emerge in its own process group so we can kill the whole tree
+    # (emerge spawns compiler subprocesses that must also be terminated)
+    setsid emerge \
       --buildpkg \
       --usepkg \
       --keep-going \
@@ -229,19 +236,21 @@ build_packages() {
       local elapsed=$(( SECONDS - start_time ))
       if [[ $elapsed -ge $warn_secs ]]; then
         log "Approaching time limit (${elapsed}s elapsed / ${limit_secs}s limit), stopping emerge"
-        kill -TERM "$emerge_pid" 2>/dev/null || true
-        # Wait up to 60 seconds for graceful exit, then force-kill
+        # Send SIGTERM to the entire process group
+        kill -TERM -- "-${emerge_pid}" 2>/dev/null || true
+        # Wait up to 60 seconds for graceful exit, then force-kill the group
         local kill_wait=0
         while kill -0 "$emerge_pid" 2>/dev/null && [[ $kill_wait -lt 60 ]]; do
           sleep 5
           kill_wait=$(( kill_wait + 5 ))
         done
         if kill -0 "$emerge_pid" 2>/dev/null; then
-          log "  Emerge did not exit after SIGTERM, sending SIGKILL"
-          kill -KILL "$emerge_pid" 2>/dev/null || true
+          log "  Emerge did not exit after SIGTERM, sending SIGKILL to process group"
+          kill -KILL -- "-${emerge_pid}" 2>/dev/null || true
         fi
         wait "$emerge_pid" 2>/dev/null || true
         save_build_state
+        show_ccache_stats
         log "Build state saved; exiting with code 42 (timed out, state saved)"
         exit 42
       fi

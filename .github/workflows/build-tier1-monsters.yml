@@ -220,7 +220,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph2
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph2
 
       - name: Upload packages as artifacts (phase 2)
         uses: actions/upload-artifact@v7
@@ -262,8 +262,9 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph2
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph2
           restore-keys: |
+            ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-
             ccache-v2-tier1-${{ matrix.package }}-
             ccache-v2-tier1-
 
@@ -321,7 +322,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}
 
       - name: Upload packages as artifacts (phase 3)
         uses: actions/upload-artifact@v7
