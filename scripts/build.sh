@@ -219,6 +219,16 @@ build_packages() {
       if [[ $elapsed -ge $warn_secs ]]; then
         log "Approaching time limit (${elapsed}s elapsed / ${limit_secs}s limit), stopping emerge"
         kill -TERM "$emerge_pid" 2>/dev/null || true
+        # Wait up to 60 seconds for graceful exit, then force-kill
+        local kill_wait=0
+        while kill -0 "$emerge_pid" 2>/dev/null && [[ $kill_wait -lt 60 ]]; do
+          sleep 5
+          kill_wait=$(( kill_wait + 5 ))
+        done
+        if kill -0 "$emerge_pid" 2>/dev/null; then
+          log "  Emerge did not exit after SIGTERM, sending SIGKILL"
+          kill -KILL "$emerge_pid" 2>/dev/null || true
+        fi
         wait "$emerge_pid" 2>/dev/null || true
         save_build_state
         log "Build state saved; exiting with code 42 (timed out, state saved)"

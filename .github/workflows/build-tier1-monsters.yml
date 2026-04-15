@@ -128,7 +128,7 @@ jobs:
     needs: [prepare, build-phase-1]
     runs-on: ubuntu-latest
     timeout-minutes: 355
-    if: always() && needs.prepare.result == 'success' && needs.build-phase-1.result != 'cancelled' && needs.build-phase-1.result != 'skipped'
+    if: always() && needs.prepare.result == 'success' && needs.build-phase-1.result == 'success'
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
@@ -230,7 +230,7 @@ jobs:
     needs: [prepare, build-phase-2]
     runs-on: ubuntu-latest
     timeout-minutes: 355
-    if: always() && needs.prepare.result == 'success' && needs.build-phase-2.result != 'cancelled' && needs.build-phase-2.result != 'skipped'
+    if: always() && needs.prepare.result == 'success' && needs.build-phase-2.result == 'success'
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
