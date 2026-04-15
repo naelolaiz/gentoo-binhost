@@ -168,6 +168,24 @@ jobs:
             echo "::warning::faac MPEG-4 license workaround may no longer be needed"
           fi
 
+      # ── 8. Portage _elog bug (stage3 ships broken Scheduler) ──────
+      - name: "Check: Portage _elog bug (Scheduler missing _elog method)"
+        id: check-portage-elog
+        run: |
+          # The gentoo/stage3:latest image may ship a Portage version where
+          # Scheduler._elog was removed but _run_pkg_pretend still calls it.
+          # We test the *pre-installed* Portage (from the image, not from the
+          # synced tree) because the workaround is
+          #   emerge --oneshot sys-apps/portage
+          # in every build workflow.
+          if python3 -c "from _emerge.Scheduler import Scheduler; assert hasattr(Scheduler, '_elog')" 2>/dev/null; then
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::Portage _elog workaround may no longer be needed (Scheduler._elog exists in stage3 image)"
+          else
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::Portage _elog workaround still needed (Scheduler._elog missing in stage3 image)"
+          fi
+
       # ── Collect results ─────────────────────────────────────────────
       - name: Summarise removable workarounds
         id: summary
@@ -193,6 +211,9 @@ jobs:
           fi
           if [ "${{ steps.check-faac-license.outputs.status }}" = "removable" ]; then
             REMOVABLE="${REMOVABLE}faac-license,"
+          fi
+          if [ "${{ steps.check-portage-elog.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}portage-elog,"
           fi
           # Trim trailing comma
           REMOVABLE="${REMOVABLE%,}"
@@ -296,6 +317,25 @@ jobs:
                   '`media-libs/avidemux-plugins` **no longer appears to depend on `media-libs/faac`**.',
                   '',
                   'Please verify and remove the `media-libs/faac MPEG-4` line from `package.license/00-binhost`.',
+                ].join('\n'),
+              },
+              'portage-elog': {
+                title: 'Remove Portage update workaround — stage3 image now ships fixed Portage',
+                body: [
+                  'The `emerge --oneshot sys-apps/portage` step was added to every build workflow',
+                  'because `gentoo/stage3:latest` shipped a Portage version where `Scheduler._elog`',
+                  'was removed but `_run_pkg_pretend` still referenced it, causing:',
+                  '```',
+                  "AttributeError: 'Scheduler' object has no attribute '_elog'",
+                  '```',
+                  '',
+                  'The `gentoo/stage3:latest` image **now appears to include a fixed Portage**.',
+                  '',
+                  'Please verify and remove the "Update Portage" step from:',
+                  '- `build-tier1-monsters.yml` (all 3 phases)',
+                  '- `build-tier2-heavy.yml`',
+                  '- `build-tier3-rest.yml`',
+                  '- `test-libclc-removal.yml`',
                 ].join('\n'),
               },
             };
