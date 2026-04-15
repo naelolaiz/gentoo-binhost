@@ -59,6 +59,7 @@ jobs:
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --package-list packages/tier3-rest.txt \
+            --binhost-url "https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3" \
             ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
             ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
             --output-dir /tmp/binpkgs

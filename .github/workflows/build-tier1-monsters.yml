@@ -93,6 +93,7 @@ jobs:
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --binhost-url "https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3" \
             --state-dir /var/tmp/portage-state \
             --max-build-time 330 \
             ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
@@ -197,6 +198,7 @@ jobs:
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --binhost-url "https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3" \
             --resume \
             --state-dir /var/tmp/portage-state \
             --max-build-time 330 \
@@ -302,6 +304,7 @@ jobs:
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --binhost-url "https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3" \
             --resume \
             --state-dir /var/tmp/portage-state \
             --max-build-time 330 \
