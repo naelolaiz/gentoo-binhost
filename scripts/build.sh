@@ -216,7 +216,7 @@ build_packages() {
 
   if [[ -n "$MAX_BUILD_TIME" ]]; then
     # Run emerge in background and monitor elapsed time.
-    # Stop gracefully at 90% of the limit, save state, exit 42.
+    # Stop gracefully at 90% of the limit, save state, return 42.
     local limit_secs=$(( MAX_BUILD_TIME * 60 ))
     local warn_secs=$(( limit_secs * 9 / 10 ))
 
@@ -251,8 +251,8 @@ build_packages() {
         wait "$emerge_pid" 2>/dev/null || true
         save_build_state
         show_ccache_stats
-        log "Build state saved; exiting with code 42 (timed out, state saved)"
-        exit 42
+        log "Build state saved; returning 42 (timed out, state saved)"
+        return 42
       fi
     done
 
@@ -298,9 +298,23 @@ setup_ccache
 sync_tree
 restore_build_state
 show_ccache_stats
+
+set +e
 build_packages
+BUILD_RC=$?
+set -e
+
+# Collect and sign whatever binpkgs were produced, even on a timed-out build,
+# so partial results are published and later phases don't have to rebuild them.
 collect_packages
 sign_packages
 show_ccache_stats
+
+if [[ $BUILD_RC -eq 42 ]]; then
+  log "Build timed out (state saved); exiting 42 so the workflow can resume in the next phase."
+  exit 42
+elif [[ $BUILD_RC -ne 0 ]]; then
+  die "emerge failed with exit code ${BUILD_RC}"
+fi
 
 log "Build complete."
