@@ -12,6 +12,10 @@
 #   --sign                   GPG-sign all produced .gpkg.tar files
 #   --gpg-key <fingerprint>  GPG key fingerprint to use for signing
 #   --output-dir <dir>       Directory to copy finished packages into (default: /var/cache/binpkgs)
+#   --resume                 Restore intermediate build state before running emerge
+#   --state-dir <dir>        Directory for saving/restoring portage build state (default: /var/tmp/portage-state)
+#   --max-build-time <min>   Stop emerge gracefully after this many minutes (90% of limit),
+#                            save build state, and exit 42 ("timed out, state saved")
 #   --help                   Show this help message
 
 set -euo pipefail
@@ -26,6 +30,9 @@ SINGLE_PACKAGE=""
 SIGN=false
 GPG_KEY=""
 OUTPUT_DIR="/var/cache/binpkgs"
+RESUME=false
+STATE_DIR="/var/tmp/portage-state"
+MAX_BUILD_TIME=""
 
 # ---------- helpers ----------
 die() { echo "ERROR: $*" >&2; exit 1; }
@@ -45,6 +52,9 @@ while [[ $# -gt 0 ]]; do
     --sign)           SIGN=true;           shift   ;;
     --gpg-key)        GPG_KEY="$2";        shift 2 ;;
     --output-dir)     OUTPUT_DIR="$2";     shift 2 ;;
+    --resume)         RESUME=true;         shift   ;;
+    --state-dir)      STATE_DIR="$2";      shift 2 ;;
+    --max-build-time) MAX_BUILD_TIME="$2"; shift 2 ;;
     --help|-h)        usage ;;
     *) die "Unknown argument: $1" ;;
   esac
@@ -121,7 +131,38 @@ setup_ccache() {
   if command -v ccache &>/dev/null; then
     log "Configuring ccache (dir: ${CCACHE_DIR:-/var/cache/ccache})"
     mkdir -p "${CCACHE_DIR:-/var/cache/ccache}"
-    ccache --max-size="${CCACHE_SIZE:-10G}" 2>/dev/null || true
+    ccache --max-size="${CCACHE_SIZE:-15G}" 2>/dev/null || true
+  fi
+}
+
+log_ccache_stats() {
+  if command -v ccache &>/dev/null; then
+    log "ccache statistics:"
+    ccache --show-stats 2>/dev/null || true
+  fi
+}
+
+# ---------- build state ----------
+restore_build_state() {
+  [[ "$RESUME" == true ]] || return 0
+  if [[ -d "$STATE_DIR" ]] && [[ -n "$(ls -A "$STATE_DIR" 2>/dev/null)" ]]; then
+    log "Restoring build state from ${STATE_DIR}"
+    mkdir -p /var/tmp/portage
+    rsync -a "${STATE_DIR}/" /var/tmp/portage/
+    log "  Build state restored"
+  else
+    log "No saved build state found at ${STATE_DIR}, starting fresh"
+  fi
+}
+
+save_build_state() {
+  log "Saving build state to ${STATE_DIR}"
+  mkdir -p "$STATE_DIR"
+  if [[ -d /var/tmp/portage ]] && [[ -n "$(ls -A /var/tmp/portage 2>/dev/null)" ]]; then
+    rsync -a /var/tmp/portage/ "${STATE_DIR}/"
+    log "  Build state saved"
+  else
+    log "  No intermediate build state found in /var/tmp/portage"
   fi
 }
 
@@ -157,12 +198,43 @@ build_packages() {
   [[ ${#packages[@]} -gt 0 ]] || die "No packages to build"
   log "Packages to build: ${packages[*]}"
 
-  emerge \
-    --buildpkg \
-    --usepkg \
-    --keep-going \
-    --verbose \
-    "${packages[@]}"
+  if [[ -n "$MAX_BUILD_TIME" ]]; then
+    # Run emerge in background and monitor elapsed time.
+    # Stop gracefully at 90% of the limit, save state, exit 42.
+    local limit_secs=$(( MAX_BUILD_TIME * 60 ))
+    local warn_secs=$(( limit_secs * 9 / 10 ))
+
+    emerge \
+      --buildpkg \
+      --usepkg \
+      --keep-going \
+      --verbose \
+      "${packages[@]}" &
+    local emerge_pid=$!
+    local start_time=$SECONDS
+
+    while kill -0 "$emerge_pid" 2>/dev/null; do
+      sleep 30
+      local elapsed=$(( SECONDS - start_time ))
+      if [[ $elapsed -ge $warn_secs ]]; then
+        log "Approaching time limit (${elapsed}s elapsed / ${limit_secs}s limit), stopping emerge"
+        kill -TERM "$emerge_pid" 2>/dev/null || true
+        wait "$emerge_pid" 2>/dev/null || true
+        save_build_state
+        log "Build state saved; exiting with code 42 (timed out, state saved)"
+        exit 42
+      fi
+    done
+
+    wait "$emerge_pid"
+  else
+    emerge \
+      --buildpkg \
+      --usepkg \
+      --keep-going \
+      --verbose \
+      "${packages[@]}"
+  fi
 }
 
 # ---------- signing ----------
@@ -194,7 +266,10 @@ collect_packages() {
 apply_profile
 setup_ccache
 sync_tree
+restore_build_state
+log_ccache_stats
 build_packages
+log_ccache_stats
 collect_packages
 sign_packages
 
