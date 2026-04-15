@@ -38,11 +38,10 @@ jobs:
           fi
           echo "matrix={\"package\":${PACKAGES}}" >> "$GITHUB_OUTPUT"
 
-  build:
+  build-phase-1:
     needs: prepare
     runs-on: ubuntu-latest
-    # GitHub-hosted runners enforce a hard 6h (360 min) cap; 350 min is a safe margin
-    timeout-minutes: 350
+    timeout-minutes: 355
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
@@ -88,22 +87,36 @@ jobs:
           emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
 
       - name: Build package (phase 1)
-        # Allow timeout or partial completion — phase 2 (build-retry) will resume with warm ccache
-        continue-on-error: true
+        id: build
         run: |
+          set +e
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --state-dir /var/tmp/portage-state \
+            --max-build-time 330 \
             ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
             ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
             --output-dir /tmp/binpkgs
+          BUILD_EXIT=$?
+          echo "exit_code=${BUILD_EXIT}" >> "$GITHUB_OUTPUT"
+          if [[ $BUILD_EXIT -ne 0 && $BUILD_EXIT -ne 42 ]]; then
+            exit $BUILD_EXIT
+          fi
+
+      - name: Save build state to cache (timed out)
+        if: steps.build.outputs.exit_code == '42'
+        uses: actions/cache/save@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-1
 
       - name: Save ccache after phase 1
         uses: actions/cache/save@v5
         if: always()
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph1
 
       - name: Upload packages as artifacts (phase 1)
         uses: actions/upload-artifact@v7
@@ -114,13 +127,11 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
-  build-retry:
-    needs: [prepare, build]
-    # Only retry when phase 1 didn't succeed (timed out or failed); skip if phase 1 was complete
-    if: always() && needs.build.result != 'success'
+  build-phase-2:
+    needs: [prepare, build-phase-1]
     runs-on: ubuntu-latest
-    # GitHub-hosted runners enforce a hard 6h (360 min) cap; 350 min is a safe margin
-    timeout-minutes: 350
+    timeout-minutes: 355
+    if: always() && needs.prepare.result == 'success' && needs.build-phase-1.result == 'success'
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
@@ -134,16 +145,27 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Restore ccache from phase 1
+      - name: Restore build state from phase 1
+        id: restore-state
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-1
+          fail-on-cache-miss: false
+
+      - name: Restore ccache
+        if: steps.restore-state.outputs.cache-hit == 'true'
         uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph1
           restore-keys: |
+            ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-
             ccache-v2-tier1-${{ matrix.package }}-
             ccache-v2-tier1-
 
       - name: Import GPG signing key
+        if: steps.restore-state.outputs.cache-hit == 'true'
         run: |
           if [[ -n "${GPG_PRIVATE_KEY:-}" ]]; then
             echo "$GPG_PRIVATE_KEY" \
@@ -155,6 +177,7 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Sync portage tree
+        if: steps.restore-state.outputs.cache-hit == 'true'
         run: |
           emerge-webrsync --quiet 2>/dev/null \
             || emerge --sync --quiet \
@@ -162,37 +185,157 @@ jobs:
           eselect profile set default/linux/amd64/23.0/desktop/plasma || true
 
       - name: Install build tools
+        if: steps.restore-state.outputs.cache-hit == 'true'
         run: |
           emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
 
-      - name: Build package (phase 2 retry)
+      - name: Build package (phase 2)
+        id: build
+        if: steps.restore-state.outputs.cache-hit == 'true'
         run: |
+          set +e
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --resume \
+            --state-dir /var/tmp/portage-state \
+            --max-build-time 330 \
             ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
             ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
             --output-dir /tmp/binpkgs
+          BUILD_EXIT=$?
+          echo "exit_code=${BUILD_EXIT}" >> "$GITHUB_OUTPUT"
+          if [[ $BUILD_EXIT -ne 0 && $BUILD_EXIT -ne 42 ]]; then
+            exit $BUILD_EXIT
+          fi
+
+      - name: Save build state to cache (timed out)
+        if: steps.build.outputs.exit_code == '42'
+        uses: actions/cache/save@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-2
 
       - name: Save ccache after phase 2
+        if: steps.restore-state.outputs.cache-hit == 'true'
         uses: actions/cache/save@v5
-        if: always()
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph2
 
       - name: Upload packages as artifacts (phase 2)
         uses: actions/upload-artifact@v7
-        if: always()
+        if: always() && steps.restore-state.outputs.cache-hit == 'true'
         with:
           name: binpkgs-tier1-phase2-${{ strategy.job-index }}
           path: /tmp/binpkgs/**/*.gpkg.tar
           if-no-files-found: warn
           retention-days: 7
 
+  build-phase-3:
+    needs: [prepare, build-phase-2]
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    if: always() && needs.prepare.result == 'success' && needs.build-phase-2.result == 'success'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    env:
+      CCACHE_SIZE: 20G
+
+    container:
+      image: gentoo/stage3:latest
+      options: --privileged
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Restore build state from phase 2
+        id: restore-state
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-2
+          fail-on-cache-miss: false
+
+      - name: Restore ccache
+        if: steps.restore-state.outputs.cache-hit == 'true'
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/cache/ccache
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph2
+          restore-keys: |
+            ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-
+            ccache-v2-tier1-${{ matrix.package }}-
+            ccache-v2-tier1-
+
+      - name: Import GPG signing key
+        if: steps.restore-state.outputs.cache-hit == 'true'
+        run: |
+          if [[ -n "${GPG_PRIVATE_KEY:-}" ]]; then
+            echo "$GPG_PRIVATE_KEY" \
+              | gpg --batch --passphrase "${GPG_PASSPHRASE:-}" \
+                    --import
+          fi
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Sync portage tree
+        if: steps.restore-state.outputs.cache-hit == 'true'
+        run: |
+          emerge-webrsync --quiet 2>/dev/null \
+            || emerge --sync --quiet \
+            || emaint sync -a
+          eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+
+      - name: Install build tools
+        if: steps.restore-state.outputs.cache-hit == 'true'
+        run: |
+          emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
+
+      - name: Build package (phase 3)
+        id: build
+        if: steps.restore-state.outputs.cache-hit == 'true'
+        run: |
+          set +e
+          bash scripts/build.sh \
+            --profile amd64-23.0-desktop-plasma-openrc \
+            --single-package "${{ matrix.package }}" \
+            --resume \
+            --state-dir /var/tmp/portage-state \
+            --max-build-time 330 \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
+            --output-dir /tmp/binpkgs
+          BUILD_EXIT=$?
+          echo "exit_code=${BUILD_EXIT}" >> "$GITHUB_OUTPUT"
+          if [[ $BUILD_EXIT -eq 42 ]]; then
+            echo "ERROR: ${{ matrix.package }} did not complete after 3 build phases" >&2
+            exit 1
+          fi
+          if [[ $BUILD_EXIT -ne 0 ]]; then
+            exit $BUILD_EXIT
+          fi
+
+      - name: Save ccache after phase 3
+        if: steps.restore-state.outputs.cache-hit == 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: /var/cache/ccache
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}
+
+      - name: Upload packages as artifacts (phase 3)
+        uses: actions/upload-artifact@v7
+        if: always() && steps.restore-state.outputs.cache-hit == 'true'
+        with:
+          name: binpkgs-tier1-phase3-${{ strategy.job-index }}
+          path: /tmp/binpkgs/**/*.gpkg.tar
+          if-no-files-found: warn
+          retention-days: 7
+
   publish:
-    needs: [build, build-retry]
-    # Publish when not cancelled; build-retry may be 'skipped' (phase 1 succeeded) — that's fine
-    if: ${{ always() && needs.build.result != 'cancelled' && needs.build-retry.result != 'cancelled' }}
+    needs: [build-phase-1, build-phase-2, build-phase-3]
+    if: ${{ always() && needs.build-phase-1.result != 'cancelled' }}
     uses: ./.github/workflows/publish-to-pages.yml
     secrets: inherit
