@@ -22,7 +22,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Build package matrix
         id: set-matrix
@@ -54,10 +54,10 @@ jobs:
       options: --privileged
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Restore ccache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
@@ -99,14 +99,14 @@ jobs:
             --output-dir /tmp/binpkgs
 
       - name: Save ccache after phase 1
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         if: always()
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
 
       - name: Upload packages as artifacts (phase 1)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: binpkgs-tier1-phase1-${{ strategy.job-index }}
@@ -132,10 +132,10 @@ jobs:
       options: --privileged
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Restore ccache from phase 1
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
@@ -175,14 +175,14 @@ jobs:
             --output-dir /tmp/binpkgs
 
       - name: Save ccache after phase 2
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         if: always()
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
 
       - name: Upload packages as artifacts (phase 2)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: binpkgs-tier1-phase2-${{ strategy.job-index }}

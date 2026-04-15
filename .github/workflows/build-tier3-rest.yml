@@ -22,10 +22,10 @@ jobs:
       options: --privileged
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Restore ccache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: /var/cache/ccache
           key: ccache-tier3-${{ github.sha }}
@@ -64,7 +64,7 @@ jobs:
             --output-dir /tmp/binpkgs
 
       - name: Upload packages as artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: binpkgs-tier3
