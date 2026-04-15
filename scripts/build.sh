@@ -206,6 +206,39 @@ save_build_state() {
   fi
 }
 
+# ---------- binpkg trust ----------
+setup_binpkg_trust() {
+  # When fetching from a remote binhost, Portage verifies GPG signatures on
+  # downloaded binary packages.  The signing key must be trusted in the
+  # Portage-specific keyring (/etc/portage/gnupg/).  `getuto` (from
+  # app-portage/gentoolkit) sets this up automatically.
+  [[ -n "$BINHOST_URL" ]] || return 0
+
+  # Already initialised — nothing to do
+  if [[ -d /etc/portage/gnupg ]] && [[ -f /etc/portage/gnupg/pubring.kbx ]]; then
+    log "Portage GnuPG keyring already exists, skipping trust setup"
+    return 0
+  fi
+
+  if command -v getuto &>/dev/null; then
+    log "Running getuto to import Gentoo binpkg signing keys"
+    getuto
+    log "  Portage binary-package trust established via getuto"
+  else
+    log "Warning: getuto not found; setting up Portage GnuPG keyring manually"
+    mkdir -p /etc/portage/gnupg
+    chmod 0700 /etc/portage/gnupg
+    # Initialise an empty keyring so gpg doesn't complain about missing files
+    gpg --homedir /etc/portage/gnupg --list-keys &>/dev/null || true
+    # Try to receive the Gentoo release key from the official keyserver
+    gpg --homedir /etc/portage/gnupg \
+        --keyserver hkps://keys.gentoo.org \
+        --recv-keys 534E4209AB49EEE1C19D96162C44695DB9F6043D 2>/dev/null \
+      && log "  Imported Gentoo release key from keyserver" \
+      || log "  Warning: could not fetch Gentoo release key from keyserver; binpkg signature verification will fail"
+  fi
+}
+
 # ---------- sync ----------
 sync_tree() {
   if [[ -f /var/db/repos/gentoo/metadata/timestamp.chk ]]; then
@@ -320,6 +353,7 @@ collect_packages() {
 apply_profile
 setup_ccache
 sync_tree
+setup_binpkg_trust
 restore_build_state
 show_ccache_stats
 
