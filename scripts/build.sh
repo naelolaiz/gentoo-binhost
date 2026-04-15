@@ -237,7 +237,7 @@ build_packages() {
       if [[ $elapsed -ge $warn_secs ]]; then
         log "Approaching time limit (${elapsed}s elapsed / ${limit_secs}s limit), stopping emerge"
         # Send SIGTERM to the entire process group
-        kill -TERM -- "-${emerge_pid}" 2>/dev/null || true
+        kill -TERM -- -${emerge_pid} 2>/dev/null || true
         # Wait up to 60 seconds for graceful exit, then force-kill the group
         local kill_wait=0
         while kill -0 "$emerge_pid" 2>/dev/null && [[ $kill_wait -lt 60 ]]; do
@@ -246,7 +246,7 @@ build_packages() {
         done
         if kill -0 "$emerge_pid" 2>/dev/null; then
           log "  Emerge did not exit after SIGTERM, sending SIGKILL to process group"
-          kill -KILL -- "-${emerge_pid}" 2>/dev/null || true
+          kill -KILL -- -${emerge_pid} 2>/dev/null || true
         fi
         wait "$emerge_pid" 2>/dev/null || true
         save_build_state
