@@ -16,6 +16,12 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  # Our own binhost first (custom USE flags), then official Gentoo x86-64-v3 as fallback
+  BINHOST_URLS: >-
+    https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3
+    https://distfiles.gentoo.org/releases/amd64/binpackages/23.0/x86-64-v3/
+
 jobs:
   prepare:
     runs-on: ubuntu-latest
@@ -93,6 +99,7 @@ jobs:
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --binhost-url "${{ env.BINHOST_URLS }}" \
             --state-dir /var/tmp/portage-state \
             --max-build-time 330 \
             ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
@@ -197,6 +204,7 @@ jobs:
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --binhost-url "${{ env.BINHOST_URLS }}" \
             --resume \
             --state-dir /var/tmp/portage-state \
             --max-build-time 330 \
@@ -302,6 +310,7 @@ jobs:
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
             --single-package "${{ matrix.package }}" \
+            --binhost-url "${{ env.BINHOST_URLS }}" \
             --resume \
             --state-dir /var/tmp/portage-state \
             --max-build-time 330 \
