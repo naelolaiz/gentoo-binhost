@@ -22,7 +22,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Build package matrix
         id: set-matrix
@@ -53,10 +53,10 @@ jobs:
       options: --privileged
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Restore ccache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
@@ -106,20 +106,20 @@ jobs:
 
       - name: Save build state to cache (timed out)
         if: steps.build.outputs.exit_code == '42'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: /var/tmp/portage-state
           key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-1
 
-      - name: Save ccache
-        uses: actions/cache/save@v4
+      - name: Save ccache after phase 1
+        uses: actions/cache/save@v5
         if: always()
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
 
-      - name: Upload packages as artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload packages as artifacts (phase 1)
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: binpkgs-tier1-phase1-${{ strategy.job-index }}
@@ -143,11 +143,11 @@ jobs:
       options: --privileged
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Restore build state from phase 1
         id: restore-state
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: /var/tmp/portage-state
           key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-1
@@ -155,7 +155,7 @@ jobs:
 
       - name: Restore ccache
         if: steps.restore-state.outputs.cache-hit == 'true'
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
@@ -210,20 +210,20 @@ jobs:
 
       - name: Save build state to cache (timed out)
         if: steps.build.outputs.exit_code == '42'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: /var/tmp/portage-state
           key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-2
 
-      - name: Save ccache
+      - name: Save ccache after phase 2
         if: steps.restore-state.outputs.cache-hit == 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph2
 
-      - name: Upload packages as artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload packages as artifacts (phase 2)
+        uses: actions/upload-artifact@v7
         if: always() && steps.restore-state.outputs.cache-hit == 'true'
         with:
           name: binpkgs-tier1-phase2-${{ strategy.job-index }}
@@ -247,11 +247,11 @@ jobs:
       options: --privileged
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Restore build state from phase 2
         id: restore-state
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: /var/tmp/portage-state
           key: build-state-tier1-${{ matrix.package }}-${{ github.run_id }}-phase-2
@@ -259,7 +259,7 @@ jobs:
 
       - name: Restore ccache
         if: steps.restore-state.outputs.cache-hit == 'true'
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph2
@@ -316,15 +316,15 @@ jobs:
             exit $BUILD_EXIT
           fi
 
-      - name: Save ccache
+      - name: Save ccache after phase 3
         if: steps.restore-state.outputs.cache-hit == 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: /var/cache/ccache
           key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
 
-      - name: Upload packages as artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload packages as artifacts (phase 3)
+        uses: actions/upload-artifact@v7
         if: always() && steps.restore-state.outputs.cache-hit == 'true'
         with:
           name: binpkgs-tier1-phase3-${{ strategy.job-index }}
