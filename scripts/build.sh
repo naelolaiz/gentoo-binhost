@@ -299,13 +299,11 @@ sync_tree
 restore_build_state
 show_ccache_stats
 
-set +e
-build_packages
-BUILD_RC=$?
-set -e
-
 # Collect and sign whatever binpkgs were produced, even on a timed-out build,
 # so partial results are published and later phases don't have to rebuild them.
+build_packages || BUILD_RC=$?
+BUILD_RC=${BUILD_RC:-0}
+
 collect_packages
 sign_packages
 show_ccache_stats
