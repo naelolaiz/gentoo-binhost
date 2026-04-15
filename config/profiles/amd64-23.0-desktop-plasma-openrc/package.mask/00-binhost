@@ -2,5 +2,5 @@
 # Mask packages that are known to be problematic in the CI environment
 # or that should not be served from the binhost
 
-# Example: mask broken package versions
-# =some-category/some-package-1.2.3
+# Mask libclc-22+ to avoid slot conflict with mesa_clc which requires =libclc-21*
+>=llvm-core/libclc-22
