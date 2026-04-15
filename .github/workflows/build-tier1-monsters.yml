@@ -45,6 +45,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    env:
+      CCACHE_SIZE: 20G
 
     container:
       image: gentoo/stage3:latest
@@ -57,10 +59,10 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: /var/cache/ccache
-          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
           restore-keys: |
-            ccache-tier1-${{ matrix.package }}-
-            ccache-tier1-
+            ccache-v2-tier1-${{ matrix.package }}-
+            ccache-v2-tier1-
 
       - name: Import GPG signing key
         run: |
@@ -111,9 +113,10 @@ jobs:
 
       - name: Save ccache
         uses: actions/cache/save@v4
+        if: always()
         with:
           path: /var/cache/ccache
-          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
 
       - name: Upload packages as artifacts
         uses: actions/upload-artifact@v4
@@ -132,6 +135,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    env:
+      CCACHE_SIZE: 20G
 
     container:
       image: gentoo/stage3:latest
@@ -153,10 +158,10 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: /var/cache/ccache
-          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
           restore-keys: |
-            ccache-tier1-${{ matrix.package }}-
-            ccache-tier1-
+            ccache-v2-tier1-${{ matrix.package }}-
+            ccache-v2-tier1-
 
       - name: Import GPG signing key
         if: steps.restore-state.outputs.cache-hit == 'true'
@@ -215,7 +220,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: /var/cache/ccache
-          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph2
 
       - name: Upload packages as artifacts
         uses: actions/upload-artifact@v4
@@ -234,6 +239,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    env:
+      CCACHE_SIZE: 20G
 
     container:
       image: gentoo/stage3:latest
@@ -255,10 +262,10 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: /var/cache/ccache
-          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph2
           restore-keys: |
-            ccache-tier1-${{ matrix.package }}-
-            ccache-tier1-
+            ccache-v2-tier1-${{ matrix.package }}-
+            ccache-v2-tier1-
 
       - name: Import GPG signing key
         if: steps.restore-state.outputs.cache-hit == 'true'
@@ -314,7 +321,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: /var/cache/ccache
-          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
 
       - name: Upload packages as artifacts
         uses: actions/upload-artifact@v4
