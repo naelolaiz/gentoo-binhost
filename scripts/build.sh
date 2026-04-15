@@ -12,6 +12,7 @@
 #   --sign                   GPG-sign all produced .gpkg.tar files
 #   --gpg-key <fingerprint>  GPG key fingerprint to use for signing
 #   --output-dir <dir>       Directory to copy finished packages into (default: /var/cache/binpkgs)
+#   --binhost-url <url>      URL of a binhost to fetch pre-built packages from (sets PORTAGE_BINHOST)
 #   --resume                 Restore intermediate build state before running emerge
 #   --state-dir <dir>        Directory for saving/restoring portage build state (default: /var/tmp/portage-state)
 #   --max-build-time <min>   Stop emerge gracefully after this many minutes (90% of limit),
@@ -33,6 +34,7 @@ OUTPUT_DIR="/var/cache/binpkgs"
 RESUME=false
 STATE_DIR="/var/tmp/portage-state"
 MAX_BUILD_TIME=""
+BINHOST_URL=""
 
 # ---------- helpers ----------
 die() { echo "ERROR: $*" >&2; exit 1; }
@@ -55,6 +57,7 @@ while [[ $# -gt 0 ]]; do
     --resume)         RESUME=true;         shift   ;;
     --state-dir)      STATE_DIR="$2";      shift 2 ;;
     --max-build-time) MAX_BUILD_TIME="$2"; shift 2 ;;
+    --binhost-url)    BINHOST_URL="$2";    shift 2 ;;
     --help|-h)        usage ;;
     *) die "Unknown argument: $1" ;;
   esac
@@ -77,6 +80,21 @@ fi
 if [[ -n "$MAX_BUILD_TIME" ]]; then
   [[ "$MAX_BUILD_TIME" =~ ^[1-9][0-9]*$ ]] \
     || die "--max-build-time must be a positive integer (minutes), got: ${MAX_BUILD_TIME}"
+fi
+
+if [[ -n "$BINHOST_URL" ]]; then
+  # Validate every space-separated URL before any of them are written into make.conf.
+  # A quote or newline in the value can break the config file or inject extra settings.
+  [[ "$BINHOST_URL" != *'"'* && "$BINHOST_URL" != *"'"* ]] \
+    || die "--binhost-url must not contain quote characters"
+  [[ "$BINHOST_URL" != *$'\n'* ]] \
+    || die "--binhost-url must not contain newlines"
+  read -ra _urls <<< "$BINHOST_URL"
+  for _url in "${_urls[@]}"; do
+    [[ "$_url" =~ ^https?:// ]] \
+      || die "--binhost-url entries must start with http:// or https://, got: ${_url}"
+  done
+  unset _url
 fi
 
 # ---------- portage configuration ----------
@@ -128,6 +146,12 @@ apply_profile() {
     nproc_val="$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)"
     sed -i "s/\$(nproc)/${nproc_val}/g" /etc/portage/make.conf
     log "  Evaluated \$(nproc) → ${nproc_val} in make.conf"
+  fi
+
+  # Configure binhost for fetching pre-built packages
+  if [[ -n "$BINHOST_URL" ]]; then
+    echo "PORTAGE_BINHOST=\"${BINHOST_URL}\"" >> /etc/portage/make.conf
+    log "  Set PORTAGE_BINHOST=${BINHOST_URL}"
   fi
 }
 
@@ -214,6 +238,12 @@ build_packages() {
   [[ ${#packages[@]} -gt 0 ]] || die "No packages to build"
   log "Packages to build: ${packages[*]}"
 
+  # Build the emerge flags array; add --getbinpkg when a binhost URL is configured
+  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose)
+  if [[ -n "$BINHOST_URL" ]]; then
+    emerge_flags+=(--getbinpkg)
+  fi
+
   if [[ -n "$MAX_BUILD_TIME" ]]; then
     # Run emerge in background and monitor elapsed time.
     # Stop gracefully at 90% of the limit, save state, return 42.
@@ -223,10 +253,7 @@ build_packages() {
     # Launch emerge in its own process group so we can kill the whole tree
     # (emerge spawns compiler subprocesses that must also be terminated)
     setsid emerge \
-      --buildpkg \
-      --usepkg \
-      --keep-going \
-      --verbose \
+      "${emerge_flags[@]}" \
       "${packages[@]}" &
     local emerge_pid=$!
     local start_time=$SECONDS
@@ -259,10 +286,7 @@ build_packages() {
     wait "$emerge_pid"
   else
     emerge \
-      --buildpkg \
-      --usepkg \
-      --keep-going \
-      --verbose \
+      "${emerge_flags[@]}" \
       "${packages[@]}"
   fi
 }
