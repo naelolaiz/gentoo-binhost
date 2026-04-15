@@ -116,7 +116,7 @@ jobs:
         if: always()
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph1
 
       - name: Upload packages as artifacts (phase 1)
         uses: actions/upload-artifact@v7
@@ -158,8 +158,9 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
-          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-${{ github.run_id }}-ph1
           restore-keys: |
+            ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-
             ccache-v2-tier1-${{ matrix.package }}-
             ccache-v2-tier1-
 
