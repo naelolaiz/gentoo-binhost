@@ -168,6 +168,21 @@ jobs:
             echo "::warning::faac MPEG-4 license workaround may no longer be needed"
           fi
 
+      # ── 8. Portage update workaround (stage3 ships broken emerge) ─
+      - name: "Check: Portage update workaround (emerge --pretend works without updating portage)"
+        id: check-portage-elog
+        run: |
+          # The workaround is `emerge --oneshot sys-apps/portage` before any
+          # build step.  We test whether `emerge --pretend` works *without*
+          # that update — if it succeeds the workaround is removable.
+          if emerge --pretend --quiet sys-apps/portage 2>/dev/null; then
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::Portage update workaround may no longer be needed (emerge --pretend works with stage3 portage)"
+          else
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::Portage update workaround still needed (emerge --pretend fails with stage3 portage)"
+          fi
+
       # ── Collect results ─────────────────────────────────────────────
       - name: Summarise removable workarounds
         id: summary
@@ -193,6 +208,9 @@ jobs:
           fi
           if [ "${{ steps.check-faac-license.outputs.status }}" = "removable" ]; then
             REMOVABLE="${REMOVABLE}faac-license,"
+          fi
+          if [ "${{ steps.check-portage-elog.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}portage-elog,"
           fi
           # Trim trailing comma
           REMOVABLE="${REMOVABLE%,}"
@@ -296,6 +314,23 @@ jobs:
                   '`media-libs/avidemux-plugins` **no longer appears to depend on `media-libs/faac`**.',
                   '',
                   'Please verify and remove the `media-libs/faac MPEG-4` line from `package.license/00-binhost`.',
+                ].join('\n'),
+              },
+              'portage-elog': {
+                title: 'Remove Portage update workaround — stage3 image now ships working Portage',
+                body: [
+                  'The `emerge --oneshot sys-apps/portage` step was added to every build workflow',
+                  'because `gentoo/stage3:latest` shipped a broken Portage where `emerge --pretend`',
+                  'crashed with an `AttributeError`.',
+                  '',
+                  'The `gentoo/stage3:latest` image **now appears to ship a working Portage** —',
+                  '`emerge --pretend` succeeds without updating portage first.',
+                  '',
+                  'Please verify and remove the "Update Portage" step from:',
+                  '- `build-tier1-monsters.yml` (all 3 phases)',
+                  '- `build-tier2-heavy.yml`',
+                  '- `build-tier3-rest.yml`',
+                  '- `test-libclc-removal.yml`',
                 ].join('\n'),
               },
             };
