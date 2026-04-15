@@ -1,14 +1,23 @@
-# Tier 1: Compilation monsters - each gets its own CI job
+# Tier 1: Compilation monsters
 # These are packages that take hours to compile and benefit most from a binhost
+#
+# Build order (defined in the workflow):
+#   1. Shared deps (llvm-core/*) — built first in a single job
+#   2. Consumers (everything else) — built after, reusing shared deps binpkgs
+#
+# This avoids multiple parallel jobs all compiling the same LLVM dependency.
 
-# Web engines
-dev-qt/qtwebengine
-net-libs/webkit-gtk
-
-# Compilers and toolchains
-sys-devel/gcc
+# Shared dependencies (built first to avoid duplicate compilation)
 llvm-core/llvm
 llvm-core/clang
 
+# Web engines (built after shared deps)
+dev-qt/qtwebengine
+net-libs/webkit-gtk
+
+# Note: sys-devel/gcc is available from the official Gentoo binhost
+# (https://distfiles.gentoo.org/releases/amd64/binpackages/) and does not
+# need to be built here.
+#
 # Note: firefox-bin and libreoffice-bin are already binary packages
-# but their dependencies still need compilation
+# but their dependencies still need compilation.
