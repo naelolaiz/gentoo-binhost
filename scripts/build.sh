@@ -214,9 +214,13 @@ setup_binpkg_trust() {
   # app-portage/gentoolkit) sets this up automatically.
   [[ -n "$BINHOST_URL" ]] || return 0
 
-  # Already initialised — nothing to do
-  if [[ -d /etc/portage/gnupg ]] && [[ -f /etc/portage/gnupg/pubring.kbx ]]; then
-    log "Portage GnuPG keyring already exists, skipping trust setup"
+  # Skip if the specific Gentoo release signing key is already trusted.
+  # Checking only for the keyring file is not enough — the key may be missing
+  # or outdated after a rotation.
+  local gentoo_key="534E4209AB49EEE1C19D96162C44695DB9F6043D"
+  if [[ -d /etc/portage/gnupg ]] \
+     && gpg --homedir /etc/portage/gnupg --list-keys "$gentoo_key" &>/dev/null; then
+    log "Gentoo binpkg signing key ${gentoo_key} already trusted, skipping trust setup"
     return 0
   fi
 
@@ -233,7 +237,7 @@ setup_binpkg_trust() {
     # Try to receive the Gentoo release key from the official keyserver
     gpg --homedir /etc/portage/gnupg \
         --keyserver hkps://keys.gentoo.org \
-        --recv-keys 534E4209AB49EEE1C19D96162C44695DB9F6043D 2>/dev/null \
+        --recv-keys 534E4209AB49EEE1C19D96162C44695DB9F6043D \
       && log "  Imported Gentoo release key from keyserver" \
       || log "  Warning: could not fetch Gentoo release key from keyserver; binpkg signature verification will fail"
   fi
