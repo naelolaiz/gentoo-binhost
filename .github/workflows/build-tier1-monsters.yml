@@ -65,12 +65,8 @@ jobs:
             fi
           else
             # Full build: split tier1 list into shared deps (llvm-core/*) and consumers
-            SHARED=$(grep -v '^\s*#' packages/tier1-monsters.txt \
-                      | grep -v '^\s*$' \
-                      | grep '^llvm-core/')
-            CONSUMERS=$(grep -v '^\s*#' packages/tier1-monsters.txt \
-                         | grep -v '^\s*$' \
-                         | grep -v '^llvm-core/' \
+            SHARED=$(awk '!/^[[:space:]]*#/ && !/^[[:space:]]*$/ && /^llvm-core\//' packages/tier1-monsters.txt)
+            CONSUMERS=$(awk '!/^[[:space:]]*#/ && !/^[[:space:]]*$/ && !/^llvm-core\//' packages/tier1-monsters.txt \
                          | jq -R . | jq -sc .)
 
             if [[ -n "$SHARED" ]]; then
