@@ -89,7 +89,8 @@ if [[ -n "$BINHOST_URL" ]]; then
     || die "--binhost-url must not contain quote characters"
   [[ "$BINHOST_URL" != *$'\n'* ]] \
     || die "--binhost-url must not contain newlines"
-  for _url in $BINHOST_URL; do
+  read -ra _urls <<< "$BINHOST_URL"
+  for _url in "${_urls[@]}"; do
     [[ "$_url" =~ ^https?:// ]] \
       || die "--binhost-url entries must start with http:// or https://, got: ${_url}"
   done
