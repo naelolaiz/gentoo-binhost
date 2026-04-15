@@ -70,7 +70,11 @@ app-editors/gvim cscope
 dev-python/pillow -jpeg2k
 media-libs/libwebp -tiff
 media-sound/lame -frontend
-media-video/ffmpeg -sdl
+# sdl is needed by kde-apps/kdenlive; the ffmpeg↔pipewire circular dep is
+# already broken via media-video/pipewire -ffmpeg above
+media-video/ffmpeg sdl
 sys-libs/ncurses -gpm
 sys-apps/attr -nls
 sys-apps/acl -nls
+# sys-kernel/gentoo-kernel-bin[initramfs] requires >=sys-kernel/installkernel-14[dracut]
+sys-kernel/installkernel dracut

@@ -3,6 +3,12 @@ name: Publish to GitHub Pages
 on:
   workflow_dispatch:
   workflow_call:
+    inputs:
+      chain_id:
+        description: 'Build chain ID for cache key (passed by build workflow)'
+        required: false
+        type: string
+        default: ''
 
 # Only one publish job runs at a time to avoid index corruption
 concurrency:
@@ -24,15 +30,84 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      # Fetch existing GitHub Pages content so we can do an incremental update
-      - name: Fetch existing Pages content
+      # Restore previously-published site from cache so that packages from
+      # earlier builds (or earlier attempts in a resume chain) are preserved.
+      # The key is intentionally a never-matching placeholder so the lookup
+      # always falls through to restore-keys, which return the newest cache
+      # whose key starts with the given prefix — first scoped to this resume
+      # chain, then any historical cache as a last resort.
+      - name: Restore existing Pages content from cache
+        uses: actions/cache/restore@v5
+        with:
+          path: /tmp/pages-site
+          key: pages-site-placeholder-never-matches
+          restore-keys: |
+            pages-site-${{ inputs.chain_id || github.run_id }}-
+            pages-site-
+
+      - name: Ensure site directory exists
+        run: mkdir -p /tmp/pages-site
+
+      # Scrub corrupt layout left behind by prior runs.
+      #
+      # An earlier "Organise packages" step (see below) used a sed-strip
+      # that silently fell through to the *full absolute artifact path*
+      # when the regex didn't match, depositing files at e.g.
+      #   /tmp/pages-site/<binhost>/tmp/artifacts/.../<pkg>.gpkg.tar
+      # Those files were then cached, indexed by generate-packages-index.sh
+      # as `CPV: tmp/artifacts/...` and crashed every Portage client with
+      #   portage.exception.InvalidData: tmp/artifacts/...
+      # the moment they tried to populate from this binhost — blocking the
+      # entire build chain (including app-emulation/virtualbox-modules).
+      # The fixed organise step below refuses to deposit such files, but
+      # the cached site itself still carries the corruption, so re-deriving
+      # the index without first scrubbing would just republish the bad
+      # tree.  Remove anything outside the canonical
+      #   <binhost>/<category>/<pn>/<pn>-<ver>.gpkg.tar(.asc)?
+      # layout, then prune the now-empty directories.
+      - name: Scrub corrupt layout in cached pages-site
         run: |
-          mkdir -p /tmp/pages-site
-          # Try to download existing packages from Pages; ignore errors on first run
-          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          # We'll rebuild from all artifacts; existing packages that aren't
-          # in the current artifact set are preserved from the previous deployment.
-          echo "Pages URL: ${PAGES_URL}"
+          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          DEST="/tmp/pages-site/${BINHOST_PATH}"
+          if [[ ! -d "$DEST" ]]; then
+            echo "No cached binhost dir to scrub."
+            exit 0
+          fi
+          # Gentoo categories follow [a-z][a-z0-9-]* (e.g. dev-qt,
+          # app-emulation, acct-group).  Anything at $DEST whose first
+          # path component is not a valid category — or whose layout is
+          # not exactly category/pn/pn-ver.{gpkg.tar,gpkg.tar.asc} — is
+          # garbage left over from the buggy prior organise step.
+          removed=0
+          while IFS= read -r -d '' f; do
+            rel="${f#${DEST}/}"
+            # Files at the binhost root (Packages, etc.) are kept.
+            if [[ "$rel" != */* ]]; then
+              continue
+            fi
+            keep=0
+            if [[ "$rel" =~ ^[a-z][a-z0-9-]*/[A-Za-z0-9_+][A-Za-z0-9._+-]*/[A-Za-z0-9_+][A-Za-z0-9._+-]*-[0-9][A-Za-z0-9._+-]*\.gpkg\.tar(\.asc)?$ ]]; then
+              cat_dir="${rel%%/*}"
+              rest="${rel#*/}"
+              pn_dir="${rest%%/*}"
+              basename="${rest#*/}"
+              # Strip both possible suffixes to compare PN.
+              stem="${basename%.asc}"
+              stem="${stem%.gpkg.tar}"
+              if [[ "$stem" == "${pn_dir}-"* ]]; then
+                keep=1
+              fi
+            fi
+            if [[ "$keep" -eq 0 ]]; then
+              echo "::warning title=Scrubbing corrupt cached binpkg path::${rel}"
+              rm -f -- "$f"
+              removed=$(( removed + 1 ))
+            fi
+          done < <(find "$DEST" -type f -print0)
+          # Drop any directories left empty after the file removals
+          # (including the entire bogus tmp/artifacts/... subtree).
+          find "$DEST" -mindepth 1 -type d -empty -delete || true
+          echo "Scrub removed ${removed} corrupt file(s)."
 
       # Download all binpkg artifacts produced by the current or recent runs
       - name: Download all build artifacts
@@ -50,20 +125,85 @@ jobs:
           DEST="/tmp/pages-site/${BINHOST_PATH}"
           mkdir -p "$DEST"
 
-          # Copy every .gpkg.tar (and optional .asc signatures) we found
-          find /tmp/artifacts -name '*.gpkg.tar' | while read -r pkg; do
-            # Preserve category/name-version subdirectory structure
-            # Artifacts are stored as category/name/name-version.gpkg.tar
-            rel_dir="$(dirname "$pkg" | sed 's|.*/binpkgs-[^/]*/||')"
-            target="${DEST}/${rel_dir}"
-            mkdir -p "$target"
-            cp "$pkg" "$target/"
-            # Copy matching .asc signature if present
-            [[ -f "${pkg}.asc" ]] && cp "${pkg}.asc" "$target/"
+          # Each artifact is downloaded to /tmp/artifacts/<artifact-name>/
+          # (download-artifact@v8 with merge-multiple: false), and inside
+          # that directory the gpkgs are laid out as
+          # <category>/<pn>/<pn>-<ver>.gpkg.tar.  Compute rel_dir as the
+          # path *inside* the per-artifact root rather than blindly
+          # stripping with sed: a sed mismatch previously fell through to
+          # the absolute path /tmp/artifacts/..., depositing files at
+          # ${DEST}//tmp/artifacts/... which then got cached, indexed as
+          # CPV: tmp/artifacts/... and crashed every Portage client with
+          #   portage.exception.InvalidData: tmp/artifacts/...
+          # blocking the entire build chain (including virtualbox-modules).
+          # Validate the shape and fail loud on any non-conforming path
+          # so the bug is fixed at the source instead of leaking into the
+          # published binhost.
+          shopt -s nullglob
+          bad=0
+          for artifact_root in /tmp/artifacts/binpkgs-*/; do
+            artifact_root="${artifact_root%/}"
+            while IFS= read -r -d '' pkg; do
+              rel="${pkg#${artifact_root}/}"           # cat/pn/pn-ver.gpkg.tar
+              rel_dir="${rel%/*}"                      # cat/pn
+              # Canonical layout: exactly two non-empty path components,
+              # category matches Gentoo naming, basename starts with the PN.
+              if [[ "$rel" != */*/* ]] \
+                 || [[ ! "$rel_dir" =~ ^[a-z][a-z0-9-]*/[A-Za-z0-9_+][A-Za-z0-9._+-]*$ ]]; then
+                echo "::error title=Malformed artifact layout::Refusing to publish ${pkg} (relative path '${rel}' does not match <cat>/<pn>/<pn>-<ver>.gpkg.tar)"
+                bad=$(( bad + 1 ))
+                continue
+              fi
+              pn_dir="${rel_dir#*/}"
+              base="$(basename "$pkg")"
+              stem="${base%.gpkg.tar}"
+              if [[ "$stem" != "${pn_dir}-"* ]]; then
+                echo "::error title=Malformed artifact layout::Refusing to publish ${pkg} (basename '${base}' does not start with parent PN '${pn_dir}-')"
+                bad=$(( bad + 1 ))
+                continue
+              fi
+              target="${DEST}/${rel_dir}"
+              mkdir -p "$target"
+              cp "$pkg" "$target/"
+              # Copy matching .asc signature if present
+              if [[ -f "${pkg}.asc" ]]; then cp "${pkg}.asc" "$target/"; fi
+            done < <(find "$artifact_root" -name '*.gpkg.tar' -print0)
           done
+          if [[ "$bad" -gt 0 ]]; then
+            echo "::error title=Organise packages failed::${bad} artifact path(s) had a malformed layout — see annotations above. Fix the upstream upload before re-running publish."
+            exit 1
+          fi
 
           echo "Package tree:"
           find "$DEST" -type f | sort
+
+      # Prune older versions per atom *before* indexing.  GitHub Pages enforces
+      # a soft 1 GB site-size limit; once we exceed it the published binhost
+      # becomes unreachable.  Every bumped ebuild that gets rebuilt leaves a
+      # stale gpkg behind in the cached site layout (no Portage process ever
+      # touches the cache to clean them), so without periodic pruning the
+      # site grows monotonically.  Keep only the newest version per
+      # (category, PN); clients always want the latest anyway.
+      - name: Prune older package versions
+        run: |
+          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          DEST="/tmp/pages-site/${BINHOST_PATH}"
+          if [[ -d "$DEST" ]]; then
+            python3 scripts/prune-old-binpkgs.py "$DEST"
+          fi
+          # Surface remaining size so a future "still over 1 GB" failure is
+          # diagnosable from the workflow log alone.
+          echo "Site size after pruning:"
+          du -sh /tmp/pages-site
+          # Default to 0 so a missing/empty dir doesn't crash the numeric
+          # comparison below under `set -e`.
+          SITE_BYTES="$(du -sb /tmp/pages-site | awk '{print $1+0}')"
+          SITE_BYTES="${SITE_BYTES:-0}"
+          # GitHub Pages soft limit is 1 GiB.  Warn (don't fail) at 900 MiB so
+          # we have time to react before the next build pushes us over.
+          if [[ "$SITE_BYTES" -gt $((900 * 1024 * 1024)) ]]; then
+            echo "::warning title=Pages site size::Pages site is ${SITE_BYTES} bytes (>900 MiB). Approaching the 1 GiB GitHub Pages limit; consider trimming packages/packages.txt."
+          fi
 
       # Generate/refresh the Packages index
       - name: Generate Packages index
@@ -91,6 +231,19 @@ jobs:
           </body>
           </html>
           EOF
+
+      # Persist the assembled site so future publishes can merge incrementally.
+      # The key MUST include something unique per attempt (github.run_id of
+      # the publish run differs per resume) — otherwise the second publish
+      # in a chain tries to reserve the same key as the first and fails with
+      # "another job may be creating this cache", silently dropping packages
+      # produced by later attempts.  The chain-scoped prefix (chain_id) is
+      # what the restore-keys above match against.
+      - name: Cache Pages content for future builds
+        uses: actions/cache/save@v5
+        with:
+          path: /tmp/pages-site
+          key: pages-site-${{ inputs.chain_id || github.run_id }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v6

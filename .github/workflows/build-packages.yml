@@ -1,0 +1,661 @@
+name: Build Packages
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight UTC
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Single package to build (leave empty to build all)'
+        required: false
+        default: ''
+      # Internal inputs used by the auto-resume mechanism.  Do not set manually.
+      _attempt:
+        description: '[internal] Resume attempt counter'
+        required: false
+        default: '1'
+      _chain_id:
+        description: '[internal] Stable ID linking resume runs together'
+        required: false
+        default: ''
+      _max_attempts:
+        description: '[internal] Safety cap on resume attempts'
+        required: false
+        default: '8'
+      fresh:
+        description: 'Wipe ALL caches (ccache-*, binpkgs-*, system-state-*, build-state-*) before starting. Only effective on attempt 1 of a manual run; ignored on schedule and on resume.'
+        required: false
+        type: boolean
+        default: false
+
+# Only one build runs at a time; new triggers queue instead of cancelling.
+concurrency:
+  group: build-packages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write          # needed for auto-resume re-trigger
+
+env:
+  # Our own binhost first (custom USE flags), then official Gentoo x86-64-v3 as fallback
+  BINHOST_URLS: >-
+    https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3
+    https://distfiles.gentoo.org/releases/amd64/binpackages/23.0/x86-64-v3/
+
+jobs:
+  # ─── Build ──────────────────────────────────────────────────────
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    container:
+      image: gentoo/stage3:latest
+      options: --privileged
+    env:
+      CCACHE_SIZE: 20G
+      # Pin CCACHE_DIR globally so every step (build.sh, post-build stats,
+      # etc.) targets the same directory that the workflow caches.  Without
+      # this, ccache silently falls back to ~/.cache/ccache and the restored
+      # /var/cache/ccache is unused — observed as "Cache size (GB): 0.0"
+      # at the start of every attempt despite a successful cache restore.
+      CCACHE_DIR: /var/cache/ccache
+    outputs:
+      should_continue: ${{ steps.result.outputs.should_continue }}
+      chain_id: ${{ steps.meta.outputs.chain_id }}
+      next_attempt: ${{ steps.meta.outputs.next_attempt }}
+
+    steps:
+      - name: Set up build metadata
+        id: meta
+        run: |
+          ATTEMPT="${{ inputs._attempt || '1' }}"
+          CHAIN_ID="${{ inputs._chain_id || github.run_id }}"
+          MAX="${{ inputs._max_attempts || '8' }}"
+
+          # Validate numeric inputs
+          for name_val in "attempt:${ATTEMPT}" "max_attempts:${MAX}"; do
+            name="${name_val%%:*}"
+            val="${name_val##*:}"
+            if [[ ! "$val" =~ ^[1-9][0-9]*$ ]]; then
+              echo "::error::Invalid ${name}: '${val}' — must be a positive integer"
+              exit 1
+            fi
+          done
+          if [[ "$ATTEMPT" -gt "$MAX" ]]; then
+            echo "::error::attempt (${ATTEMPT}) exceeds max_attempts (${MAX})"
+            exit 1
+          fi
+
+          echo "attempt=${ATTEMPT}" >> "$GITHUB_OUTPUT"
+          echo "chain_id=${CHAIN_ID}" >> "$GITHUB_OUTPUT"
+          echo "next_attempt=$((ATTEMPT + 1))" >> "$GITHUB_OUTPUT"
+          if [[ "$ATTEMPT" -gt 1 ]]; then
+            echo "::notice::Auto-resumed build (attempt ${ATTEMPT}/${MAX}, chain ${CHAIN_ID})"
+          fi
+
+      - name: Validate package input
+        if: inputs.package != ''
+        run: |
+          PKG="${{ inputs.package }}"
+          if [[ ! "$PKG" =~ ^[a-zA-Z0-9._-]+/[a-zA-Z0-9._+-]+$ ]]; then
+            echo "::error::Invalid package name: ${PKG}"
+            echo "Expected format: category/package-name (e.g. dev-qt/qtwebengine)"
+            exit 1
+          fi
+
+      - uses: actions/checkout@v6
+
+      # Optional manual cache wipe.  When the workflow is dispatched with
+      # `fresh: true`, delete every cache in the four families this workflow
+      # uses (ccache-*, binpkgs-*, system-state-*, build-state-*) BEFORE any
+      # restore step runs.  Use this when state has gone inconsistent and a
+      # clean rebuild from the stage3 baseline is wanted.
+      #
+      # Triple-guarded to make this hard to misfire:
+      #   * github.event_name == 'workflow_dispatch'  — never on schedule
+      #   * inputs.fresh                              — explicit opt-in
+      #   * steps.meta.outputs.attempt == '1'         — never on resume
+      # The resume re-trigger job already does NOT forward `fresh` in its
+      # workflow_dispatch payload, so attempt>1 always sees the default
+      # `false`; the attempt guard is defence-in-depth.
+      #
+      # Implemented in pure Python via the stdlib (no jq in stage3, and a
+      # `curl | python3` pipe through `mapfile` would let JSON-parse errors
+      # be silently swallowed by process substitution).  urllib.urlopen
+      # raises HTTPError on 4xx/5xx, which exits the interpreter non-zero
+      # and fails the step — no `|| true`, no `2>/dev/null`, no swallowing.
+      - name: Wipe caches (fresh start)
+        if: github.event_name == 'workflow_dispatch' && inputs.fresh && steps.meta.outputs.attempt == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          echo "::warning::fresh=true requested — deleting caches with prefixes: ccache-, binpkgs-, system-state-, build-state-"
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          token = os.environ["GH_TOKEN"]
+          repo = os.environ["REPO"]
+          prefixes = ["ccache-", "binpkgs-", "system-state-", "build-state-"]
+          base_headers = {
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+          }
+
+          def api(method, path):
+              req = urllib.request.Request(
+                  f"https://api.github.com{path}",
+                  method=method,
+                  headers=base_headers,
+              )
+              with urllib.request.urlopen(req) as resp:
+                  body = resp.read()
+              return body
+
+          grand_total = 0
+          for prefix in prefixes:
+              deleted = 0
+              # Always re-fetch page 1 until empty: each iteration deletes
+              # every cache it sees, so subsequent fetches naturally shift
+              # forward.  Avoids the "delete-while-paginating" off-by-page
+              # bug where incrementing `page` skips items.
+              while True:
+                  qs = urllib.parse.urlencode({"key": prefix, "per_page": "100"})
+                  body = api("GET", f"/repos/{repo}/actions/caches?{qs}")
+                  data = json.loads(body)
+                  caches = data.get("actions_caches", []) or []
+                  if not caches:
+                      break
+                  for c in caches:
+                      cid = c["id"]
+                      key = c["key"]
+                      ref = c.get("ref", "?")
+                      print(f"[fresh] DELETE id={cid} key={key} ref={ref}", flush=True)
+                      api("DELETE", f"/repos/{repo}/actions/caches/{cid}")
+                      deleted += 1
+              print(f"[fresh] deleted {deleted} cache(s) with prefix {prefix!r}", flush=True)
+              grand_total += deleted
+
+          print(f"[fresh] cache wipe complete — {grand_total} cache(s) deleted total", flush=True)
+          PY
+
+      - name: Restore ccache
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/cache/ccache
+          key: ccache-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          restore-keys: |
+            ccache-${{ steps.meta.outputs.chain_id }}-
+            ccache-
+
+      # Preserve already-built binary packages across resume attempts.  Without
+      # this, /var/cache/binpkgs starts empty on every attempt and `--usepkg`
+      # has nothing to skip, so each timed-out attempt re-builds the same
+      # prefix of the package list from source instead of picking up where the
+      # previous one left off.  This is the actual reason resume chains keep
+      # producing the same NEW_PKGS count attempt after attempt — `--resume`
+      # / mtimedb only ever mattered for the single mid-build package.
+      #
+      # Scoped to the chain so resume attempts share binpkgs, with a global
+      # fallback so a fresh chain can warm-start from the last completed one.
+      #
+      # COUPLED CACHE: the keys here MUST stay in lockstep with the
+      # "Restore system state" step below — Portage's installed-package DB
+      # (/var/db/pkg) and the matching binpkgs MUST come from the same
+      # generation, otherwise Portage will skip re-installing a package
+      # whose binary is missing.  The "Verify coupled-cache invariant" step
+      # below uses GitHub's authoritative `cache-matched-key` outputs to
+      # XOR-check this and fail RED if exactly one of the two restored.
+      # Do not change one cache's keys without changing the other.
+      - name: Restore binpkgs
+        id: restore_binpkgs
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/cache/binpkgs
+          key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          restore-keys: |
+            binpkgs-${{ steps.meta.outputs.chain_id }}-
+            binpkgs-
+
+      # System-state cache: Portage's installed-package DB plus its metadata
+      # cache, the world set, and package-managed /etc state.  Restoring this
+      # means attempt N+1 sees the ~1000 packages installed by attempt N as
+      # already-installed and skips re-merging them — saving roughly 50-80
+      # minutes per attempt out of a 5h budget that was previously burned on
+      # identical re-installs.
+      #
+      # /etc/portage, /etc/env.d, /etc/ld.so.conf.d are included so VDB
+      # entries that wrote files under /etc don't drift away from the on-disk
+      # state across attempts.  apply_profile in build.sh runs AFTER this
+      # restore and overwrites repo-managed files (make.conf, package.use/*,
+      # …) from the source of truth, so the cache cannot poison repo policy;
+      # it only fills in non-repo files (gnupg keyring, env.d/*, etc.).
+      #
+      # Save key MUST equal the binpkgs save key shape so the two restore
+      # in lockstep on the next attempt; the workflow-level
+      # "Verify coupled-cache invariant" step gates against any mismatch.
+      - name: Restore system state
+        id: restore_system_state
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            /var/db/pkg
+            /var/lib/portage
+            /var/cache/edb
+            /etc/portage
+            /etc/env.d
+            /etc/ld.so.conf.d
+          key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          restore-keys: |
+            system-state-${{ steps.meta.outputs.chain_id }}-
+            system-state-
+
+      # Hard check on the coupled-cache invariant.  If on a resume attempt
+      # one of the two restored and the other didn't, /var/db/pkg will claim
+      # packages are installed whose binaries are missing and Portage will
+      # skip-then-fail on them later.  Fail RED HERE instead.
+      - name: Verify coupled-cache invariant
+        # Run on EVERY attempt, including attempt 1.  Cross-chain divergence
+        # (the bug this catches) actually only happens on attempt 1 of a new
+        # chain: GitHub's 10 GB-per-repo cache budget can evict the 3.6 GB
+        # binpkgs cache while the 50 MB system-state cache survives, so a
+        # fresh chain inherits a half-restored world.  An earlier guard
+        # (`if: attempt != '1'`) made this step a no-op exactly when it was
+        # needed and let the build silently fall through to source-rebuilding
+        # packages that /var/db/pkg already claims are installed — see run
+        # 24636521882 where dev-lang/go was scheduled `[ebuild R]` instead of
+        # `[binary R]`, failed in 1.8s, and the cancel-on-error left no
+        # build.log behind.
+        run: |
+          B_KEY="${{ steps.restore_binpkgs.outputs.cache-matched-key }}"
+          S_KEY="${{ steps.restore_system_state.outputs.cache-matched-key }}"
+          echo "binpkgs       restored from key: ${B_KEY:-<none>}"
+          echo "system-state  restored from key: ${S_KEY:-<none>}"
+          # Both restored = OK.  Both empty = OK (fresh state).  The unsafe
+          # mismatch is system-state-only restore: /var/db/pkg says packages are
+          # installed while /var/cache/binpkgs has no matching gpkgs.
+          #
+          # Binpkgs-only restore is safe: we just warm-start from prior binary
+          # artifacts while keeping stage3's installed DB baseline.
+          if [[ -z "$B_KEY" && -n "$S_KEY" ]]; then
+            echo "::error title=Coupled-cache mismatch::system-state restored but binpkgs did not; refusing to build because Portage's installed DB and available binpkgs would diverge."
+            exit 1
+          fi
+          if [[ -n "$B_KEY" && -z "$S_KEY" ]]; then
+            echo "::warning title=Binpkgs-only restore::binpkgs restored without system-state. Proceeding with a fresh installed DB baseline and reusing available binary artifacts."
+          fi
+
+      - name: Import GPG signing key
+        run: |
+          if [[ -n "${GPG_PRIVATE_KEY:-}" ]]; then
+            echo "$GPG_PRIVATE_KEY" \
+              | gpg --batch --passphrase "${GPG_PASSPHRASE:-}" --import
+          fi
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Sync portage tree
+        run: |
+          # Mirror the fallback chain in scripts/build.sh, but log which
+          # method succeeded so silent fallbacks are observable.  No `|| true`
+          # on `eselect profile set` — wrong/missing profile must fail RED.
+          if emerge-webrsync --quiet; then
+            echo "Synced via emerge-webrsync"
+          elif emerge --sync --quiet; then
+            echo "Synced via emerge --sync (webrsync failed; see stderr above)"
+          else
+            echo "Falling back to emaint sync"
+            emaint sync -a
+          fi
+          eselect profile set default/linux/amd64/23.0/desktop/plasma
+
+      - name: Set up Portage binpkg trust
+        run: |
+          # Bootstrap the Portage-specific GPG keyring so binary packages
+          # from the Gentoo binhost can be signature-verified.  This MUST
+          # happen before "Install build tools" because that step fetches
+          # signed gpkgs from the official Gentoo binhost.
+          #
+          # Use /usr/bin/getuto — Portage's own $PORTAGE_TRUST_HELPER, from
+          # app-portage/getuto, which is a hard dep of recent sys-apps/portage
+          # and is therefore present in the stage3.  getuto:
+          #   * imports the binhost signing keys (including the binpkg key
+          #     534E4209AB49EEE1C19D96162C44695DB9F6043D, which is NOT a
+          #     primary key in /usr/share/openpgp-keys/gentoo-release.asc),
+          #   * sets correct trust levels, and
+          #   * chowns /etc/portage/gnupg to portage:portage so gpg-as-portage
+          #     does not error with "unsafe ownership on homedir" /
+          #     "Permission denied" on pubring.kbx during binpkg verification.
+          #
+          # An earlier manual `gpg --import` of the release-keys file plus a
+          # subsequent `chown` looked correct but produced exactly those two
+          # errors at install-tools time (CI run 24651146807, job
+          # 72074035707) — getuto avoids the whole class of bug.
+          if ! command -v getuto >/dev/null; then
+            echo "::error::/usr/bin/getuto not found in stage3; cannot bootstrap Portage binpkg trust"
+            exit 1
+          fi
+          getuto
+
+          # Verify the binhost signing key is actually present after
+          # bootstrap — catches a silent regression in getuto or a key
+          # rotation before it surfaces as a cryptic NO_PUBKEY during
+          # emerge.
+          GENTOO_BINHOST_KEY="534E4209AB49EEE1C19D96162C44695DB9F6043D"
+          if ! gpg --homedir /etc/portage/gnupg --list-keys "$GENTOO_BINHOST_KEY" >/dev/null; then
+            echo "::error::Gentoo binhost signing key ${GENTOO_BINHOST_KEY} not present in /etc/portage/gnupg after getuto"
+            exit 1
+          fi
+
+          # Defence in depth: getuto already chowns to portage:portage, but
+          # re-asserting it here means a future getuto change that drops the
+          # chown still leaves us with a working keyring instead of the
+          # "unsafe ownership" failure we are fixing.
+          chown -R portage:portage /etc/portage/gnupg
+
+      # Remove stale VDB entries whose files are absent from the fresh stage3
+      # image.  This MUST run before "Install build tools" so that the tools
+      # emerge (ccache, gentoolkit) sees a correct installed-package view.
+      # The same script is also called by scripts/build.sh before the main
+      # build emerge.  See scripts/verify-vdb.sh for full documentation.
+      - name: Repair stale VDB entries
+        run: bash scripts/verify-vdb.sh
+
+      - name: Install build tools
+        env:
+          # Pull binpkgs from the published binhost in addition to the local
+          # /var/cache/binpkgs.  Without this, --usepkg y consults ONLY the
+          # local cache; on the first attempt of a new chain (where the
+          # GitHub binpkgs cache may have been evicted while system-state
+          # survived — see "Verify coupled-cache invariant" above) the local
+          # cache is empty, so ccache and gentoolkit get rebuilt from source
+          # every single time.  --getbinpkg y + PORTAGE_BINHOST makes Portage
+          # fetch the gpkgs we already published in earlier runs.
+          #
+          # Binpkg trust (Gentoo release key in /etc/portage/gnupg/) is
+          # established by the "Set up Portage binpkg trust" step above.
+          PORTAGE_BINHOST: ${{ env.BINHOST_URLS }}
+        run: |
+          # Guard against a corrupt own-binhost Packages index.  A single
+          # malformed CPV entry (e.g. "CPV: tmp/artifacts/acct-group/cuse/cuse-0-1"
+          # from a prior buggy publish run that deposited files at a non-canonical
+          # path) will crash emerge with portage.exception.InvalidData, preventing
+          # the entire build chain from starting.  Validate the index first; if
+          # ours is unreachable or has bad entries, fall back to the Gentoo
+          # official binhost for this step.  The publish job that always runs
+          # after build (even on failure) will scrub and regenerate a clean index
+          # so subsequent runs recover automatically.
+          _OWN_BINHOST="https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          _OFFICIAL_BINHOST="https://distfiles.gentoo.org/releases/amd64/binpackages/23.0/x86-64-v3/"
+          _TOOLS_BINHOST="${PORTAGE_BINHOST}"
+
+          _own_pkg_idx=""
+          _own_binhost_ok=true
+          if ! _own_pkg_idx="$(curl --fail --no-progress-meter --max-time 30 \
+              "${_OWN_BINHOST}/Packages")"; then
+            echo "::warning::Could not fetch own binhost Packages index — excluding own binhost from tools install"
+            _own_binhost_ok=false
+            _TOOLS_BINHOST="$_OFFICIAL_BINHOST"
+          fi
+          if [[ "$_own_binhost_ok" == true ]]; then
+            if ! printf '%s\n' "$_own_pkg_idx" | python3 scripts/check-packages-index.py; then
+              echo "::warning::Own binhost Packages index has malformed CPV entries — excluding own binhost from tools install to prevent emerge crash"
+              _TOOLS_BINHOST="$_OFFICIAL_BINHOST"
+            fi
+          fi
+          unset _own_pkg_idx _own_binhost_ok _OWN_BINHOST _OFFICIAL_BINHOST
+
+          PORTAGE_BINHOST="$_TOOLS_BINHOST" emerge --oneshot --quiet --usepkg y --getbinpkg y \
+            dev-util/ccache app-portage/gentoolkit
+
+          # Self-heal stale-binpkg ABI mismatch.  A previously published
+          # binpkg may have been linked against an older SONAME than what
+          # the current stage3 ships (observed in CI:
+          #   ccache: error while loading shared libraries:
+          #   libblake3.so.0: cannot open shared object file
+          # because the published dev-util/ccache gpkg was built when
+          # dev-libs/blake3 still shipped libblake3.so.0, and the current
+          # container has a newer blake3 SONAME).  The recorded RDEPEND in
+          # the gpkg is satisfied by any version in the slot, so Portage
+          # installs it without rebuilding.  Detect this by actually
+          # invoking the binaries and, if they fail, drop the bad gpkgs
+          # from the local binpkg cache and rebuild from source so the
+          # next publish replaces the broken artifact in the binhost.
+          if ! ccache --version >/dev/null || ! equery --version >/dev/null; then
+            echo "::warning::Stale binpkg ABI mismatch detected for ccache/gentoolkit — rebuilding from source"
+            rm -f /var/cache/binpkgs/dev-util/ccache-*.gpkg.tar \
+                  /var/cache/binpkgs/app-portage/gentoolkit-*.gpkg.tar
+            emerge --oneshot --quiet --usepkg n --getbinpkg n \
+              dev-util/ccache app-portage/gentoolkit
+            # Re-verify; if still broken, fail loud — this is not the
+            # bug we're working around.
+            ccache --version >/dev/null
+            equery --version >/dev/null
+          fi
+
+          # Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_*
+          # in /etc.  Bootstrap-time drops (typically env.d/01blake3,
+          # env.d/05gcc-x86_64-pkg-cs, profile.env) must be merged before the
+          # main build phase so subsequent emerges see the new env vars.
+          # Mirror of merge_pending_configs() in scripts/build.sh; kept inline
+          # because build.sh is a top-level runner, not a sourceable library.
+          # No fallback if etc-update is missing: fail loudly instead.
+          _pending=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
+          echo "[build-packages.yml] merge_pending_configs: ${_pending} pending ._cfg* file(s) under /etc"
+          if [[ "$_pending" -gt 0 ]]; then
+            etc-update --automode -5
+            env-update
+            # shellcheck disable=SC1091
+            . /etc/profile
+            _remaining=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
+            echo "[build-packages.yml] merge_pending_configs: ${_remaining} pending ._cfg* file(s) remain (started with ${_pending})"
+          fi
+          unset _pending _remaining
+
+      - name: Restore build state from previous attempt
+        if: inputs._attempt && inputs._attempt != '1'
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          fail-on-cache-miss: false
+
+      - name: Build packages
+        id: build
+        run: |
+          set +e
+          bash scripts/build.sh \
+            --profile amd64-23.0-desktop-plasma-openrc \
+            ${{ inputs.package && format('--single-package {0}', inputs.package) || '--package-list packages/packages.txt' }} \
+            --binhost-url "${{ env.BINHOST_URLS }}" \
+            --state-dir /var/tmp/portage-state \
+            --max-build-time 330 \
+            ${{ (inputs._attempt || '1') != '1' && '--resume' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
+            --output-dir /tmp/binpkgs
+          BUILD_EXIT=$?
+          echo "exit_code=${BUILD_EXIT}" >> "$GITHUB_OUTPUT"
+          if [[ $BUILD_EXIT -ne 0 && $BUILD_EXIT -ne 42 ]]; then
+            exit $BUILD_EXIT
+          fi
+
+      - name: Save build state for resume
+        if: always() && steps.build.outputs.exit_code == '42'
+        uses: actions/cache/save@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.next_attempt }}
+
+      - name: Save ccache
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: /var/cache/ccache
+          key: ccache-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+
+      # Save binpkgs even on timeout / failure: any package fully built before
+      # the SIGTERM is a real, reusable artifact and must persist for the next
+      # resume attempt.  Key includes attempt so each save is unique (otherwise
+      # the second use in a chain hits "Unable to reserve cache with key X"
+      # and silently drops content); the chain-scoped restore-keys above let
+      # the next attempt find it.
+      - name: Save binpkgs
+        id: save_binpkgs
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: /var/cache/binpkgs
+          key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+
+      # Save the system-state cache with the SAME key shape as binpkgs.  This
+      # is the coupling the next attempt's "Verify coupled-cache invariant"
+      # step relies on.  if:always() so a timed-out attempt still hands its
+      # installed-DB to the next one.
+      - name: Save system state
+        id: save_system_state
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: |
+            /var/db/pkg
+            /var/lib/portage
+            /var/cache/edb
+            /etc/portage
+            /etc/env.d
+            /etc/ld.so.conf.d
+          key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+
+      # Diagnostic: surface cache-save outcomes as warnings.  We do NOT fail
+      # the build here — the next resume attempt's "Verify coupled-cache
+      # invariant" step is the authoritative gate (it XOR-checks the
+      # `cache-matched-key` outputs and fails RED if exactly one of the pair
+      # restored).  Failing the current run on a save outcome that hasn't
+      # yet caused harm would just compound the loss of a 5 h build.
+      - name: Verify cache saves succeeded
+        if: always()
+        run: |
+          B="${{ steps.save_binpkgs.outcome }}"
+          S="${{ steps.save_system_state.outcome }}"
+          echo "binpkgs save outcome:      ${B}"
+          echo "system-state save outcome: ${S}"
+          if [[ "$B" != "success" && "$B" != "skipped" ]]; then
+            echo "::warning title=Cache save did not succeed::Save of /var/cache/binpkgs reported '${B}'. Next resume attempt's coupled-cache check will fail RED if the system-state save did succeed."
+          fi
+          if [[ "$S" != "success" && "$S" != "skipped" ]]; then
+            echo "::warning title=Cache save did not succeed::Save of system-state caches reported '${S}'. Next resume attempt's coupled-cache check will fail RED if the binpkgs save did succeed."
+          fi
+          if [[ "$B" == "success" && "$S" != "success" ]] || [[ "$B" != "success" && "$S" == "success" ]]; then
+            echo "::warning title=Coupled cache save mismatch::binpkgs and system-state saves did not both succeed; the next attempt's coupled-cache invariant check will block resume."
+          fi
+
+      - name: Upload packages
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          path: |
+            /tmp/binpkgs/**/*.gpkg.tar
+            /tmp/binpkgs/**/*.asc
+            /tmp/binpkgs/_failures/**
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Determine if build should continue
+        id: result
+        if: always()
+        run: |
+          EXIT="${{ steps.build.outputs.exit_code || '1' }}"
+          MAX="${{ inputs._max_attempts || '8' }}"
+          NEXT="${{ steps.meta.outputs.next_attempt }}"
+          NEW_PKGS="${{ steps.build.outputs.new_package_count || '0' }}"
+          REPEATED="${{ steps.build.outputs.repeated_failures || 'false' }}"
+          FAILED="${{ steps.build.outputs.failed_package_count || '0' }}"
+
+          echo "exit=${EXIT} new_pkgs=${NEW_PKGS} failed=${FAILED} repeated=${REPEATED} next=${NEXT}/${MAX}"
+
+          # Default: do not continue.  Switch to true only on the happy
+          # "timed-out, made progress, no repeated failures" path.
+          should_continue=false
+          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" && "$NEW_PKGS" -gt 0 && "$REPEATED" != "true" ]]; then
+            should_continue=true
+          fi
+          echo "should_continue=${should_continue}" >> "$GITHUB_OUTPUT"
+
+          # Repeated failures: a package that failed in TWO consecutive
+          # attempts will fail in the next one too — every additional resume
+          # is just burning CI minutes.  Stop the chain RED so the user sees
+          # which atom is stuck (build.sh already wrote the build.log into
+          # the uploaded artifact).
+          if [[ "$REPEATED" == "true" ]]; then
+            echo "::error title=Repeated package failures::One or more packages failed in two consecutive resume attempts. Auto-resume disabled. See the 'Failed packages' section in the build summary and the _failures/ directory in the build artifact for the captured build.log of each failure."
+            exit 1
+          fi
+
+          if [[ "$EXIT" == "42" && "$NEW_PKGS" -le 0 ]]; then
+            # Resuming would just burn another 5h producing nothing.  Better to
+            # surface the stall now so a human can investigate the stuck ebuild.
+            echo "::error title=Zero-progress timeout::Build attempt ${{ steps.meta.outputs.attempt }} timed out (exit 42) without producing any new binary packages. Auto-resume disabled for this chain to avoid wasting CI minutes; investigate the stuck ebuild."
+            exit 1
+          fi
+          # Any per-package failure is also surfaced (build.sh already emitted
+          # one ::error per failed atom); we don't fail the run for a SINGLE
+          # failure (the chain may still complete the rest), but we do exit
+          # non-zero on the LAST attempt so the run is RED instead of yellow.
+          if [[ "$FAILED" -gt 0 && ( "$EXIT" != "42" || "$NEXT" -gt "$MAX" ) ]]; then
+            echo "::error title=Build finished with failures::${FAILED} package(s) failed. See annotations above and _failures/ in the build artifact."
+            exit 1
+          fi
+          if [[ "$EXIT" == "42" && "$NEXT" -gt "$MAX" ]]; then
+            echo "::warning::Build did not complete after ${MAX} attempts. Consider increasing _max_attempts."
+          fi
+
+  # ─── Publish to GitHub Pages ────────────────────────────────────
+  publish:
+    needs: build
+    if: always() && !cancelled()
+    uses: ./.github/workflows/publish-to-pages.yml
+    with:
+      chain_id: ${{ needs.build.outputs.chain_id }}
+    secrets: inherit
+
+  # ─── Auto-resume: re-trigger if the build timed out ─────────────
+  continue:
+    needs: [build, publish]
+    if: always() && !cancelled() && needs.build.outputs.should_continue == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Re-trigger build to continue where it left off
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NEXT="${{ needs.build.outputs.next_attempt }}"
+          CHAIN_ID="${{ needs.build.outputs.chain_id }}"
+          MAX="${{ inputs._max_attempts || '8' }}"
+          PACKAGE="${{ inputs.package }}"
+          echo "Resuming build (attempt ${NEXT}/${MAX}, chain ${CHAIN_ID})"
+          PAYLOAD="$(jq -n \
+            --arg ref "${{ github.ref_name }}" \
+            --arg package "$PACKAGE" \
+            --arg attempt "$NEXT" \
+            --arg chain_id "$CHAIN_ID" \
+            --arg max "$MAX" \
+            '{ref: $ref, inputs: {package: $package, _attempt: $attempt, _chain_id: $chain_id, _max_attempts: $max}}'
+          )"
+          curl -f -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Content-Type: application/json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/build-packages.yml/dispatches" \
+            --data "$PAYLOAD"

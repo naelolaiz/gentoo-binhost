@@ -40,14 +40,14 @@ jobs:
             fi
 
             # Must be a valid tar archive
-            if ! tar --list -f "$pkg" &>/dev/null; then
+            if ! tar --list -f "$pkg" >/dev/null; then
               echo "  ERROR: Not a valid tar archive"
               ERRORS=$((ERRORS + 1))
               continue
             fi
 
             # gpkg archives must contain a METADATA directory or package.tar
-            MEMBERS=$(tar --list -f "$pkg" 2>/dev/null)
+            MEMBERS=$(tar --list -f "$pkg")
             if ! echo "$MEMBERS" | grep -qE '(^|/)gpkg-1$|(^|/)image\.tar\.(zst|bz2|gz|xz)$'; then
               echo "  WARNING: Does not look like a valid GPKG (missing image.tar.*)"
             fi
