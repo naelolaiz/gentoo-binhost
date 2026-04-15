@@ -41,10 +41,13 @@ jobs:
   build:
     needs: prepare
     runs-on: ubuntu-latest
-    timeout-minutes: 650
+    # GitHub-hosted runners enforce a hard 6h (360 min) cap; 350 min is a safe margin
+    timeout-minutes: 350
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    env:
+      CCACHE_SIZE: 20G
 
     container:
       image: gentoo/stage3:latest
@@ -54,13 +57,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Restore ccache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: /var/cache/ccache
-          key: ccache-tier1-${{ matrix.package }}-${{ github.sha }}
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
           restore-keys: |
-            ccache-tier1-${{ matrix.package }}-
-            ccache-tier1-
+            ccache-v2-tier1-${{ matrix.package }}-
+            ccache-v2-tier1-
 
       - name: Import GPG signing key
         run: |
@@ -84,7 +87,9 @@ jobs:
         run: |
           emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
 
-      - name: Apply profile configuration
+      - name: Build package (phase 1)
+        # Allow timeout or partial completion — phase 2 (build-retry) will resume with warm ccache
+        continue-on-error: true
         run: |
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
@@ -93,17 +98,101 @@ jobs:
             ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
             --output-dir /tmp/binpkgs
 
-      - name: Upload packages as artifacts
+      - name: Save ccache after phase 1
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: /var/cache/ccache
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
+
+      - name: Upload packages as artifacts (phase 1)
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: binpkgs-tier1-${{ strategy.job-index }}
+          name: binpkgs-tier1-phase1-${{ strategy.job-index }}
+          path: /tmp/binpkgs/**/*.gpkg.tar
+          if-no-files-found: warn
+          retention-days: 7
+
+  build-retry:
+    needs: [prepare, build]
+    # Only retry when phase 1 didn't succeed (timed out or failed); skip if phase 1 was complete
+    if: always() && needs.build.result != 'success'
+    runs-on: ubuntu-latest
+    # GitHub-hosted runners enforce a hard 6h (360 min) cap; 350 min is a safe margin
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    env:
+      CCACHE_SIZE: 20G
+
+    container:
+      image: gentoo/stage3:latest
+      options: --privileged
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore ccache from phase 1
+        uses: actions/cache/restore@v4
+        with:
+          path: /var/cache/ccache
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}-ph1
+          restore-keys: |
+            ccache-v2-tier1-${{ matrix.package }}-
+            ccache-v2-tier1-
+
+      - name: Import GPG signing key
+        run: |
+          if [[ -n "${GPG_PRIVATE_KEY:-}" ]]; then
+            echo "$GPG_PRIVATE_KEY" \
+              | gpg --batch --passphrase "${GPG_PASSPHRASE:-}" \
+                    --import
+          fi
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Sync portage tree
+        run: |
+          emerge-webrsync --quiet 2>/dev/null \
+            || emerge --sync --quiet \
+            || emaint sync -a
+          eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+
+      - name: Install build tools
+        run: |
+          emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
+
+      - name: Build package (phase 2 retry)
+        run: |
+          bash scripts/build.sh \
+            --profile amd64-23.0-desktop-plasma-openrc \
+            --single-package "${{ matrix.package }}" \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
+            --output-dir /tmp/binpkgs
+
+      - name: Save ccache after phase 2
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: /var/cache/ccache
+          key: ccache-v2-tier1-${{ matrix.package }}-${{ github.sha }}
+
+      - name: Upload packages as artifacts (phase 2)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: binpkgs-tier1-phase2-${{ strategy.job-index }}
           path: /tmp/binpkgs/**/*.gpkg.tar
           if-no-files-found: warn
           retention-days: 7
 
   publish:
-    needs: build
-    if: ${{ always() && needs.build.result != 'cancelled' }}
+    needs: [build, build-retry]
+    # Publish when not cancelled; build-retry may be 'skipped' (phase 1 succeeded) — that's fine
+    if: ${{ always() && needs.build.result != 'cancelled' && needs.build-retry.result != 'cancelled' }}
     uses: ./.github/workflows/publish-to-pages.yml
     secrets: inherit

@@ -14,6 +14,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # GitHub-hosted runners enforce a hard 6h (360 min) cap; 350 min is a safe margin
     timeout-minutes: 350
 
     container:

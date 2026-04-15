@@ -121,7 +121,25 @@ setup_ccache() {
   if command -v ccache &>/dev/null; then
     log "Configuring ccache (dir: ${CCACHE_DIR:-/var/cache/ccache})"
     mkdir -p "${CCACHE_DIR:-/var/cache/ccache}"
-    ccache --max-size="${CCACHE_SIZE:-10G}" 2>/dev/null || true
+    ccache --max-size="${CCACHE_SIZE:-20G}" 2>/dev/null || true
+    # Use file content for compiler identification (more cache hits across runs)
+    ccache --set-config=compiler_check=content 2>/dev/null || true
+    # Enable compression to save cache space
+    ccache --set-config=compression=true 2>/dev/null || true
+    ccache --set-config=compression_level=1 2>/dev/null || true
+    # Ignore working directory in cache keys (better hit rate across jobs)
+    ccache --set-config=hash_dir=false 2>/dev/null || true
+    ccache --zero-stats 2>/dev/null || true
+    log "ccache configuration:"
+    ccache --show-config 2>/dev/null || true
+  fi
+}
+
+# ---------- ccache stats ----------
+show_ccache_stats() {
+  if command -v ccache &>/dev/null; then
+    log "ccache statistics:"
+    ccache --show-stats 2>/dev/null || true
   fi
 }
 
@@ -197,5 +215,6 @@ sync_tree
 build_packages
 collect_packages
 sign_packages
+show_ccache_stats
 
 log "Build complete."
