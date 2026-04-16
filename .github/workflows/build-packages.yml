@@ -68,6 +68,16 @@ jobs:
           echo "next_phase=$((PHASE + 1))" >> "$GITHUB_OUTPUT"
           echo "::notice::Phase ${PHASE} of chain ${CHAIN_ID}"
 
+      - name: Validate inputs
+        if: inputs.package != ''
+        run: |
+          PKG="${{ inputs.package }}"
+          if [[ ! "$PKG" =~ ^[a-zA-Z0-9._-]+/[a-zA-Z0-9._+-]+$ ]]; then
+            echo "::error::Invalid package name: ${PKG}"
+            echo "Expected format: category/package-name (e.g. dev-qt/qtwebengine)"
+            exit 1
+          fi
+
       - uses: actions/checkout@v6
 
       - name: Restore ccache
