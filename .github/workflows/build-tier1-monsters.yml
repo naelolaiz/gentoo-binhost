@@ -546,7 +546,8 @@ jobs:
       always() &&
       needs.prepare.result == 'success' &&
       needs.prepare.outputs.has_consumers == 'true' &&
-      needs.build-phase-1.result == 'success'
+      needs.build-phase-1.result != 'cancelled' &&
+      needs.build-phase-1.result != 'skipped'
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.consumer_matrix) }}
@@ -673,7 +674,8 @@ jobs:
       always() &&
       needs.prepare.result == 'success' &&
       needs.prepare.outputs.has_consumers == 'true' &&
-      needs.build-phase-2.result == 'success'
+      needs.build-phase-2.result != 'cancelled' &&
+      needs.build-phase-2.result != 'skipped'
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.consumer_matrix) }}
