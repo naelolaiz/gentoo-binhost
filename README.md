@@ -46,9 +46,7 @@ gpg --import keys/binhost-signing-key.asc
 ```
 gentoo-binhost/
 ├── .github/workflows/
-│   ├── build-tier1-monsters.yml      # qtwebengine, webkit-gtk, llvm/clang — weekly
-│   ├── build-tier2-heavy.yml         # KDE plasma, Qt, ffmpeg, mesa — twice-weekly
-│   ├── build-tier3-rest.yml          # remaining world packages — twice-weekly
+│   ├── build-packages.yml            # builds all packages (weekly, auto-resumes)
 │   ├── publish-to-pages.yml          # deploys binpkgs to GitHub Pages
 │   └── accept-local-packages.yml     # validates locally-built package PRs
 ├── config/profiles/
@@ -59,9 +57,7 @@ gentoo-binhost/
 │       ├── package.mask/
 │       └── package.license/
 ├── packages/
-│   ├── tier1-monsters.txt            # compile monsters (hours each)
-│   ├── tier2-heavy.txt               # heavy packages (30 min – 2 h)
-│   └── tier3-rest.txt                # everything else
+│   └── packages.txt                  # all packages to build
 ├── scripts/
 │   ├── build.sh                      # main CI build script
 │   ├── upload-local-packages.sh      # submit locally-built packages via PR
@@ -74,13 +70,17 @@ gentoo-binhost/
 └── CONTRIBUTING.md
 ```
 
-## Build Tiers
+## How the Build Works
 
-| Tier | Contents | Schedule |
-|------|----------|----------|
-| **Tier 1** | qtwebengine, webkit-gtk, llvm, clang | Weekly (Sun) |
-| **Tier 2** | KDE Plasma, Qt modules, ffmpeg, mesa, OpenCV, VTK | Mon & Thu |
-| **Tier 3** | Audio tools, KDE apps, dev tools, system utilities | Tue & Fri |
+The CI runs weekly (Sunday) and does what you'd do on your own system:
+
+1. **Sync** — `emerge-webrsync` (or `emerge --sync`)
+2. **Build** — `emerge --buildpkg --usepkg --getbinpkg --keep-going <all packages>`
+3. **Publish** — deploy to GitHub Pages
+
+If the build times out (GitHub Actions has a 6 h limit), it saves state, publishes
+whatever was built, and **automatically re-triggers** itself for the next phase.
+This repeats until all packages complete (up to 8 phases ≈ 44 h of build time).
 
 Each build uses ccache to speed up incremental rebuilds.
 

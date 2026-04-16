@@ -59,7 +59,7 @@ jobs:
             mkdir -p "$target"
             cp "$pkg" "$target/"
             # Copy matching .asc signature if present
-            [[ -f "${pkg}.asc" ]] && cp "${pkg}.asc" "$target/"
+            if [[ -f "${pkg}.asc" ]]; then cp "${pkg}.asc" "$target/"; fi
           done
 
           echo "Package tree:"

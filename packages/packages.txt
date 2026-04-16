@@ -1,4 +1,54 @@
-# Tier 3: Rest of commonly needed packages
+# All packages built by the Gentoo binhost CI.
+#
+# emerge processes these respecting dependency order automatically.
+# The build workflow handles timeout (--max-build-time) and resume (--resume)
+# so that the full list completes across multiple build phases if needed.
+
+# LLVM toolchain
+llvm-core/llvm
+llvm-core/clang
+
+# Web engines
+dev-qt/qtwebengine
+net-libs/webkit-gtk
+
+# KDE Plasma Desktop
+kde-plasma/plasma-meta
+
+# Qt ecosystem
+dev-qt/qtbase
+dev-qt/qtdeclarative
+dev-qt/qttools
+dev-qt/qtwayland
+dev-qt/qtmultimedia
+dev-qt/qtwebchannel
+dev-qt/qtwebsockets
+dev-qt/qtsvg
+dev-qt/qt5compat
+dev-qt/qtshadertools
+dev-qt/qtlocation
+dev-qt/qtconnectivity
+dev-qt/qtcharts
+dev-qt/qtspeech
+dev-qt/qtquick3d
+
+# Multimedia
+media-video/ffmpeg
+media-libs/opencv
+media-video/pipewire
+media-video/wireplumber
+media-libs/mesa
+
+# Heavy libraries
+sci-libs/vtk
+sci-libs/opencascade
+
+# Heavy applications
+media-gfx/gimp
+media-gfx/inkscape
+media-sound/ardour
+media-sound/musescore
+media-video/avidemux
 
 # Audio production stack
 media-sound/csound
