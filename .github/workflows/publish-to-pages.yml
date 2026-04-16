@@ -3,6 +3,12 @@ name: Publish to GitHub Pages
 on:
   workflow_dispatch:
   workflow_call:
+    inputs:
+      chain_id:
+        description: 'Build chain ID for cache key (passed by build workflow)'
+        required: false
+        type: string
+        default: ''
 
 # Only one publish job runs at a time to avoid index corruption
 concurrency:
@@ -24,15 +30,18 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      # Fetch existing GitHub Pages content so we can do an incremental update
-      - name: Fetch existing Pages content
-        run: |
-          mkdir -p /tmp/pages-site
-          # Try to download existing packages from Pages; ignore errors on first run
-          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          # We'll rebuild from all artifacts; existing packages that aren't
-          # in the current artifact set are preserved from the previous deployment.
-          echo "Pages URL: ${PAGES_URL}"
+      # Restore previously-published site from cache so that packages from
+      # earlier builds (or earlier attempts in a resume chain) are preserved.
+      - name: Restore existing Pages content from cache
+        uses: actions/cache/restore@v5
+        with:
+          path: /tmp/pages-site
+          key: pages-site-placeholder-never-matches
+          restore-keys: |
+            pages-site-
+
+      - name: Ensure site directory exists
+        run: mkdir -p /tmp/pages-site
 
       # Download all binpkg artifacts produced by the current or recent runs
       - name: Download all build artifacts
@@ -51,7 +60,7 @@ jobs:
           mkdir -p "$DEST"
 
           # Copy every .gpkg.tar (and optional .asc signatures) we found
-          find /tmp/artifacts -name '*.gpkg.tar' | while read -r pkg; do
+          find /tmp/artifacts -name '*.gpkg.tar' 2>/dev/null | while read -r pkg; do
             # Preserve category/name-version subdirectory structure
             # Artifacts are stored as category/name/name-version.gpkg.tar
             rel_dir="$(dirname "$pkg" | sed 's|.*/binpkgs-[^/]*/||')"
@@ -59,7 +68,7 @@ jobs:
             mkdir -p "$target"
             cp "$pkg" "$target/"
             # Copy matching .asc signature if present
-            [[ -f "${pkg}.asc" ]] && cp "${pkg}.asc" "$target/"
+            if [[ -f "${pkg}.asc" ]]; then cp "${pkg}.asc" "$target/"; fi
           done
 
           echo "Package tree:"
@@ -91,6 +100,13 @@ jobs:
           </body>
           </html>
           EOF
+
+      # Persist the assembled site so future publishes can merge incrementally
+      - name: Cache Pages content for future builds
+        uses: actions/cache/save@v5
+        with:
+          path: /tmp/pages-site
+          key: pages-site-${{ inputs.chain_id || github.run_id }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v6

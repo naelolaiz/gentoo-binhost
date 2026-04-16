@@ -1,0 +1,237 @@
+name: Build Packages
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight UTC
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Single package to build (leave empty to build all)'
+        required: false
+        default: ''
+      # Internal inputs used by the auto-resume mechanism.  Do not set manually.
+      _attempt:
+        description: '[internal] Resume attempt counter'
+        required: false
+        default: '1'
+      _chain_id:
+        description: '[internal] Stable ID linking resume runs together'
+        required: false
+        default: ''
+      _max_attempts:
+        description: '[internal] Safety cap on resume attempts'
+        required: false
+        default: '8'
+
+# Only one build runs at a time; new triggers queue instead of cancelling.
+concurrency:
+  group: build-packages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write          # needed for auto-resume re-trigger
+
+env:
+  # Our own binhost first (custom USE flags), then official Gentoo x86-64-v3 as fallback
+  BINHOST_URLS: >-
+    https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3
+    https://distfiles.gentoo.org/releases/amd64/binpackages/23.0/x86-64-v3/
+
+jobs:
+  # ─── Build ──────────────────────────────────────────────────────
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    container:
+      image: gentoo/stage3:latest
+      options: --privileged
+    env:
+      CCACHE_SIZE: 20G
+    outputs:
+      should_continue: ${{ steps.result.outputs.should_continue }}
+      chain_id: ${{ steps.meta.outputs.chain_id }}
+      next_attempt: ${{ steps.meta.outputs.next_attempt }}
+
+    steps:
+      - name: Set up build metadata
+        id: meta
+        run: |
+          ATTEMPT="${{ inputs._attempt || '1' }}"
+          CHAIN_ID="${{ inputs._chain_id || github.run_id }}"
+          MAX="${{ inputs._max_attempts || '8' }}"
+
+          # Validate numeric inputs
+          for name_val in "attempt:${ATTEMPT}" "max_attempts:${MAX}"; do
+            name="${name_val%%:*}"
+            val="${name_val##*:}"
+            if [[ ! "$val" =~ ^[1-9][0-9]*$ ]]; then
+              echo "::error::Invalid ${name}: '${val}' — must be a positive integer"
+              exit 1
+            fi
+          done
+          if [[ "$ATTEMPT" -gt "$MAX" ]]; then
+            echo "::error::attempt (${ATTEMPT}) exceeds max_attempts (${MAX})"
+            exit 1
+          fi
+
+          echo "attempt=${ATTEMPT}" >> "$GITHUB_OUTPUT"
+          echo "chain_id=${CHAIN_ID}" >> "$GITHUB_OUTPUT"
+          echo "next_attempt=$((ATTEMPT + 1))" >> "$GITHUB_OUTPUT"
+          if [[ "$ATTEMPT" -gt 1 ]]; then
+            echo "::notice::Auto-resumed build (attempt ${ATTEMPT}/${MAX}, chain ${CHAIN_ID})"
+          fi
+
+      - name: Validate package input
+        if: inputs.package != ''
+        run: |
+          PKG="${{ inputs.package }}"
+          if [[ ! "$PKG" =~ ^[a-zA-Z0-9._-]+/[a-zA-Z0-9._+-]+$ ]]; then
+            echo "::error::Invalid package name: ${PKG}"
+            echo "Expected format: category/package-name (e.g. dev-qt/qtwebengine)"
+            exit 1
+          fi
+
+      - uses: actions/checkout@v6
+
+      - name: Restore ccache
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/cache/ccache
+          key: ccache-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          restore-keys: |
+            ccache-${{ steps.meta.outputs.chain_id }}-
+            ccache-
+
+      - name: Import GPG signing key
+        run: |
+          if [[ -n "${GPG_PRIVATE_KEY:-}" ]]; then
+            echo "$GPG_PRIVATE_KEY" \
+              | gpg --batch --passphrase "${GPG_PASSPHRASE:-}" --import
+          fi
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Sync portage tree
+        run: |
+          emerge-webrsync --quiet 2>/dev/null \
+            || emerge --sync --quiet \
+            || emaint sync -a
+          eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+
+      - name: Install build tools
+        run: |
+          emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
+
+      - name: Restore build state from previous attempt
+        if: inputs._attempt && inputs._attempt != '1'
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          fail-on-cache-miss: false
+
+      - name: Build packages
+        id: build
+        run: |
+          set +e
+          bash scripts/build.sh \
+            --profile amd64-23.0-desktop-plasma-openrc \
+            ${{ inputs.package && format('--single-package {0}', inputs.package) || '--package-list packages/packages.txt' }} \
+            --binhost-url "${{ env.BINHOST_URLS }}" \
+            --state-dir /var/tmp/portage-state \
+            --max-build-time 330 \
+            ${{ (inputs._attempt || '1') != '1' && '--resume' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && '--sign' || '' }} \
+            ${{ secrets.GPG_PRIVATE_KEY != '' && format('--gpg-key {0}', secrets.GPG_KEY_FINGERPRINT) || '' }} \
+            --output-dir /tmp/binpkgs
+          BUILD_EXIT=$?
+          echo "exit_code=${BUILD_EXIT}" >> "$GITHUB_OUTPUT"
+          if [[ $BUILD_EXIT -ne 0 && $BUILD_EXIT -ne 42 ]]; then
+            exit $BUILD_EXIT
+          fi
+
+      - name: Save build state for resume
+        if: always() && steps.build.outputs.exit_code == '42'
+        uses: actions/cache/save@v5
+        with:
+          path: /var/tmp/portage-state
+          key: build-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.next_attempt }}
+
+      - name: Save ccache
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: /var/cache/ccache
+          key: ccache-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+
+      - name: Upload packages
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          path: |
+            /tmp/binpkgs/**/*.gpkg.tar
+            /tmp/binpkgs/**/*.asc
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Determine if build should continue
+        id: result
+        if: always()
+        run: |
+          EXIT="${{ steps.build.outputs.exit_code || '1' }}"
+          MAX="${{ inputs._max_attempts || '8' }}"
+          NEXT="${{ steps.meta.outputs.next_attempt }}"
+          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" ]]; then
+            echo "should_continue=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_continue=false" >> "$GITHUB_OUTPUT"
+          fi
+          if [[ "$EXIT" == "42" && "$NEXT" -gt "$MAX" ]]; then
+            echo "::warning::Build did not complete after ${MAX} attempts. Consider increasing _max_attempts."
+          fi
+
+  # ─── Publish to GitHub Pages ────────────────────────────────────
+  publish:
+    needs: build
+    if: always() && !cancelled()
+    uses: ./.github/workflows/publish-to-pages.yml
+    with:
+      chain_id: ${{ needs.build.outputs.chain_id }}
+    secrets: inherit
+
+  # ─── Auto-resume: re-trigger if the build timed out ─────────────
+  continue:
+    needs: [build, publish]
+    if: always() && !cancelled() && needs.build.outputs.should_continue == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Re-trigger build to continue where it left off
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NEXT="${{ needs.build.outputs.next_attempt }}"
+          CHAIN_ID="${{ needs.build.outputs.chain_id }}"
+          MAX="${{ inputs._max_attempts || '8' }}"
+          PACKAGE="${{ inputs.package }}"
+          echo "Resuming build (attempt ${NEXT}/${MAX}, chain ${CHAIN_ID})"
+          PAYLOAD="$(jq -n \
+            --arg ref "${{ github.ref_name }}" \
+            --arg package "$PACKAGE" \
+            --arg attempt "$NEXT" \
+            --arg chain_id "$CHAIN_ID" \
+            --arg max "$MAX" \
+            '{ref: $ref, inputs: {package: $package, _attempt: $attempt, _chain_id: $chain_id, _max_attempts: $max}}'
+          )"
+          curl -f -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Content-Type: application/json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/build-packages.yml/dispatches" \
+            --data "$PAYLOAD"
