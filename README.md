@@ -79,8 +79,8 @@ The CI runs weekly (Sunday) and does what you'd do on your own system:
 3. **Publish** — deploy to GitHub Pages
 
 If the build times out (GitHub Actions has a 6 h limit), it saves state, publishes
-whatever was built, and **automatically re-triggers** itself for the next phase.
-This repeats until all packages complete (up to 8 phases ≈ 44 h of build time).
+whatever was built, and **automatically re-triggers** itself to continue.
+This repeats until all packages complete (up to 8 attempts ≈ 44 h of build time).
 
 Each build uses ccache to speed up incremental rebuilds.
 
