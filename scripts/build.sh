@@ -279,6 +279,13 @@ build_packages() {
   local emerge_flags=(--buildpkg --usepkg --keep-going --verbose)
   if [[ -n "$BINHOST_URL" ]]; then
     emerge_flags+=(--getbinpkg)
+    # Binary packages on the binhost may have been built against older sub-slot
+    # versions (e.g. :6/6.10.2=).  When newer ebuilds are available, the slot
+    # operator deps from those binaries pull in the old versions alongside the
+    # new ones, causing unresolvable slot conflicts.  Ignoring built slot
+    # operator deps lets Portage prefer the latest ebuilds and rebuild
+    # dependents as needed instead of mixing binary and source versions.
+    emerge_flags+=(--ignore-built-slot-operator-deps=y)
   fi
 
   if [[ -n "$MAX_BUILD_TIME" ]]; then
