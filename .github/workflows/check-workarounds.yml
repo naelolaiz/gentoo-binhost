@@ -136,7 +136,10 @@ jobs:
             echo "::notice::media-sound/musescore not found in portage tree — skipping"
             exit 0
           fi
-          if grep -rql 'at-most-one-of.*jack.*pipewire\|at-most-one-of.*pipewire.*jack' \
+          # Use -z (null-delimited, i.e. whole file as single record) so the
+          # check still works when REQUIRED_USE spans multiple lines in the
+          # ebuild. The previous single-line regex produced a false negative.
+          if grep -rqlz 'at-most-one-of[^)]*\bjack\b[^)]*\bpipewire\b\|at-most-one-of[^)]*\bpipewire\b[^)]*\bjack\b' \
                "$MUSESCORE_DIR"/ --include='*.ebuild'; then
             echo "status=needed" >> "$GITHUB_OUTPUT"
             echo "::notice::musescore -jack workaround still needed (at-most-one-of jack pipewire constraint exists)"
