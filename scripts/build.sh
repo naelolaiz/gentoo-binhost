@@ -155,11 +155,46 @@ apply_profile() {
   fi
 }
 
+# ---------- progress accounting ----------
+# Count fully-built *.gpkg.tar files in /var/cache/binpkgs (where Portage
+# always writes finished binpkgs).  Used to detect "exit 42 with zero new
+# packages" so the workflow can stop wasting 5-hour resume slots on a
+# permanently stuck build.
+count_binpkgs() {
+  if [[ -d /var/cache/binpkgs ]]; then
+    find /var/cache/binpkgs -name '*.gpkg.tar' 2>/dev/null | wc -l
+  else
+    echo 0
+  fi
+}
+
+emit_progress_summary() {
+  local before="$1" after="$2"
+  local delta=$(( after - before ))
+  log "Build progress: ${before} → ${after} binpkgs (delta: ${delta})"
+  # GitHub Actions notice — bubbles up to the run summary at the top
+  echo "::notice title=Build progress::${delta} new package(s) built this attempt (total: ${after}, was: ${before})"
+  if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+    {
+      echo "binpkg_count_before=${before}"
+      echo "binpkg_count_after=${after}"
+      echo "new_package_count=${delta}"
+    } >> "$GITHUB_OUTPUT"
+  fi
+}
+
 # ---------- ccache ----------
 setup_ccache() {
+  # Export CCACHE_DIR so every `ccache …` invocation in this shell (and any
+  # child processes) targets the same directory that the workflow restores
+  # and saves via actions/cache.  Without this, ccache falls back to
+  # ~/.cache/ccache (e.g. /github/home/.cache/ccache under the GHA container)
+  # and the restored cache at /var/cache/ccache is effectively unused, which
+  # is exactly the symptom we observed (cache size 0.0 GB at every attempt).
+  export CCACHE_DIR="${CCACHE_DIR:-/var/cache/ccache}"
   if command -v ccache &>/dev/null; then
-    log "Configuring ccache (dir: ${CCACHE_DIR:-/var/cache/ccache})"
-    mkdir -p "${CCACHE_DIR:-/var/cache/ccache}"
+    log "Configuring ccache (dir: ${CCACHE_DIR})"
+    mkdir -p "${CCACHE_DIR}"
     ccache --max-size="${CCACHE_SIZE:-20G}" 2>/dev/null || true
     # Use file content for compiler identification (more cache hits across runs)
     ccache --set-config=compiler_check=content 2>/dev/null || true
@@ -370,12 +405,16 @@ show_ccache_stats
 
 # Collect and sign whatever binpkgs were produced, even on a timed-out build,
 # so partial results are published and later phases don't have to rebuild them.
+BINPKGS_BEFORE="$(count_binpkgs)"
+log "Binpkgs present before this attempt: ${BINPKGS_BEFORE}"
 build_packages || BUILD_RC=$?
 BUILD_RC=${BUILD_RC:-0}
+BINPKGS_AFTER="$(count_binpkgs)"
 
 collect_packages
 sign_packages
 show_ccache_stats
+emit_progress_summary "${BINPKGS_BEFORE}" "${BINPKGS_AFTER}"
 
 if [[ $BUILD_RC -eq 42 ]]; then
   log "Build timed out (state saved); exiting 42 so the workflow can resume in the next phase."
