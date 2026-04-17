@@ -317,8 +317,8 @@ sync_tree() {
   log "Syncing portage tree"
   # Try methods in order of preference; log which one actually succeeds so
   # silent fallbacks (e.g. webrsync mirror outage) are visible in CI logs.
-  # We swallow stderr only on the *intermediate* attempts; the final attempt
-  # runs unguarded so its failure surfaces under set -e.
+  # Stderr is preserved on every attempt — earlier "2>/dev/null" suppression
+  # made it impossible to tell *why* a fallback was triggered.
   if emerge-webrsync --quiet; then
     log "  Synced via emerge-webrsync"
   elif emerge --sync --quiet; then
