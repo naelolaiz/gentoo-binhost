@@ -50,6 +50,12 @@ jobs:
       options: --privileged
     env:
       CCACHE_SIZE: 20G
+      # Pin CCACHE_DIR globally so every step (build.sh, post-build stats,
+      # etc.) targets the same directory that the workflow caches.  Without
+      # this, ccache silently falls back to ~/.cache/ccache and the restored
+      # /var/cache/ccache is unused — observed as "Cache size (GB): 0.0"
+      # at the start of every attempt despite a successful cache restore.
+      CCACHE_DIR: /var/cache/ccache
     outputs:
       should_continue: ${{ steps.result.outputs.should_continue }}
       chain_id: ${{ steps.meta.outputs.chain_id }}
@@ -117,10 +123,18 @@ jobs:
 
       - name: Sync portage tree
         run: |
-          emerge-webrsync --quiet 2>/dev/null \
-            || emerge --sync --quiet \
-            || emaint sync -a
-          eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+          # Mirror the fallback chain in scripts/build.sh, but log which
+          # method succeeded so silent fallbacks are observable.  No `|| true`
+          # on `eselect profile set` — wrong/missing profile must fail RED.
+          if emerge-webrsync --quiet; then
+            echo "Synced via emerge-webrsync"
+          elif emerge --sync --quiet; then
+            echo "Synced via emerge --sync (webrsync failed; see stderr above)"
+          else
+            echo "Falling back to emaint sync"
+            emaint sync -a
+          fi
+          eselect profile set default/linux/amd64/23.0/desktop/plasma
 
       - name: Install build tools
         run: |
@@ -186,10 +200,17 @@ jobs:
           EXIT="${{ steps.build.outputs.exit_code || '1' }}"
           MAX="${{ inputs._max_attempts || '8' }}"
           NEXT="${{ steps.meta.outputs.next_attempt }}"
-          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" ]]; then
+          NEW_PKGS="${{ steps.build.outputs.new_package_count || '0' }}"
+          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" && "$NEW_PKGS" -gt 0 ]]; then
             echo "should_continue=true" >> "$GITHUB_OUTPUT"
           else
             echo "should_continue=false" >> "$GITHUB_OUTPUT"
+          fi
+          if [[ "$EXIT" == "42" && "$NEW_PKGS" -le 0 ]]; then
+            # Resuming would just burn another 5h producing nothing.  Better to
+            # surface the stall now so a human can investigate the stuck ebuild.
+            echo "::error title=Zero-progress timeout::Build attempt ${{ steps.meta.outputs.attempt }} timed out (exit 42) without producing any new binary packages. Auto-resume disabled for this chain to avoid wasting CI minutes; investigate the stuck ebuild."
+            exit 1
           fi
           if [[ "$EXIT" == "42" && "$NEXT" -gt "$MAX" ]]; then
             echo "::warning::Build did not complete after ${MAX} attempts. Consider increasing _max_attempts."

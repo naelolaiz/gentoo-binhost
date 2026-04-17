@@ -41,8 +41,13 @@ PYEOF
 else
   log "Generating Packages index manually"
 
-  # Write header
+  # Write header.  VERSION: 2 is required by modern Portage (>=2.3.51); a
+  # missing field produces "Binhost package index version is not supported:
+  # 'None'" warnings on the client and may prevent some clients from using
+  # the binhost at all.
   cat > "$INDEX_FILE" <<EOF
+ARCH: amd64
+VERSION: 2
 TIMESTAMP: $(date -u +%s)
 REPO: gentoo-binhost
 

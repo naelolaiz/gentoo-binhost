@@ -101,6 +101,13 @@ fi
 apply_profile() {
   log "Applying profile: ${PROFILE}"
 
+  # Use nullglob so an empty profile subdirectory expands to zero arguments
+  # instead of triggering a literal `cp /…/* …` error.  We deliberately do NOT
+  # silence cp's stderr or `|| true` it: if cp fails for a real reason
+  # (permission denied, broken mount, etc.) the job must fail RED instead of
+  # silently building with no USE overrides applied.
+  shopt -s nullglob
+
   # make.conf
   if [[ -f "${PROFILE_DIR}/make.conf" ]]; then
     cp "${PROFILE_DIR}/make.conf" /etc/portage/make.conf
@@ -110,33 +117,49 @@ apply_profile() {
   # package.use
   mkdir -p /etc/portage/package.use
   if [[ -d "${PROFILE_DIR}/package.use" ]]; then
-    cp "${PROFILE_DIR}/package.use/"* /etc/portage/package.use/ 2>/dev/null || true
-    log "  Installed package.use files"
+    local _files=( "${PROFILE_DIR}/package.use/"* )
+    if (( ${#_files[@]} > 0 )); then
+      cp "${_files[@]}" /etc/portage/package.use/
+      log "  Installed ${#_files[@]} package.use file(s)"
+    fi
   fi
 
   # package.accept_keywords
   mkdir -p /etc/portage/package.accept_keywords
   if [[ -d "${PROFILE_DIR}/package.accept_keywords" ]]; then
-    cp "${PROFILE_DIR}/package.accept_keywords/"* /etc/portage/package.accept_keywords/ 2>/dev/null || true
-    log "  Installed package.accept_keywords files"
+    local _files=( "${PROFILE_DIR}/package.accept_keywords/"* )
+    if (( ${#_files[@]} > 0 )); then
+      cp "${_files[@]}" /etc/portage/package.accept_keywords/
+      log "  Installed ${#_files[@]} package.accept_keywords file(s)"
+    fi
   fi
 
   # package.mask
   mkdir -p /etc/portage/package.mask
   if [[ -d "${PROFILE_DIR}/package.mask" ]]; then
-    cp "${PROFILE_DIR}/package.mask/"* /etc/portage/package.mask/ 2>/dev/null || true
-    log "  Installed package.mask files"
+    local _files=( "${PROFILE_DIR}/package.mask/"* )
+    if (( ${#_files[@]} > 0 )); then
+      cp "${_files[@]}" /etc/portage/package.mask/
+      log "  Installed ${#_files[@]} package.mask file(s)"
+    fi
   fi
 
   # package.license
   mkdir -p /etc/portage/package.license
   if [[ -d "${PROFILE_DIR}/package.license" ]]; then
-    cp "${PROFILE_DIR}/package.license/"* /etc/portage/package.license/ 2>/dev/null || true
-    log "  Installed package.license files"
+    local _files=( "${PROFILE_DIR}/package.license/"* )
+    if (( ${#_files[@]} > 0 )); then
+      cp "${_files[@]}" /etc/portage/package.license/
+      log "  Installed ${#_files[@]} package.license file(s)"
+    fi
   fi
 
-  # Set the Gentoo profile
-  eselect profile set default/linux/amd64/23.0/desktop/plasma || true
+  shopt -u nullglob
+
+  # Set the Gentoo profile.  No `|| true`: a typo or missing profile is a
+  # configuration bug that must fail the job, not silently leave the previous
+  # (or default stage3) profile active and produce mysteriously wrong builds.
+  eselect profile set default/linux/amd64/23.0/desktop/plasma
   log "  eselect profile set"
 
   # Portage's config parser doesn't support $(cmd) command substitutions.
@@ -155,22 +178,63 @@ apply_profile() {
   fi
 }
 
+# ---------- progress accounting ----------
+# Count fully-built *.gpkg.tar files in /var/cache/binpkgs (where Portage
+# always writes finished binpkgs).  Used to detect "exit 42 with zero new
+# packages" so the workflow can stop wasting 5-hour resume slots on a
+# permanently stuck build.
+count_binpkgs() {
+  if [[ -d /var/cache/binpkgs ]]; then
+    find /var/cache/binpkgs -name '*.gpkg.tar' 2>/dev/null | wc -l
+  else
+    echo 0
+  fi
+}
+
+emit_progress_summary() {
+  local before="$1" after="$2"
+  local delta=$(( after - before ))
+  log "Build progress: ${before} → ${after} binpkgs (delta: ${delta})"
+  # GitHub Actions notice — bubbles up to the run summary at the top
+  echo "::notice title=Build progress::${delta} new package(s) built this attempt (total: ${after}, was: ${before})"
+  if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+    {
+      echo "binpkg_count_before=${before}"
+      echo "binpkg_count_after=${after}"
+      echo "new_package_count=${delta}"
+    } >> "$GITHUB_OUTPUT"
+  fi
+}
+
 # ---------- ccache ----------
 setup_ccache() {
+  # Export CCACHE_DIR so every `ccache …` invocation in this shell (and any
+  # child processes) targets the same directory that the workflow restores
+  # and saves via actions/cache.  Without this, ccache falls back to
+  # ~/.cache/ccache (e.g. /github/home/.cache/ccache under the GHA container)
+  # and the restored cache at /var/cache/ccache is effectively unused, which
+  # is exactly the symptom we observed (cache size 0.0 GB at every attempt).
+  export CCACHE_DIR="${CCACHE_DIR:-/var/cache/ccache}"
   if command -v ccache &>/dev/null; then
-    log "Configuring ccache (dir: ${CCACHE_DIR:-/var/cache/ccache})"
-    mkdir -p "${CCACHE_DIR:-/var/cache/ccache}"
-    ccache --max-size="${CCACHE_SIZE:-20G}" 2>/dev/null || true
+    log "Configuring ccache (dir: ${CCACHE_DIR})"
+    mkdir -p "${CCACHE_DIR}"
+    # Do NOT silence these — if ccache config writes fail (bad CCACHE_DIR
+    # perms, corrupt config, etc.) the job must fail RED.  Suppressing
+    # stderr+exit here is exactly what hid the original "cache_dir defaulted
+    # to ~/.cache/ccache" bug for months.
+    ccache --max-size="${CCACHE_SIZE:-20G}"
     # Use file content for compiler identification (more cache hits across runs)
-    ccache --set-config=compiler_check=content 2>/dev/null || true
+    ccache --set-config=compiler_check=content
     # Enable compression to save cache space
-    ccache --set-config=compression=true 2>/dev/null || true
-    ccache --set-config=compression_level=1 2>/dev/null || true
+    ccache --set-config=compression=true
+    ccache --set-config=compression_level=1
     # Ignore working directory in cache keys (better hit rate across jobs)
-    ccache --set-config=hash_dir=false 2>/dev/null || true
-    ccache --zero-stats 2>/dev/null || true
+    ccache --set-config=hash_dir=false
+    ccache --zero-stats
     log "ccache configuration:"
-    ccache --show-config 2>/dev/null || true
+    # --show-config is informational; allow non-zero exit but keep stderr
+    # visible so any "config file unreadable" message reaches the log.
+    ccache --show-config || log "  (ccache --show-config failed; see stderr above)"
   fi
 }
 
@@ -178,7 +242,8 @@ setup_ccache() {
 show_ccache_stats() {
   if command -v ccache &>/dev/null; then
     log "ccache statistics:"
-    ccache --show-stats 2>/dev/null || true
+    # Informational; tolerate non-zero exit but do not hide stderr.
+    ccache --show-stats || log "  (ccache --show-stats failed; see stderr above)"
   fi
 }
 
@@ -250,11 +315,19 @@ sync_tree() {
     return 0
   fi
   log "Syncing portage tree"
-  # emerge-webrsync is faster in CI (downloads a compressed snapshot over HTTPS)
-  # Fall back to emerge --sync (rsync) or emaint sync if webrsync is unavailable
-  emerge-webrsync --quiet 2>/dev/null \
-    || emerge --sync --quiet \
-    || emaint sync -a
+  # Try methods in order of preference; log which one actually succeeds so
+  # silent fallbacks (e.g. webrsync mirror outage) are visible in CI logs.
+  # Stderr is preserved on every attempt — earlier "2>/dev/null" suppression
+  # made it impossible to tell *why* a fallback was triggered.
+  if emerge-webrsync --quiet; then
+    log "  Synced via emerge-webrsync"
+  elif emerge --sync --quiet; then
+    log "  Synced via emerge --sync (webrsync failed; see stderr above)"
+  else
+    log "  Falling back to emaint sync (webrsync and rsync both failed)"
+    emaint sync -a
+    log "  Synced via emaint"
+  fi
 }
 
 # ---------- build ----------
@@ -370,12 +443,16 @@ show_ccache_stats
 
 # Collect and sign whatever binpkgs were produced, even on a timed-out build,
 # so partial results are published and later phases don't have to rebuild them.
+BINPKGS_BEFORE="$(count_binpkgs)"
+log "Binpkgs present before this attempt: ${BINPKGS_BEFORE}"
 build_packages || BUILD_RC=$?
 BUILD_RC=${BUILD_RC:-0}
+BINPKGS_AFTER="$(count_binpkgs)"
 
 collect_packages
 sign_packages
 show_ccache_stats
+emit_progress_summary "${BINPKGS_BEFORE}" "${BINPKGS_AFTER}"
 
 if [[ $BUILD_RC -eq 42 ]]; then
   log "Build timed out (state saved); exiting 42 so the workflow can resume in the next phase."
