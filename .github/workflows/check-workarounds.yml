@@ -126,6 +126,25 @@ jobs:
             echo "::warning::python:3.12 -bluetooth workaround may no longer be needed"
           fi
 
+      # ── 6. musescore -jack ─────────────────────────────────────────
+      - name: "Check: musescore -jack (REQUIRED_USE: at-most-one-of jack pipewire)"
+        id: check-musescore-jack
+        run: |
+          MUSESCORE_DIR="/var/db/repos/gentoo/media-sound/musescore"
+          if [ ! -d "$MUSESCORE_DIR" ]; then
+            echo "status=unknown" >> "$GITHUB_OUTPUT"
+            echo "::notice::media-sound/musescore not found in portage tree — skipping"
+            exit 0
+          fi
+          if grep -rql 'at-most-one-of.*jack.*pipewire\|at-most-one-of.*pipewire.*jack' \
+               "$MUSESCORE_DIR"/ --include='*.ebuild'; then
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::musescore -jack workaround still needed (at-most-one-of jack pipewire constraint exists)"
+          else
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::musescore -jack workaround may no longer be needed"
+          fi
+
       # ── 7. faac MPEG-4 license ────────────────────────────────────
       - name: "Check: faac MPEG-4 license (avidemux → avidemux-plugins[aac] → faac)"
         id: check-faac-license
@@ -183,6 +202,9 @@ jobs:
           fi
           if [ "${{ steps.check-python-bluetooth.outputs.status }}" = "removable" ]; then
             REMOVABLE="${REMOVABLE}python-bluetooth,"
+          fi
+          if [ "${{ steps.check-musescore-jack.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}musescore-jack,"
           fi
           if [ "${{ steps.check-faac-license.outputs.status }}" = "removable" ]; then
             REMOVABLE="${REMOVABLE}faac-license,"
@@ -268,6 +290,18 @@ jobs:
                   '`dev-lang/python` **no longer appears to have a `bluetooth` USE flag**.',
                   '',
                   'Please verify and remove the `dev-lang/python:3.12 -bluetooth` line.',
+                ].join('\n'),
+              },
+              'musescore-jack': {
+                title: 'Remove musescore -jack workaround — REQUIRED_USE constraint may no longer exist',
+                body: [
+                  'The `-jack` USE flag on `media-sound/musescore` in `package.use/00-profile-defaults`',
+                  'was added because musescore has `REQUIRED_USE: at-most-one-of ( jack pipewire )`',
+                  'and both flags are globally enabled in `make.conf`.',
+                  '',
+                  '`media-sound/musescore` **no longer appears to have the `at-most-one-of ( jack pipewire )` constraint**.',
+                  '',
+                  'Please verify and remove the `media-sound/musescore -jack` line.',
                 ].join('\n'),
               },
               'faac-license': {
