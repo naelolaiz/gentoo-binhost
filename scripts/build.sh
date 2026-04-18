@@ -298,24 +298,35 @@ save_build_state() {
   fi
 }
 
-# Returns 0 if mtimedb has a non-empty "resume" list (i.e. there is something
-# for `emerge --resume` to continue), 1 otherwise.  mtimedb has been plain
-# JSON since Portage 2.1.x, so no Python/Portage import is needed.
+# Returns 0 if mtimedb has a non-empty "resume" list, 1 if there is no list
+# (or the file doesn't exist).  Any *other* failure (unreadable file,
+# malformed JSON, etc.) is fatal — we deliberately do NOT swallow it: a
+# silent "no resume list" misdiagnosis would throw away an in-flight
+# build's progress without anyone noticing.  mtimedb has been plain JSON
+# since Portage 2.1.x, so a parse failure here is a real problem worth
+# stopping the job for.
 has_resume_list() {
   [[ -f "$MTIMEDB_PATH" ]] || return 1
-  # Discard stdout (we only care about exit code) but KEEP stderr so a
-  # malformed/upgraded mtimedb format yields a visible Python traceback in
-  # the CI log instead of a silent "no resume list" misdiagnosis.
-  python3 - "$MTIMEDB_PATH" >/dev/null <<'PYEOF'
-import json, sys
+  local rc=0
+  python3 - "$MTIMEDB_PATH" >/dev/null <<'PYEOF' || rc=$?
+import json, sys, traceback
 try:
     with open(sys.argv[1]) as f:
         db = json.load(f)
 except Exception:
-    sys.exit(1)
+    # Print the full traceback to stderr so the CI log shows exactly what
+    # went wrong, then exit with a distinct code so the bash caller can
+    # tell "parse failure" apart from "no resume list".
+    traceback.print_exc()
+    sys.exit(2)
 resume = db.get("resume") or db.get("resume_backup") or {}
 sys.exit(0 if resume.get("mergelist") else 1)
 PYEOF
+  case "$rc" in
+    0) return 0 ;;
+    1) return 1 ;;
+    *) die "Failed to parse ${MTIMEDB_PATH} (python exit ${rc}); refusing to silently skip --resume" ;;
+  esac
 }
 
 # ---------- binpkg trust ----------
@@ -430,11 +441,15 @@ build_packages() {
   if [[ "$RESUME" == true ]] && has_resume_list; then
     log "Found saved emerge resume list; continuing it before starting fresh emerge"
     local resume_flags=(--keep-going --verbose)
-    if ! run_emerge_with_deadline "$deadline" --resume --skipfirst "${resume_flags[@]}"; then
-      local rc=$?
-      if [[ $rc -eq 42 ]]; then
-        return 42
-      fi
+    # Capture the real exit code: `if ! cmd; then rc=$?` is a known bash
+    # footgun — inside the then-block, $? is the status of the negated
+    # condition (always 0), not of cmd.  Use `cmd || rc=$?` instead so the
+    # 42 ("timed out, state saved") signal actually propagates.
+    local rc=0
+    run_emerge_with_deadline "$deadline" --resume --skipfirst "${resume_flags[@]}" || rc=$?
+    if [[ $rc -eq 42 ]]; then
+      return 42
+    elif [[ $rc -ne 0 ]]; then
       log "  emerge --resume failed (rc=${rc}); falling through to full emerge to retry"
     fi
   fi
@@ -528,7 +543,10 @@ collect_packages() {
 # stale gpkg that nothing on the binhost will ever serve again).
 prune_old_binpkgs() {
   local script="${SCRIPT_DIR}/prune-old-binpkgs.py"
-  [[ -x "$script" || -f "$script" ]] || { log "Pruner not found at ${script}, skipping"; return 0; }
+  # The pruner ships next to this script in the same repo.  If it's missing,
+  # that's a packaging bug, not something to silently work around — without
+  # it the Pages site will eventually exceed 1 GiB and become unreachable.
+  [[ -f "$script" ]] || die "Pruner not found at ${script}"
   local dirs=()
   [[ -d /var/cache/binpkgs ]] && dirs+=(/var/cache/binpkgs)
   if [[ "$OUTPUT_DIR" != "/var/cache/binpkgs" && -d "$OUTPUT_DIR" ]]; then
