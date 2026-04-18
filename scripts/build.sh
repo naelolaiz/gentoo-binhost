@@ -248,27 +248,74 @@ show_ccache_stats() {
 }
 
 # ---------- build state ----------
+# Portage's resume list lives in /var/cache/edb/mtimedb (key: "resume").
+# emerge --resume reads it to continue where SIGTERM interrupted us.
+MTIMEDB_PATH="/var/cache/edb/mtimedb"
+
 restore_build_state() {
   [[ "$RESUME" == true ]] || return 0
-  if [[ -d "$STATE_DIR" ]] && [[ -n "$(ls -A "$STATE_DIR" 2>/dev/null)" ]]; then
-    log "Restoring build state from ${STATE_DIR}"
+  if [[ ! -d "$STATE_DIR" ]] || [[ -z "$(ls -A "$STATE_DIR" 2>/dev/null)" ]]; then
+    log "No saved build state found at ${STATE_DIR}, starting fresh"
+    return 0
+  fi
+  log "Restoring build state from ${STATE_DIR}"
+
+  # WORKDIRs:
+  #   * new layout: STATE_DIR/portage/  (subdir, sits next to STATE_DIR/mtimedb)
+  #   * legacy layout (pre-mtimedb support): STATE_DIR was a flat mirror of
+  #     /var/tmp/portage with no subdirs.  Detect by absence of *both* the
+  #     portage/ subdir and a mtimedb sibling.
+  if [[ -d "${STATE_DIR}/portage" ]]; then
+    mkdir -p /var/tmp/portage
+    rsync -a --delete "${STATE_DIR}/portage/" /var/tmp/portage/
+    log "  Restored /var/tmp/portage (WORKDIRs, new layout)"
+  elif [[ ! -f "${STATE_DIR}/mtimedb" ]]; then
     mkdir -p /var/tmp/portage
     rsync -a --delete "${STATE_DIR}/" /var/tmp/portage/
-    log "  Build state restored"
-  else
-    log "No saved build state found at ${STATE_DIR}, starting fresh"
+    log "  Restored /var/tmp/portage (WORKDIRs, legacy flat layout)"
+  fi
+
+  # mtimedb (independent of WORKDIRs — restored whenever present):
+  if [[ -f "${STATE_DIR}/mtimedb" ]]; then
+    mkdir -p "$(dirname "$MTIMEDB_PATH")"
+    cp "${STATE_DIR}/mtimedb" "$MTIMEDB_PATH"
+    log "  Restored mtimedb (emerge --resume list)"
   fi
 }
 
 save_build_state() {
   log "Saving build state to ${STATE_DIR}"
-  mkdir -p "$STATE_DIR"
+  mkdir -p "${STATE_DIR}/portage"
   if [[ -d /var/tmp/portage ]] && [[ -n "$(ls -A /var/tmp/portage 2>/dev/null)" ]]; then
-    rsync -a --delete /var/tmp/portage/ "${STATE_DIR}/"
-    log "  Build state saved"
+    rsync -a --delete /var/tmp/portage/ "${STATE_DIR}/portage/"
+    log "  Saved /var/tmp/portage (WORKDIRs)"
   else
     log "  No intermediate build state found in /var/tmp/portage"
   fi
+  if [[ -f "$MTIMEDB_PATH" ]]; then
+    cp "$MTIMEDB_PATH" "${STATE_DIR}/mtimedb"
+    log "  Saved mtimedb (emerge --resume list)"
+  fi
+}
+
+# Returns 0 if mtimedb has a non-empty "resume" list (i.e. there is something
+# for `emerge --resume` to continue), 1 otherwise.  mtimedb has been plain
+# JSON since Portage 2.1.x, so no Python/Portage import is needed.
+has_resume_list() {
+  [[ -f "$MTIMEDB_PATH" ]] || return 1
+  # Discard stdout (we only care about exit code) but KEEP stderr so a
+  # malformed/upgraded mtimedb format yields a visible Python traceback in
+  # the CI log instead of a silent "no resume list" misdiagnosis.
+  python3 - "$MTIMEDB_PATH" >/dev/null <<'PYEOF'
+import json, sys
+try:
+    with open(sys.argv[1]) as f:
+        db = json.load(f)
+except Exception:
+    sys.exit(1)
+resume = db.get("resume") or db.get("resume_backup") or {}
+sys.exit(0 if resume.get("mergelist") else 1)
+PYEOF
 }
 
 # ---------- binpkg trust ----------
@@ -361,51 +408,92 @@ build_packages() {
     emerge_flags+=(--ignore-built-slot-operator-deps=y)
   fi
 
+  # Compute a single deadline shared between the optional `emerge --resume`
+  # phase and the main emerge invocation, so a long-running resume can't
+  # starve the main build (or vice-versa).  When --max-build-time is unset,
+  # DEADLINE=0 disables the timer entirely.
+  local deadline=0
   if [[ -n "$MAX_BUILD_TIME" ]]; then
-    # Run emerge in background and monitor elapsed time.
-    # Stop gracefully at 90% of the limit, save state, return 42.
-    local limit_secs=$(( MAX_BUILD_TIME * 60 ))
-    local warn_secs=$(( limit_secs * 9 / 10 ))
+    deadline=$(( SECONDS + MAX_BUILD_TIME * 60 ))
+  fi
 
-    # Launch emerge in its own process group so we can kill the whole tree
-    # (emerge spawns compiler subprocesses that must also be terminated)
-    setsid emerge \
-      "${emerge_flags[@]}" \
-      "${packages[@]}" &
-    local emerge_pid=$!
-    local start_time=$SECONDS
-
-    while kill -0 "$emerge_pid" 2>/dev/null; do
-      sleep 30
-      local elapsed=$(( SECONDS - start_time ))
-      if [[ $elapsed -ge $warn_secs ]]; then
-        log "Approaching time limit (${elapsed}s elapsed / ${limit_secs}s limit), stopping emerge"
-        # Send SIGTERM to the entire process group
-        kill -TERM -- -${emerge_pid} 2>/dev/null || true
-        # Wait up to 60 seconds for graceful exit, then force-kill the group
-        local kill_wait=0
-        while kill -0 "$emerge_pid" 2>/dev/null && [[ $kill_wait -lt 60 ]]; do
-          sleep 5
-          kill_wait=$(( kill_wait + 5 ))
-        done
-        if kill -0 "$emerge_pid" 2>/dev/null; then
-          log "  Emerge did not exit after SIGTERM, sending SIGKILL to process group"
-          kill -KILL -- -${emerge_pid} 2>/dev/null || true
-        fi
-        wait "$emerge_pid" 2>/dev/null || true
-        save_build_state
-        show_ccache_stats
-        log "Build state saved; returning 42 (timed out, state saved)"
+  # If we have a saved emerge resume list (from a previous SIGTERM), continue
+  # it first.  --skipfirst drops the package that was actively building when
+  # we were killed: its WORKDIR is almost certainly inconsistent after the
+  # SIGKILL fallback, and trying to reuse it tends to fail confusingly.
+  # If --resume has nothing to do (empty/stale list) we just fall through.
+  #
+  # emerge(1) only honours a small subset of options together with --resume
+  # (see "USING RESUME" — most action-flags like --buildpkg/--usepkg are
+  # baked into the saved mergelist already).  Pass only flags that affect
+  # *how* the resume runs, not *what* it builds.
+  if [[ "$RESUME" == true ]] && has_resume_list; then
+    log "Found saved emerge resume list; continuing it before starting fresh emerge"
+    local resume_flags=(--keep-going --verbose)
+    if ! run_emerge_with_deadline "$deadline" --resume --skipfirst "${resume_flags[@]}"; then
+      local rc=$?
+      if [[ $rc -eq 42 ]]; then
         return 42
       fi
-    done
-
-    wait "$emerge_pid"
-  else
-    emerge \
-      "${emerge_flags[@]}" \
-      "${packages[@]}"
+      log "  emerge --resume failed (rc=${rc}); falling through to full emerge to retry"
+    fi
   fi
+
+  run_emerge_with_deadline "$deadline" "${emerge_flags[@]}" "${packages[@]}"
+}
+
+# run_emerge_with_deadline <deadline_secs> <emerge args...>
+#   deadline_secs == 0  -> no time limit (run to completion)
+#   deadline_secs > 0   -> SIGTERM emerge at 90% of remaining time, save
+#                          state, return 42; SIGKILL after a 60s grace.
+# Returns emerge's own exit code, or 42 on a timed-out save-and-resume.
+run_emerge_with_deadline() {
+  local deadline="$1"; shift
+  if [[ "$deadline" -eq 0 ]]; then
+    emerge "$@"
+    return $?
+  fi
+
+  local now=$SECONDS
+  if [[ $deadline -le $now ]]; then
+    log "Time budget exhausted before starting emerge; saving state and returning 42"
+    save_build_state
+    return 42
+  fi
+
+  local remaining=$(( deadline - now ))
+  # Stop at 90% of the *remaining* budget so we always leave headroom for
+  # save_build_state, ccache flush, artifact upload, etc.
+  local warn_secs=$(( remaining * 9 / 10 ))
+
+  setsid emerge "$@" &
+  local emerge_pid=$!
+  local start_time=$SECONDS
+
+  while kill -0 "$emerge_pid" 2>/dev/null; do
+    sleep 30
+    local elapsed=$(( SECONDS - start_time ))
+    if [[ $elapsed -ge $warn_secs ]]; then
+      log "Approaching time limit (${elapsed}s elapsed / ${remaining}s budget for this phase), stopping emerge"
+      kill -TERM -- -${emerge_pid} 2>/dev/null || true
+      local kill_wait=0
+      while kill -0 "$emerge_pid" 2>/dev/null && [[ $kill_wait -lt 60 ]]; do
+        sleep 5
+        kill_wait=$(( kill_wait + 5 ))
+      done
+      if kill -0 "$emerge_pid" 2>/dev/null; then
+        log "  Emerge did not exit after SIGTERM, sending SIGKILL to process group"
+        kill -KILL -- -${emerge_pid} 2>/dev/null || true
+      fi
+      wait "$emerge_pid" 2>/dev/null || true
+      save_build_state
+      show_ccache_stats
+      log "Build state saved; returning 42 (timed out, state saved)"
+      return 42
+    fi
+  done
+
+  wait "$emerge_pid"
 }
 
 # ---------- signing ----------
@@ -433,6 +521,26 @@ collect_packages() {
   fi
 }
 
+# ---------- prune older versions ----------
+# Keep only the newest version per (category, PN) in the binpkg directories.
+# This is what stops the published Pages site from blowing past GitHub's 1 GB
+# soft limit after a few rebuild rounds (every bumped ebuild leaves behind a
+# stale gpkg that nothing on the binhost will ever serve again).
+prune_old_binpkgs() {
+  local script="${SCRIPT_DIR}/prune-old-binpkgs.py"
+  [[ -x "$script" || -f "$script" ]] || { log "Pruner not found at ${script}, skipping"; return 0; }
+  local dirs=()
+  [[ -d /var/cache/binpkgs ]] && dirs+=(/var/cache/binpkgs)
+  if [[ "$OUTPUT_DIR" != "/var/cache/binpkgs" && -d "$OUTPUT_DIR" ]]; then
+    dirs+=("$OUTPUT_DIR")
+  fi
+  if (( ${#dirs[@]} == 0 )); then
+    return 0
+  fi
+  log "Pruning older versions in: ${dirs[*]}"
+  python3 "$script" "${dirs[@]}"
+}
+
 # ---------- main ----------
 apply_profile
 setup_ccache
@@ -450,6 +558,7 @@ BUILD_RC=${BUILD_RC:-0}
 BINPKGS_AFTER="$(count_binpkgs)"
 
 collect_packages
+prune_old_binpkgs
 sign_packages
 show_ccache_stats
 emit_progress_summary "${BINPKGS_BEFORE}" "${BINPKGS_AFTER}"
