@@ -111,6 +111,25 @@ jobs:
             ccache-${{ steps.meta.outputs.chain_id }}-
             ccache-
 
+      # Preserve already-built binary packages across resume attempts.  Without
+      # this, /var/cache/binpkgs starts empty on every attempt and `--usepkg`
+      # has nothing to skip, so each timed-out attempt re-builds the same
+      # prefix of the package list from source instead of picking up where the
+      # previous one left off.  This is the actual reason resume chains keep
+      # producing the same NEW_PKGS count attempt after attempt — `--resume`
+      # / mtimedb only ever mattered for the single mid-build package.
+      #
+      # Scoped to the chain so resume attempts share binpkgs, with a global
+      # fallback so a fresh chain can warm-start from the last completed one.
+      - name: Restore binpkgs
+        uses: actions/cache/restore@v5
+        with:
+          path: /var/cache/binpkgs
+          key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          restore-keys: |
+            binpkgs-${{ steps.meta.outputs.chain_id }}-
+            binpkgs-
+
       - name: Import GPG signing key
         run: |
           if [[ -n "${GPG_PRIVATE_KEY:-}" ]]; then
@@ -181,6 +200,19 @@ jobs:
         with:
           path: /var/cache/ccache
           key: ccache-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+
+      # Save binpkgs even on timeout / failure: any package fully built before
+      # the SIGTERM is a real, reusable artifact and must persist for the next
+      # resume attempt.  Key includes attempt so each save is unique (otherwise
+      # the second use in a chain hits "Unable to reserve cache with key X"
+      # and silently drops content); the chain-scoped restore-keys above let
+      # the next attempt find it.
+      - name: Save binpkgs
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: /var/cache/binpkgs
+          key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
 
       - name: Upload packages
         if: always()

@@ -79,6 +79,34 @@ jobs:
           echo "Package tree:"
           find "$DEST" -type f | sort
 
+      # Prune older versions per atom *before* indexing.  GitHub Pages enforces
+      # a soft 1 GB site-size limit; once we exceed it the published binhost
+      # becomes unreachable.  Every bumped ebuild that gets rebuilt leaves a
+      # stale gpkg behind in the cached site layout (no Portage process ever
+      # touches the cache to clean them), so without periodic pruning the
+      # site grows monotonically.  Keep only the newest version per
+      # (category, PN); clients always want the latest anyway.
+      - name: Prune older package versions
+        run: |
+          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          DEST="/tmp/pages-site/${BINHOST_PATH}"
+          if [[ -d "$DEST" ]]; then
+            python3 scripts/prune-old-binpkgs.py "$DEST"
+          fi
+          # Surface remaining size so a future "still over 1 GB" failure is
+          # diagnosable from the workflow log alone.
+          echo "Site size after pruning:"
+          du -sh /tmp/pages-site || true
+          # Default to 0 so a missing/empty dir doesn't crash the numeric
+          # comparison below under `set -e`.
+          SITE_BYTES="$(du -sb /tmp/pages-site 2>/dev/null | awk '{print $1+0}')"
+          SITE_BYTES="${SITE_BYTES:-0}"
+          # GitHub Pages soft limit is 1 GiB.  Warn (don't fail) at 900 MiB so
+          # we have time to react before the next build pushes us over.
+          if [[ "$SITE_BYTES" -gt $((900 * 1024 * 1024)) ]]; then
+            echo "::warning title=Pages site size::Pages site is ${SITE_BYTES} bytes (>900 MiB). Approaching the 1 GiB GitHub Pages limit; consider trimming packages/packages.txt."
+          fi
+
       # Generate/refresh the Packages index
       - name: Generate Packages index
         run: |
