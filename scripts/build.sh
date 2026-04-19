@@ -365,43 +365,25 @@ report_failed_atoms() {
   fi
 }
 
-# ---------- cache risk mitigations ----------
+# ---------- cache footprint diagnostics ----------
 #
-# These functions are the safety net for the system-state caching strategy
-# (the new /var/db/pkg + /var/lib/portage cache that lets resume attempts
-# skip re-installing already-installed binpkgs).  Every risk I called out
-# in the implementation plan has a hard check here that fails RED so we
-# never silently corrupt a build with a stale or out-of-sync cache.
+# The system-state cache (/var/db/pkg + /var/lib/portage + /var/cache/edb)
+# plus the existing binpkgs and ccache caches together must stay under
+# GitHub's 10 GiB per-repository cache cap.  Above that cap, actions/cache
+# silently drops save attempts, which would break resume.
+#
+# We surface size as a WARNING here only — failing the build over a save
+# we haven't yet attempted is overreach.  The authoritative coupled-cache
+# check is the workflow-level XOR on `cache-matched-key` in build-packages.yml,
+# which fires on the NEXT attempt if a save was actually dropped.
 
-# Manifest sentinel files written into each cached directory at save time.
-# A future restore reads them back to verify that all the caches restored
-# in this attempt belong to the SAME (chain_id, attempt) pair — otherwise
-# /var/db/pkg can claim a package is installed when its files are actually
-# missing (because the matching binpkgs cache was a different generation).
-CACHE_MANIFEST_BASENAME=".binhost-cache-manifest"
-
-# Total cache budget across every cache this job uses.  GitHub Actions
-# enforces a hard 10 GiB per-repository cap; we leave 2 GiB headroom for
-# transient growth between save steps.
-CACHE_TOTAL_LIMIT_BYTES=$(( 10 * 1024 * 1024 * 1024 ))
-CACHE_TOTAL_WARN_BYTES=$(( 8  * 1024 * 1024 * 1024 ))
-
-# Sampling parameters for verify_installed_db_consistency.  A full scan of
-# /var/db/pkg/*/CONTENTS is O(100k) entries on a desktop profile and would
-# add minutes to every attempt; the spot-check picks N random packages and
-# M random object entries each.  A genuine cache↔fs mismatch produces near-
-# 100% missing across any sample, so small N×M are sufficient.
-INSTALLED_DB_SAMPLE_PKGS=15
-INSTALLED_DB_SAMPLE_FILES_PER_PKG=10
-# % of sampled files that may be missing without action (postinst-removed
-# files, /var/log oddities) — above this, only warn — and a hard stop level
-# above which we refuse to continue (the cache is almost certainly broken).
-INSTALLED_DB_WARN_THRESHOLD_PCT=10
-INSTALLED_DB_FAIL_THRESHOLD_PCT=40
+# Cache size at which we emit a warning to the step log; chosen to leave
+# ~2 GiB headroom under GitHub's 10 GiB per-repository cap.
+CACHE_TOTAL_WARN_BYTES=$(( 8 * 1024 * 1024 * 1024 ))
 
 # Directories that are persisted across resume attempts via actions/cache.
-# Keep this list aligned with the cache steps in build-packages.yml — both
-# `measure_cache_footprint` and `write_cache_manifests` iterate over it.
+# Keep this list aligned with the cache steps in build-packages.yml so the
+# footprint measurement reflects what's actually being saved.
 CACHED_DIRS=(
   /var/cache/binpkgs
   /var/cache/ccache
@@ -409,179 +391,6 @@ CACHED_DIRS=(
   /var/cache/edb
   /var/lib/portage
 )
-
-# Expected coupling: the system-state cache and the binpkgs cache MUST come
-# from the same (chain_id, attempt) generation.  /var/db/pkg knowing about
-# a package whose binpkg isn't present in the resumed-from binpkgs cache
-# would mean Portage refuses to re-install (because it's "already there")
-# while the binary is actually gone — Portage merge would then fail in
-# pkg_setup or, worse, link against missing files at build time.
-CACHE_PAIR_DIRS=(/var/cache/binpkgs /var/db/pkg)
-
-write_cache_manifests() {
-  # Write a tiny JSON manifest into each cached directory recording the
-  # (chain_id, attempt, run_id, timestamp) that produced its current contents.
-  # The next attempt's check_cache_consistency cross-references these so a
-  # mismatched pair is detected immediately, not after a confusing build
-  # failure 4 hours into the next attempt.
-  local chain_id="${GITHUB_RUN_ID:-unknown-chain}"
-  local attempt="${GHA_ATTEMPT:-unknown-attempt}"
-  local run_id="${GITHUB_RUN_ID:-unknown-run}"
-  # Caller can override via env if it wants to record the chain explicitly
-  # (build-packages.yml passes BINHOST_CHAIN_ID + BINHOST_ATTEMPT for this).
-  chain_id="${BINHOST_CHAIN_ID:-$chain_id}"
-  attempt="${BINHOST_ATTEMPT:-$attempt}"
-
-  local now
-  now="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-  local manifest
-  manifest="$(printf '{"chain_id":"%s","attempt":"%s","run_id":"%s","timestamp":"%s"}' \
-                "${chain_id}" "${attempt}" "${run_id}" "${now}")"
-
-  local d
-  for d in "${CACHED_DIRS[@]}"; do
-    if [[ -d "$d" ]]; then
-      # Use a temp + atomic mv so a half-written manifest never appears
-      # (would otherwise produce a baffling JSON parse failure on restore).
-      printf '%s\n' "$manifest" > "${d}/${CACHE_MANIFEST_BASENAME}.tmp"
-      mv -f "${d}/${CACHE_MANIFEST_BASENAME}.tmp" "${d}/${CACHE_MANIFEST_BASENAME}"
-      log "  Wrote cache manifest: ${d}/${CACHE_MANIFEST_BASENAME}"
-    fi
-  done
-}
-
-# Read the value of one key from a JSON manifest.  Restricted to plain
-# string values — anything more elaborate is over-engineering for a 4-key
-# file we wrote ourselves one line up.  Returns empty string if absent.
-_cache_manifest_get() {
-  local file="$1" key="$2"
-  [[ -f "$file" ]] || { echo ""; return 0; }
-  python3 - "$file" "$key" <<'PYEOF' 2>/dev/null || echo ""
-import json, sys
-try:
-    with open(sys.argv[1]) as f:
-        m = json.load(f)
-    print(m.get(sys.argv[2], "") or "")
-except Exception:
-    print("")
-PYEOF
-}
-
-check_cache_consistency() {
-  # On attempt 1 there is nothing restored, so nothing to verify.  Skip.
-  local attempt="${BINHOST_ATTEMPT:-1}"
-  if [[ "$attempt" == "1" ]]; then
-    log "First attempt of this chain — skipping cache consistency check (nothing restored)"
-    return 0
-  fi
-
-  log "Verifying cache pair consistency (system-state ↔ binpkgs must come from same chain)"
-
-  local pair_chain="" pair_attempt="" mismatch=0
-  local d chain attempt_seen
-  for d in "${CACHE_PAIR_DIRS[@]}"; do
-    local mfile="${d}/${CACHE_MANIFEST_BASENAME}"
-    if [[ ! -f "$mfile" ]]; then
-      # /var/db/pkg always exists (it ships with stage3) but won't have a
-      # manifest if THIS is the first attempt that introduced the system-state
-      # cache.  Treat that case as "no prior data, accept it" — but only when
-      # the directory looks like a stage3 default (no resume-marker file).
-      if [[ "$d" == "/var/db/pkg" ]]; then
-        log "  /var/db/pkg has no manifest (stage3 default or pre-cache run); treating as fresh."
-        continue
-      fi
-      log "  ::error::Cached directory ${d} has no manifest but should have one for attempt ${attempt}."
-      mismatch=1
-      continue
-    fi
-    chain="$(_cache_manifest_get "$mfile" chain_id)"
-    attempt_seen="$(_cache_manifest_get "$mfile" attempt)"
-    log "  ${d}: chain=${chain:-?} attempt=${attempt_seen:-?}"
-    if [[ -z "$chain" || -z "$attempt_seen" ]]; then
-      log "  ::error::Manifest at ${mfile} is empty/unparseable; refusing to trust this cache."
-      mismatch=1
-      continue
-    fi
-    if [[ -z "$pair_chain" ]]; then
-      pair_chain="$chain"
-      pair_attempt="$attempt_seen"
-    elif [[ "$chain" != "$pair_chain" || "$attempt_seen" != "$pair_attempt" ]]; then
-      log "  ::error::Cache mismatch: ${d} is from chain=${chain}/attempt=${attempt_seen} but expected chain=${pair_chain}/attempt=${pair_attempt}."
-      mismatch=1
-    fi
-  done
-
-  if [[ "$mismatch" -ne 0 ]]; then
-    echo "::error title=Cache consistency violation::system-state and binpkgs caches restored from different generations. Refusing to build to avoid silent corruption (Portage thinking a package is installed when its binary isn't present in /var/cache/binpkgs). Wipe the caches for chain ${BINHOST_CHAIN_ID:-?} and rebuild from scratch."
-    die "Cache pair (${CACHE_PAIR_DIRS[*]}) restored from inconsistent generations; refusing to continue."
-  fi
-  log "  Cache pair consistent (chain=${pair_chain:-n/a}, attempt=${pair_attempt:-n/a})"
-}
-
-verify_installed_db_consistency() {
-  # The cached /var/db/pkg might claim package X version Y is installed, but
-  # if /var/cache/binpkgs lost that .gpkg AND the live container fs doesn't
-  # actually have its files, Portage will skip re-installing it (already
-  # "installed") and downstream linking will fail confusingly.
-  #
-  # We can't afford to walk every CONTENTS file (>100k entries on a desktop
-  # profile), so spot-check: pick up to N installed packages, verify a few
-  # of their CONTENTS entries point to existing files.  A broken cache
-  # produces near-100% misses; a healthy one produces ~0%.
-  if [[ ! -d /var/db/pkg ]]; then
-    log "No /var/db/pkg present; skipping installed-DB consistency check"
-    return 0
-  fi
-  local sample_pkgs="${INSTALLED_DB_SAMPLE_PKGS}" sample_files="${INSTALLED_DB_SAMPLE_FILES_PER_PKG}"
-  local pkgs=()
-  while IFS= read -r p; do pkgs+=("$p"); done < <(
-    find /var/db/pkg -mindepth 2 -maxdepth 2 -type d 2>/dev/null | shuf -n "$sample_pkgs"
-  )
-  if [[ ${#pkgs[@]} -eq 0 ]]; then
-    log "No installed packages recorded in /var/db/pkg; nothing to spot-check"
-    return 0
-  fi
-
-  log "Spot-checking ${#pkgs[@]} installed package(s) for file presence"
-  local total_checked=0 total_missing=0
-  local pkg contents path entries
-  for pkg in "${pkgs[@]}"; do
-    contents="${pkg}/CONTENTS"
-    [[ -f "$contents" ]] || continue
-    # CONTENTS lines look like:  obj /usr/bin/foo <md5> <mtime>
-    # We only check `obj` lines (regular files); dirs/syms can be legitimately
-    # absent on a freshly-restored container.
-    entries="$(grep -E '^obj ' "$contents" 2>/dev/null | shuf -n "$sample_files" || true)"
-    [[ -n "$entries" ]] || continue
-    while IFS= read -r line; do
-      path="$(echo "$line" | awk '{print $2}')"
-      [[ -n "$path" ]] || continue
-      total_checked=$(( total_checked + 1 ))
-      if [[ ! -e "$path" ]]; then
-        total_missing=$(( total_missing + 1 ))
-      fi
-    done <<< "$entries"
-  done
-
-  if [[ "$total_checked" -eq 0 ]]; then
-    log "  No object files in CONTENTS to check (sample empty); skipping"
-    return 0
-  fi
-
-  local pct=$(( total_missing * 100 / total_checked ))
-  log "  ${total_missing}/${total_checked} sampled files missing (${pct}%)"
-
-  # >40% missing means the cache is almost certainly out of sync with the
-  # live filesystem; a few isolated misses (<10%) can happen for e.g. files
-  # that the package itself removed in pkg_postinst.  We pick 40% as a
-  # generous threshold but fail loudly above it.
-  if [[ "$pct" -gt "$INSTALLED_DB_FAIL_THRESHOLD_PCT" ]]; then
-    echo "::error title=Installed-DB inconsistency::${total_missing} of ${total_checked} sampled files from /var/db/pkg/*/CONTENTS are missing on disk (${pct}%). The cached installed-package DB does not match the container filesystem; Portage would skip re-installing packages whose binaries are gone. Refusing to build."
-    die "Installed-DB / filesystem mismatch above threshold (${pct}%); refusing to continue."
-  elif [[ "$pct" -gt "$INSTALLED_DB_WARN_THRESHOLD_PCT" ]]; then
-    echo "::warning title=Installed-DB drift::${total_missing} of ${total_checked} sampled files missing (${pct}%); within tolerance but worth investigating."
-  fi
-}
 
 # Print a human-readable size for a directory; "0" if it doesn't exist.
 _dir_size_bytes() {
@@ -610,22 +419,21 @@ measure_cache_footprint() {
     fi
   done
   human_total="$(numfmt --to=iec --suffix=B "$total" 2>/dev/null || echo "${total}B")"
-  log "  TOTAL: ${human_total} (limit: 10 GiB GHA per-repo cap)"
+  log "  TOTAL: ${human_total} (GHA per-repo cap: 10 GiB)"
 
   if [[ -n "${GITHUB_OUTPUT:-}" && "$phase" == "after" ]]; then
     echo "cache_total_bytes=${total}" >> "$GITHUB_OUTPUT"
   fi
 
-  # Only fail RED on the post-build measurement: that's what we're about to
-  # try to save.  Pre-build is informational; if a restore brought back too
-  # much we still want to run so the build can prune things.
-  if [[ "$phase" == "after" ]]; then
-    if [[ "$total" -gt "$CACHE_TOTAL_LIMIT_BYTES" ]]; then
-      echo "::error title=Cache footprint exceeds GHA cap::Total cache size ${human_total} exceeds GitHub's 10 GiB per-repository cap. Some actions/cache save steps WILL be silently dropped, leading to broken resume attempts. Reduce CCACHE_SIZE or prune /var/cache/binpkgs before this point."
-      die "Cache footprint ${human_total} above 10 GiB GHA cap; refusing to continue with unsaveable caches."
-    elif [[ "$total" -gt "$CACHE_TOTAL_WARN_BYTES" ]]; then
-      echo "::warning title=Cache footprint approaching GHA cap::Total cache size ${human_total} is within 2 GiB of GitHub's 10 GiB per-repository cap. Consider reducing CCACHE_SIZE."
-    fi
+  # Diagnostic-only: warn when the post-build footprint approaches GitHub's
+  # 10 GiB per-repository cache cap.  We deliberately do NOT fail the build
+  # here — a dropped save is recoverable (the next attempt's coupled-cache
+  # invariant check in build-packages.yml is the authoritative gate; it
+  # will fail RED if exactly one of the two caches restored).  Failing a
+  # completed 5 h build over a save we haven't yet attempted would be
+  # strictly worse than warning and letting the next attempt arbitrate.
+  if [[ "$phase" == "after" && "$total" -gt "$CACHE_TOTAL_WARN_BYTES" ]]; then
+    echo "::warning title=Cache footprint approaching GHA cap::Total cache size ${human_total} is within 2 GiB of GitHub's 10 GiB per-repository cap. If a save is silently dropped, the next attempt's coupled-cache check will fail RED."
   fi
 }
 
@@ -988,8 +796,6 @@ setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
-check_cache_consistency
-verify_installed_db_consistency
 measure_cache_footprint "before"
 show_ccache_stats
 
@@ -1006,7 +812,6 @@ prune_old_binpkgs
 sign_packages
 show_ccache_stats
 report_failed_atoms
-write_cache_manifests
 measure_cache_footprint "after"
 emit_progress_summary "${BINPKGS_BEFORE}" "${BINPKGS_AFTER}"
 

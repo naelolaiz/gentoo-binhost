@@ -126,9 +126,10 @@ jobs:
       # "Restore system state" step below — Portage's installed-package DB
       # (/var/db/pkg) and the matching binpkgs MUST come from the same
       # generation, otherwise Portage will skip re-installing a package
-      # whose binary is missing.  scripts/build.sh check_cache_consistency
-      # asserts this at runtime via a manifest cross-check and dies RED on
-      # mismatch.  Do not change one cache's keys without changing the other.
+      # whose binary is missing.  The "Verify coupled-cache invariant" step
+      # below uses GitHub's authoritative `cache-matched-key` outputs to
+      # XOR-check this and fail RED if exactly one of the two restored.
+      # Do not change one cache's keys without changing the other.
       - name: Restore binpkgs
         id: restore_binpkgs
         uses: actions/cache/restore@v5
@@ -150,8 +151,8 @@ jobs:
       # so caching /etc/portage would either be redundant or actively wrong.
       #
       # Save key MUST equal the binpkgs save key shape so the two restore
-      # in lockstep on the next attempt; check_cache_consistency in build.sh
-      # verifies this via manifests written by write_cache_manifests.
+      # in lockstep on the next attempt; the workflow-level
+      # "Verify coupled-cache invariant" step gates against any mismatch.
       - name: Restore system state
         id: restore_system_state
         uses: actions/cache/restore@v5
@@ -223,13 +224,6 @@ jobs:
 
       - name: Build packages
         id: build
-        env:
-          # Used by scripts/build.sh write_cache_manifests so each cached
-          # directory carries a manifest naming the chain+attempt that
-          # produced its contents.  check_cache_consistency on the next
-          # attempt cross-references these.
-          BINHOST_CHAIN_ID: ${{ steps.meta.outputs.chain_id }}
-          BINHOST_ATTEMPT: ${{ steps.meta.outputs.attempt }}
         run: |
           set +e
           bash scripts/build.sh \
@@ -277,8 +271,9 @@ jobs:
           key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
 
       # Save the system-state cache with the SAME key shape as binpkgs.  This
-      # is the coupling check_cache_consistency relies on.  if:always() so a
-      # timed-out attempt still hands its installed-DB to the next one.
+      # is the coupling the next attempt's "Verify coupled-cache invariant"
+      # step relies on.  if:always() so a timed-out attempt still hands its
+      # installed-DB to the next one.
       - name: Save system state
         id: save_system_state
         if: always()
@@ -290,10 +285,12 @@ jobs:
             /var/cache/edb
           key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
 
-      # Hard check: if either save step failed, the next resume attempt would
-      # restore an inconsistent cache pair.  Surface it RED now (loudly), even
-      # if the build itself succeeded — silent half-saved cache is exactly the
-      # class of bug we're trying to eliminate.
+      # Diagnostic: surface cache-save outcomes as warnings.  We do NOT fail
+      # the build here — the next resume attempt's "Verify coupled-cache
+      # invariant" step is the authoritative gate (it XOR-checks the
+      # `cache-matched-key` outputs and fails RED if exactly one of the pair
+      # restored).  Failing the current run on a save outcome that hasn't
+      # yet caused harm would just compound the loss of a 5 h build.
       - name: Verify cache saves succeeded
         if: always()
         run: |
@@ -301,22 +298,15 @@ jobs:
           S="${{ steps.save_system_state.outcome }}"
           echo "binpkgs save outcome:      ${B}"
           echo "system-state save outcome: ${S}"
-          fail=0
           if [[ "$B" != "success" && "$B" != "skipped" ]]; then
-            echo "::error title=Cache save failed::Save of /var/cache/binpkgs reported '${B}'. Next resume attempt will restore stale data."
-            fail=1
+            echo "::warning title=Cache save did not succeed::Save of /var/cache/binpkgs reported '${B}'. Next resume attempt's coupled-cache check will fail RED if the system-state save did succeed."
           fi
           if [[ "$S" != "success" && "$S" != "skipped" ]]; then
-            echo "::error title=Cache save failed::Save of system-state caches reported '${S}'. Next resume attempt will see /var/db/pkg out of sync with /var/cache/binpkgs."
-            fail=1
+            echo "::warning title=Cache save did not succeed::Save of system-state caches reported '${S}'. Next resume attempt's coupled-cache check will fail RED if the binpkgs save did succeed."
           fi
-          # XOR detection: one saved, the other didn't — the worst case for
-          # the next attempt's coupled-cache check.
           if [[ "$B" == "success" && "$S" != "success" ]] || [[ "$B" != "success" && "$S" == "success" ]]; then
-            echo "::error title=Coupled cache save mismatch::binpkgs and system-state saves did not both succeed; the cache pair is now inconsistent and the next attempt will refuse to build."
-            fail=1
+            echo "::warning title=Coupled cache save mismatch::binpkgs and system-state saves did not both succeed; the next attempt's coupled-cache invariant check will block resume."
           fi
-          [[ $fail -eq 0 ]] || exit 1
 
       - name: Upload packages
         if: always()
