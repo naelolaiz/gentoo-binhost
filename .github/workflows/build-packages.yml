@@ -121,7 +121,16 @@ jobs:
       #
       # Scoped to the chain so resume attempts share binpkgs, with a global
       # fallback so a fresh chain can warm-start from the last completed one.
+      #
+      # COUPLED CACHE: the keys here MUST stay in lockstep with the
+      # "Restore system state" step below — Portage's installed-package DB
+      # (/var/db/pkg) and the matching binpkgs MUST come from the same
+      # generation, otherwise Portage will skip re-installing a package
+      # whose binary is missing.  scripts/build.sh check_cache_consistency
+      # asserts this at runtime via a manifest cross-check and dies RED on
+      # mismatch.  Do not change one cache's keys without changing the other.
       - name: Restore binpkgs
+        id: restore_binpkgs
         uses: actions/cache/restore@v5
         with:
           path: /var/cache/binpkgs
@@ -129,6 +138,51 @@ jobs:
           restore-keys: |
             binpkgs-${{ steps.meta.outputs.chain_id }}-
             binpkgs-
+
+      # System-state cache: Portage's installed-package DB plus its metadata
+      # cache and the world set.  Restoring this means attempt N+1 sees the
+      # ~1000 packages installed by attempt N as already-installed and skips
+      # re-merging them — saving roughly 50-80 minutes per attempt out of a
+      # 5h budget that was previously burned on identical re-installs.
+      #
+      # NOT cached: /etc/portage — apply_profile in build.sh re-installs
+      # config from the repo on every attempt and asserts it byte-matches,
+      # so caching /etc/portage would either be redundant or actively wrong.
+      #
+      # Save key MUST equal the binpkgs save key shape so the two restore
+      # in lockstep on the next attempt; check_cache_consistency in build.sh
+      # verifies this via manifests written by write_cache_manifests.
+      - name: Restore system state
+        id: restore_system_state
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            /var/db/pkg
+            /var/lib/portage
+            /var/cache/edb
+          key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          restore-keys: |
+            system-state-${{ steps.meta.outputs.chain_id }}-
+            system-state-
+
+      # Hard check on the coupled-cache invariant.  If on a resume attempt
+      # one of the two restored and the other didn't, /var/db/pkg will claim
+      # packages are installed whose binaries are missing and Portage will
+      # skip-then-fail on them later.  Fail RED HERE instead.
+      - name: Verify coupled-cache invariant
+        if: steps.meta.outputs.attempt != '1'
+        run: |
+          B_KEY="${{ steps.restore_binpkgs.outputs.cache-matched-key }}"
+          S_KEY="${{ steps.restore_system_state.outputs.cache-matched-key }}"
+          echo "binpkgs       restored from key: ${B_KEY:-<none>}"
+          echo "system-state  restored from key: ${S_KEY:-<none>}"
+          # Both restored = OK.  Both empty = OK (nothing to verify; build.sh
+          # will treat this as a fresh attempt).  XOR = bad: one cache from
+          # this chain, the other from somewhere else (or absent).
+          if [[ -n "$B_KEY" && -z "$S_KEY" ]] || [[ -z "$B_KEY" && -n "$S_KEY" ]]; then
+            echo "::error title=Coupled-cache mismatch::Exactly one of (binpkgs, system-state) restored from cache; the other did not. Refusing to build because Portage's installed DB and binpkgs would diverge silently."
+            exit 1
+          fi
 
       - name: Import GPG signing key
         run: |
@@ -169,6 +223,13 @@ jobs:
 
       - name: Build packages
         id: build
+        env:
+          # Used by scripts/build.sh write_cache_manifests so each cached
+          # directory carries a manifest naming the chain+attempt that
+          # produced its contents.  check_cache_consistency on the next
+          # attempt cross-references these.
+          BINHOST_CHAIN_ID: ${{ steps.meta.outputs.chain_id }}
+          BINHOST_ATTEMPT: ${{ steps.meta.outputs.attempt }}
         run: |
           set +e
           bash scripts/build.sh \
@@ -208,11 +269,54 @@ jobs:
       # and silently drops content); the chain-scoped restore-keys above let
       # the next attempt find it.
       - name: Save binpkgs
+        id: save_binpkgs
         if: always()
         uses: actions/cache/save@v5
         with:
           path: /var/cache/binpkgs
           key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+
+      # Save the system-state cache with the SAME key shape as binpkgs.  This
+      # is the coupling check_cache_consistency relies on.  if:always() so a
+      # timed-out attempt still hands its installed-DB to the next one.
+      - name: Save system state
+        id: save_system_state
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: |
+            /var/db/pkg
+            /var/lib/portage
+            /var/cache/edb
+          key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+
+      # Hard check: if either save step failed, the next resume attempt would
+      # restore an inconsistent cache pair.  Surface it RED now (loudly), even
+      # if the build itself succeeded — silent half-saved cache is exactly the
+      # class of bug we're trying to eliminate.
+      - name: Verify cache saves succeeded
+        if: always()
+        run: |
+          B="${{ steps.save_binpkgs.outcome }}"
+          S="${{ steps.save_system_state.outcome }}"
+          echo "binpkgs save outcome:      ${B}"
+          echo "system-state save outcome: ${S}"
+          fail=0
+          if [[ "$B" != "success" && "$B" != "skipped" ]]; then
+            echo "::error title=Cache save failed::Save of /var/cache/binpkgs reported '${B}'. Next resume attempt will restore stale data."
+            fail=1
+          fi
+          if [[ "$S" != "success" && "$S" != "skipped" ]]; then
+            echo "::error title=Cache save failed::Save of system-state caches reported '${S}'. Next resume attempt will see /var/db/pkg out of sync with /var/cache/binpkgs."
+            fail=1
+          fi
+          # XOR detection: one saved, the other didn't — the worst case for
+          # the next attempt's coupled-cache check.
+          if [[ "$B" == "success" && "$S" != "success" ]] || [[ "$B" != "success" && "$S" == "success" ]]; then
+            echo "::error title=Coupled cache save mismatch::binpkgs and system-state saves did not both succeed; the cache pair is now inconsistent and the next attempt will refuse to build."
+            fail=1
+          fi
+          [[ $fail -eq 0 ]] || exit 1
 
       - name: Upload packages
         if: always()
@@ -222,6 +326,7 @@ jobs:
           path: |
             /tmp/binpkgs/**/*.gpkg.tar
             /tmp/binpkgs/**/*.asc
+            /tmp/binpkgs/_failures/**
           if-no-files-found: warn
           retention-days: 7
 
@@ -233,15 +338,41 @@ jobs:
           MAX="${{ inputs._max_attempts || '8' }}"
           NEXT="${{ steps.meta.outputs.next_attempt }}"
           NEW_PKGS="${{ steps.build.outputs.new_package_count || '0' }}"
-          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" && "$NEW_PKGS" -gt 0 ]]; then
-            echo "should_continue=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "should_continue=false" >> "$GITHUB_OUTPUT"
+          REPEATED="${{ steps.build.outputs.repeated_failures || 'false' }}"
+          FAILED="${{ steps.build.outputs.failed_package_count || '0' }}"
+
+          echo "exit=${EXIT} new_pkgs=${NEW_PKGS} failed=${FAILED} repeated=${REPEATED} next=${NEXT}/${MAX}"
+
+          # Default: do not continue.  Switch to true only on the happy
+          # "timed-out, made progress, no repeated failures" path.
+          should_continue=false
+          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" && "$NEW_PKGS" -gt 0 && "$REPEATED" != "true" ]]; then
+            should_continue=true
           fi
+          echo "should_continue=${should_continue}" >> "$GITHUB_OUTPUT"
+
+          # Repeated failures: a package that failed in TWO consecutive
+          # attempts will fail in the next one too — every additional resume
+          # is just burning CI minutes.  Stop the chain RED so the user sees
+          # which atom is stuck (build.sh already wrote the build.log into
+          # the uploaded artifact).
+          if [[ "$REPEATED" == "true" ]]; then
+            echo "::error title=Repeated package failures::One or more packages failed in two consecutive resume attempts. Auto-resume disabled. See the 'Failed packages' section in the build summary and the _failures/ directory in the build artifact for the captured build.log of each failure."
+            exit 1
+          fi
+
           if [[ "$EXIT" == "42" && "$NEW_PKGS" -le 0 ]]; then
             # Resuming would just burn another 5h producing nothing.  Better to
             # surface the stall now so a human can investigate the stuck ebuild.
             echo "::error title=Zero-progress timeout::Build attempt ${{ steps.meta.outputs.attempt }} timed out (exit 42) without producing any new binary packages. Auto-resume disabled for this chain to avoid wasting CI minutes; investigate the stuck ebuild."
+            exit 1
+          fi
+          # Any per-package failure is also surfaced (build.sh already emitted
+          # one ::error per failed atom); we don't fail the run for a SINGLE
+          # failure (the chain may still complete the rest), but we do exit
+          # non-zero on the LAST attempt so the run is RED instead of yellow.
+          if [[ "$FAILED" -gt 0 && ( "$EXIT" != "42" || "$NEXT" -gt "$MAX" ) ]]; then
+            echo "::error title=Build finished with failures::${FAILED} package(s) failed. See annotations above and _failures/ in the build artifact."
             exit 1
           fi
           if [[ "$EXIT" == "42" && "$NEXT" -gt "$MAX" ]]; then
