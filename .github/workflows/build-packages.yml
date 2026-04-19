@@ -244,10 +244,23 @@ jobs:
               --import /usr/share/openpgp-keys/gentoo-release.asc
             echo "Imported Gentoo release key from local openpgp-keys"
           else
-            gpg --homedir /etc/portage/gnupg \
+            if timeout 30s gpg --homedir /etc/portage/gnupg \
+              --batch --no-tty \
               --keyserver hkps://keys.gentoo.org \
-              --recv-keys "$GENTOO_KEY"
-            echo "Imported Gentoo release key from keyserver"
+              --recv-keys "$GENTOO_KEY"; then
+              echo "Imported Gentoo release key from keyserver"
+            else
+              echo "::error::Failed to import Gentoo release key from keyserver within 30 seconds"
+              exit 1
+            fi
+          fi
+
+          # Verify the key was actually imported — catch silent import
+          # failures or key rotations before they surface as cryptic
+          # signature errors during emerge.
+          if ! gpg --homedir /etc/portage/gnupg --list-keys "$GENTOO_KEY" >/dev/null; then
+            echo "::error::Gentoo release signing key ${GENTOO_KEY} not found in /etc/portage/gnupg after import"
+            exit 1
           fi
 
       - name: Install build tools
