@@ -567,7 +567,7 @@ PYEOF
 # A handful of packages are *self-hosting*: their ebuild needs an already-
 # installed copy of the same package to bootstrap from source.  dev-lang/go
 # is the canonical example — make.bash refuses to run without an existing
-# Go >= 1.24.6 at /usr/lib/go/bin/go (or wherever GOROOT_BOOTSTRAP points).
+# Go >= 1.24.6 at the default Gentoo bootstrap path /usr/lib/go/bin/go.
 #
 # Our CI restores /var/db/pkg from a system-state cache, but /usr is on the
 # runner's ephemeral disk.  When the binpkgs cache has been evicted (or the
@@ -592,15 +592,21 @@ SELF_HOSTED_BOOTSTRAP_PACKAGES=(
 )
 
 verify_self_hosted_packages() {
-  local entry pkg bootstrap_bin vdb_dirs
+  local entry pkg cat pn bootstrap_bin vdb_dirs
   for entry in "${SELF_HOSTED_BOOTSTRAP_PACKAGES[@]}"; do
     pkg="${entry%%:*}"
+    cat="${pkg%/*}"
+    pn="${pkg##*/}"
     bootstrap_bin="${entry#*:}"
 
-    # vdb entries live in /var/db/pkg/<cat>/<pn>-<ver>[-r<rev>].  Use
-    # nullglob so an empty match is an empty array, not a literal pattern.
+    # vdb entries live in /var/db/pkg/<cat>/<pn>-<ver>[-r<rev>].  Match only
+    # the exact PN within its category directory; PMS guarantees versions
+    # start with a digit, so `${pn}-[0-9]*` won't catch sibling packages
+    # whose PN happens to start with our PN (e.g. dev-lang/go-* would
+    # otherwise match dev-lang/go-cross-* too).  nullglob keeps an empty
+    # match as an empty array instead of the literal pattern.
     shopt -s nullglob
-    vdb_dirs=( /var/db/pkg/"${pkg}"-* )
+    vdb_dirs=( /var/db/pkg/"${cat}"/"${pn}"-[0-9]* )
     shopt -u nullglob
 
     if (( ${#vdb_dirs[@]} == 0 )); then
