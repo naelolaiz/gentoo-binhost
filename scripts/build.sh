@@ -112,6 +112,12 @@ apply_profile() {
   if [[ -f "${PROFILE_DIR}/make.conf" ]]; then
     cp "${PROFILE_DIR}/make.conf" /etc/portage/make.conf
     log "  Installed make.conf"
+    # Hard check: the just-written make.conf must byte-equal the repo source.
+    # Guards against a /etc/portage cache layer (or a rogue prior step) that
+    # silently overwrites it after our cp.  No `|| true`: we WANT to fail RED.
+    if ! cmp -s "${PROFILE_DIR}/make.conf" /etc/portage/make.conf; then
+      die "make.conf byte-mismatch immediately after copy — something else is writing to /etc/portage/make.conf"
+    fi
   fi
 
   # package.use
@@ -203,6 +209,231 @@ emit_progress_summary() {
       echo "binpkg_count_after=${after}"
       echo "new_package_count=${delta}"
     } >> "$GITHUB_OUTPUT"
+  fi
+}
+
+# ---------- failure surfacing ----------
+# Detect every ebuild that failed during the just-finished emerge and SHOW it
+# loudly: GitHub Actions ::error annotation, build log copied into the
+# artifact directory, and a step-summary entry with the tail of the log.
+#
+# Without this, --keep-going makes emerge exit 0 even when individual atoms
+# fail, leaving the user with no way to tell why qtwebengine (or whatever)
+# blocks the chain — the actual `temp/build.log` is deleted with the runner
+# at job end.  Surfacing failures is the explicit, repeatedly-requested
+# user requirement: "Not hiding errors, but showing them and reporting logs
+# appropriately to fix it."
+#
+# Failure marker convention used by Portage:
+#   /var/tmp/portage/<cat>/<pkg>/temp/die.env   — written by `die` in ebuild.sh
+#   /var/tmp/portage/<cat>/<pkg>/temp/build.log — full build output for that atom
+# The presence of die.env is the canonical signal that the merge of that atom
+# failed; if it's absent the atom either didn't run or completed successfully.
+# Number of lines of build.log tailed into the GitHub step summary for each
+# failed package.  80 is enough for a typical configure/cmake error; raising
+# it would clutter the summary, lowering it would hide enough context.
+FAILURE_LOG_TAIL_LINES=80
+report_failed_atoms() {
+  local portage_tmp="/var/tmp/portage"
+  local failures_dir="${OUTPUT_DIR%/}/_failures"
+  local list_file="${STATE_DIR%/}/failed-packages.txt"
+  local prev_list_file="${STATE_DIR%/}/failed-packages.previous.txt"
+  local repeated_file="${STATE_DIR%/}/failed-packages.repeated.txt"
+
+  mkdir -p "$failures_dir" "$STATE_DIR"
+  : > "$list_file"
+  : > "$repeated_file"
+
+  if [[ ! -d "$portage_tmp" ]]; then
+    log "No /var/tmp/portage found; no per-atom failures to report"
+    return 0
+  fi
+
+  # Iterate every die.env under /var/tmp/portage/<cat>/<pkg>/temp/.  Use a
+  # nullglob find rather than a glob so an empty match doesn't accidentally
+  # emit "/var/tmp/portage/*/*/temp/die.env" as a literal "failed atom".
+  local die_files=()
+  while IFS= read -r -d '' f; do die_files+=("$f"); done < <(
+    find "$portage_tmp" -mindepth 4 -maxdepth 4 -type f -name die.env -print0 2>/dev/null
+  )
+
+  if [[ ${#die_files[@]} -eq 0 ]]; then
+    log "No failed atoms detected (no die.env files under ${portage_tmp})"
+    if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+      echo "failed_package_count=0" >> "$GITHUB_OUTPUT"
+      echo "repeated_failures=false" >> "$GITHUB_OUTPUT"
+    fi
+    return 0
+  fi
+
+  log "Detected ${#die_files[@]} failed atom(s); collecting logs and emitting annotations"
+
+  if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
+    {
+      echo ""
+      echo "### Failed packages (${#die_files[@]})"
+      echo ""
+      echo "Each entry below is a Portage ebuild that died during this attempt."
+      echo "The full \`build.log\` and \`die.env\` are uploaded under \`_failures/\` in the build artifact."
+      echo ""
+    } >> "$GITHUB_STEP_SUMMARY"
+  fi
+
+  local f cat_pkg cat pkg phase build_log dest
+  for f in "${die_files[@]}"; do
+    # Path layout: /var/tmp/portage/<cat>/<pkg>/temp/die.env
+    cat_pkg="${f#"${portage_tmp}"/}"     # <cat>/<pkg>/temp/die.env
+    cat_pkg="${cat_pkg%/temp/die.env}" # <cat>/<pkg>
+    cat="${cat_pkg%%/*}"
+    pkg="${cat_pkg##*/}"
+
+    # Extract the failed phase from die.env (line like: EBUILD_PHASE=compile)
+    phase="$(grep -m1 '^EBUILD_PHASE=' "$f" 2>/dev/null | cut -d= -f2- | tr -d '"' || true)"
+    [[ -n "$phase" ]] || phase="unknown"
+
+    echo "${cat}/${pkg}" >> "$list_file"
+
+    build_log="$(dirname "$f")/build.log"
+    dest="${failures_dir}/${cat}/${pkg}"
+    mkdir -p "$dest"
+    cp "$f" "${dest}/die.env"
+    if [[ -f "$build_log" ]]; then
+      cp "$build_log" "${dest}/build.log"
+    fi
+    # Also save environment if it exists — useful for reproducing the failure.
+    if [[ -f "$(dirname "$f")/environment" ]]; then
+      cp "$(dirname "$f")/environment" "${dest}/environment"
+    fi
+
+    # ::error annotation — appears at top of GitHub Actions UI, RED.
+    echo "::error title=Package build failed::${cat}/${pkg} failed in phase '${phase}'. See _failures/${cat}/${pkg}/build.log in the build artifact."
+
+    if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
+      {
+        echo "<details><summary><strong>${cat}/${pkg}</strong> — failed in <code>${phase}</code></summary>"
+        echo ""
+        if [[ -f "${dest}/build.log" ]]; then
+          echo "Last ${FAILURE_LOG_TAIL_LINES} lines of \`build.log\`:"
+          echo ""
+          echo '```'
+          tail -n "${FAILURE_LOG_TAIL_LINES}" "${dest}/build.log"
+          echo '```'
+        else
+          echo "_No \`build.log\` was preserved — only \`die.env\` is available._"
+        fi
+        echo ""
+        echo "</details>"
+        echo ""
+      } >> "$GITHUB_STEP_SUMMARY"
+    fi
+    log "  Captured failure: ${cat}/${pkg} (phase: ${phase})"
+  done
+
+  # Compare against the previous attempt's failure list (saved in STATE_DIR
+  # by the previous attempt) to detect atoms that fail repeatedly — those are
+  # the ones a human needs to look at, and resuming further just burns CI.
+  local repeated_count=0
+  if [[ -f "$prev_list_file" ]]; then
+    # comm -12 needs sorted input
+    local cur_sorted prev_sorted
+    cur_sorted="$(mktemp)"; prev_sorted="$(mktemp)"
+    sort -u "$list_file" > "$cur_sorted"
+    sort -u "$prev_list_file" > "$prev_sorted"
+    comm -12 "$cur_sorted" "$prev_sorted" > "$repeated_file"
+    rm -f "$cur_sorted" "$prev_sorted"
+    repeated_count="$(wc -l < "$repeated_file" | tr -d ' ')"
+  fi
+
+  if [[ "$repeated_count" -gt 0 ]]; then
+    log "WARNING: ${repeated_count} package(s) failed in this attempt AND the previous one:"
+    while IFS= read -r atom; do log "    repeated: ${atom}"; done < "$repeated_file"
+    echo "::error title=Repeated package failures::${repeated_count} package(s) failed in two consecutive attempts. Auto-resume should stop. Atoms: $(tr '\n' ' ' < "$repeated_file")"
+  fi
+
+  # Rotate the list so the next attempt's invocation can compare against ours.
+  cp "$list_file" "$prev_list_file"
+
+  if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+    {
+      echo "failed_package_count=${#die_files[@]}"
+      if [[ "$repeated_count" -gt 0 ]]; then
+        echo "repeated_failures=true"
+      else
+        echo "repeated_failures=false"
+      fi
+    } >> "$GITHUB_OUTPUT"
+  fi
+}
+
+# ---------- cache footprint diagnostics ----------
+#
+# The system-state cache (/var/db/pkg + /var/lib/portage + /var/cache/edb)
+# plus the existing binpkgs and ccache caches together must stay under
+# GitHub's 10 GiB per-repository cache cap.  Above that cap, actions/cache
+# silently drops save attempts, which would break resume.
+#
+# We surface size as a WARNING here only — failing the build over a save
+# we haven't yet attempted is overreach.  The authoritative coupled-cache
+# check is the workflow-level XOR on `cache-matched-key` in build-packages.yml,
+# which fires on the NEXT attempt if a save was actually dropped.
+
+# Cache size at which we emit a warning to the step log; chosen to leave
+# ~2 GiB headroom under GitHub's 10 GiB per-repository cap.
+CACHE_TOTAL_WARN_BYTES=$(( 8 * 1024 * 1024 * 1024 ))
+
+# Directories that are persisted across resume attempts via actions/cache.
+# Keep this list aligned with the cache steps in build-packages.yml so the
+# footprint measurement reflects what's actually being saved.
+CACHED_DIRS=(
+  /var/cache/binpkgs
+  /var/cache/ccache
+  /var/db/pkg
+  /var/cache/edb
+  /var/lib/portage
+)
+
+# Print a human-readable size for a directory; "0" if it doesn't exist.
+_dir_size_bytes() {
+  local d="$1"
+  if [[ -d "$d" ]]; then
+    du -sb "$d" 2>/dev/null | awk '{print $1+0}'
+  else
+    echo 0
+  fi
+}
+
+measure_cache_footprint() {
+  local phase="${1:-}"   # "before" | "after"
+  log "Cache footprint (${phase}):"
+  local total=0 d size human_total human_size
+  for d in "${CACHED_DIRS[@]}"; do
+    size="$(_dir_size_bytes "$d")"
+    total=$(( total + size ))
+    human_size="$(numfmt --to=iec --suffix=B "$size" 2>/dev/null || echo "${size}B")"
+    log "  ${d}: ${human_size}"
+    if [[ -n "${GITHUB_OUTPUT:-}" && "$phase" == "after" ]]; then
+      # Sanitize path -> output key; only used for diagnostics.
+      local k
+      k="cache_size_$(echo "$d" | tr '/' '_' | tr -c 'A-Za-z0-9_' '_')"
+      echo "${k}=${size}" >> "$GITHUB_OUTPUT"
+    fi
+  done
+  human_total="$(numfmt --to=iec --suffix=B "$total" 2>/dev/null || echo "${total}B")"
+  log "  TOTAL: ${human_total} (GHA per-repo cap: 10 GiB)"
+
+  if [[ -n "${GITHUB_OUTPUT:-}" && "$phase" == "after" ]]; then
+    echo "cache_total_bytes=${total}" >> "$GITHUB_OUTPUT"
+  fi
+
+  # Diagnostic-only: warn when the post-build footprint approaches GitHub's
+  # 10 GiB per-repository cache cap.  We deliberately do NOT fail the build
+  # here — a dropped save is recoverable (the next attempt's coupled-cache
+  # invariant check in build-packages.yml is the authoritative gate; it
+  # will fail RED if exactly one of the two caches restored).  Failing a
+  # completed 5 h build over a save we haven't yet attempted would be
+  # strictly worse than warning and letting the next attempt arbitrate.
+  if [[ "$phase" == "after" && "$total" -gt "$CACHE_TOTAL_WARN_BYTES" ]]; then
+    echo "::warning title=Cache footprint approaching GHA cap::Total cache size ${human_total} is within 2 GiB of GitHub's 10 GiB per-repository cap. If a save is silently dropped, the next attempt's coupled-cache check will fail RED."
   fi
 }
 
@@ -565,6 +796,7 @@ setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
+measure_cache_footprint "before"
 show_ccache_stats
 
 # Collect and sign whatever binpkgs were produced, even on a timed-out build,
@@ -579,6 +811,8 @@ collect_packages
 prune_old_binpkgs
 sign_packages
 show_ccache_stats
+report_failed_atoms
+measure_cache_footprint "after"
 emit_progress_summary "${BINPKGS_BEFORE}" "${BINPKGS_AFTER}"
 
 if [[ $BUILD_RC -eq 42 ]]; then
