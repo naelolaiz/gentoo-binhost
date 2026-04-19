@@ -229,6 +229,10 @@ emit_progress_summary() {
 #   /var/tmp/portage/<cat>/<pkg>/temp/build.log — full build output for that atom
 # The presence of die.env is the canonical signal that the merge of that atom
 # failed; if it's absent the atom either didn't run or completed successfully.
+# Number of lines of build.log tailed into the GitHub step summary for each
+# failed package.  80 is enough for a typical configure/cmake error; raising
+# it would clutter the summary, lowering it would hide enough context.
+FAILURE_LOG_TAIL_LINES=80
 report_failed_atoms() {
   local portage_tmp="/var/tmp/portage"
   local failures_dir="${OUTPUT_DIR%/}/_failures"
@@ -309,10 +313,10 @@ report_failed_atoms() {
         echo "<details><summary><strong>${cat}/${pkg}</strong> — failed in <code>${phase}</code></summary>"
         echo ""
         if [[ -f "${dest}/build.log" ]]; then
-          echo "Last 80 lines of \`build.log\`:"
+          echo "Last ${FAILURE_LOG_TAIL_LINES} lines of \`build.log\`:"
           echo ""
           echo '```'
-          tail -n 80 "${dest}/build.log"
+          tail -n "${FAILURE_LOG_TAIL_LINES}" "${dest}/build.log"
           echo '```'
         else
           echo "_No \`build.log\` was preserved — only \`die.env\` is available._"
@@ -381,6 +385,19 @@ CACHE_MANIFEST_BASENAME=".binhost-cache-manifest"
 # transient growth between save steps.
 CACHE_TOTAL_LIMIT_BYTES=$(( 10 * 1024 * 1024 * 1024 ))
 CACHE_TOTAL_WARN_BYTES=$(( 8  * 1024 * 1024 * 1024 ))
+
+# Sampling parameters for verify_installed_db_consistency.  A full scan of
+# /var/db/pkg/*/CONTENTS is O(100k) entries on a desktop profile and would
+# add minutes to every attempt; the spot-check picks N random packages and
+# M random object entries each.  A genuine cache↔fs mismatch produces near-
+# 100% missing across any sample, so small N×M are sufficient.
+INSTALLED_DB_SAMPLE_PKGS=15
+INSTALLED_DB_SAMPLE_FILES_PER_PKG=10
+# % of sampled files that may be missing without action (postinst-removed
+# files, /var/log oddities) — above this, only warn — and a hard stop level
+# above which we refuse to continue (the cache is almost certainly broken).
+INSTALLED_DB_WARN_THRESHOLD_PCT=10
+INSTALLED_DB_FAIL_THRESHOLD_PCT=40
 
 # Directories that are persisted across resume attempts via actions/cache.
 # Keep this list aligned with the cache steps in build-packages.yml — both
@@ -515,7 +532,7 @@ verify_installed_db_consistency() {
     log "No /var/db/pkg present; skipping installed-DB consistency check"
     return 0
   fi
-  local sample_pkgs=15 sample_files=10
+  local sample_pkgs="${INSTALLED_DB_SAMPLE_PKGS}" sample_files="${INSTALLED_DB_SAMPLE_FILES_PER_PKG}"
   local pkgs=()
   while IFS= read -r p; do pkgs+=("$p"); done < <(
     find /var/db/pkg -mindepth 2 -maxdepth 2 -type d 2>/dev/null | shuf -n "$sample_pkgs"
@@ -558,10 +575,10 @@ verify_installed_db_consistency() {
   # live filesystem; a few isolated misses (<10%) can happen for e.g. files
   # that the package itself removed in pkg_postinst.  We pick 40% as a
   # generous threshold but fail loudly above it.
-  if [[ "$pct" -gt 40 ]]; then
+  if [[ "$pct" -gt "$INSTALLED_DB_FAIL_THRESHOLD_PCT" ]]; then
     echo "::error title=Installed-DB inconsistency::${total_missing} of ${total_checked} sampled files from /var/db/pkg/*/CONTENTS are missing on disk (${pct}%). The cached installed-package DB does not match the container filesystem; Portage would skip re-installing packages whose binaries are gone. Refusing to build."
     die "Installed-DB / filesystem mismatch above threshold (${pct}%); refusing to continue."
-  elif [[ "$pct" -gt 10 ]]; then
+  elif [[ "$pct" -gt "$INSTALLED_DB_WARN_THRESHOLD_PCT" ]]; then
     echo "::warning title=Installed-DB drift::${total_missing} of ${total_checked} sampled files missing (${pct}%); within tolerance but worth investigating."
   fi
 }
