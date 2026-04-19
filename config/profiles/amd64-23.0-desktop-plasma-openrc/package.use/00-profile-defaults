@@ -76,3 +76,5 @@ media-video/ffmpeg sdl
 sys-libs/ncurses -gpm
 sys-apps/attr -nls
 sys-apps/acl -nls
+# sys-kernel/gentoo-kernel-bin[initramfs] requires >=sys-kernel/installkernel-14[dracut]
+sys-kernel/installkernel dracut
