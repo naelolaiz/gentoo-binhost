@@ -619,6 +619,29 @@ sync_tree() {
   fi
 }
 
+# ---------- kernel symlink ----------
+# Point /usr/src/linux at an installed kernel so any *-modules ebuild going
+# through linux-mod-r1.eclass (e.g. app-emulation/virtualbox-modules) finds
+# kernel sources during pkg_setup.  sys-kernel/gentoo-kernel-bin's own
+# pkg_postinst already calls `eselect kernel set` via the dist-kernel
+# eclass; this step is belt-and-suspenders for chained resume attempts
+# where the kernel was installed in a previous attempt.  No-op when no
+# kernel is installed yet (eselect returns non-zero, which is fine).
+ensure_kernel_symlink() {
+  if ! command -v eselect &>/dev/null; then
+    return 0
+  fi
+  # `eselect kernel list` exits 0 even when nothing is installed; check the
+  # output for at least one entry instead of relying on the exit code.
+  if eselect --colour=no kernel list 2>/dev/null | grep -qE '^\s*\['; then
+    log "Setting /usr/src/linux symlink"
+    eselect kernel set 1
+    log "  /usr/src/linux -> $(readlink /usr/src/linux 2>/dev/null || echo 'not set')"
+  else
+    log "No kernel sources installed yet; skipping eselect kernel set"
+  fi
+}
+
 # ---------- build ----------
 build_packages() {
   local packages=()
@@ -796,6 +819,7 @@ setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
+ensure_kernel_symlink
 measure_cache_footprint "before"
 show_ccache_stats
 

@@ -105,6 +105,15 @@ www-apps/gitea
 sys-apps/fwupd
 sys-process/htop
 app-emulation/qemu
+# Provides /usr/src/linux for any *-modules ebuild going through
+# linux-mod-r1.eclass (e.g. app-emulation/virtualbox-modules, which is
+# PDEPENDed by app-emulation/virtualbox).  Without real kernel sources in
+# the CI container, those ebuilds die in pkg_setup with "kernel sources are
+# required to build kernel modules".  Portage handles the merge order, and
+# gentoo-kernel-bin's pkg_postinst runs `eselect kernel set` itself; the
+# explicit eselect call in scripts/build.sh is belt-and-suspenders for
+# resume attempts.
+sys-kernel/gentoo-kernel-bin
 app-emulation/virtualbox
 
 # Misc
