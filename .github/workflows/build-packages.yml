@@ -212,7 +212,12 @@ jobs:
 
       - name: Install build tools
         run: |
-          emerge --oneshot --quiet dev-util/ccache app-portage/gentoolkit
+          # --usepkg y: the "Restore binpkgs" step above has already
+          # populated /var/cache/binpkgs with last attempt's gpkgs,
+          # including dev-util/ccache. Without --usepkg Portage ignores
+          # them and rebuilds ccache from source on every single attempt,
+          # burning ~1-2 min of the 5h budget for nothing.
+          emerge --oneshot --quiet --usepkg y dev-util/ccache app-portage/gentoolkit
 
       - name: Restore build state from previous attempt
         if: inputs._attempt && inputs._attempt != '1'
