@@ -220,6 +220,36 @@ jobs:
           fi
           eselect profile set default/linux/amd64/23.0/desktop/plasma
 
+      - name: Set up Portage binpkg trust
+        run: |
+          # Bootstrap the Portage-specific GPG keyring so binary packages
+          # from the Gentoo binhost can be signature-verified.  This MUST
+          # happen before "Install build tools" because that step fetches
+          # signed gpkgs from the official Gentoo binhost.  getuto (from
+          # app-portage/gentoolkit) normally handles this, but gentoolkit is
+          # one of the packages we are installing — chicken-and-egg.
+          mkdir -p /etc/portage/gnupg
+          chmod 0700 /etc/portage/gnupg
+          # Initialise an empty keyring so subsequent imports have somewhere
+          # to write.  Suppress only stdout (the empty key list) — keep
+          # stderr visible so a real GPG failure is loud.
+          gpg --homedir /etc/portage/gnupg --list-keys >/dev/null || true
+
+          GENTOO_KEY="534E4209AB49EEE1C19D96162C44695DB9F6043D"
+
+          # Try local openpgp-keys first (shipped by sec-keys/openpgp-keys-gentoo-release
+          # in the stage3), then fall back to the keyserver.
+          if [[ -f /usr/share/openpgp-keys/gentoo-release.asc ]]; then
+            gpg --homedir /etc/portage/gnupg \
+              --import /usr/share/openpgp-keys/gentoo-release.asc
+            echo "Imported Gentoo release key from local openpgp-keys"
+          else
+            gpg --homedir /etc/portage/gnupg \
+              --keyserver hkps://keys.gentoo.org \
+              --recv-keys "$GENTOO_KEY"
+            echo "Imported Gentoo release key from keyserver"
+          fi
+
       - name: Install build tools
         env:
           # Pull binpkgs from the published binhost in addition to the local
@@ -230,16 +260,10 @@ jobs:
           # cache is empty, so ccache and gentoolkit get rebuilt from source
           # every single time.  --getbinpkg y + PORTAGE_BINHOST makes Portage
           # fetch the gpkgs we already published in earlier runs.
+          #
+          # Binpkg trust (Gentoo release key in /etc/portage/gnupg/) is
+          # established by the "Set up Portage binpkg trust" step above.
           PORTAGE_BINHOST: ${{ env.BINHOST_URLS }}
-          # The full binpkg trust keyring (Gentoo release key + our own
-          # signing key) is set up later by setup_binpkg_trust inside
-          # build.sh.  For this bootstrap step (only ccache + gentoolkit, not
-          # part of what we publish) skip the signature requirement so we
-          # can fetch over HTTPS from the binhost.  The signature check is
-          # re-enabled implicitly for the real package build because
-          # PORTAGE_BINHOST and FEATURES are exported with the default
-          # binpkg-request-signature inside build.sh.
-          FEATURES: "-binpkg-request-signature"
         run: |
           emerge --oneshot --quiet --usepkg y --getbinpkg y \
             dev-util/ccache app-portage/gentoolkit
