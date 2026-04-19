@@ -32,6 +32,9 @@ SIGN=false
 GPG_KEY=""
 OUTPUT_DIR="/var/cache/binpkgs"
 RESUME=false
+# STATE_DIR is cached (actions/cache save) only on exit 42 (timeout/resume),
+# NOT on exit 1 (real failure / RED chain end).  This makes all state stored
+# here — including repeated-failure tracking — chain-scoped by design.
 STATE_DIR="/var/tmp/portage-state"
 MAX_BUILD_TIME=""
 BINHOST_URL=""
@@ -332,6 +335,13 @@ report_failed_atoms() {
   # Compare against the previous attempt's failure list (saved in STATE_DIR
   # by the previous attempt) to detect atoms that fail repeatedly — those are
   # the ones a human needs to look at, and resuming further just burns CI.
+  #
+  # NOTE: Repeated-failure tracking is chain-scoped, not cross-chain.
+  # This is intentional — chains are independent retry units.  The mechanism:
+  # STATE_DIR cache is saved on exit 42 (timeout) only; on exit 1 (real
+  # failure / RED chain end) the cache is NOT saved, so the next independent
+  # chain starts with a clean slate.  Do not "fix" this gap — chain A's
+  # failures must not poison chain B.
   local repeated_count=0
   if [[ -f "$prev_list_file" ]]; then
     # comm -12 needs sorted input
