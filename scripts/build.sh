@@ -563,6 +563,73 @@ PYEOF
   esac
 }
 
+# ---------- vdb / on-disk consistency ----------
+# A handful of packages are *self-hosting*: their ebuild needs an already-
+# installed copy of the same package to bootstrap from source.  dev-lang/go
+# is the canonical example — make.bash refuses to run without an existing
+# Go >= 1.24.6 at the default Gentoo bootstrap path /usr/lib/go/bin/go.
+#
+# Our CI restores /var/db/pkg from a system-state cache, but /usr is on the
+# runner's ephemeral disk.  When the binpkgs cache has been evicted (or the
+# previous chain's gpkg for that exact version was pruned/never-produced)
+# we end up with vdb claiming the package is installed while the real files
+# are gone.  Portage then schedules `[ebuild R]` (USE flags don't match the
+# new ebuild's defaults so it picks reinstall over reuse), the rebuild
+# can't bootstrap, and the whole emerge dies.  This is what killed run
+# 24637227461 (job 72034743102).
+#
+# Fix: BEFORE emerge plans the build, detect (vdb-says-installed AND
+# bootstrap-binary-missing) and drop the stale vdb entry.  emerge then
+# re-resolves the package's BDEPEND from scratch — for dev-lang/go that's
+# `|| ( >=dev-lang/go-1.24.6 >=dev-lang/go-bin-1.24.6 )`, so Portage will
+# pull dev-lang/go-bin from the Gentoo binhost as a working bootstrap and
+# the source rebuild can proceed.
+#
+# Each entry is "<category>/<pn>:<absolute-bootstrap-binary-path>".
+# Add new self-hosting packages here as needed.
+SELF_HOSTED_BOOTSTRAP_PACKAGES=(
+  "dev-lang/go:/usr/lib/go/bin/go"
+)
+
+verify_self_hosted_packages() {
+  local entry pkg cat pn bootstrap_bin vdb_dirs
+  for entry in "${SELF_HOSTED_BOOTSTRAP_PACKAGES[@]}"; do
+    pkg="${entry%%:*}"
+    cat="${pkg%/*}"
+    pn="${pkg##*/}"
+    bootstrap_bin="${entry#*:}"
+
+    # vdb entries live in /var/db/pkg/<cat>/<pn>-<ver>[-r<rev>].  Match only
+    # the exact PN within its category directory; PMS guarantees versions
+    # start with a digit, so `${pn}-[0-9]*` won't catch sibling packages
+    # whose PN happens to start with our PN (e.g. dev-lang/go-* would
+    # otherwise match dev-lang/go-cross-* too).  nullglob keeps an empty
+    # match as an empty array instead of the literal pattern.
+    shopt -s nullglob
+    vdb_dirs=( /var/db/pkg/"${cat}"/"${pn}"-[0-9]* )
+    shopt -u nullglob
+
+    if (( ${#vdb_dirs[@]} == 0 )); then
+      # vdb doesn't claim it's installed — Portage will resolve BDEPEND
+      # normally and pull the binary bootstrap if needed.
+      continue
+    fi
+    if [[ -x "$bootstrap_bin" ]]; then
+      # vdb agrees with reality — nothing to do.
+      continue
+    fi
+
+    log "Self-hosted bootstrap mismatch for ${pkg}: vdb claims installed (${vdb_dirs[*]})"
+    log "  but bootstrap binary ${bootstrap_bin} is missing on disk."
+    log "  Removing stale vdb entry so emerge re-resolves BDEPEND and pulls a bootstrap binpkg."
+    local d
+    for d in "${vdb_dirs[@]}"; do
+      rm -rf -- "$d"
+      log "  Removed ${d}"
+    done
+  done
+}
+
 # ---------- binpkg trust ----------
 setup_binpkg_trust() {
   # When fetching from a remote binhost, Portage verifies GPG signatures on
@@ -870,6 +937,7 @@ setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
+verify_self_hosted_packages
 ensure_kernel_symlink
 measure_cache_footprint "before"
 show_ccache_stats
