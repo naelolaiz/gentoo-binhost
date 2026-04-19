@@ -65,7 +65,7 @@ jobs:
           mkdir -p "$DEST"
 
           # Copy every .gpkg.tar (and optional .asc signatures) we found
-          find /tmp/artifacts -name '*.gpkg.tar' 2>/dev/null | while read -r pkg; do
+          find /tmp/artifacts -name '*.gpkg.tar' | while read -r pkg; do
             # Preserve category/name-version subdirectory structure
             # Artifacts are stored as category/name/name-version.gpkg.tar
             rel_dir="$(dirname "$pkg" | sed 's|.*/binpkgs-[^/]*/||')"
@@ -96,10 +96,10 @@ jobs:
           # Surface remaining size so a future "still over 1 GB" failure is
           # diagnosable from the workflow log alone.
           echo "Site size after pruning:"
-          du -sh /tmp/pages-site || true
+          du -sh /tmp/pages-site
           # Default to 0 so a missing/empty dir doesn't crash the numeric
           # comparison below under `set -e`.
-          SITE_BYTES="$(du -sb /tmp/pages-site 2>/dev/null | awk '{print $1+0}')"
+          SITE_BYTES="$(du -sb /tmp/pages-site | awk '{print $1+0}')"
           SITE_BYTES="${SITE_BYTES:-0}"
           # GitHub Pages soft limit is 1 GiB.  Warn (don't fail) at 900 MiB so
           # we have time to react before the next build pushes us over.

@@ -171,7 +171,17 @@ jobs:
       # packages are installed whose binaries are missing and Portage will
       # skip-then-fail on them later.  Fail RED HERE instead.
       - name: Verify coupled-cache invariant
-        if: steps.meta.outputs.attempt != '1'
+        # Run on EVERY attempt, including attempt 1.  Cross-chain divergence
+        # (the bug this catches) actually only happens on attempt 1 of a new
+        # chain: GitHub's 10 GB-per-repo cache budget can evict the 3.6 GB
+        # binpkgs cache while the 50 MB system-state cache survives, so a
+        # fresh chain inherits a half-restored world.  An earlier guard
+        # (`if: attempt != '1'`) made this step a no-op exactly when it was
+        # needed and let the build silently fall through to source-rebuilding
+        # packages that /var/db/pkg already claims are installed — see run
+        # 24636521882 where dev-lang/go was scheduled `[ebuild R]` instead of
+        # `[binary R]`, failed in 1.8s, and the cancel-on-error left no
+        # build.log behind.
         run: |
           B_KEY="${{ steps.restore_binpkgs.outputs.cache-matched-key }}"
           S_KEY="${{ steps.restore_system_state.outputs.cache-matched-key }}"
