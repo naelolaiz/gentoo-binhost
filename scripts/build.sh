@@ -172,7 +172,7 @@ apply_profile() {
   # Evaluate any $(nproc) placeholders now that we're running under bash.
   if [[ -f /etc/portage/make.conf ]]; then
     local nproc_val
-    nproc_val="$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)"
+    nproc_val="$(nproc || getconf _NPROCESSORS_ONLN || echo 1)"
     sed -i "s/\$(nproc)/${nproc_val}/g" /etc/portage/make.conf
     log "  Evaluated \$(nproc) → ${nproc_val} in make.conf"
   fi
@@ -191,7 +191,7 @@ apply_profile() {
 # permanently stuck build.
 count_binpkgs() {
   if [[ -d /var/cache/binpkgs ]]; then
-    find /var/cache/binpkgs -name '*.gpkg.tar' 2>/dev/null | wc -l
+    find /var/cache/binpkgs -name '*.gpkg.tar' | wc -l
   else
     echo 0
   fi
@@ -249,12 +249,12 @@ report_failed_atoms() {
     return 0
   fi
 
-  # Iterate every die.env under /var/tmp/portage/<cat>/<pkg>/temp/.  Use a
-  # nullglob find rather than a glob so an empty match doesn't accidentally
-  # emit "/var/tmp/portage/*/*/temp/die.env" as a literal "failed atom".
+  # Iterate every die.env under /var/tmp/portage/<cat>/<pkg>/temp/.  No
+  # 2>/dev/null on find: if the directory is unreadable for a real reason
+  # (perm denied, IO error) we want to see it, not lose all failure context.
   local die_files=()
   while IFS= read -r -d '' f; do die_files+=("$f"); done < <(
-    find "$portage_tmp" -mindepth 4 -maxdepth 4 -type f -name die.env -print0 2>/dev/null
+    find "$portage_tmp" -mindepth 4 -maxdepth 4 -type f -name die.env -print0
   )
 
   if [[ ${#die_files[@]} -eq 0 ]]; then
@@ -287,8 +287,11 @@ report_failed_atoms() {
     cat="${cat_pkg%%/*}"
     pkg="${cat_pkg##*/}"
 
-    # Extract the failed phase from die.env (line like: EBUILD_PHASE=compile)
-    phase="$(grep -m1 '^EBUILD_PHASE=' "$f" 2>/dev/null | cut -d= -f2- | tr -d '"' || true)"
+    # Extract the failed phase from die.env (line like: EBUILD_PHASE=compile).
+    # No 2>/dev/null: $f IS die.env, which we just found via -type f, so a
+    # grep error here means the file became unreadable mid-scan and we want
+    # to know.
+    phase="$(grep -m1 '^EBUILD_PHASE=' "$f" | cut -d= -f2- | tr -d '"' || true)"
     [[ -n "$phase" ]] || phase="unknown"
 
     echo "${cat}/${pkg}" >> "$list_file"
@@ -396,7 +399,7 @@ CACHED_DIRS=(
 _dir_size_bytes() {
   local d="$1"
   if [[ -d "$d" ]]; then
-    du -sb "$d" 2>/dev/null | awk '{print $1+0}'
+    du -sb "$d" | awk '{print $1+0}'
   else
     echo 0
   fi
@@ -409,7 +412,7 @@ measure_cache_footprint() {
   for d in "${CACHED_DIRS[@]}"; do
     size="$(_dir_size_bytes "$d")"
     total=$(( total + size ))
-    human_size="$(numfmt --to=iec --suffix=B "$size" 2>/dev/null || echo "${size}B")"
+    human_size="$(numfmt --to=iec --suffix=B "$size" || echo "${size}B")"
     log "  ${d}: ${human_size}"
     if [[ -n "${GITHUB_OUTPUT:-}" && "$phase" == "after" ]]; then
       # Sanitize path -> output key; only used for diagnostics.
@@ -418,7 +421,7 @@ measure_cache_footprint() {
       echo "${k}=${size}" >> "$GITHUB_OUTPUT"
     fi
   done
-  human_total="$(numfmt --to=iec --suffix=B "$total" 2>/dev/null || echo "${total}B")"
+  human_total="$(numfmt --to=iec --suffix=B "$total" || echo "${total}B")"
   log "  TOTAL: ${human_total} (GHA per-repo cap: 10 GiB)"
 
   if [[ -n "${GITHUB_OUTPUT:-}" && "$phase" == "after" ]]; then
@@ -446,7 +449,7 @@ setup_ccache() {
   # and the restored cache at /var/cache/ccache is effectively unused, which
   # is exactly the symptom we observed (cache size 0.0 GB at every attempt).
   export CCACHE_DIR="${CCACHE_DIR:-/var/cache/ccache}"
-  if command -v ccache &>/dev/null; then
+  if command -v ccache >/dev/null; then
     log "Configuring ccache (dir: ${CCACHE_DIR})"
     mkdir -p "${CCACHE_DIR}"
     # Do NOT silence these — if ccache config writes fail (bad CCACHE_DIR
@@ -471,7 +474,7 @@ setup_ccache() {
 
 # ---------- ccache stats ----------
 show_ccache_stats() {
-  if command -v ccache &>/dev/null; then
+  if command -v ccache >/dev/null; then
     log "ccache statistics:"
     # Informational; tolerate non-zero exit but do not hide stderr.
     ccache --show-stats || log "  (ccache --show-stats failed; see stderr above)"
@@ -485,7 +488,7 @@ MTIMEDB_PATH="/var/cache/edb/mtimedb"
 
 restore_build_state() {
   [[ "$RESUME" == true ]] || return 0
-  if [[ ! -d "$STATE_DIR" ]] || [[ -z "$(ls -A "$STATE_DIR" 2>/dev/null)" ]]; then
+  if [[ ! -d "$STATE_DIR" ]] || [[ -z "$(ls -A "$STATE_DIR")" ]]; then
     log "No saved build state found at ${STATE_DIR}, starting fresh"
     return 0
   fi
@@ -517,7 +520,7 @@ restore_build_state() {
 save_build_state() {
   log "Saving build state to ${STATE_DIR}"
   mkdir -p "${STATE_DIR}/portage"
-  if [[ -d /var/tmp/portage ]] && [[ -n "$(ls -A /var/tmp/portage 2>/dev/null)" ]]; then
+  if [[ -d /var/tmp/portage ]] && [[ -n "$(ls -A /var/tmp/portage)" ]]; then
     rsync -a --delete /var/tmp/portage/ "${STATE_DIR}/portage/"
     log "  Saved /var/tmp/portage (WORKDIRs)"
   else
@@ -573,12 +576,12 @@ setup_binpkg_trust() {
   # or outdated after a rotation.
   local gentoo_key="534E4209AB49EEE1C19D96162C44695DB9F6043D"
   if [[ -d /etc/portage/gnupg ]] \
-     && gpg --homedir /etc/portage/gnupg --list-keys "$gentoo_key" &>/dev/null; then
+     && gpg --homedir /etc/portage/gnupg --list-keys "$gentoo_key" >/dev/null; then
     log "Gentoo binpkg signing key ${gentoo_key} already trusted, skipping trust setup"
     return 0
   fi
 
-  if command -v getuto &>/dev/null; then
+  if command -v getuto >/dev/null; then
     log "Running getuto to import Gentoo binpkg signing keys"
     getuto
     log "  Portage binary-package trust established via getuto"
@@ -586,8 +589,10 @@ setup_binpkg_trust() {
     log "Warning: getuto not found; setting up Portage GnuPG keyring manually"
     mkdir -p /etc/portage/gnupg
     chmod 0700 /etc/portage/gnupg
-    # Initialise an empty keyring so gpg doesn't complain about missing files
-    gpg --homedir /etc/portage/gnupg --list-keys &>/dev/null || true
+    # Initialise an empty keyring so subsequent --recv-keys has somewhere to
+    # write.  Suppress only stdout (the empty key list) — keep stderr visible
+    # so a real GPG failure (corrupt keyring, bad perms) is loud.
+    gpg --homedir /etc/portage/gnupg --list-keys >/dev/null || true
     # Try to receive the Gentoo release key from the official keyserver
     gpg --homedir /etc/portage/gnupg \
         --keyserver hkps://keys.gentoo.org \
@@ -743,22 +748,29 @@ run_emerge_with_deadline() {
   local emerge_pid=$!
   local start_time=$SECONDS
 
-  while kill -0 "$emerge_pid" 2>/dev/null; do
+  # NOTE on `kill -0` / `kill -TERM` / `wait` below: we deliberately do NOT
+  # suppress their stderr.  At most a single "No such process" / "not a
+  # child of this shell" line can leak when emerge exits between two
+  # successive probes — that's a *signal*, not noise: it means the timeout
+  # path raced with a normal exit.  Suppressing it has previously hidden
+  # real bugs (process group not propagated, wrong PID, kernel reaping
+  # surprises).  Keep them visible.
+  while kill -0 "$emerge_pid"; do
     sleep 30
     local elapsed=$(( SECONDS - start_time ))
     if [[ $elapsed -ge $warn_secs ]]; then
       log "Approaching time limit (${elapsed}s elapsed / ${remaining}s budget for this phase), stopping emerge"
-      kill -TERM -- -${emerge_pid} 2>/dev/null || true
+      kill -TERM -- -${emerge_pid} || true
       local kill_wait=0
-      while kill -0 "$emerge_pid" 2>/dev/null && [[ $kill_wait -lt 60 ]]; do
+      while kill -0 "$emerge_pid" && [[ $kill_wait -lt 60 ]]; do
         sleep 5
         kill_wait=$(( kill_wait + 5 ))
       done
-      if kill -0 "$emerge_pid" 2>/dev/null; then
+      if kill -0 "$emerge_pid"; then
         log "  Emerge did not exit after SIGTERM, sending SIGKILL to process group"
-        kill -KILL -- -${emerge_pid} 2>/dev/null || true
+        kill -KILL -- -${emerge_pid} || true
       fi
-      wait "$emerge_pid" 2>/dev/null || true
+      wait "$emerge_pid" || true
       save_build_state
       show_ccache_stats
       log "Build state saved; returning 42 (timed out, state saved)"
@@ -818,6 +830,41 @@ prune_old_binpkgs() {
 }
 
 # ---------- main ----------
+# Make sure that, if the runner cancels us (job-timeout / user-cancel /
+# external SIGTERM), we still:
+#   1. Capture any in-flight portage failures (die.env files) so the next
+#      attempt can compare against them and so the artifact actually
+#      contains the failing build.log instead of an empty _failures/
+#      directory.  This was the missing piece in run 24636521882, where
+#      dev-lang/go failed in 1.8 s and then the cancel path threw the
+#      build.log away.
+#   2. Move whatever finished gpkgs already exist into OUTPUT_DIR, so the
+#      "Save binpkgs" cache step preserves real progress instead of an
+#      empty tree.
+# Idempotent helpers: collect_packages / sign_packages / report_failed_atoms
+# are all safe to re-run from the EXIT trap after the normal happy path
+# already invoked them — they short-circuit on empty inputs.
+_on_exit() {
+  local rc=$?
+  # Disable the trap re-entry: if any of the cleanup helpers themselves
+  # die, we still want a single exit, not a recursion loop.
+  trap - EXIT INT TERM
+  if [[ $rc -ne 0 && $rc -ne 42 ]]; then
+    log "Caught unexpected exit (rc=${rc}); running failure capture before exiting"
+    # Keep going past individual helper failures — partial capture is
+    # always more useful than no capture.
+    collect_packages       || log "  collect_packages failed during cleanup (rc=$?)"
+    [[ "$SIGN" == true ]] && { sign_packages || log "  sign_packages failed during cleanup (rc=$?)"; }
+    report_failed_atoms    || log "  report_failed_atoms failed during cleanup (rc=$?)"
+  fi
+  exit "$rc"
+}
+trap _on_exit EXIT
+# SIGTERM/SIGINT: re-raise via 'exit' so EXIT trap runs with the conventional
+# 128+signo exit code.
+trap 'log "Caught SIGTERM"; exit 143' TERM
+trap 'log "Caught SIGINT";  exit 130' INT
+
 apply_profile
 setup_ccache
 sync_tree

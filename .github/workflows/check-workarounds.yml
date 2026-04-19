@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Sync portage tree
         run: |
-          emerge-webrsync --quiet 2>/dev/null \
+          emerge-webrsync --quiet \
             || emerge --sync --quiet \
             || emaint sync -a
 

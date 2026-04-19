@@ -171,7 +171,17 @@ jobs:
       # packages are installed whose binaries are missing and Portage will
       # skip-then-fail on them later.  Fail RED HERE instead.
       - name: Verify coupled-cache invariant
-        if: steps.meta.outputs.attempt != '1'
+        # Run on EVERY attempt, including attempt 1.  Cross-chain divergence
+        # (the bug this catches) actually only happens on attempt 1 of a new
+        # chain: GitHub's 10 GB-per-repo cache budget can evict the 3.6 GB
+        # binpkgs cache while the 50 MB system-state cache survives, so a
+        # fresh chain inherits a half-restored world.  An earlier guard
+        # (`if: attempt != '1'`) made this step a no-op exactly when it was
+        # needed and let the build silently fall through to source-rebuilding
+        # packages that /var/db/pkg already claims are installed — see run
+        # 24636521882 where dev-lang/go was scheduled `[ebuild R]` instead of
+        # `[binary R]`, failed in 1.8s, and the cancel-on-error left no
+        # build.log behind.
         run: |
           B_KEY="${{ steps.restore_binpkgs.outputs.cache-matched-key }}"
           S_KEY="${{ steps.restore_system_state.outputs.cache-matched-key }}"
@@ -211,13 +221,28 @@ jobs:
           eselect profile set default/linux/amd64/23.0/desktop/plasma
 
       - name: Install build tools
+        env:
+          # Pull binpkgs from the published binhost in addition to the local
+          # /var/cache/binpkgs.  Without this, --usepkg y consults ONLY the
+          # local cache; on the first attempt of a new chain (where the
+          # GitHub binpkgs cache may have been evicted while system-state
+          # survived — see "Verify coupled-cache invariant" above) the local
+          # cache is empty, so ccache and gentoolkit get rebuilt from source
+          # every single time.  --getbinpkg y + PORTAGE_BINHOST makes Portage
+          # fetch the gpkgs we already published in earlier runs.
+          PORTAGE_BINHOST: ${{ env.BINHOST_URLS }}
+          # The full binpkg trust keyring (Gentoo release key + our own
+          # signing key) is set up later by setup_binpkg_trust inside
+          # build.sh.  For this bootstrap step (only ccache + gentoolkit, not
+          # part of what we publish) skip the signature requirement so we
+          # can fetch over HTTPS from the binhost.  The signature check is
+          # re-enabled implicitly for the real package build because
+          # PORTAGE_BINHOST and FEATURES are exported with the default
+          # binpkg-request-signature inside build.sh.
+          FEATURES: "-binpkg-request-signature"
         run: |
-          # --usepkg y: the "Restore binpkgs" step above has already
-          # populated /var/cache/binpkgs with last attempt's gpkgs,
-          # including dev-util/ccache. Without --usepkg Portage ignores
-          # them and rebuilds ccache from source on every single attempt,
-          # burning ~1-2 min of the 5h budget for nothing.
-          emerge --oneshot --quiet --usepkg y dev-util/ccache app-portage/gentoolkit
+          emerge --oneshot --quiet --usepkg y --getbinpkg y \
+            dev-util/ccache app-portage/gentoolkit
 
       - name: Restore build state from previous attempt
         if: inputs._attempt && inputs._attempt != '1'
