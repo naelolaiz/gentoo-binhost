@@ -625,18 +625,22 @@ sync_tree() {
 # kernel sources during pkg_setup.  sys-kernel/gentoo-kernel-bin's own
 # pkg_postinst already calls `eselect kernel set` via the dist-kernel
 # eclass; this step is belt-and-suspenders for chained resume attempts
-# where the kernel was installed in a previous attempt.  No-op when no
-# kernel is installed yet (eselect returns non-zero, which is fine).
+# where the kernel was installed in a previous attempt.
+#
+# No error suppression here: eselect is part of the stage3 base system,
+# `eselect kernel list` exits 0 even when nothing is installed, and we
+# want any unexpected stderr to land in the CI log.  When no kernel is
+# installed yet, `eselect kernel list` prints only its header (no `[N]`
+# entries) and we skip the `set` call.
 ensure_kernel_symlink() {
-  if ! command -v eselect &>/dev/null; then
-    return 0
-  fi
-  # `eselect kernel list` exits 0 even when nothing is installed; check the
-  # output for at least one entry instead of relying on the exit code.
-  if eselect --colour=no kernel list 2>/dev/null | grep -qE '^\s*\['; then
+  log "Checking for installed kernel sources"
+  local kernel_list
+  kernel_list=$(eselect --colour=no kernel list)
+  printf '%s\n' "$kernel_list"
+  if printf '%s\n' "$kernel_list" | grep -qE '^\s*\['; then
     log "Setting /usr/src/linux symlink"
     eselect kernel set 1
-    log "  /usr/src/linux -> $(readlink /usr/src/linux 2>/dev/null || echo 'not set')"
+    log "  /usr/src/linux -> $(readlink /usr/src/linux)"
   else
     log "No kernel sources installed yet; skipping eselect kernel set"
   fi
