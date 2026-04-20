@@ -715,6 +715,7 @@ verify_self_hosted_packages() {
 # Add new entries here as new build-time deps are discovered.
 INSTALLED_DEP_PROBES=(
   "media-libs/libglvnd:/usr/lib64/pkgconfig/libglvnd.pc"
+  "dev-lang/go-bootstrap:/usr/lib/go-bootstrap/bin/go"
 )
 
 verify_installed_deps() {
