@@ -41,13 +41,18 @@ PYEOF
 else
   log "Generating Packages index manually"
 
-  # Write header.  VERSION: 2 is required by modern Portage (>=2.3.51); a
-  # missing field produces "Binhost package index version is not supported:
-  # 'None'" warnings on the client and may prevent some clients from using
-  # the binhost at all.
+  # Write header.  Portage only accepts VERSION values <= its internal
+  # _pkgindex_version, which is 0 (see lib/portage/dbapi/bintree.py:
+  #   self._pkgindex_version = 0
+  #   if int(version) <= self._pkgindex_version: return True
+  # ).  Writing VERSION: 2 here caused clients to log
+  # "!!! Binhost package index version is not supported: '2'" and silently
+  # skip our binhost (see CI run 24651146807).  Omitting VERSION entirely
+  # produces "is not supported: 'None'" — also rejected.  The only
+  # currently-accepted value is 0.
   cat > "$INDEX_FILE" <<EOF
 ARCH: amd64
-VERSION: 2
+VERSION: 0
 TIMESTAMP: $(date -u +%s)
 REPO: gentoo-binhost
 

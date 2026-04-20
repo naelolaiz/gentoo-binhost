@@ -225,48 +225,43 @@ jobs:
           # Bootstrap the Portage-specific GPG keyring so binary packages
           # from the Gentoo binhost can be signature-verified.  This MUST
           # happen before "Install build tools" because that step fetches
-          # signed gpkgs from the official Gentoo binhost.  getuto (from
-          # app-portage/gentoolkit) normally handles this, but gentoolkit is
-          # one of the packages we are installing — chicken-and-egg.
-          mkdir -p /etc/portage/gnupg
-          chmod 0700 /etc/portage/gnupg
-          # Initialise an empty keyring so subsequent imports have somewhere
-          # to write.  Suppress only stdout (the empty key list) — keep
-          # stderr visible so a real GPG failure is loud.
-          gpg --homedir /etc/portage/gnupg --list-keys >/dev/null || true
-
-          GENTOO_KEY="534E4209AB49EEE1C19D96162C44695DB9F6043D"
-
-          # Try local openpgp-keys first (shipped by sec-keys/openpgp-keys-gentoo-release
-          # in the stage3), then fall back to the keyserver.
-          if [[ -f /usr/share/openpgp-keys/gentoo-release.asc ]]; then
-            gpg --homedir /etc/portage/gnupg \
-              --import /usr/share/openpgp-keys/gentoo-release.asc
-            echo "Imported Gentoo release key from local openpgp-keys"
-          else
-            if timeout 30s gpg --homedir /etc/portage/gnupg \
-              --batch --no-tty \
-              --keyserver hkps://keys.gentoo.org \
-              --recv-keys "$GENTOO_KEY"; then
-              echo "Imported Gentoo release key from keyserver"
-            else
-              echo "::error::Failed to import Gentoo release key from keyserver within 30 seconds"
-              exit 1
-            fi
+          # signed gpkgs from the official Gentoo binhost.
+          #
+          # Use /usr/bin/getuto — Portage's own $PORTAGE_TRUST_HELPER, from
+          # app-portage/getuto, which is a hard dep of recent sys-apps/portage
+          # and is therefore present in the stage3.  getuto:
+          #   * imports the binhost signing keys (including the binpkg key
+          #     534E4209AB49EEE1C19D96162C44695DB9F6043D, which is NOT a
+          #     primary key in /usr/share/openpgp-keys/gentoo-release.asc),
+          #   * sets correct trust levels, and
+          #   * chowns /etc/portage/gnupg to portage:portage so gpg-as-portage
+          #     does not error with "unsafe ownership on homedir" /
+          #     "Permission denied" on pubring.kbx during binpkg verification.
+          #
+          # An earlier manual `gpg --import` of the release-keys file plus a
+          # subsequent `chown` looked correct but produced exactly those two
+          # errors at install-tools time (CI run 24651146807, job
+          # 72074035707) — getuto avoids the whole class of bug.
+          if ! command -v getuto >/dev/null; then
+            echo "::error::/usr/bin/getuto not found in stage3; cannot bootstrap Portage binpkg trust"
+            exit 1
           fi
+          getuto
 
-          # Verify the key was actually imported — catch silent import
-          # failures or key rotations before they surface as cryptic
-          # signature errors during emerge.
-          if ! gpg --homedir /etc/portage/gnupg --list-keys "$GENTOO_KEY" >/dev/null; then
-            echo "::error::Gentoo release signing key ${GENTOO_KEY} not found in /etc/portage/gnupg after import"
+          # Verify the binhost signing key is actually present after
+          # bootstrap — catches a silent regression in getuto or a key
+          # rotation before it surfaces as a cryptic NO_PUBKEY during
+          # emerge.
+          GENTOO_BINHOST_KEY="534E4209AB49EEE1C19D96162C44695DB9F6043D"
+          if ! gpg --homedir /etc/portage/gnupg --list-keys "$GENTOO_BINHOST_KEY" >/dev/null; then
+            echo "::error::Gentoo binhost signing key ${GENTOO_BINHOST_KEY} not present in /etc/portage/gnupg after getuto"
             exit 1
           fi
 
-          # Portage verifies binary package GPG signatures as the 'portage'
-          # user, not root.  The keyring must be owned by that user or gpg
-          # refuses to read it ("unsafe ownership on homedir", "Permission
-          # denied" on pubring.kbx / random_seed / lock files).
+          # Defence in depth: getuto already chowns to portage:portage, but
+          # re-asserting it here means a future getuto change that drops the
+          # chown still leaves us with a working keyring instead of the
+          # "unsafe ownership" failure we are fixing.
           chown -R portage:portage /etc/portage/gnupg
 
       - name: Install build tools
