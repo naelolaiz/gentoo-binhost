@@ -282,6 +282,31 @@ jobs:
           emerge --oneshot --quiet --usepkg y --getbinpkg y \
             dev-util/ccache app-portage/gentoolkit
 
+          # Self-heal stale-binpkg ABI mismatch.  A previously published
+          # binpkg may have been linked against an older SONAME than what
+          # the current stage3 ships (observed in CI:
+          #   ccache: error while loading shared libraries:
+          #   libblake3.so.0: cannot open shared object file
+          # because the published dev-util/ccache gpkg was built when
+          # dev-libs/blake3 still shipped libblake3.so.0, and the current
+          # container has a newer blake3 SONAME).  The recorded RDEPEND in
+          # the gpkg is satisfied by any version in the slot, so Portage
+          # installs it without rebuilding.  Detect this by actually
+          # invoking the binaries and, if they fail, drop the bad gpkgs
+          # from the local binpkg cache and rebuild from source so the
+          # next publish replaces the broken artifact in the binhost.
+          if ! ccache --version >/dev/null || ! equery --version >/dev/null; then
+            echo "::warning::Stale binpkg ABI mismatch detected for ccache/gentoolkit — rebuilding from source"
+            rm -f /var/cache/binpkgs/dev-util/ccache-*.gpkg.tar \
+                  /var/cache/binpkgs/app-portage/gentoolkit-*.gpkg.tar
+            emerge --oneshot --quiet --usepkg n --getbinpkg n \
+              dev-util/ccache app-portage/gentoolkit
+            # Re-verify; if still broken, fail loud — this is not the
+            # bug we're working around.
+            ccache --version >/dev/null
+            equery --version >/dev/null
+          fi
+
       - name: Restore build state from previous attempt
         if: inputs._attempt && inputs._attempt != '1'
         uses: actions/cache/restore@v5
