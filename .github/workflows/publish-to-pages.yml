@@ -48,6 +48,67 @@ jobs:
       - name: Ensure site directory exists
         run: mkdir -p /tmp/pages-site
 
+      # Scrub corrupt layout left behind by prior runs.
+      #
+      # An earlier "Organise packages" step (see below) used a sed-strip
+      # that silently fell through to the *full absolute artifact path*
+      # when the regex didn't match, depositing files at e.g.
+      #   /tmp/pages-site/<binhost>/tmp/artifacts/.../<pkg>.gpkg.tar
+      # Those files were then cached, indexed by generate-packages-index.sh
+      # as `CPV: tmp/artifacts/...` and crashed every Portage client with
+      #   portage.exception.InvalidData: tmp/artifacts/...
+      # the moment they tried to populate from this binhost — blocking the
+      # entire build chain (including app-emulation/virtualbox-modules).
+      # The fixed organise step below refuses to deposit such files, but
+      # the cached site itself still carries the corruption, so re-deriving
+      # the index without first scrubbing would just republish the bad
+      # tree.  Remove anything outside the canonical
+      #   <binhost>/<category>/<pn>/<pn>-<ver>.gpkg.tar(.asc)?
+      # layout, then prune the now-empty directories.
+      - name: Scrub corrupt layout in cached pages-site
+        run: |
+          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          DEST="/tmp/pages-site/${BINHOST_PATH}"
+          if [[ ! -d "$DEST" ]]; then
+            echo "No cached binhost dir to scrub."
+            exit 0
+          fi
+          # Gentoo categories follow [a-z][a-z0-9-]* (e.g. dev-qt,
+          # app-emulation, acct-group).  Anything at $DEST whose first
+          # path component is not a valid category — or whose layout is
+          # not exactly category/pn/pn-ver.{gpkg.tar,gpkg.tar.asc} — is
+          # garbage left over from the buggy prior organise step.
+          removed=0
+          while IFS= read -r -d '' f; do
+            rel="${f#${DEST}/}"
+            # Files at the binhost root (Packages, etc.) are kept.
+            if [[ "$rel" != */* ]]; then
+              continue
+            fi
+            keep=0
+            if [[ "$rel" =~ ^[a-z][a-z0-9-]*/[A-Za-z0-9_+][A-Za-z0-9._+-]*/[A-Za-z0-9_+][A-Za-z0-9._+-]*-[0-9][A-Za-z0-9._+-]*\.gpkg\.tar(\.asc)?$ ]]; then
+              cat_dir="${rel%%/*}"
+              rest="${rel#*/}"
+              pn_dir="${rest%%/*}"
+              basename="${rest#*/}"
+              # Strip both possible suffixes to compare PN.
+              stem="${basename%.asc}"
+              stem="${stem%.gpkg.tar}"
+              if [[ "$stem" == "${pn_dir}-"* ]]; then
+                keep=1
+              fi
+            fi
+            if [[ "$keep" -eq 0 ]]; then
+              echo "::warning title=Scrubbing corrupt cached binpkg path::${rel}"
+              rm -f -- "$f"
+              removed=$(( removed + 1 ))
+            fi
+          done < <(find "$DEST" -type f -print0)
+          # Drop any directories left empty after the file removals
+          # (including the entire bogus tmp/artifacts/... subtree).
+          find "$DEST" -mindepth 1 -type d -empty -delete || true
+          echo "Scrub removed ${removed} corrupt file(s)."
+
       # Download all binpkg artifacts produced by the current or recent runs
       - name: Download all build artifacts
         uses: actions/download-artifact@v8
@@ -64,17 +125,54 @@ jobs:
           DEST="/tmp/pages-site/${BINHOST_PATH}"
           mkdir -p "$DEST"
 
-          # Copy every .gpkg.tar (and optional .asc signatures) we found
-          find /tmp/artifacts -name '*.gpkg.tar' | while read -r pkg; do
-            # Preserve category/name-version subdirectory structure
-            # Artifacts are stored as category/name/name-version.gpkg.tar
-            rel_dir="$(dirname "$pkg" | sed 's|.*/binpkgs-[^/]*/||')"
-            target="${DEST}/${rel_dir}"
-            mkdir -p "$target"
-            cp "$pkg" "$target/"
-            # Copy matching .asc signature if present
-            if [[ -f "${pkg}.asc" ]]; then cp "${pkg}.asc" "$target/"; fi
+          # Each artifact is downloaded to /tmp/artifacts/<artifact-name>/
+          # (download-artifact@v8 with merge-multiple: false), and inside
+          # that directory the gpkgs are laid out as
+          # <category>/<pn>/<pn>-<ver>.gpkg.tar.  Compute rel_dir as the
+          # path *inside* the per-artifact root rather than blindly
+          # stripping with sed: a sed mismatch previously fell through to
+          # the absolute path /tmp/artifacts/..., depositing files at
+          # ${DEST}//tmp/artifacts/... which then got cached, indexed as
+          # CPV: tmp/artifacts/... and crashed every Portage client with
+          #   portage.exception.InvalidData: tmp/artifacts/...
+          # blocking the entire build chain (including virtualbox-modules).
+          # Validate the shape and fail loud on any non-conforming path
+          # so the bug is fixed at the source instead of leaking into the
+          # published binhost.
+          shopt -s nullglob
+          bad=0
+          for artifact_root in /tmp/artifacts/binpkgs-*/; do
+            artifact_root="${artifact_root%/}"
+            while IFS= read -r -d '' pkg; do
+              rel="${pkg#${artifact_root}/}"           # cat/pn/pn-ver.gpkg.tar
+              rel_dir="${rel%/*}"                      # cat/pn
+              # Canonical layout: exactly two non-empty path components,
+              # category matches Gentoo naming, basename starts with the PN.
+              if [[ "$rel" != */*/* ]] \
+                 || [[ ! "$rel_dir" =~ ^[a-z][a-z0-9-]*/[A-Za-z0-9_+][A-Za-z0-9._+-]*$ ]]; then
+                echo "::error title=Malformed artifact layout::Refusing to publish ${pkg} (relative path '${rel}' does not match <cat>/<pn>/<pn>-<ver>.gpkg.tar)"
+                bad=$(( bad + 1 ))
+                continue
+              fi
+              pn_dir="${rel_dir#*/}"
+              base="$(basename "$pkg")"
+              stem="${base%.gpkg.tar}"
+              if [[ "$stem" != "${pn_dir}-"* ]]; then
+                echo "::error title=Malformed artifact layout::Refusing to publish ${pkg} (basename '${base}' does not start with parent PN '${pn_dir}-')"
+                bad=$(( bad + 1 ))
+                continue
+              fi
+              target="${DEST}/${rel_dir}"
+              mkdir -p "$target"
+              cp "$pkg" "$target/"
+              # Copy matching .asc signature if present
+              if [[ -f "${pkg}.asc" ]]; then cp "${pkg}.asc" "$target/"; fi
+            done < <(find "$artifact_root" -name '*.gpkg.tar' -print0)
           done
+          if [[ "$bad" -gt 0 ]]; then
+            echo "::error title=Organise packages failed::${bad} artifact path(s) had a malformed layout — see annotations above. Fix the upstream upload before re-running publish."
+            exit 1
+          fi
 
           echo "Package tree:"
           find "$DEST" -type f | sort
