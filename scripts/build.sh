@@ -630,6 +630,66 @@ verify_self_hosted_packages() {
   done
 }
 
+# ---------- installed-dependency disk probes ----------
+# Problem: our CI restores /var/db/pkg from a system-state cache, but does
+# NOT restore the actual installed files (under /usr, /lib, etc.).  Those
+# come from the stage3 image.  For packages that are NOT part of the stage3
+# image but were installed in a previous build chain, Portage considers them
+# already-installed (VDB says so) and excludes them from the emerge plan —
+# but their actual files are absent from disk.
+#
+# When such a package is a BUILD-TIME dependency of another package in the
+# current plan, the dependent package's configure step fails because the
+# dependency's pkg-config / header / library files are missing.
+#
+# Real example: mesa-26.0.5 made media-libs/libglvnd an unconditional
+# DEPEND (previously gated behind USE=libglvnd).  After a system-state
+# restore, /var/db/pkg claims libglvnd is installed but
+# /usr/lib64/pkgconfig/libglvnd.pc does not exist, so meson configure
+# fails with: "Dependency "libglvnd" not found, tried pkgconfig and cmake".
+#
+# Fix: probe a representative file for each such package.  If the VDB
+# entry exists but the file is absent, remove the stale VDB entry so
+# emerge re-resolves and re-installs the package before its dependents.
+#
+# Each entry is "<category>/<pn>:<absolute-path-to-probe-file>".
+# Add new entries here as new build-time deps are discovered.
+INSTALLED_DEP_PROBES=(
+  "media-libs/libglvnd:/usr/lib64/pkgconfig/libglvnd.pc"
+)
+
+verify_installed_deps() {
+  local entry pkg cat pn probe_file vdb_dirs
+  for entry in "${INSTALLED_DEP_PROBES[@]}"; do
+    pkg="${entry%%:*}"
+    cat="${pkg%/*}"
+    pn="${pkg##*/}"
+    probe_file="${entry#*:}"
+
+    shopt -s nullglob
+    vdb_dirs=( /var/db/pkg/"${cat}"/"${pn}"-[0-9]* )
+    shopt -u nullglob
+
+    if (( ${#vdb_dirs[@]} == 0 )); then
+      # Not in VDB at all — Portage will resolve it as a new dep normally.
+      continue
+    fi
+    if [[ -e "$probe_file" ]]; then
+      # VDB and disk agree — nothing to do.
+      continue
+    fi
+
+    log "Installed-dep probe mismatch for ${pkg}: vdb claims installed (${vdb_dirs[*]})"
+    log "  but probe file ${probe_file} is missing on disk."
+    log "  Removing stale vdb entry so emerge re-resolves and re-installs."
+    local d
+    for d in "${vdb_dirs[@]}"; do
+      rm -rf -- "$d"
+      log "  Removed ${d}"
+    done
+  done
+}
+
 # ---------- binpkg trust ----------
 setup_binpkg_trust() {
   # When fetching from a remote binhost, Portage verifies GPG signatures on
@@ -945,6 +1005,7 @@ sync_tree
 setup_binpkg_trust
 restore_build_state
 verify_self_hosted_packages
+verify_installed_deps
 ensure_kernel_symlink
 measure_cache_footprint "before"
 show_ccache_stats
