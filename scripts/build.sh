@@ -867,36 +867,49 @@ sync_tree() {
 # afterwards as a confirmation that the unread queue is now empty.
 display_and_read_news() {
   log "Displaying unread Gentoo news items"
-  eselect --colour=no news read new
+  eselect --colour=no news read new || true
   log "News items after read:"
-  eselect --colour=no news list
+  eselect --colour=no news list || true
 }
 
 # ---------- kernel symlink ----------
 # Point /usr/src/linux at an installed kernel so any *-modules ebuild going
 # through linux-mod-r1.eclass (e.g. app-emulation/virtualbox-modules) finds
-# kernel sources during pkg_setup.  sys-kernel/gentoo-kernel-bin's own
-# pkg_postinst already calls `eselect kernel set` via the dist-kernel
-# eclass; this step is belt-and-suspenders for chained resume attempts
-# where the kernel was installed in a previous attempt.
-#
-# No error suppression here: eselect is part of the stage3 base system,
-# `eselect kernel list` exits 0 even when nothing is installed, and we
-# want any unexpected stderr to land in the CI log.  When no kernel is
-# installed yet, `eselect kernel list` prints only its header (no `[N]`
-# entries) and we skip the `set` call.
+# kernel sources during pkg_setup.  If no kernel is installed yet, install
+# sys-kernel/gentoo-kernel-bin first — it is needed anyway (packages.txt)
+# and its pkg_postinst calls `eselect kernel set` via the dist-kernel
+# eclass.  The explicit eselect call afterwards is belt-and-suspenders for
+# resume attempts where the kernel was already installed in a prior attempt.
 ensure_kernel_symlink() {
   log "Checking for installed kernel sources"
-  local kernel_list
-  kernel_list=$(eselect --colour=no kernel list)
-  printf '%s\n' "$kernel_list"
-  if printf '%s\n' "$kernel_list" | grep -qE '^\s*\['; then
-    log "Setting /usr/src/linux symlink"
-    eselect kernel set 1
-    log "  /usr/src/linux -> $(readlink /usr/src/linux)"
-  else
-    log "No kernel sources installed yet; skipping eselect kernel set"
+  # Use a plain shell glob instead of `eselect kernel list`: globbing the
+  # filesystem cannot fail in normal CI conditions, whereas eselect can exit
+  # non-zero (Python tracebacks, stale state, etc.) and would then need an
+  # error-hiding guard.  `shopt -s nullglob` makes the array empty when no
+  # match exists rather than literal "/usr/src/linux-*".
+  local -a kernel_dirs
+  shopt -s nullglob
+  kernel_dirs=(/usr/src/linux-*)
+  shopt -u nullglob
+  printf '  found kernel source: %s\n' "${kernel_dirs[@]}"
+  if (( ${#kernel_dirs[@]} == 0 )); then
+    log "No kernel sources installed; emerging sys-kernel/gentoo-kernel-bin"
+    emerge --buildpkg --usepkg --getbinpkg --verbose sys-kernel/gentoo-kernel-bin
+    shopt -s nullglob
+    kernel_dirs=(/usr/src/linux-*)
+    shopt -u nullglob
+    (( ${#kernel_dirs[@]} > 0 )) \
+      || die "No /usr/src/linux-* directory present after emerging gentoo-kernel-bin"
   fi
+  # Pick the highest-version directory (sort -V is version-aware) and point
+  # /usr/src/linux at it with a plain `ln -sfn`.  `ln -sfn` is atomic and
+  # safer than `eselect kernel set 1`, which has additional logic that can
+  # fail and would force us back to error-suppression.
+  local target
+  target=$(printf '%s\n' "${kernel_dirs[@]}" | sort -V | tail -n1)
+  log "Setting /usr/src/linux -> ${target}"
+  ln -sfn "${target##*/}" /usr/src/linux
+  log "  /usr/src/linux -> $(readlink /usr/src/linux)"
 }
 
 # ---------- build ----------
