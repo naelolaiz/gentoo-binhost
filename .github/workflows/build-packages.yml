@@ -22,6 +22,11 @@ on:
         description: '[internal] Safety cap on resume attempts'
         required: false
         default: '8'
+      fresh:
+        description: 'Wipe ALL caches (ccache-*, binpkgs-*, system-state-*, build-state-*) before starting. Only effective on attempt 1 of a manual run; ignored on schedule and on resume.'
+        required: false
+        type: boolean
+        default: false
 
 # Only one build runs at a time; new triggers queue instead of cancelling.
 concurrency:
@@ -102,6 +107,86 @@ jobs:
 
       - uses: actions/checkout@v6
 
+      # Optional manual cache wipe.  When the workflow is dispatched with
+      # `fresh: true`, delete every cache in the four families this workflow
+      # uses (ccache-*, binpkgs-*, system-state-*, build-state-*) BEFORE any
+      # restore step runs.  Use this when state has gone inconsistent and a
+      # clean rebuild from the stage3 baseline is wanted.
+      #
+      # Triple-guarded to make this hard to misfire:
+      #   * github.event_name == 'workflow_dispatch'  — never on schedule
+      #   * inputs.fresh                              — explicit opt-in
+      #   * steps.meta.outputs.attempt == '1'         — never on resume
+      # The resume re-trigger job already does NOT forward `fresh` in its
+      # workflow_dispatch payload, so attempt>1 always sees the default
+      # `false`; the attempt guard is defence-in-depth.
+      #
+      # Implemented in pure Python via the stdlib (no jq in stage3, and a
+      # `curl | python3` pipe through `mapfile` would let JSON-parse errors
+      # be silently swallowed by process substitution).  urllib.urlopen
+      # raises HTTPError on 4xx/5xx, which exits the interpreter non-zero
+      # and fails the step — no `|| true`, no `2>/dev/null`, no swallowing.
+      - name: Wipe caches (fresh start)
+        if: github.event_name == 'workflow_dispatch' && inputs.fresh && steps.meta.outputs.attempt == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          echo "::warning::fresh=true requested — deleting caches with prefixes: ccache-, binpkgs-, system-state-, build-state-"
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          token = os.environ["GH_TOKEN"]
+          repo = os.environ["REPO"]
+          prefixes = ["ccache-", "binpkgs-", "system-state-", "build-state-"]
+          base_headers = {
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+          }
+
+          def api(method, path):
+              req = urllib.request.Request(
+                  f"https://api.github.com{path}",
+                  method=method,
+                  headers=base_headers,
+              )
+              with urllib.request.urlopen(req) as resp:
+                  body = resp.read()
+              return body
+
+          grand_total = 0
+          for prefix in prefixes:
+              deleted = 0
+              # Always re-fetch page 1 until empty: each iteration deletes
+              # every cache it sees, so subsequent fetches naturally shift
+              # forward.  Avoids the "delete-while-paginating" off-by-page
+              # bug where incrementing `page` skips items.
+              while True:
+                  qs = urllib.parse.urlencode({"key": prefix, "per_page": "100"})
+                  body = api("GET", f"/repos/{repo}/actions/caches?{qs}")
+                  data = json.loads(body)
+                  caches = data.get("actions_caches", []) or []
+                  if not caches:
+                      break
+                  for c in caches:
+                      cid = c["id"]
+                      key = c["key"]
+                      ref = c.get("ref", "?")
+                      print(f"[fresh] DELETE id={cid} key={key} ref={ref}", flush=True)
+                      api("DELETE", f"/repos/{repo}/actions/caches/{cid}")
+                      deleted += 1
+              print(f"[fresh] deleted {deleted} cache(s) with prefix {prefix!r}", flush=True)
+              grand_total += deleted
+
+          print(f"[fresh] cache wipe complete — {grand_total} cache(s) deleted total", flush=True)
+          PY
+
       - name: Restore ccache
         uses: actions/cache/restore@v5
         with:
@@ -141,14 +226,18 @@ jobs:
             binpkgs-
 
       # System-state cache: Portage's installed-package DB plus its metadata
-      # cache and the world set.  Restoring this means attempt N+1 sees the
-      # ~1000 packages installed by attempt N as already-installed and skips
-      # re-merging them — saving roughly 50-80 minutes per attempt out of a
-      # 5h budget that was previously burned on identical re-installs.
+      # cache, the world set, and package-managed /etc state.  Restoring this
+      # means attempt N+1 sees the ~1000 packages installed by attempt N as
+      # already-installed and skips re-merging them — saving roughly 50-80
+      # minutes per attempt out of a 5h budget that was previously burned on
+      # identical re-installs.
       #
-      # NOT cached: /etc/portage — apply_profile in build.sh re-installs
-      # config from the repo on every attempt and asserts it byte-matches,
-      # so caching /etc/portage would either be redundant or actively wrong.
+      # /etc/portage, /etc/env.d, /etc/ld.so.conf.d are included so VDB
+      # entries that wrote files under /etc don't drift away from the on-disk
+      # state across attempts.  apply_profile in build.sh runs AFTER this
+      # restore and overwrites repo-managed files (make.conf, package.use/*,
+      # …) from the source of truth, so the cache cannot poison repo policy;
+      # it only fills in non-repo files (gnupg keyring, env.d/*, etc.).
       #
       # Save key MUST equal the binpkgs save key shape so the two restore
       # in lockstep on the next attempt; the workflow-level
@@ -161,6 +250,9 @@ jobs:
             /var/db/pkg
             /var/lib/portage
             /var/cache/edb
+            /etc/portage
+            /etc/env.d
+            /etc/ld.so.conf.d
           key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
           restore-keys: |
             system-state-${{ steps.meta.outputs.chain_id }}-
@@ -336,6 +428,25 @@ jobs:
             equery --version >/dev/null
           fi
 
+          # Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_*
+          # in /etc.  Bootstrap-time drops (typically env.d/01blake3,
+          # env.d/05gcc-x86_64-pkg-cs, profile.env) must be merged before the
+          # main build phase so subsequent emerges see the new env vars.
+          # Mirror of merge_pending_configs() in scripts/build.sh; kept inline
+          # because build.sh is a top-level runner, not a sourceable library.
+          # No fallback if etc-update is missing: fail loudly instead.
+          _pending=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
+          echo "[build-packages.yml] merge_pending_configs: ${_pending} pending ._cfg* file(s) under /etc"
+          if [[ "$_pending" -gt 0 ]]; then
+            etc-update --automode -5
+            env-update
+            # shellcheck disable=SC1091
+            . /etc/profile
+            _remaining=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
+            echo "[build-packages.yml] merge_pending_configs: ${_remaining} pending ._cfg* file(s) remain (started with ${_pending})"
+          fi
+          unset _pending _remaining
+
       - name: Restore build state from previous attempt
         if: inputs._attempt && inputs._attempt != '1'
         uses: actions/cache/restore@v5
@@ -405,6 +516,9 @@ jobs:
             /var/db/pkg
             /var/lib/portage
             /var/cache/edb
+            /etc/portage
+            /etc/env.d
+            /etc/ld.so.conf.d
           key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
 
       # Diagnostic: surface cache-save outcomes as warnings.  We do NOT fail

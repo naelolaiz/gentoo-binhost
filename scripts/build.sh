@@ -245,6 +245,21 @@ emit_progress_summary() {
 # it would clutter the summary, lowering it would hide enough context.
 FAILURE_LOG_TAIL_LINES=80
 report_failed_atoms() {
+  # Idempotency guard.  This function is invoked both from the normal happy
+  # path (line ~1030) and from the EXIT trap (_on_exit) when `die` fires
+  # after a real emerge failure.  Without this guard the second invocation
+  # would re-write failed-packages.txt with the SAME atoms (the .die_hooks
+  # markers are still on disk), then `comm` against the just-rotated
+  # failed-packages.previous.txt and report every failure as "repeated in
+  # two consecutive attempts" — falsely killing the resume chain on the
+  # very first attempt.  The first invocation does the work; any
+  # subsequent re-entry is a no-op.
+  if [[ "${_REPORT_FAILED_ATOMS_DONE:-0}" == "1" ]]; then
+    log "report_failed_atoms: already ran in this process; skipping re-entry"
+    return 0
+  fi
+  _REPORT_FAILED_ATOMS_DONE=1
+
   local portage_tmp="/var/tmp/portage"
   local failures_dir="${OUTPUT_DIR%/}/_failures"
   local list_file="${STATE_DIR%/}/failed-packages.txt"
@@ -651,10 +666,16 @@ PYEOF
 # without us having to enumerate them up front.
 #
 # Notes:
-#   * We sample the first obj entry rather than scanning every file in
-#     CONTENTS: in our cache+stage3 scenario the state is binary (all
-#     files present, or all absent), so one probe is sufficient and keeps
-#     the scan cheap on a several-thousand-entry VDB.
+#   * We sample multiple obj entries (first, ~25%, ~50%, ~75%, last)
+#     rather than only the first one.  Sampling a single file is
+#     unreliable because a package's first CONTENTS entry is often a
+#     small file in /etc or /usr/share/doc that survives even when the
+#     bulk of the install has been wiped — the dev-ruby/rubygems case
+#     where the VDB entry remained, the first probe file existed, but
+#     /usr/lib64/ruby/3.3.0/rubygems/compatibility.rb did not, breaking
+#     every Ruby ebuild that subsequently tried to run rubygems.  Five
+#     spread-out probes give us very high confidence with negligible cost
+#     (~25k stat() calls for a few-thousand-package VDB).
 #   * Packages whose CONTENTS has no obj entries (e.g. virtuals,
 #     metapackages) are left alone — there's nothing on disk to probe and
 #     dropping them would force needless re-resolution.
@@ -662,7 +683,7 @@ verify_installed_deps() {
   local vdb_root="/var/db/pkg"
   [[ -d "$vdb_root" ]] || return 0
 
-  local cat_dir pkg_dir contents probe pkg_atom removed=0
+  local cat_dir pkg_dir contents pkg_atom removed=0
   shopt -s nullglob
   for cat_dir in "$vdb_root"/*/; do
     for pkg_dir in "$cat_dir"*/; do
@@ -673,19 +694,53 @@ verify_installed_deps() {
       #   obj <absolute-path> <md5> <mtime>
       # Path may contain spaces, so we strip the trailing two
       # whitespace-delimited tokens (md5, mtime) rather than splitting on
-      # whitespace blindly. Take only the first obj entry as a probe.
-      probe="$(awk '$1=="obj" {
-                      sub(/^obj /, "");
-                      sub(/ [^ ]+ [^ ]+$/, "");
-                      print;
-                      exit
-                    }' "$contents")"
-      [[ -n "$probe" ]] || continue       # no obj entries — skip
-      [[ -e "$probe" ]] && continue       # files present — VDB matches disk
+      # whitespace blindly.  Emit up to 5 sample paths spread across the
+      # file's obj entries (first, 25%, 50%, 75%, last).
+      local probes=()
+      local probe missing_probe=""
+      while IFS= read -r probe; do
+        [[ -n "$probe" ]] && probes+=("$probe")
+      done < <(awk '
+        $1=="obj" {
+          line = $0
+          sub(/^obj /, "", line)
+          sub(/ [^ ]+ [^ ]+$/, "", line)
+          paths[++n] = line
+        }
+        END {
+          if (n == 0) exit
+          # Build a unique, ordered list of sample indices so small
+          # CONTENTS (n<5) do not cause duplicate probes.
+          idx[1] = 1
+          idx[2] = int((n + 3) / 4)
+          idx[3] = int((n + 1) / 2)
+          idx[4] = int((3 * n + 1) / 4)
+          idx[5] = n
+          last = 0
+          for (i = 1; i <= 5; i++) {
+            v = idx[i]
+            if (v < 1) v = 1
+            if (v > n) v = n
+            if (v != last) {
+              print paths[v]
+              last = v
+            }
+          }
+        }' "$contents")
+
+      [[ ${#probes[@]} -gt 0 ]] || continue   # no obj entries — skip
+
+      for probe in "${probes[@]}"; do
+        if [[ ! -e "$probe" ]]; then
+          missing_probe="$probe"
+          break
+        fi
+      done
+      [[ -z "$missing_probe" ]] && continue   # all probes present — VDB matches disk
 
       pkg_atom="${pkg_dir#"${vdb_root}"/}"
       pkg_atom="${pkg_atom%/}"
-      log "Stale VDB entry: ${pkg_atom} — probe file ${probe} missing on disk"
+      log "Stale VDB entry: ${pkg_atom} — probe file ${missing_probe} missing on disk"
       log "  Removing so emerge re-resolves and re-installs (or pulls a binpkg)."
       rm -rf -- "${pkg_dir%/}"
       removed=$(( removed + 1 ))
@@ -694,6 +749,39 @@ verify_installed_deps() {
   shopt -u nullglob
 
   log "verify_installed_deps: removed ${removed} stale VDB entries"
+}
+
+# ---------- /etc CONFIG_PROTECT auto-merge ----------
+# Auto-merge any CONFIG_PROTECT files that emerge dropped as `._cfg0000_*` in
+# /etc.  In CI we have no local /etc edits worth preserving, so the policy is
+# "always take the new file" — `etc-update --automode -5` ("Auto-merge AND
+# overwrite all files").  No fallback if etc-update is missing: fail loudly.
+#
+# Why this matters: VDB entries that wrote the new config files are restored
+# from system-state cache.  If we leave the ._cfg files unmerged, Portage
+# thinks the new config is installed when on-disk only the stale stage3
+# version exists — same VDB-vs-disk drift verify_installed_deps already
+# guards against under /usr, just for /etc, where /etc/env.d/* and
+# /etc/ld.so.conf.d/* silently affect every subsequent build.
+merge_pending_configs() {
+  local before remaining
+  before=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
+  log "merge_pending_configs: ${before} pending ._cfg* file(s) under /etc"
+  if [[ "$before" -eq 0 ]]; then
+    return 0
+  fi
+
+  etc-update --automode -5
+
+  # Refresh /etc/profile.env, /etc/ld.so.conf, and the linker cache so
+  # newly merged env.d / ld.so.conf.d entries take effect for the rest of
+  # this job rather than waiting for the next container.
+  env-update
+  # shellcheck disable=SC1091
+  . /etc/profile
+
+  remaining=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
+  log "merge_pending_configs: ${remaining} pending ._cfg* file(s) remain after merge (started with ${before})"
 }
 
 # ---------- binpkg trust ----------
@@ -762,6 +850,26 @@ sync_tree() {
     emaint sync -a
     log "  Synced via emaint"
   fi
+}
+
+# ---------- portage news ----------
+# Display all unread Gentoo news items, then mark them as read.  Two reasons:
+#   1. Per the project-wide "show all information" rule, hiding
+#      maintainer-issued news (security advisories, profile/eclass
+#      transitions, breaking ABI changes) is the wrong default in CI.
+#   2. Until the news items are marked as read, *every* subsequent emerge
+#      invocation re-prints the "IMPORTANT: N news items need reading"
+#      reminder (observed: 29 unread items, repeated dozens of times in a
+#      single build log).  Reading once silences the reminder.
+#
+# `eselect news read new` prints all unread items to stdout (no TTY -> no
+# pager) and atomically marks them read.  `eselect news list` is appended
+# afterwards as a confirmation that the unread queue is now empty.
+display_and_read_news() {
+  log "Displaying unread Gentoo news items"
+  eselect --colour=no news read new
+  log "News items after read:"
+  eselect --colour=no news list
 }
 
 # ---------- kernel symlink ----------
@@ -1011,6 +1119,7 @@ sync_tree
 setup_binpkg_trust
 restore_build_state
 verify_installed_deps
+display_and_read_news
 ensure_kernel_symlink
 measure_cache_footprint "before"
 show_ccache_stats
@@ -1022,6 +1131,11 @@ log "Binpkgs present before this attempt: ${BINPKGS_BEFORE}"
 build_packages || BUILD_RC=$?
 BUILD_RC=${BUILD_RC:-0}
 BINPKGS_AFTER="$(count_binpkgs)"
+
+# Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_* in /etc.
+# Run regardless of BUILD_RC (incl. timeout rc=42) so partial-progress state
+# does not leak unmerged configs into the next attempt's /etc baseline.
+merge_pending_configs
 
 collect_packages
 prune_old_binpkgs
@@ -1037,5 +1151,18 @@ if [[ $BUILD_RC -eq 42 ]]; then
 elif [[ $BUILD_RC -ne 0 ]]; then
   die "emerge failed with exit code ${BUILD_RC}"
 fi
+
+# Final assertion: no ._cfg* should remain under /etc after merge_pending_configs.
+# A non-empty list means a CONFIG_PROTECT path we don't expect snuck through;
+# warn (don't fail) so the user sees it in the GitHub Actions summary.
+_remaining_cfg=()
+while IFS= read -r -d '' _cfg; do
+  _remaining_cfg+=("$_cfg")
+done < <(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print0)
+if [[ ${#_remaining_cfg[@]} -gt 0 ]]; then
+  echo "::warning title=Unmerged /etc config files::merge_pending_configs left ${#_remaining_cfg[@]} ._cfg* file(s) behind:"
+  printf '  %s\n' "${_remaining_cfg[@]}"
+fi
+unset _remaining_cfg _cfg
 
 log "Build complete."
