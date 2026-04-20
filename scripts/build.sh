@@ -623,131 +623,77 @@ PYEOF
 }
 
 # ---------- vdb / on-disk consistency ----------
-# A handful of packages are *self-hosting*: their ebuild needs an already-
-# installed copy of the same package to bootstrap from source.  dev-lang/go
-# is the canonical example — make.bash refuses to run without an existing
-# Go >= 1.24.6 at the default Gentoo bootstrap path /usr/lib/go/bin/go.
+# Problem: CI restores /var/db/pkg (the VDB — Portage's "what is installed"
+# database) from a system-state cache, but does NOT restore the actual
+# installed files under /usr, /lib, etc. — those come from the freshly-
+# extracted stage3 image. For any package that is NOT part of stage3 but
+# was installed in a previous chain, the VDB claims it's installed while
+# its files are absent from disk. Portage then either:
+#   - excludes it from the emerge plan (breaking dependents at configure
+#     time when their pkg-config / headers / libraries are missing — e.g.
+#     mesa failing with "Dependency 'libglvnd' not found"), or
+#   - schedules an [ebuild R] rebuild that can't bootstrap because the
+#     self-hosted prior install isn't really there (e.g. dev-lang/go's
+#     make.bash refusing to run without /usr/lib/go/bin/go).
 #
-# Our CI restores /var/db/pkg from a system-state cache, but /usr is on the
-# runner's ephemeral disk.  When the binpkgs cache has been evicted (or the
-# previous chain's gpkg for that exact version was pruned/never-produced)
-# we end up with vdb claiming the package is installed while the real files
-# are gone.  Portage then schedules `[ebuild R]` (USE flags don't match the
-# new ebuild's defaults so it picks reinstall over reuse), the rebuild
-# can't bootstrap, and the whole emerge dies.  This is what killed run
-# 24637227461 (job 72034743102).
+# A previous fix maintained two hand-written allow-lists of (package,
+# probe-path) tuples and removed VDB entries when a hardcoded probe was
+# missing. That was a workaround that only handled packages we'd already
+# been bitten by, and demanded a code change every time a new package hit
+# the same pattern.
 #
-# Fix: BEFORE emerge plans the build, detect (vdb-says-installed AND
-# bootstrap-binary-missing) and drop the stale vdb entry.  emerge then
-# re-resolves the package's BDEPEND from scratch — for dev-lang/go that's
-# `|| ( >=dev-lang/go-1.24.6 >=dev-lang/go-bin-1.24.6 )`, so Portage will
-# pull dev-lang/go-bin from the Gentoo binhost as a working bootstrap and
-# the source rebuild can proceed.
+# Fix (general): every VDB entry already records the exact files it
+# installed in /var/db/pkg/<cat>/<pf>/CONTENTS. We walk all VDB entries,
+# pick the first `obj` (regular-file) line from each CONTENTS as a probe,
+# and if the file is absent on disk we drop the stale VDB entry. emerge
+# then re-resolves dependencies from scratch — pulling a binpkg from the
+# binhost or rebuilding from source — for ANY package that's missing,
+# without us having to enumerate them up front.
 #
-# Each entry is "<category>/<pn>:<absolute-bootstrap-binary-path>".
-# Add new self-hosting packages here as needed.
-SELF_HOSTED_BOOTSTRAP_PACKAGES=(
-  "dev-lang/go:/usr/lib/go/bin/go"
-)
-
-verify_self_hosted_packages() {
-  local entry pkg cat pn bootstrap_bin vdb_dirs
-  for entry in "${SELF_HOSTED_BOOTSTRAP_PACKAGES[@]}"; do
-    pkg="${entry%%:*}"
-    cat="${pkg%/*}"
-    pn="${pkg##*/}"
-    bootstrap_bin="${entry#*:}"
-
-    # vdb entries live in /var/db/pkg/<cat>/<pn>-<ver>[-r<rev>].  Match only
-    # the exact PN within its category directory; PMS guarantees versions
-    # start with a digit, so `${pn}-[0-9]*` won't catch sibling packages
-    # whose PN happens to start with our PN (e.g. dev-lang/go-* would
-    # otherwise match dev-lang/go-cross-* too).  nullglob keeps an empty
-    # match as an empty array instead of the literal pattern.
-    shopt -s nullglob
-    vdb_dirs=( /var/db/pkg/"${cat}"/"${pn}"-[0-9]* )
-    shopt -u nullglob
-
-    if (( ${#vdb_dirs[@]} == 0 )); then
-      # vdb doesn't claim it's installed — Portage will resolve BDEPEND
-      # normally and pull the binary bootstrap if needed.
-      continue
-    fi
-    if [[ -x "$bootstrap_bin" ]]; then
-      # vdb agrees with reality — nothing to do.
-      continue
-    fi
-
-    log "Self-hosted bootstrap mismatch for ${pkg}: vdb claims installed (${vdb_dirs[*]})"
-    log "  but bootstrap binary ${bootstrap_bin} is missing on disk."
-    log "  Removing stale vdb entry so emerge re-resolves BDEPEND and pulls a bootstrap binpkg."
-    local d
-    for d in "${vdb_dirs[@]}"; do
-      rm -rf -- "$d"
-      log "  Removed ${d}"
-    done
-  done
-}
-
-# ---------- installed-dependency disk probes ----------
-# Problem: our CI restores /var/db/pkg from a system-state cache, but does
-# NOT restore the actual installed files (under /usr, /lib, etc.).  Those
-# come from the stage3 image.  For packages that are NOT part of the stage3
-# image but were installed in a previous build chain, Portage considers them
-# already-installed (VDB says so) and excludes them from the emerge plan —
-# but their actual files are absent from disk.
-#
-# When such a package is a BUILD-TIME dependency of another package in the
-# current plan, the dependent package's configure step fails because the
-# dependency's pkg-config / header / library files are missing.
-#
-# Real example: mesa-26.0.5 made media-libs/libglvnd an unconditional
-# DEPEND (previously gated behind USE=libglvnd).  After a system-state
-# restore, /var/db/pkg claims libglvnd is installed but
-# /usr/lib64/pkgconfig/libglvnd.pc does not exist, so meson configure
-# fails with: "Dependency "libglvnd" not found, tried pkgconfig and cmake".
-#
-# Fix: probe a representative file for each such package.  If the VDB
-# entry exists but the file is absent, remove the stale VDB entry so
-# emerge re-resolves and re-installs the package before its dependents.
-#
-# Each entry is "<category>/<pn>:<absolute-path-to-probe-file>".
-# Add new entries here as new build-time deps are discovered.
-INSTALLED_DEP_PROBES=(
-  "media-libs/libglvnd:/usr/lib64/pkgconfig/libglvnd.pc"
-  "dev-lang/go-bootstrap:/usr/lib/go-bootstrap/bin/go"
-)
-
+# Notes:
+#   * We sample the first obj entry rather than scanning every file in
+#     CONTENTS: in our cache+stage3 scenario the state is binary (all
+#     files present, or all absent), so one probe is sufficient and keeps
+#     the scan cheap on a several-thousand-entry VDB.
+#   * Packages whose CONTENTS has no obj entries (e.g. virtuals,
+#     metapackages) are left alone — there's nothing on disk to probe and
+#     dropping them would force needless re-resolution.
 verify_installed_deps() {
-  local entry pkg cat pn probe_file vdb_dirs
-  for entry in "${INSTALLED_DEP_PROBES[@]}"; do
-    pkg="${entry%%:*}"
-    cat="${pkg%/*}"
-    pn="${pkg##*/}"
-    probe_file="${entry#*:}"
+  local vdb_root="/var/db/pkg"
+  [[ -d "$vdb_root" ]] || return 0
 
-    shopt -s nullglob
-    vdb_dirs=( /var/db/pkg/"${cat}"/"${pn}"-[0-9]* )
-    shopt -u nullglob
+  local cat_dir pkg_dir contents probe pkg_atom removed=0
+  shopt -s nullglob
+  for cat_dir in "$vdb_root"/*/; do
+    for pkg_dir in "$cat_dir"*/; do
+      contents="${pkg_dir}CONTENTS"
+      [[ -f "$contents" ]] || continue
 
-    if (( ${#vdb_dirs[@]} == 0 )); then
-      # Not in VDB at all — Portage will resolve it as a new dep normally.
-      continue
-    fi
-    if [[ -e "$probe_file" ]]; then
-      # VDB and disk agree — nothing to do.
-      continue
-    fi
+      # CONTENTS obj-line format (portage):
+      #   obj <absolute-path> <md5> <mtime>
+      # Path may contain spaces, so we strip the trailing two
+      # whitespace-delimited tokens (md5, mtime) rather than splitting on
+      # whitespace blindly. Take only the first obj entry as a probe.
+      probe="$(awk '$1=="obj" {
+                      sub(/^obj /, "");
+                      sub(/ [^ ]+ [^ ]+$/, "");
+                      print;
+                      exit
+                    }' "$contents")"
+      [[ -n "$probe" ]] || continue       # no obj entries — skip
+      [[ -e "$probe" ]] && continue       # files present — VDB matches disk
 
-    log "Installed-dep probe mismatch for ${pkg}: vdb claims installed (${vdb_dirs[*]})"
-    log "  but probe file ${probe_file} is missing on disk."
-    log "  Removing stale vdb entry so emerge re-resolves and re-installs."
-    local d
-    for d in "${vdb_dirs[@]}"; do
-      rm -rf -- "$d"
-      log "  Removed ${d}"
+      pkg_atom="${pkg_dir#"${vdb_root}"/}"
+      pkg_atom="${pkg_atom%/}"
+      log "Stale VDB entry: ${pkg_atom} — probe file ${probe} missing on disk"
+      log "  Removing so emerge re-resolves and re-installs (or pulls a binpkg)."
+      rm -rf -- "${pkg_dir%/}"
+      removed=$(( removed + 1 ))
     done
   done
+  shopt -u nullglob
+
+  log "verify_installed_deps: removed ${removed} stale VDB entries"
 }
 
 # ---------- binpkg trust ----------
@@ -1064,7 +1010,6 @@ setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
-verify_self_hosted_packages
 verify_installed_deps
 ensure_kernel_symlink
 measure_cache_footprint "before"
