@@ -263,6 +263,12 @@ jobs:
             exit 1
           fi
 
+          # Portage verifies binary package GPG signatures as the 'portage'
+          # user, not root.  The keyring must be owned by that user or gpg
+          # refuses to read it ("unsafe ownership on homedir", "Permission
+          # denied" on pubring.kbx / random_seed / lock files).
+          chown -R portage:portage /etc/portage/gnupg
+
       - name: Install build tools
         env:
           # Pull binpkgs from the published binhost in addition to the local

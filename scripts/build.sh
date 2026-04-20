@@ -667,6 +667,13 @@ setup_binpkg_trust() {
       && log "  Imported Gentoo release key from keyserver" \
       || log "  Warning: could not fetch Gentoo release key from keyserver; binpkg signature verification will fail"
   fi
+
+  # Portage verifies binary package GPG signatures as the 'portage' user,
+  # not root.  The keyring must be owned by that user or gpg refuses to read
+  # it ("unsafe ownership on homedir", "Permission denied").
+  if [[ -d /etc/portage/gnupg ]]; then
+    chown -R portage:portage /etc/portage/gnupg
+  fi
 }
 
 # ---------- sync ----------
