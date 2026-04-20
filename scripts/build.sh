@@ -931,7 +931,11 @@ build_packages() {
   log "Packages to build: ${packages[*]}"
 
   # Build the emerge flags array; add --getbinpkg when a binhost URL is configured
-  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose)
+  # --update --newuse --deep: update installed packages whose USE flags differ from the
+  # current profile (e.g. pambase -elogind→elogind, libxml2 -icu→icu cached in system-state).
+  # Without these flags Portage refuses to replace the stale installed package and instead
+  # raises a slot conflict when a dependency needs the flag-changed version.
+  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose --update --newuse --deep)
   if [[ -n "$BINHOST_URL" ]]; then
     emerge_flags+=(--getbinpkg)
     # Binary packages on the binhost may have been built against older sub-slot
