@@ -225,10 +225,21 @@ emit_progress_summary() {
 # appropriately to fix it."
 #
 # Failure marker convention used by Portage:
-#   /var/tmp/portage/<cat>/<pkg>/temp/die.env   — written by `die` in ebuild.sh
+#   /var/tmp/portage/<cat>/<pkg>/.die_hooks    — touched UNCONDITIONALLY by
+#       isolated-functions.sh::die() for any non-`depend` phase invoked via
+#       ebuild.sh/misc-functions.sh.  This is the canonical "this ebuild
+#       called die" marker.
+#   /var/tmp/portage/<cat>/<pkg>/temp/environment — saved environment for the
+#       failed phase; readable for `EBUILD_PHASE=...` and useful for repro.
 #   /var/tmp/portage/<cat>/<pkg>/temp/build.log — full build output for that atom
-# The presence of die.env is the canonical signal that the merge of that atom
-# failed; if it's absent the atom either didn't run or completed successfully.
+#   /var/tmp/portage/<cat>/<pkg>/temp/die.env  — LEGACY fallback: Portage only
+#       writes this when ${T}/environment does NOT exist (see die() in
+#       isolated-functions.sh: `if [[ -f "${T}/environment" ]]; ... elif [[ -d
+#       "${T}" ]]; then { set; export; } > "${T}/die.env"; fi`).  For a normal
+#       compile/install-phase failure, environment exists and die.env is never
+#       written, which is why the previous .die_hooks-less probe missed every
+#       real failure (e.g. dev-lang/go-1.26.2 in run 24664855594) and reported
+#       "No failed atoms detected" while the chain was definitively broken.
 # Number of lines of build.log tailed into the GitHub step summary for each
 # failed package.  80 is enough for a typical configure/cmake error; raising
 # it would clutter the summary, lowering it would hide enough context.
@@ -249,16 +260,24 @@ report_failed_atoms() {
     return 0
   fi
 
-  # Iterate every die.env under /var/tmp/portage/<cat>/<pkg>/temp/.  No
-  # 2>/dev/null on find: if the directory is unreadable for a real reason
+  # Iterate every .die_hooks under /var/tmp/portage/<cat>/<pkg>/.die_hooks.
+  # This is the canonical marker (see header comment).  We also probe for
+  # legacy die.env files at /var/tmp/portage/<cat>/<pkg>/temp/die.env so that
+  # if Portage ever writes one (only possible when ${T}/environment is
+  # absent) we still capture it.  Two passes because -mindepth/-maxdepth are
+  # global to a find invocation, not per -o branch.
+  # No 2>/dev/null on find: if the directory is unreadable for a real reason
   # (perm denied, IO error) we want to see it, not lose all failure context.
   local die_files=()
+  while IFS= read -r -d '' f; do die_files+=("$f"); done < <(
+    find "$portage_tmp" -mindepth 3 -maxdepth 3 -type f -name .die_hooks -print0
+  )
   while IFS= read -r -d '' f; do die_files+=("$f"); done < <(
     find "$portage_tmp" -mindepth 4 -maxdepth 4 -type f -name die.env -print0
   )
 
   if [[ ${#die_files[@]} -eq 0 ]]; then
-    log "No failed atoms detected (no die.env files under ${portage_tmp})"
+    log "No failed atoms detected (no .die_hooks or die.env files under ${portage_tmp})"
     if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
       echo "failed_package_count=0" >> "$GITHUB_OUTPUT"
       echo "repeated_failures=false" >> "$GITHUB_OUTPUT"
@@ -274,38 +293,78 @@ report_failed_atoms() {
       echo "### Failed packages (${#die_files[@]})"
       echo ""
       echo "Each entry below is a Portage ebuild that died during this attempt."
-      echo "The full \`build.log\` and \`die.env\` are uploaded under \`_failures/\` in the build artifact."
+      echo "The full \`build.log\` and saved \`environment\` (or legacy \`die.env\`) are uploaded under \`_failures/\` in the build artifact."
       echo ""
     } >> "$GITHUB_STEP_SUMMARY"
   fi
 
-  local f cat_pkg cat pkg phase build_log dest
+  local f cat_pkg cat pkg phase build_log dest temp_dir env_src
+  # Track which atoms we've already captured so a package with both
+  # .die_hooks (depth 3) and die.env (depth 4) isn't reported twice.
+  local -A seen_atoms=()
   for f in "${die_files[@]}"; do
-    # Path layout: /var/tmp/portage/<cat>/<pkg>/temp/die.env
-    cat_pkg="${f#"${portage_tmp}"/}"     # <cat>/<pkg>/temp/die.env
-    cat_pkg="${cat_pkg%/temp/die.env}" # <cat>/<pkg>
+    # Derive <cat>/<pkg> and the package's temp/ directory from the marker
+    # file path.  Two layouts to handle:
+    #   /var/tmp/portage/<cat>/<pkg>/.die_hooks       (canonical, depth 3)
+    #   /var/tmp/portage/<cat>/<pkg>/temp/die.env     (legacy fallback, depth 4)
+    cat_pkg="${f#"${portage_tmp}"/}"
+    case "$f" in
+      */.die_hooks)
+        cat_pkg="${cat_pkg%/.die_hooks}"        # <cat>/<pkg>
+        temp_dir="${portage_tmp}/${cat_pkg}/temp"
+        ;;
+      */temp/die.env)
+        cat_pkg="${cat_pkg%/temp/die.env}"      # <cat>/<pkg>
+        temp_dir="$(dirname "$f")"
+        ;;
+      *)
+        log "  WARNING: unrecognised marker path '${f}', skipping"
+        continue
+        ;;
+    esac
+    if [[ -n "${seen_atoms[$cat_pkg]:-}" ]]; then
+      continue
+    fi
+    seen_atoms["$cat_pkg"]=1
     cat="${cat_pkg%%/*}"
     pkg="${cat_pkg##*/}"
 
-    # Extract the failed phase from die.env (line like: EBUILD_PHASE=compile).
-    # No 2>/dev/null: $f IS die.env, which we just found via -type f, so a
-    # grep error here means the file became unreadable mid-scan and we want
-    # to know.
-    phase="$(grep -m1 '^EBUILD_PHASE=' "$f" | cut -d= -f2- | tr -d '"' || true)"
+    # Extract the failed phase.  Prefer temp/environment (the file that
+    # actually exists for ordinary failures); fall back to temp/die.env
+    # (legacy).  No 2>/dev/null: a read error here is real signal.
+    phase=""
+    env_src=""
+    if [[ -f "${temp_dir}/environment" ]]; then
+      env_src="${temp_dir}/environment"
+    elif [[ -f "${temp_dir}/die.env" ]]; then
+      env_src="${temp_dir}/die.env"
+    fi
+    if [[ -n "$env_src" ]]; then
+      # temp/environment is saved with `declare -p`, producing lines like
+      #   declare -- EBUILD_PHASE="compile"
+      # while die.env is produced by `{ set; export; }` which yields
+      #   EBUILD_PHASE=compile
+      # Accept both shapes.
+      phase="$(grep -m1 -E '(^|[[:space:]])EBUILD_PHASE=' "$env_src" \
+        | sed -E 's/.*EBUILD_PHASE=//; s/^"//; s/"$//' || true)"
+    fi
     [[ -n "$phase" ]] || phase="unknown"
 
     echo "${cat}/${pkg}" >> "$list_file"
 
-    build_log="$(dirname "$f")/build.log"
+    build_log="${temp_dir}/build.log"
     dest="${failures_dir}/${cat}/${pkg}"
     mkdir -p "$dest"
-    cp "$f" "${dest}/die.env"
     if [[ -f "$build_log" ]]; then
       cp "$build_log" "${dest}/build.log"
     fi
-    # Also save environment if it exists — useful for reproducing the failure.
-    if [[ -f "$(dirname "$f")/environment" ]]; then
-      cp "$(dirname "$f")/environment" "${dest}/environment"
+    # Save environment if it exists — useful for reproducing the failure.
+    if [[ -f "${temp_dir}/environment" ]]; then
+      cp "${temp_dir}/environment" "${dest}/environment"
+    fi
+    # Also save legacy die.env if Portage happened to write one.
+    if [[ -f "${temp_dir}/die.env" ]]; then
+      cp "${temp_dir}/die.env" "${dest}/die.env"
     fi
 
     # ::error annotation — appears at top of GitHub Actions UI, RED.
@@ -322,7 +381,7 @@ report_failed_atoms() {
           tail -n "${FAILURE_LOG_TAIL_LINES}" "${dest}/build.log"
           echo '```'
         else
-          echo "_No \`build.log\` was preserved — only \`die.env\` is available._"
+          echo "_No \`build.log\` was preserved — only the saved \`environment\` is available._"
         fi
         echo ""
         echo "</details>"
@@ -966,8 +1025,8 @@ prune_old_binpkgs() {
 # ---------- main ----------
 # Make sure that, if the runner cancels us (job-timeout / user-cancel /
 # external SIGTERM), we still:
-#   1. Capture any in-flight portage failures (die.env files) so the next
-#      attempt can compare against them and so the artifact actually
+#   1. Capture any in-flight portage failures (.die_hooks markers) so the
+#      next attempt can compare against them and so the artifact actually
 #      contains the failing build.log instead of an empty _failures/
 #      directory.  This was the missing piece in run 24636521882, where
 #      dev-lang/go failed in 1.8 s and then the cancel path threw the
