@@ -279,12 +279,18 @@ jobs:
           S_KEY="${{ steps.restore_system_state.outputs.cache-matched-key }}"
           echo "binpkgs       restored from key: ${B_KEY:-<none>}"
           echo "system-state  restored from key: ${S_KEY:-<none>}"
-          # Both restored = OK.  Both empty = OK (nothing to verify; build.sh
-          # will treat this as a fresh attempt).  XOR = bad: one cache from
-          # this chain, the other from somewhere else (or absent).
-          if [[ -n "$B_KEY" && -z "$S_KEY" ]] || [[ -z "$B_KEY" && -n "$S_KEY" ]]; then
-            echo "::error title=Coupled-cache mismatch::Exactly one of (binpkgs, system-state) restored from cache; the other did not. Refusing to build because Portage's installed DB and binpkgs would diverge silently."
+          # Both restored = OK.  Both empty = OK (fresh state).  The unsafe
+          # mismatch is system-state-only restore: /var/db/pkg says packages are
+          # installed while /var/cache/binpkgs has no matching gpkgs.
+          #
+          # Binpkgs-only restore is safe: we just warm-start from prior binary
+          # artifacts while keeping stage3's installed DB baseline.
+          if [[ -z "$B_KEY" && -n "$S_KEY" ]]; then
+            echo "::error title=Coupled-cache mismatch::system-state restored but binpkgs did not; refusing to build because Portage's installed DB and available binpkgs would diverge."
             exit 1
+          fi
+          if [[ -n "$B_KEY" && -z "$S_KEY" ]]; then
+            echo "::warning title=Binpkgs-only restore::binpkgs restored without system-state. Proceeding with a fresh installed DB baseline and reusing available binary artifacts."
           fi
 
       - name: Import GPG signing key
