@@ -362,6 +362,14 @@ jobs:
           # "unsafe ownership" failure we are fixing.
           chown -R portage:portage /etc/portage/gnupg
 
+      # Remove stale VDB entries whose files are absent from the fresh stage3
+      # image.  This MUST run before "Install build tools" so that the tools
+      # emerge (ccache, gentoolkit) sees a correct installed-package view.
+      # The same script is also called by scripts/build.sh before the main
+      # build emerge.  See scripts/verify-vdb.sh for full documentation.
+      - name: Repair stale VDB entries
+        run: bash scripts/verify-vdb.sh
+
       - name: Install build tools
         env:
           # Pull binpkgs from the published binhost in addition to the local
@@ -405,63 +413,6 @@ jobs:
             fi
           fi
           unset _own_pkg_idx _own_binhost_ok _OWN_BINHOST _OFFICIAL_BINHOST
-
-          # Self-heal stale Python-related VDB entries before installing
-          # gentoolkit (which uses meson and runs Python interpreters during
-          # configure for every PYTHON_TARGETS entry).
-          #
-          # Two distinct failure modes are handled here:
-          #
-          # (1) Missing interpreter binary on disk while VDB still records
-          #     dev-lang/python:3.X as installed.
-          #
-          #     The stage3 container ships only the current default Python
-          #     slot (e.g. 3.13).  When the system-state cache is restored
-          #     from a previous run, /var/db/pkg/dev-lang/python-3.12.* may
-          #     come back even though /usr/bin/python3.12 is not in the
-          #     fresh container.  Portage then trusts VDB and does NOT
-          #     reinstall python:3.12, so when gentoolkit's meson configure
-          #     runs the python_foreach_impl wrapper for 3.12 it tries to
-          #     `exec /usr/bin/python3.12` and dies with:
-          #       /usr/bin/python3.12: No such file or directory
-          #     meson then aborts with "is not a valid python or it is
-          #     missing distutils" (the wrapper exited 127, which meson
-          #     misreports as a distutils problem).  Observed in CI run
-          #     24716031401 job 72292555196.
-          #
-          #     Fix: for every PYTHON_TARGETS slot, if VDB has a
-          #     dev-lang/python entry for that slot but /usr/bin/python3.X
-          #     is missing, drop the stale VDB entry so emerge re-resolves
-          #     and pulls (or builds) the interpreter as a dependency of
-          #     gentoolkit before its configure step runs.
-          #
-          # (2) Interpreter present but `import distutils` fails because of
-          #     a stale dev-python/setuptools VDB entry whose _distutils_hack
-          #     .pth file is no longer on disk.  This is the original
-          #     gentoolkit-0.7.2 meson failure (Python 3.12 removed distutils
-          #     from the stdlib; setuptools provides the shim).
-          #
-          #     Fix: if a present interpreter cannot import distutils, drop
-          #     all stale setuptools VDB entries so the emerge below pulls a
-          #     fresh binpkg (or rebuilds from source).
-          shopt -s nullglob
-          for _py in python3.12 python3.13; do
-            _vdb_entries=( /var/db/pkg/dev-lang/python-"${_py#python}".* )
-            if [[ ! -x "/usr/bin/${_py}" && ${#_vdb_entries[@]} -gt 0 ]]; then
-              echo "::warning::/usr/bin/${_py} missing on disk but VDB has dev-lang/python:${_py#python} — removing stale VDB entry so emerge reinstalls the interpreter"
-              rm -rf -- "${_vdb_entries[@]}"
-              continue
-            fi
-            if command -v "$_py" >/dev/null 2>&1 && \
-               ! "$_py" -c "import distutils" 2>/dev/null; then
-              echo "::warning::$_py cannot import distutils — removing stale dev-python/setuptools VDB entry so emerge reinstalls"
-              find /var/db/pkg/dev-python -maxdepth 1 -name 'setuptools-*' -type d \
-                -exec rm -rf {} +
-              break  # setuptools wipe is global; once is enough
-            fi
-          done
-          shopt -u nullglob
-          unset _py _vdb_entries
 
           PORTAGE_BINHOST="$_TOOLS_BINHOST" emerge --oneshot --quiet --usepkg y --getbinpkg y \
             dev-util/ccache app-portage/gentoolkit

@@ -645,110 +645,18 @@ PYEOF
 # was installed in a previous chain, the VDB claims it's installed while
 # its files are absent from disk. Portage then either:
 #   - excludes it from the emerge plan (breaking dependents at configure
-#     time when their pkg-config / headers / libraries are missing — e.g.
-#     mesa failing with "Dependency 'libglvnd' not found"), or
+#     time when their pkg-config / headers / libraries are missing), or
 #   - schedules an [ebuild R] rebuild that can't bootstrap because the
-#     self-hosted prior install isn't really there (e.g. dev-lang/go's
-#     make.bash refusing to run without /usr/lib/go/bin/go).
+#     self-hosted prior install isn't really there.
 #
-# A previous fix maintained two hand-written allow-lists of (package,
-# probe-path) tuples and removed VDB entries when a hardcoded probe was
-# missing. That was a workaround that only handled packages we'd already
-# been bitten by, and demanded a code change every time a new package hit
-# the same pattern.
-#
-# Fix (general): every VDB entry already records the exact files it
-# installed in /var/db/pkg/<cat>/<pf>/CONTENTS. We walk all VDB entries,
-# pick the first `obj` (regular-file) line from each CONTENTS as a probe,
-# and if the file is absent on disk we drop the stale VDB entry. emerge
-# then re-resolves dependencies from scratch — pulling a binpkg from the
-# binhost or rebuilding from source — for ANY package that's missing,
-# without us having to enumerate them up front.
-#
-# Notes:
-#   * We sample multiple obj entries (first, ~25%, ~50%, ~75%, last)
-#     rather than only the first one.  Sampling a single file is
-#     unreliable because a package's first CONTENTS entry is often a
-#     small file in /etc or /usr/share/doc that survives even when the
-#     bulk of the install has been wiped — the dev-ruby/rubygems case
-#     where the VDB entry remained, the first probe file existed, but
-#     /usr/lib64/ruby/3.3.0/rubygems/compatibility.rb did not, breaking
-#     every Ruby ebuild that subsequently tried to run rubygems.  Five
-#     spread-out probes give us very high confidence with negligible cost
-#     (~25k stat() calls for a few-thousand-package VDB).
-#   * Packages whose CONTENTS has no obj entries (e.g. virtuals,
-#     metapackages) are left alone — there's nothing on disk to probe and
-#     dropping them would force needless re-resolution.
+# Fix (general): scripts/verify-vdb.sh walks all VDB entries, samples up to
+# 5 obj paths from each CONTENTS, and removes any entry whose files are
+# absent on disk.  See that script for full documentation.  The same script
+# is called from build-packages.yml before "Install build tools" so that
+# stale entries are gone before any emerge runs — not just before the main
+# build emerge.
 verify_installed_deps() {
-  local vdb_root="/var/db/pkg"
-  [[ -d "$vdb_root" ]] || return 0
-
-  local cat_dir pkg_dir contents pkg_atom removed=0
-  shopt -s nullglob
-  for cat_dir in "$vdb_root"/*/; do
-    for pkg_dir in "$cat_dir"*/; do
-      contents="${pkg_dir}CONTENTS"
-      [[ -f "$contents" ]] || continue
-
-      # CONTENTS obj-line format (portage):
-      #   obj <absolute-path> <md5> <mtime>
-      # Path may contain spaces, so we strip the trailing two
-      # whitespace-delimited tokens (md5, mtime) rather than splitting on
-      # whitespace blindly.  Emit up to 5 sample paths spread across the
-      # file's obj entries (first, 25%, 50%, 75%, last).
-      local probes=()
-      local probe missing_probe=""
-      while IFS= read -r probe; do
-        [[ -n "$probe" ]] && probes+=("$probe")
-      done < <(awk '
-        $1=="obj" {
-          line = $0
-          sub(/^obj /, "", line)
-          sub(/ [^ ]+ [^ ]+$/, "", line)
-          paths[++n] = line
-        }
-        END {
-          if (n == 0) exit
-          # Build a unique, ordered list of sample indices so small
-          # CONTENTS (n<5) do not cause duplicate probes.
-          idx[1] = 1
-          idx[2] = int((n + 3) / 4)
-          idx[3] = int((n + 1) / 2)
-          idx[4] = int((3 * n + 1) / 4)
-          idx[5] = n
-          last = 0
-          for (i = 1; i <= 5; i++) {
-            v = idx[i]
-            if (v < 1) v = 1
-            if (v > n) v = n
-            if (v != last) {
-              print paths[v]
-              last = v
-            }
-          }
-        }' "$contents")
-
-      [[ ${#probes[@]} -gt 0 ]] || continue   # no obj entries — skip
-
-      for probe in "${probes[@]}"; do
-        if [[ ! -e "$probe" ]]; then
-          missing_probe="$probe"
-          break
-        fi
-      done
-      [[ -z "$missing_probe" ]] && continue   # all probes present — VDB matches disk
-
-      pkg_atom="${pkg_dir#"${vdb_root}"/}"
-      pkg_atom="${pkg_atom%/}"
-      log "Stale VDB entry: ${pkg_atom} — probe file ${missing_probe} missing on disk"
-      log "  Removing so emerge re-resolves and re-installs (or pulls a binpkg)."
-      rm -rf -- "${pkg_dir%/}"
-      removed=$(( removed + 1 ))
-    done
-  done
-  shopt -u nullglob
-
-  log "verify_installed_deps: removed ${removed} stale VDB entries"
+  bash "$(dirname "${BASH_SOURCE[0]}")/verify-vdb.sh"
 }
 
 # ---------- /etc CONFIG_PROTECT auto-merge ----------
