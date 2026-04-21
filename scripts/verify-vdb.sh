@@ -83,6 +83,45 @@ _sample_obj_paths() {
     }' "$contents"
 }
 
+# Test if a library has ABI compatibility issues (GLIBC symbol version mismatch).
+# Returns 0 if library is OK, 1 if incompatible.
+# This check is ONLY run for specific packages known to cause GLIBC symbol issues.
+_test_library_abi() {
+  local lib="$1"
+  [[ -f "$lib" ]] || return 0   # doesn't exist, not our problem here
+
+  # Check if the library has GLIBC symbol version requirements that exceed
+  # what the current system provides. We do this by examining the symbol
+  # versions directly with readelf instead of trying to link, which is faster.
+  local max_required_version system_glibc_version
+  
+  # Get maximum GLIBC version required by the library
+  max_required_version=$(readelf -V "$lib" 2>/dev/null | \
+    grep -oP 'GLIBC_\d+\.\d+' | sort -V | tail -1)
+  
+  [[ -z "$max_required_version" ]] && return 0  # no GLIBC version requirements
+  
+  # Get current system GLIBC version from libc.so.6
+  system_glibc_version=$(readelf -V /lib64/libc.so.6 2>/dev/null | \
+    grep -oP 'GLIBC_\d+\.\d+' | sort -V | tail -1)
+  
+  [[ -z "$system_glibc_version" ]] && return 0  # can't determine, assume OK
+  
+  # Check if required version is greater than system version.
+  # If max_required_version sorts after system_glibc_version, it's incompatible.
+  if [[ "$max_required_version" != "$system_glibc_version" ]]; then
+    local sorted_first
+    sorted_first=$(printf '%s\n%s\n' "$system_glibc_version" "$max_required_version" | sort -V | head -1)
+    if [[ "$sorted_first" == "$system_glibc_version" ]]; then
+      # system version comes first in sort, so max_required is greater
+      log "  Library $lib requires $max_required_version but system has $system_glibc_version"
+      return 1  # incompatible
+    fi
+  fi
+  
+  return 0  # compatible
+}
+
 removed=0
 shopt -s nullglob
 for cat_dir in "${vdb_root}"/*/; do
@@ -104,14 +143,36 @@ for cat_dir in "${vdb_root}"/*/; do
         break
       fi
     done
-    [[ -z "$missing_probe" ]] && continue   # all probes present — VDB matches disk
 
     pkg_atom="${pkg_dir#"${vdb_root}"/}"
     pkg_atom="${pkg_atom%/}"
-    log "Stale VDB entry: ${pkg_atom} — probe file ${missing_probe} missing on disk"
-    log "  Removing so emerge re-resolves and re-installs (or pulls a binpkg)."
-    rm -rf -- "${pkg_dir%/}"
-    removed=$(( removed + 1 ))
+
+    if [[ -n "$missing_probe" ]]; then
+      log "Stale VDB entry: ${pkg_atom} — probe file ${missing_probe} missing on disk"
+      log "  Removing so emerge re-resolves and re-installs (or pulls a binpkg)."
+      rm -rf -- "${pkg_dir%/}"
+      removed=$(( removed + 1 ))
+      continue
+    fi
+
+    # Additional ABI compatibility check for packages known to cause GLIBC symbol issues.
+    # Format: case pattern -> library path to check
+    # Note: /usr/lib64 is correct for this binhost's amd64/x86-64-v3 target architecture
+    local lib_to_check=""
+    case "$pkg_atom" in
+      media-sound/lame-*)
+        lib_to_check="/usr/lib64/libmp3lame.so"
+        ;;
+    esac
+
+    if [[ -n "$lib_to_check" ]]; then
+      if ! _test_library_abi "$lib_to_check"; then
+        log "Stale VDB entry: ${pkg_atom} — $(basename "$lib_to_check") has GLIBC symbol version mismatch"
+        log "  Removing so emerge rebuilds with current glibc."
+        rm -rf -- "${pkg_dir%/}"
+        removed=$(( removed + 1 ))
+      fi
+    fi
   done
 done
 shopt -u nullglob
