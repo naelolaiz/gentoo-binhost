@@ -406,6 +406,36 @@ jobs:
           fi
           unset _own_pkg_idx _own_binhost_ok _OWN_BINHOST _OFFICIAL_BINHOST
 
+          # Self-heal stale dev-python/setuptools VDB entry.
+          #
+          # gentoolkit-0.7.x switched to a meson build system.  meson validates
+          # every Python installation it uses by running:
+          #   python3.N -c "import distutils"
+          # Python 3.12 removed distutils from the stdlib; it is now provided
+          # by dev-python/setuptools via a _distutils_hack .pth hook.  When the
+          # system-state cache is restored, /var/db/pkg may contain a setuptools
+          # VDB entry whose recorded version doesn't match the setuptools
+          # actually on disk (the stage3 container brings fresh files each run).
+          # In that case the .pth hook may be absent and `import distutils` fails
+          # even though Portage considers the package installed — causing the
+          # meson configure for gentoolkit to die before we get to our own
+          # verify_installed_deps() probe in scripts/build.sh.
+          #
+          # Fix: probe the concrete Python interpreters that gentoolkit will
+          # build for.  If any of them cannot import distutils, drop all stale
+          # setuptools VDB entries so the emerge below can pull a fresh binpkg
+          # (or rebuild from source) before gentoolkit's meson configure runs.
+          for _py in python3.12 python3.13; do
+            if command -v "$_py" >/dev/null 2>&1 && \
+               ! "$_py" -c "import distutils" 2>/dev/null; then
+              echo "::warning::$_py cannot import distutils — removing stale dev-python/setuptools VDB entry so emerge reinstalls"
+              find /var/db/pkg/dev-python -maxdepth 1 -name 'setuptools-*' -type d \
+                -exec rm -rf {} +
+              break
+            fi
+          done
+          unset _py
+
           PORTAGE_BINHOST="$_TOOLS_BINHOST" emerge --oneshot --quiet --usepkg y --getbinpkg y \
             dev-util/ccache app-portage/gentoolkit
 
