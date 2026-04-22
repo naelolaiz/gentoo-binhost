@@ -171,6 +171,37 @@ jobs:
             echo "::warning::faac MPEG-4 license workaround may no longer be needed"
           fi
 
+      # ── 8. cmake-4.3.1 mask ─────────────────────────────────────────
+      - name: "Check: cmake-4.3.1 mask (failed to build in CI)"
+        id: check-cmake-431
+        run: |
+          CMAKE_DIR="/var/db/repos/gentoo/dev-build/cmake"
+          if [ ! -d "$CMAKE_DIR" ]; then
+            echo "status=unknown" >> "$GITHUB_OUTPUT"
+            echo "::notice::dev-build/cmake not found in portage tree — skipping"
+            exit 0
+          fi
+          # The mask on =dev-build/cmake-4.3.1 is only relevant as long as
+          # 4.3.1 is still the best available version.  If a newer version
+          # (4.3.2+) is available portage will pick it instead and the mask
+          # becomes a no-op that can be safely removed.
+          BEST_VER=$(find "$CMAKE_DIR" -maxdepth 1 -name 'cmake-*.ebuild' \
+            | grep -oP '(?<=cmake-)\d+\.\d+\.\d+' | sort -V | tail -1)
+          if [ -z "$BEST_VER" ]; then
+            echo "status=unknown" >> "$GITHUB_OUTPUT"
+            echo "::notice::No cmake ebuilds found — skipping"
+            exit 0
+          fi
+          # Compare versions: if best > 4.3.1 the mask is no longer needed
+          if printf '%s\n' "4.3.1" "$BEST_VER" | sort -V | tail -1 | grep -qxF "$BEST_VER" \
+             && [ "$BEST_VER" != "4.3.1" ]; then
+            echo "status=removable" >> "$GITHUB_OUTPUT"
+            echo "::warning::=dev-build/cmake-4.3.1 mask may no longer be needed (best available: ${BEST_VER})"
+          else
+            echo "status=needed" >> "$GITHUB_OUTPUT"
+            echo "::notice::=dev-build/cmake-4.3.1 mask still needed (best available: ${BEST_VER})"
+          fi
+
       # ── Collect results ─────────────────────────────────────────────
       - name: Summarise removable workarounds
         id: summary
@@ -196,6 +227,9 @@ jobs:
           fi
           if [ "${{ steps.check-faac-license.outputs.status }}" = "removable" ]; then
             REMOVABLE="${REMOVABLE}faac-license,"
+          fi
+          if [ "${{ steps.check-cmake-431.outputs.status }}" = "removable" ]; then
+            REMOVABLE="${REMOVABLE}cmake-431-mask,"
           fi
           # Trim trailing comma
           REMOVABLE="${REMOVABLE%,}"
@@ -299,6 +333,18 @@ jobs:
                   '`media-libs/avidemux-plugins` **no longer appears to depend on `media-libs/faac`**.',
                   '',
                   'Please verify and remove the `media-libs/faac MPEG-4` line from `package.license/00-binhost`.',
+                ].join('\n'),
+              },
+              'cmake-431-mask': {
+                title: 'Remove =dev-build/cmake-4.3.1 mask — a newer cmake version is now available',
+                body: [
+                  'The `=dev-build/cmake-4.3.1` mask in `package.mask/00-binhost` was added because',
+                  'cmake-4.3.1 failed to build in two consecutive CI attempts (phase: unknown).',
+                  '',
+                  'A newer cmake version is now available in the portage tree, so the mask on the',
+                  'specific 4.3.1 ebuild is no longer needed — portage will prefer the newer version.',
+                  '',
+                  'Please verify and remove the `=dev-build/cmake-4.3.1` line from `package.mask/00-binhost`.',
                 ].join('\n'),
               },
             };
