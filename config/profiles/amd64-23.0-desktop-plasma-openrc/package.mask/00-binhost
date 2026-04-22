@@ -9,7 +9,3 @@
 # Pin to the previous version until the issue is resolved upstream or a fixed
 # release (4.3.2+) supersedes it.
 =dev-build/cmake-4.3.1
-
-# Mask pipewire-1.6.3: failed in CI build (compile phase, ninja -v -l0 -j4 failed).
-# Pin to older ebuilds until upstream/stabilisation fixes land.
-=media-video/pipewire-1.6.3
