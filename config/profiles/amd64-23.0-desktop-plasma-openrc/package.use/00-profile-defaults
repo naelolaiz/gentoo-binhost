@@ -34,7 +34,9 @@ media-libs/libheif ffmpeg gdk-pixbuf openh264 tools
 media-gfx/imagemagick fontconfig djvu graphviz openexr raw wmf lzma zip
 # Break circular dependency: ffmpeg → openal[sdl] → libsdl2[pipewire] → pipewire[ffmpeg]
 # pipewire does not need ffmpeg for core audio routing; ffmpeg support is optional
-media-video/pipewire extra -ffmpeg
+# Keep latest pipewire, but trim optional "extra" components in CI to reduce
+# compile breakage surface while preserving the core sound-server stack.
+media-video/pipewire -extra -ffmpeg
 # musescore REQUIRED_USE: at-most-one-of ( jack pipewire )
 # Both are globally enabled in make.conf; keep pipewire as the modern audio backend
 media-sound/musescore -jack
@@ -47,7 +49,9 @@ x11-base/xorg-drivers input_device_wacom input_device_evdev input_device_joystic
 sci-visualization/gnuplot bitmap gpic latex
 media-gfx/mandelbulber opencl openexr
 dev-python/pyqtgraph qt5 qt6
-media-sound/audacity vamp id3tag mpg123 opus twolame
+# Explicitly disable audacity's optional vamp and twolame features,
+# which repeatedly failed in CI.
+media-sound/audacity -vamp id3tag mpg123 opus -twolame
 media-sound/alsa-tools fltk
 media-sound/carla gtk2 sf2
 media-libs/zita-resampler tools

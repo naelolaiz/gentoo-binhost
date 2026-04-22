@@ -158,7 +158,7 @@ for cat_dir in "${vdb_root}"/*/; do
     # Additional ABI compatibility check for packages known to cause GLIBC symbol issues.
     # Format: case pattern -> library path to check
     # Note: /usr/lib64 is correct for this binhost's amd64/x86-64-v3 target architecture
-    local lib_to_check=""
+    lib_to_check=""
     case "$pkg_atom" in
       media-sound/lame-*)
         lib_to_check="/usr/lib64/libmp3lame.so"
