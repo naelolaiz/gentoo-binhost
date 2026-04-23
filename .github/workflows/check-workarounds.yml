@@ -13,6 +13,11 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    # Intentionally `:latest`, NOT the pinned STAGE3_TAG from
+    # build-packages.yml.  This job asks "is the workaround still needed
+    # against the CURRENT Gentoo tree?" — testing against an older pinned
+    # stage3 would give stale answers.  The workarounds themselves are
+    # evaluated by running emerge queries against a freshly-synced tree.
     container:
       image: gentoo/stage3:latest
     outputs:

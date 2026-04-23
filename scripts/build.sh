@@ -7,6 +7,7 @@
 #
 # Options:
 #   --profile <name>         Profile directory under config/profiles/ (required)
+#   --gentoo-profile <path>  Gentoo profile path (required; e.g. default/linux/amd64/23.0/desktop/plasma)
 #   --package-list <file>    Path to a newline-separated package list file
 #   --single-package <atom>  Build a single package atom
 #   --sign                   GPG-sign all produced .gpkg.tar files
@@ -26,6 +27,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 # ---------- defaults ----------
 PROFILE=""
+GENTOO_PROFILE=""
 PACKAGE_LIST=""
 SINGLE_PACKAGE=""
 SIGN=false
@@ -49,6 +51,7 @@ usage() {
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --profile)        PROFILE="$2";        shift 2 ;;
+    --gentoo-profile) GENTOO_PROFILE="$2"; shift 2 ;;
     --package-list)   PACKAGE_LIST="$2";   shift 2 ;;
     --single-package) SINGLE_PACKAGE="$2"; shift 2 ;;
     --sign)           SIGN=true;           shift   ;;
@@ -65,6 +68,7 @@ done
 
 # ---------- validation ----------
 [[ -n "$PROFILE" ]] || die "--profile is required"
+[[ -n "$GENTOO_PROFILE" ]] || die "--gentoo-profile is required (e.g. default/linux/amd64/23.0/desktop/plasma)"
 [[ -n "$PACKAGE_LIST" || -n "$SINGLE_PACKAGE" ]] \
   || die "One of --package-list or --single-package is required"
 [[ -z "$PACKAGE_LIST" || -z "$SINGLE_PACKAGE" ]] \
@@ -101,7 +105,7 @@ fi
 apply_profile() {
   bash "${SCRIPT_DIR}/apply-profile.sh" \
     "${PROFILE}" \
-    "default/linux/amd64/23.0/desktop/plasma" \
+    "${GENTOO_PROFILE}" \
     ${BINHOST_URL:+--binhost-url "${BINHOST_URL}"}
 }
 
@@ -581,82 +585,26 @@ verify_installed_deps() {
 }
 
 # ---------- /etc CONFIG_PROTECT auto-merge ----------
-# Auto-merge any CONFIG_PROTECT files that emerge dropped as `._cfg0000_*` in
-# /etc.  In CI we have no local /etc edits worth preserving, so the policy is
-# "always take the new file" — `etc-update --automode -5` ("Auto-merge AND
-# overwrite all files").  No fallback if etc-update is missing: fail loudly.
-#
-# Why this matters: VDB entries that wrote the new config files are restored
-# from system-state cache.  If we leave the ._cfg files unmerged, Portage
-# thinks the new config is installed when on-disk only the stale stage3
-# version exists — same VDB-vs-disk drift verify_installed_deps already
-# guards against under /usr, just for /etc, where /etc/env.d/* and
-# /etc/ld.so.conf.d/* silently affect every subsequent build.
+# Thin wrapper around scripts/merge-pending-configs.sh so that this shell
+# re-sources /etc/profile after the merge — env.d/* and ld.so.conf.d/*
+# entries take effect for the rest of this job.  The shared script does
+# etc-update + env-update; sourcing /etc/profile in the child process would
+# be lost on exit.
 merge_pending_configs() {
-  local before remaining
-  before=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
-  log "merge_pending_configs: ${before} pending ._cfg* file(s) under /etc"
-  if [[ "$before" -eq 0 ]]; then
-    return 0
+  bash "${SCRIPT_DIR}/merge-pending-configs.sh" build.sh
+  if [[ -f /etc/profile ]]; then
+    # shellcheck disable=SC1091
+    . /etc/profile
   fi
-
-  etc-update --automode -5
-
-  # Refresh /etc/profile.env, /etc/ld.so.conf, and the linker cache so
-  # newly merged env.d / ld.so.conf.d entries take effect for the rest of
-  # this job rather than waiting for the next container.
-  env-update
-  # shellcheck disable=SC1091
-  . /etc/profile
-
-  remaining=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
-  log "merge_pending_configs: ${remaining} pending ._cfg* file(s) remain after merge (started with ${before})"
 }
 
 # ---------- binpkg trust ----------
+# Delegate to the shared helper so the CI workflow and standalone build.sh
+# runs use identical, strict getuto-based trust setup.  Only invoke when a
+# remote binhost is configured; without one, Portage won't verify anything.
 setup_binpkg_trust() {
-  # When fetching from a remote binhost, Portage verifies GPG signatures on
-  # downloaded binary packages.  The signing key must be trusted in the
-  # Portage-specific keyring (/etc/portage/gnupg/).  `getuto` (from
-  # app-portage/gentoolkit) sets this up automatically.
   [[ -n "$BINHOST_URL" ]] || return 0
-
-  # Skip if the specific Gentoo release signing key is already trusted.
-  # Checking only for the keyring file is not enough — the key may be missing
-  # or outdated after a rotation.
-  local gentoo_key="534E4209AB49EEE1C19D96162C44695DB9F6043D"
-  if [[ -d /etc/portage/gnupg ]] \
-     && gpg --homedir /etc/portage/gnupg --list-keys "$gentoo_key" >/dev/null; then
-    log "Gentoo binpkg signing key ${gentoo_key} already trusted, skipping trust setup"
-    return 0
-  fi
-
-  if command -v getuto >/dev/null; then
-    log "Running getuto to import Gentoo binpkg signing keys"
-    getuto
-    log "  Portage binary-package trust established via getuto"
-  else
-    log "Warning: getuto not found; setting up Portage GnuPG keyring manually"
-    mkdir -p /etc/portage/gnupg
-    chmod 0700 /etc/portage/gnupg
-    # Initialise an empty keyring so subsequent --recv-keys has somewhere to
-    # write.  Suppress only stdout (the empty key list) — keep stderr visible
-    # so a real GPG failure (corrupt keyring, bad perms) is loud.
-    gpg --homedir /etc/portage/gnupg --list-keys >/dev/null || true
-    # Try to receive the Gentoo release key from the official keyserver
-    gpg --homedir /etc/portage/gnupg \
-        --keyserver hkps://keys.gentoo.org \
-        --recv-keys 534E4209AB49EEE1C19D96162C44695DB9F6043D \
-      && log "  Imported Gentoo release key from keyserver" \
-      || log "  Warning: could not fetch Gentoo release key from keyserver; binpkg signature verification will fail"
-  fi
-
-  # Portage verifies binary package GPG signatures as the 'portage' user,
-  # not root.  The keyring must be owned by that user or gpg refuses to read
-  # it ("unsafe ownership on homedir", "Permission denied").
-  if [[ -d /etc/portage/gnupg ]]; then
-    chown -R portage:portage /etc/portage/gnupg
-  fi
+  bash "${SCRIPT_DIR}/setup-binpkg-trust.sh"
 }
 
 # ---------- sync ----------
