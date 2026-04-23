@@ -29,12 +29,16 @@ jobs:
           fi
           echo "Pinned stage3 tag: ${PINNED}"
 
-          # Query Docker Hub for the latest dated amd64-openrc tag
+          # Query the Docker Registry v2 API (same protocol docker pull uses — reliable)
+          REGISTRY_TOKEN=$(curl -fsSL \
+            "https://auth.docker.io/token?service=registry.docker.io&scope=repository:gentoo/stage3:pull" | \
+            jq -r .token)
           LATEST=$(curl -fsSL \
-            "https://registry.hub.docker.com/v2/repositories/gentoo/stage3/tags?page_size=10&name=amd64-openrc-2" | \
-            jq -r '[.results[].name | select(startswith("amd64-openrc-2"))] | sort | last // ""')
+            -H "Authorization: Bearer ${REGISTRY_TOKEN}" \
+            "https://registry-1.docker.io/v2/gentoo/stage3/tags/list" | \
+            jq -r '[.tags[] | select(startswith("amd64-openrc-2"))] | sort | last // ""')
           if [[ -z "$LATEST" ]]; then
-            echo "::error::Could not determine latest stage3 tag from Docker Hub"
+            echo "::error::Could not determine latest stage3 tag from Docker Registry"
             exit 1
           fi
           echo "Latest stage3 tag: ${LATEST}"
