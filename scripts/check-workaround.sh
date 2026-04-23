@@ -85,10 +85,12 @@ check_version_gt() {
   local pn="${pkg#*/}"
   _ensure_pkg "$pkg" || return 0
   local pkg_dir="${PKG_TREE}/${pkg}"
-  # Extract PV from ebuild filename: strip leading pn- and trailing .ebuild
+  # Extract bare dotted-numeric version (no revision suffix) from ebuild filenames.
+  # grep -oP stops before any -rN suffix, so cmake-4.3.1-r1.ebuild yields 4.3.1 —
+  # a revision of the pinned version is not treated as "newer" for mask removal.
   local best
   best=$(find "$pkg_dir" -maxdepth 1 -name "${pn}-*.ebuild" \
-    | sed "s|.*/${pn}-\(.*\)\.ebuild|\1|" | sort -V | tail -1)
+    | grep -oP "(?<=${pn}-)\d+(?:\.\d+)+" | sort -V | tail -1)
   if [[ -z "$best" ]]; then
     echo "  ${pkg}: no versioned ebuilds found" >&2
     echo "unknown"
