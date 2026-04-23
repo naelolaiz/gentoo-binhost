@@ -21,7 +21,7 @@ jobs:
     # if this drifts from STAGE3_TAG.  To upgrade: update both files
     # together.
     container:
-      image: gentoo/stage3:amd64-openrc-20260420
+      image: gentoo/stage3:amd64-openrc-20260501
     steps:
       - uses: actions/checkout@v6
 
