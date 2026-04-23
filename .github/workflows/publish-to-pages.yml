@@ -23,6 +23,8 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      BINHOST_PATH: amd64/23.0/desktop/plasma/openrc/x86-64-v3
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -67,7 +69,6 @@ jobs:
       # layout, then prune the now-empty directories.
       - name: Scrub corrupt layout in cached pages-site
         run: |
-          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
           DEST="/tmp/pages-site/${BINHOST_PATH}"
           if [[ ! -d "$DEST" ]]; then
             echo "No cached binhost dir to scrub."
@@ -121,7 +122,6 @@ jobs:
       # Organise packages into the standard binhost directory layout
       - name: Organise packages
         run: |
-          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
           DEST="/tmp/pages-site/${BINHOST_PATH}"
           mkdir -p "$DEST"
 
@@ -186,7 +186,6 @@ jobs:
       # (category, PN); clients always want the latest anyway.
       - name: Prune older package versions
         run: |
-          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
           DEST="/tmp/pages-site/${BINHOST_PATH}"
           if [[ -d "$DEST" ]]; then
             python3 scripts/prune-old-binpkgs.py "$DEST"
@@ -208,14 +207,18 @@ jobs:
       # Generate/refresh the Packages index
       - name: Generate Packages index
         run: |
-          BINHOST_PATH="amd64/23.0/desktop/plasma/openrc/x86-64-v3"
           DEST="/tmp/pages-site/${BINHOST_PATH}"
           bash scripts/generate-packages-index.sh "$DEST"
 
       # Add a minimal index.html so GitHub Pages serves something at the root
       - name: Create root index
+        env:
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
-          cat > /tmp/pages-site/index.html <<'EOF'
+          BINHOST_URL="https://${REPO_OWNER}.github.io/${REPO_NAME}/${BINHOST_PATH}"
+          cat > /tmp/pages-site/index.html <<EOF
           <!DOCTYPE html>
           <html lang="en">
           <head><meta charset="utf-8"><title>Gentoo Binhost</title></head>
@@ -223,10 +226,10 @@ jobs:
           <h1>Gentoo Binhost</h1>
           <p>Binary packages for <code>default/linux/amd64/23.0/desktop/plasma</code>
              (OpenRC, ~amd64, x86-64-v3).</p>
-          <p>See the <a href="https://github.com/naelolaiz/gentoo-binhost">repository</a>
+          <p>See the <a href="${REPO_URL}">repository</a>
              for usage instructions.</p>
           <pre>
-          PORTAGE_BINHOST="https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3"
+          PORTAGE_BINHOST="${BINHOST_URL}"
           </pre>
           </body>
           </html>

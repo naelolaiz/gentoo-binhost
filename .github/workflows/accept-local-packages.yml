@@ -74,7 +74,8 @@ jobs:
             rel="${pkg#contrib/}"
             depth=$(echo "$rel" | tr '/' '\n' | wc -l)
             # Expected: <arch>/<version>/<desktop>/<variant>/<init>/<march>/<cat>/<pkg.gpkg.tar>
-            if [[ $depth -lt 3 ]]; then
+            # = 8 path components (7 slashes) after stripping contrib/
+            if [[ $depth -lt 8 ]]; then
               echo "  ERROR: ${pkg} — path too shallow (expected contrib/<arch>/.../<cat>/<pkg>.gpkg.tar)"
               ERRORS=$((ERRORS + 1))
             else
@@ -83,23 +84,3 @@ jobs:
           done < <(find contrib/ -name '*.gpkg.tar' -print0)
 
           [[ $ERRORS -eq 0 ]] || exit 1
-
-  publish-on-merge:
-    # This job runs after the PR is merged (push to default branch)
-    # It is NOT triggered by the PR itself — the validate job above handles PRs.
-    # Actual merge-triggered publish is handled by a separate push trigger below.
-    runs-on: ubuntu-latest
-    needs: validate
-    if: false  # placeholder — see push trigger workflow or merge queue
-    permissions: {}
-    steps:
-      - run: echo "Merge publish is handled by the push event in publish-to-pages.yml"
-
-# ---------------------------------------------------------------------------
-# Separate event: run publish when a contrib PR is merged to the default branch
-# ---------------------------------------------------------------------------
-# NOTE: GitHub Actions does not allow a single workflow file to respond to both
-# pull_request and push events in a merged fashion that shares jobs, so we use
-# a dedicated publish step triggered on push (see publish-to-pages.yml which
-# accepts workflow_call).  The merge publish is triggered by the build workflows
-# or manually via workflow_dispatch on publish-to-pages.yml.
