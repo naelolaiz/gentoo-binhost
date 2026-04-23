@@ -82,30 +82,15 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      # Assert that STAGE3_TAG (the env var used for cache-key scoping), the
-      # build-packages.yml container.image tag, and validate-config-changes.yml
-      # container.image tag all point at the same stage3.  If they drift,
-      # caches from a prior tag get restored into a newer container —
-      # silently yielding the GLIBC ABI / VDB mismatches verify-vdb.sh then
-      # has to repair — and PR validation tests against a different image
-      # than production actually uses.  Fail RED instead.
+      # Assert every stage3 tag reference across all workflows matches the
+      # canonical `STAGE3_TAG` env in this file.  Drift means caches from a
+      # prior tag could be restored into a newer container (GLIBC ABI /
+      # VDB mismatches verify-vdb.sh then has to repair) or PR validation
+      # running a different image than production.  See
+      # scripts/sync-stage3-tag.sh for the one-command bump tool; this
+      # step invokes it in check-only mode.
       - name: Verify stage3 tag consistency
-        run: |
-          ENV_TAG="${{ env.STAGE3_TAG }}"
-          BUILD_IMAGE_TAG="$(grep -oP '(?<=image: gentoo/stage3:)[^ ]+' .github/workflows/build-packages.yml | head -1)"
-          VALIDATE_IMAGE_TAG="$(grep -oP '(?<=image: gentoo/stage3:)[^ ]+' .github/workflows/validate-config-changes.yml | head -1)"
-          echo "STAGE3_TAG env:                        ${ENV_TAG}"
-          echo "build-packages.yml container.image:    ${BUILD_IMAGE_TAG}"
-          echo "validate-config-changes.yml image:     ${VALIDATE_IMAGE_TAG}"
-          if [[ -z "$ENV_TAG" || -z "$BUILD_IMAGE_TAG" || -z "$VALIDATE_IMAGE_TAG" ]]; then
-            echo "::error title=Stage3 tag missing::Could not parse STAGE3_TAG or one of the container.image tags"
-            exit 1
-          fi
-          if [[ "$ENV_TAG" != "$BUILD_IMAGE_TAG" ]] \
-             || [[ "$ENV_TAG" != "$VALIDATE_IMAGE_TAG" ]]; then
-            echo "::error title=Stage3 tag drift::STAGE3_TAG (${ENV_TAG}), build-packages.yml container.image (${BUILD_IMAGE_TAG}), and validate-config-changes.yml container.image (${VALIDATE_IMAGE_TAG}) disagree. Update ALL three together or caches will mismatch the runtime stage3."
-            exit 1
-          fi
+        run: bash scripts/sync-stage3-tag.sh --check "${{ env.STAGE3_TAG }}"
 
       - name: Set up build metadata
         id: meta

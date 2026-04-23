@@ -8,6 +8,13 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### CI (tier 4)
+
+- **`scripts/sync-stage3-tag.sh`** — one command to bump the pinned stage3 tag across every workflow (`--write <tag>`) and to verify no drift (`--check`). Replaces the "please edit three places by hand" ritual.
+- **`lint.yml` `stage3-tag-drift` job** — runs on every PR touching workflows or scripts; catches partial stage3 tag edits before they reach main.
+- **`build-packages.yml` tag-consistency step** — now calls `sync-stage3-tag.sh --check` instead of hand-rolled grep.
+- **`check-stage3.yml`** — auto-filed update issue body now recommends the exact `sync-stage3-tag.sh --write <new-tag>` invocation.
+
 ### Documentation
 
 - Added `docs/ARCHITECTURE.md` (CI internals: stage3 pinning, resume chain, coupled-cache invariant, VDB repair, workarounds subsystem).

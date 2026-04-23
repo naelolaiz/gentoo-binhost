@@ -65,3 +65,15 @@ jobs:
             exit 0
           fi
           python3 -m py_compile "${pyfiles[@]}"
+
+  stage3-tag-drift:
+    name: Stage3 tag drift check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      # Runs on every PR that touches workflows or scripts.  Catches drift
+      # earlier than build-packages.yml (which only runs on schedule /
+      # manual dispatch), so a PR that bumps stage3 in one file but not
+      # another gets a red light immediately.
+      - name: Verify stage3 tag consistency across workflows
+        run: bash scripts/sync-stage3-tag.sh --check

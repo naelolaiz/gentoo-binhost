@@ -37,17 +37,34 @@ Three independent monitoring workflows run on their own schedules:
 ## 1. The stage3 container
 
 Every build runs inside a pinned `gentoo/stage3:amd64-openrc-<DATE>` image. The
-tag appears in three places (enforced by the "Verify stage3 tag consistency"
-step in `build-packages.yml`):
+tag appears in three places, kept in lockstep by `scripts/sync-stage3-tag.sh`:
 
-1. `STAGE3_TAG` env var — part of every cache key.
+1. `STAGE3_TAG` env var in `build-packages.yml` (the canonical source of truth) — part of every cache key.
 2. `container.image` in `build-packages.yml` — the actual runtime.
 3. `container.image` in `validate-config-changes.yml` — PR validation uses the same image as production.
 
-Pinning matters because:
+### Bumping the tag
+
+Never edit the three locations by hand. Use the sync tool:
+
+```bash
+bash scripts/sync-stage3-tag.sh --write amd64-openrc-20260520
+```
+
+It rewrites every reference atomically and runs `--check` afterwards to
+verify. Two CI gates enforce no-drift:
+
+- **`lint.yml` `stage3-tag-drift` job** — runs on every PR touching workflows or scripts. Catches partial edits before they reach main.
+- **`build-packages.yml` `Verify stage3 tag consistency` step** — runs at the top of every build. Refuses to build if any tag disagrees with `STAGE3_TAG`.
+
+`check-stage3.yml`'s auto-filed update issue recommends the exact
+`sync-stage3-tag.sh --write <tag>` invocation.
+
+### Why pinning matters
 
 - The tag is baked into every cache key (`ccache-<TAG>-…`, `binpkgs-<TAG>-…`, `system-state-<TAG>-…`, `build-state-<TAG>-…`). Updating it invalidates every cache. That's the desired behavior — a new glibc in stage3 means existing binpkgs may have the wrong ABI (see `scripts/verify-vdb.sh`).
 - `check-stage3.yml` queries the Docker Registry weekly and files a "stage3 update available" issue when newer tags exist, *unless* a build chain is active (updating mid-chain would corrupt resume state).
+- `check-workarounds.yml` deliberately uses `gentoo/stage3:latest` (not pinned) because it checks "is the workaround still needed against the *current* Gentoo tree?". Lines containing `gentoo/stage3:latest` are intentionally excluded by the sync tool's scanner.
 
 ## 2. The resume chain
 
@@ -213,6 +230,7 @@ issue for any workaround that can now be removed.
 | `build.sh`                   | workflow | main build runner (profile apply, ccache, sync, trust, VDB repair, news, kernel symlink, build, progress, failure report) |
 | `apply-profile.sh`           | build.sh, validate-config-changes | copies `config/profiles/<name>/*` into `/etc/portage/*` |
 | `sync-portage.sh`            | build.sh, workflows | `emerge-webrsync` → `emerge --sync` → `emaint sync` fallback chain |
+| `sync-stage3-tag.sh`         | maintainer, build + lint workflows | `--write <tag>` rewrites every stage3 tag reference; `--check` verifies no drift |
 | `setup-binpkg-trust.sh`      | workflow, build.sh | getuto-based Portage keyring bootstrap |
 | `verify-vdb.sh`              | workflow, build.sh | deletes stale VDB entries (missing files or glibc ABI mismatch) |
 | `install-build-tools.sh`     | workflow | emerges ccache + gentoolkit with own-binhost-index validation and stale-gpkg ABI recovery |

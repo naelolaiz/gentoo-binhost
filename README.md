@@ -68,6 +68,7 @@ gentoo-binhost/
 │   ├── build.sh                       # main CI build script
 │   ├── apply-profile.sh               # copies config/profiles/<name>/ into /etc/portage
 │   ├── sync-portage.sh                # webrsync → rsync → emaint fallback chain
+│   ├── sync-stage3-tag.sh             # one-command bump of the pinned stage3 tag (with --check for CI)
 │   ├── setup-binpkg-trust.sh          # getuto-based Portage keyring bootstrap
 │   ├── verify-vdb.sh                  # removes stale VDB entries (missing files / glibc drift)
 │   ├── install-build-tools.sh         # emerges ccache + gentoolkit with self-healing
