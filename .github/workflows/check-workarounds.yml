@@ -26,7 +26,6 @@ jobs:
 
       # ── Helper function ──────────────────────────────────────────────
       - name: Create USE flag check helper
-        id: helpers
         run: |
           cat > /tmp/check-iuse.sh << 'SCRIPT'
           #!/usr/bin/env bash

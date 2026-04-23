@@ -401,8 +401,9 @@ jobs:
           # official binhost for this step.  The publish job that always runs
           # after build (even on failure) will scrub and regenerate a clean index
           # so subsequent runs recover automatically.
-          _OWN_BINHOST="https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3"
-          _OFFICIAL_BINHOST="https://distfiles.gentoo.org/releases/amd64/binpackages/23.0/x86-64-v3/"
+          # Split the first two URLs out of PORTAGE_BINHOST (our own binhost first,
+          # Gentoo official second — matching the BINHOST_URLS ordering above).
+          read -r _OWN_BINHOST _OFFICIAL_BINHOST <<< "$PORTAGE_BINHOST"
           _TOOLS_BINHOST="${PORTAGE_BINHOST}"
 
           _own_pkg_idx=""
