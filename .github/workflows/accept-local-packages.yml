@@ -66,20 +66,29 @@ jobs:
 
       - name: Check path structure
         run: |
-          # Packages must be under contrib/<arch>/<profile>/<march>/
+          # Packages must live under the canonical layout:
+          #   contrib/<arch>/<profile-version>/<desktop>/<variant>/<init>/<march>/<category>/<pn>-<ver>.gpkg.tar
+          # = exactly 8 path components after stripping `contrib/`.
+          # A strict structural regex catches BOTH too-shallow and
+          # too-deep paths — the earlier `depth -lt 8` check silently
+          # accepted deeper paths, letting a malformed submission through.
+          #
+          # Field shapes:
+          #   arch/march:      [a-z0-9][a-z0-9._+-]*    (e.g. amd64, znver3, x86-64-v3)
+          #   profile version: [0-9][0-9.]*             (e.g. 23.0)
+          #   desktop/variant/init: [a-z][a-z0-9-]*     (e.g. plasma, openrc)
+          #   category:        [a-z][a-z0-9-]*          (Gentoo category)
+          #   basename:        <pn>-<version>.gpkg.tar (PMS-ish; PN must start with a letter or digit, version with a digit)
           echo "Checking path structure..."
           ERRORS=0
+          pattern='^contrib/[a-z0-9][a-z0-9._+-]*/[0-9][0-9.]*/[a-z][a-z0-9-]*/[a-z][a-z0-9-]*/[a-z][a-z0-9-]*/[a-z0-9][a-z0-9._+-]*/[a-z][a-z0-9-]*/[A-Za-z0-9_+][A-Za-z0-9._+-]*-[0-9][A-Za-z0-9._+-]*\.gpkg\.tar$'
 
           while IFS= read -r -d '' pkg; do
-            rel="${pkg#contrib/}"
-            depth=$(echo "$rel" | tr '/' '\n' | wc -l)
-            # Expected: <arch>/<version>/<desktop>/<variant>/<init>/<march>/<cat>/<pkg.gpkg.tar>
-            # = 8 path components (7 slashes) after stripping contrib/
-            if [[ $depth -lt 8 ]]; then
-              echo "  ERROR: ${pkg} — path too shallow (expected contrib/<arch>/.../<cat>/<pkg>.gpkg.tar)"
-              ERRORS=$((ERRORS + 1))
-            else
+            if [[ "$pkg" =~ $pattern ]]; then
               echo "  OK: ${pkg}"
+            else
+              echo "  ERROR: ${pkg} — path does not match contrib/<arch>/<ver>/<desktop>/<variant>/<init>/<march>/<cat>/<pn>-<ver>.gpkg.tar"
+              ERRORS=$((ERRORS + 1))
             fi
           done < <(find contrib/ -name '*.gpkg.tar' -print0)
 

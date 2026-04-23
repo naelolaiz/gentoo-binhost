@@ -1,0 +1,67 @@
+name: Lint
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+      - 'scripts/**'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - 'scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actionlint:
+    name: Lint GitHub Actions workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      # Download a pinned actionlint release rather than `go install` or a
+      # third-party action: pinning the exact version makes the lint results
+      # reproducible, and downloading the official release tarball directly
+      # keeps the supply-chain surface tiny (one curl + one sha256 check
+      # against the URL publisher).
+      - name: Run actionlint
+        run: |
+          ACTIONLINT_VERSION="1.7.7"
+          curl -fsSL --max-time 30 \
+            "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
+            | tar -xzC /usr/local/bin actionlint
+          actionlint -color
+
+  shellcheck:
+    name: Shellcheck scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Run shellcheck on scripts/*.sh
+        run: |
+          shopt -s nullglob
+          scripts=(scripts/*.sh)
+          if (( ${#scripts[@]} == 0 )); then
+            echo "No shell scripts to lint."
+            exit 0
+          fi
+          shellcheck --severity=warning --external-sources "${scripts[@]}"
+
+  python-syntax:
+    name: Python syntax check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Compile every scripts/*.py
+        run: |
+          shopt -s nullglob
+          pyfiles=(scripts/*.py)
+          if (( ${#pyfiles[@]} == 0 )); then
+            echo "No Python scripts to check."
+            exit 0
+          fi
+          python3 -m py_compile "${pyfiles[@]}"

@@ -15,8 +15,13 @@ permissions:
 jobs:
   verify-depgraph:
     runs-on: ubuntu-latest
+    # Pinned to the same stage3 tag as build-packages.yml so PR validation
+    # exercises the EXACT base image production builds will use.  The
+    # "Verify stage3 tag consistency" step in build-packages.yml fails RED
+    # if this drifts from STAGE3_TAG.  To upgrade: update both files
+    # together.
     container:
-      image: gentoo/stage3:latest
+      image: gentoo/stage3:amd64-openrc-20260420
     steps:
       - uses: actions/checkout@v6
 

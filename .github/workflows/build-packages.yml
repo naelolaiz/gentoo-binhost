@@ -42,10 +42,16 @@ permissions:
 env:
   # Pinned stage3 tag — included in every cache key so a stage3 update
   # automatically invalidates all caches and forces a clean rebuild.
-  # Must match the container.image tag below exactly.
-  # To upgrade: update BOTH this value AND the container.image value.
-  # See check-stage3.yml for automated staleness notifications.
+  # Must match the container.image tag below exactly; the first step in the
+  # build job (`Verify stage3 tag consistency`) asserts this and fails RED
+  # if they drift.  To upgrade: update BOTH this value AND the
+  # container.image value.  See check-stage3.yml for automated staleness
+  # notifications.
   STAGE3_TAG: amd64-openrc-20260420
+  # Gentoo profile path.  Single source of truth: both the in-workflow
+  # `eselect profile set` below and scripts/build.sh receive this via
+  # --gentoo-profile so there's no second hardcoded copy to drift.
+  GENTOO_PROFILE: default/linux/amd64/23.0/desktop/plasma
   # Our own binhost first (custom USE flags), then official Gentoo x86-64-v3 as fallback
   BINHOST_URLS: >-
     https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3
@@ -74,6 +80,33 @@ jobs:
       next_attempt: ${{ steps.meta.outputs.next_attempt }}
 
     steps:
+      - uses: actions/checkout@v6
+
+      # Assert that STAGE3_TAG (the env var used for cache-key scoping), the
+      # build-packages.yml container.image tag, and validate-config-changes.yml
+      # container.image tag all point at the same stage3.  If they drift,
+      # caches from a prior tag get restored into a newer container —
+      # silently yielding the GLIBC ABI / VDB mismatches verify-vdb.sh then
+      # has to repair — and PR validation tests against a different image
+      # than production actually uses.  Fail RED instead.
+      - name: Verify stage3 tag consistency
+        run: |
+          ENV_TAG="${{ env.STAGE3_TAG }}"
+          BUILD_IMAGE_TAG="$(grep -oP '(?<=image: gentoo/stage3:)[^ ]+' .github/workflows/build-packages.yml | head -1)"
+          VALIDATE_IMAGE_TAG="$(grep -oP '(?<=image: gentoo/stage3:)[^ ]+' .github/workflows/validate-config-changes.yml | head -1)"
+          echo "STAGE3_TAG env:                        ${ENV_TAG}"
+          echo "build-packages.yml container.image:    ${BUILD_IMAGE_TAG}"
+          echo "validate-config-changes.yml image:     ${VALIDATE_IMAGE_TAG}"
+          if [[ -z "$ENV_TAG" || -z "$BUILD_IMAGE_TAG" || -z "$VALIDATE_IMAGE_TAG" ]]; then
+            echo "::error title=Stage3 tag missing::Could not parse STAGE3_TAG or one of the container.image tags"
+            exit 1
+          fi
+          if [[ "$ENV_TAG" != "$BUILD_IMAGE_TAG" ]] \
+             || [[ "$ENV_TAG" != "$VALIDATE_IMAGE_TAG" ]]; then
+            echo "::error title=Stage3 tag drift::STAGE3_TAG (${ENV_TAG}), build-packages.yml container.image (${BUILD_IMAGE_TAG}), and validate-config-changes.yml container.image (${VALIDATE_IMAGE_TAG}) disagree. Update ALL three together or caches will mismatch the runtime stage3."
+            exit 1
+          fi
+
       - name: Set up build metadata
         id: meta
         run: |
@@ -95,9 +128,11 @@ jobs:
             exit 1
           fi
 
-          echo "attempt=${ATTEMPT}" >> "$GITHUB_OUTPUT"
-          echo "chain_id=${CHAIN_ID}" >> "$GITHUB_OUTPUT"
-          echo "next_attempt=$((ATTEMPT + 1))" >> "$GITHUB_OUTPUT"
+          {
+            echo "attempt=${ATTEMPT}"
+            echo "chain_id=${CHAIN_ID}"
+            echo "next_attempt=$((ATTEMPT + 1))"
+          } >> "$GITHUB_OUTPUT"
           if [[ "$ATTEMPT" -gt 1 ]]; then
             echo "::notice::Auto-resumed build (attempt ${ATTEMPT}/${MAX}, chain ${CHAIN_ID})"
           fi
@@ -112,8 +147,6 @@ jobs:
             exit 1
           fi
 
-      - uses: actions/checkout@v6
-
       # Optional manual cache wipe.  When the workflow is dispatched with
       # `fresh: true`, delete every cache in the four families this workflow
       # uses (ccache-*, binpkgs-*, system-state-*, build-state-*) BEFORE any
@@ -127,72 +160,14 @@ jobs:
       # The resume re-trigger job already does NOT forward `fresh` in its
       # workflow_dispatch payload, so attempt>1 always sees the default
       # `false`; the attempt guard is defence-in-depth.
-      #
-      # Implemented in pure Python via the stdlib (no jq in stage3, and a
-      # `curl | python3` pipe through `mapfile` would let JSON-parse errors
-      # be silently swallowed by process substitution).  urllib.urlopen
-      # raises HTTPError on 4xx/5xx, which exits the interpreter non-zero
-      # and fails the step — no `|| true`, no `2>/dev/null`, no swallowing.
       - name: Wipe caches (fresh start)
         if: github.event_name == 'workflow_dispatch' && inputs.fresh && steps.meta.outputs.attempt == '1'
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
-          set -euo pipefail
           echo "::warning::fresh=true requested — deleting caches with prefixes: ccache-, binpkgs-, system-state-, build-state-"
-          python3 - <<'PY'
-          import json
-          import os
-          import urllib.error
-          import urllib.parse
-          import urllib.request
-
-          token = os.environ["GH_TOKEN"]
-          repo = os.environ["REPO"]
-          prefixes = ["ccache-", "binpkgs-", "system-state-", "build-state-"]
-          base_headers = {
-              "Authorization": f"Bearer {token}",
-              "Accept": "application/vnd.github+json",
-              "X-GitHub-Api-Version": "2022-11-28",
-          }
-
-          def api(method, path):
-              req = urllib.request.Request(
-                  f"https://api.github.com{path}",
-                  method=method,
-                  headers=base_headers,
-              )
-              with urllib.request.urlopen(req) as resp:
-                  body = resp.read()
-              return body
-
-          grand_total = 0
-          for prefix in prefixes:
-              deleted = 0
-              # Always re-fetch page 1 until empty: each iteration deletes
-              # every cache it sees, so subsequent fetches naturally shift
-              # forward.  Avoids the "delete-while-paginating" off-by-page
-              # bug where incrementing `page` skips items.
-              while True:
-                  qs = urllib.parse.urlencode({"key": prefix, "per_page": "100"})
-                  body = api("GET", f"/repos/{repo}/actions/caches?{qs}")
-                  data = json.loads(body)
-                  caches = data.get("actions_caches", []) or []
-                  if not caches:
-                      break
-                  for c in caches:
-                      cid = c["id"]
-                      key = c["key"]
-                      ref = c.get("ref", "?")
-                      print(f"[fresh] DELETE id={cid} key={key} ref={ref}", flush=True)
-                      api("DELETE", f"/repos/{repo}/actions/caches/{cid}")
-                      deleted += 1
-              print(f"[fresh] deleted {deleted} cache(s) with prefix {prefix!r}", flush=True)
-              grand_total += deleted
-
-          print(f"[fresh] cache wipe complete — {grand_total} cache(s) deleted total", flush=True)
-          PY
+          python3 scripts/wipe-caches.py ccache- binpkgs- system-state- build-state-
 
       - name: Restore ccache
         uses: actions/cache/restore@v5
@@ -316,51 +291,14 @@ jobs:
           # Set the profile now so steps before build.sh (e.g. "Install build
           # tools") see the correct profile.  No `|| true`: a wrong/missing
           # profile must fail RED.
-          eselect profile set default/linux/amd64/23.0/desktop/plasma
+          eselect profile set "${{ env.GENTOO_PROFILE }}"
 
+      # Bootstrap Portage binpkg trust.  MUST happen before "Install build
+      # tools" because that step fetches signed gpkgs from the official
+      # Gentoo binhost.  Logic lives in scripts/setup-binpkg-trust.sh so
+      # build.sh uses the same strict getuto-based setup for local runs.
       - name: Set up Portage binpkg trust
-        run: |
-          # Bootstrap the Portage-specific GPG keyring so binary packages
-          # from the Gentoo binhost can be signature-verified.  This MUST
-          # happen before "Install build tools" because that step fetches
-          # signed gpkgs from the official Gentoo binhost.
-          #
-          # Use /usr/bin/getuto — Portage's own $PORTAGE_TRUST_HELPER, from
-          # app-portage/getuto, which is a hard dep of recent sys-apps/portage
-          # and is therefore present in the stage3.  getuto:
-          #   * imports the binhost signing keys (including the binpkg key
-          #     534E4209AB49EEE1C19D96162C44695DB9F6043D, which is NOT a
-          #     primary key in /usr/share/openpgp-keys/gentoo-release.asc),
-          #   * sets correct trust levels, and
-          #   * chowns /etc/portage/gnupg to portage:portage so gpg-as-portage
-          #     does not error with "unsafe ownership on homedir" /
-          #     "Permission denied" on pubring.kbx during binpkg verification.
-          #
-          # An earlier manual `gpg --import` of the release-keys file plus a
-          # subsequent `chown` looked correct but produced exactly those two
-          # errors at install-tools time (CI run 24651146807, job
-          # 72074035707) — getuto avoids the whole class of bug.
-          if ! command -v getuto >/dev/null; then
-            echo "::error::/usr/bin/getuto not found in stage3; cannot bootstrap Portage binpkg trust"
-            exit 1
-          fi
-          getuto
-
-          # Verify the binhost signing key is actually present after
-          # bootstrap — catches a silent regression in getuto or a key
-          # rotation before it surfaces as a cryptic NO_PUBKEY during
-          # emerge.
-          GENTOO_BINHOST_KEY="534E4209AB49EEE1C19D96162C44695DB9F6043D"
-          if ! gpg --homedir /etc/portage/gnupg --list-keys "$GENTOO_BINHOST_KEY" >/dev/null; then
-            echo "::error::Gentoo binhost signing key ${GENTOO_BINHOST_KEY} not present in /etc/portage/gnupg after getuto"
-            exit 1
-          fi
-
-          # Defence in depth: getuto already chowns to portage:portage, but
-          # re-asserting it here means a future getuto change that drops the
-          # chown still leaves us with a working keyring instead of the
-          # "unsafe ownership" failure we are fixing.
-          chown -R portage:portage /etc/portage/gnupg
+        run: bash scripts/setup-binpkg-trust.sh
 
       # Remove stale VDB entries whose files are absent from the fresh stage3
       # image.  This MUST run before "Install build tools" so that the tools
@@ -370,97 +308,15 @@ jobs:
       - name: Repair stale VDB entries
         run: bash scripts/verify-vdb.sh
 
+      # Install ccache + gentoolkit for the main build.  Pulls from both our
+      # own binhost and the official Gentoo binhost (self-healing: skips the
+      # own binhost if its Packages index is unreachable or malformed, and
+      # rebuilds from source if a published gpkg has a stale SONAME).  See
+      # scripts/install-build-tools.sh for full rationale.
       - name: Install build tools
         env:
-          # Pull binpkgs from the published binhost in addition to the local
-          # /var/cache/binpkgs.  Without this, --usepkg y consults ONLY the
-          # local cache; on the first attempt of a new chain (where the
-          # GitHub binpkgs cache may have been evicted while system-state
-          # survived — see "Verify coupled-cache invariant" above) the local
-          # cache is empty, so ccache and gentoolkit get rebuilt from source
-          # every single time.  --getbinpkg y + PORTAGE_BINHOST makes Portage
-          # fetch the gpkgs we already published in earlier runs.
-          #
-          # Binpkg trust (Gentoo release key in /etc/portage/gnupg/) is
-          # established by the "Set up Portage binpkg trust" step above.
           PORTAGE_BINHOST: ${{ env.BINHOST_URLS }}
-        run: |
-          # Guard against a corrupt own-binhost Packages index.  A single
-          # malformed CPV entry (e.g. "CPV: tmp/artifacts/acct-group/cuse/cuse-0-1"
-          # from a prior buggy publish run that deposited files at a non-canonical
-          # path) will crash emerge with portage.exception.InvalidData, preventing
-          # the entire build chain from starting.  Validate the index first; if
-          # ours is unreachable or has bad entries, fall back to the Gentoo
-          # official binhost for this step.  The publish job that always runs
-          # after build (even on failure) will scrub and regenerate a clean index
-          # so subsequent runs recover automatically.
-          # Split the first two URLs out of PORTAGE_BINHOST (our own binhost first,
-          # Gentoo official second — matching the BINHOST_URLS ordering above).
-          read -r _OWN_BINHOST _OFFICIAL_BINHOST <<< "$PORTAGE_BINHOST"
-          _TOOLS_BINHOST="${PORTAGE_BINHOST}"
-
-          _own_pkg_idx=""
-          _own_binhost_ok=true
-          if ! _own_pkg_idx="$(curl --fail --no-progress-meter --max-time 30 \
-              "${_OWN_BINHOST}/Packages")"; then
-            echo "::warning::Could not fetch own binhost Packages index — excluding own binhost from tools install"
-            _own_binhost_ok=false
-            _TOOLS_BINHOST="$_OFFICIAL_BINHOST"
-          fi
-          if [[ "$_own_binhost_ok" == true ]]; then
-            if ! printf '%s\n' "$_own_pkg_idx" | python3 scripts/check-packages-index.py; then
-              echo "::warning::Own binhost Packages index has malformed CPV entries — excluding own binhost from tools install to prevent emerge crash"
-              _TOOLS_BINHOST="$_OFFICIAL_BINHOST"
-            fi
-          fi
-          unset _own_pkg_idx _own_binhost_ok _OWN_BINHOST _OFFICIAL_BINHOST
-
-          PORTAGE_BINHOST="$_TOOLS_BINHOST" emerge --oneshot --quiet --usepkg y --getbinpkg y \
-            dev-util/ccache app-portage/gentoolkit
-
-          # Self-heal stale-binpkg ABI mismatch.  A previously published
-          # binpkg may have been linked against an older SONAME than what
-          # the current stage3 ships (observed in CI:
-          #   ccache: error while loading shared libraries:
-          #   libblake3.so.0: cannot open shared object file
-          # because the published dev-util/ccache gpkg was built when
-          # dev-libs/blake3 still shipped libblake3.so.0, and the current
-          # container has a newer blake3 SONAME).  The recorded RDEPEND in
-          # the gpkg is satisfied by any version in the slot, so Portage
-          # installs it without rebuilding.  Detect this by actually
-          # invoking the binaries and, if they fail, drop the bad gpkgs
-          # from the local binpkg cache and rebuild from source so the
-          # next publish replaces the broken artifact in the binhost.
-          if ! ccache --version >/dev/null || ! equery --version >/dev/null; then
-            echo "::warning::Stale binpkg ABI mismatch detected for ccache/gentoolkit — rebuilding from source"
-            rm -f /var/cache/binpkgs/dev-util/ccache-*.gpkg.tar \
-                  /var/cache/binpkgs/app-portage/gentoolkit-*.gpkg.tar
-            emerge --oneshot --quiet --usepkg n --getbinpkg n \
-              dev-util/ccache app-portage/gentoolkit
-            # Re-verify; if still broken, fail loud — this is not the
-            # bug we're working around.
-            ccache --version >/dev/null
-            equery --version >/dev/null
-          fi
-
-          # Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_*
-          # in /etc.  Bootstrap-time drops (typically env.d/01blake3,
-          # env.d/05gcc-x86_64-pkg-cs, profile.env) must be merged before the
-          # main build phase so subsequent emerges see the new env vars.
-          # Mirror of merge_pending_configs() in scripts/build.sh; kept inline
-          # because build.sh is a top-level runner, not a sourceable library.
-          # No fallback if etc-update is missing: fail loudly instead.
-          _pending=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
-          echo "[build-packages.yml] merge_pending_configs: ${_pending} pending ._cfg* file(s) under /etc"
-          if [[ "$_pending" -gt 0 ]]; then
-            etc-update --automode -5
-            env-update
-            # shellcheck disable=SC1091
-            . /etc/profile
-            _remaining=$(find /etc -name '._cfg[0-9][0-9][0-9][0-9]_*' -print | wc -l)
-            echo "[build-packages.yml] merge_pending_configs: ${_remaining} pending ._cfg* file(s) remain (started with ${_pending})"
-          fi
-          unset _pending _remaining
+        run: bash scripts/install-build-tools.sh
 
       - name: Restore build state from previous attempt
         if: inputs._attempt && inputs._attempt != '1'
@@ -476,6 +332,7 @@ jobs:
           set +e
           bash scripts/build.sh \
             --profile amd64-23.0-desktop-plasma-openrc \
+            --gentoo-profile "${{ env.GENTOO_PROFILE }}" \
             ${{ inputs.package && format('--single-package {0}', inputs.package) || '--package-list packages/packages.txt' }} \
             --binhost-url "${{ env.BINHOST_URLS }}" \
             --state-dir /var/tmp/portage-state \
@@ -634,29 +491,24 @@ jobs:
     needs: [build, publish]
     if: always() && !cancelled() && needs.build.outputs.should_continue == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       actions: write
     steps:
       - name: Re-trigger build to continue where it left off
         env:
           GH_TOKEN: ${{ github.token }}
+          NEXT: ${{ needs.build.outputs.next_attempt }}
+          CHAIN_ID: ${{ needs.build.outputs.chain_id }}
+          MAX: ${{ inputs._max_attempts || '8' }}
+          PACKAGE: ${{ inputs.package }}
+          REF: ${{ github.ref_name }}
         run: |
-          NEXT="${{ needs.build.outputs.next_attempt }}"
-          CHAIN_ID="${{ needs.build.outputs.chain_id }}"
-          MAX="${{ inputs._max_attempts || '8' }}"
-          PACKAGE="${{ inputs.package }}"
           echo "Resuming build (attempt ${NEXT}/${MAX}, chain ${CHAIN_ID})"
-          PAYLOAD="$(jq -n \
-            --arg ref "${{ github.ref_name }}" \
-            --arg package "$PACKAGE" \
-            --arg attempt "$NEXT" \
-            --arg chain_id "$CHAIN_ID" \
-            --arg max "$MAX" \
-            '{ref: $ref, inputs: {package: $package, _attempt: $attempt, _chain_id: $chain_id, _max_attempts: $max}}'
-          )"
-          curl -f -X POST \
-            -H "Authorization: Bearer ${GH_TOKEN}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Content-Type: application/json" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/build-packages.yml/dispatches" \
-            --data "$PAYLOAD"
+          gh workflow run build-packages.yml \
+            --repo "${{ github.repository }}" \
+            --ref "${REF}" \
+            -f "package=${PACKAGE}" \
+            -f "_attempt=${NEXT}" \
+            -f "_chain_id=${CHAIN_ID}" \
+            -f "_max_attempts=${MAX}"
