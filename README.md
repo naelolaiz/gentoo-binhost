@@ -46,27 +46,46 @@ gpg --import keys/binhost-signing-key.asc
 ```
 gentoo-binhost/
 ├── .github/workflows/
-│   ├── build-packages.yml            # builds all packages (weekly, auto-resumes)
-│   ├── publish-to-pages.yml          # deploys binpkgs to GitHub Pages
-│   └── accept-local-packages.yml     # validates locally-built package PRs
-├── config/profiles/
-│   └── amd64-23.0-desktop-plasma-openrc/
-│       ├── make.conf
-│       ├── package.use/
-│       ├── package.accept_keywords/
-│       ├── package.mask/
-│       └── package.license/
+│   ├── build-packages.yml             # builds all packages (weekly, auto-resumes)
+│   ├── publish-to-pages.yml           # deploys binpkgs to GitHub Pages
+│   ├── accept-local-packages.yml      # validates locally-built package PRs
+│   ├── validate-config-changes.yml    # PR gate: verifies mask/USE changes resolve
+│   ├── check-stage3.yml               # weekly: files an issue when a newer stage3 is out
+│   ├── check-workarounds.yml          # weekly: flags removable config workarounds
+│   └── lint.yml                       # actionlint + shellcheck on every PR
+├── config/
+│   ├── profiles/
+│   │   └── amd64-23.0-desktop-plasma-openrc/
+│   │       ├── make.conf
+│   │       ├── package.use/
+│   │       ├── package.accept_keywords/
+│   │       ├── package.mask/
+│   │       └── package.license/
+│   └── workarounds.json               # data-driven workaround self-checks
 ├── packages/
-│   └── packages.txt                  # all packages to build
+│   └── packages.txt                   # all packages to build
 ├── scripts/
-│   ├── build.sh                      # main CI build script
-│   ├── upload-local-packages.sh      # submit locally-built packages via PR
-│   └── generate-packages-index.sh    # regenerate Packages index
+│   ├── build.sh                       # main CI build script
+│   ├── apply-profile.sh               # copies config/profiles/<name>/ into /etc/portage
+│   ├── sync-portage.sh                # webrsync → rsync → emaint fallback chain
+│   ├── setup-binpkg-trust.sh          # getuto-based Portage keyring bootstrap
+│   ├── verify-vdb.sh                  # removes stale VDB entries (missing files / glibc drift)
+│   ├── install-build-tools.sh         # emerges ccache + gentoolkit with self-healing
+│   ├── merge-pending-configs.sh       # etc-update for ._cfg* files
+│   ├── wipe-caches.py                 # deletes every cache with a given prefix (fresh: true)
+│   ├── generate-packages-index.sh     # regenerate Packages index
+│   ├── prune-old-binpkgs.py           # keep newest version per (cat, pn)
+│   ├── check-packages-index.py        # validate a Packages index has no malformed CPV
+│   ├── check-workaround.sh            # executes one workaround check
+│   └── upload-local-packages.sh       # submit locally-built packages via PR
 ├── docs/
-│   └── LOCAL-CPU-FLAGS-GUIDE.md
+│   ├── ARCHITECTURE.md                # how the CI works (for contributors)
+│   ├── TROUBLESHOOTING.md             # interpreting failure annotations
+│   └── LOCAL-CPU-FLAGS-GUIDE.md       # CPU compatibility notes for consumers
 ├── keys/
-│   └── README.md                     # GPG key setup instructions
-├── contrib/                          # locally-built package contributions
+│   └── README.md                      # GPG key setup instructions
+├── contrib/                           # locally-built package contributions
+├── CHANGELOG.md
 └── CONTRIBUTING.md
 ```
 
@@ -83,6 +102,11 @@ whatever was built, and **automatically re-triggers** itself to continue.
 This repeats until all packages complete (up to 8 attempts ≈ 44 h of build time).
 
 Each build uses ccache to speed up incremental rebuilds.
+
+For the full design (resume chain, coupled-cache invariant, VDB repair,
+workarounds subsystem), see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+For interpreting CI failure annotations, see
+[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 ## Contributing
 
