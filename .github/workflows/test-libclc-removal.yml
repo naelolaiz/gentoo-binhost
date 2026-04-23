@@ -123,3 +123,13 @@ jobs:
             exit 1
           fi
           echo "✓ Dependency graph for mesa resolves cleanly"
+
+      - name: Upload depcheck logs
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: depcheck-logs
+          path: |
+            /tmp/depcheck.log
+            /tmp/mesa-depcheck.log
+          if-no-files-found: ignore
