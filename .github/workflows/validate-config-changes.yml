@@ -1,11 +1,12 @@
-name: Test libclc mask removal
+name: Validate Config Changes
 
 on:
   pull_request:
     paths:
       - 'config/profiles/**/package.mask/**'
       - 'config/profiles/**/package.use/**'
-      - '.github/workflows/test-libclc-removal.yml'
+      - 'scripts/apply-profile.sh'
+      - '.github/workflows/validate-config-changes.yml'
   workflow_dispatch:
 
 permissions:
@@ -20,10 +21,7 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Sync portage tree
-        run: |
-          emerge-webrsync --quiet \
-            || emerge --sync --quiet \
-            || emaint sync -a
+        run: bash scripts/sync-portage.sh
 
       - name: Apply profile configuration
         run: |
