@@ -32,15 +32,7 @@ jobs:
           # Query Docker Hub for the latest dated amd64-openrc tag
           LATEST=$(curl -fsSL \
             "https://registry.hub.docker.com/v2/repositories/gentoo/stage3/tags?page_size=10&name=amd64-openrc-2" | \
-            python3 -c "
-import json, sys
-data = json.load(sys.stdin)
-tags = sorted(
-    [t['name'] for t in data.get('results', []) if t['name'].startswith('amd64-openrc-2')],
-    reverse=True,
-)
-print(tags[0] if tags else '', end='')
-")
+            jq -r '[.results[].name | select(startswith("amd64-openrc-2"))] | sort | last // ""')
           if [[ -z "$LATEST" ]]; then
             echo "::error::Could not determine latest stage3 tag from Docker Hub"
             exit 1
@@ -71,20 +63,23 @@ print(tags[0] if tags else '', end='')
             exit 0
           fi
 
+          BODY_FILE=$(mktemp)
+          echo "A newer Gentoo stage3 image is available." >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "**Pinned:** \`${PINNED}\`" >> "$BODY_FILE"
+          echo "**Available:** \`${LATEST}\`" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "## How to update" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "Edit \`.github/workflows/build-packages.yml\` and change **both** of these to \`${LATEST}\`:" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "1. \`STAGE3_TAG: ${PINNED}\` -> \`STAGE3_TAG: ${LATEST}\`" >> "$BODY_FILE"
+          echo "2. \`image: gentoo/stage3:${PINNED}\` -> \`image: gentoo/stage3:${LATEST}\`" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "## Important" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "Updating the stage3 tag **invalidates all caches** (the tag is part of every cache key)." >> "$BODY_FILE"
+          echo "The next build will start from scratch. Only apply this update when no build chain is active." >> "$BODY_FILE"
           gh issue create \
-            --title "stage3 update available: ${PINNED} → ${LATEST}" \
-            --body "A newer Gentoo stage3 image is available.
-
-**Pinned:** \`${PINNED}\`
-**Available:** \`${LATEST}\`
-
-## How to update
-
-Edit \`.github/workflows/build-packages.yml\` and change **both** of these to \`${LATEST}\`:
-
-1. \`STAGE3_TAG: ${PINNED}\` → \`STAGE3_TAG: ${LATEST}\`
-2. \`image: gentoo/stage3:${PINNED}\` → \`image: gentoo/stage3:${LATEST}\`
-
-## Important
-
-Updating the stage3 tag **invalidates all caches** (the tag is part of every cache key). The next build will start from scratch and will need multiple resume attempts to complete. Only apply this update when no build chain is active."
+            --title "stage3 update available: ${PINNED} -> ${LATEST}" \
+            --body-file "$BODY_FILE"
