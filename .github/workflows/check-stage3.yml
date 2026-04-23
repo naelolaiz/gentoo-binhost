@@ -15,7 +15,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Check for newer stage3
         env:
@@ -30,10 +30,10 @@ jobs:
           echo "Pinned stage3 tag: ${PINNED}"
 
           # Query the Docker Registry v2 API (same protocol docker pull uses — reliable)
-          REGISTRY_TOKEN=$(curl -fsSL \
+          REGISTRY_TOKEN=$(curl -fsSL --max-time 30 \
             "https://auth.docker.io/token?service=registry.docker.io&scope=repository:gentoo/stage3:pull" | \
             jq -r .token)
-          LATEST=$(curl -fsSL \
+          LATEST=$(curl -fsSL --max-time 30 \
             -H "Authorization: Bearer ${REGISTRY_TOKEN}" \
             "https://registry-1.docker.io/v2/gentoo/stage3/tags/list" | \
             jq -r '[.tags[] | select(startswith("amd64-openrc-2"))] | sort | last // ""')
