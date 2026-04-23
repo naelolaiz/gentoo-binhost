@@ -312,17 +312,10 @@ jobs:
 
       - name: Sync portage tree
         run: |
-          # Mirror the fallback chain in scripts/build.sh, but log which
-          # method succeeded so silent fallbacks are observable.  No `|| true`
-          # on `eselect profile set` — wrong/missing profile must fail RED.
-          if emerge-webrsync --quiet; then
-            echo "Synced via emerge-webrsync"
-          elif emerge --sync --quiet; then
-            echo "Synced via emerge --sync (webrsync failed; see stderr above)"
-          else
-            echo "Falling back to emaint sync"
-            emaint sync -a
-          fi
+          bash scripts/sync-portage.sh
+          # Set the profile now so steps before build.sh (e.g. "Install build
+          # tools") see the correct profile.  No `|| true`: a wrong/missing
+          # profile must fail RED.
           eselect profile set default/linux/amd64/23.0/desktop/plasma
 
       - name: Set up Portage binpkg trust

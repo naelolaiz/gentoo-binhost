@@ -661,24 +661,7 @@ setup_binpkg_trust() {
 
 # ---------- sync ----------
 sync_tree() {
-  if [[ -f /var/db/repos/gentoo/metadata/timestamp.chk ]]; then
-    log "Portage tree already synced, skipping"
-    return 0
-  fi
-  log "Syncing portage tree"
-  # Try methods in order of preference; log which one actually succeeds so
-  # silent fallbacks (e.g. webrsync mirror outage) are visible in CI logs.
-  # Stderr is preserved on every attempt — earlier "2>/dev/null" suppression
-  # made it impossible to tell *why* a fallback was triggered.
-  if emerge-webrsync --quiet; then
-    log "  Synced via emerge-webrsync"
-  elif emerge --sync --quiet; then
-    log "  Synced via emerge --sync (webrsync failed; see stderr above)"
-  else
-    log "  Falling back to emaint sync (webrsync and rsync both failed)"
-    emaint sync -a
-    log "  Synced via emaint"
-  fi
+  bash "${SCRIPT_DIR}/sync-portage.sh"
 }
 
 # ---------- portage news ----------
