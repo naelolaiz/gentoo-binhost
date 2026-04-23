@@ -99,89 +99,10 @@ fi
 
 # ---------- portage configuration ----------
 apply_profile() {
-  log "Applying profile: ${PROFILE}"
-
-  # Use nullglob so an empty profile subdirectory expands to zero arguments
-  # instead of triggering a literal `cp /…/* …` error.  We deliberately do NOT
-  # silence cp's stderr or `|| true` it: if cp fails for a real reason
-  # (permission denied, broken mount, etc.) the job must fail RED instead of
-  # silently building with no USE overrides applied.
-  shopt -s nullglob
-
-  # make.conf
-  if [[ -f "${PROFILE_DIR}/make.conf" ]]; then
-    cp "${PROFILE_DIR}/make.conf" /etc/portage/make.conf
-    log "  Installed make.conf"
-    # Hard check: the just-written make.conf must byte-equal the repo source.
-    # Guards against a /etc/portage cache layer (or a rogue prior step) that
-    # silently overwrites it after our cp.  No `|| true`: we WANT to fail RED.
-    if ! cmp -s "${PROFILE_DIR}/make.conf" /etc/portage/make.conf; then
-      die "make.conf byte-mismatch immediately after copy — something else is writing to /etc/portage/make.conf"
-    fi
-  fi
-
-  # package.use
-  mkdir -p /etc/portage/package.use
-  if [[ -d "${PROFILE_DIR}/package.use" ]]; then
-    local _files=( "${PROFILE_DIR}/package.use/"* )
-    if (( ${#_files[@]} > 0 )); then
-      cp "${_files[@]}" /etc/portage/package.use/
-      log "  Installed ${#_files[@]} package.use file(s)"
-    fi
-  fi
-
-  # package.accept_keywords
-  mkdir -p /etc/portage/package.accept_keywords
-  if [[ -d "${PROFILE_DIR}/package.accept_keywords" ]]; then
-    local _files=( "${PROFILE_DIR}/package.accept_keywords/"* )
-    if (( ${#_files[@]} > 0 )); then
-      cp "${_files[@]}" /etc/portage/package.accept_keywords/
-      log "  Installed ${#_files[@]} package.accept_keywords file(s)"
-    fi
-  fi
-
-  # package.mask
-  mkdir -p /etc/portage/package.mask
-  if [[ -d "${PROFILE_DIR}/package.mask" ]]; then
-    local _files=( "${PROFILE_DIR}/package.mask/"* )
-    if (( ${#_files[@]} > 0 )); then
-      cp "${_files[@]}" /etc/portage/package.mask/
-      log "  Installed ${#_files[@]} package.mask file(s)"
-    fi
-  fi
-
-  # package.license
-  mkdir -p /etc/portage/package.license
-  if [[ -d "${PROFILE_DIR}/package.license" ]]; then
-    local _files=( "${PROFILE_DIR}/package.license/"* )
-    if (( ${#_files[@]} > 0 )); then
-      cp "${_files[@]}" /etc/portage/package.license/
-      log "  Installed ${#_files[@]} package.license file(s)"
-    fi
-  fi
-
-  shopt -u nullglob
-
-  # Set the Gentoo profile.  No `|| true`: a typo or missing profile is a
-  # configuration bug that must fail the job, not silently leave the previous
-  # (or default stage3) profile active and produce mysteriously wrong builds.
-  eselect profile set default/linux/amd64/23.0/desktop/plasma
-  log "  eselect profile set"
-
-  # Portage's config parser doesn't support $(cmd) command substitutions.
-  # Evaluate any $(nproc) placeholders now that we're running under bash.
-  if [[ -f /etc/portage/make.conf ]]; then
-    local nproc_val
-    nproc_val="$(nproc || getconf _NPROCESSORS_ONLN || echo 1)"
-    sed -i "s/\$(nproc)/${nproc_val}/g" /etc/portage/make.conf
-    log "  Evaluated \$(nproc) → ${nproc_val} in make.conf"
-  fi
-
-  # Configure binhost for fetching pre-built packages
-  if [[ -n "$BINHOST_URL" ]]; then
-    echo "PORTAGE_BINHOST=\"${BINHOST_URL}\"" >> /etc/portage/make.conf
-    log "  Set PORTAGE_BINHOST=${BINHOST_URL}"
-  fi
+  bash "${SCRIPT_DIR}/apply-profile.sh" \
+    "${PROFILE}" \
+    "default/linux/amd64/23.0/desktop/plasma" \
+    ${BINHOST_URL:+--binhost-url "${BINHOST_URL}"}
 }
 
 # ---------- progress accounting ----------
