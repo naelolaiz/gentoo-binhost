@@ -11,21 +11,30 @@ these checks exists.
 
 ## `Stage3 tag drift`
 
-> STAGE3_TAG (…), build-packages.yml container.image (…), and
-> validate-config-changes.yml container.image (…) disagree. Update ALL
-> three together or caches will mismatch the runtime stage3.
+> stage3 tag drift (STAGE3_TAG|image): got <current>, expected <canonical>
+> Run 'scripts/sync-stage3-tag.sh --write <tag>' to fix
 
 **Cause.** Someone changed the stage3 tag in one place but not the others.
-There are three locations that must stay in lockstep:
+The tag appears in three locations:
 
-1. `STAGE3_TAG` env var in `.github/workflows/build-packages.yml`
-2. `container.image` (`gentoo/stage3:<TAG>`) in the same file
-3. `container.image` in `.github/workflows/validate-config-changes.yml`
+1. `STAGE3_TAG` env var in `.github/workflows/build-packages.yml` — the canonical source of truth.
+2. `container.image` (`gentoo/stage3:<TAG>`) in the same file.
+3. `container.image` in `.github/workflows/validate-config-changes.yml`.
 
-**Fix.** Update all three to the same tag in the same commit.
+**Fix.** From the repo root:
 
-**Prevention.** The weekly `check-stage3.yml` job's auto-filed update issue
-lists every location — follow its instructions exactly.
+```bash
+bash scripts/sync-stage3-tag.sh --write amd64-openrc-<new-date>
+```
+
+The tool rewrites every reference atomically and self-verifies. Commit the
+result in its own PR.
+
+**Prevention.**
+
+- `lint.yml`'s `stage3-tag-drift` job runs on every PR touching workflows or scripts and fails red on drift.
+- `build-packages.yml` also verifies at build start; drift refuses to build.
+- The weekly `check-stage3.yml` update issue tells you the exact `--write` command to run.
 
 ---
 
