@@ -40,6 +40,12 @@ permissions:
   actions: write          # needed for auto-resume re-trigger
 
 env:
+  # Pinned stage3 tag — included in every cache key so a stage3 update
+  # automatically invalidates all caches and forces a clean rebuild.
+  # Must match the container.image tag below exactly.
+  # To upgrade: update BOTH this value AND the container.image value.
+  # See check-stage3.yml for automated staleness notifications.
+  STAGE3_TAG: amd64-openrc-20260420
   # Our own binhost first (custom USE flags), then official Gentoo x86-64-v3 as fallback
   BINHOST_URLS: >-
     https://naelolaiz.github.io/gentoo-binhost/amd64/23.0/desktop/plasma/openrc/x86-64-v3
@@ -51,7 +57,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 350
     container:
-      image: gentoo/stage3:latest
+      # Must match STAGE3_TAG in the workflow-level env above.
+      image: gentoo/stage3:amd64-openrc-20260420
       options: --privileged
     env:
       CCACHE_SIZE: 20G
@@ -191,10 +198,10 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: /var/cache/ccache
-          key: ccache-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          key: ccache-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
           restore-keys: |
-            ccache-${{ steps.meta.outputs.chain_id }}-
-            ccache-
+            ccache-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-
+            ccache-${{ env.STAGE3_TAG }}-
 
       # Preserve already-built binary packages across resume attempts.  Without
       # this, /var/cache/binpkgs starts empty on every attempt and `--usepkg`
@@ -220,10 +227,10 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: /var/cache/binpkgs
-          key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          key: binpkgs-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
           restore-keys: |
-            binpkgs-${{ steps.meta.outputs.chain_id }}-
-            binpkgs-
+            binpkgs-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-
+            binpkgs-${{ env.STAGE3_TAG }}-
 
       # System-state cache: Portage's installed-package DB plus its metadata
       # cache, the world set, and package-managed /etc state.  Restoring this
@@ -253,10 +260,10 @@ jobs:
             /etc/portage
             /etc/env.d
             /etc/ld.so.conf.d
-          key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          key: system-state-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
           restore-keys: |
-            system-state-${{ steps.meta.outputs.chain_id }}-
-            system-state-
+            system-state-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-
+            system-state-${{ env.STAGE3_TAG }}-
 
       # Hard check on the coupled-cache invariant.  If on a resume attempt
       # one of the two restored and the other didn't, /var/db/pkg will claim
@@ -466,7 +473,7 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: /var/tmp/portage-state
-          key: build-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          key: build-state-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
           fail-on-cache-miss: false
 
       - name: Build packages
@@ -494,14 +501,14 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: /var/tmp/portage-state
-          key: build-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.next_attempt }}
+          key: build-state-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.next_attempt }}
 
       - name: Save ccache
         if: always()
         uses: actions/cache/save@v5
         with:
           path: /var/cache/ccache
-          key: ccache-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          key: ccache-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
 
       # Save binpkgs even on timeout / failure: any package fully built before
       # the SIGTERM is a real, reusable artifact and must persist for the next
@@ -515,7 +522,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: /var/cache/binpkgs
-          key: binpkgs-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          key: binpkgs-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
 
       # Save the system-state cache with the SAME key shape as binpkgs.  This
       # is the coupling the next attempt's "Verify coupled-cache invariant"
@@ -533,7 +540,7 @@ jobs:
             /etc/portage
             /etc/env.d
             /etc/ld.so.conf.d
-          key: system-state-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
+          key: system-state-${{ env.STAGE3_TAG }}-${{ steps.meta.outputs.chain_id }}-${{ steps.meta.outputs.attempt }}
 
       # Diagnostic: surface cache-save outcomes as warnings.  We do NOT fail
       # the build here — the next resume attempt's "Verify coupled-cache

@@ -1,0 +1,89 @@
+name: Check Stage3 Update
+
+on:
+  schedule:
+    # Weekly on Monday at 08:00 UTC — offset from the Sunday build to avoid racing it
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for newer stage3
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Read the pinned tag from the workflow file (single source of truth)
+          PINNED=$(grep -oP '(?<=STAGE3_TAG: )amd64-openrc-\d+' .github/workflows/build-packages.yml | head -1)
+          if [[ -z "$PINNED" ]]; then
+            echo "::error::Could not parse STAGE3_TAG from build-packages.yml"
+            exit 1
+          fi
+          echo "Pinned stage3 tag: ${PINNED}"
+
+          # Query the Docker Registry v2 API (same protocol docker pull uses — reliable)
+          REGISTRY_TOKEN=$(curl -fsSL \
+            "https://auth.docker.io/token?service=registry.docker.io&scope=repository:gentoo/stage3:pull" | \
+            jq -r .token)
+          LATEST=$(curl -fsSL \
+            -H "Authorization: Bearer ${REGISTRY_TOKEN}" \
+            "https://registry-1.docker.io/v2/gentoo/stage3/tags/list" | \
+            jq -r '[.tags[] | select(startswith("amd64-openrc-2"))] | sort | last // ""')
+          if [[ -z "$LATEST" ]]; then
+            echo "::error::Could not determine latest stage3 tag from Docker Registry"
+            exit 1
+          fi
+          echo "Latest stage3 tag: ${LATEST}"
+
+          if [[ "$PINNED" == "$LATEST" ]]; then
+            echo "Stage3 is up to date — nothing to do"
+            exit 0
+          fi
+          echo "Newer stage3 available: ${PINNED} → ${LATEST}"
+
+          # Never suggest an update while a build chain is in progress.
+          # Changing the stage3 mid-chain would invalidate all caches, losing all
+          # prior build progress and corrupting the resume chain.
+          ACTIVE=$(gh api "repos/${{ github.repository }}/actions/workflows/build-packages.yml/runs" \
+            --jq '[.workflow_runs[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | length')
+          if [[ "$ACTIVE" -gt 0 ]]; then
+            echo "Active build chain detected (${ACTIVE} run(s) in progress/queued) — deferring notification"
+            exit 0
+          fi
+
+          # Avoid filing duplicate issues for the same latest tag
+          EXISTING=$(gh issue list --state open --json title \
+            --jq "[.[] | select(.title | contains(\"${LATEST}\"))] | length")
+          if [[ "$EXISTING" -gt 0 ]]; then
+            echo "Issue for ${LATEST} already open — skipping"
+            exit 0
+          fi
+
+          BODY_FILE=$(mktemp)
+          echo "A newer Gentoo stage3 image is available." >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "**Pinned:** \`${PINNED}\`" >> "$BODY_FILE"
+          echo "**Available:** \`${LATEST}\`" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "## How to update" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "Edit \`.github/workflows/build-packages.yml\` and change **both** of these to \`${LATEST}\`:" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "1. \`STAGE3_TAG: ${PINNED}\` -> \`STAGE3_TAG: ${LATEST}\`" >> "$BODY_FILE"
+          echo "2. \`image: gentoo/stage3:${PINNED}\` -> \`image: gentoo/stage3:${LATEST}\`" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "## Important" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "Updating the stage3 tag **invalidates all caches** (the tag is part of every cache key)." >> "$BODY_FILE"
+          echo "The next build will start from scratch. Only apply this update when no build chain is active." >> "$BODY_FILE"
+          gh issue create \
+            --title "stage3 update available: ${PINNED} -> ${LATEST}" \
+            --body-file "$BODY_FILE"

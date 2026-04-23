@@ -83,45 +83,39 @@ _sample_obj_paths() {
     }' "$contents"
 }
 
-# Test if a library has ABI compatibility issues (GLIBC symbol version mismatch).
-# Returns 0 if library is OK, 1 if incompatible.
-# This check is ONLY run for specific packages known to cause GLIBC symbol issues.
-_test_library_abi() {
-  local lib="$1"
-  [[ -f "$lib" ]] || return 0   # doesn't exist, not our problem here
+# Cached system GLIBC version — populated once before the main loop.
+_SYSTEM_GLIBC_VERSION=""
 
-  # Check if the library has GLIBC symbol version requirements that exceed
-  # what the current system provides. We do this by examining the symbol
-  # versions directly with readelf instead of trying to link, which is faster.
-  local max_required_version system_glibc_version
-  
-  # Get maximum GLIBC version required by the library
-  max_required_version=$(readelf -V "$lib" 2>/dev/null | \
+_init_system_glibc_version() {
+  _SYSTEM_GLIBC_VERSION=$(readelf -V /lib64/libc.so.6 2>/dev/null | \
     grep -oP 'GLIBC_\d+\.\d+' | sort -V | tail -1)
-  
-  [[ -z "$max_required_version" ]] && return 0  # no GLIBC version requirements
-  
-  # Get current system GLIBC version from libc.so.6
-  system_glibc_version=$(readelf -V /lib64/libc.so.6 2>/dev/null | \
-    grep -oP 'GLIBC_\d+\.\d+' | sort -V | tail -1)
-  
-  [[ -z "$system_glibc_version" ]] && return 0  # can't determine, assume OK
-  
-  # Check if required version is greater than system version.
-  # If max_required_version sorts after system_glibc_version, it's incompatible.
-  if [[ "$max_required_version" != "$system_glibc_version" ]]; then
-    local sorted_first
-    sorted_first=$(printf '%s\n%s\n' "$system_glibc_version" "$max_required_version" | sort -V | head -1)
-    if [[ "$sorted_first" == "$system_glibc_version" ]]; then
-      # system version comes first in sort, so max_required is greater
-      log "  Library $lib requires $max_required_version but system has $system_glibc_version"
-      return 1  # incompatible
-    fi
-  fi
-  
-  return 0  # compatible
 }
 
+# Test if a library has ABI compatibility issues (GLIBC symbol version mismatch).
+# Returns 0 if library is OK or check is inconclusive, 1 if incompatible.
+_test_library_abi() {
+  local lib="$1"
+  [[ -f "$lib" ]] || return 0   # file absent — not our problem here
+  [[ -n "$_SYSTEM_GLIBC_VERSION" ]] || return 0  # system version unknown, skip
+
+  local max_required_version
+  max_required_version=$(readelf -V "$lib" 2>/dev/null | \
+    grep -oP 'GLIBC_\d+\.\d+' | sort -V | tail -1)
+
+  [[ -z "$max_required_version" ]] && return 0  # library has no GLIBC requirements
+
+  if [[ "$max_required_version" != "$_SYSTEM_GLIBC_VERSION" ]]; then
+    local sorted_first
+    sorted_first=$(printf '%s\n%s\n' "$_SYSTEM_GLIBC_VERSION" "$max_required_version" | sort -V | head -1)
+    if [[ "$sorted_first" == "$_SYSTEM_GLIBC_VERSION" ]]; then
+      log "  Library $lib requires $max_required_version but system has $_SYSTEM_GLIBC_VERSION"
+      return 1
+    fi
+  fi
+  return 0
+}
+
+_init_system_glibc_version
 removed=0
 shopt -s nullglob
 for cat_dir in "${vdb_root}"/*/; do
@@ -155,23 +149,28 @@ for cat_dir in "${vdb_root}"/*/; do
       continue
     fi
 
-    # Additional ABI compatibility check for packages known to cause GLIBC symbol issues.
-    # Format: case pattern -> library path to check
-    # Note: /usr/lib64 is correct for this binhost's amd64/x86-64-v3 target architecture
-    lib_to_check=""
-    case "$pkg_atom" in
-      media-sound/lame-*)
-        lib_to_check="/usr/lib64/libmp3lame.so"
-        ;;
-    esac
-
-    if [[ -n "$lib_to_check" ]]; then
-      if ! _test_library_abi "$lib_to_check"; then
-        log "Stale VDB entry: ${pkg_atom} — $(basename "$lib_to_check") has GLIBC symbol version mismatch"
-        log "  Removing so emerge rebuilds with current glibc."
-        rm -rf -- "${pkg_dir%/}"
-        removed=$(( removed + 1 ))
+    # Check every shared library installed by this package for GLIBC ABI compatibility.
+    # Any .so whose GLIBC requirements exceed the current system's GLIBC will cause
+    # linker errors in packages that depend on it — remove the entire VDB entry so
+    # emerge rebuilds it against the current glibc.
+    abi_bad_lib=""
+    while IFS= read -r so_path; do
+      if ! _test_library_abi "$so_path"; then
+        abi_bad_lib="$so_path"
+        break
       fi
+    done < <(awk '$1=="obj" {
+      line = $0
+      sub(/^obj /, "", line)
+      sub(/ [^ ]+ [^ ]+$/, "", line)
+      if (line ~ /\.so(\.|$)/) print line
+    }' "$contents")
+
+    if [[ -n "$abi_bad_lib" ]]; then
+      log "Stale VDB entry: ${pkg_atom} — $(basename "$abi_bad_lib") has GLIBC symbol version mismatch"
+      log "  Removing so emerge rebuilds with current glibc."
+      rm -rf -- "${pkg_dir%/}"
+      removed=$(( removed + 1 ))
     fi
   done
 done
