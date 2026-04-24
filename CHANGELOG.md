@@ -8,6 +8,10 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Reliability
+
+- **`scripts/build.sh` — resume-chain fix.** Sourcing `/etc/profile` after `etc-update` runs under `set -u`, so an unset variable in any `/etc/profile.d/*.sh` (observed: `DEBUGINFOD_URLS` in `debuginfod.sh`) aborted `build.sh` mid-cleanup and swallowed `return 42` from a timed-out emerge, turning it into exit 1 and disabling auto-resume. Now wrap the source in `set +u`/`set -u`.
+
 ### CI (tier 4)
 
 - **`scripts/sync-stage3-tag.sh`** — one command to bump the pinned stage3 tag across every workflow (`--write <tag>`) and to verify no drift (`--check`). Replaces the "please edit three places by hand" ritual.
