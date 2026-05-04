@@ -780,94 +780,38 @@ build_packages() {
   run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" "${packages[@]}"
 }
 
-# Rebuild packages whose installed binaries reference libraries that no
-# longer exist on disk — e.g. `dev-util/mesa_clc` with NEEDED
-# `libclang-cpp.so.21.1` after a prior chain upgraded `llvm-core/clang`
-# from slot 21 to 22.  Without this, the next emerge that invokes the
-# broken binary fails with `error while loading shared libraries: ...:
-# cannot open shared object file` (exit 127), as observed on
-# `media-libs/mesa-26.0.5-r1` in run 25265374638.
+# Drain Portage's preserved_libs_registry before the main build, so any
+# package whose libraries were preserved across a toolchain upgrade in a
+# prior chain (e.g. libclang-cpp.so.21.1 retained after clang 21->22) is
+# rebuilt against the current toolchain.  Cheap no-op when the registry
+# is empty — `emerge @preserved-rebuild` returns immediately.
 #
-# Two complementary mechanisms — both are needed because they catch
-# different states of the same problem:
-#   1. `emerge @preserved-rebuild` — drains Portage's
-#      preserved_libs_registry.  Fast no-op when the registry is empty.
-#      Catches packages whose pkg_postinst called preserve_old_lib.
-#   2. `revdep-rebuild` (from app-portage/gentoolkit) — scans actual ELF
-#      NEEDED entries against the ldconfig cache.  Catches the case where
-#      the old library was simply removed without going through
-#      preserve_old_lib — which is exactly what happened to
-#      libclang-cpp.so.21.1.
+# Honours $DEADLINE via run_emerge_with_deadline so a long pre-build
+# rebuild can't starve the main build; on rc=42 we return 42 and let the
+# workflow auto-resume.
 #
-# Runs BEFORE the main build_packages so subsequent emerges see a healthy
-# ELF graph.  Both passes honour the shared $DEADLINE via
-# run_emerge_with_deadline; revdep-rebuild is invoked in --pretend mode so
-# we read its package list and feed the rebuild through our deadline-aware
-# wrapper instead of letting revdep-rebuild fork emerge directly.
+# Note: we do NOT run revdep-rebuild here.  An earlier attempt to chain
+# its --pretend output into a deadline-aware emerge tripped on
+# version-specific flags (the python rewrite rejects --no-progress and
+# --ignore-temp-files); the ELF-scan layer is left as a future addition
+# only if @preserved-rebuild + the exhaustive scripts/verify-vdb.sh
+# CONTENTS check leave a real gap.
 rebuild_broken_libs() {
-  local rc
+  local rc=0
 
   local emerge_flags=(--keep-going --usepkg --buildpkg --verbose)
   if [[ -n "$BINHOST_URL" ]]; then
     emerge_flags+=(--getbinpkg --ignore-built-slot-operator-deps=y)
   fi
 
-  # ---- Pass 1: preserved_libs_registry ----
   log "Rebuilding packages with preserved libraries (@preserved-rebuild)"
-  rc=0
   run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" @preserved-rebuild || rc=$?
   if [[ $rc -eq 42 ]]; then
     return 42
   elif [[ $rc -ne 0 ]]; then
-    # Don't abort: any genuinely failing atom here will be surfaced again by
-    # the main build's report_failed_atoms.  Continue to the ELF scan.
-    log "  @preserved-rebuild emerge returned ${rc}; continuing to ELF scan"
-  fi
-
-  # ---- Pass 2: revdep-rebuild ELF scan ----
-  if ! command -v revdep-rebuild >/dev/null; then
-    log "revdep-rebuild not available (app-portage/gentoolkit missing); skipping ELF scan"
-    return 0
-  fi
-
-  log "Scanning installed binaries for broken NEEDED entries (revdep-rebuild --pretend)"
-  # revdep-rebuild writes its package list to
-  # /var/cache/revdep-rebuild/4_pkgs.rr.  Run with --pretend so we drive the
-  # rebuild ourselves through run_emerge_with_deadline; otherwise its
-  # internal emerge call would bypass the deadline.
-  local rr_pkgs="/var/cache/revdep-rebuild/4_pkgs.rr"
-  rm -f "${rr_pkgs}"
-  rc=0
-  # --no-progress: quiet output for CI logs.
-  # --ignore-temp-files: skip /var/tmp/portage build artefacts so we don't
-  # chase ELF errors in half-finished WORKDIRs.
-  revdep-rebuild --pretend --no-progress --ignore-temp-files || rc=$?
-  if [[ $rc -ne 0 ]]; then
-    log "  revdep-rebuild --pretend returned ${rc}; checking output anyway"
-  fi
-
-  if [[ ! -s "${rr_pkgs}" ]]; then
-    log "  No packages with broken NEEDED entries found"
-    return 0
-  fi
-
-  log "  Broken packages detected by revdep-rebuild:"
-  sed 's/^/    /' "${rr_pkgs}"
-
-  local atoms=()
-  while IFS= read -r atom; do
-    [[ -n "$atom" ]] && atoms+=("$atom")
-  done < "${rr_pkgs}"
-
-  log "Rebuilding ${#atoms[@]} package(s) with broken NEEDED entries"
-  rc=0
-  run_emerge_with_deadline "$DEADLINE" --oneshot "${emerge_flags[@]}" "${atoms[@]}" || rc=$?
-  if [[ $rc -eq 42 ]]; then
-    return 42
-  elif [[ $rc -ne 0 ]]; then
-    # Same rationale as pass 1: let the main build surface any genuine
-    # ebuild failures via report_failed_atoms.
-    log "  revdep-driven rebuild returned ${rc}; main build will still proceed"
+    # Don't abort: any genuinely failing atom here will be surfaced again
+    # by the main build's report_failed_atoms.
+    log "  @preserved-rebuild emerge returned ${rc}; main build will still proceed"
   fi
 }
 
