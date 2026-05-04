@@ -593,8 +593,16 @@ verify_installed_deps() {
 merge_pending_configs() {
   bash "${SCRIPT_DIR}/merge-pending-configs.sh" build.sh
   if [[ -f /etc/profile ]]; then
+    # /etc/profile and the profile.d/*.sh scripts it sources are written for
+    # ambient login shells without `set -u`, so an unset variable in any of
+    # them (e.g. DEBUGINFOD_URLS in /etc/profile.d/debuginfod.sh) aborts
+    # build.sh mid-cleanup.  In one observed run this swallowed a `return 42`
+    # from the timed-out emerge and turned it into exit 1, which disabled
+    # auto-resume.  Disable nounset just for the duration of the source.
+    set +u
     # shellcheck disable=SC1091
     . /etc/profile
+    set -u
   fi
 }
 
