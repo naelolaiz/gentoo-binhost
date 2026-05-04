@@ -50,36 +50,22 @@ fi
 #   obj <absolute-path> <md5> <mtime>
 # Path may contain spaces, so we strip the trailing two
 # whitespace-delimited tokens (md5, mtime) rather than splitting on
-# whitespace blindly.  Emit up to 5 sample paths spread across the
-# file's obj entries (first, 25%, 50%, 75%, last).
-_sample_obj_paths() {
+# whitespace blindly.  Emit EVERY obj path: the caller stops on the first
+# missing file, so for healthy packages we walk all entries and for broken
+# packages we short-circuit.  The previous "5 spread samples" was
+# probabilistic and missed real breakage — observed in run 25343885245
+# where dev-lang/ruby-3.3.11-1 had thousands of obj entries with one
+# missing file (rubygems/compatibility.rb) that none of the 5 samples
+# happened to land on; the VDB entry was kept and the next emerge that
+# invoked ruby (dev-ruby/json-2.19.4) died in configure phase.
+_all_obj_paths() {
   local contents="$1"
   awk '
     $1=="obj" {
       line = $0
       sub(/^obj /, "", line)
       sub(/ [^ ]+ [^ ]+$/, "", line)
-      paths[++n] = line
-    }
-    END {
-      if (n == 0) exit
-      # Build a unique, ordered list of sample indices so small
-      # CONTENTS (n<5) do not cause duplicate probes.
-      idx[1] = 1
-      idx[2] = int((n + 3) / 4)
-      idx[3] = int((n + 1) / 2)
-      idx[4] = int((3 * n + 1) / 4)
-      idx[5] = n
-      last = 0
-      for (i = 1; i <= 5; i++) {
-        v = idx[i]
-        if (v < 1) v = 1
-        if (v > n) v = n
-        if (v != last) {
-          print paths[v]
-          last = v
-        }
-      }
+      print line
     }' "$contents"
 }
 
@@ -123,20 +109,22 @@ for cat_dir in "${vdb_root}"/*/; do
     contents="${pkg_dir}CONTENTS"
     [[ -f "$contents" ]] || continue
 
-    probes=()
-    while IFS= read -r probe; do
-      [[ -n "$probe" ]] && probes+=("$probe")
-    done < <(_sample_obj_paths "$contents")
-
-    [[ ${#probes[@]} -gt 0 ]] || continue   # no obj entries (virtual/metapkg) — skip
-
+    # Stream every obj entry and stop on the first missing file.  Healthy
+    # packages walk all entries (cheap: bash `[[ -e ]]` is a single stat
+    # call); broken packages short-circuit immediately.  Skip packages
+    # with no obj entries (virtual/metapkg — nothing on disk to verify).
     missing_probe=""
-    for probe in "${probes[@]}"; do
+    saw_obj=0
+    while IFS= read -r probe; do
+      [[ -n "$probe" ]] || continue
+      saw_obj=1
       if [[ ! -e "$probe" ]]; then
         missing_probe="$probe"
         break
       fi
-    done
+    done < <(_all_obj_paths "$contents")
+
+    [[ "$saw_obj" -eq 1 ]] || continue
 
     pkg_atom="${pkg_dir#"${vdb_root}"/}"
     pkg_atom="${pkg_atom%/}"
