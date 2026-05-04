@@ -227,6 +227,15 @@ report_failed_atoms() {
 
   log "Detected ${#die_files[@]} failed atom(s); collecting logs and emitting annotations"
 
+  # SIGTERM-victim filter (see run_emerge_with_deadline).  When the deadline
+  # wrapper killed emerge mid-build, Portage's signal handler writes
+  # .die_hooks for the in-flight ebuild — that's a timeout artefact, not a
+  # real failure, and including it pollutes failed-packages.txt with
+  # nondeterministic atoms that can falsely trip the "repeated failures"
+  # gate across attempts.  We exclude markers whose mtime falls within
+  # 2 seconds of the SIGTERM timestamp (clock resolution slack).
+  local timeout_fired_at="${_TIMEOUT_FIRED_AT:-0}"
+
   if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
     {
       echo ""
@@ -265,6 +274,22 @@ report_failed_atoms() {
     if [[ -n "${seen_atoms[$cat_pkg]:-}" ]]; then
       continue
     fi
+
+    # F2: skip markers written at/after the SIGTERM-fired timestamp — those
+    # are the in-flight ebuilds that Portage's signal handler killed when
+    # the wrapper enforced --max-build-time, not packages that genuinely
+    # failed.  Including them can falsely trip "repeated failures" if the
+    # same atom keeps being unlucky across attempts.
+    if [[ "$timeout_fired_at" -gt 0 ]]; then
+      local f_mtime
+      f_mtime=$(stat -c %Y "$f")
+      if [[ "$f_mtime" -ge $((timeout_fired_at - 2)) ]]; then
+        log "  Skipping ${cat_pkg}: marker mtime ${f_mtime} >= SIGTERM time ${timeout_fired_at} (timeout victim, not a real failure)"
+        seen_atoms["$cat_pkg"]=1
+        continue
+      fi
+    fi
+
     seen_atoms["$cat_pkg"]=1
     cat="${cat_pkg%%/*}"
     pkg="${cat_pkg##*/}"
@@ -287,6 +312,17 @@ report_failed_atoms() {
       # Accept both shapes.
       phase="$(grep -m1 -E '(^|[[:space:]])EBUILD_PHASE=' "$env_src" \
         | sed -E 's/.*EBUILD_PHASE=//; s/^"//; s/"$//' || true)"
+    fi
+    # F3: fallback — when temp/environment didn't yield a phase (e.g. the
+    # ebuild was interrupted before Portage's environment-save hook ran),
+    # parse build.log for the canonical Portage error line:
+    #   * ERROR: media-libs/mesa-26.0.5-r1::gentoo failed (compile phase):
+    # Without this fallback every such failure was annotated as
+    # `phase 'unknown'` even when build.log clearly named the phase
+    # — observed on media-libs/mesa-26.0.5-r1 in run 25265374638.
+    if [[ -z "$phase" && -f "${temp_dir}/build.log" ]]; then
+      phase="$(grep -m1 -oE 'failed \([a-z_-]+ phase\)' "${temp_dir}/build.log" \
+        | sed -E 's/^failed \(([a-z_-]+) phase\)$/\1/' || true)"
     fi
     [[ -n "$phase" ]] || phase="unknown"
 
@@ -715,15 +751,6 @@ build_packages() {
     emerge_flags+=(--ignore-built-slot-operator-deps=y)
   fi
 
-  # Compute a single deadline shared between the optional `emerge --resume`
-  # phase and the main emerge invocation, so a long-running resume can't
-  # starve the main build (or vice-versa).  When --max-build-time is unset,
-  # DEADLINE=0 disables the timer entirely.
-  local deadline=0
-  if [[ -n "$MAX_BUILD_TIME" ]]; then
-    deadline=$(( SECONDS + MAX_BUILD_TIME * 60 ))
-  fi
-
   # If we have a saved emerge resume list (from a previous SIGTERM), continue
   # it first.  --skipfirst drops the package that was actively building when
   # we were killed: its WORKDIR is almost certainly inconsistent after the
@@ -742,7 +769,7 @@ build_packages() {
     # condition (always 0), not of cmd.  Use `cmd || rc=$?` instead so the
     # 42 ("timed out, state saved") signal actually propagates.
     local rc=0
-    run_emerge_with_deadline "$deadline" --resume --skipfirst "${resume_flags[@]}" || rc=$?
+    run_emerge_with_deadline "$DEADLINE" --resume --skipfirst "${resume_flags[@]}" || rc=$?
     if [[ $rc -eq 42 ]]; then
       return 42
     elif [[ $rc -ne 0 ]]; then
@@ -750,7 +777,98 @@ build_packages() {
     fi
   fi
 
-  run_emerge_with_deadline "$deadline" "${emerge_flags[@]}" "${packages[@]}"
+  run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" "${packages[@]}"
+}
+
+# Rebuild packages whose installed binaries reference libraries that no
+# longer exist on disk — e.g. `dev-util/mesa_clc` with NEEDED
+# `libclang-cpp.so.21.1` after a prior chain upgraded `llvm-core/clang`
+# from slot 21 to 22.  Without this, the next emerge that invokes the
+# broken binary fails with `error while loading shared libraries: ...:
+# cannot open shared object file` (exit 127), as observed on
+# `media-libs/mesa-26.0.5-r1` in run 25265374638.
+#
+# Two complementary mechanisms — both are needed because they catch
+# different states of the same problem:
+#   1. `emerge @preserved-rebuild` — drains Portage's
+#      preserved_libs_registry.  Fast no-op when the registry is empty.
+#      Catches packages whose pkg_postinst called preserve_old_lib.
+#   2. `revdep-rebuild` (from app-portage/gentoolkit) — scans actual ELF
+#      NEEDED entries against the ldconfig cache.  Catches the case where
+#      the old library was simply removed without going through
+#      preserve_old_lib — which is exactly what happened to
+#      libclang-cpp.so.21.1.
+#
+# Runs BEFORE the main build_packages so subsequent emerges see a healthy
+# ELF graph.  Both passes honour the shared $DEADLINE via
+# run_emerge_with_deadline; revdep-rebuild is invoked in --pretend mode so
+# we read its package list and feed the rebuild through our deadline-aware
+# wrapper instead of letting revdep-rebuild fork emerge directly.
+rebuild_broken_libs() {
+  local rc
+
+  local emerge_flags=(--keep-going --usepkg --buildpkg --verbose)
+  if [[ -n "$BINHOST_URL" ]]; then
+    emerge_flags+=(--getbinpkg --ignore-built-slot-operator-deps=y)
+  fi
+
+  # ---- Pass 1: preserved_libs_registry ----
+  log "Rebuilding packages with preserved libraries (@preserved-rebuild)"
+  rc=0
+  run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" @preserved-rebuild || rc=$?
+  if [[ $rc -eq 42 ]]; then
+    return 42
+  elif [[ $rc -ne 0 ]]; then
+    # Don't abort: any genuinely failing atom here will be surfaced again by
+    # the main build's report_failed_atoms.  Continue to the ELF scan.
+    log "  @preserved-rebuild emerge returned ${rc}; continuing to ELF scan"
+  fi
+
+  # ---- Pass 2: revdep-rebuild ELF scan ----
+  if ! command -v revdep-rebuild >/dev/null; then
+    log "revdep-rebuild not available (app-portage/gentoolkit missing); skipping ELF scan"
+    return 0
+  fi
+
+  log "Scanning installed binaries for broken NEEDED entries (revdep-rebuild --pretend)"
+  # revdep-rebuild writes its package list to
+  # /var/cache/revdep-rebuild/4_pkgs.rr.  Run with --pretend so we drive the
+  # rebuild ourselves through run_emerge_with_deadline; otherwise its
+  # internal emerge call would bypass the deadline.
+  local rr_pkgs="/var/cache/revdep-rebuild/4_pkgs.rr"
+  rm -f "${rr_pkgs}"
+  rc=0
+  # --no-progress: quiet output for CI logs.
+  # --ignore-temp-files: skip /var/tmp/portage build artefacts so we don't
+  # chase ELF errors in half-finished WORKDIRs.
+  revdep-rebuild --pretend --no-progress --ignore-temp-files || rc=$?
+  if [[ $rc -ne 0 ]]; then
+    log "  revdep-rebuild --pretend returned ${rc}; checking output anyway"
+  fi
+
+  if [[ ! -s "${rr_pkgs}" ]]; then
+    log "  No packages with broken NEEDED entries found"
+    return 0
+  fi
+
+  log "  Broken packages detected by revdep-rebuild:"
+  sed 's/^/    /' "${rr_pkgs}"
+
+  local atoms=()
+  while IFS= read -r atom; do
+    [[ -n "$atom" ]] && atoms+=("$atom")
+  done < "${rr_pkgs}"
+
+  log "Rebuilding ${#atoms[@]} package(s) with broken NEEDED entries"
+  rc=0
+  run_emerge_with_deadline "$DEADLINE" --oneshot "${emerge_flags[@]}" "${atoms[@]}" || rc=$?
+  if [[ $rc -eq 42 ]]; then
+    return 42
+  elif [[ $rc -ne 0 ]]; then
+    # Same rationale as pass 1: let the main build surface any genuine
+    # ebuild failures via report_failed_atoms.
+    log "  revdep-driven rebuild returned ${rc}; main build will still proceed"
+  fi
 }
 
 # run_emerge_with_deadline <deadline_secs> <emerge args...>
@@ -793,6 +911,16 @@ run_emerge_with_deadline() {
     local elapsed=$(( SECONDS - start_time ))
     if [[ $elapsed -ge $warn_secs ]]; then
       log "Approaching time limit (${elapsed}s elapsed / ${remaining}s budget for this phase), stopping emerge"
+      # Record the SIGTERM timestamp so report_failed_atoms can distinguish
+      # .die_hooks files written by Portage's signal handler (timeout
+      # victims, NOT real ebuild failures) from those written by genuine
+      # die() calls.  Without this, the package being built when SIGTERM
+      # fires gets added to failed-packages.txt and can trip the "repeated
+      # failures" gate over consecutive resume attempts even though no
+      # ebuild actually failed — observed: app-text/doxygen-1.16.1 in run
+      # 24943956580 ("Exiting on signal 15" 53s into its compile, then
+      # reported as "failed in phase 'unknown'").
+      _TIMEOUT_FIRED_AT=$(date +%s)
       kill -TERM -- -${emerge_pid} || true
       local kill_wait=0
       while kill -0 "$emerge_pid" && [[ $kill_wait -lt 60 ]]; do
@@ -898,12 +1026,33 @@ trap _on_exit EXIT
 trap 'log "Caught SIGTERM"; exit 143' TERM
 trap 'log "Caught SIGINT";  exit 130' INT
 
+# Compute the shared build deadline once for this attempt.  Both
+# rebuild_broken_libs and build_packages drive run_emerge_with_deadline
+# from this single value, so a long pre-build cleanup pass can't starve
+# the main build (or vice-versa).  When --max-build-time is unset,
+# DEADLINE=0 disables the timer entirely.
+DEADLINE=0
+if [[ -n "$MAX_BUILD_TIME" ]]; then
+  DEADLINE=$(( SECONDS + MAX_BUILD_TIME * 60 ))
+fi
+
 apply_profile
 setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
 verify_installed_deps
+# Repair any installed binaries with broken NEEDED entries inherited from a
+# previous chain (e.g. mesa_clc against libclang-cpp.so.21.1 after a clang
+# 21->22 upgrade).  MUST run before any further emerge so subsequent steps
+# (kernel install, news handling, main build) don't trip over the broken
+# binaries.  Honours $DEADLINE; on rc=42 the build exits 42 so the workflow
+# can resume in the next attempt.
+rebuild_broken_libs || _RBL_RC=$?
+if [[ "${_RBL_RC:-0}" -eq 42 ]]; then
+  log "rebuild_broken_libs hit the deadline; exiting 42 so the workflow can resume."
+  exit 42
+fi
 display_and_read_news
 ensure_kernel_symlink
 measure_cache_footprint "before"
