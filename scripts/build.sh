@@ -610,14 +610,61 @@ PYEOF
 #   - schedules an [ebuild R] rebuild that can't bootstrap because the
 #     self-hosted prior install isn't really there.
 #
-# Fix (general): scripts/verify-vdb.sh walks all VDB entries, samples up to
-# 5 obj paths from each CONTENTS, and removes any entry whose files are
-# absent on disk.  See that script for full documentation.  The same script
-# is called from build-packages.yml before "Install build tools" so that
-# stale entries are gone before any emerge runs — not just before the main
-# build emerge.
+# Fix (general): scripts/verify-vdb.sh walks all VDB entries, checks every
+# obj path in CONTENTS, and removes any entry whose files are absent on
+# disk.  See that script for full documentation.  The same script is also
+# called from build-packages.yml before "Install build tools" so stale
+# entries are gone before any emerge runs.
+#
+# After verify-vdb removes a package, we MUST rebuild it from source
+# (--usepkg=n).  Reason: the published binhost binpkg may itself be
+# corrupt — it was built by a previous CI run from a partially-broken
+# installation, so reinstalling that binpkg perpetuates the same missing
+# files.  Observed in run 25347952798: dev-lang/ruby-3.3.11's binpkg
+# lacked /usr/lib64/ruby/3.3.0/rubygems/compatibility.rb, every emerge
+# that touched ruby crashed the same way after reinstall.  Forcing a
+# from-source rebuild generates a correct binpkg locally that replaces
+# the corrupt one in the binhost on the next publish.
+VERIFY_VDB_REMOVED_FILE="${STATE_DIR%/}/verify-vdb-removed-atoms.txt"
+
 verify_installed_deps() {
-  bash "$(dirname "${BASH_SOURCE[0]}")/verify-vdb.sh"
+  mkdir -p "$STATE_DIR"
+  bash "$(dirname "${BASH_SOURCE[0]}")/verify-vdb.sh" \
+    --removed-atoms-file "$VERIFY_VDB_REMOVED_FILE"
+}
+
+rebuild_stale_from_source() {
+  [[ -s "$VERIFY_VDB_REMOVED_FILE" ]] || {
+    log "verify-vdb removed nothing; no from-source rebuild needed"
+    return 0
+  }
+
+  local atoms=()
+  while IFS= read -r atom; do
+    [[ -n "$atom" ]] && atoms+=("$atom")
+  done < "$VERIFY_VDB_REMOVED_FILE"
+
+  log "Rebuilding ${#atoms[@]} package(s) from source (--usepkg=n) to bypass any corrupt binpkg:"
+  printf '    %s\n' "${atoms[@]}"
+
+  # --usepkg=n: do not consume any binpkg (cached or from binhost) for
+  # these atoms — we don't trust them.
+  # --buildpkg: write the freshly-built binpkg to /var/cache/binpkgs so
+  # the publish step replaces the corrupt one on the binhost.
+  # --getbinpkg=n: belt-and-suspenders against pulling from binhost.
+  # --keep-going: don't let a single broken atom abort the whole sweep.
+  local rebuild_flags=(--oneshot --keep-going --usepkg=n --getbinpkg=n --buildpkg --verbose)
+
+  local rc=0
+  run_emerge_with_deadline "$DEADLINE" "${rebuild_flags[@]}" "${atoms[@]}" || rc=$?
+  if [[ $rc -eq 42 ]]; then
+    return 42
+  elif [[ $rc -ne 0 ]]; then
+    # Don't abort: if a from-source rebuild fails for one of these atoms,
+    # the main emerge will surface it via report_failed_atoms.  Better
+    # to surface real failures than mask them.
+    log "  From-source rebuild returned ${rc}; main build will continue and surface any blockers"
+  fi
 }
 
 # ---------- /etc CONFIG_PROTECT auto-merge ----------
@@ -986,12 +1033,20 @@ sync_tree
 setup_binpkg_trust
 restore_build_state
 verify_installed_deps
+# Rebuild from source any package whose VDB verify-vdb just removed.
+# Skipping this would let emerge re-install from a corrupt cached binpkg
+# (the binhost is fed by these CI runs, so a previously-broken state is
+# baked into the published gpkg).  MUST run before kernel install / main
+# build so they see a healthy installation.  Honours $DEADLINE.
+rebuild_stale_from_source || _RSFS_RC=$?
+if [[ "${_RSFS_RC:-0}" -eq 42 ]]; then
+  log "rebuild_stale_from_source hit the deadline; exiting 42 so the workflow can resume."
+  exit 42
+fi
 # Repair any installed binaries with broken NEEDED entries inherited from a
 # previous chain (e.g. mesa_clc against libclang-cpp.so.21.1 after a clang
-# 21->22 upgrade).  MUST run before any further emerge so subsequent steps
-# (kernel install, news handling, main build) don't trip over the broken
-# binaries.  Honours $DEADLINE; on rc=42 the build exits 42 so the workflow
-# can resume in the next attempt.
+# 21->22 upgrade).  Honours $DEADLINE; on rc=42 the build exits 42 so the
+# workflow can resume in the next attempt.
 rebuild_broken_libs || _RBL_RC=$?
 if [[ "${_RBL_RC:-0}" -eq 42 ]]; then
   log "rebuild_broken_libs hit the deadline; exiting 42 so the workflow can resume."
