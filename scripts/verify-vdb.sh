@@ -20,18 +20,33 @@
 #     emerge (ccache, gentoolkit) has a correct view of installed packages,
 #   - from scripts/build.sh before the main build emerge.
 #
-# Usage: verify-vdb.sh [--vdb-root <path>]
-#   --vdb-root <path>   VDB directory to scan (default: /var/db/pkg)
+# Usage: verify-vdb.sh [--vdb-root <path>] [--removed-atoms-file <path>]
+#   --vdb-root <path>           VDB directory to scan (default: /var/db/pkg)
+#   --removed-atoms-file <path> If set, write one `=cat/pkg-version` per
+#                               removed VDB entry to this file (truncated
+#                               on entry).  Caller can then `emerge
+#                               --usepkg=n` those atoms to force a
+#                               from-source rebuild that bypasses any
+#                               corrupt cached binpkg.  Without this,
+#                               re-installing from a corrupt binpkg
+#                               perpetuates the same missing files (run
+#                               25347952798: dev-lang/ruby-3.3.11 binpkg
+#                               had `rubygems/compatibility.rb` missing).
 set -euo pipefail
 
 log() { echo "[verify-vdb] $*"; }
 
 vdb_root="/var/db/pkg"
+removed_atoms_file=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --vdb-root)
       vdb_root="$2"
+      shift 2
+      ;;
+    --removed-atoms-file)
+      removed_atoms_file="$2"
       shift 2
       ;;
     *)
@@ -40,6 +55,13 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+# Truncate up front so a caller that always reads the file sees an empty
+# list when nothing was removed, not stale entries from a prior run.
+if [[ -n "$removed_atoms_file" ]]; then
+  mkdir -p "$(dirname "$removed_atoms_file")"
+  : > "$removed_atoms_file"
+fi
 
 if [[ ! -d "$vdb_root" ]]; then
   log "No VDB at ${vdb_root}, nothing to verify"
@@ -131,9 +153,10 @@ for cat_dir in "${vdb_root}"/*/; do
 
     if [[ -n "$missing_probe" ]]; then
       log "Stale VDB entry: ${pkg_atom} — probe file ${missing_probe} missing on disk"
-      log "  Removing so emerge re-resolves and re-installs (or pulls a binpkg)."
+      log "  Removing so emerge rebuilds from source (caller forces --usepkg=n)."
       rm -rf -- "${pkg_dir%/}"
       removed=$(( removed + 1 ))
+      [[ -n "$removed_atoms_file" ]] && echo "=${pkg_atom}" >> "$removed_atoms_file"
       continue
     fi
 
@@ -156,9 +179,10 @@ for cat_dir in "${vdb_root}"/*/; do
 
     if [[ -n "$abi_bad_lib" ]]; then
       log "Stale VDB entry: ${pkg_atom} — $(basename "$abi_bad_lib") has GLIBC symbol version mismatch"
-      log "  Removing so emerge rebuilds with current glibc."
+      log "  Removing so emerge rebuilds from source (caller forces --usepkg=n)."
       rm -rf -- "${pkg_dir%/}"
       removed=$(( removed + 1 ))
+      [[ -n "$removed_atoms_file" ]] && echo "=${pkg_atom}" >> "$removed_atoms_file"
     fi
   done
 done
