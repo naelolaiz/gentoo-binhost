@@ -639,10 +639,13 @@ rebuild_stale_from_source() {
     return 0
   }
 
+  # Read the file, dedupe (the workflow's verify-vdb step and build.sh's
+  # verify_installed_deps both append; if both detected the same stale
+  # package — likely on a fresh chain — we'd otherwise emerge it twice).
   local atoms=()
   while IFS= read -r atom; do
     [[ -n "$atom" ]] && atoms+=("$atom")
-  done < "$VERIFY_VDB_REMOVED_FILE"
+  done < <(sort -u "$VERIFY_VDB_REMOVED_FILE")
 
   log "Rebuilding ${#atoms[@]} package(s) from source (--usepkg=n) to bypass any corrupt binpkg:"
   printf '    %s\n' "${atoms[@]}"
@@ -657,6 +660,12 @@ rebuild_stale_from_source() {
 
   local rc=0
   run_emerge_with_deadline "$DEADLINE" "${rebuild_flags[@]}" "${atoms[@]}" || rc=$?
+
+  # Truncate the file so a subsequent resume attempt (which may inherit
+  # this state via the build-state cache) doesn't try to rebuild atoms
+  # that have already been rebuilt this attempt.
+  : > "$VERIFY_VDB_REMOVED_FILE"
+
   if [[ $rc -eq 42 ]]; then
     return 42
   elif [[ $rc -ne 0 ]]; then
