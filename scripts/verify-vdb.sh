@@ -22,16 +22,23 @@
 #
 # Usage: verify-vdb.sh [--vdb-root <path>] [--removed-atoms-file <path>]
 #   --vdb-root <path>           VDB directory to scan (default: /var/db/pkg)
-#   --removed-atoms-file <path> If set, write one `=cat/pkg-version` per
-#                               removed VDB entry to this file (truncated
-#                               on entry).  Caller can then `emerge
-#                               --usepkg=n` those atoms to force a
-#                               from-source rebuild that bypasses any
-#                               corrupt cached binpkg.  Without this,
-#                               re-installing from a corrupt binpkg
-#                               perpetuates the same missing files (run
-#                               25347952798: dev-lang/ruby-3.3.11 binpkg
-#                               had `rubygems/compatibility.rb` missing).
+#   --removed-atoms-file <path> If set, APPEND one `=cat/pkg-version` per
+#                               removed VDB entry to this file.  Caller
+#                               is responsible for truncating before its
+#                               first verify-vdb invocation in a job and
+#                               again after consuming the list.  Append
+#                               (not truncate) so the workflow's "Repair
+#                               stale VDB entries" step and build.sh's
+#                               verify_installed_deps both contribute to
+#                               one list, which rebuild_stale_from_source
+#                               emerges with --usepkg=n to bypass the
+#                               (potentially corrupt) cached binpkg.
+#                               Without the cross-step share, the second
+#                               invocation found nothing stale (already
+#                               cleaned by the first) and the corrupt
+#                               binpkg was reinstalled anyway — observed
+#                               in run 25360091149 where ruby still had
+#                               `rubygems/compatibility.rb` missing.
 set -euo pipefail
 
 log() { echo "[verify-vdb] $*"; }
@@ -56,11 +63,11 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Truncate up front so a caller that always reads the file sees an empty
-# list when nothing was removed, not stale entries from a prior run.
+# Ensure parent dir exists; do NOT truncate — multiple verify-vdb
+# invocations in the same job append to the same file.  See header.
 if [[ -n "$removed_atoms_file" ]]; then
   mkdir -p "$(dirname "$removed_atoms_file")"
-  : > "$removed_atoms_file"
+  touch "$removed_atoms_file"
 fi
 
 if [[ ! -d "$vdb_root" ]]; then

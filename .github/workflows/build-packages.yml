@@ -290,8 +290,21 @@ jobs:
       # emerge (ccache, gentoolkit) sees a correct installed-package view.
       # The same script is also called by scripts/build.sh before the main
       # build emerge.  See scripts/verify-vdb.sh for full documentation.
+      #
+      # Pass --removed-atoms-file to a path build.sh also reads
+      # ($STATE_DIR/verify-vdb-removed-atoms.txt with STATE_DIR set in the
+      # build.sh invocation below to /var/tmp/portage-state).  Both
+      # verify-vdb invocations append to that file; build.sh's
+      # rebuild_stale_from_source then emerges every listed atom with
+      # --usepkg=n to bypass any corrupt cached binpkg before the main
+      # build runs.  Truncate first so leftovers from a previous attempt
+      # are not re-rebuilt on this attempt.
       - name: Repair stale VDB entries
-        run: bash scripts/verify-vdb.sh
+        run: |
+          mkdir -p /var/tmp/portage-state
+          : > /var/tmp/portage-state/verify-vdb-removed-atoms.txt
+          bash scripts/verify-vdb.sh \
+            --removed-atoms-file /var/tmp/portage-state/verify-vdb-removed-atoms.txt
 
       # Install ccache + gentoolkit for the main build.  Pulls from both our
       # own binhost and the official Gentoo binhost (self-healing: skips the
