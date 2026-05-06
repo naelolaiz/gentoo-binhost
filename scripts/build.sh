@@ -1071,44 +1071,50 @@ setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
-verify_installed_deps
-# Rebuild from source any package whose VDB verify-vdb just removed.
-# Skipping this would let emerge re-install from a corrupt cached binpkg
-# (the binhost is fed by these CI runs, so a previously-broken state is
-# baked into the published gpkg).  MUST run before kernel install / main
-# build so they see a healthy installation.  Honours $DEADLINE.
-rebuild_stale_from_source || _RSFS_RC=$?
-if [[ "${_RSFS_RC:-0}" -eq 42 ]]; then
-  log "rebuild_stale_from_source hit the deadline; exiting 42 so the workflow can resume."
-  exit 42
-fi
-# Repair any installed binaries with broken NEEDED entries inherited from a
-# previous chain (e.g. mesa_clc against libclang-cpp.so.21.1 after a clang
-# 21->22 upgrade).  Honours $DEADLINE; on rc=42 the build exits 42 so the
-# workflow can resume in the next attempt.
-rebuild_broken_libs || _RBL_RC=$?
-if [[ "${_RBL_RC:-0}" -eq 42 ]]; then
-  log "rebuild_broken_libs hit the deadline; exiting 42 so the workflow can resume."
-  exit 42
-fi
-display_and_read_news
-ensure_kernel_symlink
-measure_cache_footprint "before"
-show_ccache_stats
-
-# Collect and sign whatever binpkgs were produced, even on a timed-out build,
-# so partial results are published and later phases don't have to rebuild them.
+# Measure the binpkg count BEFORE any building work in this attempt.
+# Every package built — by rebuild_stale_from_source, rebuild_broken_libs,
+# OR build_packages — must count toward "progress this attempt", because
+# the workflow's zero-progress gate uses (BINPKGS_AFTER - BINPKGS_BEFORE)
+# to decide whether to abandon the chain.  Previously this snapshot lived
+# AFTER the pre-build phases, so a pre-build timeout (e.g. a 38-minute
+# glibc rebuild in run 25399775054) recorded zero progress and killed the
+# chain even though real work had completed.
 BINPKGS_BEFORE="$(count_binpkgs)"
 log "Binpkgs present before this attempt: ${BINPKGS_BEFORE}"
-build_packages || BUILD_RC=$?
-BUILD_RC=${BUILD_RC:-0}
+
+# Pre-build phases honour $DEADLINE.  If any of them hits the deadline
+# (rc=42), accumulate it and skip the remaining phases — but DO NOT exit
+# directly: the cleanup block below MUST run so partial binpkgs are
+# collected/signed and emit_progress_summary records what was built.
+# Without that, a pre-build timeout looks identical to "no progress".
+BUILD_RC=0
+verify_installed_deps
+rebuild_stale_from_source || BUILD_RC=$?
+if [[ "$BUILD_RC" -eq 0 ]]; then
+  # Repair any installed binaries with broken NEEDED entries inherited from
+  # a previous chain (e.g. mesa_clc against libclang-cpp.so.21.1 after a
+  # clang 21->22 upgrade).
+  rebuild_broken_libs || BUILD_RC=$?
+fi
+if [[ "$BUILD_RC" -eq 0 ]]; then
+  display_and_read_news
+  ensure_kernel_symlink
+  measure_cache_footprint "before"
+  show_ccache_stats
+  build_packages || BUILD_RC=$?
+fi
+
 BINPKGS_AFTER="$(count_binpkgs)"
 
-# Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_* in /etc.
-# Run regardless of BUILD_RC (incl. timeout rc=42) so partial-progress state
-# does not leak unmerged configs into the next attempt's /etc baseline.
+# Cleanup: ALWAYS runs regardless of BUILD_RC.  The whole point is that a
+# timeout (rc=42) in any phase still publishes whatever was built this
+# attempt and emits progress so the chain can resume rather than be
+# killed by the zero-progress gate.
+#
+# Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_* in /etc
+# so partial-progress state does not leak unmerged configs into the next
+# attempt's /etc baseline.
 merge_pending_configs
-
 collect_packages
 prune_old_binpkgs
 sign_packages
