@@ -616,15 +616,25 @@ PYEOF
 # called from build-packages.yml before "Install build tools" so stale
 # entries are gone before any emerge runs.
 #
-# After verify-vdb removes a package, we MUST rebuild it from source
-# (--usepkg=n).  Reason: the published binhost binpkg may itself be
-# corrupt — it was built by a previous CI run from a partially-broken
-# installation, so reinstalling that binpkg perpetuates the same missing
-# files.  Observed in run 25347952798: dev-lang/ruby-3.3.11's binpkg
-# lacked /usr/lib64/ruby/3.3.0/rubygems/compatibility.rb, every emerge
-# that touched ruby crashed the same way after reinstall.  Forcing a
-# from-source rebuild generates a correct binpkg locally that replaces
-# the corrupt one in the binhost on the next publish.
+# After verify-vdb removes a stale entry, we need to restore those packages.
+# Most stale packages are absent simply because stage3 doesn't include
+# previously-built CI packages — their binpkgs in the local cache and
+# published binhost are valid.  Forcing --usepkg=n for ALL stale entries
+# causes source-rebuilds of every package that was ever built (598+ packages
+# observed in run 25399775054, including glibc at 38 minutes alone), which
+# exhausts the time budget before the main build even starts.
+#
+# Two-phase approach:
+#   Phase 1: install from binpkg (fast path — local cache or remote binhost).
+#   Phase 2: re-run verify-vdb to detect packages whose binpkg is itself
+#            corrupt (files listed in CONTENTS are still absent after install).
+#            Only those get rebuilt from source (--usepkg=n --getbinpkg=n).
+#
+# Corrupt-binpkg scenario (observed in run 25347952798): dev-lang/ruby-3.3.11
+# was published from a partially-broken install, so reinstalling from that
+# binpkg still left rubygems/compatibility.rb missing.  Phase 2 detects this:
+# after the Phase 1 binpkg install, verify-vdb still flags ruby as stale →
+# Phase 2 rebuilds ruby from source, generating a correct replacement binpkg.
 VERIFY_VDB_REMOVED_FILE="${STATE_DIR%/}/verify-vdb-removed-atoms.txt"
 
 verify_installed_deps() {
@@ -635,43 +645,63 @@ verify_installed_deps() {
 
 rebuild_stale_from_source() {
   [[ -s "$VERIFY_VDB_REMOVED_FILE" ]] || {
-    log "verify-vdb removed nothing; no from-source rebuild needed"
+    log "verify-vdb removed nothing; no stale-package restore needed"
     return 0
   }
 
-  # Read the file, dedupe (the workflow's verify-vdb step and build.sh's
-  # verify_installed_deps both append; if both detected the same stale
-  # package — likely on a fresh chain — we'd otherwise emerge it twice).
+  # Read the deduplicated atom list recorded by the workflow step and
+  # build.sh's own verify_installed_deps, then clear the file.  Phase 2
+  # will re-populate it with any packages still stale after binpkg install.
   local atoms=()
   while IFS= read -r atom; do
     [[ -n "$atom" ]] && atoms+=("$atom")
   done < <(sort -u "$VERIFY_VDB_REMOVED_FILE")
-
-  log "Rebuilding ${#atoms[@]} package(s) from source (--usepkg=n) to bypass any corrupt binpkg:"
-  printf '    %s\n' "${atoms[@]}"
-
-  # --usepkg=n: do not consume any binpkg (cached or from binhost) for
-  # these atoms — we don't trust them.
-  # --buildpkg: write the freshly-built binpkg to /var/cache/binpkgs so
-  # the publish step replaces the corrupt one on the binhost.
-  # --getbinpkg=n: belt-and-suspenders against pulling from binhost.
-  # --keep-going: don't let a single broken atom abort the whole sweep.
-  local rebuild_flags=(--oneshot --keep-going --usepkg=n --getbinpkg=n --buildpkg --verbose)
-
-  local rc=0
-  run_emerge_with_deadline "$DEADLINE" "${rebuild_flags[@]}" "${atoms[@]}" || rc=$?
-
-  # Truncate the file so a subsequent resume attempt (which may inherit
-  # this state via the build-state cache) doesn't try to rebuild atoms
-  # that have already been rebuilt this attempt.
   : > "$VERIFY_VDB_REMOVED_FILE"
 
-  if [[ $rc -eq 42 ]]; then
-    return 42
-  elif [[ $rc -ne 0 ]]; then
-    # Don't abort: if a from-source rebuild fails for one of these atoms,
-    # the main emerge will surface it via report_failed_atoms.  Better
-    # to surface real failures than mask them.
+  log "Restoring ${#atoms[@]} previously-stale package(s) from binpkg (phase 1):"
+  printf '    %s\n' "${atoms[@]}"
+
+  # Phase 1: install from binpkg.  --usepkg uses the local /var/cache/binpkgs
+  # cache (restored by the workflow at job start); --getbinpkg fetches from
+  # the remote binhost for anything not in the local cache.  Falls back to
+  # source if no binpkg is available at all.  --buildpkg writes any remotely-
+  # fetched binpkg to the local cache so the publish step can include it.
+  local install_flags=(--oneshot --keep-going --usepkg --buildpkg --verbose)
+  if [[ -n "$BINHOST_URL" ]]; then
+    install_flags+=(--getbinpkg --ignore-built-slot-operator-deps=y)
+  fi
+  local rc=0
+  run_emerge_with_deadline "$DEADLINE" "${install_flags[@]}" "${atoms[@]}" || rc=$?
+  if [[ $rc -eq 42 ]]; then return 42; fi
+
+  # Phase 2: detect corrupt binpkgs.  Re-scan the whole VDB; any package
+  # still stale after phase 1 had a corrupt binpkg (its CONTENTS files are
+  # absent even after install).  Rebuild ONLY those from source.
+  bash "$(dirname "${BASH_SOURCE[0]}")/verify-vdb.sh" \
+    --removed-atoms-file "$VERIFY_VDB_REMOVED_FILE"
+
+  if [[ ! -s "$VERIFY_VDB_REMOVED_FILE" ]]; then
+    log "All stale packages restored from binpkg; no corrupt binpkgs detected"
+    return 0
+  fi
+
+  local corrupt_atoms=()
+  while IFS= read -r atom; do
+    [[ -n "$atom" ]] && corrupt_atoms+=("$atom")
+  done < <(sort -u "$VERIFY_VDB_REMOVED_FILE")
+  : > "$VERIFY_VDB_REMOVED_FILE"
+
+  log "Rebuilding ${#corrupt_atoms[@]} package(s) from source — corrupt binpkg detected:"
+  printf '    %s\n' "${corrupt_atoms[@]}"
+
+  # --usepkg=n --getbinpkg=n: do not trust any cached or remote binpkg for
+  # these atoms — the binpkg itself is the source of the corruption.
+  # --buildpkg: write the freshly-built binpkg so the publish step replaces
+  # the corrupt one on the binhost.
+  local rebuild_flags=(--oneshot --keep-going --usepkg=n --getbinpkg=n --buildpkg --verbose)
+  run_emerge_with_deadline "$DEADLINE" "${rebuild_flags[@]}" "${corrupt_atoms[@]}" || rc=$?
+  if [[ $rc -eq 42 ]]; then return 42; fi
+  if [[ $rc -ne 0 ]]; then
     log "  From-source rebuild returned ${rc}; main build will continue and surface any blockers"
   fi
 }
@@ -1041,44 +1071,50 @@ setup_ccache
 sync_tree
 setup_binpkg_trust
 restore_build_state
-verify_installed_deps
-# Rebuild from source any package whose VDB verify-vdb just removed.
-# Skipping this would let emerge re-install from a corrupt cached binpkg
-# (the binhost is fed by these CI runs, so a previously-broken state is
-# baked into the published gpkg).  MUST run before kernel install / main
-# build so they see a healthy installation.  Honours $DEADLINE.
-rebuild_stale_from_source || _RSFS_RC=$?
-if [[ "${_RSFS_RC:-0}" -eq 42 ]]; then
-  log "rebuild_stale_from_source hit the deadline; exiting 42 so the workflow can resume."
-  exit 42
-fi
-# Repair any installed binaries with broken NEEDED entries inherited from a
-# previous chain (e.g. mesa_clc against libclang-cpp.so.21.1 after a clang
-# 21->22 upgrade).  Honours $DEADLINE; on rc=42 the build exits 42 so the
-# workflow can resume in the next attempt.
-rebuild_broken_libs || _RBL_RC=$?
-if [[ "${_RBL_RC:-0}" -eq 42 ]]; then
-  log "rebuild_broken_libs hit the deadline; exiting 42 so the workflow can resume."
-  exit 42
-fi
-display_and_read_news
-ensure_kernel_symlink
-measure_cache_footprint "before"
-show_ccache_stats
-
-# Collect and sign whatever binpkgs were produced, even on a timed-out build,
-# so partial results are published and later phases don't have to rebuild them.
+# Measure the binpkg count BEFORE any building work in this attempt.
+# Every package built — by rebuild_stale_from_source, rebuild_broken_libs,
+# OR build_packages — must count toward "progress this attempt", because
+# the workflow's zero-progress gate uses (BINPKGS_AFTER - BINPKGS_BEFORE)
+# to decide whether to abandon the chain.  Previously this snapshot lived
+# AFTER the pre-build phases, so a pre-build timeout (e.g. a 38-minute
+# glibc rebuild in run 25399775054) recorded zero progress and killed the
+# chain even though real work had completed.
 BINPKGS_BEFORE="$(count_binpkgs)"
 log "Binpkgs present before this attempt: ${BINPKGS_BEFORE}"
-build_packages || BUILD_RC=$?
-BUILD_RC=${BUILD_RC:-0}
+
+# Pre-build phases honour $DEADLINE.  If any of them hits the deadline
+# (rc=42), accumulate it and skip the remaining phases — but DO NOT exit
+# directly: the cleanup block below MUST run so partial binpkgs are
+# collected/signed and emit_progress_summary records what was built.
+# Without that, a pre-build timeout looks identical to "no progress".
+BUILD_RC=0
+verify_installed_deps
+rebuild_stale_from_source || BUILD_RC=$?
+if [[ "$BUILD_RC" -eq 0 ]]; then
+  # Repair any installed binaries with broken NEEDED entries inherited from
+  # a previous chain (e.g. mesa_clc against libclang-cpp.so.21.1 after a
+  # clang 21->22 upgrade).
+  rebuild_broken_libs || BUILD_RC=$?
+fi
+if [[ "$BUILD_RC" -eq 0 ]]; then
+  display_and_read_news
+  ensure_kernel_symlink
+  measure_cache_footprint "before"
+  show_ccache_stats
+  build_packages || BUILD_RC=$?
+fi
+
 BINPKGS_AFTER="$(count_binpkgs)"
 
-# Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_* in /etc.
-# Run regardless of BUILD_RC (incl. timeout rc=42) so partial-progress state
-# does not leak unmerged configs into the next attempt's /etc baseline.
+# Cleanup: ALWAYS runs regardless of BUILD_RC.  The whole point is that a
+# timeout (rc=42) in any phase still publishes whatever was built this
+# attempt and emits progress so the chain can resume rather than be
+# killed by the zero-progress gate.
+#
+# Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_* in /etc
+# so partial-progress state does not leak unmerged configs into the next
+# attempt's /etc baseline.
 merge_pending_configs
-
 collect_packages
 prune_old_binpkgs
 sign_packages

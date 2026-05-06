@@ -439,10 +439,16 @@ jobs:
 
           echo "exit=${EXIT} new_pkgs=${NEW_PKGS} failed=${FAILED} repeated=${REPEATED} next=${NEXT}/${MAX}"
 
-          # Default: do not continue.  Switch to true only on the happy
-          # "timed-out, made progress, no repeated failures" path.
+          # Continue if timed out (rc=42), attempts left, no repeated
+          # failure.  Long single packages (qtwebengine, llvm, chromium)
+          # WILL be SIGTERM'd mid-compile because they take longer than
+          # --max-build-time on a cold ccache; emerge --resume restarts
+          # them from scratch and ccache (preserved at /var/cache/ccache
+          # via actions/cache) makes the next attempt fast enough to
+          # finish.  The chain MUST be allowed to reach attempt N+1 for
+          # this to work.  MAX=8 is the only ceiling.
           should_continue=false
-          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" && "$NEW_PKGS" -gt 0 && "$REPEATED" != "true" ]]; then
+          if [[ "$EXIT" == "42" && "$NEXT" -le "$MAX" && "$REPEATED" != "true" ]]; then
             should_continue=true
           fi
           echo "should_continue=${should_continue}" >> "$GITHUB_OUTPUT"
@@ -451,16 +457,10 @@ jobs:
           # attempts will fail in the next one too — every additional resume
           # is just burning CI minutes.  Stop the chain RED so the user sees
           # which atom is stuck (build.sh already wrote the build.log into
-          # the uploaded artifact).
+          # the uploaded artifact).  Distinct from SIGTERM-victim atoms
+          # (build.sh excludes those from repeated_failures already).
           if [[ "$REPEATED" == "true" ]]; then
             echo "::error title=Repeated package failures::One or more packages failed in two consecutive resume attempts. Auto-resume disabled. See the 'Failed packages' section in the build summary and the _failures/ directory in the build artifact for the captured build.log of each failure."
-            exit 1
-          fi
-
-          if [[ "$EXIT" == "42" && "$NEW_PKGS" -le 0 ]]; then
-            # Resuming would just burn another 5h producing nothing.  Better to
-            # surface the stall now so a human can investigate the stuck ebuild.
-            echo "::error title=Zero-progress timeout::Build attempt ${{ steps.meta.outputs.attempt }} timed out (exit 42) without producing any new binary packages. Auto-resume disabled for this chain to avoid wasting CI minutes; investigate the stuck ebuild."
             exit 1
           fi
           # Any per-package failure is also surfaced (build.sh already emitted
