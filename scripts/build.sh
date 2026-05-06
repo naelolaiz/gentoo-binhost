@@ -1127,7 +1127,19 @@ if [[ $BUILD_RC -eq 42 ]]; then
   log "Build timed out (state saved); exiting 42 so the workflow can resume in the next phase."
   exit 42
 elif [[ $BUILD_RC -ne 0 ]]; then
-  die "emerge failed with exit code ${BUILD_RC}"
+  # emerge --keep-going can exit non-zero when SOME packages failed but
+  # others were built successfully (e.g. observed in run 25414969030:
+  # cargo-c + json failed but 565 other packages built fine).  Killing
+  # the chain on this exit code throws away that progress and prevents
+  # the next attempt from retrying the failed atoms.  Treat as a
+  # resumable timeout: the workflow's repeated_failures gate (which
+  # fires when the SAME atom fails in two consecutive attempts) is the
+  # correct stop signal — it catches genuinely-stuck packages without
+  # killing chains that just need another pass to clear transient
+  # failures (network glitch during cargo fetch, mid-build interrupted
+  # binpkg, etc.).
+  log "emerge had per-package failures (exit ${BUILD_RC}); exiting 42 so the chain retries them. The repeated_failures gate will stop the chain if any atom fails twice in a row."
+  exit 42
 fi
 
 # Final assertion: no ._cfg* should remain under /etc after merge_pending_configs.
