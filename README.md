@@ -93,7 +93,7 @@ gentoo-binhost/
 The CI runs weekly (Sunday) and does what you'd do on your own system:
 
 1. **Sync** — `emerge-webrsync` (or `emerge --sync`)
-2. **Build** — `emerge --buildpkg --usepkg --getbinpkg --keep-going <all packages>`
+2. **Build** — `emerge --buildpkgonly --usepkg --getbinpkg --keep-going <all packages>`
 3. **Publish** — deploy to GitHub Pages
 
 If the build times out (GitHub Actions has a 6 h limit), it publishes

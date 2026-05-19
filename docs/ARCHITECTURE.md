@@ -71,7 +71,9 @@ verify. Two CI gates enforce no-drift:
 A full rebuild doesn't fit in GitHub Actions' 6-hour job limit. The build
 workflow handles this by running for 5.5 hours, saving completed binary
 packages plus ccache, then re-dispatching itself to continue from a clean
-stage3 container.
+stage3 container. The main package emerge uses `--buildpkgonly`: target
+packages are built for the binhost, while dependencies are still merged only
+when the build graph actually needs them.
 
 ### Exit codes
 
