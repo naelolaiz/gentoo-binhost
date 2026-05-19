@@ -1,31 +1,20 @@
 #!/usr/bin/env bash
-# scripts/build.sh — main build script for the Gentoo binhost CI
+# Main build script for the Gentoo binhost CI.
 #
-# Usage:
-#   build.sh --profile <profile-name> --package-list <file>
-#   build.sh --profile <profile-name> --single-package <atom>
+# The CI intentionally starts each attempt from a clean stage3 image.  The
+# only state carried between attempts is:
+#   - /var/cache/binpkgs: finished packages from this build chain
+#   - /var/cache/ccache: compiler cache
 #
-# Options:
-#   --profile <name>         Profile directory under config/profiles/ (required)
-#   --gentoo-profile <path>  Gentoo profile path (required; e.g. default/linux/amd64/23.0/desktop/plasma)
-#   --package-list <file>    Path to a newline-separated package list file
-#   --single-package <atom>  Build a single package atom
-#   --sign                   GPG-sign all produced .gpkg.tar files
-#   --gpg-key <fingerprint>  GPG key fingerprint to use for signing
-#   --output-dir <dir>       Directory to copy finished packages into (default: /var/cache/binpkgs)
-#   --binhost-url <url>      URL of a binhost to fetch pre-built packages from (sets PORTAGE_BINHOST)
-#   --resume                 Restore intermediate build state before running emerge
-#   --state-dir <dir>        Directory for saving/restoring portage build state (default: /var/tmp/portage-state)
-#   --max-build-time <min>   Stop emerge gracefully after this many minutes (90% of limit),
-#                            save build state, and exit 42 ("timed out, state saved")
-#   --help                   Show this help message
+# We do not restore Portage's installed-package database or previous workdirs.
+# A stale installed DB can claim that libraries are usable when the filesystem
+# or ABI is not, which turns dependency problems into late compile failures.
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-# ---------- defaults ----------
 PROFILE=""
 GENTOO_PROFILE=""
 PACKAGE_LIST=""
@@ -33,62 +22,76 @@ SINGLE_PACKAGE=""
 SIGN=false
 GPG_KEY=""
 OUTPUT_DIR="/var/cache/binpkgs"
-RESUME=false
 STATE_DIR="/var/tmp/portage-state"
 MAX_BUILD_TIME=""
 BINHOST_URL=""
 
-# ---------- helpers ----------
+FAILURE_LOG_TAIL_LINES=80
+FAILED_ATOM_COUNT=0
+_TIMEOUT_FIRED_AT=0
+
 die() { echo "ERROR: $*" >&2; exit 1; }
 log() { echo "[build.sh] $*"; }
 
 usage() {
-  sed -n '/^# Usage:/,/^$/p' "$0" | sed 's/^# \?//'
+  sed -n '/^# Main build script/,/^$/p' "$0" | sed 's/^# \?//'
+  cat <<'EOF'
+
+Usage:
+  build.sh --profile <profile-name> --gentoo-profile <path> --package-list <file> [options]
+  build.sh --profile <profile-name> --gentoo-profile <path> --single-package <atom> [options]
+
+Options:
+  --profile <name>         Profile directory under config/profiles/
+  --gentoo-profile <path>  Gentoo profile path passed to eselect
+  --package-list <file>    Newline-separated package list
+  --single-package <atom>  Build one package atom
+  --sign                   GPG-sign produced packages
+  --gpg-key <fingerprint>  GPG key fingerprint for signing
+  --output-dir <dir>       Copy finished packages here
+  --binhost-url <url>      Space-separated PORTAGE_BINHOST URL(s)
+  --state-dir <dir>        Directory for failure metadata
+  --max-build-time <min>   Stop emerge after 90% of this budget and exit 42
+  --resume                 Accepted for backwards compatibility; ignored
+  --help                   Show this help
+EOF
   exit 0
 }
 
-# ---------- argument parsing ----------
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --profile)        PROFILE="$2";        shift 2 ;;
     --gentoo-profile) GENTOO_PROFILE="$2"; shift 2 ;;
     --package-list)   PACKAGE_LIST="$2";   shift 2 ;;
     --single-package) SINGLE_PACKAGE="$2"; shift 2 ;;
-    --sign)           SIGN=true;           shift   ;;
+    --sign)           SIGN=true;           shift ;;
     --gpg-key)        GPG_KEY="$2";        shift 2 ;;
     --output-dir)     OUTPUT_DIR="$2";     shift 2 ;;
-    --resume)         RESUME=true;         shift   ;;
     --state-dir)      STATE_DIR="$2";      shift 2 ;;
     --max-build-time) MAX_BUILD_TIME="$2"; shift 2 ;;
     --binhost-url)    BINHOST_URL="$2";    shift 2 ;;
+    --resume)         shift ;;
     --help|-h)        usage ;;
     *) die "Unknown argument: $1" ;;
   esac
 done
 
-# ---------- validation ----------
 [[ -n "$PROFILE" ]] || die "--profile is required"
-[[ -n "$GENTOO_PROFILE" ]] || die "--gentoo-profile is required (e.g. default/linux/amd64/23.0/desktop/plasma)"
+[[ -n "$GENTOO_PROFILE" ]] || die "--gentoo-profile is required"
 [[ -n "$PACKAGE_LIST" || -n "$SINGLE_PACKAGE" ]] \
   || die "One of --package-list or --single-package is required"
 [[ -z "$PACKAGE_LIST" || -z "$SINGLE_PACKAGE" ]] \
   || die "--package-list and --single-package are mutually exclusive"
-
-PROFILE_DIR="${REPO_ROOT}/config/profiles/${PROFILE}"
-[[ -d "$PROFILE_DIR" ]] || die "Profile directory not found: ${PROFILE_DIR}"
-
+[[ -d "${REPO_ROOT}/config/profiles/${PROFILE}" ]] \
+  || die "Profile directory not found: ${REPO_ROOT}/config/profiles/${PROFILE}"
 if [[ -n "$PACKAGE_LIST" ]]; then
   [[ -f "$PACKAGE_LIST" ]] || die "Package list not found: ${PACKAGE_LIST}"
 fi
-
 if [[ -n "$MAX_BUILD_TIME" ]]; then
   [[ "$MAX_BUILD_TIME" =~ ^[1-9][0-9]*$ ]] \
-    || die "--max-build-time must be a positive integer (minutes), got: ${MAX_BUILD_TIME}"
+    || die "--max-build-time must be a positive integer, got: ${MAX_BUILD_TIME}"
 fi
-
 if [[ -n "$BINHOST_URL" ]]; then
-  # Validate every space-separated URL before any of them are written into make.conf.
-  # A quote or newline in the value can break the config file or inject extra settings.
   [[ "$BINHOST_URL" != *'"'* && "$BINHOST_URL" != *"'"* ]] \
     || die "--binhost-url must not contain quote characters"
   [[ "$BINHOST_URL" != *$'\n'* ]] \
@@ -98,22 +101,18 @@ if [[ -n "$BINHOST_URL" ]]; then
     [[ "$_url" =~ ^https?:// ]] \
       || die "--binhost-url entries must start with http:// or https://, got: ${_url}"
   done
-  unset _url
+  unset _url _urls
 fi
 
-# ---------- portage configuration ----------
 apply_profile() {
+  local args=("${PROFILE}" "${GENTOO_PROFILE}")
+  if [[ -n "$BINHOST_URL" ]]; then
+    args+=(--binhost-url "$BINHOST_URL")
+  fi
   bash "${SCRIPT_DIR}/apply-profile.sh" \
-    "${PROFILE}" \
-    "${GENTOO_PROFILE}" \
-    ${BINHOST_URL:+--binhost-url "${BINHOST_URL}"}
+    "${args[@]}"
 }
 
-# ---------- progress accounting ----------
-# Count fully-built *.gpkg.tar files in /var/cache/binpkgs (where Portage
-# always writes finished binpkgs).  Used to detect "exit 42 with zero new
-# packages" so the workflow can stop wasting 5-hour resume slots on a
-# permanently stuck build.
 count_binpkgs() {
   if [[ -d /var/cache/binpkgs ]]; then
     find /var/cache/binpkgs -name '*.gpkg.tar' | wc -l
@@ -125,8 +124,7 @@ count_binpkgs() {
 emit_progress_summary() {
   local before="$1" after="$2"
   local delta=$(( after - before ))
-  log "Build progress: ${before} → ${after} binpkgs (delta: ${delta})"
-  # GitHub Actions notice — bubbles up to the run summary at the top
+  log "Build progress: ${before} -> ${after} binpkgs (delta: ${delta})"
   echo "::notice title=Build progress::${delta} new package(s) built this attempt (total: ${after}, was: ${before})"
   if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
     {
@@ -137,48 +135,7 @@ emit_progress_summary() {
   fi
 }
 
-# ---------- failure surfacing ----------
-# Detect every ebuild that failed during the just-finished emerge and SHOW it
-# loudly: GitHub Actions ::error annotation, build log copied into the
-# artifact directory, and a step-summary entry with the tail of the log.
-#
-# Without this, --keep-going makes emerge exit 0 even when individual atoms
-# fail, leaving the user with no way to tell why qtwebengine (or whatever)
-# blocks the chain — the actual `temp/build.log` is deleted with the runner
-# at job end.  Surfacing failures is the explicit, repeatedly-requested
-# user requirement: "Not hiding errors, but showing them and reporting logs
-# appropriately to fix it."
-#
-# Failure marker convention used by Portage:
-#   /var/tmp/portage/<cat>/<pkg>/.die_hooks    — touched UNCONDITIONALLY by
-#       isolated-functions.sh::die() for any non-`depend` phase invoked via
-#       ebuild.sh/misc-functions.sh.  This is the canonical "this ebuild
-#       called die" marker.
-#   /var/tmp/portage/<cat>/<pkg>/temp/environment — saved environment for the
-#       failed phase; readable for `EBUILD_PHASE=...` and useful for repro.
-#   /var/tmp/portage/<cat>/<pkg>/temp/build.log — full build output for that atom
-#   /var/tmp/portage/<cat>/<pkg>/temp/die.env  — LEGACY fallback: Portage only
-#       writes this when ${T}/environment does NOT exist (see die() in
-#       isolated-functions.sh: `if [[ -f "${T}/environment" ]]; ... elif [[ -d
-#       "${T}" ]]; then { set; export; } > "${T}/die.env"; fi`).  For a normal
-#       compile/install-phase failure, environment exists and die.env is never
-#       written, which is why the previous .die_hooks-less probe missed every
-#       real failure (e.g. dev-lang/go-1.26.2 in run 24664855594) and reported
-#       "No failed atoms detected" while the chain was definitively broken.
-# Number of lines of build.log tailed into the GitHub step summary for each
-# failed package.  80 is enough for a typical configure/cmake error; raising
-# it would clutter the summary, lowering it would hide enough context.
-FAILURE_LOG_TAIL_LINES=80
 report_failed_atoms() {
-  # Idempotency guard.  This function is invoked both from the normal happy
-  # path (line ~1030) and from the EXIT trap (_on_exit) when `die` fires
-  # after a real emerge failure.  Without this guard the second invocation
-  # would re-write failed-packages.txt with the SAME atoms (the .die_hooks
-  # markers are still on disk), then `comm` against the just-rotated
-  # failed-packages.previous.txt and report every failure as "repeated in
-  # two consecutive attempts" — falsely killing the resume chain on the
-  # very first attempt.  The first invocation does the work; any
-  # subsequent re-entry is a no-op.
   if [[ "${_REPORT_FAILED_ATOMS_DONE:-0}" == "1" ]]; then
     log "report_failed_atoms: already ran in this process; skipping re-entry"
     return 0
@@ -188,26 +145,22 @@ report_failed_atoms() {
   local portage_tmp="/var/tmp/portage"
   local failures_dir="${OUTPUT_DIR%/}/_failures"
   local list_file="${STATE_DIR%/}/failed-packages.txt"
-  local prev_list_file="${STATE_DIR%/}/failed-packages.previous.txt"
-  local repeated_file="${STATE_DIR%/}/failed-packages.repeated.txt"
+  local captured_count=0
 
+  FAILED_ATOM_COUNT=0
   mkdir -p "$failures_dir" "$STATE_DIR"
   : > "$list_file"
-  : > "$repeated_file"
 
   if [[ ! -d "$portage_tmp" ]]; then
     log "No /var/tmp/portage found; no per-atom failures to report"
+    if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+      {
+        echo "failed_package_count=0"
+      } >> "$GITHUB_OUTPUT"
+    fi
     return 0
   fi
 
-  # Iterate every .die_hooks under /var/tmp/portage/<cat>/<pkg>/.die_hooks.
-  # This is the canonical marker (see header comment).  We also probe for
-  # legacy die.env files at /var/tmp/portage/<cat>/<pkg>/temp/die.env so that
-  # if Portage ever writes one (only possible when ${T}/environment is
-  # absent) we still capture it.  Two passes because -mindepth/-maxdepth are
-  # global to a find invocation, not per -o branch.
-  # No 2>/dev/null on find: if the directory is unreadable for a real reason
-  # (perm denied, IO error) we want to see it, not lose all failure context.
   local die_files=()
   while IFS= read -r -d '' f; do die_files+=("$f"); done < <(
     find "$portage_tmp" -mindepth 3 -maxdepth 3 -type f -name .die_hooks -print0
@@ -217,53 +170,38 @@ report_failed_atoms() {
   )
 
   if [[ ${#die_files[@]} -eq 0 ]]; then
-    log "No failed atoms detected (no .die_hooks or die.env files under ${portage_tmp})"
+    log "No failed atoms detected"
     if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
-      echo "failed_package_count=0" >> "$GITHUB_OUTPUT"
-      echo "repeated_failures=false" >> "$GITHUB_OUTPUT"
+      {
+        echo "failed_package_count=0"
+      } >> "$GITHUB_OUTPUT"
     fi
     return 0
   fi
 
-  log "Detected ${#die_files[@]} failed atom(s); collecting logs and emitting annotations"
-
-  # SIGTERM-victim filter (see run_emerge_with_deadline).  When the deadline
-  # wrapper killed emerge mid-build, Portage's signal handler writes
-  # .die_hooks for the in-flight ebuild — that's a timeout artefact, not a
-  # real failure, and including it pollutes failed-packages.txt with
-  # nondeterministic atoms that can falsely trip the "repeated failures"
-  # gate across attempts.  We exclude markers whose mtime falls within
-  # 2 seconds of the SIGTERM timestamp (clock resolution slack).
-  local timeout_fired_at="${_TIMEOUT_FIRED_AT:-0}"
+  log "Detected ${#die_files[@]} failure marker(s); collecting real ebuild failures"
 
   if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
     {
       echo ""
-      echo "### Failed packages (${#die_files[@]})"
+      echo "### Failed packages"
       echo ""
-      echo "Each entry below is a Portage ebuild that died during this attempt."
-      echo "The full \`build.log\` and saved \`environment\` (or legacy \`die.env\`) are uploaded under \`_failures/\` in the build artifact."
+      echo "Timeout victims are filtered out. Full logs are uploaded under \`_failures/\` in the build artifact."
       echo ""
     } >> "$GITHUB_STEP_SUMMARY"
   fi
 
-  local f cat_pkg cat pkg phase build_log dest temp_dir env_src
-  # Track which atoms we've already captured so a package with both
-  # .die_hooks (depth 3) and die.env (depth 4) isn't reported twice.
+  local f cat_pkg cat pkg temp_dir phase env_src build_log dest
   local -A seen_atoms=()
   for f in "${die_files[@]}"; do
-    # Derive <cat>/<pkg> and the package's temp/ directory from the marker
-    # file path.  Two layouts to handle:
-    #   /var/tmp/portage/<cat>/<pkg>/.die_hooks       (canonical, depth 3)
-    #   /var/tmp/portage/<cat>/<pkg>/temp/die.env     (legacy fallback, depth 4)
     cat_pkg="${f#"${portage_tmp}"/}"
     case "$f" in
       */.die_hooks)
-        cat_pkg="${cat_pkg%/.die_hooks}"        # <cat>/<pkg>
+        cat_pkg="${cat_pkg%/.die_hooks}"
         temp_dir="${portage_tmp}/${cat_pkg}/temp"
         ;;
       */temp/die.env)
-        cat_pkg="${cat_pkg%/temp/die.env}"      # <cat>/<pkg>
+        cat_pkg="${cat_pkg%/temp/die.env}"
         temp_dir="$(dirname "$f")"
         ;;
       *)
@@ -271,32 +209,20 @@ report_failed_atoms() {
         continue
         ;;
     esac
-    if [[ -n "${seen_atoms[$cat_pkg]:-}" ]]; then
-      continue
-    fi
+    [[ -z "${seen_atoms[$cat_pkg]:-}" ]] || continue
+    seen_atoms["$cat_pkg"]=1
 
-    # F2: skip markers written at/after the SIGTERM-fired timestamp — those
-    # are the in-flight ebuilds that Portage's signal handler killed when
-    # the wrapper enforced --max-build-time, not packages that genuinely
-    # failed.  Including them can falsely trip "repeated failures" if the
-    # same atom keeps being unlucky across attempts.
-    if [[ "$timeout_fired_at" -gt 0 ]]; then
+    if [[ "$_TIMEOUT_FIRED_AT" -gt 0 ]]; then
       local f_mtime
       f_mtime=$(stat -c %Y "$f")
-      if [[ "$f_mtime" -ge $((timeout_fired_at - 2)) ]]; then
-        log "  Skipping ${cat_pkg}: marker mtime ${f_mtime} >= SIGTERM time ${timeout_fired_at} (timeout victim, not a real failure)"
-        seen_atoms["$cat_pkg"]=1
+      if [[ "$f_mtime" -ge $((_TIMEOUT_FIRED_AT - 2)) ]]; then
+        log "  Skipping ${cat_pkg}: timeout victim, not a real failure"
         continue
       fi
     fi
 
-    seen_atoms["$cat_pkg"]=1
     cat="${cat_pkg%%/*}"
     pkg="${cat_pkg##*/}"
-
-    # Extract the failed phase.  Prefer temp/environment (the file that
-    # actually exists for ordinary failures); fall back to temp/die.env
-    # (legacy).  No 2>/dev/null: a read error here is real signal.
     phase=""
     env_src=""
     if [[ -f "${temp_dir}/environment" ]]; then
@@ -305,21 +231,9 @@ report_failed_atoms() {
       env_src="${temp_dir}/die.env"
     fi
     if [[ -n "$env_src" ]]; then
-      # temp/environment is saved with `declare -p`, producing lines like
-      #   declare -- EBUILD_PHASE="compile"
-      # while die.env is produced by `{ set; export; }` which yields
-      #   EBUILD_PHASE=compile
-      # Accept both shapes.
       phase="$(grep -m1 -E '(^|[[:space:]])EBUILD_PHASE=' "$env_src" \
         | sed -E 's/.*EBUILD_PHASE=//; s/^"//; s/"$//' || true)"
     fi
-    # F3: fallback — when temp/environment didn't yield a phase (e.g. the
-    # ebuild was interrupted before Portage's environment-save hook ran),
-    # parse build.log for the canonical Portage error line:
-    #   * ERROR: media-libs/mesa-26.0.5-r1::gentoo failed (compile phase):
-    # Without this fallback every such failure was annotated as
-    # `phase 'unknown'` even when build.log clearly named the phase
-    # — observed on media-libs/mesa-26.0.5-r1 in run 25265374638.
     if [[ -z "$phase" && -f "${temp_dir}/build.log" ]]; then
       phase="$(grep -m1 -oE 'failed \([a-z_-]+ phase\)' "${temp_dir}/build.log" \
         | sed -E 's/^failed \(([a-z_-]+) phase\)$/\1/' || true)"
@@ -327,28 +241,20 @@ report_failed_atoms() {
     [[ -n "$phase" ]] || phase="unknown"
 
     echo "${cat}/${pkg}" >> "$list_file"
+    captured_count=$(( captured_count + 1 ))
 
     build_log="${temp_dir}/build.log"
     dest="${failures_dir}/${cat}/${pkg}"
     mkdir -p "$dest"
-    if [[ -f "$build_log" ]]; then
-      cp "$build_log" "${dest}/build.log"
-    fi
-    # Save environment if it exists — useful for reproducing the failure.
-    if [[ -f "${temp_dir}/environment" ]]; then
-      cp "${temp_dir}/environment" "${dest}/environment"
-    fi
-    # Also save legacy die.env if Portage happened to write one.
-    if [[ -f "${temp_dir}/die.env" ]]; then
-      cp "${temp_dir}/die.env" "${dest}/die.env"
-    fi
+    [[ -f "$build_log" ]] && cp "$build_log" "${dest}/build.log"
+    [[ -f "${temp_dir}/environment" ]] && cp "${temp_dir}/environment" "${dest}/environment"
+    [[ -f "${temp_dir}/die.env" ]] && cp "${temp_dir}/die.env" "${dest}/die.env"
 
-    # ::error annotation — appears at top of GitHub Actions UI, RED.
     echo "::error title=Package build failed::${cat}/${pkg} failed in phase '${phase}'. See _failures/${cat}/${pkg}/build.log in the build artifact."
 
     if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
       {
-        echo "<details><summary><strong>${cat}/${pkg}</strong> — failed in <code>${phase}</code></summary>"
+        echo "<details><summary><strong>${cat}/${pkg}</strong> - failed in <code>${phase}</code></summary>"
         echo ""
         if [[ -f "${dest}/build.log" ]]; then
           echo "Last ${FAILURE_LOG_TAIL_LINES} lines of \`build.log\`:"
@@ -357,7 +263,7 @@ report_failed_atoms() {
           tail -n "${FAILURE_LOG_TAIL_LINES}" "${dest}/build.log"
           echo '```'
         else
-          echo "_No \`build.log\` was preserved — only the saved \`environment\` is available._"
+          echo "_No build.log was preserved._"
         fi
         echo ""
         echo "</details>"
@@ -367,70 +273,46 @@ report_failed_atoms() {
     log "  Captured failure: ${cat}/${pkg} (phase: ${phase})"
   done
 
-  # Compare against the previous attempt's failure list (saved in STATE_DIR
-  # by the previous attempt) to detect atoms that fail repeatedly — those are
-  # the ones a human needs to look at, and resuming further just burns CI.
-  local repeated_count=0
-  if [[ -f "$prev_list_file" ]]; then
-    # comm -12 needs sorted input
-    local cur_sorted prev_sorted
-    cur_sorted="$(mktemp)"; prev_sorted="$(mktemp)"
-    sort -u "$list_file" > "$cur_sorted"
-    sort -u "$prev_list_file" > "$prev_sorted"
-    comm -12 "$cur_sorted" "$prev_sorted" > "$repeated_file"
-    rm -f "$cur_sorted" "$prev_sorted"
-    repeated_count="$(wc -l < "$repeated_file" | tr -d ' ')"
+  if [[ "$captured_count" -eq 0 ]]; then
+    log "No real failed atoms after timeout filtering"
+    if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+      {
+        echo "failed_package_count=0"
+      } >> "$GITHUB_OUTPUT"
+    fi
+    return 0
   fi
 
-  if [[ "$repeated_count" -gt 0 ]]; then
-    log "WARNING: ${repeated_count} package(s) failed in this attempt AND the previous one:"
-    while IFS= read -r atom; do log "    repeated: ${atom}"; done < "$repeated_file"
-    echo "::error title=Repeated package failures::${repeated_count} package(s) failed in two consecutive attempts. Auto-resume should stop. Atoms: $(tr '\n' ' ' < "$repeated_file")"
-  fi
-
-  # Rotate the list so the next attempt's invocation can compare against ours.
-  cp "$list_file" "$prev_list_file"
-
+  FAILED_ATOM_COUNT="$captured_count"
   if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
     {
-      echo "failed_package_count=${#die_files[@]}"
-      if [[ "$repeated_count" -gt 0 ]]; then
-        echo "repeated_failures=true"
-      else
-        echo "repeated_failures=false"
-      fi
+      echo "failed_package_count=${captured_count}"
     } >> "$GITHUB_OUTPUT"
   fi
 }
 
-# ---------- cache footprint diagnostics ----------
-#
-# The system-state cache (/var/db/pkg + /var/lib/portage + /var/cache/edb)
-# plus the existing binpkgs and ccache caches together must stay under
-# GitHub's 10 GiB per-repository cache cap.  Above that cap, actions/cache
-# silently drops save attempts, which would break resume.
-#
-# We surface size as a WARNING here only — failing the build over a save
-# we haven't yet attempted is overreach.  The authoritative coupled-cache
-# check is the workflow-level XOR on `cache-matched-key` in build-packages.yml,
-# which fires on the NEXT attempt if a save was actually dropped.
+setup_ccache() {
+  export CCACHE_DIR="${CCACHE_DIR:-/var/cache/ccache}"
+  if command -v ccache >/dev/null; then
+    log "Configuring ccache (dir: ${CCACHE_DIR})"
+    mkdir -p "${CCACHE_DIR}"
+    ccache --max-size="${CCACHE_SIZE:-20G}"
+    ccache --set-config=compiler_check=content
+    ccache --set-config=compression=true
+    ccache --set-config=compression_level=1
+    ccache --set-config=hash_dir=false
+    ccache --zero-stats
+    ccache --show-config || log "  (ccache --show-config failed)"
+  fi
+}
 
-# Cache size at which we emit a warning to the step log; chosen to leave
-# ~2 GiB headroom under GitHub's 10 GiB per-repository cap.
-CACHE_TOTAL_WARN_BYTES=$(( 8 * 1024 * 1024 * 1024 ))
+show_ccache_stats() {
+  if command -v ccache >/dev/null; then
+    log "ccache statistics:"
+    ccache --show-stats || log "  (ccache --show-stats failed)"
+  fi
+}
 
-# Directories that are persisted across resume attempts via actions/cache.
-# Keep this list aligned with the cache steps in build-packages.yml so the
-# footprint measurement reflects what's actually being saved.
-CACHED_DIRS=(
-  /var/cache/binpkgs
-  /var/cache/ccache
-  /var/db/pkg
-  /var/cache/edb
-  /var/lib/portage
-)
-
-# Print a human-readable size for a directory; "0" if it doesn't exist.
 _dir_size_bytes() {
   local d="$1"
   if [[ -d "$d" ]]; then
@@ -441,286 +323,35 @@ _dir_size_bytes() {
 }
 
 measure_cache_footprint() {
-  local phase="${1:-}"   # "before" | "after"
+  local phase="${1:-}"
+  local dirs=(/var/cache/binpkgs /var/cache/ccache)
+  local total=0 d size human_size human_total
   log "Cache footprint (${phase}):"
-  local total=0 d size human_total human_size
-  for d in "${CACHED_DIRS[@]}"; do
+  for d in "${dirs[@]}"; do
     size="$(_dir_size_bytes "$d")"
     total=$(( total + size ))
     human_size="$(numfmt --to=iec --suffix=B "$size" || echo "${size}B")"
     log "  ${d}: ${human_size}"
-    if [[ -n "${GITHUB_OUTPUT:-}" && "$phase" == "after" ]]; then
-      # Sanitize path -> output key; only used for diagnostics.
-      local k
-      k="cache_size_$(echo "$d" | tr '/' '_' | tr -c 'A-Za-z0-9_' '_')"
-      echo "${k}=${size}" >> "$GITHUB_OUTPUT"
-    fi
   done
   human_total="$(numfmt --to=iec --suffix=B "$total" || echo "${total}B")"
-  log "  TOTAL: ${human_total} (GHA per-repo cap: 10 GiB)"
-
+  log "  TOTAL: ${human_total} (GHA per-repo cache cap: 10 GiB)"
   if [[ -n "${GITHUB_OUTPUT:-}" && "$phase" == "after" ]]; then
     echo "cache_total_bytes=${total}" >> "$GITHUB_OUTPUT"
   fi
-
-  # Diagnostic-only: warn when the post-build footprint approaches GitHub's
-  # 10 GiB per-repository cache cap.  We deliberately do NOT fail the build
-  # here — a dropped save is recoverable (the next attempt's coupled-cache
-  # invariant check in build-packages.yml is the authoritative gate; it
-  # will fail RED if exactly one of the two caches restored).  Failing a
-  # completed 5 h build over a save we haven't yet attempted would be
-  # strictly worse than warning and letting the next attempt arbitrate.
-  if [[ "$phase" == "after" && "$total" -gt "$CACHE_TOTAL_WARN_BYTES" ]]; then
-    echo "::warning title=Cache footprint approaching GHA cap::Total cache size ${human_total} is within 2 GiB of GitHub's 10 GiB per-repository cap. If a save is silently dropped, the next attempt's coupled-cache check will fail RED."
-  fi
 }
 
-# ---------- ccache ----------
-setup_ccache() {
-  # Export CCACHE_DIR so every `ccache …` invocation in this shell (and any
-  # child processes) targets the same directory that the workflow restores
-  # and saves via actions/cache.  Without this, ccache falls back to
-  # ~/.cache/ccache (e.g. /github/home/.cache/ccache under the GHA container)
-  # and the restored cache at /var/cache/ccache is effectively unused, which
-  # is exactly the symptom we observed (cache size 0.0 GB at every attempt).
-  export CCACHE_DIR="${CCACHE_DIR:-/var/cache/ccache}"
-  if command -v ccache >/dev/null; then
-    log "Configuring ccache (dir: ${CCACHE_DIR})"
-    mkdir -p "${CCACHE_DIR}"
-    # Do NOT silence these — if ccache config writes fail (bad CCACHE_DIR
-    # perms, corrupt config, etc.) the job must fail RED.  Suppressing
-    # stderr+exit here is exactly what hid the original "cache_dir defaulted
-    # to ~/.cache/ccache" bug for months.
-    ccache --max-size="${CCACHE_SIZE:-20G}"
-    # Use file content for compiler identification (more cache hits across runs)
-    ccache --set-config=compiler_check=content
-    # Enable compression to save cache space
-    ccache --set-config=compression=true
-    ccache --set-config=compression_level=1
-    # Ignore working directory in cache keys (better hit rate across jobs)
-    ccache --set-config=hash_dir=false
-    ccache --zero-stats
-    log "ccache configuration:"
-    # --show-config is informational; allow non-zero exit but keep stderr
-    # visible so any "config file unreadable" message reaches the log.
-    ccache --show-config || log "  (ccache --show-config failed; see stderr above)"
-  fi
+setup_binpkg_trust() {
+  [[ -n "$BINHOST_URL" ]] || return 0
+  bash "${SCRIPT_DIR}/setup-binpkg-trust.sh"
 }
 
-# ---------- ccache stats ----------
-show_ccache_stats() {
-  if command -v ccache >/dev/null; then
-    log "ccache statistics:"
-    # Informational; tolerate non-zero exit but do not hide stderr.
-    ccache --show-stats || log "  (ccache --show-stats failed; see stderr above)"
-  fi
+sync_tree() {
+  bash "${SCRIPT_DIR}/sync-portage.sh"
 }
 
-# ---------- build state ----------
-# Portage's resume list lives in /var/cache/edb/mtimedb (key: "resume").
-# emerge --resume reads it to continue where SIGTERM interrupted us.
-MTIMEDB_PATH="/var/cache/edb/mtimedb"
-
-restore_build_state() {
-  [[ "$RESUME" == true ]] || return 0
-  if [[ ! -d "$STATE_DIR" ]] || [[ -z "$(ls -A "$STATE_DIR")" ]]; then
-    log "No saved build state found at ${STATE_DIR}, starting fresh"
-    return 0
-  fi
-  log "Restoring build state from ${STATE_DIR}"
-
-  # WORKDIRs:
-  #   * new layout: STATE_DIR/portage/  (subdir, sits next to STATE_DIR/mtimedb)
-  #   * legacy layout (pre-mtimedb support): STATE_DIR was a flat mirror of
-  #     /var/tmp/portage with no subdirs.  Detect by absence of *both* the
-  #     portage/ subdir and a mtimedb sibling.
-  if [[ -d "${STATE_DIR}/portage" ]]; then
-    mkdir -p /var/tmp/portage
-    rsync -a --delete "${STATE_DIR}/portage/" /var/tmp/portage/
-    log "  Restored /var/tmp/portage (WORKDIRs, new layout)"
-  elif [[ ! -f "${STATE_DIR}/mtimedb" ]]; then
-    mkdir -p /var/tmp/portage
-    rsync -a --delete "${STATE_DIR}/" /var/tmp/portage/
-    log "  Restored /var/tmp/portage (WORKDIRs, legacy flat layout)"
-  fi
-
-  # mtimedb (independent of WORKDIRs — restored whenever present):
-  if [[ -f "${STATE_DIR}/mtimedb" ]]; then
-    mkdir -p "$(dirname "$MTIMEDB_PATH")"
-    cp "${STATE_DIR}/mtimedb" "$MTIMEDB_PATH"
-    log "  Restored mtimedb (emerge --resume list)"
-  fi
-}
-
-save_build_state() {
-  log "Saving build state to ${STATE_DIR}"
-  mkdir -p "${STATE_DIR}/portage"
-  if [[ -d /var/tmp/portage ]] && [[ -n "$(ls -A /var/tmp/portage)" ]]; then
-    rsync -a --delete /var/tmp/portage/ "${STATE_DIR}/portage/"
-    log "  Saved /var/tmp/portage (WORKDIRs)"
-  else
-    log "  No intermediate build state found in /var/tmp/portage"
-  fi
-  if [[ -f "$MTIMEDB_PATH" ]]; then
-    cp "$MTIMEDB_PATH" "${STATE_DIR}/mtimedb"
-    log "  Saved mtimedb (emerge --resume list)"
-  fi
-}
-
-# Returns 0 if mtimedb has a non-empty "resume" list, 1 if there is no list
-# (or the file doesn't exist).  Any *other* failure (unreadable file,
-# malformed JSON, etc.) is fatal — we deliberately do NOT swallow it: a
-# silent "no resume list" misdiagnosis would throw away an in-flight
-# build's progress without anyone noticing.  mtimedb has been plain JSON
-# since Portage 2.1.x, so a parse failure here is a real problem worth
-# stopping the job for.
-has_resume_list() {
-  [[ -f "$MTIMEDB_PATH" ]] || return 1
-  local rc=0
-  python3 - "$MTIMEDB_PATH" >/dev/null <<'PYEOF' || rc=$?
-import json, sys, traceback
-try:
-    with open(sys.argv[1]) as f:
-        db = json.load(f)
-except Exception:
-    # Print the full traceback to stderr so the CI log shows exactly what
-    # went wrong, then exit with a distinct code so the bash caller can
-    # tell "parse failure" apart from "no resume list".
-    traceback.print_exc()
-    sys.exit(2)
-resume = db.get("resume") or db.get("resume_backup") or {}
-sys.exit(0 if resume.get("mergelist") else 1)
-PYEOF
-  case "$rc" in
-    0) return 0 ;;
-    1) return 1 ;;
-    *) die "Failed to parse ${MTIMEDB_PATH} (python exit ${rc}); refusing to silently skip --resume" ;;
-  esac
-}
-
-# ---------- vdb / on-disk consistency ----------
-# Problem: CI restores /var/db/pkg (the VDB — Portage's "what is installed"
-# database) from a system-state cache, but does NOT restore the actual
-# installed files under /usr, /lib, etc. — those come from the freshly-
-# extracted stage3 image. For any package that is NOT part of stage3 but
-# was installed in a previous chain, the VDB claims it's installed while
-# its files are absent from disk. Portage then either:
-#   - excludes it from the emerge plan (breaking dependents at configure
-#     time when their pkg-config / headers / libraries are missing), or
-#   - schedules an [ebuild R] rebuild that can't bootstrap because the
-#     self-hosted prior install isn't really there.
-#
-# Fix (general): scripts/verify-vdb.sh walks all VDB entries, checks every
-# obj path in CONTENTS, and removes any entry whose files are absent on
-# disk.  See that script for full documentation.  The same script is also
-# called from build-packages.yml before "Install build tools" so stale
-# entries are gone before any emerge runs.
-#
-# After verify-vdb removes a stale entry, we need to restore those packages.
-# Most stale packages are absent simply because stage3 doesn't include
-# previously-built CI packages — their binpkgs in the local cache and
-# published binhost are valid.  Forcing --usepkg=n for ALL stale entries
-# causes source-rebuilds of every package that was ever built (598+ packages
-# observed in run 25399775054, including glibc at 38 minutes alone), which
-# exhausts the time budget before the main build even starts.
-#
-# Two-phase approach:
-#   Phase 1: install from binpkg (fast path — local cache or remote binhost).
-#   Phase 2: re-run verify-vdb to detect packages whose binpkg is itself
-#            corrupt (files listed in CONTENTS are still absent after install).
-#            Only those get rebuilt from source (--usepkg=n --getbinpkg=n).
-#
-# Corrupt-binpkg scenario (observed in run 25347952798): dev-lang/ruby-3.3.11
-# was published from a partially-broken install, so reinstalling from that
-# binpkg still left rubygems/compatibility.rb missing.  Phase 2 detects this:
-# after the Phase 1 binpkg install, verify-vdb still flags ruby as stale →
-# Phase 2 rebuilds ruby from source, generating a correct replacement binpkg.
-VERIFY_VDB_REMOVED_FILE="${STATE_DIR%/}/verify-vdb-removed-atoms.txt"
-
-verify_installed_deps() {
-  mkdir -p "$STATE_DIR"
-  bash "$(dirname "${BASH_SOURCE[0]}")/verify-vdb.sh" \
-    --removed-atoms-file "$VERIFY_VDB_REMOVED_FILE"
-}
-
-rebuild_stale_from_source() {
-  [[ -s "$VERIFY_VDB_REMOVED_FILE" ]] || {
-    log "verify-vdb removed nothing; no stale-package restore needed"
-    return 0
-  }
-
-  # Read the deduplicated atom list recorded by the workflow step and
-  # build.sh's own verify_installed_deps, then clear the file.  Phase 2
-  # will re-populate it with any packages still stale after binpkg install.
-  local atoms=()
-  while IFS= read -r atom; do
-    [[ -n "$atom" ]] && atoms+=("$atom")
-  done < <(sort -u "$VERIFY_VDB_REMOVED_FILE")
-  : > "$VERIFY_VDB_REMOVED_FILE"
-
-  log "Restoring ${#atoms[@]} previously-stale package(s) from binpkg (phase 1):"
-  printf '    %s\n' "${atoms[@]}"
-
-  # Phase 1: install from binpkg.  --usepkg uses the local /var/cache/binpkgs
-  # cache (restored by the workflow at job start); --getbinpkg fetches from
-  # the remote binhost for anything not in the local cache.  Falls back to
-  # source if no binpkg is available at all.  --buildpkg writes any remotely-
-  # fetched binpkg to the local cache so the publish step can include it.
-  local install_flags=(--oneshot --keep-going --usepkg --buildpkg --verbose)
-  if [[ -n "$BINHOST_URL" ]]; then
-    install_flags+=(--getbinpkg --ignore-built-slot-operator-deps=y)
-  fi
-  local rc=0
-  run_emerge_with_deadline "$DEADLINE" "${install_flags[@]}" "${atoms[@]}" || rc=$?
-  if [[ $rc -eq 42 ]]; then return 42; fi
-
-  # Phase 2: detect corrupt binpkgs.  Re-scan the whole VDB; any package
-  # still stale after phase 1 had a corrupt binpkg (its CONTENTS files are
-  # absent even after install).  Rebuild ONLY those from source.
-  bash "$(dirname "${BASH_SOURCE[0]}")/verify-vdb.sh" \
-    --removed-atoms-file "$VERIFY_VDB_REMOVED_FILE"
-
-  if [[ ! -s "$VERIFY_VDB_REMOVED_FILE" ]]; then
-    log "All stale packages restored from binpkg; no corrupt binpkgs detected"
-    return 0
-  fi
-
-  local corrupt_atoms=()
-  while IFS= read -r atom; do
-    [[ -n "$atom" ]] && corrupt_atoms+=("$atom")
-  done < <(sort -u "$VERIFY_VDB_REMOVED_FILE")
-  : > "$VERIFY_VDB_REMOVED_FILE"
-
-  log "Rebuilding ${#corrupt_atoms[@]} package(s) from source — corrupt binpkg detected:"
-  printf '    %s\n' "${corrupt_atoms[@]}"
-
-  # --usepkg=n --getbinpkg=n: do not trust any cached or remote binpkg for
-  # these atoms — the binpkg itself is the source of the corruption.
-  # --buildpkg: write the freshly-built binpkg so the publish step replaces
-  # the corrupt one on the binhost.
-  local rebuild_flags=(--oneshot --keep-going --usepkg=n --getbinpkg=n --buildpkg --verbose)
-  run_emerge_with_deadline "$DEADLINE" "${rebuild_flags[@]}" "${corrupt_atoms[@]}" || rc=$?
-  if [[ $rc -eq 42 ]]; then return 42; fi
-  if [[ $rc -ne 0 ]]; then
-    log "  From-source rebuild returned ${rc}; main build will continue and surface any blockers"
-  fi
-}
-
-# ---------- /etc CONFIG_PROTECT auto-merge ----------
-# Thin wrapper around scripts/merge-pending-configs.sh so that this shell
-# re-sources /etc/profile after the merge — env.d/* and ld.so.conf.d/*
-# entries take effect for the rest of this job.  The shared script does
-# etc-update + env-update; sourcing /etc/profile in the child process would
-# be lost on exit.
 merge_pending_configs() {
   bash "${SCRIPT_DIR}/merge-pending-configs.sh" build.sh
   if [[ -f /etc/profile ]]; then
-    # /etc/profile and the profile.d/*.sh scripts it sources are written for
-    # ambient login shells without `set -u`, so an unset variable in any of
-    # them (e.g. DEBUGINFOD_URLS in /etc/profile.d/debuginfod.sh) aborts
-    # build.sh mid-cleanup.  In one observed run this swallowed a `return 42`
-    # from the timed-out emerge and turned it into exit 1, which disabled
-    # auto-resume.  Disable nounset just for the duration of the source.
     set +u
     # shellcheck disable=SC1091
     . /etc/profile
@@ -728,33 +359,6 @@ merge_pending_configs() {
   fi
 }
 
-# ---------- binpkg trust ----------
-# Delegate to the shared helper so the CI workflow and standalone build.sh
-# runs use identical, strict getuto-based trust setup.  Only invoke when a
-# remote binhost is configured; without one, Portage won't verify anything.
-setup_binpkg_trust() {
-  [[ -n "$BINHOST_URL" ]] || return 0
-  bash "${SCRIPT_DIR}/setup-binpkg-trust.sh"
-}
-
-# ---------- sync ----------
-sync_tree() {
-  bash "${SCRIPT_DIR}/sync-portage.sh"
-}
-
-# ---------- portage news ----------
-# Display all unread Gentoo news items, then mark them as read.  Two reasons:
-#   1. Per the project-wide "show all information" rule, hiding
-#      maintainer-issued news (security advisories, profile/eclass
-#      transitions, breaking ABI changes) is the wrong default in CI.
-#   2. Until the news items are marked as read, *every* subsequent emerge
-#      invocation re-prints the "IMPORTANT: N news items need reading"
-#      reminder (observed: 29 unread items, repeated dozens of times in a
-#      single build log).  Reading once silences the reminder.
-#
-# `eselect news read new` prints all unread items to stdout (no TTY -> no
-# pager) and atomically marks them read.  `eselect news list` is appended
-# afterwards as a confirmation that the unread queue is now empty.
 display_and_read_news() {
   log "Displaying unread Gentoo news items"
   eselect --colour=no news read new || true
@@ -762,39 +366,30 @@ display_and_read_news() {
   eselect --colour=no news list || true
 }
 
-# ---------- kernel symlink ----------
-# Point /usr/src/linux at an installed kernel so any *-modules ebuild going
-# through linux-mod-r1.eclass (e.g. app-emulation/virtualbox-modules) finds
-# kernel sources during pkg_setup.  If no kernel is installed yet, install
-# sys-kernel/gentoo-kernel-bin first — it is needed anyway (packages.txt)
-# and its pkg_postinst calls `eselect kernel set` via the dist-kernel
-# eclass.  The explicit eselect call afterwards is belt-and-suspenders for
-# resume attempts where the kernel was already installed in a prior attempt.
+emerge_common_flags() {
+  local -n _out=$1
+  _out=(--buildpkg --usepkg --verbose)
+  if [[ -n "$BINHOST_URL" ]]; then
+    _out+=(--getbinpkg --ignore-built-slot-operator-deps=y)
+  fi
+}
+
 ensure_kernel_symlink() {
   log "Checking for installed kernel sources"
-  # Use a plain shell glob instead of `eselect kernel list`: globbing the
-  # filesystem cannot fail in normal CI conditions, whereas eselect can exit
-  # non-zero (Python tracebacks, stale state, etc.) and would then need an
-  # error-hiding guard.  `shopt -s nullglob` makes the array empty when no
-  # match exists rather than literal "/usr/src/linux-*".
-  local -a kernel_dirs
+  local -a kernel_dirs kernel_flags
   shopt -s nullglob
   kernel_dirs=(/usr/src/linux-*)
   shopt -u nullglob
-  printf '  found kernel source: %s\n' "${kernel_dirs[@]}"
   if (( ${#kernel_dirs[@]} == 0 )); then
     log "No kernel sources installed; emerging sys-kernel/gentoo-kernel-bin"
-    emerge --buildpkg --usepkg --getbinpkg --verbose sys-kernel/gentoo-kernel-bin
+    emerge_common_flags kernel_flags
+    emerge "${kernel_flags[@]}" sys-kernel/gentoo-kernel-bin
     shopt -s nullglob
     kernel_dirs=(/usr/src/linux-*)
     shopt -u nullglob
     (( ${#kernel_dirs[@]} > 0 )) \
       || die "No /usr/src/linux-* directory present after emerging gentoo-kernel-bin"
   fi
-  # Pick the highest-version directory (sort -V is version-aware) and point
-  # /usr/src/linux at it with a plain `ln -sfn`.  `ln -sfn` is atomic and
-  # safer than `eselect kernel set 1`, which has additional logic that can
-  # fail and would force us back to error-suppression.
   local target
   target=$(printf '%s\n' "${kernel_dirs[@]}" | sort -V | tail -n1)
   log "Setting /usr/src/linux -> ${target}"
@@ -802,169 +397,46 @@ ensure_kernel_symlink() {
   log "  /usr/src/linux -> $(readlink /usr/src/linux)"
 }
 
-# ---------- build ----------
-build_packages() {
-  local packages=()
-
-  if [[ -n "$SINGLE_PACKAGE" ]]; then
-    packages=("$SINGLE_PACKAGE")
-  else
-    # Read package list, stripping comments and blank lines
-    while IFS= read -r line; do
-      line="${line%%#*}"   # strip inline comments
-      line="$(echo "$line" | xargs)"  # strip leading/trailing whitespace
-      [[ -n "$line" ]] && packages+=("$line")
-    done < "$PACKAGE_LIST"
-  fi
-
-  [[ ${#packages[@]} -gt 0 ]] || die "No packages to build"
-  log "Packages to build: ${packages[*]}"
-
-  # Build the emerge flags array; add --getbinpkg when a binhost URL is configured
-  # --update --newuse --deep: update installed packages whose USE flags differ from the
-  # current profile (e.g. pambase -elogind→elogind, libxml2 -icu→icu cached in system-state).
-  # Without these flags Portage refuses to replace the stale installed package and instead
-  # raises a slot conflict when a dependency needs the flag-changed version.
-  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose --update --newuse --deep)
-  if [[ -n "$BINHOST_URL" ]]; then
-    emerge_flags+=(--getbinpkg)
-    # Binary packages on the binhost may have been built against older sub-slot
-    # versions (e.g. :6/6.10.2=).  When newer ebuilds are available, the slot
-    # operator deps from those binaries pull in the old versions alongside the
-    # new ones, causing unresolvable slot conflicts.  Ignoring built slot
-    # operator deps lets Portage prefer the latest ebuilds and rebuild
-    # dependents as needed instead of mixing binary and source versions.
-    emerge_flags+=(--ignore-built-slot-operator-deps=y)
-  fi
-
-  # If we have a saved emerge resume list (from a previous SIGTERM), continue
-  # it first.  --skipfirst drops the package that was actively building when
-  # we were killed: its WORKDIR is almost certainly inconsistent after the
-  # SIGKILL fallback, and trying to reuse it tends to fail confusingly.
-  # If --resume has nothing to do (empty/stale list) we just fall through.
-  #
-  # emerge(1) only honours a small subset of options together with --resume
-  # (see "USING RESUME" — most action-flags like --buildpkg/--usepkg are
-  # baked into the saved mergelist already).  Pass only flags that affect
-  # *how* the resume runs, not *what* it builds.
-  if [[ "$RESUME" == true ]] && has_resume_list; then
-    log "Found saved emerge resume list; continuing it before starting fresh emerge"
-    local resume_flags=(--keep-going --verbose)
-    # Capture the real exit code: `if ! cmd; then rc=$?` is a known bash
-    # footgun — inside the then-block, $? is the status of the negated
-    # condition (always 0), not of cmd.  Use `cmd || rc=$?` instead so the
-    # 42 ("timed out, state saved") signal actually propagates.
-    local rc=0
-    run_emerge_with_deadline "$DEADLINE" --resume --skipfirst "${resume_flags[@]}" || rc=$?
-    if [[ $rc -eq 42 ]]; then
-      return 42
-    elif [[ $rc -ne 0 ]]; then
-      log "  emerge --resume failed (rc=${rc}); falling through to full emerge to retry"
-    fi
-  fi
-
-  run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" "${packages[@]}"
-}
-
-# Drain Portage's preserved_libs_registry before the main build, so any
-# package whose libraries were preserved across a toolchain upgrade in a
-# prior chain (e.g. libclang-cpp.so.21.1 retained after clang 21->22) is
-# rebuilt against the current toolchain.  Cheap no-op when the registry
-# is empty — `emerge @preserved-rebuild` returns immediately.
-#
-# Honours $DEADLINE via run_emerge_with_deadline so a long pre-build
-# rebuild can't starve the main build; on rc=42 we return 42 and let the
-# workflow auto-resume.
-#
-# Note: we do NOT run revdep-rebuild here.  An earlier attempt to chain
-# its --pretend output into a deadline-aware emerge tripped on
-# version-specific flags (the python rewrite rejects --no-progress and
-# --ignore-temp-files); the ELF-scan layer is left as a future addition
-# only if @preserved-rebuild + the exhaustive scripts/verify-vdb.sh
-# CONTENTS check leave a real gap.
-rebuild_broken_libs() {
-  local rc=0
-
-  local emerge_flags=(--keep-going --usepkg --buildpkg --verbose)
-  if [[ -n "$BINHOST_URL" ]]; then
-    emerge_flags+=(--getbinpkg --ignore-built-slot-operator-deps=y)
-  fi
-
-  log "Rebuilding packages with preserved libraries (@preserved-rebuild)"
-  run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" @preserved-rebuild || rc=$?
-  if [[ $rc -eq 42 ]]; then
-    return 42
-  elif [[ $rc -ne 0 ]]; then
-    # Don't abort: any genuinely failing atom here will be surfaced again
-    # by the main build's report_failed_atoms.
-    log "  @preserved-rebuild emerge returned ${rc}; main build will still proceed"
-  fi
-}
-
-# run_emerge_with_deadline <deadline_secs> <emerge args...>
-#   deadline_secs == 0  -> no time limit (run to completion)
-#   deadline_secs > 0   -> SIGTERM emerge at 90% of remaining time, save
-#                          state, return 42; SIGKILL after a 60s grace.
-# Returns emerge's own exit code, or 42 on a timed-out save-and-resume.
 run_emerge_with_deadline() {
-  local deadline="$1"; shift
+  local deadline="$1"
+  shift
   if [[ "$deadline" -eq 0 ]]; then
     emerge "$@"
     return $?
   fi
 
-  local now=$SECONDS
-  if [[ $deadline -le $now ]]; then
-    log "Time budget exhausted before starting emerge; saving state and returning 42"
-    save_build_state
+  local now remaining warn_secs emerge_pid start_time
+  now=$SECONDS
+  if [[ "$deadline" -le "$now" ]]; then
+    log "Time budget exhausted before starting emerge"
     return 42
   fi
-
-  local remaining=$(( deadline - now ))
-  # Stop at 90% of the *remaining* budget so we always leave headroom for
-  # save_build_state, ccache flush, artifact upload, etc.
-  local warn_secs=$(( remaining * 9 / 10 ))
+  remaining=$(( deadline - now ))
+  warn_secs=$(( remaining * 9 / 10 ))
 
   setsid emerge "$@" &
-  local emerge_pid=$!
-  local start_time=$SECONDS
+  emerge_pid=$!
+  start_time=$SECONDS
 
-  # NOTE on `kill -0` / `kill -TERM` / `wait` below: we deliberately do NOT
-  # suppress their stderr.  At most a single "No such process" / "not a
-  # child of this shell" line can leak when emerge exits between two
-  # successive probes — that's a *signal*, not noise: it means the timeout
-  # path raced with a normal exit.  Suppressing it has previously hidden
-  # real bugs (process group not propagated, wrong PID, kernel reaping
-  # surprises).  Keep them visible.
-  while kill -0 "$emerge_pid"; do
+  while kill -0 "$emerge_pid" 2>/dev/null; do
     sleep 30
     local elapsed=$(( SECONDS - start_time ))
-    if [[ $elapsed -ge $warn_secs ]]; then
-      log "Approaching time limit (${elapsed}s elapsed / ${remaining}s budget for this phase), stopping emerge"
-      # Record the SIGTERM timestamp so report_failed_atoms can distinguish
-      # .die_hooks files written by Portage's signal handler (timeout
-      # victims, NOT real ebuild failures) from those written by genuine
-      # die() calls.  Without this, the package being built when SIGTERM
-      # fires gets added to failed-packages.txt and can trip the "repeated
-      # failures" gate over consecutive resume attempts even though no
-      # ebuild actually failed — observed: app-text/doxygen-1.16.1 in run
-      # 24943956580 ("Exiting on signal 15" 53s into its compile, then
-      # reported as "failed in phase 'unknown'").
+    if [[ "$elapsed" -ge "$warn_secs" ]]; then
+      log "Approaching time limit (${elapsed}s elapsed / ${remaining}s budget), stopping emerge"
       _TIMEOUT_FIRED_AT=$(date +%s)
-      kill -TERM -- -${emerge_pid} || true
+      kill -TERM -- -"${emerge_pid}" 2>/dev/null || true
       local kill_wait=0
-      while kill -0 "$emerge_pid" && [[ $kill_wait -lt 60 ]]; do
+      while kill -0 "$emerge_pid" 2>/dev/null && [[ "$kill_wait" -lt 60 ]]; do
         sleep 5
         kill_wait=$(( kill_wait + 5 ))
       done
-      if kill -0 "$emerge_pid"; then
+      if kill -0 "$emerge_pid" 2>/dev/null; then
         log "  Emerge did not exit after SIGTERM, sending SIGKILL to process group"
-        kill -KILL -- -${emerge_pid} || true
+        kill -KILL -- -"${emerge_pid}" 2>/dev/null || true
       fi
-      wait "$emerge_pid" || true
-      save_build_state
+      wait "$emerge_pid" 2>/dev/null || true
       show_ccache_stats
-      log "Build state saved; returning 42 (timed out, state saved)"
+      log "Returning 42 so the workflow can continue with restored binpkgs and ccache"
       return 42
     fi
   done
@@ -972,22 +444,46 @@ run_emerge_with_deadline() {
   wait "$emerge_pid"
 }
 
-# ---------- signing ----------
+read_package_list() {
+  local -n _packages=$1
+  _packages=()
+  if [[ -n "$SINGLE_PACKAGE" ]]; then
+    _packages=("$SINGLE_PACKAGE")
+    return 0
+  fi
+
+  local line
+  while IFS= read -r line; do
+    line="${line%%#*}"
+    line="$(printf '%s' "$line" | xargs)"
+    [[ -n "$line" ]] && _packages+=("$line")
+  done < "$PACKAGE_LIST"
+}
+
+build_packages() {
+  local packages=()
+  read_package_list packages
+  (( ${#packages[@]} > 0 )) || die "No packages to build"
+  log "Packages to build: ${packages[*]}"
+
+  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose --update --newuse --deep)
+  if [[ -n "$BINHOST_URL" ]]; then
+    emerge_flags+=(--getbinpkg --ignore-built-slot-operator-deps=y)
+  fi
+  run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" "${packages[@]}"
+}
+
 sign_packages() {
   [[ "$SIGN" == true ]] || return 0
   [[ -n "$GPG_KEY" ]] || die "--gpg-key must be specified when --sign is used"
-
+  [[ -d "$OUTPUT_DIR" ]] || return 0
   log "Signing packages in ${OUTPUT_DIR}"
   find "${OUTPUT_DIR}" -name '*.gpkg.tar' | while read -r pkg; do
-    gpg --batch --yes \
-        --local-user "$GPG_KEY" \
-        --detach-sign --armor \
-        "$pkg"
+    gpg --batch --yes --local-user "$GPG_KEY" --detach-sign --armor "$pkg"
     log "  Signed: $(basename "$pkg")"
   done
 }
 
-# ---------- collect output ----------
 collect_packages() {
   if [[ "$OUTPUT_DIR" != "/var/cache/binpkgs" ]]; then
     log "Copying packages to ${OUTPUT_DIR}"
@@ -997,70 +493,32 @@ collect_packages() {
   fi
 }
 
-# ---------- prune older versions ----------
-# Keep only the newest version per (category, PN) in the binpkg directories.
-# This is what stops the published Pages site from blowing past GitHub's 1 GB
-# soft limit after a few rebuild rounds (every bumped ebuild leaves behind a
-# stale gpkg that nothing on the binhost will ever serve again).
 prune_old_binpkgs() {
   local script="${SCRIPT_DIR}/prune-old-binpkgs.py"
-  # The pruner ships next to this script in the same repo.  If it's missing,
-  # that's a packaging bug, not something to silently work around — without
-  # it the Pages site will eventually exceed 1 GiB and become unreachable.
   [[ -f "$script" ]] || die "Pruner not found at ${script}"
   local dirs=()
   [[ -d /var/cache/binpkgs ]] && dirs+=(/var/cache/binpkgs)
-  if [[ "$OUTPUT_DIR" != "/var/cache/binpkgs" && -d "$OUTPUT_DIR" ]]; then
-    dirs+=("$OUTPUT_DIR")
-  fi
-  if (( ${#dirs[@]} == 0 )); then
-    return 0
-  fi
+  [[ "$OUTPUT_DIR" != "/var/cache/binpkgs" && -d "$OUTPUT_DIR" ]] && dirs+=("$OUTPUT_DIR")
+  (( ${#dirs[@]} > 0 )) || return 0
   log "Pruning older versions in: ${dirs[*]}"
   python3 "$script" "${dirs[@]}"
 }
 
-# ---------- main ----------
-# Make sure that, if the runner cancels us (job-timeout / user-cancel /
-# external SIGTERM), we still:
-#   1. Capture any in-flight portage failures (.die_hooks markers) so the
-#      next attempt can compare against them and so the artifact actually
-#      contains the failing build.log instead of an empty _failures/
-#      directory.  This was the missing piece in run 24636521882, where
-#      dev-lang/go failed in 1.8 s and then the cancel path threw the
-#      build.log away.
-#   2. Move whatever finished gpkgs already exist into OUTPUT_DIR, so the
-#      "Save binpkgs" cache step preserves real progress instead of an
-#      empty tree.
-# Idempotent helpers: collect_packages / sign_packages / report_failed_atoms
-# are all safe to re-run from the EXIT trap after the normal happy path
-# already invoked them — they short-circuit on empty inputs.
 _on_exit() {
   local rc=$?
-  # Disable the trap re-entry: if any of the cleanup helpers themselves
-  # die, we still want a single exit, not a recursion loop.
   trap - EXIT INT TERM
-  if [[ $rc -ne 0 && $rc -ne 42 ]]; then
+  if [[ "$rc" -ne 0 && "$rc" -ne 42 ]]; then
     log "Caught unexpected exit (rc=${rc}); running failure capture before exiting"
-    # Keep going past individual helper failures — partial capture is
-    # always more useful than no capture.
-    collect_packages       || log "  collect_packages failed during cleanup (rc=$?)"
-    [[ "$SIGN" == true ]] && { sign_packages || log "  sign_packages failed during cleanup (rc=$?)"; }
-    report_failed_atoms    || log "  report_failed_atoms failed during cleanup (rc=$?)"
+    collect_packages || log "  collect_packages failed during cleanup (rc=$?)"
+    [[ "$SIGN" == true ]] && sign_packages || true
+    report_failed_atoms || log "  report_failed_atoms failed during cleanup (rc=$?)"
   fi
   exit "$rc"
 }
 trap _on_exit EXIT
-# SIGTERM/SIGINT: re-raise via 'exit' so EXIT trap runs with the conventional
-# 128+signo exit code.
 trap 'log "Caught SIGTERM"; exit 143' TERM
-trap 'log "Caught SIGINT";  exit 130' INT
+trap 'log "Caught SIGINT"; exit 130' INT
 
-# Compute the shared build deadline once for this attempt.  Both
-# rebuild_broken_libs and build_packages drive run_emerge_with_deadline
-# from this single value, so a long pre-build cleanup pass can't starve
-# the main build (or vice-versa).  When --max-build-time is unset,
-# DEADLINE=0 disables the timer entirely.
 DEADLINE=0
 if [[ -n "$MAX_BUILD_TIME" ]]; then
   DEADLINE=$(( SECONDS + MAX_BUILD_TIME * 60 ))
@@ -1070,50 +528,19 @@ apply_profile
 setup_ccache
 sync_tree
 setup_binpkg_trust
-restore_build_state
-# Measure the binpkg count BEFORE any building work in this attempt.
-# Every package built — by rebuild_stale_from_source, rebuild_broken_libs,
-# OR build_packages — must count toward "progress this attempt", because
-# the workflow's zero-progress gate uses (BINPKGS_AFTER - BINPKGS_BEFORE)
-# to decide whether to abandon the chain.  Previously this snapshot lived
-# AFTER the pre-build phases, so a pre-build timeout (e.g. a 38-minute
-# glibc rebuild in run 25399775054) recorded zero progress and killed the
-# chain even though real work had completed.
+
 BINPKGS_BEFORE="$(count_binpkgs)"
 log "Binpkgs present before this attempt: ${BINPKGS_BEFORE}"
 
-# Pre-build phases honour $DEADLINE.  If any of them hits the deadline
-# (rc=42), accumulate it and skip the remaining phases — but DO NOT exit
-# directly: the cleanup block below MUST run so partial binpkgs are
-# collected/signed and emit_progress_summary records what was built.
-# Without that, a pre-build timeout looks identical to "no progress".
 BUILD_RC=0
-verify_installed_deps
-rebuild_stale_from_source || BUILD_RC=$?
-if [[ "$BUILD_RC" -eq 0 ]]; then
-  # Repair any installed binaries with broken NEEDED entries inherited from
-  # a previous chain (e.g. mesa_clc against libclang-cpp.so.21.1 after a
-  # clang 21->22 upgrade).
-  rebuild_broken_libs || BUILD_RC=$?
-fi
-if [[ "$BUILD_RC" -eq 0 ]]; then
-  display_and_read_news
-  ensure_kernel_symlink
-  measure_cache_footprint "before"
-  show_ccache_stats
-  build_packages || BUILD_RC=$?
-fi
+display_and_read_news
+ensure_kernel_symlink
+measure_cache_footprint "before"
+show_ccache_stats
+build_packages || BUILD_RC=$?
 
 BINPKGS_AFTER="$(count_binpkgs)"
 
-# Cleanup: ALWAYS runs regardless of BUILD_RC.  The whole point is that a
-# timeout (rc=42) in any phase still publishes whatever was built this
-# attempt and emits progress so the chain can resume rather than be
-# killed by the zero-progress gate.
-#
-# Auto-merge any CONFIG_PROTECT files emerge dropped as ._cfg0000_* in /etc
-# so partial-progress state does not leak unmerged configs into the next
-# attempt's /etc baseline.
 merge_pending_configs
 collect_packages
 prune_old_binpkgs
@@ -1123,28 +550,17 @@ report_failed_atoms
 measure_cache_footprint "after"
 emit_progress_summary "${BINPKGS_BEFORE}" "${BINPKGS_AFTER}"
 
-if [[ $BUILD_RC -eq 42 ]]; then
-  log "Build timed out (state saved); exiting 42 so the workflow can resume in the next phase."
+if [[ "$BUILD_RC" -eq 42 ]]; then
+  log "Build timed out; exiting 42 so the workflow can continue."
   exit 42
-elif [[ $BUILD_RC -ne 0 ]]; then
-  # emerge --keep-going can exit non-zero when SOME packages failed but
-  # others were built successfully (e.g. observed in run 25414969030:
-  # cargo-c + json failed but 565 other packages built fine).  Killing
-  # the chain on this exit code throws away that progress and prevents
-  # the next attempt from retrying the failed atoms.  Treat as a
-  # resumable timeout: the workflow's repeated_failures gate (which
-  # fires when the SAME atom fails in two consecutive attempts) is the
-  # correct stop signal — it catches genuinely-stuck packages without
-  # killing chains that just need another pass to clear transient
-  # failures (network glitch during cargo fetch, mid-build interrupted
-  # binpkg, etc.).
-  log "emerge had per-package failures (exit ${BUILD_RC}); exiting 42 so the chain retries them. The repeated_failures gate will stop the chain if any atom fails twice in a row."
-  exit 42
+elif [[ "$BUILD_RC" -ne 0 ]]; then
+  log "emerge returned ${BUILD_RC}; package failures are not treated as resume progress."
+  exit "$BUILD_RC"
+elif [[ "$FAILED_ATOM_COUNT" -gt 0 ]]; then
+  log "${FAILED_ATOM_COUNT} package(s) failed even though emerge returned success."
+  exit 1
 fi
 
-# Final assertion: no ._cfg* should remain under /etc after merge_pending_configs.
-# A non-empty list means a CONFIG_PROTECT path we don't expect snuck through;
-# warn (don't fail) so the user sees it in the GitHub Actions summary.
 _remaining_cfg=()
 while IFS= read -r -d '' _cfg; do
   _remaining_cfg+=("$_cfg")

@@ -3,11 +3,9 @@
 # dropped as ._cfg0000_* in /etc.
 #
 # CI policy is "always take the new file" (`etc-update --automode -5`) because
-# we have no local /etc edits worth preserving.  Failing to merge leaves VDB
-# entries claiming the new configs are installed while on-disk only the stale
-# stage3 version exists — same VDB-vs-disk drift verify-vdb.sh guards against,
-# just for /etc, where /etc/env.d/* and /etc/ld.so.conf.d/* silently affect
-# every subsequent build.
+# we have no local /etc edits worth preserving. Failing to merge leaves staged
+# config updates under CONFIG_PROTECT; env.d and ld.so.conf changes can silently
+# affect every subsequent build step.
 #
 # env-update runs afterwards so /etc/profile.env, /etc/ld.so.conf, and the
 # linker cache pick up any newly-merged env.d / ld.so.conf.d entries.

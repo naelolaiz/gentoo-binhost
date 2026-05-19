@@ -33,10 +33,10 @@ jobs:
       - uses: actions/checkout@v6
 
       # Restore previously-published site from cache so that packages from
-      # earlier builds (or earlier attempts in a resume chain) are preserved.
+      # earlier builds (or earlier attempts in a continuation chain) are preserved.
       # The key is intentionally a never-matching placeholder so the lookup
       # always falls through to restore-keys, which return the newest cache
-      # whose key starts with the given prefix — first scoped to this resume
+      # whose key starts with the given prefix — first scoped to this continuation
       # chain, then any historical cache as a last resort.
       - name: Restore existing Pages content from cache
         uses: actions/cache/restore@v5
@@ -236,7 +236,7 @@ jobs:
 
       # Persist the assembled site so future publishes can merge incrementally.
       # The key MUST include something unique per attempt (github.run_id of
-      # the publish run differs per resume) — otherwise the second publish
+      # the publish run differs per continuation) — otherwise the second publish
       # in a chain tries to reserve the same key as the first and fails with
       # "another job may be creating this cache", silently dropping packages
       # produced by later attempts.  The chain-scoped prefix (chain_id) is

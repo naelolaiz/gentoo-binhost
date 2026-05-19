@@ -70,13 +70,11 @@ gentoo-binhost/
 │   ├── sync-portage.sh                # webrsync → rsync → emaint fallback chain
 │   ├── sync-stage3-tag.sh             # one-command bump of the pinned stage3 tag (with --check for CI)
 │   ├── setup-binpkg-trust.sh          # getuto-based Portage keyring bootstrap
-│   ├── verify-vdb.sh                  # removes stale VDB entries (missing files / glibc drift)
-│   ├── install-build-tools.sh         # emerges ccache + gentoolkit with self-healing
+│   ├── install-build-tools.sh         # installs ccache from the official Gentoo binhost
 │   ├── merge-pending-configs.sh       # etc-update for ._cfg* files
 │   ├── wipe-caches.py                 # deletes every cache with a given prefix (fresh: true)
 │   ├── generate-packages-index.sh     # regenerate Packages index
 │   ├── prune-old-binpkgs.py           # keep newest version per (cat, pn)
-│   ├── check-packages-index.py        # validate a Packages index has no malformed CPV
 │   ├── check-workaround.sh            # executes one workaround check
 │   └── upload-local-packages.sh       # submit locally-built packages via PR
 ├── docs/
@@ -98,13 +96,14 @@ The CI runs weekly (Sunday) and does what you'd do on your own system:
 2. **Build** — `emerge --buildpkg --usepkg --getbinpkg --keep-going <all packages>`
 3. **Publish** — deploy to GitHub Pages
 
-If the build times out (GitHub Actions has a 6 h limit), it saves state, publishes
-whatever was built, and **automatically re-triggers** itself to continue.
+If the build times out (GitHub Actions has a 6 h limit), it publishes
+whatever was built, keeps the current chain's binpkgs plus ccache, and
+**automatically re-triggers** itself to continue from a clean stage3.
 This repeats until all packages complete (up to 8 attempts ≈ 44 h of build time).
 
 Each build uses ccache to speed up incremental rebuilds.
 
-For the full design (resume chain, coupled-cache invariant, VDB repair,
+For the full design (continuation chain, cache model, failure reporting,
 workarounds subsystem), see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 For interpreting CI failure annotations, see
 [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).

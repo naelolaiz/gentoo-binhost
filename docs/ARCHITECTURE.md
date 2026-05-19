@@ -62,45 +62,44 @@ verify. Two CI gates enforce no-drift:
 
 ### Why pinning matters
 
-- The tag is baked into every cache key (`ccache-<TAG>-…`, `binpkgs-<TAG>-…`, `system-state-<TAG>-…`, `build-state-<TAG>-…`). Updating it invalidates every cache. That's the desired behavior — a new glibc in stage3 means existing binpkgs may have the wrong ABI (see `scripts/verify-vdb.sh`).
-- `check-stage3.yml` queries the Docker Registry weekly and files a "stage3 update available" issue when newer tags exist, *unless* a build chain is active (updating mid-chain would corrupt resume state).
+- The tag is baked into every cache key (`ccache-<TAG>-...`, `binpkgs-<TAG>-...`). Updating it invalidates every build cache. That's the desired behavior: a new stage3 means the build should start from a clean installed system.
+- `check-stage3.yml` queries the Docker Registry weekly and files a "stage3 update available" issue when newer tags exist, *unless* a build chain is active.
 - `check-workarounds.yml` deliberately uses `gentoo/stage3:latest` (not pinned) because it checks "is the workaround still needed against the *current* Gentoo tree?". Lines containing `gentoo/stage3:latest` are intentionally excluded by the sync tool's scanner.
 
-## 2. The resume chain
+## 2. The continuation chain
 
 A full rebuild doesn't fit in GitHub Actions' 6-hour job limit. The build
-workflow handles this by running for 5.5 hours, saving state, then
-re-dispatching itself to continue.
+workflow handles this by running for 5.5 hours, saving completed binary
+packages plus ccache, then re-dispatching itself to continue from a clean
+stage3 container.
 
 ### Exit codes
 
 | Exit | Meaning |
 |------|---------|
 | 0    | Build finished successfully |
-| 42   | Timed out gracefully; state saved; resume expected |
-| other| Hard failure; no resume |
+| 42   | Timed out gracefully; continuation expected |
+| other| Package/config failure; no continuation |
 
 The `42` is picked by `scripts/build.sh`. When `--max-build-time` is hit:
 
 1. The shell script sends `SIGTERM` to the emerge process group, waits up to 60s for graceful shutdown, then sends `SIGKILL` if needed.
-2. `mtimedb` (emerge's resume list) is copied to the state dir.
-3. `/var/tmp/portage` (intermediate WORKDIRs) is copied to the state dir.
+2. Finished `.gpkg.tar` files are copied into the artifact/output directory.
+3. ccache stats and build progress are emitted.
 4. The script exits 42.
 
 The `continue` job in `build-packages.yml` only re-dispatches when
 `should_continue == 'true'`, which requires all of:
 
 - exit 42
-- at least one *new* `.gpkg.tar` was produced this attempt
-- no package failed in *two consecutive* attempts (see *Failure detection*)
-- next attempt ≤ `_max_attempts` (default 8)
+- no real package failure was detected
+- next attempt <= `_max_attempts` (default 8)
 
 ### Chain identification
 
 `chain_id` is the `github.run_id` of the first attempt in the chain. Every
-resume run inherits the same `chain_id` via `workflow_dispatch` input, so all
-caches from the same conceptual build share a key prefix and can be restored
-as a group.
+continuation run inherits the same `chain_id` via `workflow_dispatch` input,
+so ccache and binpkg caches from the same conceptual build share a key prefix.
 
 Inputs with a leading underscore (`_attempt`, `_chain_id`, `_max_attempts`)
 are conventionally "internal" — set by the `continue` job's
@@ -108,34 +107,29 @@ are conventionally "internal" — set by the `continue` job's
 
 ## 3. The cache system
 
-Four cache families, all scoped to `STAGE3_TAG` and `chain_id`:
+Two cache families are used:
 
 | Cache key prefix | Path | Purpose |
 |------------------|------|---------|
 | `ccache-…`       | `/var/cache/ccache` | compiler cache |
-| `binpkgs-…`      | `/var/cache/binpkgs` | already-built binpkgs |
-| `system-state-…` | `/var/db/pkg`, `/var/lib/portage`, `/var/cache/edb`, `/etc/portage`, `/etc/env.d`, `/etc/ld.so.conf.d` | Portage's installed-package DB and on-disk config |
-| `build-state-…`  | `/var/tmp/portage-state` | saved mtimedb + WORKDIRs for resume |
+| `binpkgs-…`      | `/var/cache/binpkgs` | packages completed by earlier attempts in the same chain |
 
-### The coupled-cache invariant
+`ccache-*` can fall back across chains because object-cache misses are safe.
+`binpkgs-*` is chain-scoped only: a fresh chain must not inherit old self-built
+packages from GitHub Pages or a previous run. That keeps this CI from feeding a
+stale or corrupt publication back into the next build.
 
-`binpkgs-*` and `system-state-*` **must move together**. If `system-state`
-restores and `binpkgs` does not, Portage's VDB claims packages are installed
-while their binaries are missing — leading to "skip then fail" later in the
-build.
-
-This happens in practice because GitHub's 10 GB-per-repo cache budget can evict
-the 3.6 GB `binpkgs` cache while the 50 MB `system-state` cache survives.
-
-The "Verify coupled-cache invariant" step uses GitHub's authoritative
-`cache-matched-key` outputs to XOR-check both restores and fails **RED** if
-exactly one succeeded. This runs on *every* attempt (including attempt 1)
-because cross-chain eviction is the actual failure mode.
+The workflow deliberately does **not** cache `/var/db/pkg`, `/var/cache/edb`,
+`/var/lib/portage`, `/etc`, or `/var/tmp/portage`. Portage can reason about ABI
+compatibility when it owns the installed system. Restoring metadata without the
+matching installed filesystem creates states Portage cannot validate reliably.
 
 ### The `fresh: true` escape hatch
 
-Dispatch `Build Packages` with `fresh: true` to delete every cache in all four
-families before any restore step runs. Triple-guarded so it cannot misfire:
+Dispatch `Build Packages` with `fresh: true` to delete both active cache
+families, plus legacy `system-state-*` and `build-state-*` prefixes left by
+older workflow versions, before any restore step runs. Triple-guarded so it
+cannot misfire:
 
 1. Must be `workflow_dispatch` (never on schedule).
 2. Must have `fresh: true` (explicit opt-in).
@@ -143,25 +137,17 @@ families before any restore step runs. Triple-guarded so it cannot misfire:
 
 The implementation lives in `scripts/wipe-caches.py`.
 
-## 4. VDB repair (`scripts/verify-vdb.sh`)
+## 4. Build inputs
 
-Between the `system-state` cache (saved at the end of one attempt) and the
-next attempt's container (fresh stage3 extract), the VDB can claim installed
-packages that are no longer on disk.
+The build consumes the official Gentoo binhost only:
 
-`verify-vdb.sh` walks every `/var/db/pkg/<cat>/<pkg>/CONTENTS`, samples up
-to 5 `obj` paths spread through the file, and deletes the VDB entry if any
-probe is missing on disk. Portage then re-resolves and pulls or rebuilds.
+```text
+https://distfiles.gentoo.org/releases/amd64/binpackages/23.0/x86-64-v3/
+```
 
-A second pass checks every shared library for a **GLIBC ABI mismatch** —
-a `.so` whose max `GLIBC_x.y` symbol version exceeds what the current stage3
-ships. Without this, binpkgs built against an older glibc cause cryptic linker
-errors in dependents.
-
-The script runs in two places:
-
-- In `build-packages.yml`, before "Install build tools", so ccache/gentoolkit see a correct view.
-- From `build.sh`, before the main build emerge.
+The repository's own GitHub Pages binhost is output, not input. This avoids a
+self-poisoning loop where one bad published package can keep breaking all
+future builds.
 
 ## 5. Binpkg trust (`scripts/setup-binpkg-trust.sh`)
 
@@ -189,10 +175,9 @@ any non-`depend` phase dies. `build.sh` scans for these markers, copies each
 failure's `build.log` and saved `environment` into `_failures/` inside the
 build artifact, and emits a GitHub `::error` annotation per atom.
 
-A second pass compares this attempt's failure list to the previous attempt's
-list (persisted in `STATE_DIR`). Any atom failing in **two consecutive**
-attempts kills the chain with `repeated_failures=true` — retrying won't help
-and the user needs to look at the log.
+Timeout victims are filtered by marker mtime: if Portage writes `.die_hooks`
+while the wrapper is terminating emerge for the time budget, that package is
+not counted as a real failure.
 
 ## 7. Publish pipeline
 
@@ -227,18 +212,16 @@ issue for any workaround that can now be removed.
 
 | Script | Called from | Purpose |
 |--------|-------------|---------|
-| `build.sh`                   | workflow | main build runner (profile apply, ccache, sync, trust, VDB repair, news, kernel symlink, build, progress, failure report) |
+| `build.sh`                   | workflow | main build runner (profile apply, ccache, sync, trust, news, kernel symlink, build, progress, failure report) |
 | `apply-profile.sh`           | build.sh, validate-config-changes | copies `config/profiles/<name>/*` into `/etc/portage/*` |
 | `sync-portage.sh`            | build.sh, workflows | `emerge-webrsync` → `emerge --sync` → `emaint sync` fallback chain |
 | `sync-stage3-tag.sh`         | maintainer, build + lint workflows | `--write <tag>` rewrites every stage3 tag reference; `--check` verifies no drift |
 | `setup-binpkg-trust.sh`      | workflow, build.sh | getuto-based Portage keyring bootstrap |
-| `verify-vdb.sh`              | workflow, build.sh | deletes stale VDB entries (missing files or glibc ABI mismatch) |
-| `install-build-tools.sh`     | workflow | emerges ccache + gentoolkit with own-binhost-index validation and stale-gpkg ABI recovery |
+| `install-build-tools.sh`     | workflow | emerges ccache from the official Gentoo binhost, rebuilding if unusable |
 | `merge-pending-configs.sh`   | build.sh, install-build-tools | `etc-update --automode -5` for `._cfg*` files |
 | `wipe-caches.py`             | workflow | deletes every cache with a given prefix (fresh-start support) |
 | `generate-packages-index.sh` | publish | writes the `Packages` index |
 | `prune-old-binpkgs.py`       | publish, build.sh | keeps only the newest version per `(cat, pn)` |
-| `check-packages-index.py`    | install-build-tools | validates a `Packages` index has no malformed CPV entries |
 | `check-workaround.sh`        | check-workarounds | executes a single workaround check (iuse/dep-grep/required-use-grep/version-gt) |
 | `upload-local-packages.sh`   | contributors | helper to submit locally-built gpkgs via PR |
 
