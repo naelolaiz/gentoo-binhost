@@ -151,6 +151,11 @@ The repository's own GitHub Pages binhost is output, not input. This avoids a
 self-poisoning loop where one bad published package can keep breaking all
 future builds.
 
+The build does not pass `--ignore-built-slot-operator-deps`. Portage must keep
+the ability to reject or rebuild a binary package whose recorded subslot
+dependencies no longer match the current root, such as a `libgit2` binary built
+against an older `llhttp` SONAME.
+
 ## 5. Binpkg trust (`scripts/setup-binpkg-trust.sh`)
 
 Portage verifies GPG signatures on binpkgs downloaded from the Gentoo binhost.
@@ -168,9 +173,9 @@ side-steps this class of bug.
 
 ## 6. Failure detection (`report_failed_atoms` in build.sh)
 
-`emerge --keep-going` exits 0 even when individual atoms fail, because
-other packages still complete. Without explicit failure detection, a broken
-ebuild silently blocks the chain while the workflow turns green.
+When an ebuild dies, the CI needs the package log copied out before the
+container disappears. Without explicit failure capture, a broken ebuild can
+leave only a short Portage summary in the workflow log.
 
 Portage writes `/var/tmp/portage/<cat>/<pkg>/.die_hooks` unconditionally when
 any non-`depend` phase dies. `build.sh` scans for these markers, copies each

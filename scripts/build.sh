@@ -252,6 +252,14 @@ report_failed_atoms() {
 
     echo "::error title=Package build failed::${cat}/${pkg} failed in phase '${phase}'. See _failures/${cat}/${pkg}/build.log in the build artifact."
 
+    if [[ -f "${dest}/build.log" ]]; then
+      echo "::group::${cat}/${pkg} build.log tail"
+      tail -n "${FAILURE_LOG_TAIL_LINES}" "${dest}/build.log"
+      echo "::endgroup::"
+    else
+      log "  No build.log was preserved for ${cat}/${pkg}"
+    fi
+
     if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
       {
         echo "<details><summary><strong>${cat}/${pkg}</strong> - failed in <code>${phase}</code></summary>"
@@ -370,7 +378,7 @@ emerge_common_flags() {
   local -n _out=$1
   _out=(--buildpkg --usepkg --verbose)
   if [[ -n "$BINHOST_URL" ]]; then
-    _out+=(--getbinpkg --ignore-built-slot-operator-deps=y)
+    _out+=(--getbinpkg)
   fi
 }
 
@@ -468,7 +476,7 @@ build_packages() {
 
   local emerge_flags=(--buildpkgonly --usepkg --keep-going --verbose --update --newuse --deep)
   if [[ -n "$BINHOST_URL" ]]; then
-    emerge_flags+=(--getbinpkg --ignore-built-slot-operator-deps=y)
+    emerge_flags+=(--getbinpkg)
   fi
   run_emerge_with_deadline "$DEADLINE" "${emerge_flags[@]}" "${packages[@]}"
 }
