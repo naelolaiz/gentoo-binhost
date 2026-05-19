@@ -38,69 +38,13 @@ result in its own PR.
 
 ---
 
-## `Coupled-cache mismatch`
+## `Package build failure`
 
-> system-state restored but binpkgs did not; refusing to build because
-> Portage's installed DB and available binpkgs would diverge.
+> Package build failure: N package(s) failed.
 
-**Cause.** GitHub's 10 GB-per-repo cache budget evicted the ~3.6 GB
-`binpkgs-*` cache, but the ~50 MB `system-state-*` cache survived. Resuming
-would give Portage a VDB that claims packages are installed while their
-binaries are absent — causing "skip then fail" mid-build. See [ARCHITECTURE.md](ARCHITECTURE.md#the-coupled-cache-invariant).
-
-**Fix.** Re-dispatch `Build Packages` with `fresh: true`:
-
-```
-Actions → Build Packages → Run workflow
-         → fresh: ☑ (check the box)
-         → Run
-```
-
-This wipes all four cache families and starts from the stage3 baseline.
-Your next published binhost will take the full resume chain (up to 44h of
-build time) to repopulate.
-
-**Prevention.** Keeping total cache size under ~8 GiB gives enough eviction
-headroom. `build.sh` emits a `Cache footprint approaching GHA cap` warning
-at that threshold — take it seriously.
-
----
-
-## `Zero-progress timeout`
-
-> Build attempt N timed out (exit 42) without producing any new binary
-> packages. Auto-resume disabled for this chain to avoid wasting CI
-> minutes; investigate the stuck ebuild.
-
-**Cause.** The 5.5-hour build budget elapsed, but `/var/cache/binpkgs`
-ended with the same `*.gpkg.tar` count it started with. A single ebuild is
-consuming the entire budget — typically a very large C++ project
-(qtwebengine, chromium, llvm) or an infinite loop.
-
-**Fix.**
-
-1. Check the "Build packages" step log — the last `[binary R]` or
-   `Compiling …` line names the stuck atom.
-2. Dispatch `Build Packages` with `package: <cat>/<pkg>` to build just
-   that atom with the full 5.5 h budget and `--verbose` output.
-3. If it's a known Gentoo-tree issue, file a workaround in
-   `config/workarounds.json` (version pin, mask, forced USE flag).
-4. If it's a USE-flag explosion, narrow the flags in
-   `config/profiles/…/package.use/`.
-
-**Prevention.** None — this is expected for very large packages. The
-workflow stops wasting CI minutes; the human job is to route around it.
-
----
-
-## `Repeated package failures`
-
-> One or more packages failed in two consecutive resume attempts.
-> Auto-resume disabled.
-
-**Cause.** The same atom(s) failed in attempt N-1 and attempt N. The
-third attempt would fail identically (same source tree, same deps,
-same flags).
+**Cause.** One or more ebuilds died in a real phase (`configure`, `compile`,
+`install`, etc.). Timeout victims are filtered out, so this is not the normal
+5.5-hour continuation path.
 
 **Fix.**
 
@@ -112,7 +56,18 @@ same flags).
    - New dep not yet in Gentoo — add `package.accept_keywords` entry or mask
    - USE-flag conflict — adjust `config/profiles/.../package.use/`
    - Compiler regression — pin GCC or disable LTO for that package
-4. Once fixed, dispatch `Build Packages` manually to resume the chain.
+4. Once fixed, dispatch `Build Packages` manually.
+
+---
+
+## `Build did not complete after N attempts`
+
+**Cause.** Every attempt hit the time budget without a real package failure,
+and `_max_attempts` was exhausted.
+
+**Fix.** Increase `_max_attempts` for the next manual dispatch, or build one
+large atom at a time with the `package: <cat>/<pkg>` input to warm ccache and
+publish partial progress.
 
 ---
 
@@ -195,19 +150,17 @@ binhost signing key or `getuto` has a regression.
 
 > Total cache size … is within 2 GiB of GitHub's 10 GiB per-repository cap.
 
-**Cause.** The four cache families together are close to 10 GiB; the next
-save attempt may be silently dropped.
+**Cause.** The ccache and binpkg caches together are close to 10 GiB; the next
+save attempt may be silently dropped by GitHub.
 
-**Fix.** Not urgent — the next attempt's `Coupled-cache mismatch` check
-fires RED if a save is actually dropped, and the `fresh: true` escape
-hatch is always available. Options to reduce footprint:
+**Fix.** Options to reduce footprint:
 
 - `CCACHE_SIZE` (default 20G) can be lowered in the workflow env.
 - `packages/packages.txt` trimming shrinks both `binpkgs` and `ccache`.
 
 ---
 
-## My dispatched build has `_attempt: 1` but keeps failing mid-resume
+## My dispatched build has `_attempt: 1` but keeps failing mid-continuation
 
 Check the "Verify stage3 tag consistency" step in the failed run's log. If
 someone updated the stage3 tag between the fresh dispatch and "now", every

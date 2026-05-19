@@ -51,7 +51,7 @@ jobs:
 
           # Never suggest an update while a build chain is in progress.
           # Changing the stage3 mid-chain would invalidate all caches, losing all
-          # prior build progress and corrupting the resume chain.
+          # prior build progress and corrupting the continuation chain.
           ACTIVE=$(gh api "repos/${{ github.repository }}/actions/workflows/build-packages.yml/runs" \
             --jq '[.workflow_runs[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | length')
           if [[ "$ACTIVE" -gt 0 ]]; then
