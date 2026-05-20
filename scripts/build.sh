@@ -474,7 +474,14 @@ build_packages() {
   (( ${#packages[@]} > 0 )) || die "No packages to build"
   log "Packages to build: ${packages[*]}"
 
-  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose --update --newuse --deep)
+  # --backtrack=100: default of 20 is not enough when the gentoo tree has
+  # transient slot/blocker conflicts (e.g. a Qt minor-version cut where
+  # ~half the qt6 packages are simultaneously in the graph).  Portage's own
+  # error message points at this knob when the solver gives up.
+  # --verbose-conflicts: when the solver still cannot resolve, dump the
+  # parent-chain context so the conflict is diagnosable from the workflow
+  # log without re-running by hand.
+  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose --verbose-conflicts --backtrack=100 --update --newuse --deep)
   if [[ -n "$BINHOST_URL" ]]; then
     emerge_flags+=(--getbinpkg)
   fi
