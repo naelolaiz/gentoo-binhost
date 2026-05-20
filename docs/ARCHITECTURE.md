@@ -69,11 +69,42 @@ verify. Two CI gates enforce no-drift:
 ## 2. The continuation chain
 
 A full rebuild doesn't fit in GitHub Actions' 6-hour job limit. The build
-workflow handles this by running for 5.5 hours, saving completed binary
-packages plus ccache, then re-dispatching itself to continue from a clean
-stage3 container. The main package emerge uses `--buildpkgonly`: target
-packages are built for the binhost, while dependencies are still merged only
-when the build graph actually needs them.
+workflow handles this by running for 5.5 hours and then re-dispatching
+itself to continue. The main package emerge uses `--buildpkg` (not
+`--buildpkgonly`): every package is both produced as a binpkg artifact and
+merged into the container's VDB, because build-time dependencies of
+downstream packages must be installed for their compilation to succeed.
+
+### Per-attempt base image (GHCR snapshot)
+
+At the end of each attempt that ran out of time (exit 42) the build job
+runs `docker commit` against itself and pushes the result to GHCR as
+`ghcr.io/<owner>/binhost-state:<STAGE3_TAG>-c<chain_id>-a<attempt>`. The
+auto-resume re-dispatch passes that image ref as `_base_image`; the
+`resolve-base-image` job at the top of the next attempt accepts it (if its
+embedded `STAGE3_TAG` still matches the workflow's pinned tag) and emits
+it as `container.image` for the build job.
+
+The point is to skip the per-attempt re-merge of previously-built deps.
+A fresh stage3 has a near-empty VDB; restoring only `/var/cache/binpkgs`
+would force emerge to re-merge every dep into VDB before any new
+compilation can run, which on a long chain dominates the time budget.
+A committed container image carries `/var/db/pkg`, `/usr`, `/etc`,
+`/var/lib/portage` and `/var/cache/binpkgs` together as one atomic
+filesystem — there is no way to restore the VDB without the files it
+references, which is the file/VDB drift that previously poisoned binpkgs
+(see PR #20).
+
+If the snapshot/push step fails, `_base_image` arrives empty on the next
+attempt; `resolve-base-image` falls back to the GHCR-mirrored bootstrap
+image (`ghcr.io/<owner>/binhost-state:bootstrap-<STAGE3_TAG>`, a one-shot
+mirror of `docker.io/gentoo/stage3:<tag>`), and the chain continues
+slowly but correctly.
+
+A stage3 bump invalidates per-attempt snapshots automatically: the
+embedded `STAGE3_TAG` in the image tag no longer matches the workflow's
+canonical tag, so `resolve-base-image` rejects the snapshot and seeds a
+new bootstrap from the new stage3.
 
 ### Exit codes
 
