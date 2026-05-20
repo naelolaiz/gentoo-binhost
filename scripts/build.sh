@@ -474,7 +474,7 @@ build_packages() {
   (( ${#packages[@]} > 0 )) || die "No packages to build"
   log "Packages to build: ${packages[*]}"
 
-  local emerge_flags=(--buildpkgonly --usepkg --keep-going --verbose --update --newuse --deep)
+  local emerge_flags=(--buildpkg --usepkg --keep-going --verbose --update --newuse --deep)
   if [[ -n "$BINHOST_URL" ]]; then
     emerge_flags+=(--getbinpkg)
   fi
