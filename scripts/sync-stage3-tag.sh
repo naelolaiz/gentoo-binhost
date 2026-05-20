@@ -60,18 +60,24 @@ _scan_references() {
   local f lineno rest tag
   for f in "${WORKFLOWS_DIR}"/*.yml; do
     # STAGE3_TAG: <tag>
+    # Skip lines whose value is a GitHub Actions expression like
+    # `${{ env.STAGE3_TAG }}` — those are step-env forwards of the
+    # canonical workflow-level declaration, not separate declarations to
+    # keep in sync.
     while IFS=: read -r lineno rest; do
       [[ -n "$lineno" ]] || continue
       tag="${rest#*:}"
       tag="${tag# }"
+      [[ "$tag" == *'${{'* ]] && continue
       printf '%s\t%s\tSTAGE3_TAG\t%s\n' "$f" "$lineno" "$tag"
     done < <(grep -nE '^[[:space:]]*STAGE3_TAG:[[:space:]]+' "$f" || true)
-    # image: gentoo/stage3:<tag>  (but NOT :latest)
+    # image: gentoo/stage3:<tag>  (but NOT :latest, and skip expressions)
     while IFS=: read -r lineno rest; do
       [[ -n "$lineno" ]] || continue
       tag="${rest##*gentoo/stage3:}"
       tag="${tag%% *}"
       [[ "$tag" == "latest" ]] && continue
+      [[ "$tag" == *'${{'* ]] && continue
       printf '%s\t%s\timage\t%s\n' "$f" "$lineno" "$tag"
     done < <(grep -nE '^[[:space:]]*image:[[:space:]]+gentoo/stage3:' "$f" || true)
   done
