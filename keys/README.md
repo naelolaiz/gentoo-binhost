@@ -17,18 +17,21 @@ not belong together, or the key has expired, the run stops there.
 
 ## Creating a key
 
-In a container, so that nothing touches a personal keyring:
+[scripts/new-signing-key.sh](../scripts/new-signing-key.sh) creates one in a
+container, so that nothing touches a personal keyring.  It writes the public
+key into this directory and the secret key to its standard output, which goes
+straight into the repository secret without being stored anywhere else:
 
 ```bash
-podman run --rm -it -v "$PWD/keys":/keys docker.io/gentoo/stage3:amd64-desktop-openrc bash -c '
-  export GNUPGHOME="$(mktemp -d)"
-  gpg --batch --passphrase "" --quick-generate-key "Gentoo Binhost (naelolaiz/gentoo-binhost)" ed25519 sign 3y
-  gpg --armor --export > /keys/binhost-signing-key.asc
-  echo "----- copy everything below into the GPG_PRIVATE_KEY secret -----"
-  gpg --armor --export-secret-keys'
+podman run --rm --network none --tmpfs /tmp \
+    -v "$PWD:/repo:ro" -v "$PWD/keys:/keys" \
+    docker.io/gentoo/stage3:amd64-desktop-openrc \
+    bash /repo/scripts/new-signing-key.sh /keys/binhost-signing-key.asc \
+  | gh secret set GPG_PRIVATE_KEY
 ```
 
-Commit the new `binhost-signing-key.asc`.
+Commit the new `binhost-signing-key.asc`.  The key is valid for three years
+and has no passphrase.
 
 ## Renewing or replacing it
 
