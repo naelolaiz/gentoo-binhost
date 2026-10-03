@@ -1,90 +1,40 @@
 [
   {
-    "key": "libclc-mask",
-    "title": "Remove >=llvm-core/libclc-22 mask — workaround may no longer be needed",
+    "key": "csound-python",
+    "title": "Remove the csound Python override — the ebuild may support the profile's Python now",
     "body_lines": [
-      "The `>=llvm-core/libclc-22` mask in `package.mask/00-binhost` was added because",
-      "`dev-util/mesa_clc` required `=llvm-core/libclc-21*`.",
+      "`media-sound/csound python_single_target_python3_13` in `package.use/00-profile-defaults`",
+      "was added because the csound ebuild only supported Python 3.12 and 3.13 while the",
+      "profile's default is 3.14, which left its REQUIRED_USE unsatisfied.",
       "",
-      "The latest ebuilds **no longer appear to have this constraint**.",
+      "A csound ebuild **now appears to support Python 3.14**.",
       "",
-      "Please verify and remove:",
-      "- `>=llvm-core/libclc-22` from `package.mask/00-binhost`",
-      "- `llvm_slot_21` USE flag from `package.use/00-profile-defaults` (`llvm-core/libclc` line)"
+      "Please verify and remove the override line, here and on the machines."
     ],
     "check": {
       "type": "dep-grep",
-      "package": "dev-util/mesa_clc",
-      "pattern": "=llvm-core/libclc-21",
-      "present_means_needed": true
+      "package": "media-sound/csound",
+      "pattern": "python3_14|python3_\\{[0-9]+\\.\\.1[4-9]\\}",
+      "present_means_needed": false
     }
   },
   {
-    "key": "pipewire-ffmpeg",
-    "title": "Remove pipewire -ffmpeg workaround — USE flag may no longer exist",
+    "key": "a2jmidid-python",
+    "title": "Remove the a2jmidid Python override — the ebuild may support the profile's Python now",
     "body_lines": [
-      "The `-ffmpeg` USE flag on `media-video/pipewire` in `package.use/00-profile-defaults`",
-      "was added to break: `ffmpeg → openal[sdl] → libsdl2[pipewire] → pipewire[ffmpeg]`.",
+      "`media-sound/a2jmidid python_single_target_python3_13` in `package.use/00-profile-defaults`",
+      "was added because the a2jmidid ebuild only supported Python up to 3.13 while the",
+      "profile's default is 3.14, which left its REQUIRED_USE unsatisfied.",
       "",
-      "`media-video/pipewire` **no longer appears to have an `ffmpeg` USE flag**.",
+      "An a2jmidid ebuild **now appears to support Python 3.14**.",
       "",
-      "Please verify and remove `-ffmpeg` from the `media-video/pipewire` line."
+      "Please verify and remove the override line, here and on the machines."
     ],
     "check": {
-      "type": "iuse",
-      "package": "media-video/pipewire",
-      "flag": "ffmpeg"
-    }
-  },
-  {
-    "key": "openal-pipewire",
-    "title": "Remove openal -pipewire workaround — USE flag may no longer exist",
-    "body_lines": [
-      "The `-pipewire` USE flag on `media-libs/openal` in `package.use/00-profile-defaults`",
-      "was added to break: `ffmpeg → openal → pipewire → ffmpeg`.",
-      "",
-      "`media-libs/openal` **no longer appears to have a `pipewire` USE flag**.",
-      "",
-      "Please verify and remove `-pipewire` from the `media-libs/openal` line."
-    ],
-    "check": {
-      "type": "iuse",
-      "package": "media-libs/openal",
-      "flag": "pipewire"
-    }
-  },
-  {
-    "key": "pillow-truetype",
-    "title": "Remove pillow -truetype workaround — USE flag may no longer exist",
-    "body_lines": [
-      "The `-truetype` USE flag on `dev-python/pillow` in `package.use/00-profile-defaults`",
-      "was added to break: `glib → docutils → pillow[truetype] → harfbuzz → glib`.",
-      "",
-      "`dev-python/pillow` **no longer appears to have a `truetype` USE flag**.",
-      "",
-      "Please verify and remove `-truetype` from the `dev-python/pillow` line."
-    ],
-    "check": {
-      "type": "iuse",
-      "package": "dev-python/pillow",
-      "flag": "truetype"
-    }
-  },
-  {
-    "key": "python-bluetooth",
-    "title": "Remove python:3.12 -bluetooth workaround — USE flag may no longer exist",
-    "body_lines": [
-      "The `-bluetooth` USE flag on `dev-lang/python:3.12` in `package.use/00-profile-defaults`",
-      "was added to break: `docutils → python-3.12[bluetooth] → bluez → glib → docutils`.",
-      "",
-      "`dev-lang/python` **no longer appears to have a `bluetooth` USE flag**.",
-      "",
-      "Please verify and remove the `dev-lang/python:3.12 -bluetooth` line."
-    ],
-    "check": {
-      "type": "iuse",
-      "package": "dev-lang/python",
-      "flag": "bluetooth"
+      "type": "dep-grep",
+      "package": "media-sound/a2jmidid",
+      "pattern": "python3_14|python3_\\{[0-9]+\\.\\.1[4-9]\\}",
+      "present_means_needed": false
     }
   },
   {
@@ -92,17 +42,17 @@
     "title": "Remove musescore -jack workaround — REQUIRED_USE constraint may no longer exist",
     "body_lines": [
       "The `-jack` USE flag on `media-sound/musescore` in `package.use/00-profile-defaults`",
-      "was added because musescore has `REQUIRED_USE: at-most-one-of ( jack pipewire )`",
+      "was added because musescore has `REQUIRED_USE=\"?? ( jack pipewire )\"` (at most one of the two)",
       "and both flags are globally enabled in `make.conf`.",
       "",
-      "`media-sound/musescore` **no longer appears to have the `at-most-one-of ( jack pipewire )` constraint**.",
+      "`media-sound/musescore` **no longer appears to have the `?? ( jack pipewire )` constraint**.",
       "",
-      "Please verify and remove the `media-sound/musescore -jack` line."
+      "Please verify and remove the `media-sound/musescore -jack` line, here and on the machines."
     ],
     "check": {
       "type": "required-use-grep",
       "package": "media-sound/musescore",
-      "pattern": "at-most-one-of[^)]*\\bjack\\b[^)]*\\bpipewire\\b|at-most-one-of[^)]*\\bpipewire\\b[^)]*\\bjack\\b"
+      "pattern": "\\?\\?[[:space:]]*\\([^)]*\\bjack\\b[^)]*\\bpipewire\\b|\\?\\?[[:space:]]*\\([^)]*\\bpipewire\\b[^)]*\\bjack\\b"
     }
   },
   {
@@ -115,31 +65,14 @@
       "",
       "`media-libs/avidemux-plugins` **no longer appears to depend on `media-libs/faac`**.",
       "",
-      "Please verify and remove the `media-libs/faac MPEG-4` line from `package.license/00-binhost`."
+      "Please verify and remove the `media-libs/faac MPEG-4` line from `package.license/00-binhost`",
+      "and the `media-libs/faac` line from `config/no-publish.txt`."
     ],
     "check": {
       "type": "dep-grep",
       "package": "media-libs/avidemux-plugins",
       "pattern": "faac|media-libs/faac",
       "present_means_needed": true
-    }
-  },
-  {
-    "key": "cmake-431-mask",
-    "title": "Remove =dev-build/cmake-4.3.1 mask — a newer cmake version is now available",
-    "body_lines": [
-      "The `=dev-build/cmake-4.3.1` mask in `package.mask/00-binhost` was added because",
-      "cmake-4.3.1 failed to build in two consecutive CI attempts (phase: unknown).",
-      "",
-      "A newer cmake version is now available in the portage tree, so the mask on the",
-      "specific 4.3.1 ebuild is no longer needed — portage will prefer the newer version.",
-      "",
-      "Please verify and remove the `=dev-build/cmake-4.3.1` line from `package.mask/00-binhost`."
-    ],
-    "check": {
-      "type": "version-gt",
-      "package": "dev-build/cmake",
-      "pinned": "4.3.1"
     }
   }
 ]

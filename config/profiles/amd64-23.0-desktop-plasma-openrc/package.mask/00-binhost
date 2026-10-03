@@ -1,6 +1,5 @@
-# Binhost-specific package masks
-# Mask packages that are known to be problematic in the CI environment
-# or that should not be served from the binhost
-
-# Mask libclc-22+ to avoid slot conflict with mesa_clc which requires =libclc-21*
->=llvm-core/libclc-22
+# Package masks shared by the builder and the machines it serves.
+#
+# Empty on purpose.  A mask changes which versions Portage picks, so anything
+# added here has to be added on the machines too, and needs an entry in
+# config/workarounds.json so that a weekly check reports when it can go.

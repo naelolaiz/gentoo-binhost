@@ -1,0 +1,27 @@
+name: Daily build
+
+# Starts the build once a day.  New package versions are picked up simply
+# because the tree is newer: whatever has no binary yet gets built.
+#
+# Kept apart from build.yml on purpose.  GitHub switches off scheduled
+# workflows in a repository without recent activity; when that happens it
+# only stops this trigger, and builds started by hand or by a previous build
+# keep working.  Re-enable it under Actions > Daily build if it was switched
+# off.
+on:
+  schedule:
+    - cron: '23 3 * * *'
+
+permissions:
+  actions: write
+
+jobs:
+  dispatch:
+    name: Start the build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build.yml --repo "$GITHUB_REPOSITORY" --ref main

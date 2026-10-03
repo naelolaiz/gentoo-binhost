@@ -1,267 +1,207 @@
 # Architecture
 
-This document describes how the CI builds the binhost and why certain non-obvious
-pieces exist. It is maintenance documentation for contributors and for the
-maintainer's future self — if you're just *using* the binhost, the
-[README](../README.md) is what you want.
+How the builder works and why it is built this way.  For using the binhost
+see the [README](../README.md); for dealing with a failed run see
+[TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
-## Overview
+## The idea
 
 ```
-                 weekly cron                manual dispatch
-                      |                           |
-                      v                           v
-              ┌───────────────────┐
-              │  build-packages   │   builds packages in a pinned
-              │  (Gentoo stage3)  │   Gentoo stage3 container
-              └─────────┬─────────┘
-                        │ artifacts
-                        v
-              ┌───────────────────┐
-              │ publish-to-pages  │   assembles the binhost tree,
-              │  (ubuntu-latest)  │   generates Packages index,
-              └─────────┬─────────┘   deploys to GitHub Pages
-                        │
-                        v (exit 42 if build timed out)
-              ┌───────────────────┐
-              │  continue (job)   │   re-dispatches build-packages
-              └───────────────────┘   with incremented _attempt
+        daily trigger / manual / previous run
+                      │
+                      ▼
+   ┌─────────────────────────────────────────┐
+   │ build (hosted runner)                   │
+   │                                         │
+   │  host-build.sh ── fresh stage3 container│      release assets
+   │     │               container-build.sh  │   ┌──► pkgs-<category>/*.gpkg.tar
+   │     │                 resolve, compile  │   │
+   │     └─ binhost.py ◄── PKGDIR ───────────┼───┤
+   │        every 5 min and at the end       │   └──► branch `binhost`
+   └──────────────────┬──────────────────────┘        Packages, state.json
+                      ▼
+        install check on a clean container
+                      ▼
+       next run, if this one ran out of time
 ```
 
-Three independent monitoring workflows run on their own schedules:
+**What is published is the only state.**  Every run starts from a fresh
+stage3 container, configures it like a machine that uses the binhost, and
+asks Portage what the package lists need.  Anything a binhost already offers
+is a binary; the rest is compiled, signed and published while the run is
+still going.  The next run sees those packages as binaries and continues with
+what is left.
 
-- `check-stage3.yml` — files an issue when a newer `gentoo/stage3` image exists.
-- `check-workarounds.yml` — runs each workaround's self-test (see *Workarounds subsystem*) against the current Portage tree and files issues for any that are now removable.
-- `validate-config-changes.yml` — runs on every PR that touches `config/profiles/**`, verifies the dependency graph resolves against the pinned stage3.
+Consequences:
 
-## 1. The stage3 container
+- A run can stop anywhere (time limit, runner failure, cancellation) and
+  loses at most the package it was compiling.
+- Nothing has to be passed from one run to the next: no chain ids, no
+  attempt counters, no saved container images, no cached package database.
+- A new upstream version needs no detection logic.  The tree is newer, no
+  binary matches, so it gets built.
+- The builder uses the binhost exactly as a machine does.  If publishing is
+  broken, the next run cannot use its own packages and says so.
 
-Every build runs inside a pinned `gentoo/stage3:amd64-openrc-<DATE>` image. The
-tag appears in three places, kept in lockstep by `scripts/sync-stage3-tag.sh`:
+## Storage
 
-1. `STAGE3_TAG` env var in `build-packages.yml` (the canonical source of truth) — part of every cache key.
-2. `container.image` in `build-packages.yml` — the actual runtime.
-3. `container.image` in `validate-config-changes.yml` — PR validation uses the same image as production.
+| What | Where | Why |
+|---|---|---|
+| Package files | Release assets, one release per category (`pkgs-dev-qt`, ...) | No size or bandwidth limit, files can be added one at a time |
+| Index (`Packages`) and `state.json` | Branch `binhost`, read through `raw.githubusercontent.com` | Replaced atomically by a git push; small |
+| Compiler cache | Actions cache, one entry | Only an accelerator; see below |
 
-### Bumping the tag
+Portage is told that the files are not next to the index: the index header
+has `URI: https://github.com/<repo>/releases/download` and each entry
+`PATH: <release tag>/<file>`.
 
-Never edit the three locations by hand. Use the sync tool:
+Rules the publisher (`scripts/binhost.py`) follows:
 
-```bash
-bash scripts/sync-stage3-tag.sh --write amd64-openrc-20260520
-```
+- **Entries are Portage's own.**  Each entry is copied from the
+  `PKGDIR/Packages` that Portage wrote in the build container; only `PATH`
+  is rewritten.  Slot, USE flags, dependencies and build time are never
+  reconstructed.
+- **Upload before index, delete after index.**  A file is uploaded before
+  the index mentions it and deleted only once the index stopped mentioning
+  it, so a client never finds an entry without its file.
+- **Portage reads every index the workflow publishes before it goes live.**
+  `scripts/portage-index.py check` parses the candidate with Portage's
+  reader in a container; a rejected candidate is not pushed.
+- **Only installed packages are published.**  Portage writes the binary
+  before merging the package.  The build container reports what is really
+  installed, and a binary whose merge failed is not handed out.
+- **Not everything may be published.**  Packages with `RESTRICT=bindist` and
+  those in `config/no-publish.txt` are built when needed and kept private.
+- **One entry per package version.**  A rebuild replaces the entry; the old
+  file is deleted by pruning after a grace period.
 
-It rewrites every reference atomically and runs `--check` afterwards to
-verify. Two CI gates enforce no-drift:
+Pruning runs at the end of every run that got through its tiers.  A package
+whose ebuild has been gone from the tree for 14 days is dropped from the
+index, and a file is deleted 14 days after the index stopped referring to
+it (because the package was rebuilt, dropped or removed by hand).
 
-- **`lint.yml` `stage3-tag-drift` job** — runs on every PR touching workflows or scripts. Catches partial edits before they reach main.
-- **`build-packages.yml` `Verify stage3 tag consistency` step** — runs at the top of every build. Refuses to build if any tag disagrees with `STAGE3_TAG`.
+## One run
 
-`check-stage3.yml`'s auto-filed update issue recommends the exact
-`sync-stage3-tag.sh --write <tag>` invocation.
+`scripts/host-build.sh` on the runner:
 
-### Why pinning matters
+1. Frees disk space and restores the compiler cache.
+2. Creates the index branch if it does not exist, reads `state.json`.
+3. Starts the stage3 container with `scripts/container-build.sh`.
+4. Publishes finished packages every five minutes while the container runs,
+   and once more when it stops.
+5. Prunes, decides whether another run is needed, writes the summary.
 
-- The tag is baked into every cache key (`ccache-<TAG>-...`, `binpkgs-<TAG>-...`). Updating it invalidates every build cache. That's the desired behavior: a new stage3 means the build should start from a clean installed system.
-- `check-stage3.yml` queries the Docker Registry weekly and files a "stage3 update available" issue when newer tags exist, *unless* a build chain is active.
-- `check-workarounds.yml` deliberately uses `gentoo/stage3:latest` (not pinned) because it checks "is the workaround still needed against the *current* Gentoo tree?". Lines containing `gentoo/stage3:latest` are intentionally excluded by the sync tool's scanner.
+`scripts/container-build.sh` in the container:
 
-## 2. The continuation chain
+1. `scripts/setup-consumer.sh`: sync the tree, apply the profile from
+   `config/profiles/`, write `binrepos.conf` (this binhost and the official
+   one), trust the signing key.  The same script prepares the container of
+   the install check.
+2. Builder-only settings: `buildpkg`, signing, ccache, `MAKEOPTS`.
+3. Per tier: resolve with `emerge --pretend`, then build only the versions
+   that have to be compiled.  A tier whose packages all exist as binaries
+   costs one dependency calculation and installs nothing.
+4. Before the first compile of a run, update the container's own packages
+   (`@world`), using binaries where they exist, so that leftovers of the
+   stage3's default configuration do not conflict with what the tiers need.
 
-A full rebuild doesn't fit in GitHub Actions' 6-hour job limit. The build
-workflow handles this by running for 5.5 hours and then re-dispatching
-itself to continue. The main package emerge uses `--buildpkg` (not
-`--buildpkgonly`): every package is both produced as a binpkg artifact and
-merged into the container's VDB, because build-time dependencies of
-downstream packages must be installed for their compilation to succeed.
+### Time limit
 
-### Per-attempt base image (GHCR snapshot)
+A hosted runner stops a job after six hours.  The build stops itself after
+`budget_minutes` (285 by default), which leaves time to publish and to save
+the compiler cache.  If packages remain, the run records the tree snapshot
+and container image it used and dispatches the next run, which uses the
+same ones.
 
-At the end of each attempt that ran out of time (exit 42) the build job
-runs `docker commit` against itself and pushes the result to GHCR as
-`ghcr.io/<owner>/binhost-state:<STAGE3_TAG>-c<chain_id>-a<attempt>`. The
-auto-resume re-dispatch passes that image ref as `_base_image`; the
-`resolve-base-image` job at the top of the next attempt accepts it (if its
-embedded `STAGE3_TAG` still matches the workflow's pinned tag) and emits
-it as `container.image` for the build job.
+### Packages longer than one run
 
-The point is to skip the per-attempt re-merge of previously-built deps.
-A fresh stage3 has a near-empty VDB; restoring only `/var/cache/binpkgs`
-would force emerge to re-merge every dep into VDB before any new
-compilation can run, which on a long chain dominates the time budget.
-A committed container image carries `/var/db/pkg`, `/usr`, `/etc`,
-`/var/lib/portage` and `/var/cache/binpkgs` together as one atomic
-filesystem — there is no way to restore the VDB without the files it
-references, which is the file/VDB drift that previously poisoned binpkgs
-(see PR #20).
+Portage cannot resume a half-finished compile, but ccache can make it
+cheap to redo: the object files compiled so far are in the cache, the next
+run gets them back and continues where the last one stopped.  That only
+works if compiler, headers and sources are identical, which is why a
+follow-up run pins the tree snapshot and the image, and why the builder
+keeps the toolchain of its stage3 instead of upgrading it.
 
-If the snapshot/push step fails, `_base_image` arrives empty on the next
-attempt; `resolve-base-image` falls back to the GHCR-mirrored bootstrap
-image (`ghcr.io/<owner>/binhost-state:bootstrap-<STAGE3_TAG>`, a one-shot
-mirror of `docker.io/gentoo/stage3:<tag>`), and the chain continues
-slowly but correctly.
+The chain ends when a run reaches the limit without having published or
+compiled anything new, or after ten runs in a row.
 
-A stage3 bump invalidates per-attempt snapshots automatically: the
-embedded `STAGE3_TAG` in the image tag no longer matches the workflow's
-canonical tag, so `resolve-base-image` rejects the snapshot and seeds a
-new bootstrap from the new stage3.
+### Failures
 
-### Exit codes
+- **A package fails to build.**  `emerge --keep-going` drops it and what
+  depends on it, and builds the rest.  For the remainder of the run the
+  package is left out of every dependency calculation, so nothing starts it
+  a second time; roots that need it are reported as unresolvable.  The log
+  goes into the run's artifact, the package into the alert issue.  The next
+  run tries again; with the compiler cache that costs little until it
+  reaches the same error.
+- **A set of packages cannot be resolved together.**  The list is split in
+  halves until the offending root is isolated; the others are built.  A
+  dependency calculation that takes more than ten minutes counts as failed.
+- **Build-time dependency loops** (ffmpeg needs openal needs pipewire needs
+  ffmpeg) only exist in a fresh container.  Portage names a USE flag that
+  breaks the loop; the builder applies it for one build, without producing a
+  binary package, and then rebuilds the affected package as configured.
+  Only that second build is published.  No such flags are kept in the
+  configuration.
+- **Out of memory or disk** is recognised in the build log and reported as
+  such, not as a broken package.
 
-| Exit | Meaning |
-|------|---------|
-| 0    | Build finished successfully |
-| 42   | Timed out gracefully; continuation expected |
-| other| Package/config failure; no continuation |
+### Install check and alert issue
 
-The `42` is picked by `scripts/build.sh`. When `--max-build-time` is hit:
+After a run that published something, a second job starts a clean stage3,
+configures it as a consumer and checks that Portage picks the published
+binaries, downloads them, verifies their signatures and installs them.
 
-1. The shell script sends `SIGTERM` to the emerge process group, waits up to 60s for graceful shutdown, then sends `SIGKILL` if needed.
-2. Finished `.gpkg.tar` files are copied into the artifact/output directory.
-3. ccache stats and build progress are emitted.
-4. The script exits 42.
+A final job keeps one issue labelled `binhost-alert`: opened or updated when
+a run ends with a problem (failed packages, unresolved roots, unpublished
+packages, a failed install check, a chain that stopped), closed by the next
+run that gets through every tier cleanly.  A clean run of a single tier
+leaves it open.
 
-The `continue` job in `build-packages.yml` only re-dispatches when
-`should_continue == 'true'`, which requires all of:
+## Decisions worth knowing
 
-- exit 42
-- no real package failure was detected
-- next attempt <= `_max_attempts` (default 8)
+**The builder consumes its own binhost.**  An earlier version did not, on
+purpose: an index with corrupt entries had once crashed every client,
+including the builder.  The price was rebuilding everything every week and
+never publishing a usable index.  The protection is now in the publishing
+path instead: entries come from Portage, the candidate index is parsed by
+Portage before it is pushed, and every run ends with an install on a clean
+machine.  `binhost.py evict <cpv>` removes a bad package by hand
+([TROUBLESHOOTING.md](TROUBLESHOOTING.md)).
 
-### Chain identification
+**No part of the system is cached except the compiler cache.**  Caching the
+installed-package database separately from the files it describes produced
+states Portage could not make sense of.  A fresh container plus binaries is
+always consistent.
 
-`chain_id` is the `github.run_id` of the first attempt in the chain. Every
-continuation run inherits the same `chain_id` via `workflow_dispatch` input,
-so ccache and binpkg caches from the same conceptual build share a key prefix.
+**The toolchain is not upgraded in the builder.**  gcc, glibc and binutils
+stay at the stage3's stable versions.  Binaries built against an older
+glibc run on a newer one; the reverse fails at run time.  Portage records
+the glibc a binary needs, so machines are protected either way.
 
-Inputs with a leading underscore (`_attempt`, `_chain_id`, `_max_attempts`)
-are conventionally "internal" — set by the `continue` job's
-`gh workflow run` call, not by humans.
+**Signing is not optional.**  Portage verifies binary package signatures by
+default; unsigned packages would be rejected by every client.  The builder
+signs with Portage's own mechanism (`FEATURES=binpkg-signing`) and checks
+before building that the key it signs with is the one published in `keys/`.
 
-## 3. The cache system
+**Test runs do not touch the real binhost.**  A run on any ref other than
+`main` uses the branch `binhost-test` and releases `test-pkgs-*`, and never
+starts a follow-up run.
 
-Two cache families are used:
+**The daily trigger is a separate workflow.**  GitHub disables scheduled
+workflows in repositories without recent activity.  With the schedule in its
+own file that only stops the trigger; manual runs and follow-up runs keep
+working.
 
-| Cache key prefix | Path | Purpose |
-|------------------|------|---------|
-| `ccache-…`       | `/var/cache/ccache` | compiler cache |
-| `binpkgs-…`      | `/var/cache/binpkgs` | packages completed by earlier attempts in the same chain |
+## Limits
 
-`ccache-*` can fall back across chains because object-cache misses are safe.
-`binpkgs-*` is chain-scoped only: a fresh chain must not inherit old self-built
-packages from GitHub Pages or a previous run. That keeps this CI from feeding a
-stale or corrupt publication back into the next build.
-
-The workflow deliberately does **not** cache `/var/db/pkg`, `/var/cache/edb`,
-`/var/lib/portage`, `/etc`, or `/var/tmp/portage`. Portage can reason about ABI
-compatibility when it owns the installed system. Restoring metadata without the
-matching installed filesystem creates states Portage cannot validate reliably.
-
-### The `fresh: true` escape hatch
-
-Dispatch `Build Packages` with `fresh: true` to delete both active cache
-families, plus legacy `system-state-*` and `build-state-*` prefixes left by
-older workflow versions, before any restore step runs. Triple-guarded so it
-cannot misfire:
-
-1. Must be `workflow_dispatch` (never on schedule).
-2. Must have `fresh: true` (explicit opt-in).
-3. Must be attempt 1 (the `continue` job does not forward `fresh`).
-
-The implementation lives in `scripts/wipe-caches.py`.
-
-## 4. Build inputs
-
-The build consumes the official Gentoo binhost only:
-
-```text
-https://distfiles.gentoo.org/releases/amd64/binpackages/23.0/x86-64-v3/
-```
-
-The repository's own GitHub Pages binhost is output, not input. This avoids a
-self-poisoning loop where one bad published package can keep breaking all
-future builds.
-
-The build does not pass `--ignore-built-slot-operator-deps`. Portage must keep
-the ability to reject or rebuild a binary package whose recorded subslot
-dependencies no longer match the current root, such as a `libgit2` binary built
-against an older `llhttp` SONAME.
-
-## 5. Binpkg trust (`scripts/setup-binpkg-trust.sh`)
-
-Portage verifies GPG signatures on binpkgs downloaded from the Gentoo binhost.
-The keyring lives at `/etc/portage/gnupg/` and must be owned by `portage:portage`.
-
-The script calls `getuto` (Portage's `$PORTAGE_TRUST_HELPER`) which:
-
-- imports the binhost signing key (`534E4209AB49EEE1C19D96162C44695DB9F6043D`),
-- sets correct trust levels,
-- chowns the keyring to portage:portage.
-
-An earlier manual `gpg --import` + `chown` produced "unsafe ownership on
-homedir" errors during binpkg verification (run 24651146807). `getuto`
-side-steps this class of bug.
-
-## 6. Failure detection (`report_failed_atoms` in build.sh)
-
-When an ebuild dies, the CI needs the package log copied out before the
-container disappears. Without explicit failure capture, a broken ebuild can
-leave only a short Portage summary in the workflow log.
-
-Portage writes `/var/tmp/portage/<cat>/<pkg>/.die_hooks` unconditionally when
-any non-`depend` phase dies. `build.sh` scans for these markers, copies each
-failure's `build.log` and saved `environment` into `_failures/` inside the
-build artifact, and emits a GitHub `::error` annotation per atom.
-
-Timeout victims are filtered by marker mtime: if Portage writes `.die_hooks`
-while the wrapper is terminating emerge for the time budget, that package is
-not counted as a real failure.
-
-## 7. Publish pipeline
-
-`publish-to-pages.yml` runs after every build (including failed and timed-out
-ones) because even a partial attempt produces real artifacts worth shipping.
-
-### Steps
-
-1. **Restore cached pages site** — the last published tree, for incremental publishes.
-2. **Scrub corrupt layout** — removes any file not matching the canonical `<cat>/<pn>/<pn>-<ver>.gpkg.tar(.asc)?` structure. Defends against historical "Organise packages" bugs that left files at e.g. `tmp/artifacts/acct-group/cuse/cuse-0-1.gpkg.tar`.
-3. **Download artifacts** — every `binpkgs-*` artifact from the current run.
-4. **Organise packages** — copies artifacts into the canonical layout, with strict regex validation. Any malformed path fails the step rather than corrupting the binhost.
-5. **Prune older versions** — keeps only the newest version per `(category, PN)`. GitHub Pages enforces a 1 GB soft limit; without pruning the site grows monotonically.
-6. **Generate Packages index** — `scripts/generate-packages-index.sh` writes `Packages` with correct `CPV: <cat>/<pf>` format (single slash; the Portage client rejects anything else).
-7. **Deploy to GitHub Pages.**
-
-## 8. Workarounds subsystem
-
-Workarounds (masked versions, forced USE flag overrides, version pins) are
-declared data-first in `config/workarounds.json`. Each entry includes:
-
-- `key` — stable identifier
-- `title` / `body_lines` — issue title and body for when it becomes removable
-- `check` — one of `iuse` / `dep-grep` / `required-use-grep` / `version-gt`, with the package and pattern to probe
-
-`check-workarounds.yml` runs weekly against `gentoo/stage3:latest` (not the
-pinned tag — we want to know whether upstream has fixed the problem),
-invokes `scripts/check-workaround.sh` for each entry, and files a GitHub
-issue for any workaround that can now be removed.
-
-## 9. Scripts
-
-| Script | Called from | Purpose |
-|--------|-------------|---------|
-| `build.sh`                   | workflow | main build runner (profile apply, ccache, sync, trust, news, kernel symlink, build, progress, failure report) |
-| `apply-profile.sh`           | build.sh, validate-config-changes | copies `config/profiles/<name>/*` into `/etc/portage/*` |
-| `sync-portage.sh`            | build.sh, workflows | `emerge-webrsync` → `emerge --sync` → `emaint sync` fallback chain |
-| `sync-stage3-tag.sh`         | maintainer, build + lint workflows | `--write <tag>` rewrites every stage3 tag reference; `--check` verifies no drift |
-| `setup-binpkg-trust.sh`      | workflow, build.sh | getuto-based Portage keyring bootstrap |
-| `install-build-tools.sh`     | workflow | emerges ccache from the official Gentoo binhost, rebuilding if unusable |
-| `merge-pending-configs.sh`   | build.sh, install-build-tools | `etc-update --automode -5` for `._cfg*` files |
-| `wipe-caches.py`             | workflow | deletes every cache with a given prefix (fresh-start support) |
-| `generate-packages-index.sh` | publish | writes the `Packages` index |
-| `prune-old-binpkgs.py`       | publish, build.sh | keeps only the newest version per `(cat, pn)` |
-| `check-workaround.sh`        | check-workarounds | executes a single workaround check (iuse/dep-grep/required-use-grep/version-gt) |
-| `upload-local-packages.sh`   | contributors | helper to submit locally-built gpkgs via PR |
-
-See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for interpreting specific
-workflow errors.
+- A package whose non-cacheable part (linking, code generation, Rust)
+  does not fit into one run cannot be built this way.
+- Only the Gentoo repository is built, no overlays.
+- One configuration.  A machine with different USE flags compiles the
+  affected packages itself.
+- The tree the packages are built from is a daily snapshot; a machine that
+  synced later may find a few binaries ignored until the next run.
+- Using GitHub's hosted runners and release storage for this is within what
+  the terms allow for a project's own builds, but GitHub decides; do not
+  add anything that keeps the schedule alive artificially.

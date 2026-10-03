@@ -1,177 +1,118 @@
 # Troubleshooting
 
-This page maps the explicit error annotations emitted by the CI to their
-causes and remediations. If you see an `::error title=…` line in a failed
-workflow run, find it below.
+Every run writes a summary (the run's page on GitHub) and uploads its logs
+as the artifact `build-logs-<run>`.  Problems that need a human are collected
+in one issue labelled `binhost-alert`, which closes itself after a clean run.
 
-Cross-reference: [ARCHITECTURE.md](ARCHITECTURE.md) explains *why* each of
-these checks exists.
+Contents of the logs artifact:
 
----
+| File | What |
+|---|---|
+| `result.env` | status, counts, tree snapshot, toolchain versions |
+| `failures.tsv`, `failures/<category>/<package>/build.log` | packages that failed and their build logs |
+| `unresolved.tsv`, `plans/*.log` | roots Portage could not resolve, with its explanation |
+| `planned.txt` | what the run decided to compile |
+| `problems.md` | the text that went into the alert issue |
+| `emerge-info.txt` | the builder's full configuration |
 
-## `Stage3 tag drift`
+## "N package(s) failed to build"
 
-> stage3 tag drift (STAGE3_TAG|image): got <current>, expected <canonical>
-> Run 'scripts/sync-stage3-tag.sh --write <tag>' to fix
+The package's `build.log` is in the artifact; its last lines are in the job
+log under the package's name.  Other packages were still built and published.
 
-**Cause.** Someone changed the stage3 tag in one place but not the others.
-The tag appears in three locations:
+- A real build failure in the tree: wait for the fix (the next run tries
+  again), or add a workaround to the profile.  A workaround in
+  `package.mask` or `package.use` needs the same change on the machines and
+  an entry in `config/workarounds.json`, so the weekly check reports when it
+  is no longer needed.
+- Marked "out of memory or disk": the package is fine, the runner was not.
+  If it happens for a package in a tier without `#@ jobs=1`, move the package
+  to the heavy tier.
 
-1. `STAGE3_TAG` env var in `.github/workflows/build-packages.yml` — the canonical source of truth.
-2. `container.image` (`gentoo/stage3:<TAG>`) in the same file.
-3. `container.image` in `.github/workflows/validate-config-changes.yml`.
+## "N root(s) could not be resolved"
 
-**Fix.** From the repo root:
+Portage found no way to install a package from a tier.  `plans/*.log` has
+its explanation.  Usual causes:
 
-```bash
-bash scripts/sync-stage3-tag.sh --write amd64-openrc-<new-date>
-```
+- **A USE dependency is not met**
+  (`Change USE: +abi_x86_32` on the Steam tier): regenerate
+  `package.use/20-steam-multilib`, see [STEAM.md](STEAM.md).
+- **A keyword, mask or licence** keeps a dependency out: add it to the
+  profile.
+- **A package left the tree or was renamed**: update the tier file.
+- **A conflict in the tree** that upstream will sort out: nothing to do.
 
-The tool rewrites every reference atomically and self-verifies. Commit the
-result in its own PR.
+## "Some finished packages could not be published"
 
-**Prevention.**
+Uploading or pushing the index failed (GitHub error, rate limit, an asset
+GitHub renamed).  Nothing inconsistent was published; the packages are
+rebuilt by the next run, mostly from the compiler cache.  If it repeats, the
+job log of the "Build and publish" step has the reason next to each package.
 
-- `lint.yml`'s `stage3-tag-drift` job runs on every PR touching workflows or scripts and fails red on drift.
-- `build-packages.yml` also verifies at build start; drift refuses to build.
-- The weekly `check-stage3.yml` update issue tells you the exact `--write` command to run.
+If the message mentions an **immutable release**: "immutable releases" has
+been switched on in the repository settings.  It has to be off; packages are
+added to the category releases over time.
 
----
+## "The install check ... ended as failure"
 
-## `Package build failure`
+A clean container could not install what was just published.  The follow-up
+run is not started while this fails.
 
-> Package build failure: N package(s) failed.
+- `Portage would not install <cpv> from the binhost`: the plan printed below
+  that line says why; most often the package's USE flags in the index do not
+  match the profile.
+- `GnuPG verification failed`: the signing key and
+  `keys/binhost-signing-key.asc` do not belong together, or the key expired.
+  See [keys/README.md](../keys/README.md).
 
-**Cause.** One or more ebuilds died in a real phase (`configure`, `compile`,
-`install`, etc.). Timeout victims are filtered out, so this is not the normal
-5.5-hour continuation path.
-
-**Fix.**
-
-1. Download the failed run's artifact (`binpkgs-<chain>-<attempt>`).
-2. Look inside `_failures/<cat>/<pkg>/build.log` — the last ~80 lines are
-   also in the workflow step summary.
-3. Common causes:
-   - Upstream source tarball moved — bump the package or pin an older version
-   - New dep not yet in Gentoo — add `package.accept_keywords` entry or mask
-   - USE-flag conflict — adjust `config/profiles/.../package.use/`
-   - Compiler regression — pin GCC or disable LTO for that package
-4. Once fixed, dispatch `Build Packages` manually.
-
----
-
-## `Build did not complete after N attempts`
-
-**Cause.** Every attempt hit the time budget without a real package failure,
-and `_max_attempts` was exhausted.
-
-**Fix.** Increase `_max_attempts` for the next manual dispatch, or build one
-large atom at a time with the `package: <cat>/<pkg>` input to warm ccache and
-publish partial progress.
-
----
-
-## `Pages site size >900 MiB`
-
-> Pages site is N bytes (>900 MiB). Approaching the 1 GiB GitHub Pages
-> limit; consider trimming packages/packages.txt.
-
-**Cause.** The published binhost directory is closing in on GitHub Pages'
-1 GiB soft limit. Crossing that limit makes the binhost unreachable.
-
-**Fix.** One or more of:
-
-1. **Trim `packages/packages.txt`** — remove packages rarely installed by
-   downstream users.
-2. **Reduce package variants** — if both Qt5 and Qt6 variants are shipped
-   for the same upstream, drop one.
-3. **Bump pruning aggressiveness** — `scripts/prune-old-binpkgs.py`
-   currently keeps the newest version per `(cat, pn)`. Nothing to tune
-   there; the fix is upstream (fewer packages).
-
-**Prevention.** Monitor the `Site size after pruning` line in the publish
-job's log.
-
----
-
-## `Malformed artifact layout`
-
-> Refusing to publish …/pkg.gpkg.tar (relative path '…' does not match
-> <cat>/<pn>/<pn>-<ver>.gpkg.tar)
-
-**Cause.** An artifact uploaded by `build-packages.yml` contains a file at
-a path that doesn't match the canonical `<category>/<pn>/<pn>-<ver>.gpkg.tar`
-layout. If published anyway, `generate-packages-index.sh` would write
-`CPV: tmp/artifacts/…` and every downstream Portage client would crash
-with `portage.exception.InvalidData`.
-
-**Fix.**
-
-1. The publish job stops before corrupting the live binhost — no user
-   impact.
-2. Find the failing artifact in the run's artifacts panel. Inspect
-   `find /tmp/artifacts/binpkgs-*/ -name '*.gpkg.tar'`.
-3. Most commonly this is a bug in `build.sh`'s `collect_packages` or
-   Portage writing to a non-standard `PKGDIR`. Investigate and patch.
-
----
-
-## `/usr/bin/getuto not found in stage3`
-
-**Cause.** The pinned stage3 does not include `app-portage/getuto`. This
-should not happen on any modern (`23.0`) stage3.
-
-**Fix.** Either upgrade `STAGE3_TAG` to a newer snapshot (dispatch the
-`Check Stage3 Update` workflow) or, if you *must* stay on this tag, emerge
-getuto manually before calling `setup-binpkg-trust.sh`:
+To take a bad package out of the binhost, run locally with a token that can
+write to the repository:
 
 ```bash
-emerge --oneshot app-portage/getuto
+podman run --rm -e GH_TOKEN -v "$PWD":/repo:ro docker.io/library/python:3.12 \
+  python3 /repo/scripts/binhost.py --backend github --repo naelolaiz/gentoo-binhost \
+  evict <category>/<package>-<version>
 ```
 
----
+(`python:3.12` contains git, which the publisher needs.)  The package
+disappears from the index at once and the next run rebuilds it.  Its file
+is deleted two weeks later, like any replaced file; add `--now` after
+`evict` to delete it immediately.  Run by hand like this, the new index is
+checked by the publisher's own rules but not parsed by Portage.
 
-## `Gentoo binhost signing key … not present after getuto`
+## "Building stopped: ..."
 
-**Cause.** `getuto` ran but did not import the expected key fingerprint
-`534E4209AB49EEE1C19D96162C44695DB9F6043D`. Either Gentoo rotated the
-binhost signing key or `getuto` has a regression.
+- **without finishing or compiling anything new**: a run spent its whole
+  time budget and produced nothing, not even new compiler cache entries.
+  Either a package's non-cacheable part does not fit into one run, or the
+  compiler cache is not being hit; the summary shows the hit count.  The
+  interrupted package is named in the summary.
+- **10 runs in a row reached the time limit**: the safety limit of the
+  chain.  Start the workflow again by hand to continue.
 
-**Fix.**
+## "The build container failed"
 
-1. Check [www.gentoo.org/glep/glep-0079.html](https://www.gentoo.org/glep/glep-0079.html) for the current signing key fingerprint.
-2. If rotated, update the constant in `scripts/setup-binpkg-trust.sh` and
-   `scripts/build.sh` (the old one is also referenced there for a
-   skip-if-already-trusted check).
+The container stopped before or outside of building packages: the tree could
+not be synced, a binhost index could not be read, the signing key could not
+be imported, or the self-test of the signature failed.  The job log ends with
+the reason.
 
----
+- `Cannot read our own index`: `raw.githubusercontent.com` did not serve the
+  index branch.  Temporary; start the run again.
+- `Packages signed with key ... would be rejected by clients`: the secret key
+  in `GPG_PRIVATE_KEY` is not the one whose public half is in `keys/`, or it
+  has expired.
+- `Cannot sign with the configured key`: `GPG_PASSPHRASE` is wrong or
+  missing.
 
-## Cache size approaching GHA cap
+## The daily build does not start
 
-> Total cache size … is within 2 GiB of GitHub's 10 GiB per-repository cap.
+GitHub switches off scheduled workflows in repositories without recent
+activity.  Re-enable **Daily build** on the Actions tab.  Runs started by
+hand are not affected.
 
-**Cause.** The ccache and binpkg caches together are close to 10 GiB; the next
-save attempt may be silently dropped by GitHub.
+## Starting over
 
-**Fix.** Options to reduce footprint:
-
-- `CCACHE_SIZE` (default 20G) can be lowered in the workflow env.
-- `packages/packages.txt` trimming shrinks both `binpkgs` and `ccache`.
-
----
-
-## My dispatched build has `_attempt: 1` but keeps failing mid-continuation
-
-Check the "Verify stage3 tag consistency" step in the failed run's log. If
-someone updated the stage3 tag between the fresh dispatch and "now", every
-subsequent run fails consistency check. Revert to the tag that was live
-when the chain started, or start a new chain with `fresh: true`.
-
----
-
-## I want to start completely over
-
-Dispatch `Build Packages` with `fresh: true`. That is the single supported
-"nuke everything" button. Don't manually delete caches via the API — the
-script handles pagination correctly (avoids off-by-page bugs deleting while
-iterating), deletes in the right order, and logs what it wiped.
+Delete the `binhost` branch and the `pkgs-*` releases; the next run creates
+an empty index and builds everything again.  To drop only the compiler
+cache, delete the `cc-v1-*` entries under Actions → Caches.

@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'config/**'
+      - 'packages/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      # A pinned release tarball rather than a third-party action: one
+      # download, reproducible results.
+      - name: actionlint
+        run: |
+          ACTIONLINT_VERSION="1.7.12"
+          curl -fsSL --max-time 60 \
+            "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
+            | tar -xzC /usr/local/bin actionlint
+          actionlint -color
+      - name: shellcheck
+        run: shellcheck --severity=warning --external-sources scripts/*.sh tests/*.sh
+      - name: Python syntax
+        run: python3 -m py_compile scripts/*.py tests/*.py
+
+  unit:
+    name: Unit tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Index and publisher tests
+        run: python3 -m unittest discover -s tests -v
+
+  # The whole pipeline against a local directory instead of GitHub: build
+  # and sign the smoke tier, publish, check that a second run has nothing to
+  # do, install on a clean machine with signature verification.
+  e2e:
+    name: End to end
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build, rebuild, consume
+        run: |
+          . config/binhost.conf
+          state="$RUNNER_TEMP/e2e"
+          mkdir -p "$state/state" "$state/tree"
+          for phase in build rebuild consume; do
+            echo "::group::${phase}"
+            docker run --rm --init --privileged \
+              -v "$PWD:/repo:ro" \
+              -v "$state/tree:/var/db/repos/gentoo" \
+              -v "$state/state:/state" \
+              "$STAGE3_IMAGE" bash /repo/tests/e2e.sh "$phase"
+            echo "::endgroup::"
+          done

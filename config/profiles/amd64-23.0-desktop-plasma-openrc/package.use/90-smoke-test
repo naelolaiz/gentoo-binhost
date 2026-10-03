@@ -1,0 +1,9 @@
+# Flags for the packages of the smoke tier (packages/tiers/00-smoke.txt).
+#
+# The smoke tier proves the pipeline end to end: build, sign, publish,
+# install on a clean machine.  That only works if its packages really have to
+# be compiled, so they get USE flags the official Gentoo binhost does not
+# build with.  Nobody is expected to install these.
+app-misc/hello -nls
+app-misc/jq static-libs
+dev-libs/oniguruma static-libs

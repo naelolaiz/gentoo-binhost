@@ -1,0 +1,24 @@
+# Heavy tier: the packages that take hours to compile.  Built first, so they
+# are the first to be available as binaries.
+#
+# One at a time: two of these side by side need more memory and disk than a
+# hosted runner has.
+#@ jobs=1
+
+# LLVM toolchain
+llvm-core/llvm
+llvm-core/clang
+
+# Web engines
+dev-qt/qtwebengine
+net-libs/webkit-gtk
+
+# Large libraries
+sci-libs/vtk
+sci-libs/opencascade
+media-libs/opencv
+
+# Large applications
+dev-qt/qt-creator
+sci-electronics/kicad-meta
+app-emulation/wine-proton

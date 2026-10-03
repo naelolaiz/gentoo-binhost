@@ -1,0 +1,10 @@
+# Packages that are built when something needs them but never published.
+# One category/package per line.
+#
+# Packages whose ebuild says RESTRICT="bindist" are skipped automatically;
+# this list is for the ones whose licence forbids redistribution without the
+# ebuild saying so.
+
+# Licence MPEG-4: accepted in package.license only so that packages which
+# link against it can be built.
+media-libs/faac
