@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791062352
-PACKAGES: 66
+TIMESTAMP: 1791062685
+PACKAGES: 81
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -348,6 +348,27 @@ MTIME: 1791061986
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791062550
+CPV: dev-build/meson-1.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test test-full python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: Apache-2.0
+MD5: 5bd1ce28204902be262834688df5ce2e
+PATH: pkgs-dev-build/meson-1.12.1-1.gpkg.tar
+RDEPEND: !<dev-build/muon-0.2.0-r2[man(-)] virtual/pkgconfig dev-lang/python:3.14
+RESTRICT: test
+SHA1: dc777cb65df4569112bd93b494493177af31e85a
+SIZE: 3461120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062551
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-arch/unzip
 BUILD_ID: 1
 BUILD_TIME: 1791059891
@@ -369,6 +390,31 @@ SIZE: 2314240
 SLOT: 3
 USE: abi_x86_64 amd64 elibc_glibc icu kernel_linux readline
 MTIME: 1791059893
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
+BUILD_ID: 1
+BUILD_TIME: 1791062452
+CPV: dev-lang/python-3.14.8
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
+EAPI: 8
+IUSE: bluetooth build debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl tail-call-interp test tk valgrind +llvm_slot_19 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: PSF-2
+MD5: e7a9d6f55d11c723065ecf8e46a49f79
+PATH: pkgs-dev-lang/python-3.14.8-1.gpkg.tar
+PDEPEND: dev-python/ensurepip-pip
+PROVIDES: x86_64: _asyncio.cpython-314-x86_64-linux-gnu.so _bisect.cpython-314-x86_64-linux-gnu.so _blake2.cpython-314-x86_64-linux-gnu.so _bz2.cpython-314-x86_64-linux-gnu.so _codecs_cn.cpython-314-x86_64-linux-gnu.so _codecs_hk.cpython-314-x86_64-linux-gnu.so _codecs_iso2022.cpython-314-x86_64-linux-gnu.so _codecs_jp.cpython-314-x86_64-linux-gnu.so _codecs_kr.cpython-314-x86_64-linux-gnu.so _codecs_tw.cpython-314-x86_64-linux-gnu.so _csv.cpython-314-x86_64-linux-gnu.so _ctypes.cpython-314-x86_64-linux-gnu.so _ctypes_test.cpython-314-x86_64-linux-gnu.so _curses.cpython-314-x86_64-linux-gnu.so _curses_panel.cpython-314-x86_64-linux-gnu.so _dbm.cpython-314-x86_64-linux-gnu.so _decimal.cpython-314-x86_64-linux-gnu.so _elementtree.cpython-314-x86_64-linux-gnu.so _gdbm.cpython-314-x86_64-linux-gnu.so _hashlib.cpython-314-x86_64-linux-gnu.so _heapq.cpython-314-x86_64-linux-gnu.so _hmac.cpython-314-x86_64-linux-gnu.so _interpchannels.cpython-314-x86_64-linux-gnu.so _interpqueues.cpython-314-x86_64-linux-gnu.so _interpreters.cpython-314-x86_64-linux-gnu.so _json.cpython-314-x86_64-linux-gnu.so _lsprof.cpython-314-x86_64-linux-gnu.so _lzma.cpython-314-x86_64-linux-gnu.so _md5.cpython-314-x86_64-linux-gnu.so _multibytecodec.cpython-314-x86_64-linux-gnu.so _multiprocessing.cpython-314-x86_64-linux-gnu.so _pickle.cpython-314-x86_64-linux-gnu.so _posixshmem.cpython-314-x86_64-linux-gnu.so _posixsubprocess.cpython-314-x86_64-linux-gnu.so _queue.cpython-314-x86_64-linux-gnu.so _random.cpython-314-x86_64-linux-gnu.so _remote_debugging.cpython-314-x86_64-linux-gnu.so _sha1.cpython-314-x86_64-linux-gnu.so _sha2.cpython-314-x86_64-linux-gnu.so _sha3.cpython-314-x86_64-linux-gnu.so _socket.cpython-314-x86_64-linux-gnu.so _sqlite3.cpython-314-x86_64-linux-gnu.so _ssl.cpython-314-x86_64-linux-gnu.so _statistics.cpython-314-x86_64-linux-gnu.so _struct.cpython-314-x86_64-linux-gnu.so _testbuffer.cpython-314-x86_64-linux-gnu.so _testcapi.cpython-314-x86_64-linux-gnu.so _testclinic.cpython-314-x86_64-linux-gnu.so _testclinic_limited.cpython-314-x86_64-linux-gnu.so _testimportmultiple.cpython-314-x86_64-linux-gnu.so _testinternalcapi.cpython-314-x86_64-linux-gnu.so _testlimitedcapi.cpython-314-x86_64-linux-gnu.so _testmultiphase.cpython-314-x86_64-linux-gnu.so _testsinglephase.cpython-314-x86_64-linux-gnu.so _uuid.cpython-314-x86_64-linux-gnu.so _xxtestfuzz.cpython-314-x86_64-linux-gnu.so _zoneinfo.cpython-314-x86_64-linux-gnu.so _zstd.cpython-314-x86_64-linux-gnu.so array.cpython-314-x86_64-linux-gnu.so binascii.cpython-314-x86_64-linux-gnu.so cmath.cpython-314-x86_64-linux-gnu.so fcntl.cpython-314-x86_64-linux-gnu.so grp.cpython-314-x86_64-linux-gnu.so libpython3.14.so.1.0 math.cpython-314-x86_64-linux-gnu.so mmap.cpython-314-x86_64-linux-gnu.so pyexpat.cpython-314-x86_64-linux-gnu.so readline.cpython-314-x86_64-linux-gnu.so resource.cpython-314-x86_64-linux-gnu.so select.cpython-314-x86_64-linux-gnu.so syslog.cpython-314-x86_64-linux-gnu.so termios.cpython-314-x86_64-linux-gnu.so unicodedata.cpython-314-x86_64-linux-gnu.so xxlimited.cpython-314-x86_64-linux-gnu.so xxlimited_35.cpython-314-x86_64-linux-gnu.so xxsubtype.cpython-314-x86_64-linux-gnu.so zlib.cpython-314-x86_64-linux-gnu.so
+RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_14(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 859d7236f156a66d09c0ac0b7e9d6313ebf14ba6
+SIZE: 12472320
+SLOT: 3.14
+USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_19 ncurses readline sqlite ssl
+MTIME: 1791062456
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -571,6 +617,31 @@ MTIME: 1791058292
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1791062579
+CPV: dev-libs/libxml2-2.15.4
+DEFINED_PHASES: compile configure install postinst prepare test unpack
+DEPEND: virtual/libiconv >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] >=dev-libs/icu-51.2-r1:0/78=[abi_x86_32(-),abi_x86_64(-)] sys-libs/readline:0/8=
+EAPI: 8
+IUSE: doc icu python readline static-libs test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 3548160a9d4f1763f632adcad626241c
+PATH: pkgs-dev-libs/libxml2-2.15.4-1.gpkg.tar
+PROVIDES: x86_32: libxml2.so.16 x86_64: libxml2.so.16
+RDEPEND: virtual/libiconv >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] >=dev-libs/icu-51.2-r1:0/78=[abi_x86_32(-),abi_x86_64(-)] sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_32: libc.so.6 libicuuc.so.78 libm.so.6 x86_64: libc.so.6 libicuuc.so.78 libm.so.6 libreadline.so.8
+RESTRICT: test
+SHA1: d169239a8ffc346a41b3434767c7209cd316363b
+SIZE: 1464320
+SLOT: 2/16
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc icu kernel_linux python_targets_python3_14 readline
+MTIME: 1791062580
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/m4
 BUILD_ID: 7
 BUILD_TIME: 1791061879
@@ -657,6 +728,238 @@ SHA1: a0aade609fbadebe4ae1d77ce8d44b0aa46ced2a
 SIZE: 153600
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791057554
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791062479
+CPV: dev-python/flit-core-4.1.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 28814ad6fdb92e5bdf560309cdb12c73
+PATH: pkgs-dev-python/flit-core-4.1.0-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: aa29f71d023b0763f03e977c0214b41b8d3c8225
+SIZE: 133120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062479
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14
+BUILD_ID: 2
+BUILD_TIME: 1791062472
+CPV: dev-python/gpep517-23
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2+
+MD5: e424481916b2691cf1bdf882c2d4e681
+PATH: pkgs-dev-python/gpep517-23-2.gpkg.tar
+PDEPEND: >=dev-python/packaging-26.1[python_targets_python3_14(-)]
+RDEPEND: >=dev-python/installer-0.5.0[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: aba7b0e565cdd5aa6902381d11058680c4f65e4c
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062473
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/unzip dev-lang/python:3.14
+BUILD_ID: 2
+BUILD_TIME: 1791062465
+CPV: dev-python/installer-1.0.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 68b47581c716bd54fe93d13f0256a85f
+PATH: pkgs-dev-python/installer-1.0.1-2.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 4b1bd291499464c3a60cd37bd5e9fa6870afb282
+SIZE: 348160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062466
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791062521
+CPV: dev-python/jaraco-context-6.1.2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: dad14c50bad4ab241de7f22844ebddca
+PATH: pkgs-dev-python/jaraco-context-6.1.2-2.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: cd2ff1c0ca408feb27a642e9ee75ebd52f1fe7ae
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062522
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791062500
+CPV: dev-python/jaraco-functools-4.6.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 9b8324e3f14fb4319f010d876fd2b196
+PATH: pkgs-dev-python/jaraco-functools-4.6.0-2.gpkg.tar
+RDEPEND: >=dev-python/more-itertools-0.12.0-r1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: b3df50014c362e81d3e7b2880338c842e3738932
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062501
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791062528
+CPV: dev-python/jaraco-text-4.3.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: e63f2f9771258afe0b9df189644e93a1
+PATH: pkgs-dev-python/jaraco-text-4.3.0-2.gpkg.tar
+RDEPEND: >=dev-python/jaraco-context-4.1.1-r1[python_targets_python3_14(-)] >=dev-python/jaraco-functools-3.5.0-r1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 6bcc1fc94ad4b7e3fcf7d68aff970d4f149f12e0
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062529
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791062493
+CPV: dev-python/more-itertools-11.1.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: doc python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: ddbad86ea4036dd61838c6dc433fbc0e
+PATH: pkgs-dev-python/more-itertools-11.1.0-2.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+SHA1: f2c31d7b1838e996701045f03d233e2951dec57a
+SIZE: 215040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062494
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791062485
+CPV: dev-python/packaging-26.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: || ( Apache-2.0 BSD-2 )
+MD5: 97785cb3a225ff8271178ca1bc4524d8
+PATH: pkgs-dev-python/packaging-26.3-2.gpkg.tar
+RDEPEND: !<dev-python/setuptools-67 dev-lang/python:3.14
+RESTRICT: test
+SHA1: 55afc8eb7e864e296f69ac24e56495b432d5915d
+SIZE: 378880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062486
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791062507
+CPV: dev-python/platformdirs-4.12.2
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: e6ec25b16bc9cc01013f9a94213770e6
+PATH: pkgs-dev-python/platformdirs-4.12.2-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: b6fe0a30d21eb52aa055fe0b6457019d68f601b8
+SIZE: 143360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062508
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/jaraco-functools-4.4.0[python_targets_python3_14(-)] >=dev-python/jaraco-text-4.0.0[python_targets_python3_14(-)] >=dev-python/more-itertools-10.8.0[python_targets_python3_14(-)] >=dev-python/packaging-25.0[python_targets_python3_14(-)] >=dev-python/platformdirs-4.4.0[python_targets_python3_14(-)] >=dev-python/wheel-0.45.1[python_targets_python3_14(-)] dev-lang/python:3.14[xml(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791062537
+CPV: dev-python/setuptools-84.0.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14[xml(+)]
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 02a9b1dae0c67bf09b8ea47827cd2ac1
+PATH: pkgs-dev-python/setuptools-84.0.0-2.gpkg.tar
+PDEPEND: dev-python/setuptools-scm[python_targets_python3_14(-)] >=dev-python/trove-classifiers-2024.10.16[python_targets_python3_14(-)]
+RDEPEND: >=dev-python/jaraco-functools-4.4.0[python_targets_python3_14(-)] >=dev-python/jaraco-text-4.0.0[python_targets_python3_14(-)] >=dev-python/more-itertools-10.8.0[python_targets_python3_14(-)] >=dev-python/packaging-25.0[python_targets_python3_14(-)] >=dev-python/platformdirs-4.4.0[python_targets_python3_14(-)] >=dev-python/wheel-0.45.1[python_targets_python3_14(-)] dev-lang/python:3.14[xml(+)]
+RESTRICT: test
+SHA1: b8daa6724809c6ca58bdd68f3481a3b89aec3a56
+SIZE: 1167360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062538
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791062514
+CPV: dev-python/wheel-0.48.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 7ebf997d195dc7e4f517c096b70cc036
+PATH: pkgs-dev-python/wheel-0.48.0-2.gpkg.tar
+RDEPEND: >=dev-python/packaging-26.0[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 73496216caf7ecf814298e653e79d3d487f4bed3
+SIZE: 133120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791062515
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1198,6 +1501,29 @@ SHA1: 6a1f7c7b88373d23d66a62f5580d9d17159da6b8
 SIZE: 184320
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
 MTIME: 1791060064
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-text/po4a sys-devel/gettext >=app-portage/elt-patches-20250306 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791062342
+CPV: sys-apps/util-linux-2.42.3
+DEFINED_PHASES: compile configure install postinst prepare pretend test unpack
+DEPEND: virtual/libcrypt:0/2= virtual/zlib:0/1= dev-libs/libpcre2:0/3= sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_32(-),abi_x86_64(-)] sys-libs/pam sys-libs/readline:0/8= virtual/libudev:0/1= virtual/os-headers acct-group/root
+EAPI: 8
+IUSE: audit build caps +cramfs cryptsetup fdformat +hardlink kill +logger magic ncurses nls pam python +readline rtas selinux slang static-libs +su +suid systemd test tty-helpers udev unicode uuidd python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos
+LICENSE: GPL-2+ GPL-1+ GPL-2 GPL-2+ GPL-3+ LGPL-2.1+ MIT BSD-2 BSD BSD-4 EUPL-1.2 public-domain
+MD5: 7beda82f177e2b4a98798fbe445cfb9d
+PATH: pkgs-sys-apps/util-linux-2.42.3-1.gpkg.tar
+PROVIDES: x86_32: libblkid.so.1 libfdisk.so.1 libmount.so.1 libsmartcols.so.1 libuuid.so.1 x86_64: libblkid.so.1 libfdisk.so.1 libmount.so.1 libsmartcols.so.1 libuuid.so.1
+RDEPEND: virtual/libcrypt:0/2= virtual/zlib:0/1= dev-libs/libpcre2:0/3= sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_32(-),abi_x86_64(-)] sys-libs/pam sys-libs/readline:0/8= virtual/libudev:0/1= !app-arch/hardlink !>=app-admin/sysklogd-2.0[logger] !<sys-apps/shadow-4.7-r2 !>=sys-apps/shadow-4.7-r2[su] !net-wireless/rfkill >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: ld-linux.so.2 libc.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6 libcrypt.so.2 libm.so.6 libncursesw.so.6 libpam.so.0 libpam_misc.so.0 libreadline.so.8 libtinfow.so.6 libudev.so.1 libz.so.1
+RESTRICT: test
+SHA1: d1809e2bbef9c13b0480c7510a2213201d4e6654
+SIZE: 6676480
+USE: abi_x86_32 abi_x86_64 amd64 cramfs elibc_glibc hardlink kernel_linux logger ncurses nls pam python_targets_python3_14 readline su suid udev unicode
+MTIME: 1791062346
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
