@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791062685
-PACKAGES: 81
+TIMESTAMP: 1791062993
+PACKAGES: 83
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -858,6 +858,29 @@ MTIME: 1791062529
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig >=dev-python/cython-3.1.4[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791062882
+CPV: dev-python/lxml-6.1.3
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: >=dev-libs/libxml2-2.10.3:2/16= >=dev-libs/libxslt-1.1.38 dev-lang/python:3.14
+EAPI: 8
+IUSE: doc examples +threads test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD ElementTree GPL-2 PSF-2
+MD5: 280d7e48a3f6f79b51621c452c06f5de
+PATH: pkgs-dev-python/lxml-6.1.3-1.gpkg.tar
+PROVIDES: x86_64: _difflib.cpython-314-x86_64-linux-gnu.so _elementpath.cpython-314-x86_64-linux-gnu.so builder.cpython-314-x86_64-linux-gnu.so diff.cpython-314-x86_64-linux-gnu.so etree.cpython-314-x86_64-linux-gnu.so objectify.cpython-314-x86_64-linux-gnu.so sax.cpython-314-x86_64-linux-gnu.so
+RDEPEND: >=dev-libs/libxml2-2.10.3:2/16= >=dev-libs/libxslt-1.1.38 dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libexslt.so.0 libxml2.so.16 libxslt.so.1
+RESTRICT: test
+SHA1: d633dcd61bf5167d2f1cf074d2ff92d3ff73bcb7
+SIZE: 2078720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 threads
+MTIME: 1791062884
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 2
 BUILD_TIME: 1791062493
@@ -1480,6 +1503,30 @@ SHA1: 4d766630d485d8254ac916a76c82f1ff7669af2a
 SIZE: 235520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux pcre
 MTIME: 1791061976
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/docbook-xml-dtd:4.2 app-text/docbook-xml-dtd:4.5 app-text/docbook-xsl-stylesheets dev-libs/libxslt dev-util/gperf dev-util/patchelf >=sys-apps/coreutils-8.16 sys-devel/gettext virtual/pkgconfig dev-python/jinja2[python_targets_python3_14(-)] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791062797
+CPV: sys-apps/systemd-utils-262
+DEFINED_PHASES: compile configure install postinst preinst setup test
+DEPEND: sys-apps/acl >=sys-apps/util-linux-2.37 sys-apps/acl >=sys-apps/kmod-15 >=sys-kernel/linux-headers-3.11
+EAPI: 8
+IUSE: +acl boot +kmod kernel-install selinux split-usr +sysctl sysusers +tmpfiles test +udev ukify abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 secureboot
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2 LGPL-2.1 MIT public-domain
+MD5: 14914a44241e7de31fdde13781bc3ce7
+PATH: pkgs-sys-apps/systemd-utils-262-1.gpkg.tar
+PDEPEND: >=sys-fs/udev-init-scripts-34
+PROVIDES: x86_32: libudev.so.1 x86_64: libsystemd-shared-262.so libudev.so.1
+RDEPEND: sys-apps/acl >=sys-apps/util-linux-2.37 sys-apps/acl >=sys-apps/kmod-15 !<sys-apps/systemd-tmpfiles-250 acct-group/audio acct-group/cdrom acct-group/dialout acct-group/disk acct-group/floppy acct-group/input acct-group/kmem acct-group/kvm acct-group/lp acct-group/render acct-group/sgx acct-group/tape acct-group/tty acct-group/usb acct-group/video !sys-apps/gentoo-systemd-integration !<sys-fs/udev-250 !sys-fs/eudev !sys-apps/systemd >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: ld-linux.so.2 libc.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6
+RESTRICT: test
+SHA1: 1d6edd1da0ced6fba1ae95104abfc5ea863df41f
+SIZE: 5027840
+USE: abi_x86_32 abi_x86_64 acl amd64 elibc_glibc kernel_linux kmod python_single_target_python3_14 sysctl tmpfiles udev
+MTIME: 1791062801
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
