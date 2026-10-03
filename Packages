@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791060221
-PACKAGES: 46
+TIMESTAMP: 1791062018
+PACKAGES: 54
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -226,6 +226,47 @@ MTIME: 1791057931
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-lang/perl-5.10 >=sys-devel/m4-1.4.16
+BUILD_ID: 1
+BUILD_TIME: 1791061887
+CPV: dev-build/autoconf-2.73-r2
+DEFINED_PHASES: configure install prepare test unpack
+EAPI: 8
+IUSE: verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+
+MD5: fd292dad372081011fe8c44ca9c3449c
+PATH: pkgs-dev-build/autoconf-2.73-r2-1.gpkg.tar
+RDEPEND: >=dev-lang/perl-5.10 >=sys-devel/m4-1.4.16 >=dev-build/autoconf-wrapper-20260320 sys-devel/gnuconfig !~dev-build/autoconf-2.73:2.5
+SHA1: 61d2a0f38dc9f2545e279a3f4e971e16ba4832a4
+SIZE: 890880
+SLOT: 2.73
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791061888
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/gzip sys-apps/help2man dev-build/autoconf-wrapper dev-build/autoconf
+BUILD_ID: 1
+BUILD_TIME: 1791061924
+CPV: dev-build/automake-1.19
+DEFINED_PHASES: configure install prepare setup test unpack
+EAPI: 8
+IUSE: test verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2+ FSFAP
+MD5: 2e7b238a23552e7adbc761a3987e82f2
+PATH: pkgs-dev-build/automake-1.19-1.gpkg.tar
+RDEPEND: >=dev-lang/perl-5.6 >=dev-build/automake-wrapper-20260920 >=dev-build/autoconf-2.69:* sys-devel/gnuconfig
+RESTRICT: test
+SHA1: 39937ae3892905d3f8fc9524356a0492000cda59
+SIZE: 942080
+SLOT: 1.19
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791061926
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791057568
 CPV: dev-build/automake-wrapper-20260920
@@ -440,6 +481,29 @@ MTIME: 1791058292
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/m4
+BUILD_ID: 7
+BUILD_TIME: 1791061879
+CPV: dev-libs/nettle-3.10.2
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=dev-libs/gmp-6.1:0/10.4=[abi_x86_64(-)]
+EAPI: 8
+IUSE: +asm doc +gmp static-libs cpu_flags_arm_neon cpu_flags_arm_aes cpu_flags_arm_sha1 cpu_flags_arm_sha2 cpu_flags_ppc_altivec cpu_flags_ppc_vsx2 cpu_flags_ppc_vsx3 cpu_flags_x86_aes cpu_flags_x86_sha cpu_flags_x86_pclmul abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: || ( GPL-2+ LGPL-3+ )
+MD5: 7c27f98076e6b1d39a9822a1ffbf9171
+PATH: pkgs-dev-libs/nettle-3.10.2-7.gpkg.tar
+PROVIDES: x86_64: libhogweed.so.6 libnettle.so.8
+RDEPEND: >=dev-libs/gmp-6.1:0/10.4=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgmp.so.10
+SHA1: 10f8881ca187359989d40b28cef287b86a5f74b0
+SIZE: 471040
+SLOT: 0/8-6
+USE: abi_x86_64 amd64 asm cpu_flags_x86_aes cpu_flags_x86_pclmul elibc_glibc gmp kernel_linux
+MTIME: 1791061880
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 7
 BUILD_TIME: 1791055508
 CPV: dev-libs/oniguruma-6.9.10
@@ -600,6 +664,29 @@ MTIME: 1791059827
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gettext virtual/pkgconfig >=app-portage/elt-patches-20250306
+BUILD_ID: 10
+BUILD_TIME: 1791061856
+CPV: media-libs/flac-1.5.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: media-libs/libogg[abi_x86_32(-),abi_x86_64(-)]
+EAPI: 8
+IUSE: +cxx debug ogg cpu_flags_x86_avx2 cpu_flags_x86_avx static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-solaris
+LICENSE: BSD FDL-1.2 GPL-2 LGPL-2.1
+MD5: 6f49cf1f653d29c12aaecc3765033460
+PATH: pkgs-media-libs/flac-1.5.0-10.gpkg.tar
+PROVIDES: x86_32: libFLAC++.so.11 libFLAC.so.14 x86_64: libFLAC++.so.11 libFLAC.so.14
+RDEPEND: media-libs/libogg[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libgcc_s.so.1 libm.so.6 libogg.so.0 libstdc++.so.6 x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libogg.so.0 libstdc++.so.6
+SHA1: 081ae90be5c65081c78987d674a38e912f8af16f
+SIZE: 890880
+SLOT: 0/11-14
+USE: abi_x86_32 abi_x86_64 amd64 cpu_flags_x86_avx cpu_flags_x86_avx2 cxx elibc_glibc kernel_linux ogg
+MTIME: 1791061857
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 7
 BUILD_TIME: 1791057536
 CPV: media-libs/libogg-1.3.6
@@ -641,6 +728,30 @@ SIZE: 552960
 SLOT: 0/16
 USE: abi_x86_32 abi_x86_64 amd64 cpu_flags_x86_sse elibc_glibc kernel_linux
 MTIME: 1791059512
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791061961
+CPV: net-libs/libmicrohttpd-1.0.5
+DEFINED_PHASES: compile configure install pretend setup test unpack
+DEPEND: >net-libs/gnutls-2.12.20-r0:0/30.30=[abi_x86_64(-)]
+EAPI: 8
+IUSE: debug +epoll +eventfd ssl static-libs test +thread-names verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-solaris
+LICENSE: LGPL-2.1+
+MD5: d99bd6d926745eadff21c5d58d8e53ff
+PATH: pkgs-net-libs/libmicrohttpd-1.0.5-1.gpkg.tar
+PROVIDES: x86_64: libmicrohttpd.so.12
+RDEPEND: >net-libs/gnutls-2.12.20-r0:0/30.30=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgnutls.so.30
+RESTRICT: test
+SHA1: ec8d364559dc3142d79346e7776d7c87d860e5ef
+SIZE: 378880
+SLOT: 0/12
+USE: abi_x86_64 amd64 elibc_glibc epoll eventfd kernel_linux ssl thread-names
+MTIME: 1791061962
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -754,6 +865,73 @@ SHA1: e2ddab72ff0360a27f791161f7e13f3b93345c00
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791058012
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/xz-utils dev-lang/perl sys-apps/help2man sys-apps/texinfo
+BUILD_ID: 1
+BUILD_TIME: 1791061765
+CPV: sys-apps/coreutils-9.12
+DEFINED_PHASES: configure install postinst prepare setup test unpack
+DEPEND: sys-apps/acl dev-libs/openssl:0/3= sys-apps/attr virtual/libintl
+EAPI: 8
+IUSE: acl caps gmp hostname kill multicall nls +openssl selinux +split-usr static test test-full vanilla xattr verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-3+
+MD5: 978f06a147562a3ce52de51e9b7e0dd9
+PATH: pkgs-sys-apps/coreutils-9.12-1.gpkg.tar
+PROVIDES: x86_64: libstdbuf.so
+RDEPEND: sys-apps/acl dev-libs/openssl:0/3= sys-apps/attr virtual/libintl !<app-forensics/tct-1.18-r1 !<net-fs/netatalk-2.0.3-r4 !net-mail/base64 !sys-apps/mktemp !<sys-apps/sandbox-2.10-r4 !<sys-apps/shadow-4.19.0_rc1 !sys-apps/stat !<sys-apps/util-linux-2.13 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libacl.so.1 libattr.so.1 libc.so.6 libcrypto.so.3
+RESTRICT: test
+SHA1: 2a43eb36d2bdfd2e24d2b701f954a6d4a53ec777
+SIZE: 4567040
+USE: abi_x86_64 acl amd64 elibc_glibc kernel_linux nls openssl xattr
+MTIME: 1791061768
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=sys-apps/texinfo-7.1 >=sys-devel/bison-3.5.4 sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1791061911
+CPV: sys-apps/gawk-5.4.1-r1
+DEFINED_PHASES: configure install prepare test unpack
+DEPEND: dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= sys-libs/readline:0/8=
+EAPI: 8
+IUSE: +mpfr pma nls readline verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+
+MD5: bd9d47976db8bfb3f2613a6fde2b6fd1
+PATH: pkgs-sys-apps/gawk-5.4.1-r1-1.gpkg.tar
+PROVIDES: x86_64: filefuncs.so fnmatch.so fork.so inplace.so intdiv.so ordchr.so readdir.so readfile.so revoutput.so revtwoway.so rwarray.so time.so
+RDEPEND: dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgmp.so.10 libm.so.6 libmpfr.so.6 libreadline.so.8
+SHA1: 744d999281f436e8a107d93f9454f98d03a5809b
+SIZE: 1658880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux mpfr nls readline
+MTIME: 1791061912
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/xz-utils >=sys-devel/bison-2.4 app-alternatives/lex virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791061939
+CPV: sys-apps/iproute2-7.2.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: net-libs/libmnl:0/0.2.0= >=net-firewall/iptables-1.4.20:0/1.8.3= >=sys-kernel/linux-headers-3.16
+EAPI: 8
+IUSE: atm berkdb bpf caps elf +iptables minimal nfs selinux
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: ddf72797ec6472d6597ab37aa4a87c66
+PATH: pkgs-sys-apps/iproute2-7.2.0-1.gpkg.tar
+RDEPEND: net-libs/libmnl:0/0.2.0= >=net-firewall/iptables-1.4.20:0/1.8.3= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6 libmnl.so.0 libxtables.so.12
+RESTRICT: test
+SHA1: d9390431720a360bc0c48805200c30a720e2e1b4
+SIZE: 1413120
+USE: abi_x86_64 amd64 elibc_glibc iptables kernel_linux
+MTIME: 1791061940
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
