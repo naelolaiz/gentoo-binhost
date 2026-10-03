@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791064420
-PACKAGES: 114
+TIMESTAMP: 1791064742
+PACKAGES: 120
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1080,6 +1080,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 3
+BUILD_TIME: 1791064565
+CPV: dev-python/pathspec-1.1.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MPL-2.0
+MD5: f1c4fa00e6c255b58df63148e9f1d442
+PATH: pkgs-dev-python/pathspec-1.1.1-3.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+SHA1: 504bfc7600e54c60a4fd6ac2ca63f52324fddbdc
+SIZE: 143360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791064566
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791062507
 CPV: dev-python/platformdirs-4.12.2
@@ -1284,6 +1304,29 @@ SHA1: 52eebf674f832e06ae6274bb5c6e7f5447fa8d7e
 SIZE: 348160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791063929
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791064556
+CPV: dev-util/spirv-tools-1.4.357.0
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: ~dev-util/spirv-headers-1.4.357.0
+EAPI: 8
+IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: Apache-2.0
+MD5: aa8a4ce8902bfa24f213a1ffd831836f
+PATH: pkgs-dev-util/spirv-tools-1.4.357.0-1.gpkg.tar
+PROVIDES: x86_32: libSPIRV-Tools-diff.so libSPIRV-Tools-link.so libSPIRV-Tools-lint.so libSPIRV-Tools-opt.so libSPIRV-Tools-reduce.so libSPIRV-Tools-shared.so libSPIRV-Tools.so x86_64: libSPIRV-Tools-diff.so libSPIRV-Tools-link.so libSPIRV-Tools-lint.so libSPIRV-Tools-opt.so libSPIRV-Tools-reduce.so libSPIRV-Tools-shared.so libSPIRV-Tools.so
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 x86_64: libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 1ab5a950125733fe6416c0bf909aba130676014f
+SIZE: 5888000
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791064559
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2347,6 +2390,29 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1791064674
+CPV: x11-libs/libX11-1.8.13
+DEFINED_PHASES: compile configure install postinst postrm prepare test unpack
+DEPEND: >=x11-libs/libxcb-1.11.1[abi_x86_32(-),abi_x86_64(-)] x11-misc/compose-tables x11-base/xorg-proto x11-libs/xtrans
+EAPI: 8
+IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 doc
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: MIT
+MD5: ee5ab6e0cfeae7d911e491b15c7764ba
+PATH: pkgs-x11-libs/libX11-1.8.13-2.gpkg.tar
+PROVIDES: x86_32: libX11-xcb.so.1 libX11.so.6 x86_64: libX11-xcb.so.1 libX11.so.6
+RDEPEND: >=x11-libs/libxcb-1.11.1[abi_x86_32(-),abi_x86_64(-)] x11-misc/compose-tables x11-base/xorg-proto >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libxcb.so.1 x86_64: libc.so.6 libxcb.so.1
+RESTRICT: test
+SHA1: c2d5afba19849fd92fffa87ce71aeb02d3c0971a
+SIZE: 1433600
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791064675
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
 BUILD_ID: 9
 BUILD_TIME: 1791058062
 CPV: x11-libs/libXau-1.0.12
@@ -2387,6 +2453,50 @@ SHA1: 5d086e82ccd4b9b2944d45825ba9f31b0cbcb94d
 SIZE: 71680
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791059544
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1791064690
+CPV: x11-libs/libXext-1.3.7
+DEFINED_PHASES: compile configure install postinst postrm prepare test unpack
+DEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] x11-base/xorg-proto
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 doc
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 9f4b5621bd60534766d7c44202701cca
+PATH: pkgs-x11-libs/libXext-1.3.7-2.gpkg.tar
+PROVIDES: x86_32: libXext.so.6 x86_64: libXext.so.6
+RDEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libX11.so.6 libc.so.6 x86_64: libX11.so.6 libc.so.6
+SHA1: 181df79ac978af50cfce605f7acc61302114ff6c
+SIZE: 133120
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791064691
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 7
+BUILD_TIME: 1791064701
+CPV: x11-libs/libXfixes-6.0.2
+DEFINED_PHASES: compile configure install test unpack
+DEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=x11-base/xorg-proto-2021.4
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 doc
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: HPND MIT
+MD5: fe0c5c3262ed17e4ef03f64a6025e51d
+PATH: pkgs-x11-libs/libXfixes-6.0.2-7.gpkg.tar
+PROVIDES: x86_32: libXfixes.so.3 x86_64: libXfixes.so.3
+RDEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libX11.so.6 libc.so.6 x86_64: libX11.so.6 libc.so.6
+SHA1: 9811336b6d75117bb5b5dc230cb15c68ebec06c4
+SIZE: 71680
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791064701
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2432,6 +2542,30 @@ SHA1: 7473805d4f2bcfb76affb91222a6fe0d9721ec4a
 SIZE: 92160
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux zlib
 MTIME: 1791063451
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) || ( ( dev-lang/python:3.14[xml(+)] >=x11-base/xcb-proto-1.17.0[python_targets_python3_14(-)] ) ( dev-lang/python:3.13[xml(+)] >=x11-base/xcb-proto-1.17.0[python_targets_python3_13(-)] ) ( dev-lang/python:3.12[xml(+)] >=x11-base/xcb-proto-1.17.0[python_targets_python3_12(-)] ) ) >=app-portage/elt-patches-20250306 virtual/pkgconfig
+BUILD_ID: 14
+BUILD_TIME: 1791064600
+CPV: x11-libs/libxcb-1.17.0
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
+DEPEND: >=x11-libs/libXau-1.0.7-r1[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXdmcp-1.1.1-r1[abi_x86_32(-),abi_x86_64(-)] x11-base/xorg-proto >=x11-base/xcb-proto-1.17.0
+EAPI: 8
+IUSE: doc selinux test +xkb abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 doc
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 77ba194f35cbe6cee9c2104d4615a59c
+PATH: pkgs-x11-libs/libxcb-1.17.0-14.gpkg.tar
+PROVIDES: x86_32: libxcb-composite.so.0 libxcb-damage.so.0 libxcb-dbe.so.0 libxcb-dpms.so.0 libxcb-dri2.so.0 libxcb-dri3.so.0 libxcb-glx.so.0 libxcb-present.so.0 libxcb-randr.so.0 libxcb-record.so.0 libxcb-render.so.0 libxcb-res.so.0 libxcb-screensaver.so.0 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-sync.so.1 libxcb-xf86dri.so.0 libxcb-xfixes.so.0 libxcb-xinerama.so.0 libxcb-xinput.so.0 libxcb-xkb.so.1 libxcb-xtest.so.0 libxcb-xv.so.0 libxcb-xvmc.so.0 libxcb.so.1 x86_64: libxcb-composite.so.0 libxcb-damage.so.0 libxcb-dbe.so.0 libxcb-dpms.so.0 libxcb-dri2.so.0 libxcb-dri3.so.0 libxcb-glx.so.0 libxcb-present.so.0 libxcb-randr.so.0 libxcb-record.so.0 libxcb-render.so.0 libxcb-res.so.0 libxcb-screensaver.so.0 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-sync.so.1 libxcb-xf86dri.so.0 libxcb-xfixes.so.0 libxcb-xinerama.so.0 libxcb-xinput.so.0 libxcb-xkb.so.1 libxcb-xtest.so.0 libxcb-xv.so.0 libxcb-xvmc.so.0 libxcb.so.1
+RDEPEND: >=x11-libs/libXau-1.0.7-r1[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXdmcp-1.1.1-r1[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libXau.so.6 libXdmcp.so.6 libc.so.6 x86_64: libXau.so.6 libXdmcp.so.6 libc.so.6
+RESTRICT: test
+SHA1: 7ae21bf874cc17792bbff7170c445dfb0e59193a
+SIZE: 819200
+SLOT: 0/1.12
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux xkb
+MTIME: 1791064601
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
