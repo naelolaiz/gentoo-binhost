@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791059772
-PACKAGES: 36
+TIMESTAMP: 1791060100
+PACKAGES: 44
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -24,6 +24,22 @@ USE_EXPAND_UNPREFIXED: ARCH
 USE_EXPAND_VALUES_ARCH: alpha amd64 arm arm64 arm64-macos hppa loong m68k mips ppc ppc64 riscv s390 sparc x64-macos x64-solaris x86
 USE_EXPAND_VALUES_ELIBC: bionic Darwin glibc mingw musl SunOS
 USE_EXPAND_VALUES_KERNEL: Darwin Hurd linux SunOS
+
+BUILD_ID: 2
+BUILD_TIME: 1791059992
+CPV: acct-group/realtime-0-r2
+DEFINED_PHASES: install preinst pretend
+EAPI: 8
+IDEPEND: >=sys-apps/shadow-4.6
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: bd26d09db9f317157bdec83d381aee56
+PATH: pkgs-acct-group/realtime-0-r2-2.gpkg.tar
+SHA1: e3f6846c00212738d6b29e6009629d4f942cffda
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791059992
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 7
 BUILD_TIME: 1791057576
@@ -85,6 +101,30 @@ SHA1: 94366fe95a218b7edecf48f4ceabb6d7e52f9150
 SIZE: 819200
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc extra-filters kernel_linux nls
 MTIME: 1791058000
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1791060026
+CPV: app-crypt/gpgme-2.2.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: || ( app-alternatives/gpg[reference] app-alternatives/gpg[freepg(-)] ) >=dev-libs/libassuan-2.5.3:0/3.0= >=dev-libs/libgpg-error-1.46-r1:0/0=
+EAPI: 8
+IUSE: common-lisp static-libs test verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2 LGPL-2.1
+MD5: 1cd641b2f1a241d713ca1deb020c12b0
+PATH: pkgs-app-crypt/gpgme-2.2.0-1.gpkg.tar
+PROVIDES: x86_64: libgpgme.so.45
+RDEPEND: || ( app-alternatives/gpg[reference] app-alternatives/gpg[freepg(-)] ) >=dev-libs/libassuan-2.5.3:0/3.0= >=dev-libs/libgpg-error-1.46-r1:0/0= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libassuan.so.9 libc.so.6 libgpg-error.so.0 libm.so.6
+RESTRICT: test
+SHA1: cd8927b7153aa79916510672a2fa46a5a942c09c
+SIZE: 563200
+SLOT: 1/45.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791060027
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -222,6 +262,30 @@ MTIME: 1791058125
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1791059891
+CPV: dev-db/sqlite-3.53.4
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: virtual/zlib:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] sys-libs/readline:0/8=[abi_x86_64(-)]
+EAPI: 8
+IUSE: debug doc icu +readline secure-delete static-libs tcl test test-full tools abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: public-domain
+MD5: a915c7b63c1171dc22c02cb4a0b06705
+PATH: pkgs-dev-db/sqlite-3.53.4-1.gpkg.tar
+PROVIDES: x86_64: libsqlite3.so.0
+RDEPEND: virtual/zlib:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] sys-libs/readline:0/8=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libicui18n.so.78 libicuio.so.78 libicuuc.so.78 libm.so.6 libreadline.so.8 libz.so.1
+RESTRICT: test
+SHA1: 9e7d98cf6256c5e1c706da3c4a9e1cd8de3598d5
+SIZE: 2314240
+SLOT: 3
+USE: abi_x86_64 amd64 elibc_glibc icu kernel_linux readline
+MTIME: 1791059893
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791057866
 CPV: dev-lang/python-exec-2.4.10
@@ -282,6 +346,28 @@ SIZE: 286720
 SLOT: 0/8
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc exec-static-trampoline kernel_linux
 MTIME: 1791058031
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/yacc >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1791060046
+CPV: dev-libs/libksba-1.8.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=dev-libs/libgpg-error-1.33
+EAPI: 8
+IUSE: static-libs verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: LGPL-3+ GPL-2+ GPL-3
+MD5: b7ef392138eefcf78e8e50d98f51294c
+PATH: pkgs-dev-libs/libksba-1.8.1-1.gpkg.tar
+PROVIDES: x86_64: libksba.so.8
+RDEPEND: >=dev-libs/libgpg-error-1.33 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgpg-error.so.0
+SHA1: ef3d789c2ff5f7bd48ec1372703248734e19baeb
+SIZE: 215040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791060047
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -431,6 +517,63 @@ SHA1: d4b6c8868bcfa1812f302b3eca56e68d5f76314d
 SIZE: 30720
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791057546
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791059816
+CPV: llvm-runtimes/clang-rtlib-config-23
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: default-compiler-rt +abi_x86_32 abi_x86_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: public-domain
+MD5: 9ad91849a26e3a72ab65e9ac709a4a97
+PATH: pkgs-llvm-runtimes/clang-rtlib-config-23-1.gpkg.tar
+RDEPEND: sys-devel/gcc
+SHA1: 2f5125261a18184dfe122b9f73ca3bec2ef15cf0
+SIZE: 20480
+SLOT: 23
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791059816
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791059821
+CPV: llvm-runtimes/clang-stdlib-config-23
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: default-libcxx
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: public-domain
+MD5: b7ca9bf4f9559a576ec6e6fc444316cc
+PATH: pkgs-llvm-runtimes/clang-stdlib-config-23-1.gpkg.tar
+RDEPEND: sys-devel/gcc
+SHA1: 6e81dceb6470079cde35e38358b6de34ddfe28bc
+SIZE: 20480
+SLOT: 23
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791059822
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791059826
+CPV: llvm-runtimes/clang-unwindlib-config-23
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: default-compiler-rt llvm-libunwind
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: public-domain
+MD5: 8202595a99678390706db94d73f6b1c5
+PATH: pkgs-llvm-runtimes/clang-unwindlib-config-23-1.gpkg.tar
+RDEPEND: sys-devel/gcc
+SHA1: fd8fd9213b490cee89c40f8600b716ab443c5edb
+SIZE: 20480
+SLOT: 23
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791059827
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -588,6 +731,25 @@ SHA1: e2ddab72ff0360a27f791161f7e13f3b93345c00
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791058012
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/xz-utils dev-lang/perl net-misc/rsync
+BUILD_ID: 1
+BUILD_TIME: 1791059921
+CPV: sys-kernel/linux-headers-7.1
+DEFINED_PHASES: compile install postinst postrm preinst prepare setup test unpack
+EAPI: 8
+IUSE: headers-only
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: d15233f013eb9535862d2e79c79d0190
+PATH: pkgs-sys-kernel/linux-headers-7.1-1.gpkg.tar
+RESTRICT: binchecks strip
+SHA1: d2a69682862e3fdf353bc2838573fed4332d0516
+SIZE: 1935360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791059934
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
