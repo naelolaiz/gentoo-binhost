@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791060100
-PACKAGES: 44
+TIMESTAMP: 1791060221
+PACKAGES: 46
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -323,6 +323,29 @@ SIZE: 30720
 SLOT: 2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791057558
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791060084
+CPV: dev-lang/rust-bin-1.98.1
+DEFINED_PHASES: compile configure install postinst postrm test unpack
+EAPI: 8
+IUSE: big-endian +clippy cpu_flags_x86_sse2 doc prefix rust-analyzer rust-src +rustfmt +llvm_slot_22 verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: || ( MIT Apache-2.0 ) BSD BSD-1 BSD-2 BSD-4
+MD5: e4f8b7a9fbfeed3e0f0e283082a237d6
+PATH: pkgs-dev-lang/rust-bin-1.98.1-1.gpkg.tar
+PROVIDES: x86_64: libLLVM.so.22.1-rust-1.98.1-stable librustc_driver-eaf3ed1d23ca5027.so libstd-64f5f36fb0927694.so
+RDEPEND: >=app-eselect/eselect-rust-20190311 dev-libs/openssl net-misc/curl sys-apps/lsb-release || ( llvm-runtimes/libgcc sys-devel/gcc:* ) !dev-lang/rust:stable !dev-lang/rust-bin:stable >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libdl.so.2 libgcc_s.so.1 libm.so.6 libpthread.so.0 librt.so.1 libz.so.1
+RESTRICT: strip
+SHA1: c6b23f8bc776fcbe83768f9104bc2a8c86bf048e
+SIZE: 200192000
+SLOT: 1.98.1
+USE: abi_x86_64 amd64 clippy cpu_flags_x86_sse2 elibc_glibc kernel_linux llvm_slot_22 rustfmt
+MTIME: 1791060100
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -731,6 +754,27 @@ SHA1: e2ddab72ff0360a27f791161f7e13f3b93345c00
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791058012
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/po4a
+BUILD_ID: 1
+BUILD_TIME: 1791060063
+CPV: sys-apps/sysvinit-3.18
+DEFINED_PHASES: compile install postinst prepare unpack
+DEPEND: acct-group/root virtual/os-headers
+EAPI: 8
+IUSE: selinux ibm nls static verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: 6d091bc7d9244cbdfbc732cab6d69a64
+PATH: pkgs-sys-apps/sysvinit-3.18-1.gpkg.tar
+RDEPEND: acct-group/root !<app-i18n/man-pages-l10n-4.18.1-r1 !<sys-apps/openrc-0.13 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+SHA1: 6a1f7c7b88373d23d66a62f5580d9d17159da6b8
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
+MTIME: 1791060064
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
