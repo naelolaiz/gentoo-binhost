@@ -1,64 +1,51 @@
-# Gentoo Binhost Signing Key — Placeholder
+# Signing key
 
-This file is a placeholder.  The actual signing key is stored as a GitHub
-Actions secret (`GPG_PRIVATE_KEY`) and is **never** committed to the repository.
+Packages are signed inside the gpkg by Portage (`FEATURES=binpkg-signing`).
+Machines verify the signature against `binhost-signing-key.asc` in this
+directory; see [scripts/trust-binhost-key.sh](../scripts/trust-binhost-key.sh).
 
-## Setting Up GPG Signing
+The secret key is only stored as a repository secret and is never committed.
 
-### 1. Generate a dedicated signing key
+| Secret | Content |
+|---|---|
+| `GPG_PRIVATE_KEY` | the armored secret key |
+| `GPG_PASSPHRASE` | its passphrase; leave unset for a key without one |
 
-```bash
-gpg --batch --gen-key <<EOF
-%no-protection
-Key-Type: RSA
-Key-Length: 4096
-Subkey-Type: RSA
-Subkey-Length: 4096
-Name-Real: Gentoo Binhost
-Name-Email: binhost@naelolaiz.github.io
-Expire-Date: 2y
-%commit
-EOF
-```
+Before building anything, each run signs a test file and verifies it the way
+a machine would.  If the secret key and the public key in this directory do
+not belong together, or the key has expired, the run stops there.
 
-### 2. Export the private key (armored)
+## Creating a key
 
-```bash
-gpg --armor --export-secret-keys binhost@naelolaiz.github.io
-```
-
-Copy the output (including the `-----BEGIN PGP PRIVATE KEY BLOCK-----` header
-and footer) into the GitHub repository secret named **`GPG_PRIVATE_KEY`**.
-
-### 3. Set the passphrase secret
-
-If you protected the key with a passphrase, store it in **`GPG_PASSPHRASE`**.
-Leave the secret empty (or do not create it) for an unprotected key.
-
-### 4. Export the public key for users
+[scripts/new-signing-key.sh](../scripts/new-signing-key.sh) creates one in a
+container, so that nothing touches a personal keyring.  It writes the public
+key into this directory and the secret key to its standard output, which goes
+straight into the repository secret without being stored anywhere else:
 
 ```bash
-gpg --armor --export binhost@naelolaiz.github.io > keys/binhost-signing-key.asc
+podman run --rm --network none --tmpfs /tmp \
+    -v "$PWD:/repo:ro" -v "$PWD/keys:/keys" \
+    docker.io/gentoo/stage3:amd64-desktop-openrc \
+    bash /repo/scripts/new-signing-key.sh /keys/binhost-signing-key.asc \
+  | gh secret set GPG_PRIVATE_KEY
 ```
 
-Commit this file so users can import the public key and verify packages:
+Commit the new `binhost-signing-key.asc`.  The key is valid for three years
+and has no passphrase.
 
-```bash
-gpg --import keys/binhost-signing-key.asc
-```
+## Renewing or replacing it
 
-### 5. (Optional) Store the key fingerprint
+A signature made by an expired key is rejected, including on packages that
+were signed while the key was valid.  Before the key expires:
 
-Set the GitHub Actions secret **`GPG_KEY_FINGERPRINT`** to the full 40-character
-fingerprint printed by:
+1. Extend the expiry (`gpg --quick-set-expire <fingerprint> 3y`) or create a
+   new key, and update the `GPG_PRIVATE_KEY` secret.
+2. Commit the new public key.
+3. On every machine, run `scripts/trust-binhost-key.sh` again with the new
+   file.
 
-```bash
-gpg --fingerprint binhost@naelolaiz.github.io
-```
-
-This is used by the build scripts when calling `--gpg-key`.
-
----
-
-Once you have committed the **public** key as `keys/binhost-signing-key.asc`,
-delete this `README.md` placeholder (or keep it for documentation).
+With a *new* key, packages signed by the old one stay installable only as
+long as machines still trust the old key; rebuild them by deleting the
+`binhost` branch (see "Starting over" in
+[docs/TROUBLESHOOTING.md](../docs/TROUBLESHOOTING.md)) or let them be replaced
+as versions move on.

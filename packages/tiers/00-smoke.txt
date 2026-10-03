@@ -1,0 +1,10 @@
+# Smoke tier: two tiny packages that prove the whole pipeline — compile,
+# sign, publish, install on a clean machine — in a few minutes.
+# Their USE flags (config/profiles/*/package.use/90-smoke-test) differ from
+# the official binhost on purpose, so they are always built here.
+#@ shallow=yes
+#@ jobs=2
+
+app-misc/hello
+# jq pulls in dev-libs/oniguruma: one package built on top of another.
+app-misc/jq

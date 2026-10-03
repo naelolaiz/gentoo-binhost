@@ -1,0 +1,263 @@
+name: Build packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      tiers:
+        description: 'Tiers to build, space separated (smoke heavy desktop desktop-more steam-runtime kmod). Empty builds all of them.'
+        required: false
+        default: ''
+      budget_minutes:
+        description: 'Minutes this run may spend before it stops building and publishes what it has (20-300).'
+        required: false
+        default: '285'
+
+# One build at a time.  GitHub keeps at most one run waiting per group: a
+# newer request replaces an older one that has not started yet.  Published
+# packages are never lost that way, but the replaced request is, so the
+# follow-up job below does not dispatch while another run is already waiting.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  # Only the default branch writes to the binhost that machines install
+  # from.  Any other ref gets its own index branch and release prefix, so
+  # trying out a change never touches the real one.
+  INDEX_BRANCH: ${{ github.ref == 'refs/heads/main' && 'binhost' || 'binhost-test' }}
+  TAG_PREFIX: ${{ github.ref == 'refs/heads/main' && 'pkgs-' || 'test-pkgs-' }}
+  # Outside the checkout, so that nothing built ends up in the read-only
+  # mount of the repository inside the container.
+  WORK: /home/runner/binhost-work
+
+jobs:
+  build:
+    name: Build and publish
+    runs-on: ubuntu-24.04
+    # Hosted runners stop a job after 6 hours.  The build stops itself well
+    # before that (budget_minutes) so that publishing and saving the compiler
+    # cache always fit.
+    timeout-minutes: 355
+    permissions:
+      contents: write   # release assets and the index branch
+    outputs:
+      status: ${{ steps.build.outputs.status }}
+      all_tiers: ${{ steps.build.outputs.all_tiers }}
+      continue: ${{ steps.build.outputs.continue }}
+      healthy: ${{ steps.build.outputs.healthy }}
+      published: ${{ steps.build.outputs.published }}
+      verify_cpvs: ${{ steps.build.outputs.verify_cpvs }}
+      head: ${{ steps.build.outputs.head }}
+      tree_date: ${{ steps.build.outputs.tree_date }}
+      problems: ${{ steps.build.outputs.problems }}
+    steps:
+      - name: Note the start time
+        id: start
+        run: echo "epoch=$(date +%s)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v7
+        with:
+          # The token is handed to the publisher explicitly and must not be
+          # readable from the build container.
+          persist-credentials: false
+
+      # A hosted runner has about 20 GB free; one large package needs more
+      # than that for its build tree alone.
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/lib/jvm /usr/local/.ghcup /usr/local/lib/android \
+            /usr/local/share/powershell /usr/share/dotnet /usr/share/swift \
+            /opt/hostedtoolcache/CodeQL
+          docker image prune --all --force >/dev/null
+          mkdir -p "$WORK/ccache"
+          df -h /
+
+      # The compiler cache is what lets a package that takes longer than one
+      # run finish: the next run recompiles nothing that was already done.
+      # It is the only thing kept in the Actions cache, and losing it costs
+      # time, never correctness.
+      - name: Restore the compiler cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ env.WORK }}/ccache
+          key: cc-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: cc-v1-
+
+      - name: Build and publish
+        id: build
+        # Backstop only; the script keeps its own deadline.
+        timeout-minutes: 325
+        env:
+          REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          JOB_START: ${{ steps.start.outputs.epoch }}
+          BUDGET_MINUTES: ${{ inputs.budget_minutes || '285' }}
+          TIERS: ${{ inputs.tiers }}
+          ALLOW_CONTINUE: ${{ github.ref == 'refs/heads/main' }}
+        run: bash scripts/host-build.sh run
+
+      - name: Publish what was finished (after an aborted build step)
+        if: always() && steps.build.outcome != 'success' && steps.build.outcome != 'skipped'
+        timeout-minutes: 15
+        env:
+          REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/host-build.sh salvage
+
+      - name: Prepare the compiler cache for saving
+        id: cache_prep
+        if: always()
+        run: |
+          # Interrupted build trees are worthless and can be tens of GB.
+          sudo rm -rf "$WORK/portage-tmp"
+          # The container wrote these as root, some of them unreadable for
+          # others (build logs); the next steps run as the runner's user.
+          mkdir -p "$WORK/ccache" "$WORK/out"
+          sudo chown -R "$(id -u):$(id -g)" "$WORK/ccache" "$WORK/out"
+          if [ -n "$(ls -A "$WORK/ccache" 2>/dev/null)" ]; then
+            echo "save=true" >> "$GITHUB_OUTPUT"
+            du -sh "$WORK/ccache"
+          fi
+
+      # A new key every run: cache entries cannot be overwritten.  GitHub
+      # drops the least recently used entry once the repository is over its
+      # cache quota.  Only the default branch saves: an entry written by a
+      # test run would push the real one out.
+      - name: Save the compiler cache
+        if: always() && steps.cache_prep.outputs.save == 'true' && github.ref == 'refs/heads/main'
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ env.WORK }}/ccache
+          key: cc-v1-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-logs-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.WORK }}/out
+          if-no-files-found: ignore
+          retention-days: 14
+
+  # A clean machine has to be able to install what was just published.
+  verify:
+    name: Install check
+    needs: build
+    # Also after a build job that failed: what it published before failing
+    # is live and has to be checked just the same.
+    if: ${{ !cancelled() && needs.build.outputs.verify_cpvs != '' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Install published packages on a clean stage3
+        env:
+          HEAD: ${{ needs.build.outputs.head }}
+          TREE_DATE: ${{ needs.build.outputs.tree_date }}
+          CPVS: ${{ needs.build.outputs.verify_cpvs }}
+        run: |
+          . config/binhost.conf
+          # shellcheck disable=SC2086  # CPVS is a space separated list
+          docker run --rm --init --privileged -v "$PWD:/repo:ro" "$STAGE3_IMAGE" \
+            bash /repo/scripts/consumer-smoke.sh \
+              --binhost-uri "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${HEAD}" \
+              --trust-key /repo/keys/binhost-signing-key.asc \
+              ${TREE_DATE:+--tree-date "$TREE_DATE"} --install 2 $CPVS
+
+  # Out of time but not done: start the next run.
+  continue:
+    name: Request the next run
+    needs: [build, verify]
+    if: >-
+      always() && needs.build.outputs.continue == 'true'
+      && (needs.verify.result == 'success' || needs.verify.result == 'skipped')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Dispatch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TIERS: ${{ inputs.tiers }}
+          BUDGET: ${{ inputs.budget_minutes || '285' }}
+        run: |
+          # A run that is already waiting (the daily one, or one started by
+          # hand) picks up where this one stopped, and may cover more tiers.
+          # Dispatching now would replace it.
+          waiting="$(gh run list --repo "$GITHUB_REPOSITORY" --workflow build.yml \
+            --branch "$GITHUB_REF_NAME" --limit 20 --json status \
+            --jq '[.[] | select(.status == "queued" or .status == "pending" or .status == "waiting")] | length')"
+          if [ "$waiting" -gt 0 ]; then
+            echo "A run is already waiting; it continues the build."
+            exit 0
+          fi
+          gh workflow run build.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" \
+            -f "tiers=${TIERS}" -f "budget_minutes=${BUDGET}"
+
+  # One issue that is open while something needs a human and closes itself
+  # when a run gets through cleanly.
+  report:
+    name: Report
+    needs: [build, verify, continue]
+    if: always() && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - name: Open, update or close the alert issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BUILD_RESULT: ${{ needs.build.result }}
+          VERIFY_RESULT: ${{ needs.verify.result }}
+          CONTINUE_RESULT: ${{ needs.continue.result }}
+          STATUS: ${{ needs.build.outputs.status }}
+          ALL_TIERS: ${{ needs.build.outputs.all_tiers }}
+          HEALTHY: ${{ needs.build.outputs.healthy }}
+          PROBLEMS: ${{ needs.build.outputs.problems }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          body="$(mktemp)"
+          {
+            [ "$BUILD_RESULT" = success ] \
+              || echo "- The build job ended as \`${BUILD_RESULT}\`."
+            [ "$VERIFY_RESULT" = success ] || [ "$VERIFY_RESULT" = skipped ] \
+              || echo "- The install check on a clean machine ended as \`${VERIFY_RESULT}\`: published packages may not be installable."
+            [ "$CONTINUE_RESULT" = success ] || [ "$CONTINUE_RESULT" = skipped ] \
+              || echo "- The next run could not be requested (\`${CONTINUE_RESULT}\`); start it by hand."
+            printf '%s\n' "$PROBLEMS"
+          } | sed '/^$/d' > "$body"
+
+          existing="$(gh issue list --label binhost-alert --state open --json number --jq '.[0].number // empty')"
+          if [ -s "$body" ]; then
+            {
+              echo "The package builder needs attention. This issue is updated by every run and closes itself after a clean one."
+              echo ""
+              cat "$body"
+              echo ""
+              echo "Run: ${RUN_URL} (logs are attached to the run as an artifact)."
+            } > "${body}.full"
+            if [ -n "$existing" ]; then
+              gh issue edit "$existing" --body-file "${body}.full"
+            else
+              gh label create binhost-alert --color B60205 \
+                --description "The package builder needs attention" --force
+              gh issue create --title "Package builder needs attention" \
+                --label binhost-alert --body-file "${body}.full"
+            fi
+          elif [ -n "$existing" ] && [ "$STATUS" = complete ] && [ "$HEALTHY" = true ] \
+               && [ "$ALL_TIERS" = true ]; then
+            # Only a clean run over every tier says the problem is gone; a
+            # clean run of one tier says nothing about the others.
+            gh issue close "$existing" --comment "Resolved: ${RUN_URL} processed every tier without problems."
+          fi

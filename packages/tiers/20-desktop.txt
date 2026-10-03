@@ -1,21 +1,10 @@
-# All packages built by the Gentoo binhost CI.
-#
-# emerge processes these respecting dependency order automatically.
-# The build workflow handles timeout (--max-build-time) and resume (--resume)
-# so that the full list completes across multiple build phases if needed.
+# Desktop tier: everything else.  Portage works out the build order.
+#@ jobs=2
 
-# LLVM toolchain
-llvm-core/llvm
-llvm-core/clang
-
-# Web engines
-dev-qt/qtwebengine
-net-libs/webkit-gtk
-
-# KDE Plasma Desktop
+# KDE Plasma desktop
 kde-plasma/plasma-meta
 
-# Qt ecosystem
+# Qt
 dev-qt/qtbase
 dev-qt/qtdeclarative
 dev-qt/qttools
@@ -34,23 +23,18 @@ dev-qt/qtquick3d
 
 # Multimedia
 media-video/ffmpeg
-media-libs/opencv
 media-video/pipewire
 media-video/wireplumber
 media-libs/mesa
 
-# Heavy libraries
-sci-libs/vtk
-sci-libs/opencascade
-
-# Heavy applications
+# Large applications
 media-gfx/gimp
 media-gfx/inkscape
 media-sound/ardour
 media-sound/musescore
 media-video/avidemux
 
-# Audio production stack
+# Audio production
 media-sound/csound
 media-sound/hydrogen
 media-sound/guitarix
@@ -105,16 +89,6 @@ www-apps/gitea
 sys-apps/fwupd
 sys-process/htop
 app-emulation/qemu
-# Provides /usr/src/linux for any *-modules ebuild going through
-# linux-mod-r1.eclass (e.g. app-emulation/virtualbox-modules, which is
-# PDEPENDed by app-emulation/virtualbox).  Without real kernel sources in
-# the CI container, those ebuilds die in pkg_setup with "kernel sources are
-# required to build kernel modules".  Portage handles the merge order, and
-# gentoo-kernel-bin's pkg_postinst runs `eselect kernel set` itself; the
-# explicit eselect call in scripts/build.sh is belt-and-suspenders for
-# resume attempts.
-sys-kernel/gentoo-kernel-bin
-app-emulation/virtualbox
 
 # Misc
 app-misc/mc

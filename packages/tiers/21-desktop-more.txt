@@ -1,0 +1,159 @@
+# Everything else the machines have in their world files and that can be
+# built from the Gentoo repository and redistributed.
+#
+# Not here, on purpose: packages from overlays, upstream binaries (*-bin,
+# nothing to compile), kernel sources, and packages whose licence does not
+# allow redistribution.
+#@ jobs=2
+
+# Administration and system tools
+app-admin/metalog
+app-admin/sudo
+app-admin/sysklogd
+app-antivirus/clamav
+app-arch/7zip
+app-arch/unrar
+app-arch/zstd
+app-containers/distrobox
+app-containers/podman-compose
+app-crypt/age
+app-eselect/eselect-repository
+app-forensics/chkrootkit
+app-forensics/lynis
+app-portage/cpuid2cpuflags
+app-portage/eix
+app-portage/genlop
+app-portage/gentoolkit
+app-shells/bash-completion
+net-firewall/iptables
+net-misc/chrony
+net-misc/dhcpcd
+net-wireless/iw
+net-wireless/wpa_supplicant
+sys-apps/arch-chroot
+sys-apps/bat
+sys-apps/dmidecode
+sys-apps/memtest86+
+sys-apps/mlocate
+sys-apps/the_silver_searcher
+sys-apps/usbutils
+sys-auth/elogind
+sys-auth/rtkit
+sys-block/gparted
+sys-boot/grub
+sys-boot/os-prober
+sys-fs/btrfs-progs
+sys-fs/dosfstools
+sys-fs/fuse:0
+sys-fs/mtools
+sys-fs/ntfs3g
+sys-kernel/genkernel
+sys-power/power-profiles-daemon
+sys-process/cronie
+sys-process/iotop
+sys-process/rtirq
+
+# Editors, terminals, small utilities
+app-editors/gvim
+app-editors/nano
+app-editors/neovim
+app-editors/vim
+app-misc/evtest
+app-misc/fdupes
+app-misc/neofetch
+app-misc/solaar
+app-misc/task
+app-misc/tmux-mem-cpu-load
+app-misc/tmux-xpanes
+x11-apps/xev
+x11-apps/xinput
+x11-apps/xkill
+x11-terms/ghostty
+
+# Development
+dev-debug/strace
+dev-libs/libisoburn
+dev-python/pip
+dev-python/pycparser
+dev-python/scipy
+dev-python/weasyprint
+dev-util/android-tools
+dev-util/cppunit
+dev-util/debootstrap
+dev-util/github-cli
+dev-util/perf
+dev-util/pkgcheck
+dev-util/pkgdev
+dev-util/rocminfo
+dev-util/schroot
+dev-vcs/git-lfs
+dev-vcs/pre-commit
+sys-devel/mold
+x11-libs/qwt
+
+# Documents
+app-text/calibre
+app-text/texlive
+app-text/zathura
+app-text/zathura-cb
+app-text/zathura-meta
+app-text/zathura-ps
+dev-texlive/texlive-xetex
+
+# KDE
+kde-apps/kde-apps-meta
+kde-apps/konqueror
+kde-plasma/bluedevil
+x11-misc/sddm
+x11-themes/gentoo-artwork
+
+# Audio
+media-libs/fluidsynth-dssi
+media-libs/zita-alsa-pcmi
+media-plugins/ams-lv2
+media-plugins/gmsynth-lv2
+media-plugins/gst-plugins-lv2
+media-plugins/hexter
+media-plugins/ir_lv2
+media-plugins/mda-lv2
+media-plugins/swh-lv2
+media-plugins/vamp-aubio-plugins
+media-plugins/vamp-libxtract-plugins
+media-plugins/xsynth-dssi
+media-sound/a2jmidid
+media-sound/alsa-utils
+media-sound/alsaplayer
+media-sound/amarok
+media-sound/fluid-soundfont
+media-sound/gigedit
+media-sound/kmidimon
+media-sound/mhwaveedit
+media-sound/pavucontrol
+media-sound/sonic-visualiser
+media-sound/timidity++
+
+# Video and graphics
+media-gfx/flam3
+media-gfx/gnofract4d
+media-gfx/quat
+media-libs/avidemux-plugins
+media-libs/exiftool
+media-video/mpv
+media-video/smplayer
+x11-misc/xaos
+
+# Science / electronics
+sci-electronics/gnucap
+sci-electronics/nvc
+sci-electronics/sigrok-cli
+sci-ml/ollama
+
+# Emulation
+app-emulation/dosemu
+app-emulation/winetricks
+
+# Network / web
+net-misc/yt-dlp
+www-client/falkon
+www-client/netsurf
+www-client/surfraw

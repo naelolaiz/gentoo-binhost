@@ -1,0 +1,6 @@
+# Used by `tests/e2e.sh deadline` and `resume` only: one package with enough
+# C++ in it to still be compiling when the test's deadline arrives.
+#@ shallow=yes
+#@ jobs=1
+
+dev-build/cmake

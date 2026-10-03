@@ -1,0 +1,65 @@
+ACCEPT_KEYWORDS: amd64 ~amd64
+ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
+ARCH: amd64
+CBUILD: x86_64-pc-linux-gnu
+CHOST: x86_64-pc-linux-gnu
+ELIBC: glibc
+FEATURES: binpkg-multi-instance binpkg-signing buildpkg ccache
+PACKAGES: 3
+PROFILE: default/linux/amd64/23.0/desktop/plasma
+REPO_REVISIONS: {"gentoo": "0123456789abcdef"}
+TIMESTAMP: 1790000100
+USE: X amd64 wayland
+VERSION: 0
+
+BUILD_ID: 1
+BUILD_TIME: 1790000010
+CPV: app-misc/hello-2.12.2
+DEFINED_PHASES: configure
+EAPI: 8
+IUSE: nls
+KEYWORDS: amd64 ~arm64
+LICENSE: GPL-3+
+MD5: 0123456789abcdef0123456789abcdef
+MTIME: 1790000011
+PATH: app-misc/hello/hello-2.12.2-1.gpkg.tar
+RDEPEND: virtual/libc
+REPO: gentoo
+SHA1: 0123456789abcdef0123456789abcdef01234567
+SIZE: 11
+USE: amd64
+
+BUILD_ID: 1
+BUILD_TIME: 1790000020
+CPV: dev-libs/oniguruma-6.9.10
+DEFINED_PHASES: configure install prepare
+EAPI: 8
+IUSE: crnl-as-line-terminator static-libs
+KEYWORDS: amd64
+LICENSE: BSD-2
+MD5: 11111111111111111111111111111111
+MTIME: 1790000021
+PATH: dev-libs/oniguruma/oniguruma-6.9.10-1.gpkg.tar
+REPO: gentoo
+SHA1: 1111111111111111111111111111111111111111
+SIZE: 12
+SLOT: 0/5
+USE: amd64 static-libs
+
+BUILD_ID: 1
+BUILD_TIME: 1790000030
+CPV: x11-libs/gtk+-3.24.50
+DEFINED_PHASES: compile configure install
+EAPI: 8
+IUSE: X wayland
+KEYWORDS: amd64
+LICENSE: LGPL-2+
+MD5: 22222222222222222222222222222222
+MTIME: 1790000031
+PATH: x11-libs/gtk+/gtk+-3.24.50-1.gpkg.tar
+REPO: gentoo
+SHA1: 2222222222222222222222222222222222222222
+SIZE: 13
+SLOT: 3
+USE: X amd64 wayland
+

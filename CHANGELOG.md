@@ -8,7 +8,44 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
-### Reliability
+### Rework: incremental builds, packages served from releases
+
+The builder was replaced.  Earlier versions completed builds but never
+served an installable binhost; this one publishes each package as soon as it
+is built and checks on a clean machine that it installs.
+
+- **New binhost location.** The index is on the `binhost` branch
+  (`https://raw.githubusercontent.com/naelolaiz/gentoo-binhost/binhost`) and
+  the package files are release assets.  The GitHub Pages site is no longer
+  used.  Machines configure it in `binrepos.conf`; see the README.
+- **Signed packages.** Packages carry a signature Portage verifies
+  (`FEATURES=binpkg-signing`).  Machines have to trust the key in `keys/`
+  once (`scripts/trust-binhost-key.sh`).  The detached `.asc` files are gone.
+- **Incremental.** A run builds only what no binhost offers yet and
+  publishes while it builds.  Nothing is rebuilt from scratch every week, and
+  a failed package no longer stops the others.
+- **Real index.** Index entries are the ones Portage wrote for the package,
+  with slot, USE flags and dependencies, and Portage parses every index
+  before it is published.
+- **Install check.** Every run that publishes ends with a clean container
+  installing the result with signature verification.
+- **Configuration.** The profile now holds only what decides whether a
+  machine accepts a binary.  The USE flags the old builder had added to break
+  build-time dependency loops (on openal, pillow, python, pipewire) are gone;
+  the builder handles such loops itself and publishes packages with the
+  configured flags.  `PYTHON_TARGETS` follows the profile default.
+  `CPU_FLAGS_X86` gained `bmi1 bmi2`.
+- **Steam.** `package.use/20-steam-multilib` enables 32-bit builds of exactly
+  the libraries `games-util/steam-launcher` needs; see `docs/STEAM.md`.
+- **Package lists** moved from `packages/packages.txt` to tier files in
+  `packages/tiers/`, heavy packages first.
+- **Removed:** the continuation chain with container snapshots, the GitHub
+  Pages publisher, the stage3 pinning tools, contributed pre-built packages,
+  and the workarounds that only existed for the old builder.
+- **CI:** unit tests and an end-to-end test of the whole pipeline on every
+  pull request (`docs/TESTING.md`).
+
+### Reliability (before the rework)
 
 - **Workflow — drop the zero-progress gate.** Previously the gate killed any chain that hit `--max-build-time` with zero new binpkgs. But `emerge --resume` does not resume a package mid-compile — Portage wipes WORKDIR and re-extracts source on every emerge invocation. Long packages (qtwebengine, llvm, chromium) WILL be SIGTERM'd mid-compile because they take longer than `--max-build-time` on a cold ccache; the mechanism that lets them fit is **ccache** (preserved at `/var/cache/ccache` across attempts via `actions/cache`) returning cached object files for unchanged source hashes — so attempt N+1 compiles much faster than attempt N. But that only works if the chain reaches attempt N+1, and the zero-progress gate prevented that on any attempt where qtwebengine alone was being compiled. Now the only continuation conditions are: timeout (rc=42) AND attempts left AND no repeated failure. The `MAX=8` attempt cap is the only ceiling.
 - **`scripts/build.sh` — robust progress accounting under any-phase timeout.** Previously, when a pre-build phase (`rebuild_stale_from_source` or `rebuild_broken_libs`) hit `--max-build-time`, build.sh `exit 42`'d immediately, skipping ALL cleanup: `collect_packages`, `sign_packages`, `report_failed_atoms`, and `emit_progress_summary`. Now: a single `BUILD_RC` accumulator captures rc from every phase; `BINPKGS_BEFORE` is snapshotted BEFORE any building work so all phases' output counts; cleanup (collect/sign/prune/report/emit_progress) ALWAYS runs regardless of which phase timed out. Partial binpkgs are always published.
