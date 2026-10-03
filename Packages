@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791062018
-PACKAGES: 54
+TIMESTAMP: 1791062352
+PACKAGES: 66
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -226,6 +226,30 @@ MTIME: 1791057931
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=sys-devel/gettext-0.18 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 11
+BUILD_TIME: 1791062108
+CPV: app-text/hunspell-1.7.2-r1
+DEFINED_PHASES: configure install prepare
+DEPEND: virtual/libiconv sys-libs/ncurses:0/6= sys-libs/readline:0/8=
+EAPI: 8
+IUSE: ncurses nls readline static-libs l10n_af l10n_bg l10n_ca l10n_cs l10n_cy l10n_da l10n_de l10n_de-1901 l10n_el l10n_en l10n_eo l10n_es l10n_et l10n_fo l10n_fr l10n_ga l10n_gl l10n_he l10n_hr l10n_hu l10n_ia l10n_id l10n_is l10n_it l10n_kk l10n_km l10n_ku l10n_lt l10n_lv l10n_mi l10n_mk l10n_ms l10n_nb l10n_nl l10n_nn l10n_pl l10n_pt l10n_pt-BR l10n_ro l10n_ru l10n_sk l10n_sl l10n_sq l10n_sv l10n_sw l10n_tn l10n_uk l10n_zu
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: || ( MPL-1.1 GPL-2+ LGPL-2.1+ )
+MD5: c2ac7dee666d5e8759adfb3fa1f01861
+PATH: pkgs-app-text/hunspell-1.7.2-r1-11.gpkg.tar
+PDEPEND: app-dicts/myspell-en app-dicts/myspell-es
+PROVIDES: x86_64: libhunspell-1.7.so.0
+RDEPEND: virtual/libiconv sys-libs/ncurses:0/6= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libncursesw.so.6 libreadline.so.8 libstdc++.so.6 libtinfow.so.6
+SHA1: 1052f043ca4f23eaa32ca4be110013417f983b51
+SIZE: 737280
+SLOT: 0/1.7
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_en l10n_es ncurses nls readline
+MTIME: 1791062109
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-lang/perl-5.10 >=sys-devel/m4-1.4.16
 BUILD_ID: 1
 BUILD_TIME: 1791061887
@@ -300,6 +324,27 @@ SHA1: 1fc420130b4a9a8b4d4868a1069996501d4979f5
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791058125
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
+BUILD_ID: 1
+BUILD_TIME: 1791061985
+CPV: dev-build/libtool-2.6.2
+DEFINED_PHASES: configure install prepare test unpack
+DEPEND: sys-devel/gnuconfig >=dev-build/autoconf-2.69:* >=dev-build/automake-1.13:*
+EAPI: 8
+IUSE: vanilla verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2+
+MD5: d5fbc36801b6394ac53430f66ba770ce
+PATH: pkgs-dev-build/libtool-2.6.2-1.gpkg.tar
+RDEPEND: sys-devel/gnuconfig >=dev-build/autoconf-2.69:* >=dev-build/automake-1.13:*
+SHA1: b9ade885c6059280dafaec7f24111a9e4c03db31
+SIZE: 808960
+SLOT: 2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791061986
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -390,6 +435,28 @@ MTIME: 1791060100
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1791062024
+CPV: dev-libs/expat-2.8.5
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: examples static-libs test unicode abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 8fc47170ce2f39c99d1db2f68752d082
+PATH: pkgs-dev-libs/expat-2.8.5-2.gpkg.tar
+PROVIDES: x86_32: libexpat.so.1 libexpatw.so.1 x86_64: libexpat.so.1 libexpatw.so.1
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libm.so.6 x86_64: libc.so.6 libm.so.6
+RESTRICT: test
+SHA1: 64b5c30bfb41bc21ec829fca948dce38bd492e93
+SIZE: 358400
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux unicode
+MTIME: 1791062025
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306
 BUILD_ID: 1
 BUILD_TIME: 1791058030
@@ -410,6 +477,29 @@ SIZE: 286720
 SLOT: 0/8
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc exec-static-trampoline kernel_linux
 MTIME: 1791058031
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1791062063
+CPV: dev-libs/libgcrypt-1.12.4
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: >=dev-libs/libgpg-error-1.56[abi_x86_64(-)] >=sys-libs/glibc-2.25
+EAPI: 8
+IUSE: +asm doc +getentropy static-libs cpu_flags_arm_neon cpu_flags_arm_aes cpu_flags_arm_sha1 cpu_flags_arm_sha2 cpu_flags_arm_sve cpu_flags_ppc_altivec cpu_flags_ppc_vsx2 cpu_flags_ppc_vsx3 cpu_flags_x86_aes cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_avx512f cpu_flags_x86_padlock cpu_flags_x86_sha cpu_flags_x86_sse4_1 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: LGPL-2.1+ GPL-2+ MIT
+MD5: 4f6dd60f98b0ba46d269a4829ec32cad
+PATH: pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar
+PROVIDES: x86_64: libgcrypt.so.20
+RDEPEND: >=dev-libs/libgpg-error-1.56[abi_x86_64(-)] >=sys-libs/glibc-2.25 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgpg-error.so.0
+SHA1: ec4251f414749e72f31376c35d65eabcc81b4ee3
+SIZE: 1105920
+SLOT: 0/20
+USE: abi_x86_64 amd64 asm cpu_flags_x86_aes cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_sse4_1 elibc_glibc getentropy kernel_linux
+MTIME: 1791062064
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -570,6 +660,27 @@ MTIME: 1791057554
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791062202
+CPV: dev-util/patchelf-0.19.2
+DEFINED_PHASES: configure prepare
+EAPI: 9
+IUSE: test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: GPL-3
+MD5: 5abe8643e1fb901635faf4666e53179f
+PATH: pkgs-dev-util/patchelf-0.19.2-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 65a87c3325180755ab9a55d1e869cffacd6206e1
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791062203
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791058159
 CPV: llvm-core/clang-common-23.1.2
@@ -687,6 +798,30 @@ MTIME: 1791061857
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 9
+BUILD_TIME: 1791062234
+CPV: media-libs/freetype-2.14.3
+DEFINED_PHASES: compile configure install prepare pretend test unpack
+DEPEND: >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] >=app-arch/bzip2-1.0.6-r4[abi_x86_32(-),abi_x86_64(-)] >=media-libs/libpng-1.2.51:0/16=[abi_x86_32(-),abi_x86_64(-)]
+EAPI: 8
+IUSE: X +adobe-cff brotli bzip2 +cleartype-hinting debug doc fontforge harfbuzz +png static-libs svg utils abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: || ( FTL GPL-2+ )
+MD5: 0011ddb0225d4888447fafbec68e8fdd
+PATH: pkgs-media-libs/freetype-2.14.3-9.gpkg.tar
+PDEPEND: >=media-libs/harfbuzz-1.3.0[truetype,abi_x86_32(-),abi_x86_64(-)]
+PROVIDES: x86_32: libfreetype.so.6 x86_64: libfreetype.so.6
+RDEPEND: >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] >=app-arch/bzip2-1.0.6-r4[abi_x86_32(-),abi_x86_64(-)] >=media-libs/libpng-1.2.51:0/16=[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libbz2.so.1 libc.so.6 libpng16.so.16 libz.so.1 x86_64: libbz2.so.1 libc.so.6 libpng16.so.16 libz.so.1
+SHA1: c905226a6e0ef38086d332d7fed24016b0c89740
+SIZE: 1167360
+SLOT: 2
+USE: X abi_x86_32 abi_x86_64 adobe-cff amd64 bzip2 cleartype-hinting elibc_glibc harfbuzz kernel_linux png svg
+MTIME: 1791062235
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 7
 BUILD_TIME: 1791057536
 CPV: media-libs/libogg-1.3.6
@@ -728,6 +863,94 @@ SIZE: 552960
 SLOT: 0/16
 USE: abi_x86_32 abi_x86_64 amd64 cpu_flags_x86_sse elibc_glibc kernel_linux
 MTIME: 1791059512
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 10
+BUILD_TIME: 1791062084
+CPV: media-libs/libvorbis-1.3.7-r2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-libs/libogg-1.3.0[abi_x86_32(-),abi_x86_64(-)]
+EAPI: 8
+IUSE: static-libs test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 46788aed26e3a70362f5b0f04f75770e
+PATH: pkgs-media-libs/libvorbis-1.3.7-r2-10.gpkg.tar
+PROVIDES: x86_32: libvorbis.so.0 libvorbisenc.so.2 libvorbisfile.so.3 x86_64: libvorbis.so.0 libvorbisenc.so.2 libvorbisfile.so.3
+RDEPEND: >=media-libs/libogg-1.3.0[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libm.so.6 libogg.so.0 x86_64: libc.so.6 libm.so.6 libmvec.so.1 libogg.so.0
+RESTRICT: test
+SHA1: a068c448e641ddca6e427febbed5625525ebeb4b
+SIZE: 512000
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791062085
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 15
+BUILD_TIME: 1791062157
+CPV: media-sound/lame-3.100-r3
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 7
+IUSE: debug cpu_flags_x86_mmx +frontend mp3rtp sndfile static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-solaris
+LICENSE: LGPL-2.1
+MD5: 3d8e1df494bdda547a51dad91825bfbd
+PATH: pkgs-media-sound/lame-3.100-r3-15.gpkg.tar
+PROVIDES: x86_32: libmp3lame.so.0 x86_64: libmp3lame.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libm.so.6 x86_64: libc.so.6 libm.so.6
+SHA1: 961b63e6403b6557c149413bb5f1e13e411a7e42
+SIZE: 624640
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux sndfile
+MTIME: 1791062158
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/libtool virtual/pkgconfig >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1791062188
+CPV: media-sound/mpg123-base-1.33.7
+DEFINED_PHASES: compile configure install postinst postrm prepare test unpack
+DEPEND: !<media-sound/mpg123-1.32.3-r100 !media-libs/libmpg123 dev-libs/libltdl:0
+EAPI: 8
+IDEPEND: app-eselect/eselect-mpg123
+IUSE: cpu_flags_x86_3dnow cpu_flags_x86_3dnowext cpu_flags_ppc_altivec alsa coreaudio int-quality ipv6 jack cpu_flags_x86_mmx nas oss portaudio pulseaudio sdl cpu_flags_x86_sse abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~x64-macos
+LICENSE: GPL-2 LGPL-2.1
+MD5: 28226badd63925f19c605b0ab24e2ade
+PATH: pkgs-media-sound/mpg123-base-1.33.7-1.gpkg.tar
+PROVIDES: x86_32: libmpg123.so.0 libout123.so.0 libsyn123.so.0 x86_64: libmpg123.so.0 libout123.so.0 libsyn123.so.0 output_dummy.so
+RDEPEND: !<media-sound/mpg123-1.32.3-r100 !media-libs/libmpg123 dev-libs/libltdl:0 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libm.so.6 x86_64: libc.so.6 libm.so.6
+SHA1: 57d312b1d8ec71f2ce60faca9fd071d7079d57ba
+SIZE: 696320
+USE: abi_x86_32 abi_x86_64 alsa amd64 cpu_flags_x86_sse elibc_glibc ipv6 jack kernel_linux pulseaudio sdl
+MTIME: 1791062189
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1791062127
+CPV: net-libs/libasyncns-0.8-r5
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: doc debug abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: LGPL-2.1
+MD5: f48268e6bb735306f73f289096d8de5c
+PATH: pkgs-net-libs/libasyncns-0.8-r5-2.gpkg.tar
+PROVIDES: x86_32: libasyncns.so.0 x86_64: libasyncns.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 x86_64: libc.so.6
+SHA1: cebc07c58f2786617a85585393483ea583ee9f67
+SIZE: 61440
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791062128
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -935,6 +1158,28 @@ MTIME: 1791061940
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 dev-build/automake || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
+BUILD_ID: 1
+BUILD_TIME: 1791061975
+CPV: sys-apps/less-710
+DEFINED_PHASES: configure install preinst prepare test unpack
+DEPEND: >=app-misc/editor-wrapper-3 >=sys-libs/ncurses-5.2:0/6= dev-libs/libpcre2
+EAPI: 8
+IUSE: pcre test verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: || ( GPL-3 BSD-2 )
+MD5: 2bbc78cb563e98b2acef2571f3cd2966
+PATH: pkgs-sys-apps/less-710-1.gpkg.tar
+RDEPEND: >=app-misc/editor-wrapper-3 >=sys-libs/ncurses-5.2:0/6= dev-libs/libpcre2 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libpcre2-8.so.0 libtinfow.so.6
+RESTRICT: test
+SHA1: 4d766630d485d8254ac916a76c82f1ff7669af2a
+SIZE: 235520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux pcre
+MTIME: 1791061976
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-text/po4a
 BUILD_ID: 1
 BUILD_TIME: 1791060063
@@ -1094,6 +1339,25 @@ SHA1: 0483c5d59e4e06cdd10683f2ce72936d81cdc638
 SIZE: 30720
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791057520
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 3
+BUILD_TIME: 1791062239
+CPV: virtual/libudev-257
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: systemd abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+MD5: 7e7844f759c5a9824b738caf0a6a2930
+PATH: pkgs-virtual/libudev-257-3.gpkg.tar
+RDEPEND: >=sys-apps/systemd-utils-257[udev,abi_x86_32(-),abi_x86_64(-)]
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+SHA1: b6203f34fa17ee4ffc6a13396f74ea5c4d401f68
+SIZE: 30720
+SLOT: 0/1
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791062240
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
