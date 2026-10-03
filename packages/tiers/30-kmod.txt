@@ -1,0 +1,13 @@
+# Kernel and kernel modules.  Last, because a binary kernel module only
+# helps a machine that runs exactly the kernel it was built against.
+#
+# gentoo-kernel-bin provides the kernel sources the VirtualBox modules are
+# built against; Portage installs it first because virtualbox-modules
+# depends on it (USE=dist-kernel).
+#@ jobs=1
+
+sys-kernel/gentoo-kernel-bin
+app-emulation/virtualbox
+app-emulation/virtualbox-modules
+app-emulation/virtualbox-additions
+app-emulation/virtualbox-guest-additions

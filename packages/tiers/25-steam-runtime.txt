@@ -1,0 +1,20 @@
+# 32-bit libraries for Steam.
+#
+# Steam itself (games-util/steam-launcher) lives in an overlay and may not be
+# redistributed, so it is not built here.  These are its dependencies from
+# the Gentoo tree, written with the USE flags the steam-launcher ebuild asks
+# for, so that a machine installing Steam gets all of them as binaries.
+#
+# The flags have to be enabled for these packages and for everything they
+# link to; that list is package.use/20-steam-multilib.  When a root below
+# stops resolving, Gentoo added a dependency and the list has to be
+# regenerated (docs/STEAM.md).
+#@ jobs=1
+
+media-libs/fontconfig[abi_x86_32]
+media-libs/libpulse[abi_x86_32]
+media-libs/mesa[abi_x86_32,opengl,X]
+media-libs/vulkan-loader[abi_x86_32,wayland,X]
+sys-libs/libudev-compat[abi_x86_32]
+virtual/opengl[abi_x86_32]
+x11-libs/libdrm[abi_x86_32]

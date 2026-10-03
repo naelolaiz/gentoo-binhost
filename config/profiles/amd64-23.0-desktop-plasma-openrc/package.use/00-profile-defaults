@@ -1,82 +1,106 @@
+# Per-package USE flags of the machines this binhost serves.
+#
+# A binary is only accepted by a machine whose USE flags for that package
+# are the same, so this file and the machines' /etc/portage/package.use have
+# to say the same thing.  The builder adds nothing of its own: build-time
+# dependency loops are broken automatically for one build and the packages
+# are then rebuilt as configured here.
+
+# ── Qt / KDE ────────────────────────────────────────────────────────────
 dev-qt/qtpositioning geoclue
-x11-libs/libdrm video_cards_radeon video_cards_intel video_cards_nouveau
-sys-boot/grub mount
-dev-libs/libdbusmenu gtk3
-media-gfx/graphviz gtk2
-sci-libs/fftw threads
-dev-python/pyqt6 pdfium quick
-sys-process/htop hwloc lm-sensors
-dev-vcs/git doc subversion tk
-# subversion needs perl when git[perl,subversion] is satisfied
-dev-vcs/subversion perl
-# Break circular buildtime dependency: ffmpeg → openal → libsdl2 → pipewire → ffmpeg
-# openal works fine with ALSA/PulseAudio backends without pipewire
-media-libs/openal -pipewire
-# Break circular buildtime dependency: glib → docutils → pillow[truetype] → harfbuzz → glib
-# truetype is optional for pillow; harfbuzz provides the truetype backend once built
-dev-python/pillow -truetype
-# Break circular buildtime dependency: docutils → python-3.12[bluetooth] → bluez → glib → docutils
-# bluetooth USE on python-3.12 pulls bluez which needs glib which needs docutils at build time
-dev-lang/python:3.12 -bluetooth
-dev-libs/boost python
-x11-libs/wxGTK gstreamer
-sci-libs/opencascade json
-dev-python/pyside uitools
-sci-libs/cgnslib hdf5
-media-libs/gegl introspection ffmpeg sdl2
-media-libs/babl introspection
+dev-qt/qtwebengine bindist
+dev-qt/qttools designer qdoc qtattributionsscanner pixeltool qtdiag qtplugininfo clang custom-cflags
 dev-qt/qt-creator designer doc keyring plugin-dev qmldesigner serialterminal
-dev-qt/qttools designer qdoc qtattributionsscanner pixeltool custom-cflags qtdiag qtplugininfo clang
-media-sound/linuxsampler sf2
 kde-frameworks/kimageformats raw openexr
+kde-plasma/plasma-meta grub oxygen-theme wacom
+kde-apps/kde-apps-meta admin education games graphics multimedia network utils accessibility sdk -pim
+kde-apps/kdesdk-meta webengine python
+kde-apps/okular djvu
+dev-python/pyqt6 pdfium quick
+dev-python/pyqtgraph qt6
+dev-python/pyside uitools
+
+# ── Multimedia / graphics ───────────────────────────────────────────────
+media-video/ffmpeg bluray lame libaom liblc3 lzma ocr opencl openh264 opus rav1e svt-av1
+media-video/pipewire extra gsettings gstreamer jack-client loudness pipewire-alsa
+media-video/mpv bluray cdda dvd dvb gamepad jack jpeg lcms openal pipewire pulseaudio rubberband tools wayland xv
 media-libs/libde265 dec265 enc265 tools
 media-libs/libheif ffmpeg gdk-pixbuf openh264 tools
+media-libs/mesa video_cards_intel video_cards_radeon video_cards_nouveau -opencl
+media-libs/gegl introspection ffmpeg sdl2
+media-libs/babl introspection
+media-libs/zita-resampler tools
+media-libs/tiff jpeg
+media-libs/libwebp -tiff
 media-gfx/imagemagick fontconfig djvu graphviz openexr raw wmf lzma zip
-# Break circular dependency: ffmpeg → openal[sdl] → libsdl2[pipewire] → pipewire[ffmpeg]
-# pipewire does not need ffmpeg for core audio routing; ffmpeg support is optional.
-# (-extra was previously also disabled to "reduce compile breakage surface", but
-# that was a bandaid for the SIGTERM-victim misclassification fixed in PR #18.)
-media-video/pipewire -ffmpeg
-# musescore REQUIRED_USE: at-most-one-of ( jack pipewire )
-# Both are globally enabled in make.conf; keep pipewire as the modern audio backend
-media-sound/musescore -jack
 media-gfx/inkscape imagemagick postscript sourceview svg2 wpg
-app-text/calibre unrar
-media-video/ffmpeg bluray lame libaom liblc3 lzma ocr openal opencl openh264 opus rav1e svt-av1
-app-misc/tmux vim-syntax
-kde-plasma/plasma-meta grub oxygen-theme wacom
-x11-base/xorg-drivers input_device_wacom input_device_evdev input_device_joystick
-sci-visualization/gnuplot bitmap gpic latex
 media-gfx/mandelbulber opencl openexr
-dev-python/pyqtgraph qt5 qt6
+media-gfx/graphviz gtk2
+
+# ── Audio production ────────────────────────────────────────────────────
 media-sound/audacity vamp id3tag mpg123 opus twolame
 media-sound/alsa-tools fltk
 media-sound/carla gtk2 sf2
-media-libs/zita-resampler tools
 media-sound/csound beats double-precision examples lua portaudio portmidi samples vim-syntax -osc
+# The ebuilds of csound and a2jmidid do not support the profile's Python yet
+# (config/workarounds.json: csound-python, a2jmidid-python).
+media-sound/csound python_single_target_python3_13
+media-sound/a2jmidid python_single_target_python3_13
 media-sound/drumstick fluidsynth
-sys-apps/etckeeper cron
-www-apps/gitea sqlite gogit
-acct-user/git gitea
-sci-libs/libsigrok ftdi hidapi
-net-dns/avahi mdnsresponder-compat
-net-libs/webkit-gtk keyring
-dev-qt/qtwebengine bindist
-dev-libs/libxmlb introspection
-sys-apps/fwupd amdgpu bash-completion flashrom gnutls introspection nvme synaptics uefi verify-sig
-net-analyzer/nmap zenmap
-net-firewall/iptables nftables
-media-libs/tiff jpeg
-media-libs/mesa video_cards_intel video_cards_radeon video_cards_nouveau -opencl
-app-editors/gvim cscope
-dev-python/pillow -jpeg2k
-media-libs/libwebp -tiff
+media-sound/linuxsampler sf2
+# REQUIRED_USE="?? ( jack pipewire )": at most one, and both are enabled
+# globally (config/workarounds.json: musescore-jack).
+media-sound/musescore -jack
 media-sound/lame -frontend
-# sdl is needed by kde-apps/kdenlive; the ffmpeg↔pipewire circular dep is
-# already broken via media-video/pipewire -ffmpeg above
-media-video/ffmpeg sdl
+media-sound/denemo guile_single_target_2-2
+media-sound/seq24 lash
+media-plugins/hexter -readline
+
+# ── Development ─────────────────────────────────────────────────────────
+dev-vcs/git doc subversion tk
+dev-vcs/subversion perl doc extras
+dev-libs/boost python
+dev-libs/libdbusmenu gtk3
+dev-libs/libxmlb introspection
+dev-libs/nss utils
+app-editors/gvim cscope
+app-text/texlive-core xetex
+
+# ── Science / electronics ───────────────────────────────────────────────
+sci-libs/fftw threads
+sci-libs/opencascade json
+sci-libs/cgnslib hdf5
+sci-libs/libsigrok ftdi hidapi
+sci-visualization/gnuplot bitmap gpic latex
+sci-electronics/gspiceui examples
+sci-electronics/gwave guile_single_target_2-2 gnuplot plotutils
+sci-electronics/geda guile_single_target_2-2
+
+# ── System / network ────────────────────────────────────────────────────
+sys-boot/grub mount
+sys-apps/fwupd amdgpu bash-completion flashrom gnutls introspection nvme synaptics uefi verify-sig
+sys-apps/etckeeper cron
+sys-process/htop hwloc lm-sensors
+sys-kernel/installkernel dracut
 sys-libs/ncurses -gpm
 sys-apps/attr -nls
 sys-apps/acl -nls
-# sys-kernel/gentoo-kernel-bin[initramfs] requires >=sys-kernel/installkernel-14[dracut]
-sys-kernel/installkernel dracut
+net-analyzer/nmap zenmap ncat ndiff nping libssh2
+net-firewall/iptables nftables
+net-dns/avahi mdnsresponder-compat
+net-libs/webkit-gtk keyring
+x11-libs/libdrm video_cards_radeon video_cards_intel video_cards_nouveau
+x11-libs/wxGTK gstreamer keyring webkit
+x11-base/xorg-drivers input_device_wacom input_device_evdev input_device_joystick
+x11-themes/gentoo-artwork grub offensive kde
+
+# ── Applications ────────────────────────────────────────────────────────
+app-text/calibre unrar
+app-misc/tmux vim-syntax
+www-apps/gitea sqlite gogit
+acct-user/git gitea
+app-emulation/virtualbox-modules dist-kernel
+# Wine runs 32-bit Windows programs through wow64; no 32-bit system
+# libraries are needed for it.
+app-emulation/wine-proton wow64 -abi_x86_32 -gecko
+dev-util/mingw64-toolchain abi_x86_32
