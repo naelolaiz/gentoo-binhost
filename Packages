@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791094488
-PACKAGES: 297
+TIMESTAMP: 1791099781
+PACKAGES: 299
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -790,6 +790,47 @@ SIZE: 2314240
 SLOT: 3
 USE: abi_x86_64 amd64 elibc_glibc icu kernel_linux readline
 MTIME: 1791059893
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( >=dev-lang/go-1.24.6 >=dev-lang/go-bootstrap-1.24.6 )
+BUILD_ID: 1
+BUILD_TIME: 1791099662
+CPV: dev-lang/go-1.27.1
+DEFINED_PHASES: compile install test
+EAPI: 9
+IUSE: cpu_flags_x86_sse2
+KEYWORDS: -* ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~s390 ~x86 ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 5a92a2b9714d719ea2d2b55bfe42a3ba
+PATH: pkgs-dev-lang/go-1.27.1-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+RESTRICT: strip
+SHA1: 544683f9401ba36f7f98e859460aafc9deea9958
+SIZE: 60313600
+SLOT: 0/1.27.1
+USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc kernel_linux
+MTIME: 1791099670
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791099509
+CPV: dev-lang/go-bootstrap-1.24.6
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: abi_mips_n64 abi_mips_o32 big-endian
+KEYWORDS: -* amd64 arm arm64 ~loong ~mips ppc64 ~riscv ~s390 x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: e9d54dafa0a8f24d3c3eee1e905f8800
+PATH: pkgs-dev-lang/go-bootstrap-1.24.6-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r2
+RESTRICT: strip
+SHA1: b361bd1f769b26b311a90190b9db115186dcf79c
+SIZE: 71383040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791099514
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
