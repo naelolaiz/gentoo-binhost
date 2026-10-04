@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791090094
-PACKAGES: 242
+TIMESTAMP: 1791090413
+PACKAGES: 250
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -38,6 +38,39 @@ SHA1: e3f6846c00212738d6b29e6009629d4f942cffda
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791059992
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 2
+BUILD_TIME: 1791090169
+CPV: acct-group/rtkit-0-r3
+DEFINED_PHASES: install preinst pretend
+EAPI: 8
+IDEPEND: >=sys-apps/shadow-4.6
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: 3a33304eccb5c751ef8b365d3cc4b695
+PATH: pkgs-acct-group/rtkit-0-r3-2.gpkg.tar
+SHA1: 3f1cf5b7c14f628d3d98fbf1c0421835322415db
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791090170
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 2
+BUILD_TIME: 1791090173
+CPV: acct-user/rtkit-0-r3
+DEFINED_PHASES: install postinst preinst prerm pretend
+EAPI: 8
+IDEPEND: >=sys-apps/shadow-4.6
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: e4d260bab0ec4d9460cc06cf805d5633
+PATH: pkgs-acct-user/rtkit-0-r3-2.gpkg.tar
+RDEPEND: acct-group/rtkit
+SHA1: 54868791cc3bb6095f3e2bf8b015493b60d03ef5
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791090174
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3621,6 +3654,30 @@ MTIME: 1791082948
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=app-portage/elt-patches-20250306
+BUILD_ID: 2
+BUILD_TIME: 1791090161
+CPV: media-libs/leptonica-1.87.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-libs/giflib-5.1.3:0/7=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] media-libs/tiff:0/6=[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)]
+EAPI: 8
+IUSE: gif jpeg jpeg2k png static-libs test tiff utils webp zlib abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: Apache-2.0
+MD5: 3492524a7fd92636c60b057c3663c7d9
+PATH: pkgs-media-libs/leptonica-1.87.0-2.gpkg.tar
+PROVIDES: x86_64: libleptonica.so.6
+RDEPEND: >=media-libs/giflib-5.1.3:0/7=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] media-libs/tiff:0/6=[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgif.so.7 libjpeg.so.62 libm.so.6 libopenjp2.so.7 libpng16.so.16 libtiff.so.6 libwebp.so.7 libwebpmux.so.3 libz.so.1
+RESTRICT: test
+SHA1: b435357e839b97867035a00e769807f25651fc21
+SIZE: 1566720
+SLOT: 0/6
+USE: abi_x86_64 amd64 elibc_glibc gif jpeg jpeg2k kernel_linux png tiff webp zlib
+MTIME: 1791090162
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl dev-lang/yasm app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791065280
@@ -3641,6 +3698,31 @@ SIZE: 2662400
 SLOT: 0/3
 USE: abi_x86_64 amd64 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_mmx cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 cpu_flags_x86_ssse3 elibc_glibc examples kernel_linux
 MTIME: 1791065282
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig dev-lang/nasm
+BUILD_ID: 1
+BUILD_TIME: 1791090255
+CPV: media-libs/libass-0.17.5-r1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=dev-libs/fribidi-0.19.5-r1[abi_x86_64(-)] >=media-libs/freetype-2.5.0.1:2[abi_x86_64(-)] >=virtual/libiconv-0-r1[abi_x86_64(-)] >=media-libs/harfbuzz-1.2.3:0/6.0.0=[truetype,abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] dev-libs/libunibreak:0/8=
+EAPI: 8
+IUSE: +fontconfig +libunibreak test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: ISC
+MD5: f4dae0879a514a95b0f90a4c011d269e
+PATH: pkgs-media-libs/libass-0.17.5-r1-1.gpkg.tar
+PROVIDES: x86_64: libass.so.9
+RDEPEND: >=dev-libs/fribidi-0.19.5-r1[abi_x86_64(-)] >=media-libs/freetype-2.5.0.1:2[abi_x86_64(-)] >=virtual/libiconv-0-r1[abi_x86_64(-)] >=media-libs/harfbuzz-1.2.3:0/6.0.0=[truetype,abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] dev-libs/libunibreak:0/8= >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: libc.so.6 libfontconfig.so.1 libfreetype.so.6 libfribidi.so.0 libharfbuzz.so.0 libm.so.6 libunibreak.so.8
+RESTRICT: test
+SHA1: 65e7d3078e7dd352d118780994a1f3f4989cf663
+SIZE: 194560
+SLOT: 0/9
+USE: abi_x86_64 amd64 elibc_glibc fontconfig kernel_linux libunibreak
+MTIME: 1791090256
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3668,6 +3750,29 @@ MTIME: 1791065290
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791090207
+CPV: media-libs/libbluray-1.4.1
+DEFINED_PHASES: compile configure install preinst prepare setup test
+DEPEND: >=dev-libs/libudfread-1.2.0:0/3=[abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] >=media-libs/freetype-2.5.0.1:2[abi_x86_64(-)] >=dev-libs/libxml2-2.9.1-r4:2/16=[abi_x86_64(-)]
+EAPI: 8
+IUSE: aacs bdplus +fontconfig static-libs +truetype utils +xml abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 java
+KEYWORDS: amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: LGPL-2.1+
+MD5: 97f1ec16e2ffb137599743fe178204dc
+PATH: pkgs-media-libs/libbluray-1.4.1-1.gpkg.tar
+PROVIDES: x86_64: libbluray.so.3
+RDEPEND: >=dev-libs/libudfread-1.2.0:0/3=[abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] >=media-libs/freetype-2.5.0.1:2[abi_x86_64(-)] >=dev-libs/libxml2-2.9.1-r4:2/16=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libfontconfig.so.1 libfreetype.so.6 libudfread.so.3 libxml2.so.16
+SHA1: 1f0232a6ad7d0e3bad71a381b074171c7d890334
+SIZE: 225280
+SLOT: 0/3
+USE: abi_x86_64 amd64 elibc_glibc fontconfig kernel_linux truetype xml
+MTIME: 1791090208
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) sys-apps/hwdata virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791063501
@@ -3687,6 +3792,29 @@ SIZE: 256000
 SLOT: 0/4
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791063502
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791090186
+CPV: media-libs/libdvdread-7.1.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-libs/libdvdcss-1.3.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: +css static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~x64-macos
+LICENSE: GPL-2 GPL-3
+MD5: f2111497d0a86e0e341d2e7eff9ddb74
+PATH: pkgs-media-libs/libdvdread-7.1.1-1.gpkg.tar
+PROVIDES: x86_64: libdvdread.so.8
+RDEPEND: >=media-libs/libdvdcss-1.3.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libdvdcss.so.2
+SHA1: e9f9b2cbed3acfb9ad2769bfcd128c905e9ae017
+SIZE: 153600
+SLOT: 0/8
+USE: abi_x86_64 amd64 css elibc_glibc kernel_linux
+MTIME: 1791090187
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3898,6 +4026,30 @@ MTIME: 1791063049
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 4
+BUILD_TIME: 1791090230
+CPV: media-libs/rubberband-4.0.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: media-libs/libsamplerate[abi_x86_64(-)] sci-libs/fftw:3.0[abi_x86_64(-)] media-libs/ladspa-sdk[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/libsndfile[abi_x86_64(-)]
+EAPI: 8
+IUSE: ladspa lv2 jni static-libs +programs test vamp abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: daf06b8bafa7c34da292caa951407051
+PATH: pkgs-media-libs/rubberband-4.0.0-r1-4.gpkg.tar
+PROVIDES: x86_64: ladspa-rubberband.so librubberband.so.3 lv2-rubberband.so
+RDEPEND: media-libs/libsamplerate[abi_x86_64(-)] sci-libs/fftw:3.0[abi_x86_64(-)] media-libs/ladspa-sdk[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/libsndfile[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libfftw3.so.3 libgcc_s.so.1 libm.so.6 libsamplerate.so.0 libsndfile.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 29cb7471ade09da91c3a79a3eaead2b398f6bdd7
+SIZE: 378880
+SLOT: 0/3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ladspa lv2 programs
+MTIME: 1791090231
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791065539
@@ -3964,6 +4116,28 @@ SHA1: bca29c7d4bc9f79096b50f11d4fa5c6c6db75237
 SIZE: 399360
 USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux wayland
 MTIME: 1791079153
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 2
+BUILD_TIME: 1791090102
+CPV: media-libs/x264-0.0.20240513-r1
+DEFINED_PHASES: compile configure install test
+DEPEND: >=dev-lang/nasm-2.13 dev-lang/perl
+EAPI: 8
+IUSE: cpu_flags_ppc_altivec +interlaced opencl static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 7bb3bce9296d880308c2538dc3207ab6
+PATH: pkgs-media-libs/x264-0.0.20240513-r1-2.gpkg.tar
+PROVIDES: x86_64: libx264.so.164
+RDEPEND: >=virtual/opencl-0-r3[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6
+SHA1: cf09cc07dfb4eb639fc8e6c41903bd6eba4ddf3a
+SIZE: 788480
+SLOT: 0/164
+USE: abi_x86_64 amd64 elibc_glibc interlaced kernel_linux opencl
+MTIME: 1791090103
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
