@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791093564
-PACKAGES: 292
+TIMESTAMP: 1791093878
+PACKAGES: 296
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -455,6 +455,28 @@ MTIME: 1791057931
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1791093699
+CPV: app-text/docbook2X-0.8.8-r5
+DEFINED_PHASES: configure install prepare
+DEPEND: dev-lang/perl dev-libs/libxslt dev-perl/XML-NamespaceSupport dev-perl/XML-SAX dev-perl/XML-LibXML app-text/docbook-xsl-stylesheets =app-text/docbook-xml-dtd-4.2*
+EAPI: 8
+IUSE: test
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: MIT
+MD5: 560bd4aa6e6c6b41c7da74d50b4dc596
+PATH: pkgs-app-text/docbook2X-0.8.8-r5-3.gpkg.tar
+RDEPEND: dev-lang/perl dev-libs/libxslt dev-perl/XML-NamespaceSupport dev-perl/XML-SAX dev-perl/XML-LibXML app-text/docbook-xsl-stylesheets =app-text/docbook-xml-dtd-4.2* >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 4de9f70fcd83b03dda3d331ca937b4f8c97c2501
+SIZE: 327680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791093700
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791093054
@@ -878,6 +900,29 @@ SHA1: 077dcff583be05fcce38c2f698cc64fec33b16d5
 SIZE: 1710080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux pcre
 MTIME: 1791092119
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/libtool-2.4.2 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791093679
+CPV: dev-libs/apr-util-1.6.5
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=dev-libs/apr-1.7.2:1/1.7= dev-libs/expat virtual/libcrypt:0/2= sys-libs/gdbm:0/6=
+EAPI: 8
+IUSE: berkdb doc gdbm ldap mysql nss odbc openssl postgres sqlite static-libs verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: Apache-2.0
+MD5: c983279acf5ab6652701f659f6196b16
+PATH: pkgs-dev-libs/apr-util-1.6.5-1.gpkg.tar
+PROVIDES: x86_64: apr_dbm_gdbm-1.so libaprutil-1.so.0
+RDEPEND: >=dev-libs/apr-1.7.2:1/1.7= dev-libs/expat virtual/libcrypt:0/2= sys-libs/gdbm:0/6= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libapr-1.so.0 libc.so.6 libcrypt.so.2 libexpat.so.1 libgdbm.so.6
+SHA1: a295763e4621aafa05771b812aaaf905f4c7aa3e
+SIZE: 194560
+SLOT: 1
+USE: abi_x86_64 amd64 elibc_glibc gdbm kernel_linux
+MTIME: 1791093680
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4994,6 +5039,31 @@ MTIME: 1791084843
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 5
+BUILD_TIME: 1791093734
+CPV: net-dialup/ppp-2.5.4-r1
+DEFINED_PHASES: configure install postinst prepare setup
+DEPEND: dev-libs/openssl:0/3= virtual/libcrypt:0/2= sys-libs/pam
+EAPI: 8
+IUSE: activefilter atm pam selinux systemd
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: BSD GPL-2
+MD5: 848b897430eba8ab1132d1e75d0d6986
+PATH: pkgs-net-dialup/ppp-2.5.4-r1-5.gpkg.tar
+PDEPEND: net-dialup/ppp-scripts
+PROVIDES: x86_64: dhcpv6relay.so minconn.so openl2tp.so passwordfd.so pppoatm.so pppoe.so pppol2tp.so radattr.so radius.so radrealms.so winbind.so
+RDEPEND: dev-libs/openssl:0/3= virtual/libcrypt:0/2= sys-libs/pam virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.3 libpam.so.0 libssl.so.3
+SHA1: 3908352c763f2dc0b06847257319c985d0382ad1
+SIZE: 460800
+SLOT: 0/2.5.4
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux pam
+MTIME: 1791093736
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 2
 BUILD_TIME: 1791062127
@@ -5309,6 +5379,30 @@ SIZE: 3512320
 SLOT: 0/320-cmake
 USE: abi_x86_64 amd64 elibc_glibc hl kernel_linux zlib
 MTIME: 1791092624
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/intltool sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791093653
+CPV: sci-libs/libqalculate-5.12.0
+DEFINED_PHASES: configure install prepare
+DEPEND: dev-libs/gmp:0/10.4= dev-libs/libxml2:2/16= dev-libs/mpfr:0/6= virtual/libiconv net-misc/curl dev-libs/icu:0/78= sys-libs/readline:0/8=
+EAPI: 9
+IUSE: +curl icu gnuplot +hardened readline test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: GPL-2+
+MD5: 384cd2888116efe52c83b75891f43acc
+PATH: pkgs-sci-libs/libqalculate-5.12.0-1.gpkg.tar
+PROVIDES: x86_64: libqalculate.so.23
+RDEPEND: dev-libs/gmp:0/10.4= dev-libs/libxml2:2/16= dev-libs/mpfr:0/6= virtual/libiconv net-misc/curl dev-libs/icu:0/78= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcurl.so.4 libgcc_s.so.1 libgmp.so.10 libicuuc.so.78 libm.so.6 libmpfr.so.6 libreadline.so.8 libstdc++.so.6 libxml2.so.16
+RESTRICT: test
+SHA1: e56a0e58faa29b1446892fedcf76f36cf2c79141
+SIZE: 3358720
+SLOT: 0/23.3
+USE: abi_x86_64 amd64 curl elibc_glibc hardened icu kernel_linux readline
+MTIME: 1791093655
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
