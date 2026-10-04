@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791111405
-PACKAGES: 304
+TIMESTAMP: 1791113509
+PACKAGES: 305
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5680,6 +5680,29 @@ SHA1: a0970ba61b968b1472ba934495dabc0db1f27d4c
 SIZE: 808960
 USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc elogind kernel_linux
 MTIME: 1791064775
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-text/xmlto app-text/docbook-xml-dtd:4.4 acct-user/messagebus dev-build/autoconf-archive virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791113411
+CPV: sys-apps/dbus-1.16.2-r2
+DEFINED_PHASES: compile configure install postinst setup test
+DEPEND: >=dev-libs/expat-2.1.0 sys-auth/elogind x11-libs/libX11 x11-libs/libXt x11-base/xorg-proto
+EAPI: 8
+IUSE: apparmor audit debug doc elogind selinux static-libs systemd test valgrind X abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: || ( AFL-2.1 GPL-2+ ) Apache-2.0 BSD GPL-2+ LGPL-2.1+ MIT tcltk
+MD5: c95efb8dfd504a3097c1e7dfd037f293
+PATH: pkgs-sys-apps/dbus-1.16.2-r2-1.gpkg.tar
+PROVIDES: x86_32: libdbus-1.so.3 x86_64: libdbus-1.so.3
+RDEPEND: >=dev-libs/expat-2.1.0 sys-auth/elogind x11-libs/libX11 x11-libs/libXt acct-user/messagebus >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 x86_64: libX11.so.6 libc.so.6 libelogind.so.0 libexpat.so.1
+RESTRICT: test
+SHA1: bba2ff7d779d1965efc17b6b6726634a38efa29e
+SIZE: 808960
+USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc elogind kernel_linux
+MTIME: 1791113412
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
