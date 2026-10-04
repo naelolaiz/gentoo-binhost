@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791093878
-PACKAGES: 296
+TIMESTAMP: 1791094488
+PACKAGES: 297
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5331,6 +5331,30 @@ SHA1: 5f32e62925e80d2c951817efc1c2f1ce77ec7a91
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791092006
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1791094326
+CPV: sci-electronics/ngspice-46
+DEFINED_PHASES: compile configure install prepare pretend setup test
+DEPEND: sys-libs/ncurses:0/6= x11-libs/libXaw x11-libs/libXt x11-libs/libX11 sci-libs/fftw:3.0/3= sys-libs/readline:0/8=
+EAPI: 8
+IUSE: X debug deprecated doc examples fftw +klu openmp +readline +shared tcl test
+KEYWORDS: amd64 ~arm64 ~ppc ~riscv ~sparc ~x86 ~x64-macos
+LICENSE: BSD GPL-2 MPL-2.0
+MD5: d1157c4ac3f7836b5c8a497b7e205ee5
+PATH: pkgs-sci-electronics/ngspice-46-3.gpkg.tar
+PROVIDES: x86_64: analog.cm digital.cm ivlng.so ivlngvpi.so libngspice.so.0 spice2poly.cm table.cm tlines.cm xtradev.cm xtraevt.cm
+RDEPEND: sys-libs/ncurses:0/6= x11-libs/libXaw x11-libs/libXt x11-libs/libX11 sci-libs/fftw:3.0/3= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: libX11.so.6 libXaw.so.7 libXft.so.2 libXt.so.6 libc.so.6 libfftw3.so.3 libfontconfig.so.1 libgcc_s.so.1 libgomp.so.1 libm.so.6 libreadline.so.8 libstdc++.so.6 libtinfo.so.6
+RESTRICT: test test
+SHA1: c32d0a14f87b63aa88afc8dcac28ab707283c1ef
+SIZE: 6440960
+USE: X abi_x86_64 amd64 elibc_glibc fftw kernel_linux klu openmp readline shared
+MTIME: 1791094331
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
