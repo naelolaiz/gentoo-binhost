@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791102497
-PACKAGES: 301
+TIMESTAMP: 1791105210
+PACKAGES: 302
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -411,6 +411,23 @@ SIZE: 419840
 SLOT: 0/1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux oniguruma static-libs
 MTIME: 1791055552
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791105002
+CPV: app-misc/neofetch-7.1.0-r1
+DEFINED_PHASES: install postinst prepare
+EAPI: 7
+KEYWORDS: amd64 arm arm64 ~hppa ~loong ~mips ~ppc ppc64 ~riscv ~sparc x86 ~arm64-macos ~x64-macos
+LICENSE: MIT
+MD5: 39360e6ec3fa61fdc7e525da9abc8487
+PATH: pkgs-app-misc/neofetch-7.1.0-r1-1.gpkg.tar
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+SHA1: 860008b72afd3a9ac606cd89c16b84ed73860025
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791105003
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
