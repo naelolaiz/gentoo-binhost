@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791091942
-PACKAGES: 257
+TIMESTAMP: 1791092281
+PACKAGES: 267
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -295,6 +295,41 @@ MTIME: 1791058150
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791091920
+CPV: app-emulation/wine-mono-10.4.1
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: +shared
+KEYWORDS: amd64 x86
+LICENSE: BSD-2 GPL-2 LGPL-2.1 MIT MPL-1.1
+MD5: 916af6c4bf25d5cceba4bf8508b80fea
+PATH: pkgs-app-emulation/wine-mono-10.4.1-1.gpkg.tar
+SHA1: f2e36b664395696be0decde145cd2bf64f8e7129
+SIZE: 81141760
+SLOT: 10.4.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux shared
+MTIME: 1791091925
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791092125
+CPV: app-eselect/eselect-ruby-20251225
+DEFINED_PHASES: install
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2
+MD5: a5180ecd9952978b5fd702041b3cf214
+PATH: pkgs-app-eselect/eselect-ruby-20251225-1.gpkg.tar
+RDEPEND: >=app-admin/eselect-1.0.2
+SHA1: f9a818851ac8e6e342d589fabf341cd1bc8543dc
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791092127
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-text/po4a dev-lang/perl || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791065003
@@ -496,6 +531,26 @@ SHA1: cba95d1edb89b66fd88b90e49a840d70ab12d59d
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791057569
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791091996
+CPV: dev-build/b2-5.5.3
+DEFINED_PHASES: compile configure install test
+EAPI: 9
+IUSE: examples
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: Boost-1.0
+MD5: d9a7e3dda250e03173cd76949038ae3e
+PATH: pkgs-dev-build/b2-5.5.3-1.gpkg.tar
+RDEPEND: !dev-util/boost-build >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 302f9ebe38ff769176611a95caadf10020818949
+SIZE: 839680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791091998
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -712,6 +767,28 @@ SIZE: 200192000
 SLOT: 1.98.1
 USE: abi_x86_64 amd64 clippy cpu_flags_x86_sse2 elibc_glibc kernel_linux llvm_slot_22 rustfmt
 MTIME: 1791060100
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791092116
+CPV: dev-lang/swig-4.4.1
+DEFINED_PHASES: compile configure install test
+DEPEND: dev-libs/libpcre2
+EAPI: 8
+IUSE: ccache doc pcre test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+ BSD BSD-2
+MD5: 234bcf1e27ac21bfcb42c302cc948788
+PATH: pkgs-dev-lang/swig-4.4.1-1.gpkg.tar
+RDEPEND: dev-libs/libpcre2 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libpcre2-8.so.0 libstdc++.so.6
+RESTRICT: test test
+SHA1: 077dcff583be05fcce38c2f698cc64fec33b16d5
+SIZE: 1710080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux pcre
+MTIME: 1791092119
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1173,6 +1250,22 @@ SHA1: 21122437ef264c2c1e691458167e3420e1bc43fe
 SIZE: 81920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791087596
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791092012
+CPV: dev-libs/stb-20260415-r1
+DEFINED_PHASES: install prepare
+EAPI: 9
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: || ( MIT Unlicense )
+MD5: 6fab8a315de8831317569514cbaab0c1
+PATH: pkgs-dev-libs/stb-20260415-r1-1.gpkg.tar
+SHA1: 5da945c0b8381b1f37ebde936ec64c4a07546c4d
+SIZE: 624640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791092013
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3535,6 +3628,44 @@ MTIME: 1791076506
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings
+BUILD_ID: 1
+BUILD_TIME: 1791092160
+CPV: media-fonts/noto-20260901
+DEFINED_PHASES: install postinst postrm setup
+EAPI: 8
+IUSE: +extra X
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: OFL-1.1
+MD5: 2608453b57446ba1bb036987e75c8c81
+PATH: pkgs-media-fonts/noto-20260901-1.gpkg.tar
+RESTRICT: binchecks strip
+SHA1: 66fe76b9279d7b2dcd63c95b4125b86ce34aa4c5
+SIZE: 147630080
+USE: X abi_x86_64 amd64 elibc_glibc extra kernel_linux
+MTIME: 1791092165
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings
+BUILD_ID: 1
+BUILD_TIME: 1791092190
+CPV: media-fonts/noto-emoji-20260924
+DEFINED_PHASES: compile install postinst postrm setup
+EAPI: 8
+IUSE: icons X
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0 OFL-1.1
+MD5: 01652166a727f7111c0acc1e98481214
+PATH: pkgs-media-fonts/noto-emoji-20260924-1.gpkg.tar
+RESTRICT: binchecks strip
+SHA1: a7adc5d156285761862d9d7a8a00aca4264143c7
+SIZE: 13250560
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791092196
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 7
 BUILD_TIME: 1791063897
@@ -3627,6 +3758,25 @@ SIZE: 1167360
 SLOT: 2
 USE: X abi_x86_32 abi_x86_64 adobe-cff amd64 bzip2 cleartype-hinting elibc_glibc harfbuzz kernel_linux png svg
 MTIME: 1791062235
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791092204
+CPV: media-libs/glm-1.0.3
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: test cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_ssse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 cpu_flags_x86_avx cpu_flags_x86_avx2
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: || ( HappyBunny MIT )
+MD5: 9a282fa27165788d7659e6aefc8b8317
+PATH: pkgs-media-libs/glm-1.0.3-1.gpkg.tar
+RESTRICT: test
+SHA1: 80f944196f51ad9fc73615674b5765f904adbb9e
+SIZE: 317440
+USE: abi_x86_64 amd64 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 cpu_flags_x86_ssse3 elibc_glibc kernel_linux
+MTIME: 1791092206
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4325,6 +4475,28 @@ MTIME: 1791062189
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=app-portage/elt-patches-20250306
+BUILD_ID: 2
+BUILD_TIME: 1791092043
+CPV: media-sound/wavpack-5.8.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=virtual/libiconv-0-r1
+EAPI: 8
+IUSE: test-full abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: BSD
+MD5: 3ac89365d79b6fcff9ebaf04572ffd6f
+PATH: pkgs-media-sound/wavpack-5.8.1-2.gpkg.tar
+PROVIDES: x86_64: libwavpack.so.1
+RDEPEND: >=virtual/libiconv-0-r1 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6
+SHA1: f7306d1a58b415ed029c8169608139c576960524
+SIZE: 614400
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791092044
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/awk virtual/pkgconfig dev-lang/nasm media-libs/shaderc dev-lang/perl
 BUILD_ID: 1
 BUILD_TIME: 1791091691
@@ -4648,6 +4820,22 @@ SHA1: 7a2b1e2e53c29458581bdbaf3f225c849f1d4ad7
 SIZE: 921600
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls pcre psl ssl zlib
 MTIME: 1791079109
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791092005
+CPV: net-wireless/wireless-regdb-20260903
+DEFINED_PHASES: compile install pretend setup
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: ISC
+MD5: cbe57c7bfacefd06078fd400d355497e
+PATH: pkgs-net-wireless/wireless-regdb-20260903-1.gpkg.tar
+SHA1: 5f32e62925e80d2c951817efc1c2f1ce77ec7a91
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791092006
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
