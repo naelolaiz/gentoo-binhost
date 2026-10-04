@@ -8,6 +8,15 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Long runs
+
+- Packages that finished building next to one that is still compiling are
+  installed and published before a run stops at its time limit.
+- A chain of runs ends after four runs in a row that published nothing; a
+  chain that keeps publishing goes on.  `budget_minutes` is at least 30.
+- A category with more than 950 files continues in `pkgs-<category>.2`, and
+  so on.  Release tags are created on the index branch.
+
 ### Rework: incremental builds, packages served from releases
 
 The builder was replaced.  Earlier versions completed builds but never

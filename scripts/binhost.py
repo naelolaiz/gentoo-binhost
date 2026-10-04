@@ -348,6 +348,9 @@ class GitHubStore:
                 "POST", f"{self.api}/repos/{self.repo}/releases",
                 payload={
                     "tag_name": tag,
+                    # The tag only anchors the release.  On the index branch
+                    # it does not pin a commit of the code's history.
+                    "target_commitish": self.branch,
                     "name": tag,
                     "body": "Binary packages, managed by the build workflow. "
                             "Do not edit; files are referenced by the package index.",

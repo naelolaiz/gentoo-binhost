@@ -529,6 +529,7 @@ class GitHubBackend(Base):
         payload = self.hub["releases"]["pkgs-app-misc"]["payload"]
         self.assertTrue(payload["prerelease"])
         self.assertEqual(payload["make_latest"], "false")
+        self.assertEqual(payload["target_commitish"], "binhost")
         self.assertEqual(sorted(self.hub["releases"]["pkgs-x11-libs"]["assets"]),
                          ["gtk_p_-3.24.50-1.gpkg.tar"])
         index = self.index()
