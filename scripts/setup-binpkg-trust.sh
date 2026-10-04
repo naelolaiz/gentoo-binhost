@@ -32,7 +32,7 @@ log() { echo "[setup-binpkg-trust] $*"; }
 GENTOO_BINHOST_KEY="534E4209AB49EEE1C19D96162C44695DB9F6043D"
 
 if [[ -d /etc/portage/gnupg ]] \
-   && gpg --homedir /etc/portage/gnupg --list-keys "$GENTOO_BINHOST_KEY" >/dev/null 2>&1; then
+   && gpg --homedir /etc/portage/gnupg --no-permission-warning --list-keys "$GENTOO_BINHOST_KEY" >/dev/null 2>&1; then
   log "Gentoo binhost signing key ${GENTOO_BINHOST_KEY} already trusted; skipping"
   exit 0
 fi
@@ -48,7 +48,7 @@ getuto
 # Verify the binhost signing key is actually present after bootstrap —
 # catches a silent regression in getuto or a key rotation before it surfaces
 # as a cryptic NO_PUBKEY during emerge.
-if ! gpg --homedir /etc/portage/gnupg --list-keys "$GENTOO_BINHOST_KEY" >/dev/null; then
+if ! gpg --homedir /etc/portage/gnupg --no-permission-warning --list-keys "$GENTOO_BINHOST_KEY" >/dev/null; then
   echo "::error::Gentoo binhost signing key ${GENTOO_BINHOST_KEY} not present in /etc/portage/gnupg after getuto" >&2
   exit 1
 fi

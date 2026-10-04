@@ -88,6 +88,19 @@ record the glibc they need (`RDEPEND: >=sys-libs/glibc-...`), so Portage
 updates glibc first when a machine is behind.  A `~amd64` machine is at or
 ahead of that version.
 
+## "Error: circular dependencies" among binaries
+
+With the USE flags used here, `media-video/ffmpeg`, `media-libs/libsdl2` and
+`media-video/pipewire` need each other.  A machine that has them installed
+never notices.  One that installs them for the first time gets
+`Error: circular dependencies` from Portage, with all three shown as
+binaries.  Install one of them without its dependencies and repeat the
+command; its dependencies come along with the rest:
+
+```bash
+emerge --oneshot --nodeps --usepkgonly --getbinpkg media-video/ffmpeg
+```
+
 ## When a package is missing
 
 - It failed to build: see the open issue labelled `binhost-alert`.

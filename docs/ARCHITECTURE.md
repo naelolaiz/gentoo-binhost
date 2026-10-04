@@ -160,7 +160,10 @@ tree.
   breaks the loop; the builder applies it for one build, without producing a
   binary package, and then rebuilds the affected package as configured.
   Only that second build is published.  No such flags are kept in the
-  configuration.
+  configuration.  Once those packages are published, the same loop exists
+  among binaries, and for that Portage has no suggestion; the builder then
+  installs one of them first without its dependencies, after which the
+  others resolve and bring its dependencies along.
 - **Out of memory or disk** is recognised in the build log and reported as
   such, not as a broken package.  Such a package gets one more try in the
   same run, by a later tier that needs it.  The work

@@ -425,10 +425,43 @@ CYCLE_ENV="/etc/portage/package.env/zz-builder-cycle-breakers"
 
 forget_cycles() { rm -f "$CYCLE_USE" "$CYCLE_ENV"; }
 
-# Returns 0 when the roots resolve with temporary flags, 1 when they do not,
-# 42 when the deadline is too close to keep trying.
+# Once those packages are published, the same loop exists among binaries
+# (ffmpeg needs libsdl2, which was built against pipewire, which was built
+# against ffmpeg), and for that Portage has no suggestion.  What a person
+# would do works: install one of them without its dependencies; the others
+# then find what they need and bring that one's dependencies along.
+#
+# cycle_binary prints the binary to install first, as an atom: preferably
+# one whose own dependency inside the loop is a plain run-time one.
+#   (media-video/ffmpeg-8.1.3-1:0/60::gentoo, binary scheduled for merge) depends on
+#    (media-libs/libsdl2-2.32.10-1:0/0::gentoo, binary scheduled for merge) (runtime)
+cycle_binary() {
+  awk '
+    /Error: circular dependencies:/ { on = 1; next }
+    on && /^ \* / { exit }
+    on && /scheduled for merge\)/ {
+      n++
+      node[n] = $0
+      sub(/^ *\(/, "", node[n])
+      sub(/[:,].*$/, "", node[n])
+      binary[n] = ($0 ~ /, binary scheduled for merge\)/)
+      soft[n] = ($0 ~ /\) \((runtime|runtime_post)\)$/)
+    }
+    END {
+      pick = ""
+      for (i = 2; i <= n && pick == ""; i++) if (soft[i] && binary[i - 1]) pick = node[i - 1]
+      for (i = 1; i <= n && pick == ""; i++) if (binary[i]) pick = node[i]
+      # Without the build number Portage appends to the version of a binary.
+      if (pick != "") { sub(/-[0-9]+$/, "", pick); print "=" pick }
+    }' "$PLAN_LOG"
+}
+
+# Returns 0 when the roots resolve after breaking the loops, 1 when they do
+# not, 42 when the deadline is too close to keep trying.  Sets
+# CYCLE_USE_CHANGED when packages will be built with temporary flags.
 break_cycles() {
-  local suggestion
+  local suggestion binary installed_first=" "
+  CYCLE_USE_CHANGED=false
   mkdir -p /etc/portage/env /etc/portage/package.env
   echo 'FEATURES="-buildpkg"' > /etc/portage/env/binhost-no-buildpkg.conf
   for _ in 1 2 3 4 5 6 7 8; do
@@ -439,18 +472,32 @@ break_cycles() {
     suggestion="$(awk '/It might be possible to break this cycle/ { on = 1; next }
                        on && /^- / { print; exit }' "$PLAN_LOG" \
       | sed -nE 's/^- ([^ :]+) \(Change USE: ([^)]+)\)$/=\1 \2/p')"
-    [[ -n "$suggestion" ]] || return 1
-    suggestion="${suggestion// +/ }"
-    echo "$suggestion" >> "$CYCLE_USE"
-    echo "${suggestion%% *} binhost-no-buildpkg.conf" >> "$CYCLE_ENV"
-    log "${TIER}: build-time dependency cycle; for this build only: ${suggestion}"
+    if [[ -n "$suggestion" ]]; then
+      suggestion="${suggestion// +/ }"
+      echo "$suggestion" >> "$CYCLE_USE"
+      echo "${suggestion%% *} binhost-no-buildpkg.conf" >> "$CYCLE_ENV"
+      CYCLE_USE_CHANGED=true
+      log "${TIER}: build-time dependency cycle; for this build only: ${suggestion}"
+    else
+      binary="$(cycle_binary)"
+      # Nothing to install first, or it did not help the last time.
+      [[ -n "$binary" && "$installed_first" != *" ${binary} "* ]] || return 1
+      installed_first+="${binary} "
+      log "${TIER}: dependency loop among binary packages; installing ${binary} first, without its dependencies"
+      if ! emerge --oneshot --nodeps --usepkgonly --getbinpkg --quiet "$binary" \
+             > "${OUT}/plans/${TIER}-${PLAN_SEQ}-install.log" 2>&1; then
+        log "${TIER}: could not install ${binary}; see plans/${TIER}-${PLAN_SEQ}-install.log"
+        return 1
+      fi
+    fi
     plan "$@" && return 0
   done
   return 1
 }
 
 # resolve <roots...>: plan, breaking dependency cycles if that is all that
-# stands in the way.  Sets CYCLE_BROKEN.  Returns like break_cycles.
+# stands in the way.  Sets CYCLE_BROKEN when packages are built with
+# temporary flags and have to be rebuilt.  Returns like break_cycles.
 resolve() {
   local rc=0
   CYCLE_BROKEN=false
@@ -458,7 +505,7 @@ resolve() {
   plan "$@" && return 0
   break_cycles "$@" || rc=$?
   if (( rc == 0 )); then
-    CYCLE_BROKEN=true
+    CYCLE_BROKEN="$CYCLE_USE_CHANGED"
     return 0
   fi
   forget_cycles
