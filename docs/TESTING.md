@@ -80,6 +80,20 @@ fresh container and expects the build to finish with at least 80 % of the
 files compiled before the interruption coming back from the compiler cache.
 About fifteen minutes; not part of the pull request checks.
 
+A third phase checks the packages that are finished at that moment but not
+installed yet, because another one is still building next to them.  It
+needs at least two CPUs and nothing from the other phases:
+
+```bash
+podman run --rm --init --privileged \
+  -v "$PWD":/repo:ro -v "$state/tree":/var/db/repos/gentoo -v "$state/state":/state \
+  docker.io/gentoo/stage3:amd64-desktop-openrc bash /repo/tests/e2e.sh drain
+```
+
+`drain` builds cmake (slowly, with one job) next to two small packages with
+a ten-minute limit, and expects the small ones to be installed and published
+although cmake is cut off.  About twelve minutes.
+
 ## Resolving the real tiers without building
 
 To see whether a change to the profile or to a tier still resolves, and how

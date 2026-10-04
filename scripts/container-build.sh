@@ -86,6 +86,10 @@ export CCACHE_DIR
 SIGN_HOME="/root/.gnupg-binhost"
 # Longest a single dependency calculation may take.
 PLAN_TIMEOUT=600
+# Seconds of failed dependency calculations after which the roots of a tier
+# that still do not resolve are given up for this run.
+RESOLVE_BUDGET=1800
+RESOLVE_SPENT=0
 FAILURE_LOG_TAIL_LINES=80
 
 STATUS="complete"
@@ -93,9 +97,10 @@ TIMEOUT_FIRED_AT=0
 FAILED_COUNT=0
 # Every failure met, counting a package again when it fails a second time.
 FAILURES_SEEN=0
-# category/package of everything that failed in this run.  They are kept out
-# of every later dependency calculation: trying again within the same run
-# would fail the same way, after the same hours.
+# category/package of what failed to build in this run (for lack of memory
+# or disk: failed twice).  They are kept out of every later dependency
+# calculation: trying again within the same run would fail the same way,
+# after the same hours.
 FAILED_CPS=()
 EXCLUDE_OPTS=()
 UNRESOLVED_COUNT=0
@@ -460,13 +465,20 @@ resolve() {
   return "$rc"
 }
 
+# record_unresolved <root> [<reason>]: without a reason, the root's own
+# dependency calculation (the last one made) is the explanation.
 record_unresolved() {
   local root="$1" why="see ${PLAN_LOG#"${OUT}/"}"
+  UNRESOLVED_COUNT=$(( UNRESOLVED_COUNT + 1 ))
+  if (( $# > 1 )); then
+    printf '%s\t%s\n' "$root" "$2" >> "$OUT/unresolved.tsv"
+    echo "::error title=Not resolved: ${root}::${2}"
+    return 0
+  fi
   # "masked by: exclude option": it needs a package that failed earlier.
   if grep -q 'masked by: exclude option' "$PLAN_LOG"; then
     why="needs a package that failed to build in this run; ${why}"
   fi
-  UNRESOLVED_COUNT=$(( UNRESOLVED_COUNT + 1 ))
   printf '%s\t%s\n' "$root" "$why" >> "$OUT/unresolved.tsv"
   echo "::error title=Cannot resolve ${root}::Portage found no way to install ${root}: ${why} in the logs artifact"
   echo "::group::emerge --pretend ${root}"
@@ -476,7 +488,8 @@ record_unresolved() {
 
 # ── Building ────────────────────────────────────────────────────────────
 
-# How many packages are built (their binary is in PKGDIR) but not installed.
+# How many packages are built (their binary is in PKGDIR), not installed, and
+# still held by emerge for installing.
 pending_merges() {
   [[ -f "${PKGDIR}/Packages" ]] || { echo 0; return 0; }
   local cpv built installed pending=0
@@ -486,7 +499,11 @@ pending_merges() {
     if [[ -f "/var/db/pkg/${cpv}/BUILD_TIME" ]]; then
       installed="$(tr -d '[:space:]' < "/var/db/pkg/${cpv}/BUILD_TIME")"
     fi
-    if [[ "$installed" != "$built" ]]; then
+    # Emerge keeps the build directory of a package until it is installed.
+    # Without one (or with a failure marker in it) nothing will install this
+    # binary any more: its merge failed, or it was replaced or removed.
+    if [[ "$installed" != "$built" && -d "${PORTAGE_TMP}/${cpv}" \
+          && ! -e "${PORTAGE_TMP}/${cpv}/.die_hooks" ]]; then
       pending=$(( pending + 1 ))
     fi
   done < <(awk '
@@ -510,7 +527,11 @@ drain_merges() {
   local pid="$1" waited=0 pending
   while kill -0 "$pid" 2>/dev/null && (( waited < DRAIN_SECONDS )); do
     pending="$(pending_merges)"
-    (( pending > 0 )) || return 0
+    if (( pending == 0 )); then
+      # Installed, but emerge may still be finishing the last one off.
+      if (( waited > 0 )); then sleep 10; fi
+      return 0
+    fi
     (( waited > 0 )) || log "Deadline reached; installing ${pending} finished package(s) before stopping"
     kill -USR2 "$pid" 2>/dev/null || true
     sleep 5
@@ -607,7 +628,13 @@ collect_failures() {
 
     FAILURES_SEEN=$(( FAILURES_SEEN + 1 ))
     if cut -f1 "$OUT/failures.tsv" | grep -qxF "$cat_pf"; then
-      # Already reported in this run.
+      # Already reported in this run; it was tried again because it had run
+      # out of memory or disk.  Once more is enough.
+      cp_name="$(qatom -F '%{CATEGORY}/%{PN}' "=${cat_pf}")"
+      if [[ " ${FAILED_CPS[*]} " != *" ${cp_name} "* ]]; then
+        FAILED_CPS+=("$cp_name")
+        EXCLUDE_OPTS+=("--exclude=${cp_name}")
+      fi
       rm -rf "${PORTAGE_TMP:?}/${cat_pf}"
       continue
     fi
@@ -618,8 +645,8 @@ collect_failures() {
     printf '%s\t%s\t%s\n' "$cat_pf" "$phase" "$class" >> "$OUT/failures.tsv"
     # Not again in this run: later calculations leave it out, and whatever
     # needs it is reported as unresolvable instead of being started.  A
-    # package that ran out of memory or disk is not left out: a later tier
-    # that needs it tries again, under other conditions.
+    # package that ran out of memory or disk gets one more try, by a later
+    # tier that needs it, under other conditions (see above).
     if [[ "$class" == build ]]; then
       cp_name="$(qatom -F '%{CATEGORY}/%{PN}' "=${cat_pf}")"
       FAILED_CPS+=("$cp_name")
@@ -709,8 +736,11 @@ build_roots() {
   # Resolving takes time too; do not keep planning past the deadline.
   deadline_near && return 42
 
+  local resolve_started
+  resolve_started=$(date +%s)
   resolve "$@" || rc=$?
   (( rc == 42 )) && return 42
+  if (( rc != 0 )); then RESOLVE_SPENT=$(( RESOLVE_SPENT + $(date +%s) - resolve_started )); fi
 
   # The base system is updated once per run, before the first compile.  Also
   # when the roots do not resolve: leftovers of the stage3's configuration
@@ -722,20 +752,32 @@ build_roots() {
     (( rc == 42 )) && return 42
     # What is installed changed, so the plan has to be made again.
     rc=0
+    resolve_started=$(date +%s)
     resolve "$@" || rc=$?
     (( rc == 42 )) && return 42
+    if (( rc != 0 )); then RESOLVE_SPENT=$(( RESOLVE_SPENT + $(date +%s) - resolve_started )); fi
   fi
 
   if (( rc != 0 )); then
+    local root
     if (( $# == 1 )); then
       record_unresolved "$1"
       return 0
     fi
+    # Failing calculations add up: one broken package that many roots need
+    # makes each of them fail.  Past the budget the rest of the tier is
+    # given up for this run, so that the tiers after it still get their turn.
+    if (( RESOLVE_SPENT >= RESOLVE_BUDGET )); then
+      for root in "$@"; do
+        record_unresolved "$root" "not examined: resolving tier ${TIER} already took $(( RESOLVE_SPENT / 60 )) minutes of failed attempts"
+      done
+      return 0
+    fi
     # Portage names the root whose dependency it could not satisfy:
     #   (dependency required by "kde-apps/kdenlive" [argument])
-    # Leave those out and try the others again; that is one calculation per
-    # bad root, where halving the list needs several.
-    local culprits=() rest=() root culprit named
+    # Try the others without it, and then that root alone (it may only fail
+    # in this company); that takes fewer calculations than halving the list.
+    local culprits=() rest=() named_roots=() culprit named
     mapfile -t culprits < <(
       sed -nE 's/^\(dependency required by "([^"]+)" \[argument\]\)$/\1/p' "$PLAN_LOG" | sort -u)
     if (( ${#culprits[@]} > 0 )); then
@@ -745,17 +787,23 @@ build_roots() {
           if [[ "$root" == "$culprit" ]]; then named=true; fi
         done
         if [[ "$named" == true ]]; then
-          record_unresolved "$root"
+          named_roots+=("$root")
         else
           rest+=("$root")
         fi
       done
-      if (( ${#rest[@]} < $# )); then
-        (( ${#rest[@]} > 0 )) || return 0
-        log "${TIER}: left out $(( $# - ${#rest[@]} )) root(s) Portage cannot satisfy; ${#rest[@]} remain"
-        rc=0
-        build_roots "$mode" "${rest[@]}" || rc=$?
-        (( rc == 42 )) && return 42
+      if (( ${#named_roots[@]} > 0 )); then
+        log "${TIER}: ${#named_roots[@]} root(s) named by Portage are tried on their own; ${#rest[@]} remain together"
+        if (( ${#rest[@]} > 0 )); then
+          rc=0
+          build_roots "$mode" "${rest[@]}" || rc=$?
+          (( rc == 42 )) && return 42
+        fi
+        for root in "${named_roots[@]}"; do
+          rc=0
+          build_roots "$mode" "$root" || rc=$?
+          (( rc == 42 )) && return 42
+        done
         return 0
       fi
     fi
@@ -851,6 +899,7 @@ for file in "${tier_files[@]}"; do
     continue
   fi
   log "── tier ${TIER}: ${#roots[@]} root(s), --jobs=${TIER_JOBS} ──"
+  RESOLVE_SPENT=0
   rc=0
   build_roots atoms "${roots[@]}" || rc=$?
   if (( rc == 42 )); then

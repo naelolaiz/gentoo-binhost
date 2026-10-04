@@ -8,7 +8,7 @@ on:
         required: false
         default: ''
       budget_minutes:
-        description: 'Minutes this run may spend before it stops building and publishes what it has (20-300).'
+        description: 'Minutes this run may spend before it stops building and publishes what it has (30-300).'
         required: false
         default: '285'
 
@@ -207,11 +207,12 @@ jobs:
             -f "tiers=${TIERS}" -f "budget_minutes=${BUDGET}"
 
   # One issue that is open while something needs a human and closes itself
-  # when a run gets through cleanly.
+  # when a run gets through cleanly.  A run cancelled by hand reports
+  # nothing; a job that ran into its time limit still does.
   report:
     name: Report
     needs: [build, verify, continue]
-    if: always() && github.ref == 'refs/heads/main'
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
@@ -233,12 +234,11 @@ jobs:
           set -euo pipefail
           body="$(mktemp)"
           {
-            # A run cancelled by hand is not a problem to report.
-            [ "$BUILD_RESULT" = success ] || [ "$BUILD_RESULT" = cancelled ] \
+            [ "$BUILD_RESULT" = success ] \
               || echo "- The build job ended as \`${BUILD_RESULT}\`."
-            [ "$VERIFY_RESULT" = success ] || [ "$VERIFY_RESULT" = skipped ] || [ "$VERIFY_RESULT" = cancelled ] \
+            [ "$VERIFY_RESULT" = success ] || [ "$VERIFY_RESULT" = skipped ] \
               || echo "- The install check on a clean machine ended as \`${VERIFY_RESULT}\`: published packages may not be installable."
-            [ "$CONTINUE_RESULT" = success ] || [ "$CONTINUE_RESULT" = skipped ] || [ "$CONTINUE_RESULT" = cancelled ] \
+            [ "$CONTINUE_RESULT" = success ] || [ "$CONTINUE_RESULT" = skipped ] \
               || echo "- The next run could not be requested (\`${CONTINUE_RESULT}\`); start it by hand."
             printf '%s\n' "$PROBLEMS"
           } | sed '/^$/d' > "$body"

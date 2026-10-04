@@ -110,8 +110,10 @@ fi
 : "${GPG_PRIVATE_KEY:?The GPG_PRIVATE_KEY secret is not set. Machines verify package signatures, so the builder cannot publish without it (see keys/README.md).}"
 : "${JOB_START:?}"
 BUDGET_MINUTES="${BUDGET_MINUTES:-285}"
-[[ "$BUDGET_MINUTES" =~ ^[0-9]+$ ]] && (( BUDGET_MINUTES >= 20 && BUDGET_MINUTES <= 300 )) \
-  || die "BUDGET_MINUTES must be a number between 20 and 300, got '${BUDGET_MINUTES}'"
+# Below half an hour, setting up and the ten minutes a build must have left
+# to be started at all leave no time to build anything.
+[[ "$BUDGET_MINUTES" =~ ^[0-9]+$ ]] && (( BUDGET_MINUTES >= 30 && BUDGET_MINUTES <= 300 )) \
+  || die "BUDGET_MINUTES must be a number between 30 and 300, got '${BUDGET_MINUTES}'"
 DEADLINE=$(( JOB_START + BUDGET_MINUTES * 60 ))
 TIERS="${TIERS:-}"
 
@@ -198,7 +200,8 @@ while [[ "$(docker inspect --format '{{.State.Running}}' "$CONTAINER")" == true 
   waited=$(( waited + 20 ))
   # The container stops itself at the deadline.  If it is still running
   # twenty minutes later, stop it from here while there is time left to
-  # publish; it then reports the run as cut off by the deadline.
+  # publish.  It then reports the run as cut off by the deadline, unless it
+  # had to be killed, which counts as a failed container.
   if [[ "$stopped" == false ]] && (( $(date +%s) >= DEADLINE + 1200 )); then
     echo "::warning::The build container overran its deadline; stopping it"
     docker stop -t 150 "$CONTAINER" >/dev/null || true
@@ -255,6 +258,7 @@ tree_date="$(result tree_date)"
 # of those in a row mean the package does not get finished this way.
 next="false"
 stop_reason=""
+stop_note=""
 if (( published > 0 )); then idle=0; else idle=$(( idle + 1 )); fi
 if [[ "$status" == deadline ]]; then
   if [[ "${ALLOW_CONTINUE:-false}" != true ]]; then
@@ -264,7 +268,8 @@ if [[ "$status" == deadline ]]; then
   elif (( idle >= MAX_IDLE )); then
     stop_reason="${MAX_IDLE} runs in a row reached the time limit without publishing a package (interrupted: $(result interrupted))"
   elif (( streak + 1 >= MAX_STREAK )); then
-    stop_reason="${MAX_STREAK} runs in a row reached the time limit; the next daily run starts again from a current tree"
+    # Not a problem to report: the chain did its work, its tree is just old.
+    stop_note="${MAX_STREAK} runs in a row reached the time limit; the next daily run starts again from a current tree"
   else
     next="true"
   fi
@@ -350,6 +355,7 @@ output image "$IMAGE_REF"
   echo "| Toolchain | $(result gcc), $(result glibc) |"
   echo "| Index | \`${INDEX_BRANCH}\` at \`$(cat "${OUT}/head")\` |"
   echo "| Follow-up run | ${next} |"
+  [[ -z "$stop_note" ]] || echo "| Chain ended | ${stop_note} |"
   if [[ -n "$(result interrupted)" ]]; then
     echo "| Interrupted | $(result interrupted) |"
   fi
@@ -360,5 +366,6 @@ output image "$IMAGE_REF"
   fi
 } >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
 
+[[ -z "$stop_note" ]] || echo "::notice::Chain ended: ${stop_note}"
 log "status=${status} published=${published} failed=${failed} unresolved=${unresolved} next=${next}"
 [[ "$status" != error && "$publish_rc" == 0 ]] || exit 1

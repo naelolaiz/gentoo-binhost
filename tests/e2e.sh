@@ -14,7 +14,8 @@
 #   e2e.sh deadline  start a slow build and let the deadline interrupt it
 #   e2e.sh resume    a fresh container must finish it from the compiler cache
 #   e2e.sh drain     packages finished next to a build that the deadline cuts
-#                    off must still be installed and published (needs two CPUs)
+#                    off must still be installed and published (needs two
+#                    CPUs; independent of the other phases)
 #
 # How to start the containers is in docs/TESTING.md.
 set -euo pipefail
@@ -214,7 +215,13 @@ PY
     ;;
 
   drain)
-    [[ -f "${KEYS}/secret.asc" ]] || fail "run the build phase first"
+    # A store of its own, so that nothing an earlier phase published is
+    # offered as a binary and the phase can be repeated.
+    STORE="${STATE}/store-drain"
+    rm -rf "$STORE"
+    mkdir -p "$STORE"
+    make_keys
+    binhost init
     serve
     # Compiled here whatever the binhosts offer; cmake with one job, so that
     # it is still building at the deadline on any machine.

@@ -96,9 +96,11 @@ checked by the publisher's own rules but not parsed by Portage.
   compiler cache grows.  Usually its non-cacheable part (linking, Rust, code
   generation) does not fit into one run.  Take it out of its tier file; the
   next daily run tries it again otherwise, and the tiers after it wait.
-- **40 runs in a row reached the time limit**: nothing is wrong.  A chain
-  keeps the tree snapshot it started with, and after that many runs the
-  snapshot is old.  The next daily run starts again from a current tree.
+
+A run summary that says **Chain ended: 40 runs in a row reached the time
+limit** is not a problem and opens no issue.  A chain keeps the tree
+snapshot it started with, and after that many runs the snapshot is old; the
+next daily run starts again from a current tree.
 
 ## "The build container failed"
 

@@ -369,6 +369,15 @@ class DirBackend(Base):
         self.assertEqual([s["path"] for s in self.state()["superseded"]],
                          ["pkgs-app-misc/old-1.0-1.gpkg.tar"])
         # Looking again does not start its grace period again.
+        recent = int(time.time()) - 86400
+        state = self.state()
+        state["superseded"][0]["at"] = recent
+        with open(os.path.join(self.root, "index", "state.json"), "w", encoding="utf-8") as handle:
+            handle.write(binhost.dump_state(state))
+        self.assertEqual(self.run_cli("prune", "--grace-days", "14"), 0)
+        self.assertEqual(self.state()["superseded"],
+                         [{"at": recent, "path": "pkgs-app-misc/old-1.0-1.gpkg.tar"}])
+        self.assertTrue(os.path.exists(orphan))
         state = self.state()
         state["superseded"][0]["at"] = 5
         with open(os.path.join(self.root, "index", "state.json"), "w", encoding="utf-8") as handle:

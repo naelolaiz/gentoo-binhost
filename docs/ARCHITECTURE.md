@@ -134,9 +134,11 @@ follow-up run pins the tree snapshot and the image, and why the builder
 keeps the toolchain of its stage3 instead of upgrading it.
 
 The chain of runs ends when a run reaches the limit without having
-published or compiled anything new, when four runs in a row published
-nothing (one package that does not get finished), or after 40 runs.  The
-next daily run then starts a new chain from a current tree.
+published or compiled anything new, or when four runs in a row published
+nothing (one package that does not get finished); both are reported.  It
+also ends after 40 runs, without a report, because the tree it is pinned
+to is old by then.  The next daily run starts a new chain from a current
+tree.
 
 ### Failures
 
@@ -148,10 +150,11 @@ next daily run then starts a new chain from a current tree.
   run tries again; with the compiler cache that costs little until it
   reaches the same error.
 - **A set of packages cannot be resolved together.**  Where Portage names
-  the root it cannot satisfy, that root is left out and the others are
-  tried again; otherwise the list is split in halves until the offending
-  root is isolated.  A dependency calculation that takes more than ten
-  minutes counts as failed.
+  the root it cannot satisfy, the others are tried without it and that
+  root on its own; otherwise the list is split in halves until the
+  offending root is isolated.  A dependency calculation that takes more
+  than ten minutes counts as failed, and after half an hour of failed
+  calculations the rest of the tier is left for the next run.
 - **Build-time dependency loops** (ffmpeg needs openal needs pipewire needs
   ffmpeg) only exist in a fresh container.  Portage names a USE flag that
   breaks the loop; the builder applies it for one build, without producing a
@@ -159,8 +162,8 @@ next daily run then starts a new chain from a current tree.
   Only that second build is published.  No such flags are kept in the
   configuration.
 - **Out of memory or disk** is recognised in the build log and reported as
-  such, not as a broken package.  Such a package is not left out for the
-  rest of the run: a later tier that needs it tries again.  The work
+  such, not as a broken package.  Such a package gets one more try in the
+  same run, by a later tier that needs it.  The work
   directory of a failed build is removed while the run goes on, so one
   failure for lack of space does not cause the next.
 
