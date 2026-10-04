@@ -29,21 +29,21 @@ bash "${SCRIPT_DIR}/setup-binpkg-trust.sh"
 FPR="$(gpg --batch --with-colons --show-keys "$KEY_FILE" | awk -F: '$1 == "fpr" { print $10; exit }')"
 [[ -n "$FPR" ]] || { echo "No OpenPGP key found in ${KEY_FILE}" >&2; exit 1; }
 
-gpg --homedir "$KEYRING" --batch --import "$KEY_FILE"
+gpg --homedir "$KEYRING" --no-permission-warning --batch --import "$KEY_FILE"
 
 # getuto stores the passphrase of the local trust key next to the keyring.
 [[ -f "${KEYRING}/pass" ]] || {
   echo "::error::${KEYRING}/pass not found; getuto did not create the local trust key" >&2
   exit 1
 }
-gpg --homedir "$KEYRING" --batch --yes --no-tty \
+gpg --homedir "$KEYRING" --no-permission-warning --batch --yes --no-tty \
     --passphrase-file "${KEYRING}/pass" --pinentry-mode loopback \
     --quick-lsign-key "$FPR"
-gpg --homedir "$KEYRING" --batch --check-trustdb
+gpg --homedir "$KEYRING" --no-permission-warning --batch --check-trustdb
 
 # Portage needs GOODSIG plus TRUST_FULLY/TRUST_ULTIMATE; anything less is
 # rejected at install time, so check the outcome now.
-VALIDITY="$(gpg --homedir "$KEYRING" --batch --with-colons --list-keys "$FPR" \
+VALIDITY="$(gpg --homedir "$KEYRING" --no-permission-warning --batch --with-colons --list-keys "$FPR" \
   | awk -F: '$1 == "pub" { print $2; exit }')"
 case "$VALIDITY" in
   f|u) ;;
