@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791084245
-PACKAGES: 194
+TIMESTAMP: 1791084554
+PACKAGES: 197
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2177,6 +2177,31 @@ MTIME: 1791084056
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 dev-python/lxml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/lxml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/lxml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/lxml[python_targets_python3_12(-)] ) ) >=dev-qt/qtbase-6.9.0:6 >=kde-frameworks/extra-cmake-modules-6.30:* app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791084364
+CPV: kde-frameworks/breeze-icons-6.30.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare setup test unpack
+DEPEND: >=dev-qt/qtbase-6.9.0:6[gui]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-3
+MD5: 2c86b1a150fc014af74526730ba4cbca
+PATH: pkgs-kde-frameworks/breeze-icons-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6BreezeIcons.so.6
+RDEPEND: >=dev-qt/qtbase-6.9.0:6[gui] !kde-frameworks/breeze-icons:5 !kde-frameworks/breeze-icons-rcc:5 !kde-frameworks/breeze-icons-rcc:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6
+RESTRICT: test
+SHA1: f91f9e1c46b29cb7597eb0e98c617bc3acfa082d
+SIZE: 14387200
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791084379
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791063904
@@ -2918,6 +2943,52 @@ SHA1: bca29c7d4bc9f79096b50f11d4fa5c6c6db75237
 SIZE: 399360
 USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux wayland
 MTIME: 1791079153
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 4
+BUILD_TIME: 1791084267
+CPV: media-sound/jack-example-tools-4
+DEFINED_PHASES: compile configure install test
+DEPEND: virtual/jack media-libs/alsa-lib media-libs/libsamplerate sys-libs/readline:0/8= media-libs/libsndfile !<media-sound/jack-audio-connection-kit-0.126.0
+EAPI: 8
+IUSE: alsa jack-net jack-netsource opus +readline sndfile zalsa
+KEYWORDS: amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv x86
+LICENSE: GPL-2+
+MD5: 4f9c0051f619d0bbf56ec0a173489595
+PATH: pkgs-media-sound/jack-example-tools-4-4.gpkg.tar
+PROVIDES: x86_64: jack_inprocess.so jack_internal_metro.so jack_intime.so
+RDEPEND: virtual/jack media-libs/alsa-lib media-libs/libsamplerate sys-libs/readline:0/8= media-libs/libsndfile !<media-sound/jack-audio-connection-kit-0.126.0 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libasound.so.2 libc.so.6 libjack.so.0 libjackserver.so.0 libm.so.6 libreadline.so.8 libsamplerate.so.0 libsndfile.so.1 libstdc++.so.6
+SHA1: 85dfb4763e0a42ce10ee3a0084c3a8b2881b9b78
+SIZE: 153600
+USE: abi_x86_64 alsa amd64 elibc_glibc kernel_linux readline sndfile
+MTIME: 1791084269
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14[threads(+)] virtual/pkgconfig
+BUILD_ID: 11
+BUILD_TIME: 1791084244
+CPV: media-sound/jack2-1.9.22
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: media-libs/alsa-lib[abi_x86_64(-)] dev-libs/expat[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] media-libs/libsamplerate[abi_x86_64(-)]
+EAPI: 8
+IUSE: +alsa +classic dbus doc ieee1394 libsamplerate metadata opus pam +tools systemd python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv x86
+LICENSE: GPL-2+ LGPL-2.1+
+MD5: dec3e7ce47e9414b5bfd2f1e256c6daf
+PATH: pkgs-media-sound/jack2-1.9.22-11.gpkg.tar
+PDEPEND: media-sound/jack-example-tools
+PROVIDES: x86_64: audioadapter.so jack_alsa.so jack_alsarawmidi.so jack_dummy.so jack_loopback.so jack_net.so jack_netone.so jack_proxy.so libjack.so.0 libjacknet.so.0 libjackserver.so.0 netadapter.so netmanager.so profiler.so
+RDEPEND: media-libs/alsa-lib[abi_x86_64(-)] dev-libs/expat[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] media-libs/libsamplerate[abi_x86_64(-)] dev-lang/python:3.14[threads(+)] dev-python/dbus-python[python_targets_python3_14(-)] sys-auth/realtime-base !media-sound/jack-audio-connection-kit !media-video/pipewire[jack-sdk(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libasound.so.2 libc.so.6 libdbus-1.so.3 libexpat.so.1 libgcc_s.so.1 libm.so.6 libsamplerate.so.0 libstdc++.so.6
+SHA1: 78df665c0e6661eb74f78c5fc969e79eabd39731
+SIZE: 665600
+SLOT: 2
+USE: abi_x86_64 alsa amd64 classic dbus elibc_glibc kernel_linux libsamplerate pam python_single_target_python3_14 tools
+MTIME: 1791084246
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
