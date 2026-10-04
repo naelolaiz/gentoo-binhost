@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791083315
-PACKAGES: 186
+TIMESTAMP: 1791083632
+PACKAGES: 191
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -174,6 +174,31 @@ SIZE: 563200
 SLOT: 1/45.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791060027
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/docbook-xml-dtd:4.2 dev-libs/libxslt >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils >=sys-devel/gettext-0.19.8 virtual/pkgconfig sys-libs/pam_wrapper dev-lang/vala:0.56 >=app-portage/elt-patches-20250306 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791083329
+CPV: app-crypt/libsecret-0.21.8.2-r1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: !<app-shells/bash-completion-2.16.0-r1 >=dev-libs/glib-2.44:2[abi_x86_64(-)] >=dev-libs/libgcrypt-1.2.2:0/20=[abi_x86_64(-)] sys-libs/pam >=dev-libs/gobject-introspection-1.82.0-r2:0/0=
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +crypt +gcrypt gnutls gtk-doc +introspection pam test test-rust tpm +vala abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2.1+
+MD5: a27051c865bda5c814db1527599e2261
+PATH: pkgs-app-crypt/libsecret-0.21.8.2-r1-1.gpkg.tar
+PDEPEND: virtual/secret-service
+PROVIDES: x86_64: libsecret-1.so.0
+RDEPEND: !<app-shells/bash-completion-2.16.0-r1 >=dev-libs/glib-2.44:2[abi_x86_64(-)] >=dev-libs/libgcrypt-1.2.2:0/20=[abi_x86_64(-)] sys-libs/pam >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcrypt.so.20 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0
+RESTRICT: test test
+SHA1: 158b708fd80a10a1715704c029153f071046167b
+SIZE: 286720
+USE: abi_x86_64 amd64 crypt elibc_glibc gcrypt introspection kernel_linux pam test-rust vala
+MTIME: 1791083331
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -770,6 +795,30 @@ SIZE: 1105920
 SLOT: 0/20
 USE: abi_x86_64 amd64 asm cpu_flags_x86_aes cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_sse4_1 elibc_glibc getentropy kernel_linux
 MTIME: 1791062064
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791083286
+CPV: dev-libs/libinput-1.32.0
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=dev-libs/libwacom-2.15:0/9= >=dev-libs/libevdev-1.9.902 >=sys-libs/mtdev-1.1 virtual/libudev:0/1= virtual/udev
+EAPI: 8
+IUSE: doc input_devices_wacom lua test +lua_single_target_lua5-4
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 0875959a6fe7ef3ab7433cdc0542c196
+PATH: pkgs-dev-libs/libinput-1.32.0-1.gpkg.tar
+PROVIDES: x86_64: libinput.so.10
+RDEPEND: >=dev-libs/libwacom-2.15:0/9= >=dev-libs/libevdev-1.9.902 >=sys-libs/mtdev-1.1 virtual/libudev:0/1= virtual/udev >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libevdev.so.2 libm.so.6 libmtdev.so.1 libudev.so.1 libwacom.so.9
+RESTRICT: test
+SHA1: dcbc771754d15b4777bc7918b08fc92fc6533fca
+SIZE: 481280
+SLOT: 0/10
+USE: abi_x86_64 amd64 elibc_glibc input_devices_wacom kernel_linux lua_single_target_lua5-4
+MTIME: 1791083288
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3422,6 +3471,30 @@ MTIME: 1791071265
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: acct-user/polkitd app-text/docbook-xml-dtd:4.1.2 app-text/docbook-xsl-stylesheets >=dev-libs/glib-2.32 dev-libs/libxslt dev-util/glib-utils virtual/pkgconfig >=dev-libs/gobject-introspection-1.82.0-r2 sys-devel/gettext >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 8
+BUILD_TIME: 1791083359
+CPV: sys-auth/polkit-126-r3
+DEFINED_PHASES: compile configure install postinst prepare setup test
+DEPEND: >=dev-libs/glib-2.32:2 dev-libs/expat dev-lang/duktape:0/2.7.0= sys-auth/elogind sys-auth/pambase sys-libs/pam
+EAPI: 8
+IUSE: elogind examples gtk +introspection kde pam nls selinux systemd test
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: LGPL-2
+MD5: 317b67e5b73c8206b6768a6ebe12e0ac
+PATH: pkgs-sys-auth/polkit-126-r3-8.gpkg.tar
+PDEPEND: || ( >=gnome-extra/polkit-gnome-0.105 >=lxde-base/lxsession-0.5.2 ) kde-plasma/polkit-kde-agent
+PROVIDES: x86_64: libpolkit-agent-1.so.0 libpolkit-gobject-1.so.0
+RDEPEND: >=dev-libs/glib-2.32:2 dev-libs/expat dev-lang/duktape:0/2.7.0= sys-auth/elogind sys-auth/pambase sys-libs/pam acct-user/polkitd virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libduktape.so.207 libelogind.so.0 libexpat.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libpam.so.0
+RESTRICT: test
+SHA1: cec15cbcfa9eddef25ddfee5fb0470dc34d73b4d
+SIZE: 286720
+USE: abi_x86_64 amd64 elibc_glibc elogind gtk introspection kde kernel_linux nls pam
+MTIME: 1791083360
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791063490
@@ -3552,6 +3625,28 @@ SHA1: 0b0a2953f8a973f3dd8584f8e0072c76c4fc296a
 SIZE: 389120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
 MTIME: 1791058109
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/pygobject:3[python_targets_python3_14(-)] >=dev-util/gdbus-codegen-2.80.5-r1 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 14
+BUILD_TIME: 1791083298
+CPV: sys-power/switcheroo-control-3.0
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] >=dev-libs/glib-2.56.0:2 >=dev-libs/libgudev-232:0/0= >=x11-libs/libdrm-2.4.97[video_cards_amdgpu]
+EAPI: 8
+IUSE: gtk-doc selinux test video_cards_amdgpu video_cards_nouveau python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: amd64 ~arm arm64 ~loong ppc64 ~riscv x86
+LICENSE: GPL-3
+MD5: 5ec934b6f6dbe0715a2594b5a7aa7a0b
+PATH: pkgs-sys-power/switcheroo-control-3.0-14.gpkg.tar
+RDEPEND: dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] >=dev-libs/glib-2.56.0:2 >=dev-libs/libgudev-232:0/0= >=x11-libs/libdrm-2.4.97[video_cards_amdgpu] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libdrm_amdgpu.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgudev-1.0.so.0
+RESTRICT: test
+SHA1: 57be60dfcc3c6719fdca6e335e935185bbfd29d3
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14 video_cards_amdgpu
+MTIME: 1791083299
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4063,6 +4158,29 @@ SHA1: 9d80d2bbb471a7862181356a9f637a758bdb334c
 SIZE: 1167360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791082965
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=gnome-base/librsvg-2.48:2 sys-devel/gettext virtual/pkgconfig x11-libs/gtk+:3 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791083385
+CPV: x11-themes/adwaita-icon-theme-50.0
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: >=x11-themes/hicolor-icon-theme-0.10
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: branding
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: || ( LGPL-3 CC-BY-SA-3.0 ) CC-BY-SA-4.0
+MD5: ed971ad7238846b9089a426bf1a91c63
+PATH: pkgs-x11-themes/adwaita-icon-theme-50.0-1.gpkg.tar
+RDEPEND: >=x11-themes/hicolor-icon-theme-0.10 >=gnome-base/librsvg-2.48:2 x11-themes/adwaita-icon-theme-legacy
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+RESTRICT: binchecks strip
+SHA1: abfd686260e613a3a71bba899b4301113b361809
+SIZE: 829440
+USE: abi_x86_64 amd64 branding elibc_glibc kernel_linux
+MTIME: 1791083386
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
