@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791085169
-PACKAGES: 200
+TIMESTAMP: 1791085477
+PACKAGES: 201
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1868,6 +1868,32 @@ SHA1: 73496216caf7ecf814298e653e79d3d487f4bed3
 SIZE: 133120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791062515
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 4
+BUILD_TIME: 1791085350
+CPV: dev-qt/qttools-6.11.2
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.2:6[widgets] ~dev-qt/qtbase-6.11.2:6[concurrent,network,sql,sqlite] ~dev-qt/qtbase-6.11.2:6[network,xml,zstd] app-arch/zstd:0/1= ~dev-qt/qtbase-6.11.2:6[dbus,xml] llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= ~dev-qt/qtdeclarative-6.11.2:6[widgets] ~dev-qt/qtbase-6.11.2:6[network,-gles2-only,vulkan] ~dev-qt/qtbase-6.11.2:6[opengl] dev-util/vulkan-headers
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +assistant designer distancefieldgenerator gles2-only kmap2qmap +linguist opengl pixeltool +qdbus qdoc qml qmlls qtattributionsscanner qtdiag qtplugininfo vulkan +widgets zstd +llvm_slot_22 llvm_slot_17 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21 custom-cflags
+KEYWORDS: amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: a75b6fe716c92d3eb5bbd1beb0450464
+PATH: pkgs-dev-qt/qttools-6.11.2-4.gpkg.tar
+PROVIDES: x86_64: libQt6Designer.so.6 libQt6DesignerComponents.so.6 libQt6Help.so.6 libQt6UiTools.so.6 libqquickwidget.so
+RDEPEND: ~dev-qt/qtbase-6.11.2:6[widgets] ~dev-qt/qtbase-6.11.2:6[concurrent,network,sql,sqlite] ~dev-qt/qtbase-6.11.2:6[network,xml,zstd] app-arch/zstd:0/1= ~dev-qt/qtbase-6.11.2:6[dbus,xml] llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= ~dev-qt/qtdeclarative-6.11.2:6[widgets] ~dev-qt/qtbase-6.11.2:6[network,-gles2-only,vulkan] ~dev-qt/qtbase-6.11.2:6[opengl] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: libLLVM.so.22.1 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libclang-cpp.so.22.1 libclang.so.22.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libzstd.so.1
+RESTRICT: test
+SHA1: 43928be5c9ef221850f4aac85895b063f4b40e80
+SIZE: 8663040
+SLOT: 6/6.11.2
+USE: abi_x86_64 amd64 assistant custom-cflags designer elibc_glibc kernel_linux linguist llvm_slot_22 opengl pixeltool qdbus qdoc qml qtattributionsscanner qtdiag qtplugininfo vulkan widgets zstd
+MTIME: 1791085354
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
