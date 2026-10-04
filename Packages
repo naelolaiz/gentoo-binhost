@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791147326
-PACKAGES: 343
+TIMESTAMP: 1791147633
+PACKAGES: 344
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3159,6 +3159,29 @@ SHA1: 98d404e16a496cb709d69f9fc081704e6f55918f
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791076676
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/asciidoc app-text/docbook2X app-text/xmlto sys-apps/texinfo sys-devel/gettext || ( >=dev-lang/rust-bin-1.74.1:* >=dev-lang/rust-1.74.1:* ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791147483
+CPV: dev-vcs/git-2.56.0
+DEFINED_PHASES: compile configure install postinst prepare setup test unpack
+DEPEND: dev-libs/openssl:0/3= virtual/zlib:0/1= net-misc/curl dev-libs/expat virtual/libiconv dev-libs/libpcre2:0/3= dev-lang/perl:0/5.44=[-build(-)] dev-lang/tk:0/8.6=
+EAPI: 8
+IUSE: +curl cgi cvs doc keyring +gpg highlight +iconv +nls +pcre perforce +perl +rust +safe-directory selinux subversion test tk +webdav xinetd debug python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2
+MD5: 713bc14752a5a1fbff1fc1f748fc1585
+PATH: pkgs-dev-vcs/git-2.56.0-1.gpkg.tar
+RDEPEND: dev-libs/openssl:0/3= virtual/zlib:0/1= net-misc/curl dev-libs/expat virtual/libiconv dev-libs/libpcre2:0/3= dev-lang/perl:0/5.44=[-build(-)] dev-lang/tk:0/8.6= app-alternatives/gpg dev-perl/Error dev-perl/MailTools dev-perl/Authen-SASL >=virtual/perl-libnet-3.110.0-r4[ssl] dev-vcs/subversion[-dso(-),perl] dev-perl/libwww-perl dev-perl/TermReadKey >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libcrypto.so.3 libcurl.so.4 libexpat.so.1 libgcc_s.so.1 libpcre2-8.so.0 libssl.so.3 libz.so.1
+RESTRICT: test
+SHA1: 19b1008856001bd06d6299989fae2ecde4fa4834
+SIZE: 26286080
+USE: abi_x86_64 amd64 curl doc elibc_glibc gpg iconv kernel_linux nls pcre perl python_single_target_python3_14 rust safe-directory subversion tk webdav
+MTIME: 1791147488
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
