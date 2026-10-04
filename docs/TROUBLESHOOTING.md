@@ -45,9 +45,13 @@ its explanation.  Usual causes:
 ## "Some finished packages could not be published"
 
 Uploading or pushing the index failed (GitHub error, rate limit, an asset
-GitHub renamed).  Nothing inconsistent was published; the packages are
+GitHub renamed), or a package was built but could not be installed in the
+build container.  Nothing inconsistent was published; the packages are
 rebuilt by the next run, mostly from the compiler cache.  If it repeats, the
 job log of the "Build and publish" step has the reason next to each package.
+
+Packages that were built but not yet installed when a run reached its time
+limit are not reported here; the next run builds them again.
 
 If the message mentions an **immutable release**: "immutable releases" has
 been switched on in the repository settings.  It has to be off; packages are
@@ -87,8 +91,16 @@ checked by the publisher's own rules but not parsed by Portage.
   Either a package's non-cacheable part does not fit into one run, or the
   compiler cache is not being hit; the summary shows the hit count.  The
   interrupted package is named in the summary.
-- **10 runs in a row reached the time limit**: the safety limit of the
-  chain.  Start the workflow again by hand to continue.
+- **4 runs in a row reached the time limit without publishing a package**:
+  the package named in the message does not get finished, although the
+  compiler cache grows.  Usually its non-cacheable part (linking, Rust, code
+  generation) does not fit into one run.  Take it out of its tier file; the
+  next daily run tries it again otherwise, and the tiers after it wait.
+
+A run summary that says **Chain ended: 40 runs in a row reached the time
+limit** is not a problem and opens no issue.  A chain keeps the tree
+snapshot it started with, and after that many runs the snapshot is old; the
+next daily run starts again from a current tree.
 
 ## "The build container failed"
 

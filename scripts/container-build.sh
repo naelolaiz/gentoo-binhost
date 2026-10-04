@@ -86,14 +86,21 @@ export CCACHE_DIR
 SIGN_HOME="/root/.gnupg-binhost"
 # Longest a single dependency calculation may take.
 PLAN_TIMEOUT=600
+# Seconds of failed dependency calculations after which the roots of a tier
+# that still do not resolve are given up for this run.
+RESOLVE_BUDGET=1800
+RESOLVE_SPENT=0
 FAILURE_LOG_TAIL_LINES=80
 
 STATUS="complete"
 TIMEOUT_FIRED_AT=0
 FAILED_COUNT=0
-# category/package of everything that failed in this run.  They are kept out
-# of every later dependency calculation: trying again within the same run
-# would fail the same way, after the same hours.
+# Every failure met, counting a package again when it fails a second time.
+FAILURES_SEEN=0
+# category/package of what failed to build in this run (for lack of memory
+# or disk: failed twice).  They are kept out of every later dependency
+# calculation: trying again within the same run would fail the same way,
+# after the same hours.
 FAILED_CPS=()
 EXCLUDE_OPTS=()
 UNRESOLVED_COUNT=0
@@ -125,11 +132,24 @@ write_merged() {
   mv "$tmp" "${OUT}/merged.txt"
 }
 
+# A failed build keeps its work directory until emerge is done with its whole
+# list, which can be hours and tens of GB later; meanwhile the packages after
+# it fail for lack of space.  Reporting it only needs the log and the marker.
+free_failed_builds() {
+  [[ -d "$PORTAGE_TMP" ]] || return 0
+  local marker dir
+  while IFS= read -r -d '' marker; do
+    dir="${marker%/.die_hooks}"
+    rm -rf "${dir}/work" "${dir}/image" "${dir}/homedir"
+  done < <(find "$PORTAGE_TMP" -mindepth 3 -maxdepth 3 -type f -name .die_hooks -print0 2>/dev/null)
+}
+
 start_reporter() {
   (
     tick=0
     while sleep 60; do
       write_merged || true
+      free_failed_builds || true
       tick=$(( tick + 1 ))
       if (( tick % 10 == 0 )); then
         echo "[build] status: $(df -h --output=avail / | tail -1 | tr -d ' ') free on /," \
@@ -445,13 +465,20 @@ resolve() {
   return "$rc"
 }
 
+# record_unresolved <root> [<reason>]: without a reason, the root's own
+# dependency calculation (the last one made) is the explanation.
 record_unresolved() {
   local root="$1" why="see ${PLAN_LOG#"${OUT}/"}"
+  UNRESOLVED_COUNT=$(( UNRESOLVED_COUNT + 1 ))
+  if (( $# > 1 )); then
+    printf '%s\t%s\n' "$root" "$2" >> "$OUT/unresolved.tsv"
+    echo "::error title=Not resolved: ${root}::${2}"
+    return 0
+  fi
   # "masked by: exclude option": it needs a package that failed earlier.
   if grep -q 'masked by: exclude option' "$PLAN_LOG"; then
     why="needs a package that failed to build in this run; ${why}"
   fi
-  UNRESOLVED_COUNT=$(( UNRESOLVED_COUNT + 1 ))
   printf '%s\t%s\n' "$root" "$why" >> "$OUT/unresolved.tsv"
   echo "::error title=Cannot resolve ${root}::Portage found no way to install ${root}: ${why} in the logs artifact"
   echo "::group::emerge --pretend ${root}"
@@ -460,6 +487,58 @@ record_unresolved() {
 }
 
 # ── Building ────────────────────────────────────────────────────────────
+
+# How many packages are built (their binary is in PKGDIR), not installed, and
+# still held by emerge for installing.
+pending_merges() {
+  [[ -f "${PKGDIR}/Packages" ]] || { echo 0; return 0; }
+  local cpv built installed pending=0
+  # The newest build of each version; an older one is never installed.
+  while read -r cpv built; do
+    installed=""
+    if [[ -f "/var/db/pkg/${cpv}/BUILD_TIME" ]]; then
+      installed="$(tr -d '[:space:]' < "/var/db/pkg/${cpv}/BUILD_TIME")"
+    fi
+    # Emerge keeps the build directory of a package until it is installed.
+    # Without one (or with a failure marker in it) nothing will install this
+    # binary any more: its merge failed, or it was replaced or removed.
+    if [[ "$installed" != "$built" && -d "${PORTAGE_TMP}/${cpv}" \
+          && ! -e "${PORTAGE_TMP}/${cpv}/.die_hooks" ]]; then
+      pending=$(( pending + 1 ))
+    fi
+  done < <(awk '
+    /^CPV: /        { cpv = $2 }
+    /^BUILD_TIME: / { built = $2 }
+    /^$/            { if (cpv != "" && built + 0 > newest[cpv] + 0) newest[cpv] = built; cpv = ""; built = "" }
+    END             { if (cpv != "" && built + 0 > newest[cpv] + 0) newest[cpv] = built
+                      for (cpv in newest) print cpv, newest[cpv] }' "${PKGDIR}/Packages")
+  echo "$pending"
+}
+
+# Portage installs a finished package only at a moment when nothing else is
+# building (FEATURES=merge-wait, and always for the base system), and when it
+# is told to stop it drops the ones still waiting: built and signed, but
+# never installed and therefore never published.  SIGUSR2 makes it install
+# what is waiting.  One signal moves one base-system package, so keep asking
+# until nothing is left or the time is up.  Only sent once a build has
+# finished: before that emerge has no handler for the signal and would die.
+DRAIN_SECONDS=240
+drain_merges() {
+  local pid="$1" waited=0 pending
+  while kill -0 "$pid" 2>/dev/null && (( waited < DRAIN_SECONDS )); do
+    pending="$(pending_merges)"
+    if (( pending == 0 )); then
+      # Installed, but emerge may still be finishing the last one off.
+      if (( waited > 0 )); then sleep 10; fi
+      return 0
+    fi
+    (( waited > 0 )) || log "Deadline reached; installing ${pending} finished package(s) before stopping"
+    kill -USR2 "$pid" 2>/dev/null || true
+    sleep 5
+    waited=$(( waited + 5 ))
+  done
+  return 0
+}
 
 run_emerge_with_deadline() {
   if (( DEADLINE == 0 )); then
@@ -476,8 +555,10 @@ run_emerge_with_deadline() {
   while kill -0 "$emerge_pid" 2>/dev/null; do
     sleep 15
     if (( $(date +%s) >= DEADLINE )); then
-      log "Deadline reached, stopping emerge"
+      # From here on a build that dies was cut off, not broken.
       TIMEOUT_FIRED_AT=$(date +%s)
+      drain_merges "$emerge_pid"
+      log "Deadline reached, stopping emerge"
       kill -TERM -- -"${emerge_pid}" 2>/dev/null || true
       local waited=0
       while kill -0 "$emerge_pid" 2>/dev/null && (( waited < 90 )); do
@@ -540,13 +621,20 @@ collect_failures() {
     # Out of disk or memory says nothing about the package.
     class="build"
     if [[ -f "${temp_dir}/build.log" ]] && grep -qE \
-         'No space left on device|Killed signal terminated program|[Oo]ut of memory|Cannot allocate memory|virtual memory exhausted' \
+         'No space left on device|Killed signal terminated program|terminated with signal 9|signal: 9, SIGKILL|[Oo]ut of memory|Cannot allocate memory|virtual memory exhausted' \
          "${temp_dir}/build.log"; then
       class="resource"
     fi
 
+    FAILURES_SEEN=$(( FAILURES_SEEN + 1 ))
     if cut -f1 "$OUT/failures.tsv" | grep -qxF "$cat_pf"; then
-      # Already reported in this run.
+      # Already reported in this run; it was tried again because it had run
+      # out of memory or disk.  Once more is enough.
+      cp_name="$(qatom -F '%{CATEGORY}/%{PN}' "=${cat_pf}")"
+      if [[ " ${FAILED_CPS[*]} " != *" ${cp_name} "* ]]; then
+        FAILED_CPS+=("$cp_name")
+        EXCLUDE_OPTS+=("--exclude=${cp_name}")
+      fi
       rm -rf "${PORTAGE_TMP:?}/${cat_pf}"
       continue
     fi
@@ -556,10 +644,14 @@ collect_failures() {
     FAILED_COUNT=$(( FAILED_COUNT + 1 ))
     printf '%s\t%s\t%s\n' "$cat_pf" "$phase" "$class" >> "$OUT/failures.tsv"
     # Not again in this run: later calculations leave it out, and whatever
-    # needs it is reported as unresolvable instead of being started.
-    cp_name="$(qatom -F '%{CATEGORY}/%{PN}' "=${cat_pf}")"
-    FAILED_CPS+=("$cp_name")
-    EXCLUDE_OPTS+=("--exclude=${cp_name}")
+    # needs it is reported as unresolvable instead of being started.  A
+    # package that ran out of memory or disk gets one more try, by a later
+    # tier that needs it, under other conditions (see above).
+    if [[ "$class" == build ]]; then
+      cp_name="$(qatom -F '%{CATEGORY}/%{PN}' "=${cat_pf}")"
+      FAILED_CPS+=("$cp_name")
+      EXCLUDE_OPTS+=("--exclude=${cp_name}")
+    fi
 
     echo "::error title=Package build failed::${cat_pf} failed in phase '${phase}' (${class}). Log: failures/${cat_pf}/build.log in the logs artifact."
     if [[ -f "${dest}/build.log" ]]; then
@@ -596,13 +688,13 @@ run_planned() {
     return 0
   fi
 
-  local rc=0 failed_before=$FAILED_COUNT
+  local rc=0 seen_before=$FAILURES_SEEN
   run_emerge_with_deadline --keep-going --jobs="$TIER_JOBS" "${RESOLVE_OPTS[@]}" \
     "${EXCLUDE_OPTS[@]}" "${targets[@]}" || rc=$?
   collect_failures
   write_merged
   (( rc == 42 )) && return 42
-  if (( rc != 0 && FAILED_COUNT == failed_before )); then
+  if (( rc != 0 && FAILURES_SEEN == seen_before )); then
     # emerge gave up for a reason other than a package that failed to
     # compile (a binary that would not install, a late resolver error).
     UNRESOLVED_COUNT=$(( UNRESOLVED_COUNT + 1 ))
@@ -644,8 +736,11 @@ build_roots() {
   # Resolving takes time too; do not keep planning past the deadline.
   deadline_near && return 42
 
+  local resolve_started
+  resolve_started=$(date +%s)
   resolve "$@" || rc=$?
   (( rc == 42 )) && return 42
+  if (( rc != 0 )); then RESOLVE_SPENT=$(( RESOLVE_SPENT + $(date +%s) - resolve_started )); fi
 
   # The base system is updated once per run, before the first compile.  Also
   # when the roots do not resolve: leftovers of the stage3's configuration
@@ -657,14 +752,60 @@ build_roots() {
     (( rc == 42 )) && return 42
     # What is installed changed, so the plan has to be made again.
     rc=0
+    resolve_started=$(date +%s)
     resolve "$@" || rc=$?
     (( rc == 42 )) && return 42
+    if (( rc != 0 )); then RESOLVE_SPENT=$(( RESOLVE_SPENT + $(date +%s) - resolve_started )); fi
   fi
 
   if (( rc != 0 )); then
+    local root
     if (( $# == 1 )); then
       record_unresolved "$1"
       return 0
+    fi
+    # Failing calculations add up: one broken package that many roots need
+    # makes each of them fail.  Past the budget the rest of the tier is
+    # given up for this run, so that the tiers after it still get their turn.
+    if (( RESOLVE_SPENT >= RESOLVE_BUDGET )); then
+      for root in "$@"; do
+        record_unresolved "$root" "not examined: resolving tier ${TIER} already took $(( RESOLVE_SPENT / 60 )) minutes of failed attempts"
+      done
+      return 0
+    fi
+    # Portage names the root whose dependency it could not satisfy:
+    #   (dependency required by "kde-apps/kdenlive" [argument])
+    # Try the others without it, and then that root alone (it may only fail
+    # in this company); that takes fewer calculations than halving the list.
+    local culprits=() rest=() named_roots=() culprit named
+    mapfile -t culprits < <(
+      sed -nE 's/^\(dependency required by "([^"]+)" \[argument\]\)$/\1/p' "$PLAN_LOG" | sort -u)
+    if (( ${#culprits[@]} > 0 )); then
+      for root in "$@"; do
+        named=false
+        for culprit in "${culprits[@]}"; do
+          if [[ "$root" == "$culprit" ]]; then named=true; fi
+        done
+        if [[ "$named" == true ]]; then
+          named_roots+=("$root")
+        else
+          rest+=("$root")
+        fi
+      done
+      if (( ${#named_roots[@]} > 0 )); then
+        log "${TIER}: ${#named_roots[@]} root(s) named by Portage are tried on their own; ${#rest[@]} remain together"
+        if (( ${#rest[@]} > 0 )); then
+          rc=0
+          build_roots "$mode" "${rest[@]}" || rc=$?
+          (( rc == 42 )) && return 42
+        fi
+        for root in "${named_roots[@]}"; do
+          rc=0
+          build_roots "$mode" "$root" || rc=$?
+          (( rc == 42 )) && return 42
+        done
+        return 0
+      fi
     fi
     log "${TIER}: ${#} roots do not resolve together; splitting"
     local half=$(( $# / 2 ))
@@ -758,6 +899,7 @@ for file in "${tier_files[@]}"; do
     continue
   fi
   log "── tier ${TIER}: ${#roots[@]} root(s), --jobs=${TIER_JOBS} ──"
+  RESOLVE_SPENT=0
   rc=0
   build_roots atoms "${roots[@]}" || rc=$?
   if (( rc == 42 )); then
