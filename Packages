@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791085784
-PACKAGES: 203
+TIMESTAMP: 1791086092
+PACKAGES: 206
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2297,6 +2297,55 @@ MTIME: 1791085530
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791085744
+CPV: kde-frameworks/kcrash-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/kcoreaddons-6.30*:6 x11-libs/libX11 x11-base/xorg-proto dev-qt/qtbase:6
+EAPI: 8
+IUSE: X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: af1308abe4a29930ed229aed56c5911f
+PATH: pkgs-kde-frameworks/kcrash-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Crash.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/kcoreaddons-6.30*:6 x11-libs/libX11 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libQt6Core.so.6 libQt6Gui.so.6 libX11.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test test
+SHA1: 7aeefc0cffaf11eabce5d2dd93cd471c84a230ac
+SIZE: 71680
+SLOT: 6/6.30
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791085746
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791085780
+CPV: kde-frameworks/kdbusaddons-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] dev-qt/qtbase:6
+EAPI: 8
+IUSE: X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: f701597de9960e550f2630d61cbeb3e5
+PATH: pkgs-kde-frameworks/kdbusaddons-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6DBusAddons.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 2990b9063b52f96231190cc9dced99e25222d161
+SIZE: 122880
+SLOT: 6/6.30
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791085781
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791084491
@@ -2318,6 +2367,29 @@ SIZE: 4556800
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1791084493
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791085726
+CPV: kde-frameworks/knotifications-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.30*:6 media-libs/libcanberra dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: c517df1dd1d891c2b73fa8e6b2cee0c2
+PATH: pkgs-kde-frameworks/knotifications-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Notifications.so.6 libknotificationqmlplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.30*:6 media-libs/libcanberra >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libc.so.6 libcanberra.so.0 libstdc++.so.6
+SHA1: 9cc46457887756051105c15f5668658930e350e5
+SIZE: 184320
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791085727
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
