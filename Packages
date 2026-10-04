@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791093218
-PACKAGES: 281
+TIMESTAMP: 1791093564
+PACKAGES: 292
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -411,6 +411,27 @@ SHA1: 2dc77e0d7f5cd054afa2dfd8d8206c41f5c773cd
 SIZE: 133120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1791063005
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791093319
+CPV: app-misc/spacenavd-1.3.1
+DEFINED_PHASES: compile configure install postinst postrm setup
+DEPEND: x11-apps/xdpyinfo x11-base/xorg-proto x11-libs/libX11 x11-libs/libXi x11-libs/libXtst
+EAPI: 8
+IUSE: X
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-3
+MD5: 2b8b4d6bc5008308c3e34c1d17b0d648
+PATH: pkgs-app-misc/spacenavd-1.3.1-1.gpkg.tar
+RDEPEND: x11-apps/xdpyinfo x11-base/xorg-proto x11-libs/libX11 x11-libs/libXi x11-libs/libXtst >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libX11.so.6 libXext.so.6 libXi.so.6 libXtst.so.6 libc.so.6
+SHA1: 8bcd2d380ce359dbd9424d3d3a2adf2591c6d459
+SIZE: 71680
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791093320
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2281,6 +2302,162 @@ SIZE: 8663040
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 assistant custom-cflags designer elibc_glibc kernel_linux linguist llvm_slot_22 opengl pixeltool qdbus qdoc qml qtattributionsscanner qtdiag qtplugininfo vulkan widgets zstd
 MTIME: 1791085354
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791093453
+CPV: dev-ruby/debug-1.11.1
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+EAPI: 8
+IUSE: test ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40 doc test test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 7104eaec55f386cacacaee0e88421bbd
+PATH: pkgs-dev-ruby/debug-1.11.1-1.gpkg.tar
+PROVIDES: x86_64: debug.so
+RDEPEND: >=dev-ruby/irb-1.10:0[ruby_targets_ruby33(-)] >=dev-ruby/reline-0.3.8[ruby_targets_ruby33(-)] dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libruby33.so.3.3
+RESTRICT: test test test test
+SHA1: e3e76552de380bdbddbeaefeeee409e780f64f05
+SIZE: 122880
+SLOT: 1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093454
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791093359
+CPV: dev-ruby/matrix-0.4.3
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+EAPI: 8
+IUSE: ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40 doc test test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: d67c1e2bf337857627f7b5daef45cc67
+PATH: pkgs-dev-ruby/matrix-0.4.3-1.gpkg.tar
+RDEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+RESTRICT: test test
+SHA1: a51eb27e289e91aab930f831010b227e639b432d
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093360
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791093370
+CPV: dev-ruby/minitest-6.0.1
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+EAPI: 8
+IUSE: doc test ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40 doc test test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 61e87ec6826e9223d9be86cdbcf2c85d
+PATH: pkgs-dev-ruby/minitest-6.0.1-1.gpkg.tar
+RDEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+RESTRICT: test test
+SHA1: 97bdf80e56b04a53239b7ddf385697c601200a9f
+SIZE: 102400
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093372
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791093496
+CPV: dev-ruby/net-ftp-0.3.9
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+EAPI: 8
+IUSE: test ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40 doc test test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 62ec3e71295ad0c8b1ccf9f69c81b683
+PATH: pkgs-dev-ruby/net-ftp-0.3.9-1.gpkg.tar
+RDEPEND: dev-ruby/net-protocol[ruby_targets_ruby33(-)] dev-ruby/time[ruby_targets_ruby33(-)] dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+RESTRICT: test test test
+SHA1: 05e1f014b7b2d4e57198ddd4f69386b836dcd0c1
+SIZE: 40960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093497
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791093484
+CPV: dev-ruby/net-imap-0.6.6
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+EAPI: 8
+IUSE: test ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40 doc test test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 8a3bd7c1ed1ca940b97f1f4e052e2b27
+PATH: pkgs-dev-ruby/net-imap-0.6.6-1.gpkg.tar
+RDEPEND: dev-ruby/date[ruby_targets_ruby33(-)] dev-ruby/net-protocol[ruby_targets_ruby33(-)] dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+RESTRICT: test test
+SHA1: bd997ad66cc11cf6f26a89fa257665ce3913d622
+SIZE: 204800
+SLOT: 0.6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093485
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-libs/libyaml-0.2.5 dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791093423
+CPV: dev-ruby/psych-5.4.0
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)]
+EAPI: 8
+IUSE: test ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40 doc test test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 892546e313b700c751245d01be564dd1
+PATH: pkgs-dev-ruby/psych-5.4.0-1.gpkg.tar
+PROVIDES: x86_64: psych.so
+RDEPEND: >=dev-libs/libyaml-0.2.5 dev-ruby/date[ruby_targets_ruby33(-)] dev-ruby/stringio[ruby_targets_ruby33(-)] dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libruby33.so.3.3 libyaml-0.so.2
+RESTRICT: test test
+SHA1: e1962ab83db280ae2901f184b1444986cf5ce3b1
+SIZE: 71680
+SLOT: 5
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093424
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3
+BUILD_ID: 1
+BUILD_TIME: 1791093341
+CPV: dev-ruby/rubygems-4.0.4
+DEFINED_PHASES: compile configure install postinst prepare setup test unpack
+DEPEND: virtual/ruby-ssl[ruby_targets_ruby33(-)] dev-lang/ruby:3.3
+EAPI: 8
+IUSE: server test ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: || ( Ruby MIT )
+MD5: 558ea07baa59cb98a689fb40bf555eb7
+PATH: pkgs-dev-ruby/rubygems-4.0.4-1.gpkg.tar
+RDEPEND: dev-lang/ruby:3.3
+RESTRICT: test
+SHA1: a8813c82f5acbe0f72345ec2375b6bbe8c887709
+SIZE: 501760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093343
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5159,6 +5336,30 @@ MTIME: 1791092798
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791093267
+CPV: sci-libs/proj-9.7.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-db/sqlite:3 media-libs/tiff:0/6=
+EAPI: 8
+IUSE: curl test +tiff
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 47590cd7516a301be51b4bc5cda34777
+PATH: pkgs-sci-libs/proj-9.7.0-1.gpkg.tar
+PROVIDES: x86_64: libproj.so.25
+RDEPEND: dev-db/sqlite:3 media-libs/tiff:0/6= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libsqlite3.so.0 libstdc++.so.6 libtiff.so.6
+RESTRICT: test
+SHA1: 387defdec76fe44667c6e3b9fb57db6d92963e05
+SIZE: 797071360
+SLOT: 0/9
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux tiff
+MTIME: 1791093273
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306
 BUILD_ID: 2
 BUILD_TIME: 1791058098
@@ -5796,6 +5997,44 @@ SHA1: aee82d0f09c5d1f48b3766418446f83e9822ed98
 SIZE: 30720
 USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791064780
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3
+BUILD_ID: 1
+BUILD_TIME: 1791093333
+CPV: virtual/ruby-ssl-16
+DEFINED_PHASES: compile configure install postinst preinst prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3
+EAPI: 8
+IUSE: ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: 40cf7afcad3675e0caa7ca56a575a49b
+PATH: pkgs-virtual/ruby-ssl-16-1.gpkg.tar
+RDEPEND: dev-lang/ruby:3.3[ssl] dev-lang/ruby:3.3
+SHA1: cdc0fa1e4e001a388275745715e79750964c77a7
+SIZE: 30720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093334
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/ruby:3.3
+BUILD_ID: 1
+BUILD_TIME: 1791093348
+CPV: virtual/rubygems-22
+DEFINED_PHASES: compile configure install postinst preinst prepare setup test unpack
+DEPEND: dev-lang/ruby:3.3
+EAPI: 8
+IUSE: ruby_targets_ruby32 ruby_targets_ruby33 ruby_targets_ruby34 ruby_targets_ruby40
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: 6b8556a07d7205e543b9a45716c2e1df
+PATH: pkgs-virtual/rubygems-22-1.gpkg.tar
+RDEPEND: >=dev-ruby/rubygems-3.5.22[ruby_targets_ruby33] dev-lang/ruby:3.3
+SHA1: c998f1250153cc417a31fbe9ea42ee01029241f7
+SIZE: 30720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ruby_targets_ruby33
+MTIME: 1791093349
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
