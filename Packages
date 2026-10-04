@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791105210
-PACKAGES: 302
+TIMESTAMP: 1791108225
+PACKAGES: 303
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6699,6 +6699,25 @@ SHA1: abfd686260e613a3a71bba899b4301113b361809
 SIZE: 829440
 USE: abi_x86_64 amd64 branding elibc_glibc kernel_linux
 MTIME: 1791083386
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 2
+BUILD_TIME: 1791107934
+CPV: x11-themes/gentoo-artwork-0.4.2-r1
+DEFINED_PHASES: install postinst unpack
+EAPI: 7
+IUSE: +grub +icons kde lilo offensive +pixmaps
+KEYWORDS: amd64 ~arm64 ~mips ppc ppc64 ~sparc x86
+LICENSE: GPL-2
+MD5: c6398cbadf5d582630548f274e39b189
+PATH: pkgs-x11-themes/gentoo-artwork-0.4.2-r1-2.gpkg.tar
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+RESTRICT: binchecks strip
+SHA1: a389ea3354757ac3bc9495bc3a279cff94ea8379
+SIZE: 64317440
+USE: abi_x86_64 amd64 elibc_glibc grub icons kde kernel_linux offensive pixmaps
+MTIME: 1791107942
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
