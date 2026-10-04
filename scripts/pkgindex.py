@@ -142,6 +142,23 @@ def release_tag(cpv, tag_prefix):
     return tag_prefix + sanitize(cpv.split("/", 1)[0])
 
 
+def overflow_tag(tag, number):
+    """Release number ``number`` of a category: the release itself, then
+    ``<tag>.2``, ``<tag>.3``, ... once a release holds as many files as the
+    host allows."""
+    return tag if number == 1 else f"{tag}.{number}"
+
+
+def is_release_tag(tag, cpv, tag_prefix):
+    """True if ``tag`` is the release of the package's category or one of its
+    overflow releases."""
+    base = release_tag(cpv, tag_prefix)
+    if tag == base:
+        return True
+    head, _, number = tag.rpartition(".")
+    return head == base and number.isdigit() and number == str(int(number)) and int(number) >= 2
+
+
 def asset_name(stanza, unique=False):
     """Asset file name for a stanza taken from the builder's PKGDIR.
 
@@ -297,7 +314,7 @@ def validate_stanza(pkg, tag_prefix):
         or not asset.endswith(GPKG_SUFFIX)
     ):
         errors.append(f"{where}: PATH {path!r} is not <tag>/<asset>{GPKG_SUFFIX}")
-    elif tag != release_tag(cpv, tag_prefix):
+    elif not is_release_tag(tag, cpv, tag_prefix):
         errors.append(
             f"{where}: PATH tag {tag!r} does not match {release_tag(cpv, tag_prefix)!r}"
         )

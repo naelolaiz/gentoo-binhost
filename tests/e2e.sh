@@ -13,6 +13,9 @@
 #
 #   e2e.sh deadline  start a slow build and let the deadline interrupt it
 #   e2e.sh resume    a fresh container must finish it from the compiler cache
+#   e2e.sh drain     packages finished next to a build that the deadline cuts
+#                    off must still be installed and published (needs two
+#                    CPUs; independent of the other phases)
 #
 # How to start the containers is in docs/TESTING.md.
 set -euo pipefail
@@ -86,6 +89,10 @@ slow_builder() {
     --deadline "$(( $(date +%s) + seconds ))" --min-window 120 --out "$out" "$@" || SLOW_RC=$?
   cat "${out}/result.env"
 }
+
+# How long the drain phase gives the builder: setting up, then building long
+# enough for the short packages to finish.
+DRAIN_TEST_SECONDS="${DRAIN_TEST_SECONDS:-600}"
 
 result() { sed -n "s/^$2=//p" "$1/result.env"; }
 
@@ -207,8 +214,47 @@ PY
     log "resume phase passed: ${hits} cache hit(s) for ${stored} file(s) compiled before the interruption"
     ;;
 
+  drain)
+    # A store of its own, so that nothing an earlier phase published is
+    # offered as a binary and the phase can be repeated.
+    STORE="${STATE}/store-drain"
+    rm -rf "$STORE"
+    mkdir -p "$STORE"
+    make_keys
+    binhost init
+    serve
+    # Compiled here whatever the binhosts offer; cmake with one job, so that
+    # it is still building at the deadline on any machine.
+    mkdir -p /etc/portage/package.use /etc/portage/env /etc/portage/package.env
+    printf '%s\n' "dev-build/cmake -ncurses" "app-editors/nano minimal" "sys-apps/sed -nls" \
+      > /etc/portage/package.use/zz-e2e-drain
+    echo 'MAKEOPTS="-j1"' > /etc/portage/env/e2e-one-job.conf
+    echo "dev-build/cmake e2e-one-job.conf" > /etc/portage/package.env/zz-e2e-drain
+    DRAIN_RC=0
+    bash "${REPO}/scripts/container-build.sh" --tiers drain --tiers-dir "${REPO}/tests/tiers" \
+      --binhost-uri "$BINHOST_URI" --trust-key "${KEYS}/public.asc" \
+      --sign-key "${KEYS}/secret.asc" --sign-passphrase "${KEYS}/passphrase" \
+      --deadline "$(( $(date +%s) + DRAIN_TEST_SECONDS ))" --min-window 120 \
+      --out "${STATE}/out-drain" 2>&1 | tee "${STATE}/drain.log" || DRAIN_RC=$?
+    cat "${STATE}/out-drain/result.env"
+    (( DRAIN_RC == 42 )) || fail "expected the builder to stop at the deadline (exit 42), got ${DRAIN_RC}"
+    grep -q 'dev-build/cmake' <<< "$(result "${STATE}/out-drain" interrupted)" \
+      || fail "cmake was not the package cut off: $(result "${STATE}/out-drain" interrupted)"
+    grep -q 'finished package(s) before stopping' "${STATE}/drain.log" \
+      || fail "no package was waiting to be installed at the deadline; the test did not exercise anything"
+    # Without --pending-ok: nothing may be left built but not installed.
+    binhost publish --pkgdir /var/cache/binpkgs --merged "${STATE}/out-drain/merged.txt" \
+      --final --result "${STATE}/publish-drain.json" \
+      || fail "packages that were finished at the deadline were not installed and published"
+    for name in app-editors/nano- sys-apps/sed-; do
+      grep -q "\"${name}" "${STATE}/publish-drain.json" || fail "${name}* was not published"
+    done
+    grep -q '"dev-build/cmake-' "${STATE}/publish-drain.json" && fail "an unfinished package was published"
+    log "drain phase passed: packages finished next to a running build were installed and published"
+    ;;
+
   *)
-    echo "Usage: $0 build|rebuild|consume|deadline|resume" >&2
+    echo "Usage: $0 build|rebuild|consume|deadline|resume|drain" >&2
     exit 1
     ;;
 esac

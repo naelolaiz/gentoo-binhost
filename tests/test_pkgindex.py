@@ -172,12 +172,20 @@ class Validate(unittest.TestCase):
             "tmp/artifacts/app-misc/hello-2.12.2-1.gpkg.tar": "PATH",
             "pkgs-app-misc/hello-2.12.2-1.tbz2": "PATH",
             "pkgs-dev-libs/hello-2.12.2-1.gpkg.tar": "does not match",
+            "pkgs-app-misc.1/hello-2.12.2-1.gpkg.tar": "does not match",
+            "pkgs-app-misc.02/hello-2.12.2-1.gpkg.tar": "does not match",
+            "pkgs-app-misc.x/hello-2.12.2-1.gpkg.tar": "does not match",
             "pkgs-app-misc/hel lo.gpkg.tar": "PATH",
         }
         for path, needle in cases.items():
             broken = pkgindex.Index(index.header, index.packages)
             broken.packages[0]["PATH"] = path
             self.assertRejected(broken, needle)
+
+    def test_overflow_release_of_the_category_is_accepted(self):
+        index = published(fixture())
+        index.packages[0]["PATH"] = "pkgs-app-misc.2/hello-2.12.2-1.gpkg.tar"
+        self.assertEqual(pkgindex.validate(index, PREFIX), [])
 
     def test_corrupt_cpv_is_rejected(self):
         # The entry that once crashed every client.
