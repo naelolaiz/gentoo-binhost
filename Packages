@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791092597
-PACKAGES: 274
+TIMESTAMP: 1791092908
+PACKAGES: 277
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4995,6 +4995,78 @@ SHA1: 5f32e62925e80d2c951817efc1c2f1ce77ec7a91
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791092006
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791092748
+CPV: sci-libs/cgnslib-4.5.1
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: sci-libs/hdf5:0/320-cmake=[-mpi,-szip]
+EAPI: 8
+IUSE: base-scope debug examples fortran +hdf5 legacy mpi scoping szip test tools
+KEYWORDS: ~amd64 ~arm ~arm64 ~x86
+LICENSE: ZLIB
+MD5: 7bbddbd5bf0522421713b813369ae606
+PATH: pkgs-sci-libs/cgnslib-4.5.1-1.gpkg.tar
+PROVIDES: x86_64: libcgns.so.4.5
+RDEPEND: sci-libs/hdf5:0/320-cmake=[-mpi,-szip] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libhdf5.so.320
+RESTRICT: test
+SHA1: 3d4da9ea4f3cefcc0138acdd0745b087ce61fe2d
+SIZE: 583680
+SLOT: 0/4.5
+USE: abi_x86_64 amd64 elibc_glibc hdf5 kernel_linux
+MTIME: 1791092750
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791092622
+CPV: sci-libs/hdf5-2.2.0
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: virtual/zlib:0/1=
+EAPI: 8
+IUSE: cxx debug fortran +hl mpi szip test threads unsupported zlib
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: NCSA-HDF
+MD5: 58226b7af43f032c069b3d931dbe1f10
+PATH: pkgs-sci-libs/hdf5-2.2.0-1.gpkg.tar
+PROVIDES: x86_64: libhdf5.so.320 libhdf5_hl.so.320 libhdf5_tools.so.320
+RDEPEND: virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6 libz.so.1
+RESTRICT: test
+SHA1: 4c8173c3b8288417fbb651d815c7ecd037de0f3e
+SIZE: 3512320
+SLOT: 0/320-cmake
+USE: abi_x86_64 amd64 elibc_glibc hl kernel_linux zlib
+MTIME: 1791092624
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791092797
+CPV: sci-libs/netcdf-4.10.1-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/libxml2:2/16= dev-libs/libzip:0/5= virtual/zlib:0/1= app-arch/bzip2:0/1= net-misc/curl:0/0= sci-libs/hdf5:0/320-cmake=[hl(+),-mpi,-szip,zlib]
+EAPI: 8
+IUSE: blosc bzip2 +dap doc examples hdf +hdf5 logging mpi szip test zstd
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86
+LICENSE: UCAR-Unidata
+MD5: 767d66d9ab27daae1e1d8d0049050960
+PATH: pkgs-sci-libs/netcdf-4.10.1-r1-1.gpkg.tar
+PROVIDES: x86_64: libnetcdf.so.22
+RDEPEND: dev-libs/libxml2:2/16= dev-libs/libzip:0/5= virtual/zlib:0/1= app-arch/bzip2:0/1= net-misc/curl:0/0= sci-libs/hdf5:0/320-cmake=[hl(+),-mpi,-szip,zlib] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcurl.so.4 libhdf5.so.320 libhdf5_hl.so.320 libm.so.6 libxml2.so.16 libzip.so.5
+RESTRICT: test
+SHA1: f56a1c2e6836f0d9c035ad843d34ac0a4c351c0b
+SIZE: 1003520
+SLOT: 0/22
+USE: abi_x86_64 amd64 bzip2 dap elibc_glibc hdf5 kernel_linux
+MTIME: 1791092798
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
