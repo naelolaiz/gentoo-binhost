@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791080252
-PACKAGES: 169
+TIMESTAMP: 1791082373
+PACKAGES: 173
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1014,6 +1014,27 @@ SHA1: 5537b283448dd2ece77b9bbe83ce00245acf05aa
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791065112
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14[ssl(+),threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791082093
+CPV: dev-python/ensurepip-pip-26.2.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14[ssl(+),threads(+)]
+EAPI: 8
+IUSE: test test-rust test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT Apache-2.0 MIT MIT BSD-2 Apache-2.0 BSD MIT Apache-2.0 MIT MPL-2.0 MIT MIT MIT Apache-2.0 || ( Apache-2.0 MIT ) MIT ISC PSF-2
+MD5: 641ad10fe1cfc1eb80b1ee8bb7e092b1
+PATH: pkgs-dev-python/ensurepip-pip-26.2.1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14[ssl(+),threads(+)]
+RESTRICT: test test
+SHA1: 5f8691277e021c28164668bbcd9711edcf98c7bc
+SIZE: 1515520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 test-rust
+MTIME: 1791082095
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2470,6 +2491,29 @@ MTIME: 1791062085
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.7.0 app-alternatives/yacc sys-devel/flex virtual/pkgconfig || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) ~dev-util/mesa_clc-26.2.3 llvm-runtimes/libclc[spirv(-)] dev-util/glslang dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791082042
+CPV: media-libs/mesa-26.2.3
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: >=x11-libs/libdrm-2.4.133[abi_x86_32(-),abi_x86_64(-)] >=dev-libs/expat-2.1.0-r3[abi_x86_32(-),abi_x86_64(-)] >=dev-util/spirv-tools-1.3.231.0[abi_x86_32(-),abi_x86_64(-)] >=media-libs/libglvnd-1.3.2[X,abi_x86_32(-),abi_x86_64(-)] >=virtual/zlib-1.2.9:0/1=[abi_x86_32(-),abi_x86_64(-)] llvm-core/llvm:22[llvm_targets_AMDGPU(+),abi_x86_32(-),abi_x86_64(-)] virtual/libelf:0/1=[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libdrm-2.4.133[video_cards_amdgpu] virtual/libelf:0/1=[abi_x86_32(-),abi_x86_64(-)] media-libs/libdisplay-info:0/4=[abi_x86_32(-),abi_x86_64(-)] virtual/libudev:0/1= >=dev-libs/wayland-1.18.0[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libX11-1.8[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libxshmfence-1.1[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXxf86vm-1.1.3[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libxcb-1.17:0/1.12=[abi_x86_32(-),abi_x86_64(-)] x11-libs/libXfixes[abi_x86_32(-),abi_x86_64(-)] x11-libs/xcb-util-keysyms[abi_x86_32(-),abi_x86_64(-)] app-arch/zstd:0/1=[abi_x86_32(-),abi_x86_64(-)] >=dev-libs/wayland-protocols-1.41 x11-libs/libXrandr[abi_x86_32(-),abi_x86_64(-)] x11-base/xorg-proto
+EAPI: 8
+IUSE: video_cards_asahi video_cards_d3d12 video_cards_freedreno video_cards_i915 video_cards_imagination video_cards_intel video_cards_lavapipe video_cards_lima video_cards_nouveau video_cards_nvk video_cards_panfrost video_cards_r300 video_cards_r600 video_cards_radeon video_cards_radeonsi video_cards_v3d video_cards_vc4 video_cards_virgl video_cards_vivante video_cards_vmware video_cards_zink cpu_flags_x86_sse2 debug +llvm lm-sensors opencl +opengl +proprietary-codecs sysprof test unwind vaapi valgrind vulkan wayland +X +zstd +llvm_slot_22 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-solaris
+LICENSE: MIT SGI-B-2.0
+MD5: 60f8b748f98999d39cdb6d234e628dcd
+PATH: pkgs-media-libs/mesa-26.2.3-1.gpkg.tar
+PROVIDES: x86_32: dri_gbm.so libEGL_mesa.so.0 libGLX_mesa.so.0 libVkLayer_MESA_anti_lag.so libVkLayer_MESA_device_select.so libVkLayer_MESA_overlay.so libdril_dri.so libgallium-26.2.3.so libgbm.so.1 libvulkan_intel.so libvulkan_intel_hasvk.so libvulkan_radeon.so x86_64: dri_gbm.so libEGL_mesa.so.0 libGLX_mesa.so.0 libVkLayer_MESA_anti_lag.so libVkLayer_MESA_device_select.so libVkLayer_MESA_overlay.so libdril_dri.so libgallium-26.2.3.so libgbm.so.1 libvulkan_intel.so libvulkan_intel_hasvk.so libvulkan_radeon.so
+RDEPEND: >=x11-libs/libdrm-2.4.133[abi_x86_32(-),abi_x86_64(-)] >=dev-libs/expat-2.1.0-r3[abi_x86_32(-),abi_x86_64(-)] >=dev-util/spirv-tools-1.3.231.0[abi_x86_32(-),abi_x86_64(-)] >=media-libs/libglvnd-1.3.2[X,abi_x86_32(-),abi_x86_64(-)] >=virtual/zlib-1.2.9:0/1=[abi_x86_32(-),abi_x86_64(-)] llvm-core/llvm:22[llvm_targets_AMDGPU(+),abi_x86_32(-),abi_x86_64(-)] virtual/libelf:0/1=[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libdrm-2.4.133[video_cards_amdgpu] virtual/libelf:0/1=[abi_x86_32(-),abi_x86_64(-)] media-libs/libdisplay-info:0/4=[abi_x86_32(-),abi_x86_64(-)] virtual/libudev:0/1= >=dev-libs/wayland-1.18.0[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libX11-1.8[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libxshmfence-1.1[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXxf86vm-1.1.3[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libxcb-1.17:0/1.12=[abi_x86_32(-),abi_x86_64(-)] x11-libs/libXfixes[abi_x86_32(-),abi_x86_64(-)] x11-libs/xcb-util-keysyms[abi_x86_32(-),abi_x86_64(-)] app-arch/zstd:0/1=[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libLLVM.so.22.1 libSPIRV-Tools.so libX11-xcb.so.1 libX11.so.6 libXext.so.6 libXxf86vm.so.1 libc.so.6 libdisplay-info.so.4 libdrm.so.2 libdrm_amdgpu.so.1 libelf.so.1 libexpat.so.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libudev.so.1 libwayland-client.so.0 libxcb-dri3.so.0 libxcb-glx.so.0 libxcb-keysyms.so.1 libxcb-present.so.0 libxcb-randr.so.0 libxcb-shm.so.0 libxcb-sync.so.1 libxcb-xfixes.so.0 libxcb.so.1 libxshmfence.so.1 libz.so.1 libzstd.so.1 x86_64: libLLVM.so.22.1 libSPIRV-Tools.so libX11-xcb.so.1 libX11.so.6 libXext.so.6 libXxf86vm.so.1 libc.so.6 libdisplay-info.so.4 libdrm.so.2 libdrm_amdgpu.so.1 libelf.so.1 libexpat.so.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libudev.so.1 libwayland-client.so.0 libxcb-dri3.so.0 libxcb-glx.so.0 libxcb-keysyms.so.1 libxcb-present.so.0 libxcb-randr.so.0 libxcb-shm.so.0 libxcb-sync.so.1 libxcb-xfixes.so.0 libxcb.so.1 libxshmfence.so.1 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 192fb42363a02da7493714cbd671ad2bb38e1f53
+SIZE: 53555200
+USE: X abi_x86_32 abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc kernel_linux llvm llvm_slot_22 opengl proprietary-codecs video_cards_intel video_cards_nouveau video_cards_radeon video_cards_radeonsi vulkan wayland zstd
+MTIME: 1791082047
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791063048
@@ -2988,6 +3032,26 @@ MTIME: 1791061976
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791082131
+CPV: sys-apps/man-pages-6.17-r2
+DEFINED_PHASES: compile configure install postinst prepare test unpack
+EAPI: 8
+IUSE: l10n_ja l10n_zh-CN l10n_cs l10n_da l10n_de l10n_el l10n_es l10n_fi l10n_fr l10n_hu l10n_id l10n_it l10n_ko l10n_mk l10n_nb l10n_nl l10n_pl l10n_pt-BR l10n_ro l10n_ru l10n_sr l10n_sv l10n_tr l10n_uk l10n_vi verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos
+LICENSE: man-pages GPL-2+ BSD
+MD5: df23f7760c00f56683b0297cbd7c7cb8
+PATH: pkgs-sys-apps/man-pages-6.17-r2-1.gpkg.tar
+PDEPEND: app-i18n/man-pages-l10n[l10n_es(-)]
+RDEPEND: virtual/man
+RESTRICT: binchecks
+SHA1: f998609e33b2a4defca147ff73cfb3c82319dc39
+SIZE: 3440640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_es
+MTIME: 1791082142
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791071257
@@ -3361,6 +3425,24 @@ SHA1: aee82d0f09c5d1f48b3766418446f83e9822ed98
 SIZE: 30720
 USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791064780
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791082150
+CPV: virtual/service-manager-3
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: systemd
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: 3b25d64be21c84200f6e5cf09c54e07b
+PATH: pkgs-virtual/service-manager-3-1.gpkg.tar
+RDEPEND: || ( sys-apps/openrc sys-apps/s6-rc[system-init(-)] sys-process/runit[system-init(-)] sys-apps/dinit[sysv-utils(-)] )
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+SHA1: c3c847c54e4413753a20bf0568e9a41d031d2ad1
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791082151
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
