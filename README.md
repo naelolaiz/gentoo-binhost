@@ -134,6 +134,6 @@ keys/                     the public signing key
 ## License
 
 Configuration files and scripts in this repository are released under the
-MIT License.  Binary packages built from Gentoo ebuilds are subject to their
+[MIT License](LICENSE).  Binary packages built from Gentoo ebuilds are subject to their
 own upstream licenses; packages that may not be redistributed are not
 published.

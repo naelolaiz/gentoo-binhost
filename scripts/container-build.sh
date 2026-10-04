@@ -775,11 +775,13 @@ build_roots() {
     fi
     # Portage names the root whose dependency it could not satisfy:
     #   (dependency required by "kde-apps/kdenlive" [argument])
+    #   # required by media-libs/mesa[abi_x86_32] (argument)
     # Try the others without it, and then that root alone (it may only fail
     # in this company); that takes fewer calculations than halving the list.
     local culprits=() rest=() named_roots=() culprit named
     mapfile -t culprits < <(
-      sed -nE 's/^\(dependency required by "([^"]+)" \[argument\]\)$/\1/p' "$PLAN_LOG" | sort -u)
+      sed -nE -e 's/^\(dependency required by "([^"]+)" \[argument\]\)$/\1/p' \
+              -e 's/^# required by (.+) \(argument\)$/\1/p' "$PLAN_LOG" | sort -u)
     if (( ${#culprits[@]} > 0 )); then
       for root in "$@"; do
         named=false
