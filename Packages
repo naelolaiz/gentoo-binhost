@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791089788
-PACKAGES: 241
+TIMESTAMP: 1791090094
+PACKAGES: 242
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4054,6 +4054,30 @@ SHA1: 57d312b1d8ec71f2ce60faca9fd071d7079d57ba
 SIZE: 696320
 USE: abi_x86_32 abi_x86_64 alsa amd64 cpu_flags_x86_sse elibc_glibc ipv6 jack kernel_linux pulseaudio sdl
 MTIME: 1791062189
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/nasm-2.15 >=dev-util/cargo-c-0.6.3 || ( >=dev-lang/rust-bin-1.74.1:* >=dev-lang/rust-1.74.1:* )
+BUILD_ID: 1
+BUILD_TIME: 1791090032
+CPV: media-video/rav1e-0.8.1
+DEFINED_PHASES: compile configure install setup test unpack
+DEPEND: dev-libs/libgit2
+EAPI: 8
+IUSE: +capi debug
+KEYWORDS: amd64 arm arm64 ~loong ~ppc ppc64 ~riscv x86
+LICENSE: BSD-2 Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD ISC MIT UoI-NCSA Unicode-3.0
+MD5: 573d6492bf8f412870cff81cc85acc5e
+PATH: pkgs-media-video/rav1e-0.8.1-1.gpkg.tar
+PROVIDES: x86_64: librav1e.so.0.8
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6
+SHA1: 3dbd94c9762b1ff7847562ddbec9e6fbaa182002
+SIZE: 2897920
+SLOT: 0/0.8
+USE: abi_x86_64 amd64 capi elibc_glibc kernel_linux
+MTIME: 1791090037
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
