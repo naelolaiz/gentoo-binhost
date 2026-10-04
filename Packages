@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791079333
-PACKAGES: 164
+TIMESTAMP: 1791079638
+PACKAGES: 165
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1689,6 +1689,31 @@ SIZE: 1658880
 SLOT: 22
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791065710
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791079571
+CPV: dev-util/spirv-llvm-translator-23.1.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-util/spirv-tools[abi_x86_64(-)] llvm-core/llvm:23/23.1=[abi_x86_64(-)] >=dev-util/spirv-headers-1.4.357.0
+EAPI: 8
+IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~riscv ~x86
+LICENSE: UoI-NCSA
+MD5: 93311b380c0d5322d3cc3588b0e994b7
+PATH: pkgs-dev-util/spirv-llvm-translator-23.1.1-1.gpkg.tar
+PROVIDES: x86_64: libLLVMSPIRVLib.so.23.1
+RDEPEND: dev-util/spirv-tools[abi_x86_64(-)] llvm-core/llvm:23/23.1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libLLVM.so.23.1 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 3d5a94df665272739651dc42f7dced4bcdf21db6
+SIZE: 1679360
+SLOT: 23
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791079572
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
