@@ -67,7 +67,7 @@ like a machine using the binhost.  Whatever the binhosts already offer is
 installed as a binary; whatever is missing, or newer in the tree, is
 compiled, signed and published straight away.  There is no build state to
 carry around: what has been published is the progress, so a run that is cut
-short, fails, or is cancelled loses at most the package it was working on.
+short, fails, or is cancelled loses only the packages it had not finished.
 
 - **Package files** are release assets of this repository, one release per
   category.

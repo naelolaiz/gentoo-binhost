@@ -39,8 +39,11 @@ MODE="${1:-run}"
 : "${REPO:?}" "${GH_TOKEN:?}" "${INDEX_BRANCH:?}" "${TAG_PREFIX:?}" "${WORK:?}"
 CONTAINER="binhost-builder"
 OUT="${WORK}/out"
-# A chain of runs that keeps hitting the time limit is cut off here.
-MAX_STREAK=10
+# A chain of runs that keeps hitting the time limit ends after this many runs
+# in a row that published nothing (one package that does not get finished),
+# and after this many runs altogether (the tree it is pinned to is stale).
+MAX_IDLE=4
+MAX_STREAK=40
 # How long a continuation keeps the tree and image of the run it continues.
 PIN_SECONDS=$(( 48 * 3600 ))
 TICK_SECONDS=300
@@ -78,7 +81,12 @@ PY
 }
 
 output() { echo "$1=$2" >> "${GITHUB_OUTPUT:-/dev/null}"; }
-result() { sed -n "s/^$1=//p" "${OUT}/result.env" 2>/dev/null | head -1; }
+# Empty when the container died without leaving a result (killed, out of
+# memory): the caller then treats the run as failed instead of stopping here.
+result() {
+  [[ -f "${OUT}/result.env" ]] || return 0
+  sed -n "s/^$1=//p" "${OUT}/result.env" | head -1
+}
 state_field() {
   python3 -c 'import json, sys
 record = json.loads(sys.argv[1] or "null") or {}
@@ -89,7 +97,7 @@ salvage() {
   docker rm -f "$CONTAINER" >/dev/null 2>&1 || true
   [[ -f "${WORK}/image-ref" ]] || { log "nothing was started; nothing to salvage"; return 0; }
   IMAGE_REF="$(cat "${WORK}/image-ref")"
-  publish --final --deadline "$(( $(date +%s) + 600 ))" \
+  publish --final --pending-ok --deadline "$(( $(date +%s) + 600 ))" \
     || echo "::error::Some finished packages could not be published; the next run rebuilds them"
 }
 
@@ -116,12 +124,15 @@ record="$(binhost state-get continue)"
 pin_tree=""
 pin_image=""
 streak=0
+idle=0
 updated="$(state_field "$record" updated)"
 if [[ -n "$updated" ]] && (( $(date +%s) - updated < PIN_SECONDS )); then
   pin_tree="$(state_field "$record" tree_date)"
   pin_image="$(state_field "$record" image)"
   streak="$(state_field "$record" streak)"
   [[ "$streak" =~ ^[0-9]+$ ]] || streak=0
+  idle="$(state_field "$record" idle)"
+  [[ "$idle" =~ ^[0-9]+$ ]] || idle=0
   # A continuation finishes what the interrupted run was building, whatever
   # this run was asked for.
   recorded_tiers="$(state_field "$record" tiers)"
@@ -217,11 +228,17 @@ esac
 [[ -n "$status" ]] || status="error"
 
 publish_rc=0
-publish --final --deadline "$(( $(date +%s) + 900 ))" || publish_rc=$?
+final_opts=(--final --deadline "$(( $(date +%s) + 900 ))")
+# A build that was stopped leaves packages that are built but not installed;
+# only after a complete run does that mean something went wrong.
+[[ "$status" == complete ]] || final_opts+=(--pending-ok)
+publish "${final_opts[@]}" || publish_rc=$?
 
-if [[ "$status" == complete && "$publish_rc" == 0 && -f "${OUT}/gone.txt" ]]; then
+# Also when some packages could not be published (exit 3): pruning is what
+# makes room again, and it only touches files the index no longer refers to.
+if [[ "$status" == complete && ( "$publish_rc" == 0 || "$publish_rc" == 3 ) && -f "${OUT}/gone.txt" ]]; then
   binhost --validate-cmd "$(validator)" prune --gone "${OUT}/gone.txt" --grace-days 14 \
-    || echo "::warning::Pruning failed; old packages stay until the next complete run"
+    || echo "::warning::Pruning failed; it is tried again by the next complete run"
 fi
 
 published="$(sort -u "${OUT}/published.txt" | grep -c . || true)"
@@ -233,16 +250,21 @@ tree_date="$(result tree_date)"
 # ── Does another run have to follow? ────────────────────────────────────
 # Only when this one ran out of time and got somewhere: it published
 # something, or it compiled something new (which the compiler cache keeps for
-# the next run).  A run that did neither would only repeat itself.
+# the next run).  A run that did neither would only repeat itself.  A run
+# that published nothing may be in the middle of one long package; several
+# of those in a row mean the package does not get finished this way.
 next="false"
 stop_reason=""
+if (( published > 0 )); then idle=0; else idle=$(( idle + 1 )); fi
 if [[ "$status" == deadline ]]; then
   if [[ "${ALLOW_CONTINUE:-false}" != true ]]; then
     stop_reason="follow-up runs are only started from the default branch"
   elif (( published == 0 && ccache_stored == 0 )); then
     stop_reason="the run reached the time limit without finishing or compiling anything new"
+  elif (( idle >= MAX_IDLE )); then
+    stop_reason="${MAX_IDLE} runs in a row reached the time limit without publishing a package (interrupted: $(result interrupted))"
   elif (( streak + 1 >= MAX_STREAK )); then
-    stop_reason="${MAX_STREAK} runs in a row reached the time limit"
+    stop_reason="${MAX_STREAK} runs in a row reached the time limit; the next daily run starts again from a current tree"
   else
     next="true"
   fi
@@ -250,9 +272,12 @@ fi
 if [[ "$next" == true ]]; then
   binhost state-set continue "$(python3 -c 'import json, sys, time
 print(json.dumps({"tiers": sys.argv[1], "tree_date": sys.argv[2], "image": sys.argv[3],
-                  "streak": int(sys.argv[4]) + 1, "updated": int(time.time())}))' \
-    "$TIERS" "$tree_date" "$IMAGE_REF" "$streak")"
-elif [[ -n "$updated" ]]; then
+                  "streak": int(sys.argv[4]) + 1, "idle": int(sys.argv[5]),
+                  "updated": int(time.time())}))' \
+    "$TIERS" "$tree_date" "$IMAGE_REF" "$streak" "$idle")"
+elif [[ -n "$updated" && "$status" != error ]]; then
+  # The chain is over.  After a failed container the record stays: whatever
+  # runs next continues with the same tree, until the record expires.
   binhost state-set continue null
 fi
 
@@ -266,12 +291,15 @@ problems="${OUT}/problems.md"
 [[ -z "$stop_reason" ]] || echo "- Building stopped: ${stop_reason}." >> "$problems"
 if (( failed > 0 )); then
   echo "- ${failed} package(s) failed to build:" >> "$problems"
-  awk -F'\t' '{ printf "  - `%s` in phase `%s`%s\n", $1, $2, ($3 == "resource" ? " (out of memory or disk, not the package)" : "") }' \
-    "${OUT}/failures.tsv" | head -40 >> "$problems"
+  awk -F'\t' 'NR <= 40 { printf "  - `%s` in phase `%s`%s\n", $1, $2, ($3 == "resource" ? " (out of memory or disk, not the package)" : "") }
+              END { if (NR > 40) printf "  - ... and %d more, see failures.tsv in the logs artifact\n", NR - 40 }' \
+    "${OUT}/failures.tsv" >> "$problems"
 fi
 if (( unresolved > 0 )); then
   echo "- ${unresolved} root(s) could not be resolved:" >> "$problems"
-  awk -F'\t' '{ printf "  - `%s` (%s)\n", $1, $2 }' "${OUT}/unresolved.tsv" | head -40 >> "$problems"
+  awk -F'\t' 'NR <= 40 { printf "  - `%s` (%s)\n", $1, $2 }
+              END { if (NR > 40) printf "  - ... and %d more, see unresolved.tsv in the logs artifact\n", NR - 40 }' \
+    "${OUT}/unresolved.tsv" >> "$problems"
 fi
 healthy="true"
 [[ ! -s "$problems" ]] || healthy="false"

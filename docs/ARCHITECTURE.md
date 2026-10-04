@@ -35,7 +35,9 @@ what is left.
 Consequences:
 
 - A run can stop anywhere (time limit, runner failure, cancellation) and
-  loses at most the package it was compiling.
+  loses only what was not installed in the container yet: the packages it
+  was compiling, and after a hard stop the few that were built and still
+  waiting to be installed.
 - Nothing has to be passed from one run to the next: no chain ids, no
   attempt counters, no saved container images, no cached package database.
 - A new upstream version needs no detection logic.  The tree is newer, no
@@ -47,7 +49,7 @@ Consequences:
 
 | What | Where | Why |
 |---|---|---|
-| Package files | Release assets, one release per category (`pkgs-dev-qt`, ...) | No size or bandwidth limit, files can be added one at a time |
+| Package files | Release assets, one release per category (`pkgs-dev-qt`, ...; `pkgs-dev-qt.2` and so on once a release is full) | No size or bandwidth limit, files can be added one at a time; a release holds at most 1000 files |
 | Index (`Packages`) and `state.json` | Branch `binhost`, read through `raw.githubusercontent.com` | Replaced atomically by a git push; small |
 | Compiler cache | Actions cache, one entry | Only an accelerator; see below |
 
@@ -78,7 +80,10 @@ Rules the publisher (`scripts/binhost.py`) follows:
 Pruning runs at the end of every run that got through its tiers.  A package
 whose ebuild has been gone from the tree for 14 days is dropped from the
 index, and a file is deleted 14 days after the index stopped referring to
-it (because the package was rebuilt, dropped or removed by hand).
+it (because the package was rebuilt, dropped or removed by hand).  Files in
+the releases that nothing refers to, left by an upload whose index update
+never happened, are found by the same step and deleted after the same
+period.
 
 ## One run
 
@@ -113,6 +118,12 @@ the compiler cache.  If packages remain, the run records the tree snapshot
 and container image it used and dispatches the next run, which uses the
 same ones.
 
+Portage installs a finished package only at a moment when no other package
+is building, and drops the ones still waiting when it is told to stop.  At
+the time limit the builder therefore first asks it to install what is
+waiting (`SIGUSR2`, for up to four minutes) and only then stops it, so that
+those packages are published too.
+
 ### Packages longer than one run
 
 Portage cannot resume a half-finished compile, but ccache can make it
@@ -122,8 +133,10 @@ works if compiler, headers and sources are identical, which is why a
 follow-up run pins the tree snapshot and the image, and why the builder
 keeps the toolchain of its stage3 instead of upgrading it.
 
-The chain ends when a run reaches the limit without having published or
-compiled anything new, or after ten runs in a row.
+The chain of runs ends when a run reaches the limit without having
+published or compiled anything new, when four runs in a row published
+nothing (one package that does not get finished), or after 40 runs.  The
+next daily run then starts a new chain from a current tree.
 
 ### Failures
 
@@ -134,9 +147,11 @@ compiled anything new, or after ten runs in a row.
   goes into the run's artifact, the package into the alert issue.  The next
   run tries again; with the compiler cache that costs little until it
   reaches the same error.
-- **A set of packages cannot be resolved together.**  The list is split in
-  halves until the offending root is isolated; the others are built.  A
-  dependency calculation that takes more than ten minutes counts as failed.
+- **A set of packages cannot be resolved together.**  Where Portage names
+  the root it cannot satisfy, that root is left out and the others are
+  tried again; otherwise the list is split in halves until the offending
+  root is isolated.  A dependency calculation that takes more than ten
+  minutes counts as failed.
 - **Build-time dependency loops** (ffmpeg needs openal needs pipewire needs
   ffmpeg) only exist in a fresh container.  Portage names a USE flag that
   breaks the loop; the builder applies it for one build, without producing a
@@ -144,7 +159,10 @@ compiled anything new, or after ten runs in a row.
   Only that second build is published.  No such flags are kept in the
   configuration.
 - **Out of memory or disk** is recognised in the build log and reported as
-  such, not as a broken package.
+  such, not as a broken package.  Such a package is not left out for the
+  rest of the run: a later tier that needs it tries again.  The work
+  directory of a failed build is removed while the run goes on, so one
+  failure for lack of space does not cause the next.
 
 ### Install check and alert issue
 

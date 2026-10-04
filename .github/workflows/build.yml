@@ -127,9 +127,13 @@ jobs:
       # A new key every run: cache entries cannot be overwritten.  GitHub
       # drops the least recently used entry once the repository is over its
       # cache quota.  Only the default branch saves: an entry written by a
-      # test run would push the real one out.
+      # test run would push the real one out.  Not when the build never
+      # started: the directory may then hold a half-restored cache, which
+      # would become the newest entry.
       - name: Save the compiler cache
-        if: always() && steps.cache_prep.outputs.save == 'true' && github.ref == 'refs/heads/main'
+        if: >-
+          always() && steps.cache_prep.outputs.save == 'true' && github.ref == 'refs/heads/main'
+          && steps.build.outcome != 'skipped'
         uses: actions/cache/save@v6
         with:
           path: ${{ env.WORK }}/ccache
@@ -229,11 +233,12 @@ jobs:
           set -euo pipefail
           body="$(mktemp)"
           {
-            [ "$BUILD_RESULT" = success ] \
+            # A run cancelled by hand is not a problem to report.
+            [ "$BUILD_RESULT" = success ] || [ "$BUILD_RESULT" = cancelled ] \
               || echo "- The build job ended as \`${BUILD_RESULT}\`."
-            [ "$VERIFY_RESULT" = success ] || [ "$VERIFY_RESULT" = skipped ] \
+            [ "$VERIFY_RESULT" = success ] || [ "$VERIFY_RESULT" = skipped ] || [ "$VERIFY_RESULT" = cancelled ] \
               || echo "- The install check on a clean machine ended as \`${VERIFY_RESULT}\`: published packages may not be installable."
-            [ "$CONTINUE_RESULT" = success ] || [ "$CONTINUE_RESULT" = skipped ] \
+            [ "$CONTINUE_RESULT" = success ] || [ "$CONTINUE_RESULT" = skipped ] || [ "$CONTINUE_RESULT" = cancelled ] \
               || echo "- The next run could not be requested (\`${CONTINUE_RESULT}\`); start it by hand."
             printf '%s\n' "$PROBLEMS"
           } | sed '/^$/d' > "$body"

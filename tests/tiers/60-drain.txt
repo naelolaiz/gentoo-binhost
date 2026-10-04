@@ -1,0 +1,10 @@
+# Used by `tests/e2e.sh drain` only: one long build next to short ones, so
+# that the short ones are built but not yet installed when the test's
+# deadline arrives.  sed is part of the base system, which Portage installs
+# with extra care.
+#@ shallow=yes
+#@ jobs=2
+
+dev-build/cmake
+app-editors/nano
+sys-apps/sed

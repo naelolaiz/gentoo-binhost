@@ -8,6 +8,7 @@ import tempfile
 import threading
 import time
 import unittest
+import unittest.mock
 import urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -300,6 +301,84 @@ class DirBackend(Base):
         self.assertEqual(self.run_cli("state-set", "continue", "null"), 0)
         self.assertNotIn("continue", self.state())
 
+    def test_built_but_not_installed_is_excused_only_on_request(self):
+        # What a build that was stopped leaves behind.
+        make_pkgdir(self.pkgdir)
+        merged = os.path.join(self.tmp, "merged.txt")
+        with open(merged, "w", encoding="utf-8") as handle:
+            handle.write("app-misc/hello-2.12.2 1790000010\n")
+        self.assertEqual(self.publish("--merged", merged, "--final"), binhost.EXIT_LEFTOVER)
+        self.assertEqual(self.publish("--merged", merged, "--final", "--pending-ok"), 0)
+        self.assertEqual([p["CPV"] for p in self.index().packages], ["app-misc/hello-2.12.2"])
+        self.assertEqual(self.read_result()["pending"],
+                         ["dev-libs/oniguruma-6.9.10", "x11-libs/gtk+-3.24.50"])
+
+    def second_package(self, index):
+        index.packages.append(dict(index.packages[0], CPV="app-misc/jq-1.8.2",
+                                   BUILD_TIME="1790000020",
+                                   PATH="app-misc/jq/jq-1.8.2-1.gpkg.tar"))
+
+    def test_full_release_overflows_into_the_next(self):
+        make_pkgdir(self.pkgdir, self.second_package)
+        with unittest.mock.patch.object(binhost, "MAX_ASSETS_PER_RELEASE", 1):
+            self.assertEqual(self.publish("--final"), 0)
+        index = self.index()
+        self.assertEqual(index.by_cpv()["app-misc/hello-2.12.2"]["PATH"],
+                         "pkgs-app-misc/hello-2.12.2-1.gpkg.tar")
+        self.assertEqual(index.by_cpv()["app-misc/jq-1.8.2"]["PATH"],
+                         "pkgs-app-misc.2/jq-1.8.2-1.gpkg.tar")
+        self.assertEqual(pkgindex.validate(index, "pkgs-"), [])
+        self.assertTrue(os.path.exists(
+            os.path.join(self.root, "assets", "pkgs-app-misc.2", "jq-1.8.2-1.gpkg.tar")))
+
+    def test_no_room_in_any_release_is_reported(self):
+        make_pkgdir(self.pkgdir, self.second_package)
+        with unittest.mock.patch.object(binhost, "MAX_ASSETS_PER_RELEASE", 1), \
+             unittest.mock.patch.object(binhost, "MAX_RELEASES_PER_CATEGORY", 1):
+            self.assertEqual(self.publish("--final"), binhost.EXIT_LEFTOVER)
+        self.assertIn("no room", self.read_result()["skipped"]["app-misc/jq-1.8.2"])
+        self.assertNotIn("app-misc/jq-1.8.2", self.index().by_cpv())
+
+    def test_a_file_that_cannot_be_deleted_stays_queued(self):
+        make_pkgdir(self.pkgdir)
+        self.publish()
+        self.assertEqual(self.run_cli("evict", "app-misc/hello-2.12.2"), 0)
+        asset = os.path.join(self.root, "assets", "pkgs-app-misc", "hello-2.12.2-1.gpkg.tar")
+        queued = ["pkgs-app-misc/hello-2.12.2-1.gpkg.tar"]
+        with unittest.mock.patch.object(binhost.DirStore, "delete_asset",
+                                        side_effect=binhost.PublishError("storage is down")):
+            self.assertEqual(self.run_cli("prune", "--grace-days", "0"), 0)
+        self.assertTrue(os.path.exists(asset))
+        self.assertEqual([s["path"] for s in self.state()["superseded"]], queued)
+        # A prune that dies while deleting must not have forgotten the files.
+        with unittest.mock.patch.object(binhost, "delete_files", side_effect=KeyboardInterrupt):
+            with self.assertRaises(KeyboardInterrupt):
+                self.run_cli("prune", "--grace-days", "0")
+        self.assertEqual([s["path"] for s in self.state()["superseded"]], queued)
+        self.assertEqual(self.run_cli("prune", "--grace-days", "0"), 0)
+        self.assertFalse(os.path.exists(asset))
+        self.assertEqual(self.state()["superseded"], [])
+
+    def test_files_nothing_refers_to_are_deleted_after_the_grace_period(self):
+        make_pkgdir(self.pkgdir)
+        self.publish()
+        orphan = os.path.join(self.root, "assets", "pkgs-app-misc", "old-1.0-1.gpkg.tar")
+        with open(orphan, "wb") as handle:
+            handle.write(b"left by an upload whose index update never happened")
+        self.assertEqual(self.run_cli("prune", "--grace-days", "14"), 0)
+        self.assertEqual([s["path"] for s in self.state()["superseded"]],
+                         ["pkgs-app-misc/old-1.0-1.gpkg.tar"])
+        # Looking again does not start its grace period again.
+        state = self.state()
+        state["superseded"][0]["at"] = 5
+        with open(os.path.join(self.root, "index", "state.json"), "w", encoding="utf-8") as handle:
+            handle.write(binhost.dump_state(state))
+        self.assertEqual(self.run_cli("prune", "--grace-days", "14"), 0)
+        self.assertFalse(os.path.exists(orphan))
+        self.assertEqual(self.state()["superseded"], [])
+        for pkg in self.index().packages:
+            self.assertTrue(os.path.exists(os.path.join(self.root, "assets", pkg["PATH"])))
+
 
 class FakeGitHub(http.server.BaseHTTPRequestHandler):
     """Just enough of the releases API for the publisher."""
@@ -512,6 +591,11 @@ class GitHubBackend(Base):
         self.hub["drop"].clear()
         self.assertEqual(self.publish("--final"), 0)
         self.assertEqual(len(self.index().packages), 3)
+
+    def test_pending_ok_does_not_excuse_a_failed_upload(self):
+        make_pkgdir(self.pkgdir)
+        self.hub["drop"].add("hello-2.12.2-1.gpkg.tar")
+        self.assertEqual(self.publish("--final", "--pending-ok"), binhost.EXIT_LEFTOVER)
 
     def test_evict_and_prune_delete_release_assets(self):
         make_pkgdir(self.pkgdir)

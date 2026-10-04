@@ -45,8 +45,10 @@ import pkgindex  # noqa: E402
 STATE_SCHEMA = 1
 INDEX_FILE = "Packages"
 STATE_FILE = "state.json"
-# GitHub allows 1000 assets per release; stop short of it and say so.
+# GitHub allows 1000 assets per release; stop short of it and continue in an
+# overflow release of the same category (pkgs-<category>.2, ...).
 MAX_ASSETS_PER_RELEASE = 950
+MAX_RELEASES_PER_CATEGORY = 20
 BOT_NAME = "github-actions[bot]"
 BOT_EMAIL = "41898282+github-actions[bot]@users.noreply.github.com"
 
@@ -514,6 +516,27 @@ def commit_index(store, snapshot, build, message, validate_cmd, tag_prefix, allo
     raise PublishError("could not push the index after repeated conflicts")
 
 
+def pick_slot(store, stanza, base_tag, taken):
+    """Where a new file goes: ``(tag, name)`` in the category's release, or
+    in the first of its overflow releases that has room.  None if there is
+    no room anywhere."""
+    for number in range(1, MAX_RELEASES_PER_CATEGORY + 1):
+        tag = pkgindex.overflow_tag(base_tag, number)
+        name = pkgindex.asset_name(stanza)
+        if f"{tag}/{name}" in taken:
+            name = pkgindex.asset_name(stanza, unique=True)
+            if f"{tag}/{name}" in taken:
+                continue
+        assets = store.list_assets(tag)
+        if name in assets:
+            # Leftover of an earlier attempt that never reached the index.
+            store.delete_asset(tag, name)
+            return tag, name
+        if len(assets) < MAX_ASSETS_PER_RELEASE:
+            return tag, name
+    return None
+
+
 def publish(store, args):
     result = {"published": [], "skipped": {}, "pending": [], "leftover": [],
               "rate_limited": False}
@@ -575,22 +598,15 @@ def publish(store, args):
             log("publish deadline reached; the rest stays for the next pass")
             break
         try:
-            tag = pkgindex.release_tag(cpv, args.tag_prefix)
-            name = pkgindex.asset_name(stanza)
-            assets = store.list_assets(tag)
-            if f"{tag}/{name}" in taken:
-                name = pkgindex.asset_name(stanza, unique=True)
-            if f"{tag}/{name}" in taken:
-                result["skipped"][cpv] = f"no free file name in release {tag}"
-                continue
-            if name in assets:
-                # Leftover of an earlier attempt that never reached the index.
-                store.delete_asset(tag, name)
-            elif len(assets) >= MAX_ASSETS_PER_RELEASE:
+            base_tag = pkgindex.release_tag(cpv, args.tag_prefix)
+            slot = pick_slot(store, stanza, base_tag, taken)
+            if slot is None:
                 result["skipped"][cpv] = (
-                    f"release {tag} holds {len(assets)} assets (limit 1000); prune it"
+                    f"no room in release {base_tag} or its "
+                    f"{MAX_RELEASES_PER_CATEGORY - 1} overflow releases"
                 )
                 continue
+            tag, name = slot
             entry = pkgindex.localize(stanza, local.header, f"{tag}/{name}")
             problems = pkgindex.validate_stanza(entry, args.tag_prefix)
             if problems:
@@ -640,11 +656,17 @@ def publish(store, args):
         f"left {len(result['leftover'])}; index now lists {result['packages']} package(s)")
     for cpv, reason in sorted(result["skipped"].items()):
         log(f"  skipped {cpv}: {reason}")
-    if args.final and result["leftover"]:
-        for cpv in result["leftover"]:
-            log(f"  NOT PUBLISHED: {cpv}")
-        return EXIT_LEFTOVER
-    return EXIT_OK
+    if not args.final:
+        return EXIT_OK
+    # A build that was stopped leaves packages that are built but not
+    # installed.  That is not a publishing problem; the next run builds them.
+    excused = set(result["pending"]) if args.pending_ok else set()
+    for cpv in sorted(excused):
+        log(f"  not installed when the build stopped, left for the next run: {cpv}")
+    unpublished = [cpv for cpv in result["leftover"] if cpv not in excused]
+    for cpv in unpublished:
+        log(f"  NOT PUBLISHED: {cpv}")
+    return EXIT_LEFTOVER if unpublished else EXIT_OK
 
 
 def delete_files(store, paths):
@@ -707,6 +729,21 @@ def evict(store, args):
     return EXIT_OK
 
 
+def stored_files(store, snapshot):
+    """``<tag>/<name>`` of every file in the releases the index or the
+    deletion queue mention.  Empty if they cannot be listed right now."""
+    paths = [pkg.get("PATH", "") for pkg in pkgindex.parse(snapshot.text).packages]
+    paths += [item["path"] for item in snapshot.state.get("superseded", [])]
+    found = set()
+    try:
+        for tag in sorted({path.partition("/")[0] for path in paths if "/" in path}):
+            found |= {f"{tag}/{name}" for name in store.list_assets(tag)}
+    except (RateLimited, PublishError) as error:
+        log(f"could not list the stored files, not looking for unreferenced ones: {error}")
+        return set()
+    return found
+
+
 def prune(store, args):
     """Drop packages whose ebuild left the tree, and delete files the index
     stopped referring to, both only after a grace period."""
@@ -717,6 +754,7 @@ def prune(store, args):
     gone_now = set(read_lines(args.gone)) if args.gone else None
     grace = args.grace_days * 86400
     doomed_paths = []
+    stored = stored_files(store, snapshot)
 
     def build(current, state):
         doomed_paths.clear()
@@ -740,20 +778,36 @@ def prune(store, args):
                 continue
             if now - item["at"] >= grace:
                 doomed_paths.append(item["path"])
-            else:
-                keep.append(item)
+            # A file stays on the list until it is really deleted (below).
+            keep.append(item)
         state["superseded"] = keep
         # Files of packages dropped just now wait one more grace period:
         # clients may still hold the index that lists them.
         add_superseded(state, removed, now)
+        # Files nothing refers to (an upload whose index update never
+        # happened) are queued like replaced ones.
+        queued = {item["path"] for item in state["superseded"]}
+        add_superseded(state, sorted(stored - referenced - queued), now)
         state["gone"] = first_seen
         return index, state
 
     commit_index(store, snapshot, build, "Prune package index", args.validate_cmd,
                  args.tag_prefix, allow_shrink=True)
-    failed = delete_files(store, doomed_paths)
-    log(f"prune deleted {len(doomed_paths) - len(failed)} file(s)")
-    requeue(store, failed, args)
+    failed = set(delete_files(store, doomed_paths))
+    deleted = {path for path in doomed_paths if path not in failed}
+    log(f"prune deleted {len(deleted)} file(s)")
+    if failed:
+        log(f"{len(failed)} file(s) stay queued for the next prune")
+    if deleted:
+        # Only now are they forgotten: had this run died while deleting, the
+        # next prune would have found them still on the list.
+        def forget(current, state):
+            state["superseded"] = [item for item in state.get("superseded", [])
+                                   if item["path"] not in deleted]
+            return current, state
+
+        commit_index(store, store.load(), forget, "Forget deleted package files",
+                     args.validate_cmd, args.tag_prefix)
     return EXIT_OK
 
 
@@ -836,6 +890,9 @@ def build_parser():
     pub.add_argument("--result", help="write a JSON summary here")
     pub.add_argument("--final", action="store_true",
                      help="exit 3 if a built package could not be published")
+    pub.add_argument("--pending-ok", action="store_true",
+                     help="with --final: packages that are built but not installed "
+                          "(the build was stopped) do not count as unpublished")
     pub.set_defaults(func=publish)
 
     ev = sub.add_parser("evict", help="remove packages from the index")
