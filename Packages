@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791102191
-PACKAGES: 300
+TIMESTAMP: 1791102497
+PACKAGES: 301
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -453,6 +453,25 @@ SHA1: 8bcd2d380ce359dbd9424d3d3a2adf2591c6d459
 SIZE: 71680
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791093320
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791102455
+CPV: app-portage/cpuid2cpuflags-18
+DEFINED_PHASES: -
+EAPI: 8
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-2+
+MD5: bb4d011bd535680259d217794e0999c3
+PATH: pkgs-app-portage/cpuid2cpuflags-18-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: libc.so.6
+SHA1: a1c32fcc58323f8865418c26df283e8566027423
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791102456
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
