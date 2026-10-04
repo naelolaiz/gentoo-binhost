@@ -92,6 +92,7 @@ RESOLVE_BUDGET=1800
 RESOLVE_SPENT=0
 FAILURE_LOG_TAIL_LINES=80
 
+NPROC="$(nproc)"
 STATUS="complete"
 TIMEOUT_FIRED_AT=0
 FAILED_COUNT=0
@@ -217,17 +218,19 @@ deadline_near() {
 # ── Builder-only configuration ──────────────────────────────────────────
 
 write_builder_conf() {
-  local nproc_val
-  nproc_val="$(nproc)"
+  local nproc_val="$NPROC"
   cat >> /etc/portage/make.conf <<EOF
 
 # ── Added by scripts/container-build.sh: settings of the builder only ──
 # buildpkg: every package compiled here becomes a binary package.
 # -news: nobody reads news in a throwaway container.
-FEATURES="\${FEATURES} buildpkg ccache -news"
+# -merge-sync: nor does anything here have to survive a power failure, and
+# syncing to disk after each of several hundred installs takes time.
+FEATURES="\${FEATURES} buildpkg ccache -news -merge-sync"
 BINPKG_FORMAT="gpkg"
 BINPKG_COMPRESS="zstd"
 # -l keeps two packages building side by side from oversubscribing the CPUs.
+# A tier that builds one package at a time drops it (see run_planned).
 MAKEOPTS="-j${nproc_val} -l${nproc_val}"
 # --with-bdeps=y: machines that set it also compare build-time dependencies
 # when deciding whether a binary still matches, so the builder must too.
@@ -735,6 +738,13 @@ run_planned() {
     return 0
   fi
 
+  # A package that builds alone has the machine to itself.  The load limit
+  # from make.conf then only keeps make from using every CPU: with it, a
+  # four-CPU runner averaged a load under three through hours of compiling.
+  if (( TIER_JOBS == 1 )); then
+    local -x MAKEOPTS="-j${NPROC}"
+  fi
+
   local rc=0 seen_before=$FAILURES_SEEN
   run_emerge_with_deadline --keep-going --jobs="$TIER_JOBS" "${RESOLVE_OPTS[@]}" \
     "${EXCLUDE_OPTS[@]}" "${targets[@]}" || rc=$?
@@ -947,7 +957,11 @@ for file in "${tier_files[@]}"; do
     log "${TIER}: no packages listed"
     continue
   fi
-  log "── tier ${TIER}: ${#roots[@]} root(s), --jobs=${TIER_JOBS} ──"
+  if (( TIER_JOBS == 1 )); then
+    log "── tier ${TIER}: ${#roots[@]} root(s), --jobs=1, make -j${NPROC} ──"
+  else
+    log "── tier ${TIER}: ${#roots[@]} root(s), --jobs=${TIER_JOBS}, make -j${NPROC} -l${NPROC} ──"
+  fi
   RESOLVE_SPENT=0
   rc=0
   build_roots atoms "${roots[@]}" || rc=$?

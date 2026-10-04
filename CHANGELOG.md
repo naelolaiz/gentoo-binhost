@@ -16,6 +16,8 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
   chain that keeps publishing goes on.  `budget_minutes` is at least 30.
 - A category with more than 950 files continues in `pkgs-<category>.2`, and
   so on.  Release tags are created on the index branch.
+- A tier that builds one package at a time lets `make` use every CPU; the
+  build container no longer syncs to disk after each install.
 
 ### Rework: incremental builds, packages served from releases
 
