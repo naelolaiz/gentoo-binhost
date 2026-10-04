@@ -655,10 +655,17 @@ def publish(store, args):
     if args.result:
         with open(args.result, "w", encoding="utf-8") as handle:
             json.dump(result, handle, indent=1, sort_keys=True)
-    log(f"published {len(result['published'])}, skipped {len(result['skipped'])}, "
-        f"left {len(result['leftover'])}; index now lists {result['packages']} package(s)")
-    for cpv, reason in sorted(result["skipped"].items()):
-        log(f"  skipped {cpv}: {reason}")
+    # A pass during the build that found nothing new says nothing: it runs
+    # every few minutes, and the packages that are never published would be
+    # listed again each time.  The final pass always reports.
+    by_design = ("RESTRICT=bindist", "listed in the no-publish file")
+    quiet = (not args.final and not result["published"] and not result["rate_limited"]
+             and all(reason.startswith(by_design) for reason in result["skipped"].values()))
+    if not quiet:
+        log(f"published {len(result['published'])}, skipped {len(result['skipped'])}, "
+            f"left {len(result['leftover'])}; index now lists {result['packages']} package(s)")
+        for cpv, reason in sorted(result["skipped"].items()):
+            log(f"  skipped {cpv}: {reason}")
     if not args.final:
         return EXIT_OK
     # A build that was stopped leaves packages that are built but not
