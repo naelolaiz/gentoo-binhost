@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791088253
-PACKAGES: 229
+TIMESTAMP: 1791088561
+PACKAGES: 232
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2821,6 +2821,30 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
+BUILD_TIME: 1791088236
+CPV: kde-frameworks/ksvg-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/karchive-6.30*:6 =kde-frameworks/kcolorscheme-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/kguiaddons-6.30*:6 =kde-frameworks/kirigami-6.30*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 5dd74829a688793c965430f8ef01a55b
+PATH: pkgs-kde-frameworks/ksvg-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Svg.so.6 libcorebindingsplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/karchive-6.30*:6 =kde-frameworks/kcolorscheme-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/kguiaddons-6.30*:6 =kde-frameworks/kirigami-6.30*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKirigamiPlatform.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Svg.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: e62a37c7d8a832cd01e4bd52f9fb627471c6667d
+SIZE: 235520
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791088237
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
 BUILD_TIME: 1791087540
 CPV: kde-frameworks/ktextwidgets-6.30.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
@@ -2840,6 +2864,56 @@ SIZE: 399360
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791087541
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791088263
+CPV: kde-frameworks/kwallet-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] =kde-frameworks/kconfig-6.30*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: minimal debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 1dfcb043a8296e8f196e8d55d4772871
+PATH: pkgs-kde-frameworks/kwallet-6.30.0-1.gpkg.tar
+PDEPEND: =kde-frameworks/kwallet-runtime-6.30*
+PROVIDES: x86_64: libKF6Wallet.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] =kde-frameworks/kconfig-6.30*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 8b5940bfd4337f8a1da1c7b4fc8dc3b5d1fc3bc9
+SIZE: 112640
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791088264
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=kde-frameworks/kdoctools-6.30:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791088376
+CPV: kde-frameworks/kwallet-runtime-6.30.0
+DEFINED_PHASES: compile configure info install nofetch postinst prepare test unpack
+DEPEND: dev-libs/libgcrypt:0/20= >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] =kde-frameworks/kcolorscheme-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/kcrash-6.30*:6 =kde-frameworks/kdbusaddons-6.30*:6 =kde-frameworks/ki18n-6.30*:6 =kde-frameworks/knotifications-6.30*:6 =kde-frameworks/kservice-6.30*:6 =kde-frameworks/kwallet-6.30*:6 =kde-frameworks/kwidgetsaddons-6.30*:6 =kde-frameworks/kwindowsystem-6.30*:6[X] >=app-crypt/qca-2.3.9:2[qt6(+)] app-crypt/libsecret dev-qt/qtbase:6
+EAPI: 8
+IUSE: gpg +man +keyring +legacy-kwallet X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: f844c0fe333042bcf16ec5472145a5c2
+PATH: pkgs-kde-frameworks/kwallet-runtime-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6WalletBackend.so.6
+RDEPEND: dev-libs/libgcrypt:0/20= >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] =kde-frameworks/kcolorscheme-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/kcrash-6.30*:6 =kde-frameworks/kdbusaddons-6.30*:6 =kde-frameworks/ki18n-6.30*:6 =kde-frameworks/knotifications-6.30*:6 =kde-frameworks/kservice-6.30*:6 =kde-frameworks/kwallet-6.30*:6 =kde-frameworks/kwidgetsaddons-6.30*:6 =kde-frameworks/kwindowsystem-6.30*:6[X] >=app-crypt/qca-2.3.9:2[qt6(+)] app-crypt/libsecret !<kde-frameworks/kwallet-5.116.0-r2:5[-kf6compat(-)] !<kde-frameworks/kwallet-6.14.0:6 =kde-frameworks/ksecretd-services-6.30* >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6Notifications.so.6 libKF6Wallet.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libgcrypt.so.20 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libqca-qt6.so.2 libsecret-1.so.0 libstdc++.so.6
+RESTRICT: test
+SHA1: 6833c1a8850564bedda553232c74eadbbd44dc40
+SIZE: 634880
+SLOT: 6/6.30
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux keyring legacy-kwallet man
+MTIME: 1791088377
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
