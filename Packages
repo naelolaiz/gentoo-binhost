@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791122463
-PACKAGES: 312
+TIMESTAMP: 1791123072
+PACKAGES: 314
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1634,6 +1634,30 @@ SHA1: 21122437ef264c2c1e691458167e3420e1bc43fe
 SIZE: 81920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791087596
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791122968
+CPV: dev-libs/protobuf-34.2
+DEFINED_PHASES: compile configure install postinst postrm prepare test
+DEPEND: >=dev-cpp/abseil-cpp-20250127.0:0/2601.1.0-cpp20=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)]
+EAPI: 8
+IUSE: conformance debug emacs examples +libprotoc +libupb +protobuf +protoc test zlib abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: BSD
+MD5: 4259058b9b09086c15726890a5f686a5
+PATH: pkgs-dev-libs/protobuf-34.2-1.gpkg.tar
+PROVIDES: x86_64: libprotobuf-lite.so.34.2.0 libprotobuf.so.34.2.0 libprotoc.so.34.2.0 libutf8_range.so.34.2.0 libutf8_validity.so.34.2.0
+RDEPEND: >=dev-cpp/abseil-cpp-20250127.0:0/2601.1.0-cpp20=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libabsl_cord.so.2601.0.0 libabsl_cord_internal.so.2601.0.0 libabsl_cordz_info.so.2601.0.0 libabsl_die_if_null.so.2601.0.0 libabsl_hash.so.2601.0.0 libabsl_log_initialize.so.2601.0.0 libabsl_log_internal_check_op.so.2601.0.0 libabsl_log_internal_conditions.so.2601.0.0 libabsl_log_internal_message.so.2601.0.0 libabsl_log_internal_nullguard.so.2601.0.0 libabsl_raw_hash_set.so.2601.0.0 libabsl_raw_logging_internal.so.2601.0.0 libabsl_spinlock_wait.so.2601.0.0 libabsl_status.so.2601.0.0 libabsl_statusor.so.2601.0.0 libabsl_str_format_internal.so.2601.0.0 libabsl_strings.so.2601.0.0 libabsl_synchronization.so.2601.0.0 libabsl_throw_delegate.so.2601.0.0 libabsl_time.so.2601.0.0 libabsl_time_zone.so.2601.0.0 libc.so.6 libgcc_s.so.1 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: e70a6b749a03c1db16d9d5380d52df8beae6a380
+SIZE: 5447680
+SLOT: 0/34.2.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux libprotoc libupb protobuf protoc zlib
+MTIME: 1791122970
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5431,6 +5455,29 @@ SIZE: 317440
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux sftp zlib
 MTIME: 1791092316
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791122991
+CPV: net-libs/mbedtls-3.6.5
+DEFINED_PHASES: compile configure install prepare setup test
+EAPI: 8
+IUSE: cpu_flags_x86_sse2 doc programs static-libs test threads abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: || ( Apache-2.0 GPL-2+ )
+MD5: 0ed0bc2899cdd9cad1eb353f34f908e4
+PATH: pkgs-net-libs/mbedtls-3.6.5-1.gpkg.tar
+PROVIDES: x86_64: libmbedcrypto-3.so.16 libmbedtls-3.so.21 libmbedx509-3.so.7
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 07705f7fbf8161115356a836f9a7eda252581bab
+SIZE: 1024000
+SLOT: 3/16.21.7
+USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc kernel_linux
+MTIME: 1791122992
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
