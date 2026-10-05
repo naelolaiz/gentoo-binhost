@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791223773
-PACKAGES: 403
+TIMESTAMP: 1791224996
+PACKAGES: 409
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -834,6 +834,27 @@ MTIME: 1791221840
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1791223680
+CPV: app-text/teckit-2.5.12
+DEFINED_PHASES: configure install prepare test
+DEPEND: dev-libs/expat virtual/zlib:0/1=
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: || ( CPL-0.5 LGPL-2.1 )
+MD5: 11e6fcfb5954606ca458f95ad221eefe
+PATH: pkgs-app-text/teckit-2.5.12-2.gpkg.tar
+PROVIDES: x86_64: libTECkit.so.0 libTECkit_Compiler.so.0
+RDEPEND: dev-libs/expat virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libexpat.so.1 libgcc_s.so.1 libstdc++.so.6 libz.so.1
+SHA1: 32696500dfef29081fe054da6816711f8947fb99
+SIZE: 419840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791223683
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 2
 BUILD_TIME: 1791089410
 CPV: app-text/tessdata_fast-4.1.0
@@ -1644,6 +1665,28 @@ SIZE: 2314240
 SLOT: 0/3
 USE: abi_x86_32 abi_x86_64 amd64 bzip2 elibc_glibc jit kernel_linux pcre16 pcre32 readline unicode zlib
 MTIME: 1791058292
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1791223842
+CPV: dev-libs/libsodium-1.0.22
+DEFINED_PHASES: compile configure install prepare test unpack
+EAPI: 8
+IUSE: +asm static-libs +urandom cpu_flags_x86_aes cpu_flags_x86_sse4_1 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos
+LICENSE: ISC
+MD5: 61ed5731dff126c45b8fd712d4727d03
+PATH: pkgs-dev-libs/libsodium-1.0.22-3.gpkg.tar
+PROVIDES: x86_64: libsodium.so.26
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6
+SHA1: f0cf27f1e881fca7caa4e27a2b95c9454e9d8641
+SIZE: 317440
+SLOT: 0/26
+USE: abi_x86_64 amd64 asm cpu_flags_x86_aes cpu_flags_x86_sse4_1 elibc_glibc kernel_linux urandom
+MTIME: 1791223845
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5967,6 +6010,52 @@ MTIME: 1791217235
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 6
+BUILD_TIME: 1791224869
+CPV: media-libs/liblrdf-0.6.1-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: media-libs/ladspa-sdk[abi_x86_64(-)] media-libs/raptor:2[abi_x86_64(-)] virtual/pkgconfig
+EAPI: 7
+IUSE: static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 ~arm ~arm64 ~hppa ~loong ppc ppc64 x86
+LICENSE: GPL-2
+MD5: 80395ace811c29731ceae15dc11ca2e3
+PATH: pkgs-media-libs/liblrdf-0.6.1-r1-6.gpkg.tar
+PROVIDES: x86_64: liblrdf.so.2
+RDEPEND: media-libs/ladspa-sdk[abi_x86_64(-)] media-libs/raptor:2[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libc.so.6 libraptor2.so.0
+SHA1: 8fcabc47166bc6353c96a81ab4ca1afe446aebad
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791224870
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791224494
+CPV: media-libs/libmediainfo-26.05
+DEFINED_PHASES: compile configure install prepare
+DEPEND: dev-libs/tinyxml2:0/11= >=media-libs/libzen-0.4.41 virtual/zlib:0/1=
+EAPI: 8
+IUSE: curl doc mms
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD-2
+MD5: b9e59ca4caf4e8d09f3c87b844ff026a
+PATH: pkgs-media-libs/libmediainfo-26.05-1.gpkg.tar
+PROVIDES: x86_64: libmediainfo.so.0
+RDEPEND: dev-libs/tinyxml2:0/11= >=media-libs/libzen-0.4.41 virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libtinyxml2.so.11 libz.so.1 libzen.so.0
+RESTRICT: test
+SHA1: e2268ab304db2b3a9cb905bdcc35392c7af0935a
+SIZE: 4884480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791224497
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 7
 BUILD_TIME: 1791057536
 CPV: media-libs/libogg-1.3.6
@@ -5984,6 +6073,28 @@ SHA1: c0eb6167e610c6b18edd252489bcda0f633bcf95
 SIZE: 256000
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791057537
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791223769
+CPV: media-libs/libopusenc-0.3
+DEFINED_PHASES: configure install prepare
+DEPEND: >=media-libs/opus-1.6:0/0=
+EAPI: 8
+IUSE: doc
+KEYWORDS: ~amd64 ~arm64 ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD
+MD5: 209d5308cc57bcd0b0b4ebc50eb121e8
+PATH: pkgs-media-libs/libopusenc-0.3-1.gpkg.tar
+PROVIDES: x86_64: libopusenc.so.0
+RDEPEND: >=media-libs/opus-1.6:0/0= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6 libopus.so.0
+SHA1: d55ef656988be48a7ba2107812f9a15bfcf437d4
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791223771
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6291,6 +6402,28 @@ SHA1: 07e7d311b6e0e2364f709c37c11c39aec36034ec
 SIZE: 583680
 USE: abi_x86_32 abi_x86_64 amd64 cpu_flags_x86_sse elibc_glibc kernel_linux
 MTIME: 1791063049
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 6
+BUILD_TIME: 1791223708
+CPV: media-libs/opusfile-0.12-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/3=[abi_x86_64(-)]
+EAPI: 8
+IUSE: doc fixed-point +float +http static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: BSD
+MD5: 09c78851ff73e5a0106f6bdd8cd40c99
+PATH: pkgs-media-libs/opusfile-0.12-r1-6.gpkg.tar
+PROVIDES: x86_64: libopusfile.so.0 libopusurl.so.0
+RDEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/3=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libm.so.6 libogg.so.0 libopus.so.0 libssl.so.3
+SHA1: 3b510db6105584a6a1abf52d16d61833c34fa88d
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc float http kernel_linux
+MTIME: 1791223710
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
