@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791217865
-PACKAGES: 397
+TIMESTAMP: 1791221341
+PACKAGES: 399
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1033,6 +1033,26 @@ SIZE: 368640
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791092272
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791221200
+CPV: dev-cpp/clhpp-2024.10.24
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: virtual/opencl >=dev-util/opencl-headers-2024.10.24
+EAPI: 8
+KEYWORDS: amd64 ppc64 x86
+LICENSE: Khronos-CLHPP
+MD5: 6ffc8ba0a450c6cd9e412e6347d55972
+PATH: pkgs-dev-cpp/clhpp-2024.10.24-1.gpkg.tar
+RDEPEND: virtual/opencl
+RESTRICT: test
+SHA1: 46f755a1ae35a0496b9363fdff643424b5933554
+SIZE: 102400
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791221203
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7550,6 +7570,30 @@ SIZE: 41994240
 SLOT: 0/9.6
 USE: abi_x86_64 amd64 cgns elibc_glibc ffmpeg kernel_linux logging netcdf openmp python_single_target_python3_14 qt6 rendering threads truetype views
 MTIME: 1791208039
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791221211
+CPV: sci-mathematics/clipper2-2.0.1
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: test
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: Boost-1.0
+MD5: 3e4cfa4c57e499cb2aa2d9217b2f58f4
+PATH: pkgs-sci-mathematics/clipper2-2.0.1-1.gpkg.tar
+PROVIDES: x86_64: libClipper2.so.2 libClipper2Z.so.2
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: c4b4a6f6ee5f21944442feddbb72361e88f50abd
+SIZE: 194560
+SLOT: 0/2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791221212
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
