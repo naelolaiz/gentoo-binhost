@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791204447
-PACKAGES: 368
+TIMESTAMP: 1791204755
+PACKAGES: 369
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4452,6 +4452,31 @@ SIZE: 235520
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791088237
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791204705
+CPV: kde-frameworks/ktexteditor-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtspeech-6.10.1:6 =kde-frameworks/karchive-6.30*:6 =kde-frameworks/kauth-6.30*:6 =kde-frameworks/kcodecs-6.30*:6 =kde-frameworks/kcolorscheme-6.30*:6 =kde-frameworks/kcompletion-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/kconfigwidgets-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/kguiaddons-6.30*:6 =kde-frameworks/ki18n-6.30*:6 =kde-frameworks/kio-6.30*:6 =kde-frameworks/kitemviews-6.30*:6 =kde-frameworks/kjobwidgets-6.30*:6 =kde-frameworks/kparts-6.30*:6 =kde-frameworks/kwidgetsaddons-6.30*:6 =kde-frameworks/kxmlgui-6.30*:6 =kde-frameworks/sonnet-6.30*:6 =kde-frameworks/syntax-highlighting-6.30*:6 app-text/editorconfig-core-c dev-qt/qtbase:6
+EAPI: 8
+IUSE: +editorconfig debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: e5ab37f14bee83f0e4875b12d4774923
+PATH: pkgs-kde-frameworks/ktexteditor-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: katepart.so libKF6TextEditor.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtspeech-6.10.1:6 =kde-frameworks/karchive-6.30*:6 =kde-frameworks/kauth-6.30*:6 =kde-frameworks/kcodecs-6.30*:6 =kde-frameworks/kcolorscheme-6.30*:6 =kde-frameworks/kcompletion-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/kconfigwidgets-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/kguiaddons-6.30*:6 =kde-frameworks/ki18n-6.30*:6 =kde-frameworks/kio-6.30*:6 =kde-frameworks/kitemviews-6.30*:6 =kde-frameworks/kjobwidgets-6.30*:6 =kde-frameworks/kparts-6.30*:6 =kde-frameworks/kwidgetsaddons-6.30*:6 =kde-frameworks/kxmlgui-6.30*:6 =kde-frameworks/sonnet-6.30*:6 =kde-frameworks/syntax-highlighting-6.30*:6 app-text/editorconfig-core-c >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6AuthCore.so.6 libKF6Codecs.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6ItemViews.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Parts.so.6 libKF6SonnetCore.so.6 libKF6SonnetUi.so.6 libKF6SyntaxHighlighting.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6TextToSpeech.so.6 libQt6Widgets.so.6 libc.so.6 libeditorconfig.so.0 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: 8c1702511d106de52fd149d2970d2f912c03766f
+SIZE: 3911680
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 editorconfig elibc_glibc kernel_linux
+MTIME: 1791204707
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
