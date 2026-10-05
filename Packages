@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791147633
-PACKAGES: 344
+TIMESTAMP: 1791160123
+PACKAGES: 345
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -11,7 +11,7 @@ CBUILD: x86_64-pc-linux-gnu
 CHOST: x86_64-pc-linux-gnu
 CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d
 ELIBC: glibc
-FEATURES: assume-digests binpkg-docompress binpkg-dostrip binpkg-logs binpkg-multi-instance binpkg-signing buildpkg buildpkg-live ccache compress-index config-protect-if-modified distlocks ebuild-locks fixlafiles ipc-sandbox merge-sync merge-wait multilib-strict network-sandbox parallel-fetch pid-sandbox pkgdir-index-trusted preserve-libs protect-owned qa-unresolved-soname-deps sandbox strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr
+FEATURES: assume-digests binpkg-docompress binpkg-dostrip binpkg-logs binpkg-multi-instance binpkg-signing buildpkg buildpkg-live ccache compress-index config-protect-if-modified distlocks ebuild-locks fixlafiles ipc-sandbox merge-wait multilib-strict network-sandbox parallel-fetch pid-sandbox pkgdir-index-trusted preserve-libs protect-owned qa-unresolved-soname-deps sandbox strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr
 GENTOO_MIRRORS: http://distfiles.gentoo.org
 IUSE_IMPLICIT: abi_x86_64 prefix prefix-guest prefix-stack
 KERNEL: linux
@@ -6143,6 +6143,30 @@ SIZE: 286720
 SLOT: 0/0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux openssl ssl
 MTIME: 1791059682
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791159925
+CPV: net-libs/nodejs-26.10.0-r2
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test
+DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.0.0:0/36= >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.8:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
+EAPI: 8
+IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
+LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
+MD5: d92035d694d6f06beb22cd32aac02d3e
+PATH: pkgs-net-libs/nodejs-26.10.0-r2-1.gpkg.tar
+RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.0.0:0/36= >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.8:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.33 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
+RESTRICT: test
+SHA1: 34e32e2b6e6fbf4216891767f983ae409ccba95b
+SIZE: 38533120
+SLOT: 0/26
+USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
+MTIME: 1791159935
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
