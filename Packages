@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791196071
-PACKAGES: 357
+TIMESTAMP: 1791196378
+PACKAGES: 359
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1255,6 +1255,30 @@ SIZE: 133120
 SLOT: 0/5.1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791062996
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791196276
+CPV: dev-libs/kirigami-addons-1.15.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) LGPL-2.1+
+MD5: b8333de98d4e5a94f616b75e4dcde10f
+PATH: pkgs-dev-libs/kirigami-addons-1.15.0-1.gpkg.tar
+PROVIDES: x86_64: libKirigamiAddonsActionsQml.so libKirigamiAddonsComponents.so.6 libKirigamiAddonsStatefulApp.so.6 libKirigamiAddonsStatefulAppplugin.so libKirigamiApp.so.6 libactionslabsplugin.so libcomponentslabsplugin.so libcomponentsplugin.so libdateandtimeplugin.so libdelegatesplugin.so libformcardplugin.so libonboardingplugin.so libsettingsplugin.so libsettingsprivateplugin.so libsoundsplugin.so libstatefulapplabsplugin.so libstatefulappprivateplugin.so libtableviewplugin.so libtreeviewplugin.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/qqc2-desktop-style-6.27.0:6 kde-plasma/libplasma:6/7= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: e4b9655d35095ca8e08bf787e6255746f3f6d7c4
+SIZE: 2979840
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791196278
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5901,6 +5925,31 @@ SIZE: 71680
 SLOT: 1.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791147207
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig >=sys-devel/gettext-0.17
+BUILD_ID: 1
+BUILD_TIME: 1791196291
+CPV: media-plugins/gst-plugins-libav-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=dev-libs/glib-2.40.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=media-video/ffmpeg-4.4:0/60.62.62=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test nls test
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv x86
+LICENSE: LGPL-2+
+MD5: 24193617e1329a60b04efe14306368cb
+PATH: pkgs-media-plugins/gst-plugins-libav-1.26.11-1.gpkg.tar
+PROVIDES: x86_64: libgstlibav.so
+RDEPEND: >=dev-libs/glib-2.40.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=media-video/ffmpeg-4.4:0/60.62.62=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libavcodec.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0
+RESTRICT: test test
+SHA1: 01f0feff67e7f439ab8396e24433e9e4d32a0e3a
+SIZE: 225280
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
+MTIME: 1791196292
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
