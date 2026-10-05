@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791195761
-PACKAGES: 354
+TIMESTAMP: 1791196071
+PACKAGES: 357
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4552,6 +4552,31 @@ MTIME: 1791146382
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791195846
+CPV: kde-frameworks/prison-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtmultimedia-6.10.1:6 media-gfx/qrencode:0/4= media-libs/libdmtx >=media-libs/zxing-cpp-1.4.0:0/4= >=dev-qt/qtdeclarative-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: qml debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 5a6a63395887bc90908a2d0460f288a7
+PATH: pkgs-kde-frameworks/prison-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Prison.so.6 libKF6PrisonScanner.so.6 libprisonquickplugin.so libprisonscannerquickplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtmultimedia-6.10.1:6 media-gfx/qrencode:0/4= media-libs/libdmtx >=media-libs/zxing-cpp-1.4.0:0/4= >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libZXing.so.4 libc.so.6 libdmtx.so.0 libgcc_s.so.1 libqrencode.so.4 libstdc++.so.6
+RESTRICT: test
+SHA1: 6ff961072d923b297c2d0d54f06f9878c738963f
+SIZE: 143360
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1791195848
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791181138
@@ -5830,6 +5855,30 @@ MTIME: 1791181286
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791195708
+CPV: media-libs/zxing-cpp-3.1.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-libs/zint-2.16.0:0/2.16= dev-libs/stb
+EAPI: 8
+IUSE: test tools
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0
+MD5: aa2e29076450aa5417b5a0da7c933c63
+PATH: pkgs-media-libs/zxing-cpp-3.1.1-1.gpkg.tar
+PROVIDES: x86_64: libZXing.so.4
+RDEPEND: >=media-libs/zint-2.16.0:0/2.16= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libzint.so.2.16
+RESTRICT: test
+SHA1: 7ead4345ce8ee4ca542e9ac9be7a7d7f4f5eb75b
+SIZE: 890880
+SLOT: 0/4
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791195709
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791147206
@@ -7089,6 +7138,28 @@ SHA1: 78c0388481e7bdc4eaa8bf7bffb207ac00c02f3d
 SIZE: 71680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791123053
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-util/gdbus-codegen-2.80.5-r1 dev-python/docutils sys-devel/gettext virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 8
+BUILD_TIME: 1791195774
+CPV: sys-apps/xdg-desktop-portal-1.20.4-r1
+DEFINED_PHASES: compile configure install postinst setup test
+DEPEND: >=dev-libs/glib-2.72:2 dev-libs/json-glib >=media-video/pipewire-0.3:0/0.4= >=sys-fs/fuse-3.10.0:3/4=[suid] x11-libs/gdk-pixbuf sys-apps/bubblewrap dev-libs/libgudev
+EAPI: 8
+IUSE: geolocation flatpak gstreamer seccomp systemd test udev
+KEYWORDS: amd64 arm arm64 ~loong ppc ppc64 ~riscv x86
+LICENSE: LGPL-2.1
+MD5: b053dd1fa1f98a8a546f5f544a7119c3
+PATH: pkgs-sys-apps/xdg-desktop-portal-1.20.4-r1-8.gpkg.tar
+RDEPEND: >=dev-libs/glib-2.72:2 dev-libs/json-glib >=media-video/pipewire-0.3:0/0.4= >=sys-fs/fuse-3.10.0:3/4=[suid] x11-libs/gdk-pixbuf sys-apps/bubblewrap dev-libs/libgudev sys-apps/dbus >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libfuse3.so.4 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgudev-1.0.so.0 libjson-glib-1.0.so.0 libpipewire-0.3.so.0
+RESTRICT: test
+SHA1: 3c4cefe247198a3f98451c0826c08e63066b98db
+SIZE: 593920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux seccomp udev
+MTIME: 1791195776
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
