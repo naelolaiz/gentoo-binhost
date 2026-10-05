@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791221341
-PACKAGES: 399
+TIMESTAMP: 1791223459
+PACKAGES: 400
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6964,6 +6964,29 @@ SIZE: 317440
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux sftp zlib
 MTIME: 1791092316
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791221473
+CPV: net-libs/libwebsockets-5.0.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/3=
+EAPI: 8
+IUSE: access-log caps cgi client dbus extensions generic-sessions http-proxy http2 ipv6 +lejp libev libevent libuv mbedtls peer-limits server-status smtp socks5 sqlite3 ssl threads zip
+KEYWORDS: amd64 arm arm64 ~loong ppc ~ppc64 ~riscv ~sparc x86
+LICENSE: MIT
+MD5: e186e8f229cb3d0988a1a0ab6af715ff
+PATH: pkgs-net-libs/libwebsockets-5.0.0-r1-1.gpkg.tar
+PROVIDES: x86_64: libwebsockets.so.22
+RDEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/3= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcap.so.2 libcrypto.so.3 libdbus-1.so.3 libssl.so.3
+SHA1: db944437dcffaaf24a050eaa2a66945f429f1b74
+SIZE: 593920
+SLOT: 0/22
+USE: abi_x86_64 amd64 dbus elibc_glibc ipv6 kernel_linux lejp ssl
+MTIME: 1791221475
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
