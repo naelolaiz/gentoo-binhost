@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791199107
-PACKAGES: 364
+TIMESTAMP: 1791204137
+PACKAGES: 366
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3876,6 +3876,31 @@ MTIME: 1791086738
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791204109
+CPV: kde-frameworks/kfilemetadata-6.30.0
+DEFINED_PHASES: compile configure info install nofetch postinst prepare setup test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.30*:6 =kde-frameworks/kcodecs-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/ki18n-6.30*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/60.62.62= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= sys-apps/attr dev-qt/qtbase:6
+EAPI: 8
+IUSE: epub exif ffmpeg mobi pdf taglib debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 09cdcff85c95a4954f11696515b55f4d
+PATH: pkgs-kde-frameworks/kfilemetadata-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: kfilemetadata_epubextractor.so kfilemetadata_exiv2extractor.so kfilemetadata_fb2extractor.so kfilemetadata_ffmpegextractor.so kfilemetadata_krita.so kfilemetadata_mobiextractor.so kfilemetadata_odfextractor.so kfilemetadata_office2007extractor.so kfilemetadata_officeextractor.so kfilemetadata_plaintextextractor.so kfilemetadata_pngextractor.so kfilemetadata_poextractor.so kfilemetadata_popplerextractor.so kfilemetadata_postscriptdscextractor.so kfilemetadata_taglibextractor.so kfilemetadata_taglibwriter.so kfilemetadata_xmlextractor.so libKF6FileMetaData.so.3
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.30*:6 =kde-frameworks/kcodecs-6.30*:6 =kde-frameworks/kcoreaddons-6.30*:6 =kde-frameworks/ki18n-6.30*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/60.62.62= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libQt6Xml.so.6 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libepub.so.0 libexiv2.so.28 libgcc_s.so.1 libm.so.6 libpoppler-qt6.so.3 libstdc++.so.6 libtag.so.2
+RESTRICT: test test
+SHA1: fce8fb1fe3dd73161a38b1ebce4a6c70bf22d37d
+SIZE: 368640
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc epub exif ffmpeg kernel_linux mobi pdf taglib
+MTIME: 1791204110
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791087015
@@ -4719,6 +4744,31 @@ SIZE: 13127680
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc filecaps handbook kernel_linux lock screencast shortcuts
 MTIME: 1791198601
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner >=kde-frameworks/kcmutils-6.26.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
+BUILD_ID: 5
+BUILD_TIME: 1791204031
+CPV: kde-plasma/kwin-x11-6.7.5-r1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/wayland-1.24.0 >=dev-qt/qt5compat-6.11.2:6[qml] >=dev-qt/qtbase-6.11.2:6/6.11.2=[-accessibility,-gles2-only,gui,opengl,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsensors-6.11.2:6 >=dev-qt/qtshadertools-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=dev-qt/qttools-6.11.2:6[widgets] >=kde-frameworks/kauth-6.26.0:6 >=kde-frameworks/kcmutils-6.26.0:6 >=kde-frameworks/kcolorscheme-6.26.0:6 >=kde-frameworks/kconfig-6.26.0:6[qml] >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kcrash-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kdeclarative-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/kguiaddons-6.26.0:6[wayland] >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kidletime-6.26.0:6/6.30=[wayland] >=kde-frameworks/knewstuff-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kpackage-6.26.0:6 >=kde-frameworks/kservice-6.26.0:6 >=kde-frameworks/ksvg-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6/6.30=[wayland,X] >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-plasma/breeze-6.7.5:6 >=kde-plasma/kdecoration-6.7.5:6 >=kde-plasma/plasma-activities-6.7.5:6/7= media-libs/fontconfig media-libs/freetype media-libs/lcms:2 media-libs/libcanberra >=media-libs/libdisplay-info-0.2.0:0/4= media-libs/libepoxy media-libs/libglvnd >=media-libs/mesa-24.1.0_rc1[opengl,X] virtual/libudev:0/1= x11-libs/libX11 x11-libs/libXi >=x11-libs/libdrm-2.4.116 >=x11-libs/libxcb-1.10:0/1.12= >=x11-libs/libxkbcommon-1.5.0 x11-libs/xcb-util-cursor x11-libs/xcb-util-keysyms x11-libs/xcb-util-wm >=kde-plasma/kscreenlocker-6.7.5:6 >=kde-plasma/knighttime-6.7.5:6 >=kde-plasma/kglobalacceld-6.7.5:6 >=dev-libs/plasma-wayland-protocols-1.16.0 >=dev-libs/wayland-protocols-1.38 >=dev-qt/qtbase-6.11.2:6[concurrent] x11-base/xorg-proto x11-libs/xcb-util-image dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: accessibility gles2-only lock +nightlight selinux +shortcuts systemd debug +handbook test
+KEYWORDS: amd64 arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 8e48055254cb71045781e1dd8f0f9701
+PATH: pkgs-kde-plasma/kwin-x11-6.7.5-r1-5.gpkg.tar
+PROVIDES: x86_64: kcm_animations_x11.so kcm_kwin4_genericscripted.so kcm_kwin_effects_x11.so kcm_kwin_scripts_x11.so kcm_kwin_virtualdesktops_x11.so kcm_kwindecoration_x11.so kcm_kwinoptions_x11.so kcm_kwinrules_x11.so kcm_kwinscreenedges_x11.so kcm_kwintabbox_x11.so kcm_kwintouchscreen_x11.so krunnerintegration.so kwin_aurorae_x11.so kwin_blur_config.so kwin_decoration_x11.so kwin_diminactive_config.so kwin_effect_x11.so kwin_glide_config.so kwin_magiclamp_config.so kwin_mouseclick_config.so kwin_mousemark_config.so kwin_overview_config.so kwin_scripts_x11.so kwin_slide_config.so kwin_thumbnailaside_config.so kwin_tileseditor_config.so kwin_trackmouse_config.so kwin_windowswitcher_x11.so kwin_windowview_config.so kwin_wobblywindows_config.so kwincompositing.so libeffectsplugin.so libkcmkwincommon-x11.so.6 libkdecorationprivatedeclarative.so libkwin-x11.so.6 nightlight.so
+RDEPEND: >=dev-libs/wayland-1.24.0 >=dev-qt/qt5compat-6.11.2:6[qml] >=dev-qt/qtbase-6.11.2:6/6.11.2=[-accessibility,-gles2-only,gui,opengl,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsensors-6.11.2:6 >=dev-qt/qtshadertools-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=dev-qt/qttools-6.11.2:6[widgets] >=kde-frameworks/kauth-6.26.0:6 >=kde-frameworks/kcmutils-6.26.0:6 >=kde-frameworks/kcolorscheme-6.26.0:6 >=kde-frameworks/kconfig-6.26.0:6[qml] >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kcrash-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kdeclarative-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/kguiaddons-6.26.0:6[wayland] >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kidletime-6.26.0:6/6.30=[wayland] >=kde-frameworks/knewstuff-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kpackage-6.26.0:6 >=kde-frameworks/kservice-6.26.0:6 >=kde-frameworks/ksvg-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6/6.30=[wayland,X] >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-plasma/breeze-6.7.5:6 >=kde-plasma/kdecoration-6.7.5:6 >=kde-plasma/plasma-activities-6.7.5:6/7= media-libs/fontconfig media-libs/freetype media-libs/lcms:2 media-libs/libcanberra >=media-libs/libdisplay-info-0.2.0:0/4= media-libs/libepoxy media-libs/libglvnd >=media-libs/mesa-24.1.0_rc1[opengl,X] virtual/libudev:0/1= x11-libs/libX11 x11-libs/libXi >=x11-libs/libdrm-2.4.116 >=x11-libs/libxcb-1.10:0/1.12= >=x11-libs/libxkbcommon-1.5.0 x11-libs/xcb-util-cursor x11-libs/xcb-util-keysyms x11-libs/xcb-util-wm >=kde-plasma/kscreenlocker-6.7.5:6 >=kde-plasma/knighttime-6.7.5:6 >=kde-plasma/kglobalacceld-6.7.5:6 !kde-plasma/kdeplasma-addons:5 !<kde-plasma/kwin-6.3.80 >=kde-frameworks/kirigami-6.26.0:6 >=kde-frameworks/kitemmodels-6.26.0:6 >=kde-plasma/aurorae-6.7.5:6 >=kde-plasma/libplasma-6.7.5:6 sys-apps/hwdata >=x11-base/xwayland-23.1.0 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kwin-x11:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libKF6AuthCore.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigQml.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6Package.so.6 libKF6Service.so.6 libKF6Svg.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libKGlobalAccelD.so.0 libKNightTime.so.0 libKScreenLocker.so.6 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6OpenGL.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Sensors.so.6 libQt6Svg.so.6 libQt6UiTools.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libX11.so.6 libXi.so.6 libc.so.6 libcanberra.so.0 libdisplay-info.so.4 libdrm.so.2 libepoxy.so.0 libgbm.so.1 libkdecorations3.so.6 libkdecorations3private.so.2 liblcms2.so.2 libm.so.6 libstdc++.so.6 libudev.so.1 libwayland-client.so.0 libwayland-server.so.0 libxcb-composite.so.0 libxcb-cursor.so.0 libxcb-damage.so.0 libxcb-glx.so.0 libxcb-icccm.so.4 libxcb-keysyms.so.1 libxcb-randr.so.0 libxcb-render.so.0 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-sync.so.1 libxcb-xfixes.so.0 libxcb-xinerama.so.0 libxcb-xkb.so.1 libxcb.so.1 libxkbcommon-x11.so.0 libxkbcommon.so.0
+RESTRICT: test test
+SHA1: 31d5312b80e5facd2ae829ee3e62934da1400f8d
+SIZE: 9748480
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux lock nightlight shortcuts
+MTIME: 1791204036
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
