@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791187013
-PACKAGES: 353
+TIMESTAMP: 1791195761
+PACKAGES: 354
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2629,6 +2629,30 @@ SHA1: 73496216caf7ecf814298e653e79d3d487f4bed3
 SIZE: 133120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791062515
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qttools-6.7.3:6[linguist] >=dev-qt/qttools-6.7.3:6[qdoc,qtattributionsscanner] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791195601
+CPV: dev-qt/qt-creator-20.0.2
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: app-arch/libarchive:0/13= dev-cpp/yaml-cpp:0/0.9= >=dev-qt/qtbase-6.7.3:6/6.11.2=[concurrent,dbus,gui,network,ssl,widgets,xml] >=dev-qt/qtdeclarative-6.7.3:6/6.11.2= >=dev-qt/qthttpserver-6.7.3:6 >=dev-qt/qttasktree-6.7.3:6 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= >=dev-qt/qttools-6.7.3:6[designer] >=dev-qt/qttools-6.7.3:6[assistant] app-crypt/libsecret dev-libs/glib:2 >=dev-qt/qtquick3d-6.7.3:6/6.11.2= >=dev-qt/qtsvg-6.7.3:6 >=dev-qt/qtwebsockets-6.7.3:6 >=dev-qt/qtserialport-6.7.3:6 >=dev-qt/qtsvg-6.7.3:6 app-arch/zstd:0/1= dev-libs/elfutils >=dev-qt/qtcharts-6.7.3:6 >=dev-qt/qtshadertools-6.7.3:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +clang designer doc +help keyring plugin-dev qmldesigner serialterminal +svg test +tracing webengine +llvm_slot_22 llvm_slot_17 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21 llvm_slot_23
+KEYWORDS: ~amd64
+LICENSE: GPL-3
+MD5: 33d1b6303f1f9b808d2242d1bed17cad
+PATH: pkgs-dev-qt/qt-creator-20.0.2-1.gpkg.tar
+PROVIDES: x86_64: libAcpClient.so libAcpLib.so.20 libAdvancedDockingSystem.so.20 libAggregation.so.20 libAndroid.so libAnt.so libAppStatisticsMonitor.so libAutoTest.so libAutotoolsProjectManager.so libAxivion.so libBareMetal.so libBazaar.so libBeautifier.so libBinEditor.so libBoot2Qt.so libCMakeProjectManager.so libCPlusPlus.so.20 libCVS.so libCargo.so libClangCodeModel.so libClangFormat.so libClangTools.so libClassView.so libClearCase.so libCmdBridgeClient.so.20 libCoco.so libCodePaster.so libCompilationDatabaseProjectManager.so libCompilerExplorer.so libConan.so libCopilot.so libCore.so libCppEditor.so libCppcheck.so libCtfVisualizer.so libDebugger.so libDesigner.so libDevContainer.so.20 libDevContainerPlugin.so libDiffEditor.so libDocker.so libDotnet.so libEffectComposer.so libEmacsKeys.so libExtensionManager.so libExtensionSystem.so.20 libFakeVim.so libFossil.so libGLSL.so.20 libGLSLEditor.so libGNProjectManager.so libGenericProjectManager.so libGit.so libGitLab.so libGradle.so libHelloWorld.so libHelp.so libImageViewer.so libIncrediBuild.so libIos.so libKSyntaxHighlighting.so.20 libLanguageClient.so libLanguageServerProtocol.so.20 libLanguageUtils.so.20 libLearning.so libLua.so libLuaLanguageClient.so libMacros.so libMcpServerLib.so.20 libMcuSupport.so libMercurial.so libMesonProjectManager.so libModelEditor.so libModeling.so.20 libMultiPropertyEditor.so libNanotrace.so.20 libNim.so libPerfProfiler.so libPerforce.so libProParser.so.20 libProjectExplorer.so libPython.so libQbsProjectManager.so libQmakeProjectManager.so libQmlDebug.so.20 libQmlDesigner.so libQmlDesignerCore.so.20 libQmlEditorWidgets.so.20 libQmlJS.so.20 libQmlJSEditor.so libQmlJSTools.so libQmlPreview.so libQmlProfiler.so libQmlProjectManager.so libQnx.so libQtApplicationManagerIntegration.so libQtSupport.so libRemoteLinux.so libResourceEditor.so libSafeRenderer.so libScreenRecorder.so libScxmlEditor.so libSerialTerminal.so libSilverSearcher.so libSqlite.so.20 libSquish.so libSubversion.so libSwift.so libTerminal.so libTerminalLib.so.20 libTextEditor.so libTodo.so libTracing.so.20 libUpdateInfo.so libUtils.so.20 libValgrind.so libVcpkg.so libVcsBase.so libWebAssembly.so libWelcome.so libZenMode.so libcomponentsplugin.so libmcpserver.so libptracepreload.so.20 libqlitehtml.so.20 libqmlpreviewplugin.so libqtkeychain.so.20 libqtquickplugin.so
+RDEPEND: app-arch/libarchive:0/13= dev-cpp/yaml-cpp:0/0.9= >=dev-qt/qtbase-6.7.3:6/6.11.2=[concurrent,dbus,gui,network,ssl,widgets,xml] >=dev-qt/qtdeclarative-6.7.3:6/6.11.2= >=dev-qt/qthttpserver-6.7.3:6 >=dev-qt/qttasktree-6.7.3:6 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= >=dev-qt/qttools-6.7.3:6[designer] >=dev-qt/qttools-6.7.3:6[assistant] app-crypt/libsecret dev-libs/glib:2 >=dev-qt/qtquick3d-6.7.3:6/6.11.2= >=dev-qt/qtsvg-6.7.3:6 >=dev-qt/qtwebsockets-6.7.3:6 >=dev-qt/qtserialport-6.7.3:6 >=dev-qt/qtsvg-6.7.3:6 app-arch/zstd:0/1= dev-libs/elfutils >=dev-qt/qtcharts-6.7.3:6 >=dev-qt/qtshadertools-6.7.3:6 >=dev-qt/qtimageformats-6.7.3:6 >=dev-qt/qtquicktimeline-6.7.3:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libLLVM.so.22.1 libQt6Charts.so.6 libQt6Concurrent.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Designer.so.6 libQt6DesignerComponents.so.6 libQt6Gui.so.6 libQt6Help.so.6 libQt6HttpServer.so.6 libQt6Network.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Quick3D.so.6 libQt6Quick3DAssetImport.so.6 libQt6Quick3DAssetUtils.so.6 libQt6Quick3DParticles.so.6 libQt6Quick3DRuntimeRender.so.6 libQt6Quick3DUtils.so.6 libQt6QuickWidgets.so.6 libQt6SerialPort.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6TaskTree.so.6 libQt6Test.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libarchive.so.13 libc.so.6 libclang-cpp.so.22.1 libdw.so.1 libelf.so.1 libgcc_s.so.1 libglib-2.0.so.0 libm.so.6 libstdc++.so.6 libyaml-cpp.so.0.9 libzstd.so.1
+RESTRICT: test
+SHA1: 9e33c0bf7d327c450a4bba5afa2f8584acc231fa
+SIZE: 95098880
+USE: abi_x86_64 amd64 clang designer doc elibc_glibc help kernel_linux keyring llvm_slot_22 plugin-dev qmldesigner serialterminal svg tracing
+MTIME: 1791195629
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
