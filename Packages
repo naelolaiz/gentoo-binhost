@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791209601
-PACKAGES: 371
+TIMESTAMP: 1791214773
+PACKAGES: 378
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6198,6 +6198,25 @@ MTIME: 1791196292
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 5
+BUILD_TIME: 1791214653
+CPV: media-plugins/gst-plugins-meta-1.26.11
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: aac a52 alsa cdda dts dv dvb dvd ffmpeg flac http jack lame libass libvisual mp3 modplug mpeg ogg opus oss pulseaudio taglib theora v4l vaapi vcd vorbis vpx wavpack X x264 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: metapackage
+MD5: a30caf00e013fffaa7da52f19ee1947d
+PATH: pkgs-media-plugins/gst-plugins-meta-1.26.11-5.gpkg.tar
+RDEPEND: >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[alsa,ogg,theora,vorbis,X,abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-a52dec-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-faad-1.26.11:1.0[abi_x86_64(-)] || ( >=media-plugins/gst-plugins-cdparanoia-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-cdio-1.26.11:1.0[abi_x86_64(-)] ) >=media-plugins/gst-plugins-dts-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-a52dec-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-dvdread-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-mpeg2dec-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-resindvd-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-libav-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-flac-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-jack-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-mpg123-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-mpeg2dec-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-pulse-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-v4l2-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-wavpack-1.26.11:1.0[abi_x86_64(-)] >=media-plugins/gst-plugins-x264-1.26.11:1.0[abi_x86_64(-)]
+SHA1: 498e4410a4f8b3036e54c277e676498715781124
+SIZE: 30720
+SLOT: 1.0
+USE: X a52 aac abi_x86_64 alsa amd64 cdda dts dvd elibc_glibc ffmpeg flac jack kernel_linux mp3 mpeg ogg pulseaudio theora v4l vorbis wavpack x264
+MTIME: 1791214654
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791123103
@@ -6912,6 +6931,122 @@ SHA1: bd9427c63e48adf2f9e66e711eed7130c992f96a
 SIZE: 1863680
 USE: abi_x86_64 amd64 ap dbus elibc_glibc fils gui kernel_linux mbo mesh readline
 MTIME: 1791145290
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-lang/swig-4.0 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791214482
+CPV: sci-electronics/kicad-10.0.5
+DEFINED_PHASES: compile configure install postinst postrm prepare pretend setup test unpack
+DEPEND: app-arch/zstd:0/1= app-crypt/libsecret app-text/poppler[cairo] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-db/unixODBC dev-libs/boost:0/1.90.0=[context,nls] >=dev-libs/libgit2-1.5:0/1.9= dev-libs/libspnav >=dev-libs/protobuf-27.2:0/34.2.0=[protobuf,protoc] >=dev-libs/nng-1.10.0:0/0= media-libs/fontconfig media-libs/freeglut media-libs/freetype:2 >=media-libs/glm-0.9.9.1 media-libs/harfbuzz:0/6.0.0= media-libs/mesa[X(+)] net-misc/curl >=sci-libs/opencascade-7.5.0:0/7.8= >=x11-libs/cairo-1.8.8:0/0= >=x11-libs/pixman-0.30 >=sci-electronics/ngspice-28[shared] virtual/zlib:0/1= x11-libs/wxGTK:3.2-gtk3/3.2=[X,opengl,webkit] >=dev-libs/wayland-1.20 dev-libs/boost:0/1.90.0=[context,nls,python,python_targets_python3_14(-)] >=dev-python/wxpython-4.2.0:*[python_targets_python3_14(-)] dev-lang/python:3.14 sys-devel/gettext
+EAPI: 8
+IUSE: doc examples nls openmp test wayland python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2+ GPL-3+ Boost-1.0 BSD BSD-2 Apache-2.0 ISC MIT ZLIB CC-BY-SA-4.0 CC0-1.0 WTFPL-2
+MD5: 4f0c5b07dd55f37f6f0095eaff83fe3e
+PATH: pkgs-sci-electronics/kicad-10.0.5-1.gpkg.tar
+PROVIDES: x86_64: _cvpcb.kiface _eeschema.kiface _gerbview.kiface _kipython.kiface _pcb_calculator.kiface _pcbnew.kiface _pl_editor.kiface libkiapi.so.10.0.5 libkicad_3dsg.so.2.0.0 libkicommon.so.10.0.5 libkigal.so.10.0.5 libs3d_plugin_idf.so libs3d_plugin_oce.so libs3d_plugin_vrml.so
+RDEPEND: app-arch/zstd:0/1= app-crypt/libsecret app-text/poppler[cairo] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-db/unixODBC dev-libs/boost:0/1.90.0=[context,nls] >=dev-libs/libgit2-1.5:0/1.9= dev-libs/libspnav >=dev-libs/protobuf-27.2:0/34.2.0=[protobuf,protoc] >=dev-libs/nng-1.10.0:0/0= media-libs/fontconfig media-libs/freeglut media-libs/freetype:2 >=media-libs/glm-0.9.9.1 media-libs/harfbuzz:0/6.0.0= media-libs/mesa[X(+)] net-misc/curl >=sci-libs/opencascade-7.5.0:0/7.8= >=x11-libs/cairo-1.8.8:0/0= >=x11-libs/pixman-0.30 >=sci-electronics/ngspice-28[shared] virtual/zlib:0/1= x11-libs/wxGTK:3.2-gtk3/3.2=[X,opengl,webkit] >=dev-libs/wayland-1.20 dev-libs/boost:0/1.90.0=[context,nls,python,python_targets_python3_14(-)] >=dev-python/wxpython-4.2.0:*[python_targets_python3_14(-)] dev-lang/python:3.14 sys-devel/gettext sci-electronics/electronics-menu >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libGLU.so.1 libGLX.so.0 libOpenGL.so.0 libTKBO.so.7.8 libTKBRep.so.7.8 libTKCDF.so.7.8 libTKDEGLTF.so.7.8 libTKDEIGES.so.7.8 libTKDEPLY.so.7.8 libTKDESTEP.so.7.8 libTKDESTL.so.7.8 libTKDEVRML.so.7.8 libTKG3d.so.7.8 libTKGeomBase.so.7.8 libTKLCAF.so.7.8 libTKMath.so.7.8 libTKMesh.so.7.8 libTKPrim.so.7.8 libTKRWMesh.so.7.8 libTKShHealing.so.7.8 libTKTopAlgo.so.7.8 libTKXCAF.so.7.8 libTKXSBase.so.7.8 libTKernel.so.7.8 libabsl_hash.so.2601.0.0 libc.so.6 libcairo.so.2 libcurl.so.4 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libgdk-3.so.0 libgio-2.0.so.0 libgit2.so.1.9 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libharfbuzz.so.0 libm.so.6 libnng.so.1 libodbc.so.2 libpoppler-glib.so.8 libprotobuf.so.34.2.0 libpython3.14.so.1.0 libsecret-1.so.0 libspnav.so.0 libstdc++.so.6 libwayland-client.so.0 libwx_baseu-3.2.so.0 libwx_baseu_net-3.2.so.0 libwx_baseu_xml-3.2.so.0 libwx_gtk3u_aui-3.2.so.0 libwx_gtk3u_core-3.2.so.0 libwx_gtk3u_gl-3.2.so.0 libwx_gtk3u_html-3.2.so.0 libwx_gtk3u_propgrid-3.2.so.0 libwx_gtk3u_stc-3.2.so.0 libwx_gtk3u_webview-3.2.so.0 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 02d5760737315b69f488c4a130482a90540fa0f5
+SIZE: 74321920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls openmp python_single_target_python3_14 wayland
+MTIME: 1791214489
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791214530
+CPV: sci-electronics/kicad-footprints-10.0.5
+DEFINED_PHASES: compile configure install postinst prepare test
+EAPI: 8
+IUSE: stpz
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: bbfe6e299ac15bc7584b8020bc08c7e3
+PATH: pkgs-sci-electronics/kicad-footprints-10.0.5-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-8.0.0
+SHA1: b092f6f6f7c4e4d1b432562296c9bfc68ef683c4
+SIZE: 9287680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791214537
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791214657
+CPV: sci-electronics/kicad-meta-10.0.5
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: doc minimal
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: metapackage
+MD5: 6de8957b25aed099ecd3dff5eda0542a
+PATH: pkgs-sci-electronics/kicad-meta-10.0.5-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-10.0.5 >=sci-electronics/kicad-symbols-10.0.5 >=sci-electronics/kicad-footprints-10.0.5 >=sci-electronics/kicad-packages3d-10.0.5 >=sci-electronics/kicad-templates-10.0.5
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+SHA1: f3a5c358f9d8f5e5660fe1984cdbe6d6f9394865
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791214658
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791214614
+CPV: sci-electronics/kicad-packages3d-10.0.5
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test
+EAPI: 8
+IUSE: stpz
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: f0cc3887dfa472b79a8cd39babc3b2c9
+PATH: pkgs-sci-electronics/kicad-packages3d-10.0.5-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-10.0.0
+SHA1: 2330ecced907e3d5840a591999d545e90329ffc6
+SIZE: 531712000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791214625
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791214512
+CPV: sci-electronics/kicad-symbols-10.0.5
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: 82fc799d5228163990bd020a172d670d
+PATH: pkgs-sci-electronics/kicad-symbols-10.0.5-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-8.0.0
+SHA1: c81de5ba648fe3dc2febc65bc6ff4c251b18ddbf
+SIZE: 5396480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791214515
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791214645
+CPV: sci-electronics/kicad-templates-10.0.5
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: eef3689e582fca208191dc11ea3a300b
+PATH: pkgs-sci-electronics/kicad-templates-10.0.5-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-8.0.0
+SHA1: 2a20cc0545653a5e5aef59349cf565d3148dcf89
+SIZE: 2877440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791214647
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
