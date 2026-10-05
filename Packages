@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791224996
-PACKAGES: 409
+TIMESTAMP: 1791225309
+PACKAGES: 410
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8651,6 +8651,29 @@ SHA1: c3c847c54e4413753a20bf0568e9a41d031d2ad1
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791082151
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.26.4:0/1.27.1= >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791225073
+CPV: www-apps/gitea-1.27.3
+DEFINED_PHASES: compile configure install postinst prepare unpack
+DEPEND: acct-group/git acct-user/git[gitea] sys-libs/pam
+EAPI: 8
+IDEPEND: sys-libs/libcap
+IUSE: +acct gogit pam sqlite pie +filecaps
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~riscv ~x86
+LICENSE: Apache-2.0 BSD BSD-2 CC0-1.0 ISC MIT MPL-2.0
+MD5: 3511c5ce026dcf12ad6dc0b4da66bfbf
+PATH: pkgs-www-apps/gitea-1.27.3-1.gpkg.tar
+RDEPEND: acct-group/git acct-user/git[gitea] sys-libs/pam virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libpam.so.0
+RESTRICT: test
+SHA1: 6c9e9ddfd356a7bc5ee93a200c52f78caa686c63
+SIZE: 44912640
+USE: abi_x86_64 acct amd64 elibc_glibc filecaps gogit kernel_linux pam sqlite
+MTIME: 1791225080
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
