@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791242880
-PACKAGES: 488
+TIMESTAMP: 1791243185
+PACKAGES: 489
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4840,6 +4840,31 @@ SIZE: 122880
 SLOT: 6/6.30
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791146648
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791242920
+CPV: kde-frameworks/kdnssd-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[network] >=dev-qt/qtbase-6.10.1:6[dbus] net-dns/avahi[mdnsresponder-compat] dev-qt/qtbase:6
+EAPI: 8
+IUSE: minimal debug test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 68fdbdfdf3cd443fdccaaa6b0a6ee711
+PATH: pkgs-kde-frameworks/kdnssd-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6DNSSD.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[network] >=dev-qt/qtbase-6.10.1:6[dbus] net-dns/avahi[mdnsresponder-compat] sys-auth/nss-mdns >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 22dbc54fdee183289f0b7a7283c4799e50bd7a5e
+SIZE: 143360
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791242922
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
