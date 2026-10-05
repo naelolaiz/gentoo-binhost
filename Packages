@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791160123
-PACKAGES: 345
+TIMESTAMP: 1791181073
+PACKAGES: 349
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3444,6 +3444,31 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
+BUILD_TIME: 1791180875
+CPV: kde-frameworks/kauth-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/kcoreaddons-6.30*:6 >=dev-qt/qtbase-6.10.1:6[dbus] =kde-frameworks/kwindowsystem-6.30*:6[wayland] >=sys-auth/polkit-qt-0.175.0[qt6(+)] dev-qt/qtbase:6
+EAPI: 8
+IUSE: +policykit debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: 3d0c32e55a0a9a5653f6a19883016498
+PATH: pkgs-kde-frameworks/kauth-6.30.0-1.gpkg.tar
+PDEPEND: kde-plasma/polkit-kde-agent:*
+PROVIDES: x86_64: kauth_backend_plugin.so kauth_helper_plugin.so libKF6AuthCore.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/kcoreaddons-6.30*:6 >=dev-qt/qtbase-6.10.1:6[dbus] =kde-frameworks/kwindowsystem-6.30*:6[wayland] >=sys-auth/polkit-qt-0.175.0[qt6(+)] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libc.so.6 libpolkit-qt6-core-1.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: cb444da074ac9bf941fec416b1f2c2ce3a407496
+SIZE: 174080
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux policykit
+MTIME: 1791180877
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
 BUILD_TIME: 1791088184
 CPV: kde-frameworks/kbookmarks-6.30.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
@@ -3823,6 +3848,31 @@ SIZE: 245760
 SLOT: 6/6.30
 USE: X abi_x86_64 amd64 dbus elibc_glibc kernel_linux wayland
 MTIME: 1791087714
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] >=sys-devel/bison-3.3.2 sys-devel/flex app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791180970
+CPV: kde-frameworks/kholidays-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtdeclarative-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: cad40889142f9c69c01db89bff34a9ff
+PATH: pkgs-kde-frameworks/kholidays-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Holidays.so.6 libkholidaysdeclarativeplugin.so
+RDEPEND: >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Qml.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: a47fad023db33feb101333a04dea44c1252cc368
+SIZE: 419840
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791180971
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4231,6 +4281,30 @@ SIZE: 327680
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux man
 MTIME: 1791086811
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791180922
+CPV: kde-frameworks/kstatusnotifieritem-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[dbus,gui,widgets] =kde-frameworks/kwindowsystem-6.30*:6[X] dev-qt/qtbase:6
+EAPI: 8
+IUSE: X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: ccafa20efb75dfe0e8c65ab741c3873c
+PATH: pkgs-kde-frameworks/kstatusnotifieritem-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6StatusNotifierItem.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[dbus,gui,widgets] =kde-frameworks/kwindowsystem-6.30*:6[X] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 912b008e6d77378fecf66c04005a3e1285f07976
+SIZE: 194560
+SLOT: 6/6.30
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791180923
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6192,6 +6266,31 @@ SIZE: 51476480
 SLOT: 4.1/0
 USE: X abi_x86_64 amd64 avif cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc gstreamer introspection jpegxl kernel_linux keyring lcms pdf seccomp spell wayland
 MTIME: 1791145029
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) || ( ( dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] ) ( dev-lang/ruby:3.2 virtual/rubygems[ruby_targets_ruby32(-)] ) ( dev-lang/ruby:3.4 virtual/rubygems[ruby_targets_ruby34(-)] ) ( dev-lang/ruby:4.0 virtual/rubygems[ruby_targets_ruby40(-)] ) ) app-accessibility/at-spi2-core dev-lang/perl >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils dev-util/gperf dev-util/unifdef sys-devel/bison sys-devel/gettext virtual/pkgconfig dev-util/wayland-scanner >=app-portage/elt-patches-20250306 app-arch/xz-utils app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791180805
+CPV: net-libs/webkit-gtk-2.54.1-r600
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
+DEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt >=gui-libs/gtk-4.14.0:4[introspection,wayland,X] media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: aqua avif cpu_flags_x86_sse cpu_flags_x86_sse2 custom-cflags examples gamepad keyring +gstreamer +introspection pdf jpegxl lcms seccomp spell systemd wayland X
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2+ BSD
+MD5: 61e87597a0e47390e419b5f61e9408dc
+PATH: pkgs-net-libs/webkit-gtk-2.54.1-r600-1.gpkg.tar
+PROVIDES: x86_64: libjavascriptcoregtk-6.0.so.1 libwebkitgtk-6.0.so.4 libwebkitgtkinjectedbundle.so
+RDEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt >=gui-libs/gtk-4.14.0:4[introspection,wayland,X] media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libX11.so.6 libatomic.so.1 libavif.so.16 libc.so.6 libcairo.so.2 libdrm.so.2 libenchant-2.so.2 libepoxy.so.0 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgcrypt.so.20 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstapp-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstfft-1.0.so.0 libgstgl-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libgtk-4.so.1 libharfbuzz-icu.so.0 libharfbuzz.so.0 libhyphen.so.0 libicui18n.so.78 libicuuc.so.78 libjpeg.so.62 libjxl.so.0.12 liblcms2.so.2 libm.so.6 libpango-1.0.so.0 libpng16.so.16 libseccomp.so.2 libsecret-1.so.0 libsoup-3.0.so.0 libsqlite3.so.0 libstdc++.so.6 libtasn1.so.6 libwayland-client.so.0 libwayland-server.so.0 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libwoff2dec.so.1.0.2 libxml2.so.16 libxslt.so.1 libz.so.1
+RESTRICT: test
+SHA1: e9cf80178693026add106a1f720552cf2600db49
+SIZE: 54671360
+SLOT: 6/0
+USE: X abi_x86_64 amd64 avif cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc gstreamer introspection jpegxl kernel_linux keyring lcms pdf seccomp spell wayland
+MTIME: 1791180816
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
