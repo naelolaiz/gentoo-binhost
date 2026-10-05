@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791234194
-PACKAGES: 456
+TIMESTAMP: 1791234668
+PACKAGES: 473
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -370,6 +370,29 @@ MTIME: 1791217057
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14[ensurepip(-),ncurses,readline] dev-python/distlib[python_targets_python3_14(-)] dev-lang/perl >=dev-build/meson-0.63.0 >=dev-util/gdbus-codegen-2.80.5-r1 app-alternatives/ninja virtual/pkgconfig sys-devel/gettext virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791232015
+CPV: app-emulation/qemu-10.2.3-r1
+DEFINED_PHASES: compile configure info install postinst postrm prepare pretend setup test unpack
+DEPEND: dev-libs/glib:2 virtual/zlib:0/1= sys-apps/attr >=x11-libs/pixman-0.28.0 dev-libs/libaio >=media-libs/alsa-lib-1.0.13 app-arch/bzip2 >=net-misc/curl-7.15.4 >=sys-apps/dtc-1.5.1 >=net-libs/gnutls-3.7.5:0/30.30= >=dev-libs/nettle-3.7.3:0/8-6= x11-libs/gtk+:3[wayland,X] virtual/jack media-libs/libjpeg-turbo:0/0.2= sys-libs/libcap-ng sys-libs/ncurses:0/6=[unicode(+)] sys-libs/ncurses:0/6= virtual/opengl media-libs/libepoxy media-libs/mesa media-libs/mesa[egl(+),gbm(+)] sys-libs/pam >=media-video/pipewire-0.3.60 >=media-libs/libpng-1.6.34:0/16= media-libs/libpulse media-libs/libsdl2[video] media-libs/libsdl2 >=sys-libs/libseccomp-2.1.0 net-libs/libslirp virtual/libudev:0/1= >=virtual/libusb-1-r2:1 ~sys-firmware/edk2-bin-202408[qemu_softmmu_targets_x86_64(+)] ~sys-firmware/ipxe-1.21.1_p20230601[binary,qemu] ~sys-firmware/seabios-bin-1.16.3 ~sys-firmware/sgabios-0.1_pre10[binary] >=sys-kernel/linux-headers-2.6.35
+EAPI: 8
+IDEPEND: sys-libs/libcap
+IUSE: accessibility +aio alsa bpf bzip2 capstone +curl debug doc +fdt fuse glusterfs +gnutls gtk infiniband iscsi io-uring jack +jpeg keyutils lzo multipath ncurses nfs nls numa opengl +oss pam passt +pin-upstream-blobs pipewire plugins +png pulseaudio python rbd sasl +seccomp sdl sdl-image selinux +slirp smartcard snappy spice ssh static-user systemtap test udev usb usbredir valgrind vde +vhost-net virgl virtfs +vnc vte wayland X xattr xdp xen zstd qemu_softmmu_targets_aarch64 qemu_softmmu_targets_alpha qemu_softmmu_targets_arm qemu_softmmu_targets_hppa qemu_softmmu_targets_i386 qemu_softmmu_targets_loongarch64 qemu_softmmu_targets_m68k qemu_softmmu_targets_microblaze qemu_softmmu_targets_microblazeel qemu_softmmu_targets_mips qemu_softmmu_targets_mips64 qemu_softmmu_targets_mips64el qemu_softmmu_targets_mipsel qemu_softmmu_targets_or1k qemu_softmmu_targets_ppc qemu_softmmu_targets_ppc64 qemu_softmmu_targets_riscv32 qemu_softmmu_targets_riscv64 qemu_softmmu_targets_s390x qemu_softmmu_targets_sh4 qemu_softmmu_targets_sh4eb qemu_softmmu_targets_sparc qemu_softmmu_targets_sparc64 qemu_softmmu_targets_x86_64 qemu_softmmu_targets_xtensa qemu_softmmu_targets_xtensaeb qemu_softmmu_targets_avr qemu_softmmu_targets_rx qemu_softmmu_targets_tricore qemu_user_targets_aarch64 qemu_user_targets_alpha qemu_user_targets_arm qemu_user_targets_hppa qemu_user_targets_i386 qemu_user_targets_loongarch64 qemu_user_targets_m68k qemu_user_targets_microblaze qemu_user_targets_microblazeel qemu_user_targets_mips qemu_user_targets_mips64 qemu_user_targets_mips64el qemu_user_targets_mipsel qemu_user_targets_or1k qemu_user_targets_ppc qemu_user_targets_ppc64 qemu_user_targets_riscv32 qemu_user_targets_riscv64 qemu_user_targets_s390x qemu_user_targets_sh4 qemu_user_targets_sh4eb qemu_user_targets_sparc qemu_user_targets_sparc64 qemu_user_targets_x86_64 qemu_user_targets_xtensa qemu_user_targets_xtensaeb qemu_user_targets_aarch64_be qemu_user_targets_armeb qemu_user_targets_hexagon qemu_user_targets_mipsn32 qemu_user_targets_mipsn32el qemu_user_targets_ppc64le qemu_user_targets_sparc32plus python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 +filecaps verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-2 LGPL-2 BSD-2
+MD5: 4c2c9ee771a73dbc1fd546da8db8793d
+PATH: pkgs-app-emulation/qemu-10.2.3-r1-1.gpkg.tar
+RDEPEND: dev-libs/glib:2 virtual/zlib:0/1= sys-apps/attr >=x11-libs/pixman-0.28.0 dev-libs/libaio >=media-libs/alsa-lib-1.0.13 app-arch/bzip2 >=net-misc/curl-7.15.4 >=sys-apps/dtc-1.5.1 >=net-libs/gnutls-3.7.5:0/30.30= >=dev-libs/nettle-3.7.3:0/8-6= x11-libs/gtk+:3[wayland,X] virtual/jack media-libs/libjpeg-turbo:0/0.2= sys-libs/libcap-ng sys-libs/ncurses:0/6=[unicode(+)] sys-libs/ncurses:0/6= virtual/opengl media-libs/libepoxy media-libs/mesa media-libs/mesa[egl(+),gbm(+)] sys-libs/pam >=media-video/pipewire-0.3.60 >=media-libs/libpng-1.6.34:0/16= media-libs/libpulse media-libs/libsdl2[video] media-libs/libsdl2 >=sys-libs/libseccomp-2.1.0 net-libs/libslirp virtual/libudev:0/1= >=virtual/libusb-1-r2:1 ~sys-firmware/edk2-bin-202408[qemu_softmmu_targets_x86_64(+)] ~sys-firmware/ipxe-1.21.1_p20230601[binary,qemu] ~sys-firmware/seabios-bin-1.16.3 ~sys-firmware/sgabios-0.1_pre10[binary] acct-group/kvm >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libSDL2-2.0.so.0 libX11.so.6 libaio.so.1 libasound.so.2 libbz2.so.1 libc.so.6 libcairo.so.2 libcap-ng.so.0 libcurl.so.4 libdw.so.1 libepoxy.so.0 libfdt.so.1 libgbm.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 libgtk-3.so.0 libjack.so.0 libjpeg.so.62 libm.so.6 libncursesw.so.6 libpam.so.0 libpipewire-0.3.so.0 libpixman-1.so.0 libpng16.so.16 libpulse.so.0 libseccomp.so.2 libslirp.so.0 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0 libz.so.1
+RESTRICT: test
+SHA1: 283bd41493d317b3cd77f89ac18278790a53db4e
+SIZE: 25845760
+USE: X abi_x86_64 aio alsa amd64 bzip2 curl elibc_glibc fdt filecaps gnutls gtk jack jpeg kernel_linux ncurses nls opengl oss pam pin-upstream-blobs pipewire png pulseaudio python_targets_python3_14 qemu_softmmu_targets_x86_64 sdl seccomp slirp udev usb vhost-net vnc wayland xattr
+MTIME: 1791232021
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791111334
 CPV: app-emulation/virtualbox-additions-7.2.18
@@ -645,6 +668,29 @@ SHA1: f176474d3a7330ab32a08d7764c77eebcfe708a5
 SIZE: 40960
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791216599
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gettext sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1791232070
+CPV: app-text/aspell-0.60.8.2
+DEFINED_PHASES: configure install prepare
+DEPEND: sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl
+EAPI: 8
+IUSE: nls unicode l10n_af l10n_am l10n_ar l10n_ast l10n_az l10n_be l10n_bg l10n_bn l10n_br l10n_ca l10n_cs l10n_csb l10n_cy l10n_da l10n_de l10n_de-1901 l10n_el l10n_en l10n_eo l10n_es l10n_et l10n_fa l10n_fi l10n_fo l10n_fr l10n_fy l10n_ga l10n_gd l10n_gl l10n_grc l10n_gu l10n_gv l10n_he l10n_hi l10n_hil l10n_hr l10n_hsb l10n_hu l10n_hus l10n_hy l10n_ia l10n_id l10n_is l10n_it l10n_kn l10n_ku l10n_ky l10n_la l10n_lt l10n_lv l10n_mg l10n_mi l10n_mk l10n_ml l10n_mn l10n_mr l10n_ms l10n_mt l10n_nb l10n_nds l10n_nl l10n_nn l10n_no l10n_ny l10n_or l10n_pa l10n_pl l10n_pt-PT l10n_pt-BR l10n_qu l10n_ro l10n_ru l10n_rw l10n_sc l10n_sk l10n_sl l10n_sr l10n_sv l10n_sw l10n_ta l10n_te l10n_tet l10n_tk l10n_tl l10n_tn l10n_tr l10n_uk l10n_uz l10n_vi l10n_wa l10n_yi l10n_zu
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: LGPL-2.1
+MD5: c1d7ddb509a66dbeea92cda249ba2f7d
+PATH: pkgs-app-text/aspell-0.60.8.2-3.gpkg.tar
+PDEPEND: app-dicts/aspell-en app-dicts/aspell-es
+PROVIDES: x86_64: context-filter.so email-filter.so libaspell.so.15 libpspell.so.15 markdown-filter.so nroff-filter.so sgml-filter.so tex-filter.so texinfo-filter.so
+RDEPEND: sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6 libncursesw.so.6 libstdc++.so.6 libtinfow.so.6
+SHA1: 7410052157c06a430bf4c8264f3070bc9a9cf79b
+SIZE: 993280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_en l10n_es nls unicode
+MTIME: 1791232073
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1142,6 +1188,54 @@ SIZE: 1536000
 SLOT: 3/3.4
 USE: abi_x86_64 amd64 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_popcnt cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 cpu_flags_x86_ssse3 elibc_glibc fftw kernel_linux llvm_slot_22 openmp
 MTIME: 1791065104
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-cpp/mm-common dev-lang/perl dev-perl/XML-Parser virtual/pkgconfig app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791228944
+CPV: dev-cpp/glibmm-2.66.8-r1
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=dev-libs/libsigc++-2.9.1:2[abi_x86_64(-)] >=dev-libs/glib-2.61.2:2[abi_x86_64(-)]
+EAPI: 8
+IUSE: gtk-doc debug test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2.1+
+MD5: 92569929d754c84b0350d0ab5e12a900
+PATH: pkgs-dev-cpp/glibmm-2.66.8-r1-1.gpkg.tar
+PROVIDES: x86_64: libgiomm-2.4.so.1 libglibmm-2.4.so.1 libglibmm_generate_extra_defs-2.4.so.1
+RDEPEND: >=dev-libs/libsigc++-2.9.1:2[abi_x86_64(-)] >=dev-libs/glib-2.61.2:2[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libsigc-2.0.so.0 libstdc++.so.6
+RESTRICT: test
+SHA1: c0023db737c4f82a98c7ba8717573e9ff435eabe
+SIZE: 1454080
+SLOT: 2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228947
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791228548
+CPV: dev-cpp/gpgmepp-2.2.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=app-crypt/gpgme-2.2:1/45.0= >=dev-libs/libgpg-error-1.47:0/0=
+EAPI: 8
+IUSE: test verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: LGPL-2+
+MD5: 43ef97819548e159de0dbd41025aa489
+PATH: pkgs-dev-cpp/gpgmepp-2.2.0-1.gpkg.tar
+PROVIDES: x86_64: libgpgmepp.so.7
+RDEPEND: >=app-crypt/gpgme-2.2:1/45.0= >=dev-libs/libgpg-error-1.47:0/0= !<app-crypt/gpgme-2[cxx(-)] !dev-cpp/gpgmepp:1 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libgpgme.so.45 libstdc++.so.6
+RESTRICT: test
+SHA1: 9a24e1d1ceae34badf1a4ba852da3607326607ee
+SIZE: 266240
+SLOT: 0/7
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228549
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2169,6 +2263,30 @@ SIZE: 5447680
 SLOT: 0/34.2.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux libprotoc libupb protobuf protoc zlib
 MTIME: 1791122970
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791228951
+CPV: dev-libs/qtkeychain-0.17.0-r2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus]
+EAPI: 8
+IUSE: keyring test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: BSD-2
+MD5: 548f741b2350deb7c9ceb4add964707a
+PATH: pkgs-dev-libs/qtkeychain-0.17.0-r2-1.gpkg.tar
+PROVIDES: x86_64: libqt6keychain.so.1
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test test
+SHA1: 6ab49543601a910e87d43bfb64f037a04b370a56
+SIZE: 122880
+SLOT: 0/1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228952
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5650,6 +5768,29 @@ MTIME: 1791226686
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.9.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.9.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791228611
+CPV: kde-misc/kdiff3-1.12.6
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/icu-70.0:0/78= >=dev-qt/qtbase-6.7.2:6[gui,widgets] >=kde-frameworks/kconfig-6.9.0:6 >=kde-frameworks/kconfigwidgets-6.9.0:6 >=kde-frameworks/kcoreaddons-6.9.0:6 >=kde-frameworks/kcrash-6.9.0:6 >=kde-frameworks/ki18n-6.9.0:6 >=kde-frameworks/kio-6.9.0:6 >=kde-frameworks/ktextwidgets-6.9.0:6 >=kde-frameworks/kwidgetsaddons-6.9.0:6 >=kde-frameworks/kxmlgui-6.9.0:6 >=dev-libs/boost-1.82 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: amd64 ~arm64 ~ppc64 ~x86
+LICENSE: GPL-2
+MD5: ceb1f5244800293b34f042ce82779904
+PATH: pkgs-kde-misc/kdiff3-1.12.6-1.gpkg.tar
+PROVIDES: x86_64: kdiff3fileitemaction.so
+RDEPEND: >=dev-libs/icu-70.0:0/78= >=dev-qt/qtbase-6.7.2:6[gui,widgets] >=kde-frameworks/kconfig-6.9.0:6 >=kde-frameworks/kconfigwidgets-6.9.0:6 >=kde-frameworks/kcoreaddons-6.9.0:6 >=kde-frameworks/kcrash-6.9.0:6 >=kde-frameworks/ki18n-6.9.0:6 >=kde-frameworks/kio-6.9.0:6 >=kde-frameworks/ktextwidgets-6.9.0:6 >=kde-frameworks/kwidgetsaddons-6.9.0:6 >=kde-frameworks/kxmlgui-6.9.0:6 !kde-misc/kdiff3:5 sys-apps/diffutils || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6KIOWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libicuuc.so.78 libm.so.6 libstdc++.so.6
+SHA1: 6d0f81c04b34c6bf6c88d66c3b016f05dc0ba9e0
+SIZE: 2222080
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791228613
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791216603
 CPV: kde-plasma/breeze-grub-6.7.5
@@ -6233,6 +6374,27 @@ SHA1: 8f143fe21828f26e3daae6e6fc608787c8157988
 SIZE: 655360
 USE: abi_x86_64 amd64 cpu_flags_x86_avx2 cpu_flags_x86_f16c cpu_flags_x86_mmx cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse4_1 elibc_glibc introspection kernel_linux lcms
 MTIME: 1791226259
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 4
+BUILD_TIME: 1791228077
+CPV: media-libs/dssi-1.1.1-r2
+DEFINED_PHASES: install prepare
+DEPEND: media-libs/alsa-lib >=media-libs/liblo-0.12 >=media-libs/ladspa-sdk-1.12-r2 >=media-libs/libsndfile-1.0.11 >=media-libs/libsamplerate-0.1.1-r1 virtual/jack
+EAPI: 8
+KEYWORDS: amd64 ppc ppc64 x86
+LICENSE: BSD LGPL-2.1
+MD5: a06ca13ce927d53df2bc58cd846a5259
+PATH: pkgs-media-libs/dssi-1.1.1-r2-4.gpkg.tar
+PROVIDES: x86_64: karplong.so less_trivial_synth.so trivial_sampler.so trivial_synth.so
+RDEPEND: media-libs/alsa-lib >=media-libs/liblo-0.12 >=media-libs/ladspa-sdk-1.12-r2 >=media-libs/libsndfile-1.0.11 >=media-libs/libsamplerate-0.1.1-r1 virtual/jack >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libasound.so.2 libc.so.6 libgcc_s.so.1 libjack.so.0 liblo.so.7 libm.so.6 libsamplerate.so.0 libsndfile.so.1 libstdc++.so.6
+SHA1: 19089aa4353ecd21050e87776f8f96507abd8f56
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228080
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7167,6 +7329,28 @@ MTIME: 1791223710
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 15
+BUILD_TIME: 1791228116
+CPV: media-libs/portaudio-19.07.00-r2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-libs/alsa-lib-1.0.27.2[abi_x86_64(-)] virtual/jack[abi_x86_64(-)]
+EAPI: 7
+IUSE: alsa +cxx debug doc jack oss static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: MIT
+MD5: 51c3417c832059de0c33f72524ff9546
+PATH: pkgs-media-libs/portaudio-19.07.00-r2-15.gpkg.tar
+PROVIDES: x86_64: libportaudio.so.2 libportaudiocpp.so.0
+RDEPEND: >=media-libs/alsa-lib-1.0.27.2[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libasound.so.2 libc.so.6 libgcc_s.so.1 libjack.so.0 libm.so.6 libstdc++.so.6
+SHA1: d3f74daec1fd3fb387c61fb309d11c08ca8e9b1b
+SIZE: 143360
+USE: abi_x86_64 alsa amd64 cxx elibc_glibc jack kernel_linux
+MTIME: 1791228118
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791227994
@@ -7212,6 +7396,29 @@ SIZE: 378880
 SLOT: 0/3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux ladspa lv2 programs
 MTIME: 1791090231
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 5
+BUILD_TIME: 1791229201
+CPV: media-libs/sdl2-image-2.8.8
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=media-libs/libsdl2-2.30.0[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=media-libs/libavif-1.0.0:0/16.4=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] >=media-libs/tiff-3.9.7-r1:0/6=[abi_x86_64(-)] >=media-libs/libwebp-0.3.0:0/7=[abi_x86_64(-)]
+EAPI: 8
+IUSE: avif gif jpeg jpegxl png samples static-libs test tiff webp abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: ZLIB
+MD5: 322b457c700e87247a834446b1487903
+PATH: pkgs-media-libs/sdl2-image-2.8.8-5.gpkg.tar
+PROVIDES: x86_64: libSDL2_image-2.0.so.0
+RDEPEND: >=media-libs/libsdl2-2.30.0[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=media-libs/libavif-1.0.0:0/16.4=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] >=media-libs/tiff-3.9.7-r1:0/6=[abi_x86_64(-)] >=media-libs/libwebp-0.3.0:0/7=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libSDL2-2.0.so.0 libavif.so.16 libc.so.6 libjpeg.so.62 libjxl.so.0.12 libpng16.so.16 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2
+RESTRICT: test
+SHA1: 34364837a1147eb32376e7d156bfcf3f1c7b57df
+SIZE: 122880
+USE: abi_x86_64 amd64 avif elibc_glibc gif jpeg jpegxl kernel_linux png tiff webp
+MTIME: 1791229203
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7518,6 +7725,75 @@ MTIME: 1791123105
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791228469
+CPV: media-plugins/zam-plugins-4.2
+DEFINED_PHASES: compile install prepare
+DEPEND: media-libs/ladspa-sdk media-libs/liblo media-libs/libsamplerate media-libs/libsndfile media-libs/lv2 media-libs/zita-convolver sci-libs/fftw:3.0 x11-libs/libX11 virtual/jack media-libs/libglvnd[X] x11-libs/cairo[X]
+EAPI: 8
+IUSE: jack opengl
+KEYWORDS: amd64
+LICENSE: GPL-2+
+MD5: 5094ce0b5f942c82b0371bae517bb011
+PATH: pkgs-media-plugins/zam-plugins-4.2-1.gpkg.tar
+PROVIDES: x86_64: ZaMaximX2-ladspa.so ZaMaximX2-vst.so ZaMaximX2.clap ZaMaximX2.so ZaMaximX2_dsp.so ZaMaximX2_ui.so ZaMultiComp-vst.so ZaMultiComp.clap ZaMultiComp.so ZaMultiCompX2-ladspa.so ZaMultiCompX2-vst.so ZaMultiCompX2.clap ZaMultiCompX2.so ZaMultiCompX2_dsp.so ZaMultiCompX2_ui.so ZaMultiComp_dsp.so ZaMultiComp_ui.so ZamAutoSat-ladspa.so ZamAutoSat-vst.so ZamAutoSat.clap ZamAutoSat.so ZamAutoSat_dsp.so ZamAutoSat_ui.so ZamComp-ladspa.so ZamComp-vst.so ZamComp.clap ZamComp.so ZamCompX2-ladspa.so ZamCompX2-vst.so ZamCompX2.clap ZamCompX2.so ZamCompX2_dsp.so ZamCompX2_ui.so ZamComp_dsp.so ZamComp_ui.so ZamDelay-ladspa.so ZamDelay-vst.so ZamDelay.clap ZamDelay.so ZamDelay_dsp.so ZamDelay_ui.so ZamDynamicEQ-ladspa.so ZamDynamicEQ-vst.so ZamDynamicEQ.clap ZamDynamicEQ.so ZamDynamicEQ_dsp.so ZamDynamicEQ_ui.so ZamEQ2-ladspa.so ZamEQ2-vst.so ZamEQ2.clap ZamEQ2.so ZamEQ2_dsp.so ZamEQ2_ui.so ZamGEQ31-ladspa.so ZamGEQ31-vst.so ZamGEQ31.clap ZamGEQ31.so ZamGEQ31_dsp.so ZamGEQ31_ui.so ZamGate-ladspa.so ZamGate-vst.so ZamGate.clap ZamGate.so ZamGateX2-ladspa.so ZamGateX2-vst.so ZamGateX2.clap ZamGateX2.so ZamGateX2_dsp.so ZamGateX2_ui.so ZamGate_dsp.so ZamGate_ui.so ZamGrains-ladspa.so ZamGrains-vst.so ZamGrains.clap ZamGrains.so ZamGrains_dsp.so ZamGrains_ui.so ZamHeadX2-vst.so ZamHeadX2.clap ZamHeadX2.so ZamHeadX2_dsp.so ZamHeadX2_ui.so ZamPhono-vst.so ZamPhono.clap ZamPhono.so ZamPhono_dsp.so ZamPhono_ui.so ZamTube-ladspa.so ZamTube-vst.so ZamTube.clap ZamTube.so ZamTube_dsp.so ZamTube_ui.so ZamVerb-vst.so ZamVerb.clap ZamVerb.so ZamVerb_dsp.so ZamVerb_ui.so
+RDEPEND: media-libs/ladspa-sdk media-libs/liblo media-libs/libsamplerate media-libs/libsndfile media-libs/lv2 media-libs/zita-convolver sci-libs/fftw:3.0 x11-libs/libX11 virtual/jack media-libs/libglvnd[X] x11-libs/cairo[X] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libGL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXcursor.so.1 libXext.so.6 libXrandr.so.2 libasound.so.2 libc.so.6 libdbus-1.so.3 libgcc_s.so.1 libm.so.6 libpulse-simple.so.0 libpulse.so.0 libsamplerate.so.0 libstdc++.so.6 libzita-convolver.so.4
+SHA1: e0bb4c610a4753a52dc1eaa4afe6bd0d8643d265
+SIZE: 68321280
+USE: abi_x86_64 amd64 elibc_glibc jack kernel_linux opengl
+MTIME: 1791228475
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791229179
+CPV: media-sound/fluidsynth-2.5.7-r1
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test unpack
+DEPEND: media-libs/alsa-lib[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/ladspa-sdk[abi_x86_64(-)] media-plugins/cmt-plugins[abi_x86_64(-)] media-video/pipewire:0/0.4=[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] sys-libs/readline:0/8=[abi_x86_64(-)] media-libs/libsdl3[abi_x86_64(-)] media-libs/libsndfile[abi_x86_64(-)]
+EAPI: 8
+IUSE: alsa dbus debug doc ipv6 jack ladspa openmp oss pipewire portaudio pulseaudio +readline sdl +sndfile systemd threads abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm64 ~ppc ~ppc64 ~x86
+LICENSE: Apache-2.0 LGPL-2.1+
+MD5: 8882455bf8521a1ad78c8e951c1d24d7
+PATH: pkgs-media-sound/fluidsynth-2.5.7-r1-1.gpkg.tar
+PROVIDES: x86_64: libfluidsynth.so.3
+RDEPEND: media-libs/alsa-lib[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/ladspa-sdk[abi_x86_64(-)] media-plugins/cmt-plugins[abi_x86_64(-)] media-video/pipewire:0/0.4=[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] sys-libs/readline:0/8=[abi_x86_64(-)] media-libs/libsdl3[abi_x86_64(-)] media-libs/libsndfile[abi_x86_64(-)] media-sound/fluid-soundfont >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libSDL3.so.0 libasound.so.2 libc.so.6 libdbus-1.so.3 libgcc_s.so.1 libgomp.so.1 libjack.so.0 libm.so.6 libpipewire-0.3.so.0 libpulse-simple.so.0 libpulse.so.0 libreadline.so.8 libsndfile.so.1 libstdc++.so.6
+SHA1: fe9bc4a1c2d9349505de693cda90915e8db055f3
+SIZE: 706560
+SLOT: 0/3
+USE: abi_x86_64 alsa amd64 dbus elibc_glibc ipv6 jack kernel_linux ladspa openmp pipewire pulseaudio readline sdl sndfile
+MTIME: 1791229181
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791230135
+CPV: media-sound/hydrogen-1.2.7
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: dev-qt/qtbase:6[gui,network,widgets,xml] dev-qt/qtsvg:6 media-libs/libsndfile media-libs/alsa-lib app-arch/libarchive:0/13= virtual/jack media-libs/liblrdf media-libs/liblo media-libs/libpulse
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: alsa +archive doc jack ladspa osc oss portaudio portmidi pulseaudio test
+KEYWORDS: ~amd64 ~ppc ~ppc64 ~x86
+LICENSE: GPL-2 ZLIB
+MD5: 1026d8be321770e00a229ea238000095
+PATH: pkgs-media-sound/hydrogen-1.2.7-1.gpkg.tar
+PROVIDES: x86_64: libhydrogen-core-1.2.7.so
+RDEPEND: dev-qt/qtbase:6[gui,network,widgets,xml] dev-qt/qtsvg:6 media-libs/libsndfile media-libs/alsa-lib app-arch/libarchive:0/13= virtual/jack media-libs/liblrdf media-libs/liblo media-libs/libpulse >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libarchive.so.13 libasound.so.2 libc.so.6 libgcc_s.so.1 libjack.so.0 liblo.so.7 liblrdf.so.2 libm.so.6 libpulse.so.0 libsndfile.so.1 libstdc++.so.6
+RESTRICT: test test
+SHA1: 36a2d6269c9cf8a7cecb3a2708a6d8331856bb47
+SIZE: 11048960
+USE: abi_x86_64 alsa amd64 archive elibc_glibc jack kernel_linux ladspa osc pulseaudio
+MTIME: 1791230137
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 4
 BUILD_TIME: 1791084267
@@ -7605,6 +7881,28 @@ SHA1: 57d312b1d8ec71f2ce60faca9fd071d7079d57ba
 SIZE: 696320
 USE: abi_x86_32 abi_x86_64 alsa amd64 cpu_flags_x86_sse elibc_glibc ipv6 jack kernel_linux pulseaudio sdl
 MTIME: 1791062189
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791229104
+CPV: media-sound/qjackctl-1.0.4
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: dev-qt/qtbase:6[dbus,gui,network,widgets,xml] virtual/jack media-libs/alsa-lib
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: alsa dbus debug portaudio
+KEYWORDS: amd64 x86
+LICENSE: GPL-2
+MD5: 82e8b34c561710e8f50668afa6396f60
+PATH: pkgs-media-sound/qjackctl-1.0.4-1.gpkg.tar
+RDEPEND: dev-qt/qtbase:6[dbus,gui,network,widgets,xml] virtual/jack media-libs/alsa-lib dev-qt/qtsvg:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libasound.so.2 libc.so.6 libgcc_s.so.1 libjack.so.0 libm.so.6 libstdc++.so.6
+SHA1: 030d00a80fac3a4813e3d39f05f8ec054740745b
+SIZE: 993280
+USE: abi_x86_64 alsa amd64 dbus elibc_glibc kernel_linux
+MTIME: 1791229105
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7697,6 +7995,29 @@ SIZE: 13158400
 SLOT: 0/60.62.62
 USE: X abi_x86_64 alsa amd64 bluray bzip2 cairo dav1d drm dvd elibc_glibc fontconfig gnutls gpl jack jpeg2k jpegxl kernel_linux ladspa lame lcms libaom libass liblc3 lv2 lzma ocr openal opencl opengl openh264 opus pulseaudio rav1e rubberband sdl svg svt-av1 theora truetype v4l vorbis vulkan webp x264 x265 xml zlib
 MTIME: 1791091695
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/awk virtual/pkgconfig || ( dev-lang/nasm dev-lang/yasm )
+BUILD_ID: 5
+BUILD_TIME: 1791229777
+CPV: media-video/ffmpeg-compat-6.1.6
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXv[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] app-arch/bzip2[abi_x86_64(-)] media-libs/dav1d:0/7=[abi_x86_64(-)] x11-libs/libdrm[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] media-libs/lcms:2[abi_x86_64(-)] media-libs/libass:0/9=[abi_x86_64(-)] media-libs/lilv[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/openal[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] media-libs/rubberband:0/3=[abi_x86_64(-)] media-libs/libsdl2[sound(+),video(+),abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] >=gnome-base/librsvg-2.52:2[abi_x86_64(-)] x11-libs/cairo[abi_x86_64(-)] media-libs/libtheora:0/2=[encode,abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] media-libs/harfbuzz:0/6.0.0=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/libvorbis[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/215=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] x11-base/xorg-proto >=sys-kernel/linux-headers-6 media-libs/ladspa-sdk dev-util/opencl-headers dev-util/vulkan-headers
+EAPI: 8
+IUSE: X alsa amf amrenc amr appkit bluray bs2b bzip2 cdio chromaprint codec2 cuda-clang +dav1d +drm fdk flite +fontconfig frei0r fribidi gcrypt gme gmp +gnutls +gpl gsm iec61883 ieee1394 jack jpeg2k jpegxl kvazaar ladspa lame lcms libaom libaribb24 +libass libcaca libilbc libplacebo librtmp libsoxr lv2 lzma modplug nvenc ocr openal opencl opengl openh264 openmpt openssl opus +postproc pulseaudio qsv rabbitmq rav1e rubberband samba sdl shaderc snappy sndio speex srt ssh svg svt-av1 theora +truetype twolame v4l vaapi vdpau vidstab vorbis vpx vulkan webp x264 x265 +xml xvid zeromq zimg +zlib zvbi soc abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~arm64-macos ~x64-macos
+LICENSE: GPL-2+
+MD5: fcc9edb759ba5c90a62ca2fd1f6d33b9
+PATH: pkgs-media-video/ffmpeg-compat-6.1.6-5.gpkg.tar
+PROVIDES: x86_64: libavcodec.so.60 libavdevice.so.60 libavfilter.so.9 libavformat.so.60 libavutil.so.58 libpostproc.so.57 libswresample.so.4 libswscale.so.7
+RDEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXv[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] app-arch/bzip2[abi_x86_64(-)] media-libs/dav1d:0/7=[abi_x86_64(-)] x11-libs/libdrm[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] media-libs/lcms:2[abi_x86_64(-)] media-libs/libass:0/9=[abi_x86_64(-)] media-libs/lilv[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/openal[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] media-libs/rubberband:0/3=[abi_x86_64(-)] media-libs/libsdl2[sound(+),video(+),abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] >=gnome-base/librsvg-2.52:2[abi_x86_64(-)] x11-libs/cairo[abi_x86_64(-)] media-libs/libtheora:0/2=[encode,abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] media-libs/harfbuzz:0/6.0.0=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/libvorbis[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/215=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libGL.so.1 libOpenCL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXv.so.1 libasound.so.2 libass.so.9 libbz2.so.1 libc.so.6 libcairo.so.2 libdav1d.so.7 libdrm.so.2 libfontconfig.so.1 libfreetype.so.6 libglib-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 libharfbuzz.so.0 libjack.so.0 libjxl.so.0.12 libjxl_threads.so.0.12 liblcms2.so.2 liblilv-0.so.0 libm.so.6 libopenal.so.1 libopenjp2.so.7 libpulse.so.0 librsvg-2.so.2 librubberband.so.3 libtheoradec.so.2 libtheoraenc.so.2 libv4l2.so.0 libvorbis.so.0 libvorbisenc.so.2 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.215 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-xfixes.so.0 libxcb.so.1 libxml2.so.16 libz.so.1
+SHA1: a5b4443632609e50eb4d8e2db7542075155d9c97
+SIZE: 10004480
+SLOT: 6/58.60.60
+USE: X abi_x86_64 alsa amd64 bzip2 dav1d drm elibc_glibc fontconfig gnutls gpl jack jpeg2k jpegxl kernel_linux ladspa lcms libass lv2 openal opencl opengl postproc pulseaudio rubberband sdl svg theora truetype v4l vorbis vulkan webp x264 x265 xml zlib
+MTIME: 1791229781
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8747,6 +9068,26 @@ MTIME: 1791226222
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/gpg
+BUILD_ID: 1
+BUILD_TIME: 1791228508
+CPV: sec-keys/openpgp-keys-hughsie-20260210
+DEFINED_PHASES: compile install test
+EAPI: 8
+IUSE: test
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: public-domain
+MD5: 2efa138b6858fd7a1d71fed4ed24fef9
+PATH: pkgs-sec-keys/openpgp-keys-hughsie-20260210-1.gpkg.tar
+PROPERTIES: test_network
+RESTRICT: test test
+SHA1: 85ec3201b4c30d7523d9bf5646687bcbdf5896d3
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228509
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306
 BUILD_ID: 2
 BUILD_TIME: 1791058098
@@ -9794,6 +10135,32 @@ MTIME: 1791083072
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-text/docbook-xml-dtd:4.1.2 app-text/docbook-xml-dtd:4.3 app-text/docbook-xsl-stylesheets dev-libs/gobject-introspection-common dev-libs/libxslt dev-util/glib-utils >=dev-build/gtk-doc-am-1.20 >=sys-devel/gettext-0.18.3 virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1791232389
+CPV: x11-libs/gtk+-2.24.33-r4
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: >=app-accessibility/at-spi2-core-2.46.0[introspection,abi_x86_64(-)] >=dev-libs/glib-2.34.3:2[abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] virtual/libintl[abi_x86_64(-)] >=x11-libs/cairo-1.12.14-r4:0/0=[svg(+),abi_x86_64(-)] >=x11-libs/gdk-pixbuf-2.30.7:2[introspection,abi_x86_64(-)] >=x11-libs/pango-1.36.3[introspection,abi_x86_64(-)] x11-misc/shared-mime-info >=net-print/cups-1.7.1-r2:0/0=[abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=x11-libs/cairo-1.12.14-r4:0/0=[svg(+),X,abi_x86_64(-)] >=x11-libs/libX11-1.6.2[abi_x86_64(-)] >=x11-libs/libXcomposite-0.4.4-r1[abi_x86_64(-)] >=x11-libs/libXcursor-1.1.14[abi_x86_64(-)] >=x11-libs/libXdamage-1.1.4-r1[abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_64(-)] >=x11-libs/libXfixes-5.0.1[abi_x86_64(-)] >=x11-libs/libXi-1.7.2[abi_x86_64(-)] >=x11-libs/libXrandr-1.5[abi_x86_64(-)] >=x11-libs/libXrender-0.9.8[abi_x86_64(-)] x11-base/xorg-proto
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: aqua cups examples +introspection test vim-syntax xinerama abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: LGPL-2+
+MD5: 4f18a56fb490f00f4b26baa52b4876d4
+PATH: pkgs-x11-libs/gtk_p_-2.24.33-r4-1.gpkg.tar
+PDEPEND: gnome-base/librsvg[abi_x86_64(-)] x11-themes/gtk-engines-adwaita
+PROVIDES: x86_64: im-am-et.so im-cedilla.so im-cyrillic-translit.so im-inuktitut.so im-ipa.so im-multipress.so im-thai.so im-ti-er.so im-ti-et.so im-viqr.so im-xim.so libferret.so libgail.so libgailutil.so.18 libgdk-x11-2.0.so.0 libgtk-x11-2.0.so.0 libpixmap.so libprintbackend-cups.so libprintbackend-file.so libprintbackend-lpr.so
+RDEPEND: >=app-accessibility/at-spi2-core-2.46.0[introspection,abi_x86_64(-)] >=dev-libs/glib-2.34.3:2[abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] virtual/libintl[abi_x86_64(-)] >=x11-libs/cairo-1.12.14-r4:0/0=[svg(+),abi_x86_64(-)] >=x11-libs/gdk-pixbuf-2.30.7:2[introspection,abi_x86_64(-)] >=x11-libs/pango-1.36.3[introspection,abi_x86_64(-)] x11-misc/shared-mime-info >=net-print/cups-1.7.1-r2:0/0=[abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=x11-libs/cairo-1.12.14-r4:0/0=[svg(+),X,abi_x86_64(-)] >=x11-libs/libX11-1.6.2[abi_x86_64(-)] >=x11-libs/libXcomposite-0.4.4-r1[abi_x86_64(-)] >=x11-libs/libXcursor-1.1.14[abi_x86_64(-)] >=x11-libs/libXdamage-1.1.4-r1[abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_64(-)] >=x11-libs/libXfixes-5.0.1[abi_x86_64(-)] >=x11-libs/libXi-1.7.2[abi_x86_64(-)] >=x11-libs/libXrandr-1.5[abi_x86_64(-)] >=x11-libs/libXrender-0.9.8[abi_x86_64(-)] >=dev-util/gtk-update-icon-cache-2 >=x11-themes/adwaita-icon-theme-3.14 x11-themes/gnome-themes-standard !<dev-util/gtk-builder-convert-2.24.33 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libX11.so.6 libXcomposite.so.1 libXcursor.so.1 libXdamage.so.1 libXext.so.6 libXfixes.so.3 libXi.so.6 libXrandr.so.2 libXrender.so.1 libatk-1.0.so.0 libc.so.6 libcairo.so.2 libcups.so.2 libfontconfig.so.1 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0
+RESTRICT: test test
+SHA1: 873314a8f031257c847c90b4f72609a16cd0f427
+SIZE: 10240000
+SLOT: 2
+USE: abi_x86_64 amd64 cups elibc_glibc introspection kernel_linux
+MTIME: 1791232394
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
 BUILD_ID: 2
 BUILD_TIME: 1791064674
@@ -10127,6 +10494,28 @@ SHA1: 11da5b8d49d52ee6ab9f4b79bac550218c1015d0
 SIZE: 51200
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791064794
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/docutils dev-qt/qttools[linguist] kde-frameworks/extra-cmake-modules:0 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791228899
+CPV: x11-misc/sddm-0.21.0_p20260819
+DEFINED_PHASES: compile configure install postinst prepare setup test unpack
+DEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower
+EAPI: 8
+IUSE: +elogind systemd test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+ MIT CC-BY-3.0 CC-BY-SA-3.0 public-domain
+MD5: 85aaa8115492e53d79a33f6303316c5e
+PATH: pkgs-x11-misc/sddm-0.21.0_p20260819-1.gpkg.tar
+RDEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower gui-apps/sddm-gentoo-config gui-libs/display-manager-init virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libXau.so.6 libc.so.6 libgcc_s.so.1 libpam.so.0 libstdc++.so.6 libxcb-xkb.so.1 libxcb.so.1
+RESTRICT: test
+SHA1: a1594bf3f57286e0a5ec4fac8f70e39d96661af8
+SIZE: 3819520
+USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux
+MTIME: 1791228902
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
