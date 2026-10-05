@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791235425
-PACKAGES: 483
+TIMESTAMP: 1791242573
+PACKAGES: 487
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5968,6 +5968,30 @@ MTIME: 1791226962
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791241875
+CPV: kde-plasma/wacomtablet-6.7.5
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/libwacom-0.30:0/9= >=dev-qt/qtbase-6.11.2:6/6.11.2=[dbus,gui,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.26.0:6 >=kde-frameworks/kconfig-6.26.0:6 >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kio-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6 >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-plasma/libplasma-6.7.5:6/7= >=kde-plasma/plasma5support-6.7.5:6 >=x11-drivers/xf86-input-wacom-0.20.0 x11-libs/libXi x11-libs/libxcb x11-base/xorg-proto x11-libs/libX11 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: amd64 arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 60c859b7032d94e86c33ea641c9abcca
+PATH: pkgs-kde-plasma/wacomtablet-6.7.5-1.gpkg.tar
+PROVIDES: x86_64: kcm_wacomtablet.so plasma_engine_wacomtablet.so wacomtablet.so
+RDEPEND: >=dev-libs/libwacom-0.30:0/9= >=dev-qt/qtbase-6.11.2:6/6.11.2=[dbus,gui,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.26.0:6 >=kde-frameworks/kconfig-6.26.0:6 >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kio-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6 >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-plasma/libplasma-6.7.5:6/7= >=kde-plasma/plasma5support-6.7.5:6 >=x11-drivers/xf86-input-wacom-0.20.0 x11-libs/libXi x11-libs/libxcb || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/wacomtablet:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libPlasma5Support.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libXi.so.6 libc.so.6 libstdc++.so.6 libwacom.so.9 libxcb-xinput.so.0 libxcb.so.1
+SHA1: 0c99aa1153a83a8b3150ad6fd3cbc6cde1e8cbe5
+SIZE: 1013760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791241877
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 virtual/pkgconfig dev-python/myst-parser[python_targets_python3_14(-)] dev-python/sphinx[python_targets_python3_14(-)] app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791076430
@@ -7881,6 +7905,29 @@ MTIME: 1791229181
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) virtual/pkgconfig dev-lang/sassc dev-util/gperf dev-util/intltool sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1791241729
+CPV: media-sound/guitarix-0.47.0-r2
+DEFINED_PHASES: compile configure install postinst postrm preinst setup
+DEPEND: dev-cpp/eigen:3/3.4= dev-libs/libsigc++:2 media-libs/libsndfile media-libs/zita-convolver:0/4= media-libs/zita-resampler:0/1= sci-libs/fftw:3.0/3= media-libs/lv2 x11-libs/cairo[X] x11-libs/libX11 dev-libs/boost:0/1.90.0= dev-cpp/atkmm:0 dev-cpp/cairomm:0 dev-cpp/glibmm:2 dev-cpp/gtkmm:3.0 dev-cpp/pangomm:1.4 dev-libs/glib:2 media-libs/liblrdf media-libs/lilv net-misc/curl virtual/jack x11-libs/cairo x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 x11-libs/pango net-wireless/bluez:0/3=
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: bluetooth debug lv2 nls nsm +standalone zeroconf
+KEYWORDS: amd64
+LICENSE: GPL-2
+MD5: aa57e6d91133b83dfc4cd2bcaf084902
+PATH: pkgs-media-sound/guitarix-0.47.0-r2-1.gpkg.tar
+PROVIDES: x86_64: gx_aclipper.so gx_aclipper_gui.so gx_alembic.so gx_alembic_gui.so gx_amp.so gx_amp_gui.so gx_amp_stereo.so gx_amp_stereo_gui.so gx_barkgraphiceq.so gx_barkgraphiceq_gui.so gx_bmp.so gx_bmp_gui.so gx_bossds1.so gx_bossds1_gui.so gx_cabinet.so gx_cabinet_gui.so gx_chorus.so gx_chorus_gui.so gx_colwah.so gx_colwah_gui.so gx_compressor.so gx_compressor_gui.so gx_cstb.so gx_cstb_gui.so gx_delay.so gx_delay_gui.so gx_detune.so gx_detune_gui.so gx_digital_delay.so gx_digital_delay_gui.so gx_digital_delay_st.so gx_digital_delay_st_gui.so gx_duck_delay.so gx_duck_delay_gui.so gx_duck_delay_st.so gx_duck_delay_st_gui.so gx_echo.so gx_echo_gui.so gx_expander.so gx_expander_gui.so gx_flanger.so gx_flanger_gui.so gx_fumaster.so gx_fumaster_gui.so gx_fuzz.so gx_fuzz_gui.so gx_fuzzface.so gx_fuzzface_gui.so gx_fuzzfacefm.so gx_fuzzfacefm_gui.so gx_gcb_95.so gx_gcb_95_gui.so gx_graphiceq.so gx_graphiceq_gui.so gx_hfb.so gx_hfb_gui.so gx_hogsfoot.so gx_hogsfoot_gui.so gx_hornet.so gx_hornet_gui.so gx_jcm800pre.so gx_jcm800pre_gui.so gx_jcm800pre_st.so gx_jcm800pre_st_gui.so gx_livelooper.so gx_livelooper_gui.so gx_mbcompressor.so gx_mbcompressor_gui.so gx_mbdelay.so gx_mbdelay_gui.so gx_mbdistortion.so gx_mbdistortion_gui.so gx_mbecho.so gx_mbecho_gui.so gx_mbreverb.so gx_mbreverb_gui.so gx_mole.so gx_mole_gui.so gx_muff.so gx_muff_gui.so gx_mxrdist.so gx_mxrdist_gui.so gx_oc_2.so gx_oc_2_gui.so gx_phaser.so gx_phaser_gui.so gx_rangem.so gx_rangem_gui.so gx_redeye.so gx_redeye_gui.so gx_reverb.so gx_reverb_gui.so gx_room_simulator.so gx_room_simulator_gui.so gx_scream.so gx_scream_gui.so gx_shimmizita.so gx_shimmizita_gui.so gx_studiopre.so gx_studiopre_gui.so gx_studiopre_st.so gx_studiopre_st_gui.so gx_susta.so gx_susta_gui.so gx_switched_tremolo.so gx_switched_tremolo_gui.so gx_tremolo.so gx_tremolo_gui.so gx_w20.so gx_w20_gui.so gx_zita_rev1.so gx_zita_rev1_gui.so gxautowah.so gxautowah_gui.so gxbooster.so gxbooster_gui.so gxechocat.so gxechocat_gui.so gxmetal_amp.so gxmetal_amp_gui.so gxmetal_head.so gxmetal_head_gui.so gxtape.so gxtape_gui.so gxtape_st.so gxtape_st_gui.so gxtilttone.so gxtilttone_gui.so gxts9.so gxts9_gui.so gxtubedelay.so gxtubedelay_gui.so gxtubetremelo.so gxtubetremelo_gui.so gxtubevibrato.so gxtubevibrato_gui.so gxtuner.so gxtuner_gui.so libgxw.so.0 libgxwmm.so.0
+RDEPEND: dev-cpp/eigen:3/3.4= dev-libs/libsigc++:2 media-libs/libsndfile media-libs/zita-convolver:0/4= media-libs/zita-resampler:0/1= sci-libs/fftw:3.0/3= media-libs/lv2 x11-libs/cairo[X] x11-libs/libX11 dev-libs/boost:0/1.90.0= dev-cpp/atkmm:0 dev-cpp/cairomm:0 dev-cpp/glibmm:2 dev-cpp/gtkmm:3.0 dev-cpp/pangomm:1.4 dev-libs/glib:2 media-libs/liblrdf media-libs/lilv net-misc/curl virtual/jack x11-libs/cairo x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 x11-libs/pango net-wireless/bluez:0/3= media-fonts/roboto >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libX11.so.6 libatkmm-1.6.so.1 libbluetooth.so.3 libboost_iostreams.so.1.90.0 libc.so.6 libcairo.so.2 libcairomm-1.0.so.1 libcurl.so.4 libfftw3f.so.3 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgdkmm-3.0.so.1 libgio-2.0.so.0 libgiomm-2.4.so.1 libglib-2.0.so.0 libglibmm-2.4.so.1 libgobject-2.0.so.0 libgtk-3.so.0 libgtkmm-3.0.so.1 libjack.so.0 liblilv-0.so.0 liblrdf.so.2 libm.so.6 libmvec.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangomm-1.4.so.1 libsigc-2.0.so.0 libsndfile.so.1 libstdc++.so.6 libzita-convolver.so.4 libzita-resampler.so.1
+SHA1: 0050ec2e9ff0d27f7c267cb0347b043fda090c13
+SIZE: 35481600
+USE: abi_x86_64 amd64 bluetooth elibc_glibc kernel_linux lv2 nls standalone
+MTIME: 1791241737
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-qt/qttools:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791230135
@@ -9011,6 +9058,29 @@ MTIME: 1791094331
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-qt/qttools:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791242228
+CPV: sci-electronics/pulseview-0.4.2_p20250515
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: >=dev-cpp/glibmm-2.68.0:2.68 dev-libs/boost:0/1.90.0= >=dev-libs/glib-2.28.0:2 dev-qt/qtbase:6[gui,widgets] dev-qt/qtsvg:6 >=sci-libs/libsigrok-0.6.0_pre:0/4=[cxx] >=sci-libs/libsigrokdecode-0.6.0_pre:0/4=
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +decode static
+KEYWORDS: ~amd64 ~x86
+LICENSE: GPL-3
+MD5: 34c215feb343d27d0184ef5fe5b2098d
+PATH: pkgs-sci-electronics/pulseview-0.4.2_p20250515-1.gpkg.tar
+RDEPEND: >=dev-cpp/glibmm-2.68.0:2.68 dev-libs/boost:0/1.90.0= >=dev-libs/glib-2.28.0:2 dev-qt/qtbase:6[gui,widgets] dev-qt/qtsvg:6 >=sci-libs/libsigrok-0.6.0_pre:0/4=[cxx] >=sci-libs/libsigrokdecode-0.6.0_pre:0/4= >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libboost_filesystem.so.1.90.0 libboost_serialization.so.1.90.0 libc.so.6 libgcc_s.so.1 libglib-2.0.so.0 libglibmm-2.68.so.1 libm.so.6 libsigrok.so.4 libsigrokcxx.so.4 libsigrokdecode.so.4 libstdc++.so.6
+SHA1: 0da703ed2a6a115ab73dbe57dc88c580fa6d0e36
+SIZE: 1761280
+USE: abi_x86_64 amd64 decode elibc_glibc kernel_linux
+MTIME: 1791242230
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791092748
@@ -9469,6 +9539,30 @@ SHA1: 4a19a9198c524b31544727ff88f5ca5b1a4e9320
 SIZE: 378880
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux netlink
 MTIME: 1791216656
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/vala:0.56 dev-python/jinja2[python_targets_python3_14(-)] >=dev-build/meson-1.3.2 sys-apps/hwdata virtual/pkgconfig >=app-shells/bash-completion-2.0 >=dev-libs/gobject-introspection-1.82.0-r2 dev-python/pycairo[python_targets_python3_14(-)] dev-python/pygobject:3[cairo,python_targets_python3_14(-)] x11-libs/pango[introspection] sec-keys/openpgp-keys-hughsie >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( app-alternatives/gpg app-crypt/gnupg[-alternatives(-)] ) >=app-portage/gemato-20.15 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791241138
+CPV: sys-apps/fwupd-2.1.8
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND: dev-lang/python:3.14 >=app-arch/gcab-1.0 app-arch/xz-utils dev-db/sqlite:3 >=dev-libs/glib-2.72:2 >=dev-libs/libxmlb-0.3.19:0/2=[introspection] dev-python/pygobject:3[python_targets_python3_14(-)] net-libs/libmnl:0/0.2.0= >=net-misc/curl-7.62.0 sys-apps/util-linux virtual/libusb:1 virtual/zlib:0/1= >=x11-libs/libdrm-2.4.113[video_cards_amdgpu] >=sys-auth/elogind-211 >=net-libs/gnutls-3.6.0:0/30.30= >=sys-auth/polkit-0.114 sys-libs/readline:0/8= sys-apps/fwupd-efi sys-boot/efibootmgr sys-fs/udisks sys-libs/efivar x11-libs/pango[introspection] virtual/os-headers
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: amdgpu bash-completion bluetooth elogind +gnutls gtk-doc introspection minimal modemmanager policykit selinux seccomp systemd test tpm readline uefi valgrind python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 verify-sig test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: 1ca88e070432b8664a2a8eddaf2fcd72
+PATH: pkgs-sys-apps/fwupd-2.1.8-1.gpkg.tar
+PROVIDES: x86_64: libfwupd.so.3 libfwupdengine.so libfwupdplugin.so libfwupdutil.so
+RDEPEND: dev-lang/python:3.14 >=app-arch/gcab-1.0 app-arch/xz-utils dev-db/sqlite:3 >=dev-libs/glib-2.72:2 >=dev-libs/libxmlb-0.3.19:0/2=[introspection] dev-python/pygobject:3[python_targets_python3_14(-)] net-libs/libmnl:0/0.2.0= >=net-misc/curl-7.62.0 sys-apps/util-linux virtual/libusb:1 virtual/zlib:0/1= >=x11-libs/libdrm-2.4.113[video_cards_amdgpu] >=sys-auth/elogind-211 >=net-libs/gnutls-3.6.0:0/30.30= >=sys-auth/polkit-0.114 sys-libs/readline:0/8= sys-apps/fwupd-efi sys-boot/efibootmgr sys-fs/udisks sys-libs/efivar sys-apps/dbus >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libblkid.so.1 libc.so.6 libcurl.so.4 libdrm.so.2 libdrm_amdgpu.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 liblzma.so.5 libmnl.so.0 libpolkit-gobject-1.so.0 libreadline.so.8 libsqlite3.so.0 libusb-1.0.so.0 libxmlb.so.2 libz.so.1
+RESTRICT: test test
+SHA1: f11d900925191ed7a6fc9cb00dc3506101db7fc7
+SIZE: 9164800
+USE: abi_x86_64 amd64 amdgpu bash-completion bluetooth elibc_glibc elogind gnutls introspection kernel_linux policykit python_single_target_python3_14 readline uefi verify-sig
+MTIME: 1791241141
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
