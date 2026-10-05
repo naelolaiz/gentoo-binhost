@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791243185
-PACKAGES: 489
+TIMESTAMP: 1791244396
+PACKAGES: 490
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8156,6 +8156,30 @@ SHA1: 030d00a80fac3a4813e3d39f05f8ec054740745b
 SIZE: 993280
 USE: abi_x86_64 alsa amd64 dbus elibc_glibc kernel_linux
 MTIME: 1791229105
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791244149
+CPV: media-sound/rosegarden-26.06
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6[gui,network,widgets,xml] media-libs/alsa-lib >=media-libs/dssi-1.0.0:0/0= media-libs/ladspa-sdk media-libs/liblo media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile sci-libs/fftw:3.0/3= virtual/jack virtual/zlib:0/1= media-libs/lilv >=media-libs/lv2-1.18.0
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: lirc lv2 test
+KEYWORDS: ~amd64 ~ppc ~x86
+LICENSE: GPL-2
+MD5: eecaa64b86ab6610dde7268f5dfc6747
+PATH: pkgs-media-sound/rosegarden-26.06-1.gpkg.tar
+RDEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6[gui,network,widgets,xml] media-libs/alsa-lib >=media-libs/dssi-1.0.0:0/0= media-libs/ladspa-sdk media-libs/liblo media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile sci-libs/fftw:3.0/3= virtual/jack virtual/zlib:0/1= media-libs/lilv >=media-libs/lv2-1.18.0 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libasound.so.2 libc.so.6 libfftw3f.so.3 libgcc_s.so.1 libjack.so.0 liblilv-0.so.0 liblo.so.7 liblrdf.so.2 libm.so.6 libsamplerate.so.0 libsndfile.so.1 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: d62c308ebba0f7fb4133eac71e686b98d00aed0f
+SIZE: 8929280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux lv2
+MTIME: 1791244151
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
