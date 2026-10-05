@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791214773
-PACKAGES: 378
+TIMESTAMP: 1791216595
+PACKAGES: 379
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -349,6 +349,32 @@ SIZE: 81141760
 SLOT: 10.4.1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux shared
 MTIME: 1791091925
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl sys-devel/binutils:* sys-devel/bison sys-devel/flex sys-devel/gcc:* virtual/pkgconfig sys-devel/gettext dev-util/wayland-scanner sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 || ( sys-devel/binutils:* llvm-core/lld:* ) dev-lang/perl dev-util/mingw64-toolchain[abi_x86_32]
+BUILD_ID: 1
+BUILD_TIME: 1791216364
+CPV: app-emulation/wine-proton-11.0.2
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup
+DEPEND: dev-libs/libgcrypt:0/20=[abi_x86_64(-)] media-libs/freetype[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/vulkan-loader[X,wayland,abi_x86_64(-)] x11-libs/libXcomposite[abi_x86_64(-)] x11-libs/libXcursor[abi_x86_64(-)] x11-libs/libXfixes[abi_x86_64(-)] x11-libs/libXi[abi_x86_64(-)] x11-libs/libXrandr[abi_x86_64(-)] x11-libs/libXrender[abi_x86_64(-)] x11-libs/libXxf86vm[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] media-libs/libsdl2[haptic,joystick,abi_x86_64(-)] dev-libs/gmp:0/10.4=[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] media-libs/gst-plugins-base:1.0[opengl,abi_x86_64(-)] media-libs/gstreamer:1.0[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] virtual/libudev:0/1=[abi_x86_64(-)] sys-libs/libunwind:0/8=[abi_x86_64(-)] dev-libs/libusb:1[abi_x86_64(-)] x11-libs/libdrm[video_cards_amdgpu,abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] >=sys-kernel/linux-headers-6.14 x11-base/xorg-proto
+EAPI: 8
+IDEPEND: >=app-eselect/eselect-wine-2
+IUSE: +X +alsa crossdev-mingw +dbus ffmpeg +fontconfig +gecko +gstreamer llvm-libunwind +mono nls perl pulseaudio +sdl selinux +ssl udev +unwind usb v4l wayland video_cards_amdgpu xinerama +abi_x86_64 arm64ec crossdev-mingw custom-cflags +mingw +strip abi_x86_32 +wow64
+KEYWORDS: -* amd64 ~x86
+LICENSE: LGPL-2.1+ BSD BSD-2 IJG MIT OPENLDAP ZLIB gsm libpng2 libtiff public-domain || ( WTFPL-2 public-domain )
+MD5: 3a1745eb36c9381bd7132ed1aa9a5980
+PATH: pkgs-app-emulation/wine-proton-11.0.2-1.gpkg.tar
+PROVIDES: x86_64: amd_ags_x64.so avicap32.so bcrypt.so crypt32.so ctapi32.so dnsapi.so dwrite.so kerberos.so localspl.so mountmgr.so msv1_0.so netapi32.so nsiproxy.so ntdll.so odbc32.so opencl.so opengl32.so qcap.so secur32.so win32u.so windows.media.speech.so winealsa.so winebth.so winebus.so winedmo.so winegstreamer.so wineps.so winepulse.so wineusb.so winevulkan.so winewayland.so winex11.so winspool.so ws2_32.so
+RDEPEND: dev-libs/libgcrypt:0/20=[abi_x86_64(-)] media-libs/freetype[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/vulkan-loader[X,wayland,abi_x86_64(-)] x11-libs/libXcomposite[abi_x86_64(-)] x11-libs/libXcursor[abi_x86_64(-)] x11-libs/libXfixes[abi_x86_64(-)] x11-libs/libXi[abi_x86_64(-)] x11-libs/libXrandr[abi_x86_64(-)] x11-libs/libXrender[abi_x86_64(-)] x11-libs/libXxf86vm[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] media-libs/libsdl2[haptic,joystick,abi_x86_64(-)] dev-libs/gmp:0/10.4=[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] media-libs/gst-plugins-base:1.0[opengl,abi_x86_64(-)] media-libs/gstreamer:1.0[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] virtual/libudev:0/1=[abi_x86_64(-)] sys-libs/libunwind:0/8=[abi_x86_64(-)] dev-libs/libusb:1[abi_x86_64(-)] x11-libs/libdrm[video_cards_amdgpu,abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] app-emulation/wine-desktop-common media-libs/gst-plugins-bad:1.0[abi_x86_64(-)] media-plugins/gst-plugins-libav:1.0[abi_x86_64(-)] media-plugins/gst-plugins-meta:1.0[abi_x86_64(-)] app-emulation/wine-mono:10.4.1 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libX11.so.6 libXext.so.6 libasound.so.2 libc.so.6 libdrm.so.2 libdrm_amdgpu.so.1 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstgl-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libm.so.6 libpulse.so.0 libresolv.so.2 libudev.so.1 libunwind.so.8 libusb-1.0.so.0 libwayland-client.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libxkbregistry.so.0
+RESTRICT: test
+SHA1: e3b87fb9c11d654e18cda4f7a0907ec780033d4b
+SIZE: 83773440
+SLOT: 11.0.2
+USE: X abi_x86_64 alsa amd64 dbus elibc_glibc fontconfig gstreamer kernel_linux mingw mono nls pulseaudio sdl ssl strip udev unwind usb v4l video_cards_amdgpu wayland wow64
+MTIME: 1791216383
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
