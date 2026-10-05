@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791181384
-PACKAGES: 352
+TIMESTAMP: 1791187013
+PACKAGES: 353
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3299,6 +3299,32 @@ SIZE: 61440
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791145215
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/gperf app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791186905
+CPV: kde-apps/kio-extras-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 kde-apps/libkexiv2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=dev-qt/qtbase-6.11.2:6[sql] kde-plasma/plasma-activities:6/7= kde-plasma/plasma-activities-stats:6 >=kde-frameworks/knotifications-6.27.0:6 net-libs/libproxy media-libs/openexr:0/32= dev-libs/qcoro >=net-libs/libssh-0.9.8:0/4=[sftp] x11-libs/libX11 x11-libs/libXcursor dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: activities ios +man mtp nfs +libproxy openexr samba +sftp taglib X debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: dff26489b8a45cd550a35d2e2b9718a0
+PATH: pkgs-kde-apps/kio-extras-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: activities.so archive.so comicbookthumbnail.so cursorthumbnail.so directorythumbnail.so djvuthumbnail.so ebookthumbnail.so exrthumbnail.so filenamesearchmodule.so filter.so fish.so forgetfileitemaction.so imagethumbnail.so info.so jpegthumbnail.so kactivitymanagerd_fileitem_linking_plugin.so kcm_netpref.so kcm_proxy.so kcm_trash.so kcm_webshortcuts.so kio_filenamesearch.so kraorathumbnail.so libkioarchive6.so.6 man.so opendocumentthumbnail.so recentlyused.so sftp.so svgthumbnail.so textthumbnail.so thumbnail.so windowsexethumbnail.so windowsimagethumbnail.so wpad_detector.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 kde-apps/libkexiv2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=dev-qt/qtbase-6.11.2:6[sql] kde-plasma/plasma-activities:6/7= kde-plasma/plasma-activities-stats:6 >=kde-frameworks/knotifications-6.27.0:6 net-libs/libproxy media-libs/openexr:0/32= dev-libs/qcoro >=net-libs/libssh-0.9.8:0/4=[sftp] x11-libs/libX11 x11-libs/libXcursor !kde-apps/kio-extras:5[-kf6compat(-)] !kde-apps/kio-extras-kf5:5 !<kde-frameworks/kio-5.116.0-r2:5 !kde-frameworks/kio-trash-desktop-file:5 >=kde-frameworks/kded-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKExiv2Qt6.so.0 libKF6Archive.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6SyntaxHighlighting.so.6 libKF6WidgetsAddons.so.6 libOpenEXR-3_3.so.32 libPlasmaActivities.so.7 libPlasmaActivitiesStats.so.1 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libXcursor.so.1 libc.so.6 libgcc_s.so.1 libproxy.so.1 libssh.so.4 libstdc++.so.6
+RESTRICT: test test
+SHA1: 43fcf0a380db25ed2591e857380d795836e0e979
+SIZE: 1976320
+SLOT: 6
+USE: X abi_x86_64 activities amd64 elibc_glibc handbook kernel_linux libproxy man openexr sftp
+MTIME: 1791186908
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
