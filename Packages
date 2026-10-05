@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791216595
-PACKAGES: 379
+TIMESTAMP: 1791216934
+PACKAGES: 390
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -24,6 +24,22 @@ USE_EXPAND_UNPREFIXED: ARCH
 USE_EXPAND_VALUES_ARCH: alpha amd64 arm arm64 arm64-macos hppa loong m68k mips ppc ppc64 riscv s390 sparc x64-macos x64-solaris x86
 USE_EXPAND_VALUES_ELIBC: bionic Darwin glibc mingw musl SunOS
 USE_EXPAND_VALUES_KERNEL: Darwin Hurd linux SunOS
+
+BUILD_ID: 2
+BUILD_TIME: 1791216773
+CPV: acct-group/git-0-r3
+DEFINED_PHASES: install preinst pretend
+EAPI: 8
+IDEPEND: >=sys-apps/shadow-4.6
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: 52410c59fe54cf48bb9101d651714dfe
+PATH: pkgs-acct-group/git-0-r3-2.gpkg.tar
+SHA1: 7b762b4c11cacf06cc2665413af8ba9ee583cd7e
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791216774
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 2
 BUILD_TIME: 1791059992
@@ -553,6 +569,44 @@ SHA1: dff085c08fec6cd0ceea494f2acddb3c194c8822
 SIZE: 2252800
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux net nls readline
 MTIME: 1791057931
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791216598
+CPV: app-shells/gentoo-bashcomp-20260905
+DEFINED_PHASES: install
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: GPL-2
+MD5: 5316d4a5461cb71bb86b06610269b583
+PATH: pkgs-app-shells/gentoo-bashcomp-20260905-1.gpkg.tar
+SHA1: f176474d3a7330ab32a08d7764c77eebcfe708a5
+SIZE: 40960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791216599
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791216604
+CPV: app-text/discount-3.0.2.0
+DEFINED_PHASES: compile configure install postinst prepare
+EAPI: 8
+IUSE: minimal test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: BSD
+MD5: e86fbec28e70fa111f3460f110b4b0b8
+PATH: pkgs-app-text/discount-3.0.2.0-1.gpkg.tar
+PROVIDES: x86_64: libmarkdown.so.3
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: aed7652079514f09d4b5470a8ac60dc54ca31e67
+SIZE: 112640
+SLOT: 0/3.0.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791216606
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4797,6 +4851,24 @@ MTIME: 1791181228
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791216603
+CPV: kde-plasma/breeze-grub-6.7.5
+DEFINED_PHASES: compile configure info install nofetch prepare unpack
+EAPI: 9
+KEYWORDS: amd64 arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-3+
+MD5: b26e48042cc043c9397e5fb6b6b3d9cc
+PATH: pkgs-kde-plasma/breeze-grub-6.7.5-1.gpkg.tar
+RDEPEND: !kde-plasma/breeze-grub:5
+SHA1: 4e7cb6f7dbccdc2e982a96d76b467797cd6a2cd6
+SIZE: 2191360
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791216604
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner >=kde-frameworks/kcmutils-6.26.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
 BUILD_ID: 8
 BUILD_TIME: 1791198595
@@ -5151,6 +5223,25 @@ SIZE: 931840
 SLOT: 0/23.1
 USE: abi_x86_32 abi_x86_64 amd64 clang elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1791076506
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/unzip >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings
+BUILD_ID: 2
+BUILD_TIME: 1791216719
+CPV: media-fonts/freefont-20120503
+DEFINED_PHASES: install postinst postrm setup
+EAPI: 7
+IUSE: X
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-3
+MD5: 985b96f92cf409d6fb6c25a4c1f9b806
+PATH: pkgs-media-fonts/freefont-20120503-2.gpkg.tar
+RESTRICT: strip binchecks
+SHA1: 4a9ebf5fdf6a978bd079b0237a78e5db49c2a04e
+SIZE: 9472000
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791216721
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6079,6 +6170,28 @@ MTIME: 1791092430
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791216724
+CPV: media-libs/vamp-plugin-sdk-2.10-r1
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: media-libs/libsndfile:0/0=[abi_x86_64(-)]
+EAPI: 8
+IUSE: doc abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: BSD
+MD5: 116effc357b2072c9f0bf78043da0b71
+PATH: pkgs-media-libs/vamp-plugin-sdk-2.10-r1-1.gpkg.tar
+PROVIDES: x86_64: libvamp-hostsdk.so.3 libvamp-sdk.so.2 vamp-example-plugins.so
+RDEPEND: media-libs/libsndfile:0/0=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libsndfile.so.1 libstdc++.so.6
+SHA1: 1426032ce95b400029fb310bfe40d5a72b8de637
+SIZE: 327680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791216725
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791079151
@@ -6147,6 +6260,28 @@ SIZE: 972800
 SLOT: 0/2.16
 USE: abi_x86_64 amd64 elibc_glibc gui kernel_linux png
 MTIME: 1791181286
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 2
+BUILD_TIME: 1791216715
+CPV: media-libs/zita-resampler-1.11.2
+DEFINED_PHASES: compile install
+DEPEND: media-libs/libsndfile
+EAPI: 8
+IUSE: cpu_flags_arm_neon cpu_flags_x86_sse2 tools
+KEYWORDS: amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-3+
+MD5: 1152da7a554faa34347ef38c799a6ffb
+PATH: pkgs-media-libs/zita-resampler-1.11.2-2.gpkg.tar
+PROVIDES: x86_64: libzita-resampler.so.1
+RDEPEND: media-libs/libsndfile >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libmvec.so.1 libsndfile.so.1 libstdc++.so.6
+SHA1: 61ff164b390f67bd5c6f76e3d2daed916dd8b14e
+SIZE: 153600
+SLOT: 0/1
+USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc kernel_linux tools
+MTIME: 1791216716
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6378,6 +6513,29 @@ SIZE: 552960
 SLOT: 0/3
 USE: abi_x86_64 alsa amd64 elibc_glibc encode ffmpeg fftw flac kernel_linux ladspa mad ogg openmp png pulseaudio sndfile wavpack
 MTIME: 1791204330
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791216708
+CPV: media-sound/twolame-0.4.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-libs/libsndfile-1.0.25[abi_x86_64(-)]
+EAPI: 8
+IUSE: +sndfile static-libs test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos
+LICENSE: GPL-2
+MD5: 52d04e681228ce84277010248dc97976
+PATH: pkgs-media-sound/twolame-0.4.0-r1-1.gpkg.tar
+PROVIDES: x86_64: libtwolame.so.0
+RDEPEND: >=media-libs/libsndfile-1.0.25[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6 libsndfile.so.1
+RESTRICT: test
+SHA1: 3d3cf3147bafcfc3ecca1ea049c4caea88917934
+SIZE: 153600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux sndfile
+MTIME: 1791216709
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7403,6 +7561,27 @@ MTIME: 1791113412
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-arch/xz-utils virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791216654
+CPV: sys-apps/ethtool-7.0
+DEFINED_PHASES: configure
+DEPEND: net-libs/libmnl
+EAPI: 8
+IUSE: +netlink
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 9e3d3baf29cc4965905e20d56f519347
+PATH: pkgs-sys-apps/ethtool-7.0-1.gpkg.tar
+RDEPEND: net-libs/libmnl >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6 libmnl.so.0
+SHA1: 4a19a9198c524b31544727ff88f5ca5b1a4e9320
+SIZE: 378880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux netlink
+MTIME: 1791216656
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=sys-apps/texinfo-7.1 >=sys-devel/bison-3.5.4 sys-devel/gettext
 BUILD_ID: 1
 BUILD_TIME: 1791061911
@@ -8051,6 +8230,48 @@ SHA1: c3c847c54e4413753a20bf0568e9a41d031d2ad1
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791082151
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 3
+BUILD_TIME: 1791216739
+CPV: x11-base/xorg-drivers-21.1-r2
+DEFINED_PHASES: -
+EAPI: 7
+IUSE: video_cards_amdgpu video_cards_ast video_cards_dummy video_cards_fbdev video_cards_freedreno video_cards_geode video_cards_i915 video_cards_intel video_cards_mga video_cards_nouveau video_cards_qxl video_cards_r128 video_cards_radeon video_cards_radeonsi video_cards_siliconmotion video_cards_tegra video_cards_vc4 video_cards_vesa video_cards_nvidia input_devices_elographics input_devices_evdev input_devices_joystick input_devices_libinput input_devices_vmmouse input_devices_void input_devices_synaptics input_devices_wacom
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: metapackage
+MD5: 0427e693d3816c2a20752664df5fc3d1
+PATH: pkgs-x11-base/xorg-drivers-21.1-r2-3.gpkg.tar
+PDEPEND: >=x11-base/xorg-server-21.1[udev] >=x11-drivers/xf86-input-libinput-0.27.1 >=x11-drivers/xf86-input-wacom-0.36.0-r2 >=x11-drivers/xf86-video-amdgpu-18.0.1 >=x11-drivers/xf86-video-ati-18.0.1-r1
+SHA1: 1a3d24844c48f2f7680728c1493b92821b368ab4
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc input_devices_libinput input_devices_wacom kernel_linux video_cards_amdgpu video_cards_radeonsi
+MTIME: 1791216740
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig virtual/pkgconfig >=app-portage/elt-patches-20250306 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791216774
+CPV: x11-drivers/xf86-input-wacom-1.2.4
+DEFINED_PHASES: compile configure install postinst postrm prepare pretend setup test unpack
+DEPEND: x11-libs/libX11 x11-libs/libXext x11-libs/libXi x11-libs/libXrandr x11-libs/libXinerama virtual/libudev:0/1= x11-base/xorg-proto >=x11-base/xorg-server-1.20[xorg]
+EAPI: 8
+IUSE: test
+KEYWORDS: ~alpha amd64 arm arm64 ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2+
+MD5: 143506922f7b31d1ebe11baeadb373f3
+PATH: pkgs-x11-drivers/xf86-input-wacom-1.2.4-1.gpkg.tar
+PROVIDES: x86_64: wacom_drv.so
+RDEPEND: x11-libs/libX11 x11-libs/libXext x11-libs/libXi x11-libs/libXrandr x11-libs/libXinerama virtual/libudev:0/1= x11-base/xorg-server:0/21.1.24= >=x11-base/xorg-server-1.20[xorg] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libX11.so.6 libXi.so.6 libXinerama.so.1 libXrandr.so.2 libc.so.6 libm.so.6 libudev.so.1
+RESTRICT: test
+SHA1: a4113e2d78edb4338967136f7a94e5f87288dc9b
+SIZE: 368640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791216776
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
