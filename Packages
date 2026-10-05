@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791227842
-PACKAGES: 451
+TIMESTAMP: 1791234194
+PACKAGES: 456
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4044,6 +4044,25 @@ MTIME: 1791084056
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6 kde-frameworks/kdoctools:6
+BUILD_ID: 1
+BUILD_TIME: 1791227837
+CPV: kde-apps/kate-common-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+EAPI: 8
+IUSE: +handbook
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 4d775a88fd3fa1aacdf34ca7a577f545
+PATH: pkgs-kde-apps/kate-common-26.08.1-1.gpkg.tar
+RDEPEND: !<kde-apps/kate-24.07.90-r1 !<kde-apps/kate-addons-24.07.90-r1 !<kde-apps/kate-lib-24.07.90-r1 !<kde-apps/kwrite-24.07.90-r1
+SHA1: 7090aca7dbfae880e06e3095e86a1f93d54a2db6
+SIZE: 9185280
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791227844
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791145214
@@ -4472,6 +4491,30 @@ SIZE: 460800
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791088000
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791228019
+CPV: kde-frameworks/kcontacts-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kcodecs-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/ki18n-6.30*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 324cf9de4addbc919797563c4c37ef66
+PATH: pkgs-kde-frameworks/kcontacts-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Contacts.so.6 libkcontactsqml.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kcodecs-6.30*:6 =kde-frameworks/kconfig-6.30*:6 =kde-frameworks/ki18n-6.30*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Codecs.so.6 libKF6ConfigCore.so.6 libKF6I18n.so.6 libKF6I18nLocaleData.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 755369e80f718ed8ef59e8db23c827972a6d5529
+SIZE: 450560
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228021
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6102,6 +6145,52 @@ MTIME: 1791063898
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791228022
+CPV: media-gfx/kio-mobi-thumbnailer-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-apps/kdegraphics-mobipocket-26.08.1:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: ae7e9e6da2ed4c5c6fdde5f2a9df92ed
+PATH: pkgs-media-gfx/kio-mobi-thumbnailer-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: mobithumbnail.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-apps/kdegraphics-mobipocket-26.08.1:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 !<kde-apps/thumbnailers-24.05.2-r1:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6KIOGui.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+SHA1: 81ee49ffa6a419c4accdc155ddbe47134953c050
+SIZE: 51200
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228023
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791228038
+CPV: media-gfx/kio-ps-thumbnailer-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: ed3f0e0dc25430eeb3dd9619c8881c17
+PATH: pkgs-media-gfx/kio-ps-thumbnailer-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: gsthumbnail.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 !<kde-apps/thumbnailers-24.05.2-r1:6 app-text/dvipsk app-text/ghostscript-gpl || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6KIOGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+SHA1: b66d772032e1346c105a51b6f9ada72ffcc36687
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791228040
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/yasm[nls] virtual/pkgconfig sys-devel/gettext dev-build/make >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791217128
@@ -7075,6 +7164,30 @@ SHA1: 3b510db6105584a6a1abf52d16d61833c34fa88d
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc float http kernel_linux
 MTIME: 1791223710
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791227994
+CPV: media-libs/pulseaudio-qt-1.9.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,dbus] media-libs/libpulse[glib] dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug +handbook doc test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1
+MD5: 3cb0f11f259450b5ed8705bc8642dc11
+PATH: pkgs-media-libs/pulseaudio-qt-1.9.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6PulseAudioQt.so.5
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,dbus] media-libs/libpulse[glib] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libc.so.6 libpulse-mainloop-glib.so.0 libpulse.so.0 libstdc++.so.6
+RESTRICT: test
+SHA1: ae92c3631d45ea83ba8392a232af48da18c1e047
+SIZE: 184320
+SLOT: 0/5
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791227996
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
