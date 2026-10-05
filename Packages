@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791226248
-PACKAGES: 420
+TIMESTAMP: 1791226593
+PACKAGES: 439
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -783,6 +783,30 @@ SIZE: 737280
 SLOT: 0/1.7
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_en l10n_es ncurses nls readline
 MTIME: 1791062109
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791226458
+CPV: app-text/mupdf-1.28.2
+DEFINED_PHASES: compile install postinst postrm preinst prepare
+DEPEND: dev-libs/gumbo:0/4= media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[truetype] media-libs/jbig2dec:0/0.20= media-libs/libpng:0/16= >=media-libs/libjpeg-turbo-1.5.3-r2:0/0.2= net-misc/curl >=dev-lang/mujs-1.3.8:0/1.3.9= >=media-libs/openjpeg-2.1:2/7= >=media-libs/freeglut-3.0.0 >=dev-libs/openssl-1.1:0/3= virtual/zlib:0/1= media-libs/libglvnd[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr x11-base/xorg-proto
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: archive barcode brotli +javascript +jpeg2k opengl ssl X
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: AGPL-3
+MD5: 201903edd0bb693a856ca9f21bee0948
+PATH: pkgs-app-text/mupdf-1.28.2-1.gpkg.tar
+PROVIDES: x86_64: libmupdf.so.1.28.2
+RDEPEND: dev-libs/gumbo:0/4= media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[truetype] media-libs/jbig2dec:0/0.20= media-libs/libpng:0/16= >=media-libs/libjpeg-turbo-1.5.3-r2:0/0.2= net-misc/curl >=dev-lang/mujs-1.3.8:0/1.3.9= >=media-libs/openjpeg-2.1:2/7= >=media-libs/freeglut-3.0.0 >=dev-libs/openssl-1.1:0/3= virtual/zlib:0/1= media-libs/libglvnd[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libGL.so.1 libX11.so.6 libXext.so.6 libXrandr.so.2 libc.so.6 libcrypto.so.3 libfreetype.so.6 libgumbo.so.4 libharfbuzz.so.0 libjbig2dec.so.0 libjpeg.so.62 libm.so.6 libmujs.so.1.3.9 libopenjp2.so.7 libz.so.1
+SHA1: bb11bc407786145634f2d96d3943cb3f2528ab94
+SIZE: 37027840
+SLOT: 0/1.28.2
+USE: X abi_x86_64 amd64 elibc_glibc javascript jpeg2k kernel_linux opengl ssl
+MTIME: 1791226462
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1924,6 +1948,30 @@ MTIME: 1791062580
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig || ( ( dev-lang/python:3.15 dev-python/setuptools[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/setuptools[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/setuptools[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/setuptools[python_targets_python3_12(-)] ) ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791226184
+CPV: dev-libs/libxmlb-0.3.29
+DEFINED_PHASES: compile configure install setup test unpack
+DEPEND: >=dev-libs/glib-2.56.0:2 app-arch/xz-utils app-arch/zstd:0/1= >=dev-libs/gobject-introspection-1.82.0-r2
+EAPI: 8
+IUSE: doc introspection +lzma stemmer test +zstd verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: 086fa3f1f1fdb6bab2bfe5122510a060
+PATH: pkgs-dev-libs/libxmlb-0.3.29-1.gpkg.tar
+PROVIDES: x86_64: libxmlb.so.2
+RDEPEND: >=dev-libs/glib-2.56.0:2 app-arch/xz-utils app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 liblzma.so.5 libzstd.so.1
+RESTRICT: test
+SHA1: fc756b5f36159ae01ecc7a6352be69220c106a6c
+SIZE: 184320
+SLOT: 0/2
+USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux lzma zstd
+MTIME: 1791226185
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/m4
 BUILD_ID: 7
 BUILD_TIME: 1791061879
@@ -2229,6 +2277,49 @@ MTIME: 1791063124
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 3
+BUILD_TIME: 1791226095
+CPV: dev-python/appdirs-1.4.4-r3
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 111dd55db19bed6bf797f60fe84c6fdb
+PATH: pkgs-dev-python/appdirs-1.4.4-r3-3.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+SHA1: 2420a4f315c724701eb1c699d09a54b9c3b3eee4
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226096
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/setuptools-61[python_targets_python3_14(-)] dev-python/setuptools-rust[python_targets_python3_14(-)] >=dev-python/setuptools-scm-6.4[python_targets_python3_14(-)] || ( >=dev-lang/rust-bin-1.85.0:* >=dev-lang/rust-1.85.0:* ) dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791226351
+CPV: dev-python/cbor2-6.1.5
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test debug python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT Apache-2.0-with-LLVM-exceptions MIT Unicode-3.0
+MD5: 1540340f6cffa0fa1dfe1df7a08694c4
+PATH: pkgs-dev-python/cbor2-6.1.5-1.gpkg.tar
+PROVIDES: x86_64: _cbor2.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6
+RESTRICT: test
+SHA1: 7e9669992f1461d3ae3fe0e647d5687601481927
+SIZE: 450560
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226354
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-python/setuptools[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791079896
@@ -2247,6 +2338,27 @@ SHA1: b5e3a85e5c61975c8df172328cf20ec334165365
 SIZE: 194560
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791079897
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791226129
+CPV: dev-python/configobj-5.0.9
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 45579671ae90fdeac1a540d477570920
+PATH: pkgs-dev-python/configobj-5.0.9-1.gpkg.tar
+RDEPEND: dev-python/six[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 74157f75197d4eea43811798321a33492f0544dd
+SIZE: 133120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226131
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2270,6 +2382,27 @@ SHA1: 8bcb5d2fceee19647ddc2fc4c8fc21735274537c
 SIZE: 204800
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791083001
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 3
+BUILD_TIME: 1791226087
+CPV: dev-python/distlib-0.4.3
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: PSF-2
+MD5: c7ad714cfba48ecd0bfb98d368ae6b3c
+PATH: pkgs-dev-python/distlib-0.4.3-3.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 67fc742c35b04402ca649e21998cb21893dbe4ff
+SIZE: 573440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226089
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2312,6 +2445,27 @@ SHA1: 5f8691277e021c28164668bbcd9711edcf98c7bc
 SIZE: 1515520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 test-rust
 MTIME: 1791082095
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791226367
+CPV: dev-python/filelock-4.0.9
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: MIT
+MD5: ff6a85562293158f40a14df577435760
+PATH: pkgs-dev-python/filelock-4.0.9-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: ff8844caefc3fc67a530eacd1fcd18fcb449728f
+SIZE: 337920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226369
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2634,6 +2788,29 @@ MTIME: 1791062494
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/cython-3.3.0[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791226109
+CPV: dev-python/msgpack-1.2.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: +native-extensions test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 debug verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: Apache-2.0
+MD5: 3a2596c0e1c3f488f306d84750e847a4
+PATH: pkgs-dev-python/msgpack-1.2.3-1.gpkg.tar
+PROVIDES: x86_64: _cmsgpack.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 3df908d1f69c5100ad711ce9275157fff14f8096
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux native-extensions python_targets_python3_14
+MTIME: 1791226111
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791065309
@@ -2694,6 +2871,27 @@ SHA1: 504bfc7600e54c60a4fd6ac2ca63f52324fddbdc
 SIZE: 143360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791064566
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 4
+BUILD_TIME: 1791226079
+CPV: dev-python/pefile-2024.8.26
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: amd64 arm arm64 ~loong ppc ppc64 ~riscv x86
+LICENSE: MIT
+MD5: 22424ad81915973df65fc365cc40dc4b
+PATH: pkgs-dev-python/pefile-2024.8.26-4.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: edc28d98b66aab3fb6e5d1ba81698bab74f502f7
+SIZE: 256000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226080
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2783,6 +2981,29 @@ MTIME: 1791065548
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 4
+BUILD_TIME: 1791226122
+CPV: dev-python/psutil-7.2.2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 debug
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 57ba729e8b0313024c0e3aec84421fe8
+PATH: pkgs-dev-python/psutil-7.2.2-4.gpkg.tar
+PROVIDES: x86_64: _psutil_linux.abi3.so
+RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: c5aa406b4d5b33aa8e0f09445c761088182aa77b
+SIZE: 337920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226123
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
 BUILD_ID: 3
 BUILD_TIME: 1791065145
@@ -2829,6 +3050,27 @@ MTIME: 1791083212
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791226153
+CPV: dev-python/pyinotify-0.9.6-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: examples test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: MIT
+MD5: f9e05ff518b7d619d9fba3c23864415e
+PATH: pkgs-dev-python/pyinotify-0.9.6-r1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14[threads(+)]
+RESTRICT: test
+SHA1: beda8a8e3a31383bfe35270d6291541e599e0d5c
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226154
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791063520
@@ -2847,6 +3089,47 @@ SHA1: fd1b3247efa0f6bf799724193b2252c6e111fefe
 SIZE: 450560
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791063521
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791226137
+CPV: dev-python/python-linux-procfs-0.7.4
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: amd64 ~arm64
+LICENSE: GPL-2
+MD5: 06401f7bc5b30c72fee5e46e0e0f5072
+PATH: pkgs-dev-python/python-linux-procfs-0.7.4-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+SHA1: 8428ad05b49e489a0ab854c5119c2cae3ed95987
+SIZE: 81920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226139
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791226145
+CPV: dev-python/pyudev-0.24.5
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2.1+
+MD5: d889ac683390271f28db919dc7cbd48d
+PATH: pkgs-dev-python/pyudev-0.24.5-1.gpkg.tar
+RDEPEND: virtual/udev dev-lang/python:3.14
+RESTRICT: test
+SHA1: 3f7d110eb741acfac06103e39f6515092d024c40
+SIZE: 143360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226147
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5679,6 +5962,28 @@ MTIME: 1791217133
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig dev-libs/gobject-introspection >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791226257
+CPV: media-libs/babl-0.1.128
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/lcms-2.13.1:2
+EAPI: 8
+IUSE: gtk-doc +introspection lcms vala cpu_flags_x86_avx2 cpu_flags_x86_f16c cpu_flags_x86_mmx cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse4_1
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv -sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: LGPL-3
+MD5: 300bdf7309bab064a27a68a03ec4e3a7
+PATH: pkgs-media-libs/babl-0.1.128-1.gpkg.tar
+PROVIDES: x86_64: CIE.so HCY.so HSL.so HSV.so avx2-int8.so cairo.so double.so fast-float.so float.so formats.so gegl-fixups.so gggl-lies.so gggl-table-lies.so gggl-table.so gggl.so gimp-8bit.so grey.so half.so libbabl-0.1.so.0 naive-CMYK.so oklab.so simple.so sse-half.so sse2-float.so sse2-int16.so sse2-int8.so sse4-int8.so two-table.so u16.so u32.so x86-64-v2-CIE.so x86-64-v2-cairo.so x86-64-v2-double.so x86-64-v2-float.so x86-64-v2-gegl-fixups.so x86-64-v2-gggl-lies.so x86-64-v2-gggl.so x86-64-v2-grey.so x86-64-v2-simple.so x86-64-v2-u16.so x86-64-v2-u32.so x86-64-v2-ycbcr.so x86-64-v3-CIE.so x86-64-v3-cairo.so x86-64-v3-double.so x86-64-v3-float.so x86-64-v3-gegl-fixups.so x86-64-v3-gggl-lies.so x86-64-v3-gggl.so x86-64-v3-grey.so x86-64-v3-simple.so x86-64-v3-u16.so x86-64-v3-u32.so x86-64-v3-ycbcr.so x86-64-v4-CIE.so x86-64-v4-cairo.so x86-64-v4-double.so x86-64-v4-float.so x86-64-v4-gegl-fixups.so x86-64-v4-gggl-lies.so x86-64-v4-gggl.so x86-64-v4-grey.so x86-64-v4-simple.so x86-64-v4-u16.so x86-64-v4-u32.so x86-64-v4-ycbcr.so ycbcr.so
+RDEPEND: >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/lcms-2.13.1:2 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 liblcms2.so.2 libm.so.6
+SHA1: 8f143fe21828f26e3daae6e6fc608787c8157988
+SIZE: 655360
+USE: abi_x86_64 amd64 cpu_flags_x86_avx2 cpu_flags_x86_f16c cpu_flags_x86_mmx cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse4_1 elibc_glibc introspection kernel_linux lcms
+MTIME: 1791226259
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/gettext virtual/pkgconfig >=app-portage/elt-patches-20250306
 BUILD_ID: 10
 BUILD_TIME: 1791061856
@@ -5774,6 +6079,29 @@ SIZE: 235520
 SLOT: 2/3
 USE: abi_x86_64 amd64 avif cpu_flags_x86_sse elibc_glibc fontconfig heif jpeg kernel_linux png tiff truetype webp zlib
 MTIME: 1791198835
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/glib-utils virtual/pkgconfig dev-lang/vala:0.56 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791226260
+CPV: media-libs/gexiv2-0.14.7-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-gfx/exiv2-0.26:0/0.28= >=dev-libs/glib-2.46.0:2 >=dev-libs/gobject-introspection-1.82.0-r2:0/0=
+EAPI: 8
+IUSE: gtk-doc +introspection python test +vala python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2.1+ GPL-2+
+MD5: 597682569e89a5fa72d9a6ecda19e32a
+PATH: pkgs-media-libs/gexiv2-0.14.7-r1-1.gpkg.tar
+PROVIDES: x86_64: libgexiv2.so.2
+RDEPEND: >=media-gfx/exiv2-0.26:0/0.28= >=dev-libs/glib-2.46.0:2 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libexiv2.so.28 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 3b1c0ad9755f077bab405b17d2e0a82a50a8fbe1
+SIZE: 174080
+USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux python_targets_python3_14 vala
+MTIME: 1791226261
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8031,6 +8359,30 @@ MTIME: 1791221212
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791226220
+CPV: sci-mathematics/manifold-3.5.2
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: sci-mathematics/clipper2:0/2= dev-cpp/tbb:0/12.2.3=
+EAPI: 8
+IUSE: assimp debug python +tbb test python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: Apache-2.0
+MD5: 990d33ff1a913ca056c0b16d3cc7a35a
+PATH: pkgs-sci-mathematics/manifold-3.5.2-1.gpkg.tar
+PROVIDES: x86_64: libmanifold.so.3 libmanifoldc.so.3
+RDEPEND: sci-mathematics/clipper2:0/2= dev-cpp/tbb:0/12.2.3= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libClipper2.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libtbb.so.12
+RESTRICT: test
+SHA1: c96727a3c2486a09bb9e479cd2d7ae3000d78731
+SIZE: 1177600
+SLOT: 0/3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14 tbb
+MTIME: 1791226222
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306
 BUILD_ID: 2
 BUILD_TIME: 1791058098
@@ -8383,6 +8735,46 @@ MTIME: 1791060064
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791226377
+CPV: sys-apps/tuned-2.28.0
+DEFINED_PHASES: compile install postinst postrm preinst setup test
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +ppd selinux python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: efdcd094a810aacba7cfa06c8eb60cf6
+PATH: pkgs-sys-apps/tuned-2.28.0-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14 sys-apps/dbus sys-apps/ethtool dev-python/configobj[python_targets_python3_14(-)] dev-python/dbus-python[python_targets_python3_14(-)] dev-python/decorator[python_targets_python3_14(-)] dev-python/pygobject:3[python_targets_python3_14(-)] dev-python/python-linux-procfs[python_targets_python3_14(-)] dev-python/pyudev[python_targets_python3_14(-)] !sys-power/power-profiles-daemon dev-python/pyinotify[python_targets_python3_14(-)] virtual/tmpfiles
+SHA1: ba1ddc16f6c7f384ee629488e94f020b9f8036b3
+SIZE: 604160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ppd python_single_target_python3_14
+MTIME: 1791226380
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791226512
+CPV: sys-apps/uswid-0.6.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: amd64 ~arm arm64 ~loong ~riscv x86
+LICENSE: BSD-2-with-patent
+MD5: 08b60ce208699d374c218f66af3d64e1
+PATH: pkgs-sys-apps/uswid-0.6.0-2.gpkg.tar
+RDEPEND: dev-python/cbor2[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] dev-python/pefile[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 1533d360fbf3d8ec5e97bb2f50f9ee309628fe44
+SIZE: 235520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791226513
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig app-text/po4a sys-devel/gettext >=app-portage/elt-patches-20250306 virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791062342
@@ -8714,6 +9106,30 @@ SHA1: 57be60dfcc3c6719fdca6e335e935185bbfd29d3
 SIZE: 61440
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14 video_cards_amdgpu
 MTIME: 1791083299
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/docbook-xsl-stylesheets dev-libs/libxslt >=dev-util/gdbus-codegen-2.80.5-r1 >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791226441
+CPV: sys-power/upower-1.91.3
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=dev-libs/glib-2.76:2 sys-apps/dbus:0/0= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-auth/polkit-103 >=dev-libs/libgudev-238:0/0= virtual/udev
+EAPI: 8
+IUSE: doc +introspection ios policykit selinux test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2+
+MD5: e5784715050b9e5a5a0196c503ab4589
+PATH: pkgs-sys-power/upower-1.91.3-1.gpkg.tar
+PROVIDES: x86_64: libupower-glib.so.3
+RDEPEND: >=dev-libs/glib-2.76:2 sys-apps/dbus:0/0= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-auth/polkit-103 >=dev-libs/libgudev-238:0/0= virtual/udev >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgudev-1.0.so.0 libpolkit-gobject-1.so.0
+RESTRICT: test
+SHA1: 84350cd628ca6e31ff156b2080399a1ccaa08c67
+SIZE: 215040
+SLOT: 0/3
+USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux policykit
+MTIME: 1791226443
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
