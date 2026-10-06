@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791310768
-PACKAGES: 770
+TIMESTAMP: 1791311078
+PACKAGES: 771
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -366,6 +366,29 @@ SHA1: 94366fe95a218b7edecf48f4ceabb6d7e52f9150
 SIZE: 819200
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc extra-filters kernel_linux nls
 MTIME: 1791058000
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791310690
+CPV: app-cdr/isoimagewriter-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-cpp/gpgmepp:0/7= dev-libs/qgpgme:0/7= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
+LICENSE: GPL-3
+MD5: bb4ab97bd4333a1fb87d1def39f11546
+PATH: pkgs-app-cdr/isoimagewriter-26.08.1-1.gpkg.tar
+RDEPEND: dev-cpp/gpgmepp:0/7= dev-libs/qgpgme:0/7= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 sys-fs/udisks:2 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libKF6Solid.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Test.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libgpgmepp.so.7 libqgpgmeqt6.so.15 libstdc++.so.6
+SHA1: 46062aa07bad128961814bfaa8987ebb1f24a39b
+SIZE: 266240
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791310691
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
