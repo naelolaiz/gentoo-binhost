@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791251394
-PACKAGES: 505
+TIMESTAMP: 1791252001
+PACKAGES: 506
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4394,6 +4394,31 @@ SIZE: 1976320
 SLOT: 6
 USE: X abi_x86_64 activities amd64 elibc_glibc handbook kernel_linux libproxy man openexr sftp
 MTIME: 1791186908
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791251769
+CPV: kde-apps/konsole-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-libs/icu:0/78= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland,X] >=kde-frameworks/kxmlgui-6.27.0:6 x11-libs/libxkbcommon dev-qt/qtbase:6
+EAPI: 8
+IUSE: ssh X debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 2057f3169f2ea7e9828d39a7ad900a55
+PATH: pkgs-kde-apps/konsole-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: konsole_quickcommandsplugin.so konsole_sshmanagerplugin.so konsolepart.so libkonsoleapp.so.26.08.1 libkonsoleprivate.so.26.08.1
+RDEPEND: dev-libs/icu:0/78= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland,X] >=kde-frameworks/kxmlgui-6.27.0:6 x11-libs/libxkbcommon || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6NotifyConfig.so.6 libKF6Parts.so.6 libKF6Pty.so.6 libKF6Service.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Network.so.6 libQt6PrintSupport.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libicuuc.so.78 libm.so.6 libstdc++.so.6 libxkbcommon.so.0
+RESTRICT: test
+SHA1: fc5daaad1cc1f2e2d39343ca5b9d0ec6bb9db735
+SIZE: 3102720
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791251771
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
