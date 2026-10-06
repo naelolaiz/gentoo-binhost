@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791252001
-PACKAGES: 506
+TIMESTAMP: 1791252611
+PACKAGES: 508
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3900,6 +3900,27 @@ MTIME: 1791065088
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791252521
+CPV: dev-util/gource-0.55
+DEFINED_PHASES: configure install prepare
+DEPEND: dev-libs/boost:0/1.90.0= >=media-libs/glew-1.5:0/2.2= >=media-libs/libpng-1.2:0/16= media-libs/libsdl2[video,opengl,X] media-libs/sdl2-image[jpeg,png] dev-libs/libpcre2:0/3= dev-libs/tinyxml media-libs/libglvnd[X] media-libs/freetype:2 virtual/glu:0 >=media-libs/glm-0.9.3
+EAPI: 8
+KEYWORDS: amd64 x86
+LICENSE: GPL-3+
+MD5: fa5439c063e49e5aad49145e46c9ebc2
+PATH: pkgs-dev-util/gource-0.55-1.gpkg.tar
+RDEPEND: dev-libs/boost:0/1.90.0= >=media-libs/glew-1.5:0/2.2= >=media-libs/libpng-1.2:0/16= media-libs/libsdl2[video,opengl,X] media-libs/sdl2-image[jpeg,png] dev-libs/libpcre2:0/3= dev-libs/tinyxml media-libs/libglvnd[X] media-libs/freetype:2 virtual/glu:0 media-fonts/freefont >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libGLEW.so.2.2 libGLU.so.1 libOpenGL.so.0 libSDL2-2.0.so.0 libSDL2_image-2.0.so.0 libboost_filesystem.so.1.90.0 libc.so.6 libfreetype.so.6 libgcc_s.so.1 libm.so.6 libpcre2-8.so.0 libpng16.so.16 libstdc++.so.6 libtinyxml.so.2
+SHA1: 3619973b2f3e455bb9bc197b03a8aca7ff389ce7
+SIZE: 501760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791252522
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791071453
@@ -4277,6 +4298,31 @@ SIZE: 215040
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791245007
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791252457
+CPV: kde-apps/dolphin-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,widgets,X,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6/6.30= >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-apps/baloo-widgets-26.08.1:6 >=kde-frameworks/baloo-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: semantic-desktop telemetry debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 7530df243614dfa448d6f0599797d019
+PATH: pkgs-kde-apps/dolphin-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: dolphinpart.so hidefileitemaction.so kcm_dolphingeneral.so kcm_dolphinviewmodes.so libdolphinprivate.so.6 libdolphinvcs.so.6 movetonewfolderitemaction.so setfoldericonitemaction.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,widgets,X,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6/6.30= >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-apps/baloo-widgets-26.08.1:6 >=kde-frameworks/baloo-6.27.0:6 >=kde-apps/kio-extras-26.08.1:6 >=kde-apps/thumbnailers-26.08.1:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Baloo.so.6 libKF6BalooWidgets.so.6 libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6Codecs.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6FileMetaData.so.3 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6MultimediaWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 210c29e2003abe1ea0177d510b88038064876166
+SIZE: 6195200
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux semantic-desktop
+MTIME: 1791252460
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
