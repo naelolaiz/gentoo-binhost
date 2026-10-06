@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791247749
-PACKAGES: 498
+TIMESTAMP: 1791248963
+PACKAGES: 499
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6640,6 +6640,29 @@ SIZE: 81920
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791228040
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791248693
+CPV: media-gfx/mandelbulber-2.33
+DEFINED_PHASES: configure install postinst postrm preinst prepare pretend setup
+DEPEND: dev-libs/lzo dev-qt/qtbase:6[concurrent,gui,network,widgets] dev-qt/qtmultimedia:6[qml] media-libs/libpng:0/16= sci-libs/gsl:0/27= dev-cpp/clhpp virtual/opencl dev-libs/imath:3/29= media-libs/openexr:0/32= media-libs/libsndfile media-libs/tiff:0/6= dev-qt/qttools:6[designer]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: opencl openexr sndfile tiff
+KEYWORDS: ~amd64 ~x86
+LICENSE: CC-BY-4.0 GPL-3+
+MD5: aa1e5284c6cd05168f716e0b098e5368
+PATH: pkgs-media-gfx/mandelbulber-2.33-1.gpkg.tar
+RDEPEND: dev-libs/lzo dev-qt/qtbase:6[concurrent,gui,network,widgets] dev-qt/qtmultimedia:6[qml] media-libs/libpng:0/16= sci-libs/gsl:0/27= dev-cpp/clhpp virtual/opencl dev-libs/imath:3/29= media-libs/openexr:0/32= media-libs/libsndfile media-libs/tiff:0/6= >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libOpenCL.so.1 libOpenEXR-3_3.so.32 libQt6Concurrent.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Test.so.6 libQt6UiTools.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libgomp.so.1 libgsl.so.27 liblzo2.so.2 libm.so.6 libmvec.so.1 libpng16.so.16 libsndfile.so.1 libstdc++.so.6 libtiff.so.6
+SHA1: 2ea7be8b966a18116eefab0457176bd3960e008d
+SIZE: 133826560
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux opencl openexr sndfile tiff
+MTIME: 1791248703
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
