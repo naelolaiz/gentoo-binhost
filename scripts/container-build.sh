@@ -355,10 +355,19 @@ PY
   fi
 }
 
+# A stage3 has no locale generated besides C.UTF-8, and some packages (gimp)
+# refuse to build without a real UTF-8 one.  A desktop machine has it.
+generate_locales() {
+  grep -qx 'en_US.UTF-8 UTF-8' /etc/locale.gen 2>/dev/null \
+    || echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen
+  locale-gen >/dev/null
+}
+
 bootstrap() {
   bash "${SCRIPT_DIR}/setup-consumer.sh" --binhost-uri "$BINHOST_URI" --trust-key "$TRUST_KEY" \
     ${TREE_DATE:+--tree-date "$TREE_DATE"} --date-file "${OUT}/tree-date"
   write_builder_conf
+  generate_locales
   pin_toolchain
   list_gone
   if [[ "$PLAN_ONLY" != true ]]; then
