@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791262400
-PACKAGES: 512
+TIMESTAMP: 1791264222
+PACKAGES: 516
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -313,6 +313,24 @@ SHA1: 158b708fd80a10a1715704c029153f071046167b
 SIZE: 286720
 USE: abi_x86_64 amd64 crypt elibc_glibc gcrypt introspection kernel_linux pam test-rust vala
 MTIME: 1791083331
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791263982
+CPV: app-dicts/aspell-en-2026.02.25.0
+DEFINED_PHASES: configure install
+DEPEND: app-text/aspell
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: Ispell myspell-en_CA-KevinAtkinson Princeton public-domain
+MD5: e3d003f1cdb089f04cce847993d4fcc1
+PATH: pkgs-app-dicts/aspell-en-2026.02.25.0-1.gpkg.tar
+RDEPEND: app-text/aspell
+SHA1: aa04d5647de1efe79b1cca09068c4bce82fdcd93
+SIZE: 1515520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791263984
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4326,6 +4344,31 @@ MTIME: 1791252460
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791263920
+CPV: kde-apps/gwenview-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,opengl,wayland,widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 media-gfx/exiv2:0/0.28= media-libs/lcms:2 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/tiff:0/6= kde-plasma/plasma-activities:6/7= >=media-libs/kcolorpicker-0.3.1 >=media-libs/kimageannotator-0.7.1 >=dev-qt/qtbase-6.11.2:6[dbus] >=kde-frameworks/baloo-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libX11 dev-libs/wayland-protocols >=dev-qt/qtbase-6.11.2:6[concurrent] >=kde-frameworks/kwindowsystem-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: activities +annotate fits +mpris raw semantic-desktop share X debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+ FDL-1.2
+MD5: bb6950066885cb992d0a9474f5bd5ebe
+PATH: pkgs-kde-apps/gwenview-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: gvpart.so libgwenviewlib.so.5 slideshowfileitemaction.so
+RDEPEND: dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,opengl,wayland,widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 media-gfx/exiv2:0/0.28= media-libs/lcms:2 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/tiff:0/6= kde-plasma/plasma-activities:6/7= >=media-libs/kcolorpicker-0.3.1 >=media-libs/kimageannotator-0.7.1 >=dev-qt/qtbase-6.11.2:6[dbus] >=kde-frameworks/baloo-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libX11 >=dev-qt/qtimageformats-6.11.2:6 >=kde-apps/thumbnailers-26.08.1:6 >=kde-frameworks/kimageformats-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Baloo.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6FileMetaData.so.3 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libKF6ItemModels.so.6 libKF6ItemViews.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6MultimediaWidgets.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libX11.so.6 libc.so.6 libexiv2.so.28 libgcc_s.so.1 libjpeg.so.62 libkImageAnnotator.so.0 liblcms2.so.2 libm.so.6 libpng16.so.16 libstdc++.so.6 libtiff.so.6 libwayland-client.so.0
+RESTRICT: test test
+SHA1: a16e6acaa2f002caeef82268df661252c55fb59a
+SIZE: 7290880
+SLOT: 6
+USE: X abi_x86_64 activities amd64 annotate elibc_glibc handbook kernel_linux mpris semantic-desktop
+MTIME: 1791263922
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791259423
@@ -4511,6 +4554,31 @@ SIZE: 245760
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux xmp
 MTIME: 1791123629
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791263528
+CPV: kde-apps/okular-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[dbus,gui,widgets,X,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/libkexiv2-26.08.1:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 media-libs/freetype virtual/zlib:0/1= >=kde-frameworks/kwallet-6.27.0:6 app-text/djvu app-text/ebook-tools >=app-text/discount-2.2.7-r1:0/3.0.0= >=kde-apps/kdegraphics-mobipocket-26.08.1:6 >=app-text/poppler-24.10.0[nss,qt6] app-text/libspectre media-libs/tiff:0/6= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: crypt djvu epub markdown mobi +pdf +postscript share speech +tiff debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 9726a82fb5f584fa4d2787138486aa5c
+PATH: pkgs-kde-apps/okular-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: libOkular6Core.so.4 okularGenerator_comicbook.so okularGenerator_djvu.so okularGenerator_dvi.so okularGenerator_epub.so okularGenerator_fax.so okularGenerator_fb.so okularGenerator_ghostview.so okularGenerator_kimgio.so okularGenerator_md.so okularGenerator_mobi.so okularGenerator_poppler.so okularGenerator_tiff.so okularGenerator_txt.so okularGenerator_xps.so okularpart.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[dbus,gui,widgets,X,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/libkexiv2-26.08.1:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 media-libs/freetype virtual/zlib:0/1= >=kde-frameworks/kwallet-6.27.0:6 app-text/djvu app-text/ebook-tools >=app-text/discount-2.2.7-r1:0/3.0.0= >=kde-apps/kdegraphics-mobipocket-26.08.1:6 >=app-text/poppler-24.10.0[nss,qt6] app-text/libspectre media-libs/tiff:0/6= >=kde-frameworks/kimageformats-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libKExiv2Qt6.so.0 libKF6Archive.so.6 libKF6Bookmarks.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Parts.so.6 libKF6TextWidgets.so.6 libKF6ThreadWeaver.so.6 libKF6Wallet.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libdjvulibre.so.21 libepub.so.0 libfreetype.so.6 libm.so.6 libmarkdown.so.3 libpoppler-qt6.so.3 libspectre.so.1 libstdc++.so.6 libtiff.so.6 libz.so.1
+RESTRICT: test
+SHA1: 7506734e45b6af51fd6cc2666c858cd874f6b8b7
+SIZE: 8366080
+SLOT: 6
+USE: abi_x86_64 amd64 crypt djvu elibc_glibc epub handbook kernel_linux markdown mobi pdf postscript tiff
+MTIME: 1791263533
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7040,6 +7108,30 @@ SIZE: 235520
 SLOT: 2/3
 USE: abi_x86_64 amd64 avif cpu_flags_x86_sse elibc_glibc fontconfig heif jpeg kernel_linux png tiff truetype webp zlib
 MTIME: 1791198835
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791263267
+CPV: media-libs/gegl-0.4.72
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test
+DEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/60.62.62= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7=
+EAPI: 8
+IUSE: cairo debug ffmpeg gtk-doc +introspection jpeg2k lcms openexr openmp pdf raw sdl sdl2 sdl3 svg test tiff umfpack vala v4l webp
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-3+ LGPL-3 )
+MD5: 581042066f72c44efb6aa6dbb87a503b
+PATH: pkgs-media-libs/gegl-0.4.72-1.gpkg.tar
+PROVIDES: x86_64: exr-load.so exr-save.so ff-load.so ff-save.so gegl-common-cxx-x86_64-v2.so gegl-common-cxx-x86_64-v3.so gegl-common-cxx.so gegl-common-gpl3-x86_64-v2.so gegl-common-gpl3-x86_64-v3.so gegl-common-gpl3.so gegl-common-x86_64-v2.so gegl-common-x86_64-v3.so gegl-common.so gegl-core.so gegl-generated-x86_64-v2.so gegl-generated-x86_64-v3.so gegl-generated.so gegl-transformops-x86_64-v2.so gegl-transformops-x86_64-v3.so gif-load.so jp2-load.so jpg-load.so jpg-save.so lcms-from-profile.so libgegl-0.4.so.0 libgegl-npd-0.4.so libgegl-sc-0.4.so npd.so npy-save.so path.so pdf-load.so pixbuf-load.so pixbuf-save.so png-load.so png-save.so ppm-load.so ppm-save.so rgbe-load.so rgbe-save.so sdl-display.so sdl2-display.so seamless-clone-compose.so seamless-clone.so svg-load.so text.so tiff-load.so tiff-save.so transformops.so v4l.so vector-fill.so vector-stroke.so webp-load.so webp-save.so
+RDEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/60.62.62= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libOpenEXR-3_3.so.32 libSDL-1.2.so.0 libSDL2-2.0.so.0 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libbabl-0.1.so.0 libc.so.6 libcairo.so.2 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libjasper.so.7 libjpeg.so.62 libjson-glib-1.0.so.0 liblcms2.so.2 libm.so.6 libnsgif.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libswscale.so.9 libtiff.so.6 libwebp.so.7
+RESTRICT: test
+SHA1: 60565f8459bbb7f3e1b0ebe851b1df01b8c35261
+SIZE: 3973120
+SLOT: 0.4
+USE: abi_x86_64 amd64 cairo elibc_glibc ffmpeg introspection jpeg2k kernel_linux lcms openexr openmp pdf sdl sdl2 svg tiff v4l webp
+MTIME: 1791263271
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
