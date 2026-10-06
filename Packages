@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791277888
-PACKAGES: 588
+TIMESTAMP: 1791278223
+PACKAGES: 604
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -24,6 +24,22 @@ USE_EXPAND_UNPREFIXED: ARCH
 USE_EXPAND_VALUES_ARCH: alpha amd64 arm arm64 arm64-macos hppa loong m68k mips ppc ppc64 riscv s390 sparc x64-macos x64-solaris x86
 USE_EXPAND_VALUES_ELIBC: bionic Darwin glibc mingw musl SunOS
 USE_EXPAND_VALUES_KERNEL: Darwin Hurd linux SunOS
+
+BUILD_ID: 2
+BUILD_TIME: 1791277679
+CPV: acct-group/android-0-r2
+DEFINED_PHASES: install preinst pretend
+EAPI: 8
+IDEPEND: >=sys-apps/shadow-4.6
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: c0d55bd42b790c7879a8a938c79c8a92
+PATH: pkgs-acct-group/android-0-r2-2.gpkg.tar
+SHA1: 54b3bf3336f5877889f45701fd1f967e8da68b2f
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277680
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 2
 BUILD_TIME: 1791216773
@@ -107,6 +123,24 @@ MTIME: 1791216926
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791277681
+CPV: acct-user/ollama-0
+DEFINED_PHASES: install postinst preinst prerm pretend setup
+EAPI: 9
+IDEPEND: >=sys-apps/shadow-4.6
+IUSE: cuda
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: a580b9190a5a600f589c93de6971ffd5
+PATH: pkgs-acct-user/ollama-0-1.gpkg.tar
+RDEPEND: acct-group/ollama
+SHA1: 9f6ca1961d830d3f82873030005e9bc2254ea75a
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277682
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 2
 BUILD_TIME: 1791090173
 CPV: acct-user/rtkit-0-r3
@@ -121,6 +155,23 @@ SHA1: 54868791cc3bb6095f3e2bf8b015493b60d03ef5
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791090174
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791277684
+CPV: acct-user/timidity-0-r2
+DEFINED_PHASES: install postinst preinst prerm pretend
+EAPI: 8
+IDEPEND: >=sys-apps/shadow-4.6
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: 5394d85baf27d202396821b9a37b4d90
+PATH: pkgs-acct-user/timidity-0-r2-1.gpkg.tar
+RDEPEND: acct-group/nobody
+SHA1: 6aaa8422d9849c19fb104db24fe6bdcdfb5f4757
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277685
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -329,6 +380,28 @@ SHA1: 432c30a4b290543b92e121c362b07fd30facb6db
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791275934
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791277824
+CPV: app-containers/crun-1.29.1-r1
+DEFINED_PHASES: configure install prepare setup test
+DEPEND: dev-libs/blake3 dev-libs/json-c:0/5.1= sys-kernel/linux-headers sys-libs/libcap sys-libs/libseccomp
+EAPI: 8
+IUSE: +bpf +caps criu +seccomp selinux systemd static-libs
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv
+LICENSE: GPL-2+ LGPL-2.1+
+MD5: eddfc5ad736b2285a5e1f79abd641f24
+PATH: pkgs-app-containers/crun-1.29.1-r1-1.gpkg.tar
+PROVIDES: x86_64: libcrun.so.0
+RDEPEND: dev-libs/blake3 dev-libs/json-c:0/5.1= sys-kernel/linux-headers sys-libs/libcap sys-libs/libseccomp >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libblake3.so.0 libc.so.6 libcap.so.2 libjson-c.so.5 libm.so.6 libseccomp.so.2
+SHA1: 391f857e0f081031a73c5f3efc222656ab8a3dbb
+SIZE: 389120
+USE: abi_x86_64 amd64 bpf caps elibc_glibc kernel_linux seccomp
+MTIME: 1791277825
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2961,6 +3034,30 @@ MTIME: 1791228952
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791277770
+CPV: dev-libs/roct-thunk-interface-7.2.0
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: sys-process/numactl x11-libs/libdrm[video_cards_amdgpu]
+EAPI: 8
+IUSE: test +llvm_slot_22
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: 4f61df758f083f3d8d9dddb9ee6d99bd
+PATH: pkgs-dev-libs/roct-thunk-interface-7.2.0-1.gpkg.tar
+PROVIDES: x86_64: libhsakmt.so.1
+RDEPEND: sys-process/numactl x11-libs/libdrm[video_cards_amdgpu] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libdrm.so.2 libdrm_amdgpu.so.1 libnuma.so.1
+RESTRICT: test
+SHA1: 01873620f563427bc25740d331d2307e12a9c9de
+SIZE: 163840
+SLOT: 0/7.2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
+MTIME: 1791277772
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-apps/file sys-apps/grep virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791092288
@@ -3150,6 +3247,29 @@ MTIME: 1791076688
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791277792
+CPV: dev-libs/xapian-2.1.0
+DEFINED_PHASES: configure install test unpack
+DEPEND: >=dev-libs/icu-54.1:0/78= virtual/zlib:0/1= sys-apps/util-linux
+EAPI: 8
+IUSE: cpu_flags_x86_sse cpu_flags_x86_sse2 debug static-libs verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-2
+MD5: 3a98afdd3ed345cd20bb29c8973c1841
+PATH: pkgs-dev-libs/xapian-2.1.0-1.gpkg.tar
+PROVIDES: x86_64: libxapian.so.45
+RDEPEND: >=dev-libs/icu-54.1:0/78= virtual/zlib:0/1= sys-apps/util-linux >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libicuuc.so.78 libm.so.6 libstdc++.so.6 libuuid.so.1 libz.so.1
+SHA1: 814f336d7adc2faf790ed7e7e308275b3be21e20
+SIZE: 3153920
+SLOT: 0/45
+USE: abi_x86_64 amd64 cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc kernel_linux
+MTIME: 1791277794
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791057553
 CPV: dev-libs/xxhash-0.8.3-r2
@@ -3321,6 +3441,27 @@ MTIME: 1791226131
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791277847
+CPV: dev-python/cssselect2-0.10.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: amd64 ~arm arm64 ~ppc ~ppc64 ~riscv x86
+LICENSE: BSD
+MD5: cbf849405f6e9046ed449e43075a25a8
+PATH: pkgs-dev-python/cssselect2-0.10.1-1.gpkg.tar
+RDEPEND: dev-python/tinycss2[python_targets_python3_14(-)] dev-python/webencodings[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 3542c6ca3b466c1940773c72912722337248bd97
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277848
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791083000
@@ -3404,6 +3545,27 @@ SHA1: 5f8691277e021c28164668bbcd9711edcf98c7bc
 SIZE: 1515520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 test-rust
 MTIME: 1791082095
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791277824
+CPV: dev-python/ensurepip-wheel-0.48.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: MIT
+MD5: dc4677dfeec0b19912975c0a7b394265
+PATH: pkgs-dev-python/ensurepip-wheel-0.48.0-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 35c97c6d3d5129443f3b473637693ad49f0576c4
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277825
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3987,6 +4149,27 @@ MTIME: 1791226123
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791277829
+CPV: dev-python/pydyf-0.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: amd64 ~x86
+LICENSE: BSD
+MD5: 091f0805daf88c44c8f110e9b4fd7e14
+PATH: pkgs-dev-python/pydyf-0.12.1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 05098083b0b54c47a69cd7c0e74033b83f0ac8f7
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277830
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
 BUILD_ID: 3
 BUILD_TIME: 1791065145
@@ -4072,6 +4255,69 @@ SHA1: fd1b3247efa0f6bf799724193b2252c6e111fefe
 SIZE: 450560
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791063521
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791277817
+CPV: dev-python/pypdf-6.19.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD
+MD5: 44daf52b5d85677b282992a74b9dc6c7
+PATH: pkgs-dev-python/pypdf-6.19.0-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 081a25f81389570af4f7329f8c180a7803f9f42e
+SIZE: 1249280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277819
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791277833
+CPV: dev-python/pyphen-0.18.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: amd64 arm64 ~riscv x86
+LICENSE: GPL-2+ LGPL-2+ MPL-1.1
+MD5: 0df0a71488c207eef73d02c2a6bb0b16
+PATH: pkgs-dev-python/pyphen-0.18.1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 2405cd066de7ff593412ab8f2d05d6a0aa280b22
+SIZE: 1525760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277834
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791277836
+CPV: dev-python/pyproject-hooks-1.3.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: e27dafa929038458ac1a98053d45fc6c
+PATH: pkgs-dev-python/pyproject-hooks-1.3.3-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 7025425125a091f65be7cfe7f211a6ed08f03df6
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277838
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4225,6 +4471,48 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791277844
+CPV: dev-python/tinyhtml5-2.1.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: amd64 ~x86
+LICENSE: MIT
+MD5: f5a45ff534c6e700283c40db6475ed7e
+PATH: pkgs-dev-python/tinyhtml5-2.1.0-1.gpkg.tar
+RDEPEND: >=dev-python/webencodings-0.5.1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: f640bae0511c3b1b2dade0198373323521a25660
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277845
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 3
+BUILD_TIME: 1791277840
+CPV: dev-python/tomli-w-1.2.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: MIT
+MD5: 5840cb3790a9d4a161bce65e1d61f159
+PATH: pkgs-dev-python/tomli-w-1.2.0-3.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: e9e5e975a35fbb982f68b119671da66794dd957e
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277841
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 3
 BUILD_TIME: 1791065127
 CPV: dev-python/tomlkit-0.15.1
@@ -4242,6 +4530,27 @@ SHA1: 532f840c92e5d8ae2bf21aa8f3bb2bd5f1150deb
 SIZE: 215040
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791065128
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/flit-core-3.11[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 3
+BUILD_TIME: 1791277804
+CPV: dev-python/typing-extensions-4.16.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: PSF-2
+MD5: 29a163634eadf50b34cc390dac637f54
+PATH: pkgs-dev-python/typing-extensions-4.16.0-3.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test test
+SHA1: 2ce62e741855eb7e787ea5b5aa41bf347436f232
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791277806
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4633,6 +4942,25 @@ SIZE: 11591680
 SLOT: 3.0
 USE: abi_x86_64 amd64 deprecated elibc_glibc jit kernel_linux networking nls regex threads
 MTIME: 1791223341
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791277952
+CPV: dev-util/android-udev-rules-20260922
+DEFINED_PHASES: install postinst postrm prepare
+EAPI: 8
+KEYWORDS: ~amd64 ~arm ~arm64 ~x86
+LICENSE: GPL-3
+MD5: 8dc179294b00696f866019429c896700
+PATH: pkgs-dev-util/android-udev-rules-20260922-1.gpkg.tar
+RDEPEND: acct-group/android virtual/udev
+RESTRICT: test
+SHA1: 527459ebc390b8cd5ca960f4cd14f93fa67a14f2
+SIZE: 40960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277953
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
