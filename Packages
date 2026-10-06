@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791270876
-PACKAGES: 533
+TIMESTAMP: 1791275927
+PACKAGES: 534
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7095,6 +7095,30 @@ SIZE: 9922560
 SLOT: 0/7.1.2-18
 USE: X abi_x86_64 amd64 bzip2 cxx djvu elibc_glibc fftw fontconfig graphviz heif jpeg jpeg2k jpegxl kernel_linux lcms lzma opencl openexr openmp pango png raw svg tiff truetype webp wmf xml zip zlib
 MTIME: 1791268083
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/glib-utils >=sys-devel/gettext-0.17 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791275721
+CPV: media-gfx/inkscape-1.4.4-r1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test unpack
+DEPEND: dev-lang/python:3.14[xml(+)] >=app-text/poppler-0.57.0:0/164=[cairo,lcms] >=dev-cpp/cairomm-1.12:0 >=dev-cpp/glibmm-2.58:2 dev-cpp/gtkmm:3.0 >=dev-cpp/pangomm-2.40:1.4 >=dev-libs/boehm-gc-7.1:0/0= dev-libs/boost:0/1.90.0=[stacktrace(-)] dev-libs/double-conversion:0/3= >=dev-libs/glib-2.41 >=dev-libs/libsigc++-2.8:2 >=dev-libs/libxml2-2.7.4:2/16= >=dev-libs/libxslt-1.1.25 dev-libs/popt media-gfx/potrace media-libs/libepoxy media-libs/fontconfig media-libs/freetype:2 media-libs/lcms:2 media-libs/libpng:0/16= sci-libs/gsl:0/27= >=x11-libs/pango-1.44 x11-libs/gtk+:3[X,wayland] x11-libs/libX11 dev-python/appdirs[python_targets_python3_14(-)] dev-python/cachecontrol[python_targets_python3_14(-)] dev-python/cssselect[python_targets_python3_14(-)] dev-python/filelock[python_targets_python3_14(-)] dev-python/lockfile[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] dev-python/pillow[jpeg,tiff,webp,python_targets_python3_14(-)] dev-python/tinycss2[python_targets_python3_14(-)] media-gfx/scour[python_targets_python3_14(-)] app-text/libwpg:0.3 dev-libs/librevenge media-libs/libcdr media-libs/libexif media-gfx/imagemagick:0/7.1.2-18=[cxx] media-libs/libjpeg-turbo:0/0.2= sys-libs/readline:0/8= x11-libs/gtksourceview:4 app-text/gspell:0/3= app-text/libwpg:0.3 dev-libs/librevenge
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: cdr dia exif graphicsmagick imagemagick inkjar jpeg openmp postscript readline sourceview spell svg2 test visio wayland wpg X python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: GPL-2 LGPL-2.1
+MD5: 97262d774564705a812c88ffd6508467
+PATH: pkgs-media-gfx/inkscape-1.4.4-r1-1.gpkg.tar
+PROVIDES: x86_64: lib2geom.so.1.4.0 libinkscape_base.so.1.4.4.0
+RDEPEND: dev-lang/python:3.14[xml(+)] >=app-text/poppler-0.57.0:0/164=[cairo,lcms] >=dev-cpp/cairomm-1.12:0 >=dev-cpp/glibmm-2.58:2 dev-cpp/gtkmm:3.0 >=dev-cpp/pangomm-2.40:1.4 >=dev-libs/boehm-gc-7.1:0/0= dev-libs/boost:0/1.90.0=[stacktrace(-)] dev-libs/double-conversion:0/3= >=dev-libs/glib-2.41 >=dev-libs/libsigc++-2.8:2 >=dev-libs/libxml2-2.7.4:2/16= >=dev-libs/libxslt-1.1.25 dev-libs/popt media-gfx/potrace media-libs/libepoxy media-libs/fontconfig media-libs/freetype:2 media-libs/lcms:2 media-libs/libpng:0/16= sci-libs/gsl:0/27= >=x11-libs/pango-1.44 x11-libs/gtk+:3[X,wayland] x11-libs/libX11 dev-python/appdirs[python_targets_python3_14(-)] dev-python/cachecontrol[python_targets_python3_14(-)] dev-python/cssselect[python_targets_python3_14(-)] dev-python/filelock[python_targets_python3_14(-)] dev-python/lockfile[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] dev-python/pillow[jpeg,tiff,webp,python_targets_python3_14(-)] dev-python/tinycss2[python_targets_python3_14(-)] media-gfx/scour[python_targets_python3_14(-)] app-text/libwpg:0.3 dev-libs/librevenge media-libs/libcdr media-libs/libexif media-gfx/imagemagick:0/7.1.2-18=[cxx] media-libs/libjpeg-turbo:0/0.2= sys-libs/readline:0/8= x11-libs/gtksourceview:4 app-text/gspell:0/3= app-text/libwpg:0.3 dev-libs/librevenge dev-python/numpy[python_targets_python3_14(-)] app-text/ghostscript-gpl >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libatkmm-1.6.so.1 libboost_filesystem.so.1.90.0 libc.so.6 libcairo-gobject.so.2 libcairo.so.2 libcairomm-1.0.so.1 libcdr-0.1.so.1 libdouble-conversion.so.3 libepoxy.so.0 libfontconfig.so.1 libfreetype.so.6 libgc.so.1 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgdkmm-3.0.so.1 libgio-2.0.so.0 libgiomm-2.4.so.1 libglib-2.0.so.0 libglibmm-2.4.so.1 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libgsl.so.27 libgspell-1.so.3 libgtk-3.so.0 libgtkmm-3.0.so.1 libgtksourceview-4.so.0 libharfbuzz.so.0 libjpeg.so.62 liblcms2.so.2 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpangomm-1.4.so.1 libpng16.so.16 libpoppler-glib.so.8 libpoppler.so.164 libpotrace.so.0 libreadline.so.8 librevenge-0.0.so.0 librevenge-stream-0.0.so.0 libsigc-2.0.so.0 libstdc++.so.6 libwpg-0.3.so.3 libxml2.so.16 libxslt.so.1 libz.so.1
+RESTRICT: test test
+SHA1: b2890e8d6e2ba19411b333d767a999cbb030ddbe
+SIZE: 38727680
+USE: X abi_x86_64 amd64 cdr elibc_glibc exif imagemagick jpeg kernel_linux openmp postscript python_single_target_python3_14 readline sourceview spell svg2 wayland wpg
+MTIME: 1791275727
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
