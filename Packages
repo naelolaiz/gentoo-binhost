@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791287326
-PACKAGES: 762
+TIMESTAMP: 1791288430
+PACKAGES: 767
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -446,6 +446,24 @@ SHA1: 391f857e0f081031a73c5f3efc222656ab8a3dbb
 SIZE: 389120
 USE: abi_x86_64 amd64 bpf caps elibc_glibc kernel_linux seccomp
 MTIME: 1791277825
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791286977
+CPV: app-containers/distrobox-1.8.2.5
+DEFINED_PHASES: install postinst postrm
+EAPI: 8
+IUSE: gui
+KEYWORDS: amd64 ~arm ~arm64 ~riscv ~x86
+LICENSE: GPL-3
+MD5: 3c9aa2d3d60dfc475efb82679d743d1d
+PATH: pkgs-app-containers/distrobox-1.8.2.5-1.gpkg.tar
+RDEPEND: || ( app-containers/docker app-containers/podman )
+SHA1: 981cc756928067bcfd4eb238d64288e3da015efd
+SIZE: 256000
+USE: abi_x86_64 amd64 elibc_glibc gui kernel_linux
+MTIME: 1791286981
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3470,6 +3488,30 @@ MTIME: 1791122970
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791287177
+CPV: dev-libs/qgpgme-2.2.0-r1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=app-crypt/gpgme-2.2:1/45.0= >=dev-cpp/gpgmepp-2.2:0/7= >=dev-libs/libgpg-error-1.47:0/0= >=dev-qt/qtbase-6.5.0:6
+EAPI: 8
+IUSE: test verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2+
+MD5: 4604b1a6917db206339d646ad4fe5f72
+PATH: pkgs-dev-libs/qgpgme-2.2.0-r1-1.gpkg.tar
+PROVIDES: x86_64: libqgpgmeqt6.so.15
+RDEPEND: >=app-crypt/gpgme-2.2:1/45.0= >=dev-cpp/gpgmepp-2.2:0/7= >=dev-libs/libgpg-error-1.47:0/0= >=dev-qt/qtbase-6.5.0:6 !<app-crypt/gpgme-2[qt6(-)] !dev-libs/qgpgme:1 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libc.so.6 libgcc_s.so.1 libgpgmepp.so.7 libstdc++.so.6
+RESTRICT: test
+SHA1: 447141c6ff9922aa95ea21fb7ef84573096b2e8b
+SIZE: 542720
+SLOT: 0/7
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791287179
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791228951
@@ -3511,6 +3553,29 @@ SIZE: 665600
 SLOT: 0/7.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
 MTIME: 1791286091
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-editors/vim-core app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791287114
+CPV: dev-libs/rocr-runtime-7.2.0
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: dev-libs/elfutils x11-libs/libdrm dev-libs/roct-thunk-interface:0/7.2 dev-libs/rocm-device-libs:0/7.2 llvm-core/clang:22/22.1= llvm-core/lld:22/22.1=
+EAPI: 8
+IUSE: debug +llvm_slot_22
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: 0061dd8ae1db748347d320a5710352d4
+PATH: pkgs-dev-libs/rocr-runtime-7.2.0-1.gpkg.tar
+PROVIDES: x86_64: libhsa-runtime64.so.1
+RDEPEND: dev-libs/elfutils x11-libs/libdrm dev-libs/roct-thunk-interface:0/7.2 dev-libs/rocm-device-libs:0/7.2 llvm-core/clang:22/22.1= llvm-core/lld:22/22.1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libdrm.so.2 libelf.so.1 libgcc_s.so.1 libhsakmt.so.1 libm.so.6 libstdc++.so.6
+SHA1: 7ba886990ab3fafa65ff4036d642eeffb3de0e26
+SIZE: 901120
+SLOT: 0/7.2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
+MTIME: 1791287116
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7584,6 +7649,29 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
+BUILD_TIME: 1791287247
+CPV: kde-apps/kfind-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qt5compat-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 3ceee844af6b22c43651fbd365914b63
+PATH: pkgs-kde-apps/kfind-26.08.1-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qt5compat-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6FileMetaData.so.3 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: bda6b10aa4496d90ecd44ca10570c205c34d7dba
+SIZE: 552960
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791287248
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
 BUILD_TIME: 1791279554
 CPV: kde-apps/kgeography-26.08.1
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
@@ -8051,6 +8139,31 @@ SIZE: 245760
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux xmp
 MTIME: 1791123629
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791287954
+CPV: kde-apps/libkgapi-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-libs/cyrus-sasl:2 >=dev-qt/qtbase-6.11.2:6[gui,network,widgets,xml] >=kde-frameworks/kcalendarcore-6.27.0:6 >=kde-frameworks/kcontacts-6.27.0:6 >=kde-frameworks/kwallet-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-2.1+
+MD5: 5708db77bf3f310b6217a863c63ae319
+PATH: pkgs-kde-apps/libkgapi-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: libKPim6GAPIBlogger.so.6 libKPim6GAPICalendar.so.6 libKPim6GAPICore.so.6 libKPim6GAPIDrive.so.6 libKPim6GAPILatitude.so.6 libKPim6GAPIMaps.so.6 libKPim6GAPIPeople.so.6 libKPim6GAPITasks.so.6 libkdexoauth2.so.3
+RDEPEND: dev-libs/cyrus-sasl:2 >=dev-qt/qtbase-6.11.2:6[gui,network,widgets,xml] >=kde-frameworks/kcalendarcore-6.27.0:6 >=kde-frameworks/kcontacts-6.27.0:6 >=kde-frameworks/kwallet-6.27.0:6 !kde-apps/libkgapi:5[-kf6compat(-)] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKF6CalendarCore.so.6 libKF6Contacts.so.6 libKF6Wallet.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 6c9ccedc51a55c58e9a0158c3e4f44836dc9c232
+SIZE: 808960
+SLOT: 6/26.08
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791287958
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
