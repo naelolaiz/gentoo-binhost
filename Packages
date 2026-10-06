@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791252920
-PACKAGES: 510
+TIMESTAMP: 1791262400
+PACKAGES: 512
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4328,6 +4328,29 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
+BUILD_TIME: 1791259423
+CPV: kde-apps/kate-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.1:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 0e8492e69edde53841466c53a3497619
+PATH: pkgs-kde-apps/kate-26.08.1-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.1:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl ~kde-apps/kate-addons-26.08.1:6 >=kde-apps/kate-common-26.08.1 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libc.so.6 libkateprivate.so.26.08.1 libstdc++.so.6
+SHA1: 6d85cca96cb427634f273da6c2fe28eae2db3fbd
+SIZE: 245760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791259428
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
 BUILD_TIME: 1791249464
 CPV: kde-apps/kate-addons-26.08.1
 DEFINED_PHASES: compile configure info install nofetch postinst prepare test unpack
@@ -8293,6 +8316,32 @@ SHA1: e0bb4c610a4753a52dc1eaa4afe6bd0d8643d265
 SIZE: 68321280
 USE: abi_x86_64 amd64 elibc_glibc jack kernel_linux opengl
 MTIME: 1791228475
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15[threads(+)] dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) dev-util/itstool sys-devel/gettext virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791262166
+CPV: media-sound/ardour-9.8.0
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: app-arch/libarchive:0/13= dev-cpp/cairomm:0[X] dev-cpp/glibmm:2 dev-cpp/pangomm:1.4 dev-libs/glib:2 dev-libs/libsigc++:2 dev-libs/libxml2:2/16= media-libs/alsa-lib media-libs/aubio:0/5= media-libs/flac media-libs/fontconfig media-libs/freetype:2 media-libs/liblo media-libs/liblrdf media-libs/libpng:0/16= media-libs/libsamplerate media-libs/libsndfile media-libs/lilv media-libs/lv2 media-libs/raptor:2 media-libs/rubberband:0/3= media-libs/taglib:0/2= media-libs/vamp-plugin-sdk net-libs/libwebsockets:0/22= net-misc/curl sys-apps/dbus sys-libs/readline:0/8= sci-libs/fftw:3.0/3=[threads] virtual/libusb:1 x11-libs/cairo[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXinerama x11-libs/libXrandr x11-libs/pango x11-themes/hicolor-icon-theme virtual/jack media-libs/libpulse dev-libs/boost dev-libs/sord media-libs/sratom x11-libs/libXi
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: doc jack phonehome pulseaudio test cpu_flags_x86_avx cpu_flags_x86_avx512f cpu_flags_x86_fma3 cpu_flags_x86_sse
+KEYWORDS: ~amd64 ~loong ~x86
+LICENSE: GPL-2
+MD5: 5d3d31e8e5d5c485cb7d93256c6630dc
+PATH: pkgs-media-sound/ardour-9.8.0-1.gpkg.tar
+PROVIDES: x86_64: a-comp.so a-delay.so a-eq.so a-exp.so a-fluidsynth.so a-reverb.so libaaf.so.0 libalsa_audiobackend.so libardour.so.3 libardour_cc121.so libardour_console1.so libardour_contourdesign.so libardour_faderport.so libardour_faderport16.so libardour_faderport2.so libardour_faderport8.so libardour_generic_midi.so libardour_launch_control_xl.so libardour_launchkey_4.so libardour_launchpad_mini.so libardour_launchpad_pro.so libardour_launchpad_x.so libardour_mcp.so libardour_mcp_http.so libardour_midisurface.so libardour_osc.so libardour_push2.so libardour_ssl_uf8.so libardour_us2400.so libardour_websockets.so libardouralsautil.so.0 libardourcp.so libardourvampplugins.so libardourvamppyin.so.0 libaudiographer.so.0 libcanvas.so.0 libclearlooks.so libdummy_audiobackend.so libevoral.so.0 libgtkmm2ext.so.0 libjack_audiobackend.so libmidipp.so.4 libpan1in2out.so libpan2in2out.so libpanbalance.so libpanvbap.so libpbd.so.4 libptformat.so.0 libpulseaudio_backend.so libsuil.so.0 libsuil_x11_in_gtk2.so libtemporal.so.0 libwaveview.so.0 libwidgets.so.0 libydk-pixbuf.so.2 libydk.so.2 libydkmm.so.2 libytk.so.2 libytkmm.so.2 libztk.so.2 libztkmm.so.2 reasonablesynth.so
+RDEPEND: app-arch/libarchive:0/13= dev-cpp/cairomm:0[X] dev-cpp/glibmm:2 dev-cpp/pangomm:1.4 dev-libs/glib:2 dev-libs/libsigc++:2 dev-libs/libxml2:2/16= media-libs/alsa-lib media-libs/aubio:0/5= media-libs/flac media-libs/fontconfig media-libs/freetype:2 media-libs/liblo media-libs/liblrdf media-libs/libpng:0/16= media-libs/libsamplerate media-libs/libsndfile media-libs/lilv media-libs/lv2 media-libs/raptor:2 media-libs/rubberband:0/3= media-libs/taglib:0/2= media-libs/vamp-plugin-sdk net-libs/libwebsockets:0/22= net-misc/curl sys-apps/dbus sys-libs/readline:0/8= sci-libs/fftw:3.0/3=[threads] virtual/libusb:1 x11-libs/cairo[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXinerama x11-libs/libXrandr x11-libs/pango x11-themes/hicolor-icon-theme virtual/jack media-libs/libpulse >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libX11.so.6 libXext.so.6 libXinerama.so.1 libXrandr.so.2 libarchive.so.13 libasound.so.2 libaubio.so.5 libc.so.6 libcairo.so.2 libcairomm-1.0.so.1 libcurl.so.4 libdbus-1.so.3 libfftw3f.so.3 libfftw3f_threads.so.3 libfontconfig.so.1 libgcc_s.so.1 libgio-2.0.so.0 libgiomm-2.4.so.1 libglib-2.0.so.0 libglibmm-2.4.so.1 libgmodule-2.0.so.0 libgobject-2.0.so.0 libjack.so.0 libjpeg.so.62 liblilv-0.so.0 liblo.so.7 liblrdf.so.2 libm.so.6 libmvec.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpangomm-1.4.so.1 libpng16.so.16 libpulse.so.0 libreadline.so.8 librubberband.so.3 libsamplerate.so.0 libserd-0.so.0 libsigc-2.0.so.0 libsndfile.so.1 libstdc++.so.6 libtag.so.2 libusb-1.0.so.0 libvamp-hostsdk.so.3 libvamp-sdk.so.2 libwebsockets.so.22 libxml2.so.16
+RESTRICT: test
+SHA1: fa64af49788dfaa458b7ef0a183ac535be1f7164
+SIZE: 29153280
+SLOT: 9
+USE: abi_x86_64 amd64 cpu_flags_x86_avx cpu_flags_x86_fma3 cpu_flags_x86_sse elibc_glibc jack kernel_linux pulseaudio
+MTIME: 1791262170
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
