@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791284525
-PACKAGES: 730
+TIMESTAMP: 1791287003
+PACKAGES: 754
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -466,6 +466,28 @@ SHA1: aa7da8852f96b665c97f20c19a7b85ae02a35045
 SIZE: 3840000
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791278595
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-go/go-md2man >=dev-lang/go-1.26.0 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1791285716
+CPV: app-containers/podman-6.1.2
+DEFINED_PHASES: compile install postinst prepare setup unpack
+DEPEND: app-containers/catatonit >=app-containers/conmon-2.1.10 >=app-containers/container-libs-0.68.0[extra(-)] app-crypt/gpgme:1/45.0= dev-db/sqlite:3 dev-libs/libassuan:0/3.0= dev-libs/libgpg-error:0/0= sys-apps/shadow:0/6= sys-libs/libseccomp:0/0=
+EAPI: 8
+IUSE: apparmor btrfs cron +seccomp selinux systemd wrapper
+KEYWORDS: ~amd64 ~arm64 ~loong ~riscv
+LICENSE: Apache-2.0 BSD BSD-2 CC-BY-SA-4.0 ISC MIT MPL-2.0
+MD5: 3a49e620d0dd6df0ecfa11f59976aef8
+PATH: pkgs-app-containers/podman-6.1.2-1.gpkg.tar
+RDEPEND: app-containers/catatonit >=app-containers/conmon-2.1.10 >=app-containers/container-libs-0.68.0[extra(-)] app-crypt/gpgme:1/45.0= dev-db/sqlite:3 dev-libs/libassuan:0/3.0= dev-libs/libgpg-error:0/0= sys-apps/shadow:0/6= sys-libs/libseccomp:0/0= virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgpgme.so.45 libseccomp.so.2 libsqlite3.so.0 libsubid.so.6
+RESTRICT: test
+SHA1: df2cae721c865da264b06dcc96cc0ed184df7853
+SIZE: 33607680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux seccomp
+MTIME: 1791285721
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1564,6 +1586,29 @@ MTIME: 1791278764
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791284491
+CPV: app-text/zathura-cb-2026.07.18
+DEFINED_PHASES: compile configure install postinst postrm preinst test
+DEPEND: app-arch/libarchive:0/13= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:3 x11-base/xorg-proto
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+KEYWORDS: ~amd64 ~arm ~riscv ~x86
+LICENSE: ZLIB
+MD5: fb9e5bd66a04e4dbca0c5fef92d67c74
+PATH: pkgs-app-text/zathura-cb-2026.07.18-1.gpkg.tar
+PROVIDES: x86_64: libcb.so
+RDEPEND: app-arch/libarchive:0/13= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:3 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libarchive.so.13 libc.so.6 libcairo.so.2 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libgirara.so.5 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-4.so.1
+RESTRICT: test
+SHA1: dda2f14ffd14e69a15d1a9f9a2aa367b2cf7df26
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791284492
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791278881
@@ -1587,6 +1632,24 @@ MTIME: 1791278882
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 2
+BUILD_TIME: 1791284621
+CPV: app-text/zathura-meta-0-r1
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: cb djvu epub +pdf postscript
+KEYWORDS: amd64 ~arm x86
+LICENSE: metapackage
+MD5: 1e7db42aa9b7df0dfa0c9613bd8c84bc
+PATH: pkgs-app-text/zathura-meta-0-r1-2.gpkg.tar
+RDEPEND: app-text/zathura app-text/zathura-djvu app-text/zathura-pdf-mupdf app-text/zathura-pdf-mupdf
+SHA1: b252eea04146b118abfa05e7ec1b241ee6e1545e
+SIZE: 20480
+USE: abi_x86_64 amd64 djvu elibc_glibc epub kernel_linux pdf
+MTIME: 1791284622
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791278889
@@ -1607,6 +1670,28 @@ SHA1: 4d4e1aaafe4827f1da54ffdad94e2de51a4a9905
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791278890
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791284630
+CPV: app-text/zathura-ps-2026.07.18
+DEFINED_PHASES: compile configure install postinst postrm test
+DEPEND: app-text/libspectre >=app-text/zathura-2026.07.18 dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo
+EAPI: 8
+KEYWORDS: ~amd64 ~arm ~riscv ~x86
+LICENSE: ZLIB
+MD5: 5ce1d0f06f1d154be71c6eecea9cf022
+PATH: pkgs-app-text/zathura-ps-2026.07.18-1.gpkg.tar
+PROVIDES: x86_64: libps.so
+RDEPEND: app-text/libspectre >=app-text/zathura-2026.07.18 dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcairo.so.2 libgirara.so.5 libspectre.so.1
+RESTRICT: test
+SHA1: 8c74e175fe13babf110cbb33ed75d23445dc3b8d
+SIZE: 40960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791284631
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3406,6 +3491,26 @@ SIZE: 122880
 SLOT: 0/1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791228952
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/rocm-cmake llvm-core/clang:22 llvm-core/lld:22 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791286090
+CPV: dev-libs/rocm-device-libs-7.2.0
+DEFINED_PHASES: compile configure install prepare setup test unpack
+EAPI: 8
+IUSE: test +llvm_slot_22
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: 6282d2e79e43c80e3fe0c1b632486182
+PATH: pkgs-dev-libs/rocm-device-libs-7.2.0-1.gpkg.tar
+RESTRICT: test
+SHA1: c856ecd625f415519da89144d995448f7e50a7e1
+SIZE: 665600
+SLOT: 0/7.2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
+MTIME: 1791286091
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5314,6 +5419,29 @@ MTIME: 1791113581
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/swig >=dev-python/cython-3.0.8[python_targets_python3_14(-)] >=dev-python/meson-python-0.15.0[python_targets_python3_14(-)] >=dev-python/pybind11-2.13.2[python_targets_python3_14(-)] >=dev-python/pytest-8.0.0[python_targets_python3_14(-)] >=dev-build/meson-1.5.0 dev-util/patchelf virtual/pkgconfig >=dev-python/pythran-0.16.0[python_targets_python3_14(-)] dev-python/pooch[python_targets_python3_14(-)] virtual/fortran >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/meson-python[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1791285550
+CPV: dev-python/scipy-1.17.1
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: >=dev-python/numpy-1.23.5:0/2=[lapack,python_targets_python3_14(-)] >=media-libs/qhull-2020.2:0/8.1= virtual/cblas >=virtual/lapack-3.8 >=dev-libs/boost-1.89.0 >=dev-python/pythran-0.16.0[python_targets_python3_14(-)] virtual/fortran dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: doc +fortran test-rust test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 debug
+KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: BSD LGPL-2
+MD5: 587e73c3f069176bc22899d595c90205
+PATH: pkgs-dev-python/scipy-1.17.1-2.gpkg.tar
+PROVIDES: x86_64: __odrpack.cpython-314-x86_64-linux-gnu.so _ansari_swilk_statistics.cpython-314-x86_64-linux-gnu.so _arpacklib.cpython-314-x86_64-linux-gnu.so _batched_linalg.cpython-314-x86_64-linux-gnu.so _bglu_dense.cpython-314-x86_64-linux-gnu.so _biasedurn.cpython-314-x86_64-linux-gnu.so _ccallback_c.cpython-314-x86_64-linux-gnu.so _ckdtree.cpython-314-x86_64-linux-gnu.so _comb.cpython-314-x86_64-linux-gnu.so _core.cpython-314-x86_64-linux-gnu.so _csparsetools.cpython-314-x86_64-linux-gnu.so _ctest.cpython-314-x86_64-linux-gnu.so _cytest.cpython-314-x86_64-linux-gnu.so _cythonized_array_utils.cpython-314-x86_64-linux-gnu.so _cyutility.cpython-314-x86_64-linux-gnu.so _decomp_interpolative.cpython-314-x86_64-linux-gnu.so _decomp_lu_cython.cpython-314-x86_64-linux-gnu.so _decomp_update.cpython-314-x86_64-linux-gnu.so _dfitpack.cpython-314-x86_64-linux-gnu.so _dierckx.cpython-314-x86_64-linux-gnu.so _direct.cpython-314-x86_64-linux-gnu.so _distance_pybind.cpython-314-x86_64-linux-gnu.so _distance_wrap.cpython-314-x86_64-linux-gnu.so _dop.cpython-314-x86_64-linux-gnu.so _ellip_harm_2.cpython-314-x86_64-linux-gnu.so _fblas.cpython-314-x86_64-linux-gnu.so _fitpack.cpython-314-x86_64-linux-gnu.so _flapack.cpython-314-x86_64-linux-gnu.so _flow.cpython-314-x86_64-linux-gnu.so _fmm_core.cpython-314-x86_64-linux-gnu.so _fpumode.cpython-314-x86_64-linux-gnu.so _group_columns.cpython-314-x86_64-linux-gnu.so _gufuncs.cpython-314-x86_64-linux-gnu.so _hausdorff.cpython-314-x86_64-linux-gnu.so _hierarchy.cpython-314-x86_64-linux-gnu.so _highs_options.cpython-314-x86_64-linux-gnu.so _interpnd.cpython-314-x86_64-linux-gnu.so _lbfgsb.cpython-314-x86_64-linux-gnu.so _linalg_pythran.cpython-314-x86_64-linux-gnu.so _lsap.cpython-314-x86_64-linux-gnu.so _matching.cpython-314-x86_64-linux-gnu.so _matfuncs_expm.cpython-314-x86_64-linux-gnu.so _matfuncs_schur_sqrtm.cpython-314-x86_64-linux-gnu.so _matfuncs_sqrtm_triu.cpython-314-x86_64-linux-gnu.so _max_len_seq_inner.cpython-314-x86_64-linux-gnu.so _min_spanning_tree.cpython-314-x86_64-linux-gnu.so _minpack.cpython-314-x86_64-linux-gnu.so _mio5_utils.cpython-314-x86_64-linux-gnu.so _mio_utils.cpython-314-x86_64-linux-gnu.so _moduleTNC.cpython-314-x86_64-linux-gnu.so _nd_image.cpython-314-x86_64-linux-gnu.so _ni_label.cpython-314-x86_64-linux-gnu.so _odepack.cpython-314-x86_64-linux-gnu.so _optimal_leaf_ordering.cpython-314-x86_64-linux-gnu.so _pava_pybind.cpython-314-x86_64-linux-gnu.so _peak_finding_utils.cpython-314-x86_64-linux-gnu.so _ppoly.cpython-314-x86_64-linux-gnu.so _propack.cpython-314-x86_64-linux-gnu.so _qhull.cpython-314-x86_64-linux-gnu.so _qmc_cy.cpython-314-x86_64-linux-gnu.so _qmvnt_cy.cpython-314-x86_64-linux-gnu.so _quadpack.cpython-314-x86_64-linux-gnu.so _rank_filter_1d.cpython-314-x86_64-linux-gnu.so _rbfinterp_pythran.cpython-314-x86_64-linux-gnu.so _reordering.cpython-314-x86_64-linux-gnu.so _rgi_cython.cpython-314-x86_64-linux-gnu.so _rigid_transform_cy.cpython-314-x86_64-linux-gnu.so _rotation_cy.cpython-314-x86_64-linux-gnu.so _shortest_path.cpython-314-x86_64-linux-gnu.so _sigtools.cpython-314-x86_64-linux-gnu.so _slsqplib.cpython-314-x86_64-linux-gnu.so _sobol.cpython-314-x86_64-linux-gnu.so _solve_toeplitz.cpython-314-x86_64-linux-gnu.so _sosfilt.cpython-314-x86_64-linux-gnu.so _sparsetools.cpython-314-x86_64-linux-gnu.so _specfun.cpython-314-x86_64-linux-gnu.so _special_ufuncs.cpython-314-x86_64-linux-gnu.so _spline.cpython-314-x86_64-linux-gnu.so _stats.cpython-314-x86_64-linux-gnu.so _stats_pythran.cpython-314-x86_64-linux-gnu.so _streams.cpython-314-x86_64-linux-gnu.so _superlu.cpython-314-x86_64-linux-gnu.so _test_ccallback.cpython-314-x86_64-linux-gnu.so _test_deprecation_call.cpython-314-x86_64-linux-gnu.so _test_deprecation_def.cpython-314-x86_64-linux-gnu.so _test_internal.cpython-314-x86_64-linux-gnu.so _test_multivariate.cpython-314-x86_64-linux-gnu.so _tools.cpython-314-x86_64-linux-gnu.so _traversal.cpython-314-x86_64-linux-gnu.so _trlib.cpython-314-x86_64-linux-gnu.so _uarray.cpython-314-x86_64-linux-gnu.so _ufuncs.cpython-314-x86_64-linux-gnu.so _ufuncs_cxx.cpython-314-x86_64-linux-gnu.so _upfirdn_apply.cpython-314-x86_64-linux-gnu.so _vode.cpython-314-x86_64-linux-gnu.so _voronoi.cpython-314-x86_64-linux-gnu.so _vq.cpython-314-x86_64-linux-gnu.so _zeros.cpython-314-x86_64-linux-gnu.so convolve.cpython-314-x86_64-linux-gnu.so cython_blas.cpython-314-x86_64-linux-gnu.so cython_lapack.cpython-314-x86_64-linux-gnu.so cython_special.cpython-314-x86_64-linux-gnu.so givens_elimination.cpython-314-x86_64-linux-gnu.so levyst.cpython-314-x86_64-linux-gnu.so messagestream.cpython-314-x86_64-linux-gnu.so pypocketfft.cpython-314-x86_64-linux-gnu.so rcont.cpython-314-x86_64-linux-gnu.so unuran_wrapper.cpython-314-x86_64-linux-gnu.so
+RDEPEND: >=dev-python/numpy-1.23.5:0/2=[lapack,python_targets_python3_14(-)] >=media-libs/qhull-2020.2:0/8.1= virtual/cblas >=virtual/lapack-3.8 dev-python/pillow[python_targets_python3_14(-)] virtual/fortran dev-lang/python:3.14[threads(+)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libblas.so.3 libc.so.6 libgcc_s.so.1 libgfortran.so.5 liblapack.so.3 libm.so.6 libqhull_r.so.8.1 libstdc++.so.6
+RESTRICT: test
+SHA1: e479cb5d570f07c485f7d40c5c40b919d71184d2
+SIZE: 29655040
+USE: abi_x86_64 amd64 elibc_glibc fortran kernel_linux python_targets_python3_14 test-rust
+MTIME: 1791285556
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/jaraco-functools-4.4.0[python_targets_python3_14(-)] >=dev-python/jaraco-text-4.0.0[python_targets_python3_14(-)] >=dev-python/more-itertools-10.8.0[python_targets_python3_14(-)] >=dev-python/packaging-25.0[python_targets_python3_14(-)] >=dev-python/platformdirs-4.4.0[python_targets_python3_14(-)] >=dev-python/wheel-0.45.1[python_targets_python3_14(-)] dev-lang/python:3.14[xml(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)]
 BUILD_ID: 2
 BUILD_TIME: 1791062537
@@ -6216,6 +6344,26 @@ MTIME: 1791083012
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-lang/go-1.27.0 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1791285846
+CPV: dev-util/github-cli-2.101.0
+DEFINED_PHASES: compile configure install unpack
+EAPI: 9
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv
+LICENSE: MIT Apache-2.0 BSD BSD-2 ISC MIT MPL-2.0 Unlicense
+MD5: 6c0c7b6aa4c6fb991ef589419ff20ac6
+PATH: pkgs-dev-util/github-cli-2.101.0-1.gpkg.tar
+RDEPEND: >=dev-vcs/git-1.7.3 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 6cd4569c740a909129f30ff6f371c080f1ee7805
+SIZE: 14981120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791285854
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/docutils-0.21.1 app-arch/xz-utils
 BUILD_ID: 1
 BUILD_TIME: 1791063911
@@ -6537,6 +6685,47 @@ MTIME: 1791147488
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-lang/go-1.25.0 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1791285961
+CPV: dev-vcs/git-lfs-3.8.0
+DEFINED_PHASES: compile install postinst test unpack
+EAPI: 8
+IUSE: doc test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0 BSD BSD-2 BSD-4 ISC MIT
+MD5: f10d2b9c13a6301debd40eb81ed13171
+PATH: pkgs-dev-vcs/git-lfs-3.8.0-1.gpkg.tar
+RDEPEND: dev-vcs/git >=sys-libs/glibc-2.43-r2
+RESTRICT: test
+SHA1: 7c30fab648a53600841c8592591a03552d2b36d8
+SIZE: 5775360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791285962
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-apps/coreutils[-multicall] dev-lang/python:3.14[sqlite] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791285997
+CPV: dev-vcs/pre-commit-4.5.1
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: dev-lang/python:3.14[sqlite]
+EAPI: 8
+IUSE: test python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: amd64 ~arm64 ~hppa ~ppc ~ppc64 x86
+LICENSE: MIT
+MD5: 1850500a76d6d5fb3fe088fada3846df
+PATH: pkgs-dev-vcs/pre-commit-4.5.1-1.gpkg.tar
+RDEPEND: dev-vcs/git >=dev-python/cfgv-2.0.0[python_targets_python3_14(-)] >=dev-python/identify-1.0.0[python_targets_python3_14(-)] >=dev-python/nodeenv-0.11.1[python_targets_python3_14(-)] >=dev-python/pyyaml-5.1[python_targets_python3_14(-)] >=dev-python/virtualenv-20.10.0[python_targets_python3_14(-)] dev-lang/python:3.14[sqlite]
+RESTRICT: test
+SHA1: abc091f2fcb1e4370a1dd47d7616c4249971b27a
+SIZE: 409600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1791285998
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig app-text/doxygen sys-devel/gettext dev-lang/swig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 dev-build/automake || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 3
 BUILD_TIME: 1791146948
@@ -6698,6 +6887,30 @@ SIZE: 1095680
 SLOT: 1
 USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux vala
 MTIME: 1791279126
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791286301
+CPV: kde-apps/analitza-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[-gles2-only,gui,opengl,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: eigen debug test
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 4e34076cce32a187fc0093b95303a5b4
+PATH: pkgs-kde-apps/analitza-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: libAnalitza.so.9 libAnalitzaGui.so.9 libAnalitzaPlot.so.9 libAnalitzaWidgets.so.9 libanalitzadeclarativeplugin.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[-gles2-only,gui,opengl,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: eb518738674a0b04140cf7e118fb2ae7d7f4d84a
+SIZE: 757760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791286302
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7112,6 +7325,30 @@ SIZE: 368640
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791279190
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791286333
+CPV: kde-apps/kde-dev-utils-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qttools-6.11.2:6[designer,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 6d5585847dd0109275b6829332367c48
+PATH: pkgs-kde-apps/kde-dev-utils-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: kuiviewerpart.so quithumbnail.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qttools-6.11.2:6[designer,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOGui.so.6 libKF6Parts.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Designer.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: d379cd74d203685e1cd0e67cd96046e7e4ff1680
+SIZE: 153600
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791286334
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8165,6 +8402,30 @@ SIZE: 184320
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791088185
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/yacc >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791286476
+CPV: kde-frameworks/kcalendarcore-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-libs/libical-3.0.5:0/3= >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: ee67163e4572957629f11fa6f8cb5b28
+PATH: pkgs-kde-frameworks/kcalendarcore-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6CalendarCore.so.6 libkcalendarcoreqml.so
+RDEPEND: >=dev-libs/libical-3.0.5:0/3= >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libc.so.6 libical.so.3 libicalss.so.3 libicalvcal.so.3 libstdc++.so.6
+RESTRICT: test test
+SHA1: da764328a6ef3ce1faa7946432fcc910e2e46ec6
+SIZE: 563200
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791286478
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10554,6 +10815,26 @@ MTIME: 1791276242
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791284644
+CPV: media-gfx/quat-1.20-r4
+DEFINED_PHASES: configure install
+DEPEND: >=virtual/zlib-1.1.4:0/1= x11-libs/fltk:1/1.4= x11-libs/libX11 x11-libs/libXext x11-libs/libXft
+EAPI: 8
+IUSE: X debug
+KEYWORDS: amd64 ppc x86
+LICENSE: GPL-2
+MD5: 346accbdc129d2bd948d049d5d0a41ad
+PATH: pkgs-media-gfx/quat-1.20-r4-1.gpkg.tar
+RDEPEND: >=virtual/zlib-1.1.4:0/1= x11-libs/fltk:1/1.4= x11-libs/libX11 x11-libs/libXext x11-libs/libXft >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libX11.so.6 libc.so.6 libfltk.so.1.4 libfltk_images.so.1.4 libjpeg.so.62 libm.so.6 libmvec.so.1 libpng16.so.16 libstdc++.so.6 libz.so.1
+SHA1: 7b3071933e73538950635173e1b4a213b72a645f
+SIZE: 430080
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791284645
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/perl sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 4
 BUILD_TIME: 1791276789
@@ -12308,6 +12589,28 @@ MTIME: 1791123105
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791284891
+CPV: media-plugins/hexter-1.1.1
+DEFINED_PHASES: configure install
+DEPEND: media-libs/alsa-lib media-libs/dssi media-libs/liblo media-libs/ladspa-sdk
+EAPI: 7
+IUSE: readline
+KEYWORDS: amd64 x86
+LICENSE: GPL-2
+MD5: caf3952e972e9595070e34addc02d9f6
+PATH: pkgs-media-plugins/hexter-1.1.1-1.gpkg.tar
+PROVIDES: x86_64: hexter.so
+RDEPEND: media-libs/alsa-lib media-libs/dssi media-libs/liblo >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 liblo.so.7 libm.so.6
+SHA1: 7d8ca9f34a4e67467988957fc6196f1187b9f47f
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791284892
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791282704
@@ -12370,6 +12673,27 @@ SHA1: e0bb4c610a4753a52dc1eaa4afe6bd0d8643d265
 SIZE: 68321280
 USE: abi_x86_64 amd64 elibc_glibc jack kernel_linux opengl
 MTIME: 1791228475
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791284884
+CPV: media-sound/a2jmidid-12
+DEFINED_PHASES: compile configure install setup test
+DEPEND: media-libs/alsa-lib virtual/jack sys-apps/dbus dev-lang/python:3.13[threads(+)]
+EAPI: 8
+IUSE: dbus python_single_target_python3_12 python_single_target_python3_13
+KEYWORDS: amd64 ~arm arm64 x86
+LICENSE: GPL-2
+MD5: e5479bf626fc51cf3b0b102d501273b0
+PATH: pkgs-media-sound/a2jmidid-12-1.gpkg.tar
+RDEPEND: media-libs/alsa-lib virtual/jack sys-apps/dbus dev-lang/python:3.13[threads(+)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libasound.so.2 libc.so.6 libdbus-1.so.3 libjack.so.0
+SHA1: a2a5b2ddb11ff7b3c38849bc2ae8a4d536778c50
+SIZE: 81920
+USE: abi_x86_64 amd64 dbus elibc_glibc kernel_linux python_single_target_python3_13
+MTIME: 1791284885
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12489,6 +12813,28 @@ SIZE: 706560
 SLOT: 0/3
 USE: abi_x86_64 alsa amd64 dbus elibc_glibc ipv6 jack kernel_linux ladspa openmp pipewire pulseaudio readline sdl sndfile
 MTIME: 1791229181
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gettext dev-util/intltool virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791285613
+CPV: media-sound/gigedit-1.2.1
+DEFINED_PHASES: configure install postinst postrm preinst prepare
+DEPEND: dev-cpp/gtkmm:3.0 media-libs/libgig media-libs/libsndfile >=media-sound/linuxsampler-2.3.0
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+KEYWORDS: amd64 ~x86
+LICENSE: GPL-2
+MD5: 1de73f069ebece90d9ed887c584b4ea6
+PATH: pkgs-media-sound/gigedit-1.2.1-1.gpkg.tar
+PROVIDES: x86_64: libgigedit.so.6 libgigeditlinuxsamplerplugin.so
+RDEPEND: dev-cpp/gtkmm:3.0 media-libs/libgig media-libs/libsndfile >=media-sound/linuxsampler-2.3.0 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libatkmm-1.6.so.1 libc.so.6 libcairomm-1.0.so.1 libgcc_s.so.1 libgdkmm-3.0.so.1 libgig.so.11 libglib-2.0.so.0 libglibmm-2.4.so.1 libgobject-2.0.so.0 libgtk-3.so.0 libgtkmm-3.0.so.1 liblinuxsampler.so.7 libm.so.6 libpangomm-1.4.so.1 libsigc-2.0.so.0 libsndfile.so.1 libstdc++.so.6
+SHA1: 882947882bef4f29dacde11698c8bb964e5c1f36
+SIZE: 1136640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791285614
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12785,6 +13131,29 @@ SHA1: d62c308ebba0f7fb4133eac71e686b98d00aed0f
 SIZE: 8929280
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux lv2
 MTIME: 1791244151
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791286333
+CPV: media-sound/sonic-visualiser-5.2.1
+DEFINED_PHASES: compile configure install postinst postrm preinst test
+DEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.4.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: id3tag jack mad ogg opus osc +portaudio pulseaudio test
+KEYWORDS: amd64 x86
+LICENSE: GPL-2
+MD5: c6a41e2c5c24ea5605409faac445fa62
+PATH: pkgs-media-sound/sonic-visualiser-5.2.1-1.gpkg.tar
+RDEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.4.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libasound.so.2 libbz2.so.1 libc.so.6 libcapnp.so.1.4.0 libfftw3.so.3 libfishsound.so.1 libgcc_s.so.1 libkj.so.1.4.0 liblo.so.7 liblrdf.so.2 libm.so.6 libmad.so.0 liboggz.so.2 libpulse.so.0 librubberband.so.3 libsamplerate.so.0 libserd-0.so.0 libsndfile.so.1 libsord-0.so.0 libstdc++.so.6 libvamp-hostsdk.so.3
+RESTRICT: test
+SHA1: 2dd2b41b0b35afbb21c1bf5bb87598ed3c1217e8
+SIZE: 5058560
+USE: abi_x86_64 amd64 elibc_glibc jack kernel_linux mad ogg osc portaudio pulseaudio
+MTIME: 1791286335
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -13980,6 +14349,26 @@ MTIME: 1791242230
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791284873
+CPV: sci-electronics/sigrok-cli-0.7.2-r1
+DEFINED_PHASES: configure postinst postrm prepare
+DEPEND: >=dev-libs/glib-2.32.0 >=sci-libs/libsigrok-0.5.0:0/4= >=sci-libs/libsigrokdecode-0.5.0:0/4= virtual/pkgconfig
+EAPI: 8
+IUSE: +decode selinux
+KEYWORDS: ~amd64 ~x86
+LICENSE: GPL-3
+MD5: e11735b79ec9745a4214a04b922f45f0
+PATH: pkgs-sci-electronics/sigrok-cli-0.7.2-r1-1.gpkg.tar
+RDEPEND: >=dev-libs/glib-2.32.0 >=sci-libs/libsigrok-0.5.0:0/4= >=sci-libs/libsigrokdecode-0.5.0:0/4= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libsigrok.so.4 libsigrokdecode.so.4
+SHA1: b0a2e207b3d7277ced7acd7dfa1f4dbd684d69a4
+SIZE: 102400
+USE: abi_x86_64 amd64 decode elibc_glibc kernel_linux
+MTIME: 1791284875
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791092748
@@ -15023,6 +15412,29 @@ MTIME: 1791090605
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-text/docbook-xml-dtd:4.1.2 dev-util/itstool sys-devel/gettext virtual/pkgconfig >=app-portage/elt-patches-20250306 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1791284482
+CPV: sys-block/gparted-1.7.0
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: >=sys-auth/polkit-0.102 >=dev-cpp/glibmm-2.56.1:2 >=dev-cpp/gtkmm-3.24:3.0 >=dev-libs/glib-2.58.3-r1:2 >=sys-block/parted-3.2:0/0= >=dev-libs/libsigc++-2.10.1:2
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: kde policykit wayland test
+KEYWORDS: amd64 ~arm ~arm64 ppc ppc64 ~riscv ~x86
+LICENSE: GPL-2+ FDL-1.2+
+MD5: f817173a1cd264eb355e19c682066a50
+PATH: pkgs-sys-block/gparted-1.7.0-1.gpkg.tar
+RDEPEND: >=sys-auth/polkit-0.102 >=dev-cpp/glibmm-2.56.1:2 >=dev-cpp/gtkmm-3.24:3.0 >=dev-libs/glib-2.58.3-r1:2 >=sys-block/parted-3.2:0/0= >=dev-libs/libsigc++-2.10.1:2 >=sys-apps/util-linux-2.33.2 x11-apps/xhost >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libatkmm-1.6.so.1 libc.so.6 libcairomm-1.0.so.1 libgcc_s.so.1 libgdk-3.so.0 libgdkmm-3.0.so.1 libglib-2.0.so.0 libglibmm-2.4.so.1 libgtk-3.so.0 libgtkmm-3.0.so.1 libpangomm-1.4.so.1 libparted-fs-resize.so.0 libparted.so.2 libsigc-2.0.so.0 libstdc++.so.6 libuuid.so.1
+RESTRICT: test
+SHA1: 6c7edfbe58204407c43f4634d23bbd26c0a76a7b
+SIZE: 2508800
+USE: abi_x86_64 amd64 elibc_glibc kde kernel_linux policykit wayland
+MTIME: 1791284484
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791280237
@@ -15066,6 +15478,24 @@ SIZE: 22169600
 SLOT: 2/2.16-r1
 USE: abi_x86_64 amd64 branding device-mapper elibc_glibc fonts grub_platforms_efi-64 grub_platforms_pc kernel_linux mount nls sdl themes truetype
 MTIME: 1791278158
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791284270
+CPV: sys-boot/os-prober-1.85
+DEFINED_PHASES: compile install postinst prepare
+EAPI: 8
+KEYWORDS: ~amd64 ~x86
+LICENSE: GPL-3
+MD5: c3dfb86f7348aaf28518fe720fa069ce
+PATH: pkgs-sys-boot/os-prober-1.85-1.gpkg.tar
+RDEPEND: sys-boot/grub:2[mount] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+SHA1: 9d1a71a48d4eccd7f7eb965177d76197ed18a63a
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791284271
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15177,6 +15607,25 @@ SIZE: 737280
 SLOT: 0/91
 USE: abi_x86_64 acl amd64 elibc_glibc fuse kernel_linux mount-ntfs ntfsprogs xattr
 MTIME: 1791281874
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791286003
+CPV: sys-kernel/genkernel-4.3.18
+DEFINED_PHASES: compile install postinst prepare setup unpack
+DEPEND: app-text/asciidoc
+EAPI: 8
+IUSE: ibm +firmware systemd python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: a45062fca17424fdc7522461fcc74c5a
+PATH: pkgs-sys-kernel/genkernel-4.3.18-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14 app-alternatives/cpio app-alternatives/bc app-alternatives/yacc app-alternatives/lex >=app-misc/pax-utils-1.2.2 app-portage/elt-patches app-portage/portage-utils dev-build/autoconf dev-build/autoconf-archive dev-build/automake dev-build/cmake dev-build/libtool dev-util/gperf sys-apps/sandbox virtual/pkgconfig sys-libs/glibc[static-libs(+)] sys-kernel/linux-firmware
+SHA1: d8567f2a6dc7e3679594dff5cd96eedb8187cd54
+SIZE: 248627200
+USE: abi_x86_64 amd64 elibc_glibc firmware kernel_linux python_single_target_python3_14
+MTIME: 1791286005
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15626,6 +16075,27 @@ SHA1: 6c9e9ddfd356a7bc5ee93a200c52f78caa686c63
 SIZE: 44912640
 USE: abi_x86_64 acct amd64 elibc_glibc filecaps gogit kernel_linux pam sqlite
 MTIME: 1791225080
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-libs/check dev-perl/HTML-Parser dev-build/netsurf-buildsystem virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791284388
+CPV: www-client/netsurf-3.11-r1
+DEFINED_PHASES: compile install prepare test
+DEPEND: dev-libs/libcss dev-libs/libnsutils dev-libs/openssl:0/3= dev-libs/libutf8proc dev-libs/libxml2:2/16= net-misc/curl net-libs/libdom >=net-libs/libhubbub-0.3.8 >=media-libs/libnsgif-1.0.0 dev-libs/glib:2 x11-libs/gtk+:3 dev-libs/nsgenbind dev-lang/duktape:0/2.7.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/libnspsl media-libs/libsvgtiny media-libs/libwebp
+EAPI: 8
+IUSE: bmp fbcon truetype +gif +gtk +javascript +jpeg +png +psl rosprite +svg +svgtiny +webp
+KEYWORDS: amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-2 MIT
+MD5: c1284fce8e380b2940b3b56002427d74
+PATH: pkgs-www-client/netsurf-3.11-r1-1.gpkg.tar
+RDEPEND: dev-libs/libcss dev-libs/libnsutils dev-libs/openssl:0/3= dev-libs/libutf8proc dev-libs/libxml2:2/16= net-misc/curl net-libs/libdom >=net-libs/libhubbub-0.3.8 >=media-libs/libnsgif-1.0.0 dev-libs/glib:2 x11-libs/gtk+:3 dev-libs/nsgenbind dev-lang/duktape:0/2.7.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/libnspsl media-libs/libsvgtiny media-libs/libwebp >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcairo.so.2 libcrypto.so.3 libcss.so.0 libcurl.so.4 libdom.so.0 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libjpeg.so.62 libjxl.so.0.12 libm.so.6 libnsgif.so.1 libnspsl.so.0 libnsutils.so.0 libpango-1.0.so.0 libpangocairo-1.0.so.0 libparserutils.so.0 libpng16.so.16 libssl.so.3 libsvgtiny.so.0 libutf8proc.so.3 libwapcaplet.so.0 libwebp.so.7 libz.so.1
+SHA1: 44723081fc63df16575713efaf46cc7948e8ec58
+SIZE: 1525760
+USE: abi_x86_64 amd64 elibc_glibc gif gtk javascript jpeg kernel_linux png psl svg svgtiny truetype webp
+MTIME: 1791284390
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -16099,6 +16569,29 @@ MTIME: 1791063441
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791284618
+CPV: x11-libs/qwt-6.3.0-r2
+DEFINED_PHASES: configure install prepare test
+DEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,gui,widgets] >=dev-qt/qtbase-6.11.2:6[opengl] virtual/opengl >=dev-qt/qtsvg-6.11.2:6
+EAPI: 8
+IUSE: designer doc examples opengl polar svg
+KEYWORDS: amd64 ~arm ppc64 ~riscv x86
+LICENSE: qwt
+MD5: cbe4fdc78a67c9be5614741d30a20870
+PATH: pkgs-x11-libs/qwt-6.3.0-r2-1.gpkg.tar
+PROVIDES: x86_64: libqwt6-qt6.so.6.3
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,gui,widgets] >=dev-qt/qtbase-6.11.2:6[opengl] virtual/opengl >=dev-qt/qtsvg-6.11.2:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 313edcfd881e450079e479a3f4263d7f9b9ce8c2
+SIZE: 768000
+SLOT: 6/3.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux opengl svg
+MTIME: 1791284620
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
 BUILD_ID: 12
 BUILD_TIME: 1791064793
@@ -16181,6 +16674,29 @@ SHA1: 9d80d2bbb471a7862181356a9f637a758bdb334c
 SIZE: 1167360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791082965
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( >=dev-lang/zig-bin-0.15.2:0.15 >=dev-lang/zig-0.15.2:0.15 ) sys-devel/gettext || ( dev-lang/zig:0.15[llvm(+)] dev-lang/zig-bin:0.15 ) virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791284860
+CPV: x11-terms/ghostty-1.3.1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND: >=dev-libs/oniguruma-6.9.9:0/5= >=dev-util/glslang-1.3.296.0:0/16.4= gui-libs/gtk:4/4=[X] gui-libs/libadwaita:1/1= >=media-libs/fontconfig-2.14.2:1.0/1.0= >=media-libs/freetype-2.13.2:2/2=[bzip2,harfbuzz,png] >=media-libs/harfbuzz-12.2.0:0/6.0.0=[truetype,introspection] >=dev-cpp/highway-1.3.0:0/0= x11-libs/libX11 dev-libs/wayland gui-libs/gtk4-layer-shell:0/0= virtual/libintl
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: X wayland man nls
+KEYWORDS: amd64
+LICENSE: Apache-2.0 BSD BSD-2 BSD-4 Boost-1.0 MIT MPL-2.0 Unicode-3.0
+MD5: b4959d71bf19a01c1de925c120f25980
+PATH: pkgs-x11-terms/ghostty-1.3.1-1.gpkg.tar
+PROVIDES: x86_64: libghostty-vt.so.0
+RDEPEND: >=dev-libs/oniguruma-6.9.9:0/5= >=dev-util/glslang-1.3.296.0:0/16.4= gui-libs/gtk:4/4=[X] gui-libs/libadwaita:1/1= >=media-libs/fontconfig-2.14.2:1.0/1.0= >=media-libs/freetype-2.13.2:2/2=[bzip2,harfbuzz,png] >=media-libs/harfbuzz-12.2.0:0/6.0.0=[truetype,introspection] >=dev-cpp/highway-1.3.0:0/0= x11-libs/libX11 dev-libs/wayland gui-libs/gtk4-layer-shell:0/0= virtual/libintl ~x11-terms/ghostty-terminfo-1.3.1 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libX11.so.6 libadwaita-1.so.0 libc.so.6 libfontconfig.so.1 libfreetype.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libglslang-default-resource-limits.so.16 libglslang.so.16 libgobject-2.0.so.0 libgtk-4.so.1 libgtk4-layer-shell.so.0 libharfbuzz.so.0 libhwy.so.1 libm.so.6 libonig.so.5 libwayland-client.so.0
+SHA1: 17f6187c23d77693074280f3695fd1dd52d1fb54
+SIZE: 17664000
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux nls wayland
+MTIME: 1791284868
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
