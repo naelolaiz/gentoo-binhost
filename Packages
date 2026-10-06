@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791288430
-PACKAGES: 767
+TIMESTAMP: 1791308945
+PACKAGES: 768
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -10809,6 +10809,32 @@ SHA1: 065b3a1901d7744c1a1dfabb221223602d498eaa
 SIZE: 880640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791277555
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/perl-5.30.3 dev-libs/libxslt >=dev-util/gdbus-codegen-2.80.5-r1 >=sys-devel/gettext-0.21 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791308674
+CPV: media-gfx/gimp-3.2.6
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
+DEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.12= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: X aalib alsa bash-completion doc fits gnome heif javascript jpeg2k jpegxl lua mng openexr openmp postscript test udev unwind vala vector-icons wayland webp wmf xpm +lua_single_target_luajit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-3+ LGPL-3+
+MD5: 243a5d4afcf24662029ea7afd90134f5
+PATH: pkgs-media-gfx/gimp-3.2.6-1.gpkg.tar
+PROVIDES: x86_64: libcolor-selector-cmyk.so libcolor-selector-water.so libcolor-selector-wheel.so libcontroller-linux-input.so libcontroller-midi.so libdisplay-filter-aces-rrt.so libdisplay-filter-clip-warning.so libdisplay-filter-color-blind.so libdisplay-filter-gamma.so libdisplay-filter-high-contrast.so libgimp-3.0.so.0 libgimp-scriptfu-3.0.so.0 libgimpbase-3.0.so.0 libgimpcolor-3.0.so.0 libgimpconfig-3.0.so.0 libgimpmath-3.0.so.0 libgimpmodule-3.0.so.0 libgimpthumb-3.0.so.0 libgimpui-3.0.so.0 libgimpwidgets-3.0.so.0
+RDEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.12= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms] x11-themes/hicolor-icon-theme >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libIex-3_3.so.32 libOpenEXR-3_3.so.32 libX11.so.6 libXcursor.so.1 libXext.so.6 libXfixes.so.3 libXmu.so.6 libappstream.so.5 libarchive.so.13 libasound.so.2 libbabl-0.1.so.0 libbz2.so.1 libc.so.6 libcairo.so.2 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgegl-0.4.so.0 libgegl-npd-0.4.so libgexiv2.so.2 libgio-2.0.so.0 libgirepository-1.0.so.1 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libgtk-3.so.0 libgudev-1.0.so.0 libharfbuzz.so.0 libheif.so.1 libjpeg.so.62 libjson-glib-1.0.so.0 libjxl.so.0.12 libjxl_threads.so.0.12 liblcms2.so.2 liblzma.so.5 libm.so.6 libmng.so.2 libmypaint.so.0 libopenjp2.so.7 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libz.so.1
+RESTRICT: test
+SHA1: fe83af82cfbc667425925147cb08f1348010f5c5
+SIZE: 33587200
+SLOT: 0/3
+USE: X abi_x86_64 alsa amd64 elibc_glibc heif jpeg2k jpegxl kernel_linux lua_single_target_luajit mng openexr openmp python_single_target_python3_14 udev wayland webp
+MTIME: 1791308682
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
