@@ -195,10 +195,14 @@ jobs:
         run: |
           # A run that is already waiting (the daily one, or one started by
           # hand) picks up where this one stopped, and may cover more tiers.
-          # Dispatching now would replace it.
+          # Dispatching now would replace it.  This run itself is left out:
+          # between two of its jobs the API can report it as queued.
+          # shellcheck disable=SC2016  # $self is a jq variable
           waiting="$(gh run list --repo "$GITHUB_REPOSITORY" --workflow build.yml \
-            --branch "$GITHUB_REF_NAME" --limit 20 --json status \
-            --jq '[.[] | select(.status == "queued" or .status == "pending" or .status == "waiting")] | length')"
+            --branch "$GITHUB_REF_NAME" --limit 20 --json status,databaseId \
+            --jq --arg self "$GITHUB_RUN_ID" \
+            '[.[] | select((.databaseId | tostring) != $self)
+                  | select(.status == "queued" or .status == "pending" or .status == "waiting")] | length')"
           if [ "$waiting" -gt 0 ]; then
             echo "A run is already waiting; it continues the build."
             exit 0
