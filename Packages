@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791311078
-PACKAGES: 771
+TIMESTAMP: 1791312605
+PACKAGES: 775
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -699,6 +699,28 @@ SHA1: bb478e72e428941beb51f89380db420aef3f5e01
 SIZE: 2580480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791058150
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791311888
+CPV: app-editors/ghostwriter-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: app-text/hunspell:0/1.7= >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=dev-qt/qtwebchannel-6.11.2:6 >=dev-qt/qtwebengine-6.11.2:6[widgets] >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/sonnet-6.27.0:6 virtual/opengl >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-3+
+MD5: a0d2f40a0e6a54a9dd6e13bf46cfd693
+PATH: pkgs-app-editors/ghostwriter-26.08.1-1.gpkg.tar
+RDEPEND: app-text/hunspell:0/1.7= >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=dev-qt/qtwebchannel-6.11.2:6 >=dev-qt/qtwebengine-6.11.2:6[widgets] >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/sonnet-6.27.0:6 virtual/opengl || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6SonnetCore.so.6 libKF6SonnetUi.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6WebChannel.so.6 libQt6WebEngineCore.so.6 libQt6WebEngineWidgets.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+SHA1: cb73719513949b02a75f536a623d8567188dd391
+SIZE: 3993600
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791311892
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5275,6 +5297,29 @@ MTIME: 1791277838
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/pyqt-builder-1.19[python_targets_python3_14(-)] >=dev-python/sip-6.15[python_targets_python3_14(-)] >=dev-qt/qtbase-6.11:6 virtual/pkgconfig dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/sip[python_targets_python3_14(-)]
+BUILD_ID: 7
+BUILD_TIME: 1791312519
+CPV: dev-python/pyqt6-6.11.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-qt/qtbase-6.11:6/6.11.2=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.11:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtwebengine-6.11:6[pdfium,widgets] >=dev-qt/qtdeclarative-6.11:6[widgets] >=dev-qt/qtdeclarative-6.11:6[opengl] >=dev-qt/qtsvg-6.11:6 >=dev-qt/qtwebchannel-6.11:6 dev-util/vulkan-headers dev-lang/python:3.14
+EAPI: 8
+IUSE: +X bluetooth +dbus debug designer examples gles2-only +gui help multimedia +network nfc opengl pdfium positioning +printsupport qml quick quick3d remoteobjects scxml serialport sensors spatialaudio speech +sql +ssl svg testlib webchannel websockets vulkan wayland +widgets +xml python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: amd64 arm arm64 ~loong ~ppc ppc64 ~riscv x86
+LICENSE: GPL-3
+MD5: 9cfe902d384fd68fd3734cdec967f15f
+PATH: pkgs-dev-python/pyqt6-6.11.0-r1-7.gpkg.tar
+PROVIDES: x86_64: QtBluetooth.abi3.so QtCore.abi3.so QtDBus.abi3.so QtGui.abi3.so QtNetwork.abi3.so QtOpenGL.abi3.so QtOpenGLWidgets.abi3.so QtPdf.abi3.so QtPdfWidgets.abi3.so QtPrintSupport.abi3.so QtQml.abi3.so QtQuick.abi3.so QtQuickWidgets.abi3.so QtSql.abi3.so QtSvg.abi3.so QtSvgWidgets.abi3.so QtWebChannel.abi3.so QtWidgets.abi3.so QtXml.abi3.so pyqt6.abi3.so
+RDEPEND: >=dev-qt/qtbase-6.11:6/6.11.2=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.11:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtwebengine-6.11:6[pdfium,widgets] >=dev-qt/qtdeclarative-6.11:6[widgets] >=dev-qt/qtdeclarative-6.11:6[opengl] >=dev-qt/qtsvg-6.11:6 >=dev-qt/qtwebchannel-6.11:6 >=dev-python/pyqt6-sip-13.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libQt6Bluetooth.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6Pdf.so.6 libQt6PdfWidgets.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6WebChannel.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libdbus-1.so.3 libm.so.6 libstdc++.so.6
+SHA1: 67143a2e98daf74031eb3916791f384e528c3695
+SIZE: 4444160
+USE: X abi_x86_64 amd64 bluetooth dbus elibc_glibc gui kernel_linux network opengl pdfium printsupport python_targets_python3_14 qml quick sql ssl svg vulkan wayland webchannel widgets xml
+MTIME: 1791312521
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/setuptools-scm-6.2.3[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791278626
@@ -7735,6 +7780,30 @@ SIZE: 13312000
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791279558
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791312398
+CPV: kde-apps/kimagemapeditor-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtwebengine-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 76ac827194dc9cbc070fb44c5e99db87
+PATH: pkgs-kde-apps/kimagemapeditor-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: kimagemapeditorpart.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtwebengine-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/kimagemapeditor:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6Parts.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6WebEngineCore.so.6 libQt6WebEngineWidgets.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: 0652ea51cec6cd88ca9a999b7d9871b40d5f8ac2
+SIZE: 1300480
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791312402
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12703,6 +12772,26 @@ SIZE: 890880
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791195709
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791310978
+CPV: media-plugins/ams-lv2-1.2.2-r1
+DEFINED_PHASES: compile configure install setup unpack
+DEPEND: dev-cpp/gtkmm:2.4 dev-cpp/cairomm:0 media-libs/lv2 media-libs/lvtk[gtk2] sci-libs/fftw:3.0 virtual/jack || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) virtual/pkgconfig
+EAPI: 8
+KEYWORDS: amd64 x86
+LICENSE: GPL-2
+MD5: eab64d2c19bf18d35a23a5606f2c5375
+PATH: pkgs-media-plugins/ams-lv2-1.2.2-r1-1.gpkg.tar
+PROVIDES: x86_64: absolute.so ad_2.so ad_2_gui.so ad_4.so ad_4_gui.so ad_6.so ad_6_gui.so advenv.so advenv_gui.so amp.so amp_gui.so amplitude.so analogmemory.so analogmemory_gui.so bitgrinder.so bitgrinder_gui.so controltocv.so cvs.so cvs_gui.so cvtocontrol.so delay.so delay_gui.so dynamicwaves2_4.so dynamicwaves2_4_gui.so dynamicwaves2_6.so dynamicwaves2_6_gui.so dynamicwaves2_8.so dynamicwaves2_8_gui.so dynamicwaves_4.so dynamicwaves_4_gui.so dynamicwaves_6.so dynamicwaves_6_gui.so dynamicwaves_8.so dynamicwaves_8_gui.so env.so env_gui.so fftvocoder.so fftvocoder_gui.so haas.so haas_gui.so hysteresis.so hysteresis_gui.so hztovc.so hztovc_gui.so inv.so lfo.so lfo2_freq.so lfo2_freq_gui.so lfo2_tempo.so lfo2_tempo_gui.so lfo_gui.so mixer_2ch.so mixer_2ch_gui.so mixer_4ch.so mixer_4ch_gui.so mixer_8ch.so mixer_8ch_gui.so mooglpf.so mooglpf_gui.so multiphase_lfo.so multiphase_lfo_gui.so noise2.so noise2_gui.so percussiveenv.so percussiveenv_gui.so ringmodulator.so ringmodulator_gui.so samplehold.so samplehold_gui.so seq_12.so seq_12_gui.so seq_16.so seq_16_gui.so seq_24.so seq_24_gui.so seq_32.so seq_32_gui.so seq_8.so seq_8_gui.so slew.so slew_gui.so stereomixer_2ch.so stereomixer_2ch_gui.so stereomixer_4ch.so stereomixer_4ch_gui.so stereomixer_8ch.so stereomixer_8ch_gui.so transport.so vcaexp.so vcaexp_gui.so vcalin.so vcalin_gui.so vcdelay.so vcdelay_gui.so vcdoubledecay.so vcdoubledecay_gui.so vcenv.so vcenv_gui.so vcenvii.so vcenvii_gui.so vcf.so vcf_gui.so vco2.so vco2_gui.so vco3.so vco3_gui.so vcorgan2_4.so vcorgan2_4_gui.so vcorgan2_6.so vcorgan2_6_gui.so vcorgan2_8.so vcorgan2_8_gui.so vcorgan_4.so vcorgan_4_gui.so vcorgan_6.so vcorgan_6_gui.so vcorgan_8.so vcorgan_8_gui.so vcpanning.so vcpanning_gui.so vcswitch.so vcswitch_gui.so vctohz.so vctohz_gui.so
+RDEPEND: dev-cpp/gtkmm:2.4 dev-cpp/cairomm:0 media-libs/lv2 media-libs/lvtk[gtk2] sci-libs/fftw:3.0 virtual/jack >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libatkmm-1.6.so.1 libc.so.6 libcairomm-1.0.so.1 libfftw3.so.3 libgcc_s.so.1 libgdkmm-2.4.so.1 libglibmm-2.4.so.1 libgtkmm-2.4.so.1 libm.so.6 libmvec.so.1 libsigc-2.0.so.0 libstdc++.so.6
+SHA1: d3cd9b252234e4cc00f107d1f02f559038cf8666
+SIZE: 901120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791310984
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
