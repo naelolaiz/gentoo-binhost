@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791277251
-PACKAGES: 576
+TIMESTAMP: 1791277888
+PACKAGES: 588
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -38,6 +38,22 @@ SHA1: 7b762b4c11cacf06cc2665413af8ba9ee583cd7e
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791216774
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791277640
+CPV: acct-group/ollama-0
+DEFINED_PHASES: install preinst pretend
+EAPI: 9
+IDEPEND: >=sys-apps/shadow-4.6
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+MD5: fb961808ce8d03fc847dc7945a20176d
+PATH: pkgs-acct-group/ollama-0-1.gpkg.tar
+SHA1: 68dcce2ade0fc4812a017e195f77d413051e5e8b
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277641
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -313,6 +329,25 @@ SHA1: 432c30a4b290543b92e121c362b07fd30facb6db
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791275934
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1791277596
+CPV: app-crypt/age-1.3.1-r1
+DEFINED_PHASES: compile install prepare test unpack
+EAPI: 8
+KEYWORDS: amd64 ~arm64
+LICENSE: BSD
+MD5: 67b4ac54b7732304ffc530e201a76aca
+PATH: pkgs-app-crypt/age-1.3.1-r1-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+SHA1: b4d2582e347ddeaac1a1ab28bc51d7cfe3d932a3
+SIZE: 5959680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277597
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1224,6 +1259,26 @@ MTIME: 1791264762
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791277656
+CPV: app-text/ttf2pk2-2.0_p20260301
+DEFINED_PHASES: configure
+DEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.0= media-libs/freetype:2 virtual/zlib:0/1=
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-2
+MD5: 13bfa171ab38a9af636e0e92df00c9e5
+PATH: pkgs-app-text/ttf2pk2-2.0_p20260301-1.gpkg.tar
+RDEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.0= media-libs/freetype:2 virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libfreetype.so.6 libkpathsea.so.6 libm.so.6
+SHA1: 307ddcae9cc201b60776eed487ecfe301a3a8fd1
+SIZE: 307200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277659
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791264136
 CPV: app-vim/gentoo-syntax-17
@@ -1751,6 +1806,28 @@ SHA1: 7fd428dca6605e5c16b2b7aabff679ecd92bc92b
 SIZE: 6144000
 USE: abi_x86_64 amd64 cet debuginfod elibc_glibc guile_single_target_3-0 kernel_linux nls python python_single_target_python3_14 server xml
 MTIME: 1791225909
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791277580
+CPV: dev-debug/strace-7.2
+DEFINED_PHASES: configure install prepare test unpack
+DEPEND: sys-libs/ncurses:0/6=
+EAPI: 8
+IUSE: aio ncurses perl selinux static test unwind elfutils verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: LGPL-2.1+
+MD5: 5bc219e5b316c1e663efe064e85dd5e9
+PATH: pkgs-dev-debug/strace-7.2-1.gpkg.tar
+RDEPEND: sys-libs/ncurses:0/6= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libtinfo.so.6
+RESTRICT: test
+SHA1: b8692bdaf155b19f570aec5544fef4c9b5b6b631
+SIZE: 1320960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ncurses
+MTIME: 1791277584
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3135,6 +3212,27 @@ SHA1: ca44b9ec5a8f9fe627449c3d320112f005595128
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux lua_single_target_luajit
 MTIME: 1791276651
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath]
+BUILD_ID: 1
+BUILD_TIME: 1791277480
+CPV: dev-perl/Date-Manip-6.990.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=virtual/perl-ExtUtils-MakeMaker-6.670.100 >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath]
+EAPI: 8
+IUSE: perl_features_debug perl_features_ithreads perl_features_quadmath test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: || ( Artistic GPL-1+ )
+MD5: f3cb763a1accde7504fc519ff90d9b25
+PATH: pkgs-dev-perl/Date-Manip-6.990.0-r1-1.gpkg.tar
+RDEPEND: >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath] dev-lang/perl:0/5.44=
+RESTRICT: test
+SHA1: 4c4feaeec5384471faa55465899624aa4fbec740
+SIZE: 942080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277482
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4599,6 +4697,23 @@ SHA1: 18a6e8cb61fd85b7841759bea81ad29435f46f6e
 SIZE: 235520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791276810
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791277581
+CPV: dev-util/debootstrap-1.0.142
+DEFINED_PHASES: compile install postinst unpack
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~sparc ~x86
+LICENSE: MIT
+MD5: e5acb7daee6949ae515c188532093d83
+PATH: pkgs-dev-util/debootstrap-1.0.142-1.gpkg.tar
+RDEPEND: app-arch/dpkg net-misc/wget sys-devel/binutils
+SHA1: 50b090a1324ccfa26047426068232e675e3f699d
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277582
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7649,6 +7764,27 @@ MTIME: 1791092196
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1791277554
+CPV: media-gfx/flam3-3.1.1-r1
+DEFINED_PHASES: configure install prepare
+DEPEND: dev-libs/libxml2:2/16= media-libs/libpng:0/16= virtual/jpeg:0/0= !<=x11-misc/electricsheep-2.6.8-r2
+EAPI: 7
+KEYWORDS: amd64 x86
+LICENSE: GPL-3
+MD5: 1ad71d1edf4e2b148e5ee12857cd75f6
+PATH: pkgs-media-gfx/flam3-3.1.1-r1-2.gpkg.tar
+PROVIDES: x86_64: libflam3.so.0
+RDEPEND: dev-libs/libxml2:2/16= media-libs/libpng:0/16= virtual/jpeg:0/0= !<=x11-misc/electricsheep-2.6.8-r2 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libjpeg.so.62 libm.so.6 libmvec.so.1 libpng16.so.16 libxml2.so.16
+SHA1: 065b3a1901d7744c1a1dfabb221223602d498eaa
+SIZE: 880640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277555
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 7
 BUILD_TIME: 1791063897
@@ -7989,6 +8125,27 @@ SHA1: 19089aa4353ecd21050e87776f8f96507abd8f56
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791228080
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath]
+BUILD_ID: 2
+BUILD_TIME: 1791277461
+CPV: media-libs/exiftool-13.30
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath]
+EAPI: 8
+IUSE: doc perl_features_debug perl_features_ithreads perl_features_quadmath test
+KEYWORDS: amd64 arm64 ppc ppc64 x86 ~x64-macos
+LICENSE: || ( Artistic GPL-1+ )
+MD5: 86baaf9ffe674ebfffaecd817615a7d5
+PATH: pkgs-media-libs/exiftool-13.30-2.gpkg.tar
+RDEPEND: >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath] dev-lang/perl:0/5.44=
+RESTRICT: test
+SHA1: 3e70c8750356cd51d6372376adb9a6a2d67c5cda
+SIZE: 5427200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277462
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -9542,6 +9699,26 @@ SIZE: 71680
 SLOT: 1.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791123105
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791277492
+CPV: media-plugins/vamp-libxtract-plugins-0.6.6.20121204-r1
+DEFINED_PHASES: configure install prepare
+DEPEND: =sci-libs/fftw-3* >=media-libs/libxtract-0.6.6 media-libs/vamp-plugin-sdk
+EAPI: 8
+KEYWORDS: amd64 ~ppc ppc64 x86
+LICENSE: GPL-2+
+MD5: 931309dbb6f4c69f2b360ab737ba48a0
+PATH: pkgs-media-plugins/vamp-libxtract-plugins-0.6.6.20121204-r1-1.gpkg.tar
+PROVIDES: x86_64: vamp-libxtract.so
+RDEPEND: =sci-libs/fftw-3* >=media-libs/libxtract-0.6.6 media-libs/vamp-plugin-sdk >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6 libvamp-sdk.so.2
+SHA1: 74f56c4be73894e9804978b6bd665562036462b2
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277493
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11650,6 +11827,24 @@ MTIME: 1791082142
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gcc:*
+BUILD_ID: 1
+BUILD_TIME: 1791277487
+CPV: sys-apps/memtest86+-8.10-r1
+DEFINED_PHASES: compile install postinst postrm preinst prepare prerm pretend setup
+EAPI: 8
+IUSE: bios32 bios64 +boot uefi32 uefi64 iso32 iso64 secureboot
+KEYWORDS: ~amd64 ~loong ~x86
+LICENSE: GPL-2
+MD5: 05e12bae07f1f333424a1430ad832edc
+PATH: pkgs-sys-apps/memtest86_p_-8.10-r1-1.gpkg.tar
+SHA1: a9033cde5f01c7ffae3bb3087ab625f00b2a249e
+SIZE: 122880
+USE: abi_x86_64 amd64 bios64 boot elibc_glibc kernel_linux uefi64
+MTIME: 1791277488
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791071257
@@ -11737,6 +11932,28 @@ SHA1: 6a1f7c7b88373d23d66a62f5580d9d17159da6b8
 SIZE: 184320
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
 MTIME: 1791060064
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791277578
+CPV: sys-apps/the_silver_searcher-2.2.0_p20201217-r4
+DEFINED_PHASES: configure install prepare test unpack
+DEPEND: dev-libs/libpcre virtual/zlib:0/1=
+EAPI: 8
+IUSE: lzma test zlib
+KEYWORDS: amd64 ~arm ~arm64 ~hppa ~loong ~mips ppc ~ppc64 ~riscv x86 ~x64-macos
+LICENSE: Apache-2.0
+MD5: 7f340292234a94665fe36d750a8f62ef
+PATH: pkgs-sys-apps/the_silver_searcher-2.2.0_p20201217-r4-1.gpkg.tar
+RDEPEND: dev-libs/libpcre virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libpcre.so.1 libz.so.1
+RESTRICT: test
+SHA1: cc200c4e4513f1ddbc889f7a3badbaa80d0aece9
+SIZE: 81920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux zlib
+MTIME: 1791277579
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12322,6 +12539,25 @@ SHA1: 6c9e9ddfd356a7bc5ee93a200c52f78caa686c63
 SIZE: 44912640
 USE: abi_x86_64 acct amd64 elibc_glibc filecaps gogit kernel_linux pam sqlite
 MTIME: 1791225080
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791277564
+CPV: www-client/surfraw-2.3.0-r3
+DEFINED_PHASES: configure install postinst preinst prepare
+EAPI: 7
+KEYWORDS: amd64 ~hppa ppc ~sparc x86
+LICENSE: public-domain
+MD5: 080a0b5205382a1d04a697cd7db4e43d
+PATH: pkgs-www-client/surfraw-2.3.0-r3-1.gpkg.tar
+RDEPEND: dev-lang/perl
+RESTRICT: test
+SHA1: f55357757766d64e02d557e6e02b9e007e0e02c4
+SIZE: 153600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791277566
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
