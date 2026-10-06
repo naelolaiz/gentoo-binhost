@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791287003
-PACKAGES: 754
+TIMESTAMP: 1791287326
+PACKAGES: 762
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6490,6 +6490,28 @@ MTIME: 1791062203
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=app-arch/tar-1.34-r2 dev-python/setuptools[python_targets_python3_14(-)] app-alternatives/yacc app-alternatives/lex sys-apps/which virtual/pkgconfig app-text/asciidoc app-text/sgml-common app-text/xmlto sys-process/time
+BUILD_ID: 1
+BUILD_TIME: 1791286628
+CPV: dev-util/perf-7.2
+DEFINED_PHASES: compile install prepare setup test unpack
+DEPEND: dev-libs/openssl:0/3= x11-libs/gtk+:2 dev-libs/libtraceevent dev-libs/libtracefs dev-lang/python:3.14 sys-libs/slang app-arch/zstd:0/1= dev-libs/elfutils virtual/zlib:0/1= virtual/libcrypt >=sys-kernel/linux-headers-5.10
+EAPI: 8
+IUSE: abi_mips_o32 abi_mips_n32 abi_mips_n64 babeltrace capstone big-endian bpf caps crypt debug gtk java libpfm +libtraceevent +libtracefs lzma numa perl +python +slang systemtap tcmalloc +llvm_slot_22 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14t python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: c25d4af29042be1ebff217a2ef0de427
+PATH: pkgs-dev-util/perf-7.2-1.gpkg.tar
+PROVIDES: x86_64: dlfilter-show-cycles.so dlfilter-test-api-v0.so dlfilter-test-api-v2.so libperf-gtk.so perf.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-libs/openssl:0/3= x11-libs/gtk+:2 dev-libs/libtraceevent dev-libs/libtracefs dev-lang/python:3.14 sys-libs/slang app-arch/zstd:0/1= dev-libs/elfutils virtual/zlib:0/1= virtual/libcrypt >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6 libdebuginfod.so.1 libdw.so.1 libelf.so.1 libgcc_s.so.1 libgdk-x11-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-x11-2.0.so.0 libm.so.6 libpython3.14.so.1.0 libslang.so.2 libstdc++.so.6 libtraceevent.so.1 libz.so.1 libzstd.so.1
+SHA1: 9db8b67dc814ec6a2343d4849fd7483f6908a62a
+SIZE: 5160960
+USE: abi_x86_64 amd64 crypt elibc_glibc gtk kernel_linux libtraceevent libtracefs llvm_slot_22 python python_single_target_python3_14 slang
+MTIME: 1791286634
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.42[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791282924
@@ -7027,6 +7049,29 @@ SHA1: 40fd1de29eb9dd907f8f77134f97877aebe7d6f3
 SIZE: 348160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791278792
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=kde-frameworks/kcoreaddons-6.27.0:6 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791286832
+CPV: kde-apps/ffmpegthumbs-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=media-video/ffmpeg-6.1:0/60.62.62= dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 45bd4c040d7b922fa8e51877e4641bb4
+PATH: pkgs-kde-apps/ffmpegthumbs-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: ffmpegthumbs.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=media-video/ffmpeg-6.1:0/60.62.62= !kde-apps/ffmpegthumbs-common || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6KIOGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libavcodec.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libc.so.6 libm.so.6 libstdc++.so.6 libswscale.so.9
+SHA1: 14615f3b0ea68b6a4694b6143f2bcea488fc4c45
+SIZE: 71680
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791286833
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7940,6 +7985,30 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
+BUILD_TIME: 1791286844
+CPV: kde-apps/libkdegames-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 media-libs/libsndfile media-libs/openal dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 7bf233d6080bc28054d8101c0fbd4a2a
+PATH: pkgs-kde-apps/libkdegames-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: libKDEGames6.so.6 libKDEGames6Private.so.6 libcorebindingsplugin.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 media-libs/libsndfile media-libs/openal || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6DNSSD.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6NewStuffWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libopenal.so.1 libsndfile.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: a769cf103783c913b184683c847e77772889b14f
+SIZE: 8376320
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791286846
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
 BUILD_TIME: 1791279923
 CPV: kde-apps/libkeduvocdocument-26.08.1
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
@@ -8123,6 +8192,30 @@ SIZE: 51200
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791279787
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791286672
+CPV: kde-apps/step-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-cpp/eigen-3.2:3/3.4= >=dev-qt/qtbase-6.11.2:6[gui,opengl,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kplotting-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 sci-libs/cln sci-libs/gsl:0/27= >=sci-libs/libqalculate-0.9.5:0/23.3= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +gsl +qalculate debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: ece3e099a83a40f7bf5409321d3f6499
+PATH: pkgs-kde-apps/step-26.08.1-1.gpkg.tar
+RDEPEND: >=dev-cpp/eigen-3.2:3/3.4= >=dev-qt/qtbase-6.11.2:6[gui,opengl,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kplotting-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 sci-libs/cln sci-libs/gsl:0/27= >=sci-libs/libqalculate-0.9.5:0/23.3= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/step:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Plotting.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGLWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libgcc_s.so.1 libgsl.so.27 libm.so.6 libqalculate.so.23 libstdc++.so.6
+RESTRICT: test
+SHA1: 41285b9ea76d124208acdd5a7b3c4e07ad7d4948
+SIZE: 1904640
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc gsl handbook kernel_linux qalculate
+MTIME: 1791286675
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12697,6 +12790,29 @@ MTIME: 1791284885
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-util/intltool sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791286671
+CPV: media-sound/alsaplayer-0.99.82-r1
+DEFINED_PHASES: configure install postinst postrm preinst prepare
+DEPEND: media-libs/libsndfile:0/0= virtual/zlib:0/1= media-libs/alsa-lib media-libs/flac:0/11-14= >=x11-libs/gtk+-2.10:2 virtual/jack media-libs/libmad media-libs/libogg virtual/opengl media-libs/libvorbis
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +alsa doc flac gtk id3tag jack mad mikmod nas nls ogg opengl oss vorbis xosd
+KEYWORDS: amd64 ~mips ~ppc ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 1cbbbb78357e4b9f2e6ef856c4a2c348
+PATH: pkgs-media-sound/alsaplayer-0.99.82-r1-1.gpkg.tar
+PROVIDES: x86_64: libalsa_out.so libalsaplayer.so.0 libblurscope.so libcdda.so libdaemon_interface.so libfile.so libflac_in.so libgtk2_interface.so libhttp.so libjack_out.so liblevelmeter.so liblogbarfft.so libmad_in.so libmonoscope.so libnull_out.so liboglspectrum.so libsndfile_in.so libspacescope.so libsynaescope.so libtext_interface.so libvorbis_in.so
+RDEPEND: media-libs/libsndfile:0/0= virtual/zlib:0/1= media-libs/alsa-lib media-libs/flac:0/11-14= >=x11-libs/gtk+-2.10:2 virtual/jack media-libs/libmad media-libs/libogg virtual/opengl media-libs/libvorbis >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libFLAC.so.14 libGL.so.1 libasound.so.2 libatk-1.0.so.0 libc.so.6 libcairo.so.2 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libgdk-x11-2.0.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgthread-2.0.so.0 libgtk-x11-2.0.so.0 libharfbuzz.so.0 libjack.so.0 libmad.so.0 libmvec.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libsndfile.so.1 libstdc++.so.6 libvorbis.so.0 libvorbisfile.so.3
+SHA1: f6d8f0dc6233270bc6aee58f26baab4948f30f9f
+SIZE: 501760
+USE: abi_x86_64 alsa amd64 elibc_glibc flac gtk jack kernel_linux mad nls ogg opengl vorbis
+MTIME: 1791286672
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15[threads(+)] dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) dev-util/itstool sys-devel/gettext virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791262166
@@ -13181,6 +13297,28 @@ MTIME: 1791204330
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791286706
+CPV: media-sound/timidity++-2.15.0-r6
+DEFINED_PHASES: configure install postinst postrm preinst prepare
+DEPEND: media-libs/alsa-lib media-libs/flac:0/11-14= x11-libs/gtk+:2 virtual/jack sys-libs/ncurses:0/6= media-libs/libogg media-libs/libvorbis media-libs/libpng:0/16= x11-libs/libX11 x11-libs/libXext x11-libs/libXaw dev-util/desktop-file-utils x11-misc/shared-mime-info
+EAPI: 7
+IUSE: alsa ao emacs flac gtk jack motif nas ncurses ogg oss selinux slang speex tk vorbis X Xaw3d
+KEYWORDS: amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2+
+MD5: d27e2ef9268e77199a14a2cf5265779a
+PATH: pkgs-media-sound/timidity_p__p_-2.15.0-r6-1.gpkg.tar
+PDEPEND: || ( media-sound/timidity-eawpatches media-sound/timidity-freepats )
+RDEPEND: media-libs/alsa-lib media-libs/flac:0/11-14= x11-libs/gtk+:2 virtual/jack sys-libs/ncurses:0/6= media-libs/libogg media-libs/libvorbis media-libs/libpng:0/16= x11-libs/libX11 x11-libs/libXext x11-libs/libXaw acct-group/audio acct-group/nobody acct-user/timidity app-eselect/eselect-timidity media-sound/alsa-utils >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libFLAC.so.14 libX11.so.6 libXext.so.6 libasound.so.2 libc.so.6 libgdk-x11-2.0.so.0 libglib-2.0.so.0 libgtk-x11-2.0.so.0 libjack.so.0 libm.so.6 libncurses.so.6 libogg.so.0 libpng16.so.16 libtinfo.so.6 libvorbis.so.0 libvorbisenc.so.2
+SHA1: 7135ae7e8cf9d72155d19cb323b957de9c4f0015
+SIZE: 737280
+USE: X abi_x86_64 alsa amd64 elibc_glibc flac gtk jack kernel_linux ncurses ogg vorbis
+MTIME: 1791286707
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791276206
 CPV: media-sound/timidity-freepats-20060219-r1
@@ -13333,6 +13471,31 @@ SHA1: 05c61ab74d45eccc4a0205943d76e961d2801534
 SIZE: 286720
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux wxwidgets
 MTIME: 1791249507
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-build/meson-1.3.0 virtual/pkgconfig dev-python/docutils dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 25
+BUILD_TIME: 1791286809
+CPV: media-video/mpv-0.41.0-r2
+DEFINED_PHASES: compile configure install postinst postrm preinst setup test
+DEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/360=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers >=dev-libs/wayland-protocols-1.41
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +X +alsa aqua archive bluray cdda +cli coreaudio debug +drm dvb dvd +egl gamepad +iconv jack javascript jpeg lcms libcaca +libmpv +lua nvenc openal pipewire pulseaudio rubberband sdl selinux sixel sndio soc test tools +uchardet vaapi vdpau +vulkan wayland xv zimg zlib lua_single_target_luajit lua_single_target_lua5-1 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv x86
+LICENSE: LGPL-2.1+ GPL-2+ BSD ISC MIT
+MD5: bed6a433a0ee687889dc1bf643277631
+PATH: pkgs-media-video/mpv-0.41.0-r2-25.gpkg.tar
+PROVIDES: x86_64: libmpv.so.2
+RDEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/360=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libEGL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXfixes.so.3 libXpresent.so.1 libXrandr.so.2 libXss.so.1 libXv.so.1 libasound.so.2 libass.so.9 libavcodec.so.62 libavdevice.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libbluray.so.3 libc.so.6 libcdio.so.21 libcdio_cdda.so.2 libcdio_paranoia.so.2 libdisplay-info.so.4 libdrm.so.2 libdvdnav.so.4 libgbm.so.1 libjack.so.0 libjpeg.so.62 liblcms2.so.2 libluajit-5.1.so.2 libm.so.6 libopenal.so.1 libpipewire-0.3.so.0 libplacebo.so.360 libpulse.so.0 librubberband.so.3 libswresample.so.6 libswscale.so.9 libuchardet.so.0 libvulkan.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libz.so.1
+RESTRICT: test
+SHA1: 157b69999a7521b0a49f2ae72d524d0b4120c38d
+SIZE: 2969600
+SLOT: 0/2
+USE: X abi_x86_64 alsa amd64 bluray cdda cli drm dvb dvd egl elibc_glibc gamepad iconv jack jpeg kernel_linux lcms libmpv lua lua_single_target_luajit openal pipewire pulseaudio python_single_target_python3_14 rubberband tools uchardet vulkan wayland xv zlib
+MTIME: 1791286811
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -16674,6 +16837,28 @@ SHA1: 9d80d2bbb471a7862181356a9f637a758bdb334c
 SIZE: 1167360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791082965
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist]
+BUILD_ID: 1
+BUILD_TIME: 1791286510
+CPV: x11-misc/xaos-4.3.7
+DEFINED_PHASES: compile configure install postinst postrm preinst
+DEPEND: dev-qt/qtbase:6[gui,widgets]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: doc
+KEYWORDS: ~amd64 ~ppc ~x86
+LICENSE: GPL-2
+MD5: 0e21517bae37b650699afb08b8d216c3
+PATH: pkgs-x11-misc/xaos-4.3.7-1.gpkg.tar
+RDEPEND: dev-qt/qtbase:6[gui,widgets] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libmvec.so.1 libstdc++.so.6
+SHA1: 3f2208a26bf4b611a49ff05c5d4bf8a9091cbf36
+SIZE: 757760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791286511
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
