@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791248963
-PACKAGES: 499
+TIMESTAMP: 1791249574
+PACKAGES: 502
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4257,6 +4257,30 @@ MTIME: 1791245007
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791249464
+CPV: kde-apps/kate-addons-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst prepare test unpack
+DEPEND: dev-cpp/gpgmepp:0/7= >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 ~kde-apps/kate-lib-26.08.1:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: +filebrowser lspclient +projects +snippets sql debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2 LGPL-2+ MIT
+MD5: 160ff7b97d3bd16ab959eb1ad199c5b1
+PATH: pkgs-kde-apps/kate-addons-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: bookmarksplugin.so cmaketoolsplugin.so compilerexplorer.so eslintplugin.so externaltoolsplugin.so formatplugin.so katebacktracebrowserplugin.so katebuildplugin.so katecloseexceptplugin.so katecolorpickerplugin.so katectagsplugin.so katefilebrowserplugin.so katefiletreeplugin.so kategdbplugin.so kategitblameplugin.so kategpgplugin.so katekonsoleplugin.so kateprojectplugin.so katereplicodeplugin.so katesearchplugin.so kateshownonprintableplugin.so katesnippetsplugin.so katesymbolviewerplugin.so katexmlcheckplugin.so katexmltoolsplugin.so keyboardmacrosplugin.so ktexteditorpreviewplugin.so latexcompletionplugin.so openlinkplugin.so rainbowparens.so rbqlplugin.so tabswitcherplugin.so templateplugin.so textfilterplugin.so
+RDEPEND: dev-cpp/gpgmepp:0/7= >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 ~kde-apps/kate-lib-26.08.1:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-apps/kate-common-26.08.1 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6SyntaxHighlighting.so.6 libKF6TextEditor.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Concurrent.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libgpgmepp.so.7 libkateprivate.so.26.08.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 97621a9e6b8cf5b93b774055bb2e64ad76699885
+SIZE: 2314240
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc filebrowser kernel_linux projects snippets
+MTIME: 1791249466
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6 kde-frameworks/kdoctools:6
 BUILD_ID: 1
 BUILD_TIME: 1791227837
@@ -6690,6 +6714,30 @@ MTIME: 1791247467
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 3
+BUILD_TIME: 1791249524
+CPV: media-libs/aubio-0.4.9-r5
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: media-video/ffmpeg-compat:6/58.60.60= sci-libs/fftw:3.0/3= virtual/jack media-libs/libsamplerate media-libs/libsndfile dev-lang/python:3.14[threads(+)] app-text/txt2man virtual/pkgconfig
+EAPI: 8
+IUSE: blas doc double-precision examples ffmpeg fftw jack libsamplerate sndfile python test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 debug
+KEYWORDS: amd64 ~arm64 ~loong ~ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-3
+MD5: 83d55ba42d74806fb9232ffe30227248
+PATH: pkgs-media-libs/aubio-0.4.9-r5-3.gpkg.tar
+PROVIDES: x86_64: libaubio.so.5
+RDEPEND: media-video/ffmpeg-compat:6/58.60.60= sci-libs/fftw:3.0/3= virtual/jack media-libs/libsamplerate media-libs/libsndfile >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libavcodec.so.60 libavformat.so.60 libavutil.so.58 libc.so.6 libfftw3f.so.3 libjack.so.0 libm.so.6 libsamplerate.so.0 libsndfile.so.1 libswresample.so.4
+RESTRICT: test
+SHA1: c7177549641ea1c682dc69e88e2a65d9b9d082c5
+SIZE: 215040
+SLOT: 0/5
+USE: abi_x86_64 amd64 elibc_glibc ffmpeg fftw jack kernel_linux libsamplerate python_targets_python3_14 sndfile
+MTIME: 1791249525
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/yasm[nls] virtual/pkgconfig sys-devel/gettext dev-build/make >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791217128
@@ -8538,6 +8586,27 @@ SIZE: 10004480
 SLOT: 6/58.60.60
 USE: X abi_x86_64 alsa amd64 bzip2 dav1d drm elibc_glibc fontconfig gnutls gpl jack jpeg2k jpegxl kernel_linux ladspa lcms libass lv2 openal opencl opengl postproc pulseaudio rubberband sdl svg theora truetype v4l vorbis vulkan webp x264 x265 xml zlib
 MTIME: 1791229781
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791249506
+CPV: media-video/mediainfo-26.05
+DEFINED_PHASES: compile configure install postinst postrm prepare setup
+DEPEND: ~media-libs/libmediainfo-26.05[-curl,-mms] >=media-libs/libzen-0.4.41 virtual/zlib:0/1= x11-libs/wxGTK:3.2-gtk3/3.2=[X]
+EAPI: 8
+IUSE: curl mms wxwidgets
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD-2
+MD5: 071e0ee20fb506a31ae0558aecba0719
+PATH: pkgs-media-video/mediainfo-26.05-1.gpkg.tar
+RDEPEND: ~media-libs/libmediainfo-26.05[-curl,-mms] >=media-libs/libzen-0.4.41 virtual/zlib:0/1= x11-libs/wxGTK:3.2-gtk3/3.2=[X] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libmediainfo.so.0 libstdc++.so.6 libwx_baseu-3.2.so.0 libwx_gtk3u_core-3.2.so.0 libwx_gtk3u_html-3.2.so.0 libzen.so.0
+SHA1: 05c61ab74d45eccc4a0205943d76e961d2801534
+SIZE: 286720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux wxwidgets
+MTIME: 1791249507
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
