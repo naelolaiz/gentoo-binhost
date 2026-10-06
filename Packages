@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791270004
-PACKAGES: 532
+TIMESTAMP: 1791270876
+PACKAGES: 533
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8978,6 +8978,29 @@ SHA1: 961b63e6403b6557c149413bb5f1e13e411a7e42
 SIZE: 624640
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux sndfile
 MTIME: 1791062158
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/t1utils dev-texlive/texlive-metapost dev-lang/perl dev-libs/kpathsea >=media-gfx/fontforge-20200314[png,python] >=sys-apps/texinfo-6.8 >=sys-devel/bison-2.4.1 sys-devel/flex sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791270336
+CPV: media-sound/lilypond-2.26.0
+DEFINED_PHASES: compile configure install postinst postrm prepare setup
+DEPEND: app-text/ghostscript-gpl dev-libs/boehm-gc >=dev-libs/glib-2.64:2 dev-libs/libatomic_ops media-fonts/tex-gyre >=media-libs/fontconfig-2.13 >=media-libs/freetype-2.10:2 media-libs/harfbuzz >=media-libs/libpng-1.6.0 >=x11-libs/cairo-1.16 >=x11-libs/pango-1.44.5 virtual/zlib:0/1= dev-scheme/guile:3.0[deprecated,regex] dev-lang/python:3.14
+EAPI: 8
+IUSE: debug doc emacs profile l10n_ca l10n_cs l10n_de l10n_en l10n_fr l10n_hu l10n_it l10n_ja l10n_nl l10n_pt l10n_zh guile_single_target_3-0 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~riscv ~x86
+LICENSE: GPL-3 FDL-1.3
+MD5: cd1553f79c4ba860333f9c66c2b2b0de
+PATH: pkgs-media-sound/lilypond-2.26.0-1.gpkg.tar
+RDEPEND: app-text/ghostscript-gpl dev-libs/boehm-gc >=dev-libs/glib-2.64:2 dev-libs/libatomic_ops media-fonts/tex-gyre >=media-libs/fontconfig-2.13 >=media-libs/freetype-2.10:2 media-libs/harfbuzz >=media-libs/libpng-1.6.0 >=x11-libs/cairo-1.16 >=x11-libs/pango-1.44.5 virtual/zlib:0/1= dev-scheme/guile:3.0[deprecated,regex] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libatomic_ops.so.1 libc.so.6 libcairo.so.2 libfontconfig.so.1 libfreetype.so.6 libgc.so.1 libglib-2.0.so.0 libgobject-2.0.so.0 libguile-3.0.so.1 libharfbuzz.so.0 libm.so.6 libpango-1.0.so.0 libpangoft2-1.0.so.0 libpng16.so.16 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: 6cf21dd86a3b9f29c82bbf85646bbfd98956a9c5
+SIZE: 6481920
+USE: abi_x86_64 amd64 elibc_glibc guile_single_target_3-0 kernel_linux l10n_en python_single_target_python3_14
+MTIME: 1791270340
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
