@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791308945
-PACKAGES: 768
+TIMESTAMP: 1791310768
+PACKAGES: 770
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6600,6 +6600,28 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
+BUILD_TIME: 1791310659
+CPV: dev-util/rocminfo-7.2.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/rocr-runtime:0/7.2 dev-lang/python:3.14
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: ~amd64
+LICENSE: UoI-NCSA
+MD5: ccae48b89844f0f4a374ec4906f25635
+PATH: pkgs-dev-util/rocminfo-7.2.0-1.gpkg.tar
+RDEPEND: dev-libs/rocr-runtime:0/7.2 dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libhsa-runtime64.so.1 libstdc++.so.6
+SHA1: f44922a1c0dd206bfc7149e5c6569a3668f533e0
+SIZE: 71680
+SLOT: 0/7.2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791310660
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
 BUILD_TIME: 1791282667
 CPV: dev-util/schroot-1.6.13_p7-r2
 DEFINED_PHASES: compile configure install postinst prepare test unpack
@@ -10835,6 +10857,30 @@ SIZE: 33587200
 SLOT: 0/3
 USE: X abi_x86_64 alsa amd64 elibc_glibc heif jpeg2k jpegxl kernel_linux lua_single_target_luajit mng openexr openmp python_single_target_python3_14 udev wayland webp
 MTIME: 1791308682
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791310620
+CPV: media-gfx/gnofract4d-4.4
+DEFINED_PHASES: compile configure install postinst postrm preinst setup test
+DEPEND: dev-lang/python:3.14 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16=
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 test
+KEYWORDS: amd64 x86
+LICENSE: BSD
+MD5: b2d239303d7896a6a0750445e851c97b
+PATH: pkgs-media-gfx/gnofract4d-4.4-1.gpkg.tar
+PROVIDES: x86_64: fract4dc.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-lang/python:3.14 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= dev-python/pygobject:3[python_targets_python3_14(-)] gui-libs/gtk:4[introspection] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libjpeg.so.62 libm.so.6 libpng16.so.16 libstdc++.so.6
+RESTRICT: test
+SHA1: b066ab59be751f92f7cc44b0d19f348c65b27e8f
+SIZE: 1105920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1791310621
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
