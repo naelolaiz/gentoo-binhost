@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791278919
-PACKAGES: 648
+TIMESTAMP: 1791279237
+PACKAGES: 655
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1435,6 +1435,52 @@ SIZE: 501760
 SLOT: 0/8.9
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux seccomp wayland
 MTIME: 1791278764
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791278881
+CPV: app-text/zathura-djvu-2026.07.18
+DEFINED_PHASES: compile configure install postinst postrm preinst test
+DEPEND: app-text/djvu >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo x11-base/xorg-proto virtual/pkgconfig
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+KEYWORDS: ~amd64 ~arm ~riscv ~x86
+LICENSE: ZLIB
+MD5: dfeb109533bb2e01a78ac672204e37e3
+PATH: pkgs-app-text/zathura-djvu-2026.07.18-1.gpkg.tar
+PROVIDES: x86_64: libdjvu.so
+RDEPEND: app-text/djvu >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcairo.so.2 libdjvulibre.so.21 libgirara.so.5 libglib-2.0.so.0
+RESTRICT: test
+SHA1: 4c7ef06ecaa1ed15a8949f611d130e77085b1658
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791278882
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791278889
+CPV: app-text/zathura-pdf-mupdf-2026.07.18
+DEFINED_PHASES: compile configure install postinst postrm preinst test
+DEPEND: >=app-text/mupdf-1.26.0:0/1.28.2= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+KEYWORDS: ~amd64 ~arm ~x86
+LICENSE: ZLIB
+MD5: 1df2e915dfe012e6a1b23ece869b883a
+PATH: pkgs-app-text/zathura-pdf-mupdf-2026.07.18-1.gpkg.tar
+PROVIDES: x86_64: libpdf-mupdf.so
+RDEPEND: >=app-text/mupdf-1.26.0:0/1.28.2= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libcairo.so.2 libgirara.so.5 libglib-2.0.so.0 libmupdf.so.1.28.2
+RESTRICT: test
+SHA1: 4d4e1aaafe4827f1da54ffdad94e2de51a4a9905
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791278890
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6283,6 +6329,29 @@ MTIME: 1791084056
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-libs/wayland-protocols-1.16 >=dev-util/wayland-scanner-1.10.0 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791278876
+CPV: gui-libs/gtk4-layer-shell-1.3.0
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=dev-libs/wayland-1.10.0 >=gui-libs/gtk-4.10.5:4[wayland] dev-libs/glib:2
+EAPI: 8
+IUSE: doc examples introspection +smoke-tests test vala
+KEYWORDS: ~amd64 ~arm64
+LICENSE: MIT
+MD5: 3141021878f64c2f1968eee479a03389
+PATH: pkgs-gui-libs/gtk4-layer-shell-1.3.0-1.gpkg.tar
+PROVIDES: x86_64: libgtk4-layer-shell.so.0 liblayer-shell-preload.so
+RDEPEND: >=dev-libs/wayland-1.10.0 >=gui-libs/gtk-4.10.5:4[wayland] dev-libs/glib:2 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-4.so.1 libwayland-client.so.0
+RESTRICT: test
+SHA1: 3f65e308a953df60dfe81cb840dd9f1f36f2e86b
+SIZE: 81920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux smoke-tests
+MTIME: 1791278877
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791245279
@@ -6355,6 +6424,24 @@ SIZE: 6195200
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux semantic-desktop
 MTIME: 1791252460
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6
+BUILD_ID: 1
+BUILD_TIME: 1791278791
+CPV: kde-apps/dolphin-plugins-common-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 5cfce639d897574a853541d9f6489277
+PATH: pkgs-kde-apps/dolphin-plugins-common-26.08.1-1.gpkg.tar
+RDEPEND: !<app-cdr/dolphin-plugins-mountiso-24.07.90-r1 !<kde-apps/dolphin-plugins-dropbox-24.07.90-r1 !<kde-apps/dolphin-plugins-git-24.07.90-r1 !<kde-apps/dolphin-plugins-mercurial-24.07.90-r1 !<kde-apps/dolphin-plugins-subversion-24.07.90-r1
+SHA1: 40fd1de29eb9dd907f8f77134f97877aebe7d6f3
+SIZE: 348160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791278792
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6589,6 +6676,52 @@ SIZE: 3102720
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791251771
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791278836
+CPV: kde-apps/kqtquickcharts-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 8fa90ca6266f109a2a0f8beeaae7ccb4
+PATH: pkgs-kde-apps/kqtquickcharts-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: libkqtquickcharts.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/kqtquickcharts:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+SHA1: 4ccf31235fa15b2ec4da6c3c5c52901348a6be14
+SIZE: 112640
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791278837
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791278905
+CPV: kde-apps/libkdcraw-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-libs/libraw-0.16:0/0.22.1= dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 601be12419686d9a23a931c6279ec9ad
+PATH: pkgs-kde-apps/libkdcraw-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: libKDcrawQt6.so.5
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-libs/libraw-0.16:0/0.22.1= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libraw.so.25 libstdc++.so.6
+SHA1: d01fa28b8f7a472f4f155ea9ef64f83d6e14ae45
+SIZE: 92160
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791278906
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7905,6 +8038,30 @@ SIZE: 3911680
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 editorconfig elibc_glibc kernel_linux
 MTIME: 1791204707
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
+BUILD_ID: 1
+BUILD_TIME: 1791278942
+CPV: kde-frameworks/ktexttemplate-6.30.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-qt/qtdeclarative:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: 041844b014c161b4337dd76bb8f1e82d
+PATH: pkgs-kde-frameworks/ktexttemplate-6.30.0-1.gpkg.tar
+PROVIDES: x86_64: ktexttemplate_defaultfilters.so ktexttemplate_defaulttags.so ktexttemplate_i18ntags.so ktexttemplate_loadertags.so ktexttemplate_scriptabletags.so libKF6TextTemplate.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-qt/qtdeclarative:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Qml.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 75ec9d8dd5f2148e8eb162671fc63880de4d3ea2
+SIZE: 460800
+SLOT: 6/6.30
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791278943
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
