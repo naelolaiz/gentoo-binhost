@@ -65,6 +65,8 @@ dev-libs/libxmlb introspection
 dev-libs/nss utils
 app-editors/gvim cscope
 app-text/texlive-core xetex
+# net-libs/nodejs 26.10 and later depend on simdutf[atomic-base64].
+dev-cpp/simdutf atomic-base64
 
 # ── Science / electronics ───────────────────────────────────────────────
 sci-libs/fftw threads
