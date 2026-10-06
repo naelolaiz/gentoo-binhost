@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791249881
-PACKAGES: 503
+TIMESTAMP: 1791251394
+PACKAGES: 505
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8176,6 +8176,30 @@ MTIME: 1791228475
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/nasm dev-lang/yasm ) sys-devel/gettext virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791251144
+CPV: media-sound/audacity-3.7.8
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 media-libs/harfbuzz:0/6.0.0= media-libs/libsndfile media-libs/libsoundtouch:0/1= media-libs/portaudio[alsa] media-libs/portmidi media-libs/portsmf:0/1= media-libs/soxr media-sound/lame sys-apps/util-linux virtual/zlib:0/1= x11-libs/cairo[glib] x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 x11-libs/pango x11-libs/wxGTK:3.2-gtk3/3.2=[X] media-libs/alsa-lib media-video/ffmpeg media-libs/flac:0/11-14=[cxx] media-libs/libid3tag:0/0.16.4= dev-libs/serd dev-libs/sord media-libs/lilv media-libs/lv2 media-libs/sratom media-libs/suil media-sound/mpg123-base media-libs/libogg media-libs/opus media-libs/opusfile media-sound/twolame media-libs/vamp-plugin-sdk media-libs/libvorbis media-sound/wavpack dev-libs/rapidjson x11-base/xorg-proto
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: alsa audiocom ffmpeg +flac id3tag +ladspa +lv2 mpg123 +ogg opus +portmixer sbsms test twolame vamp +vorbis wavpack test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-3 GPL-2+ CC-BY-3.0
+MD5: 994f35846848c0cb6e11108abd206ffd
+PATH: pkgs-media-sound/audacity-3.7.8-1.gpkg.tar
+PROVIDES: x86_64: lib-audacity-application-logic.so lib-audio-devices.so lib-audio-graph.so lib-audio-io.so lib-basic-ui.so lib-builtin-effects.so lib-channel.so lib-command-parameters.so lib-components.so lib-concurrency.so lib-crypto.so lib-dynamic-range-processor.so lib-effects.so lib-exceptions.so lib-export-ui.so lib-ffmpeg-support.so lib-fft.so lib-file-formats.so lib-files.so lib-graphics.so lib-import-export.so lib-ipc.so lib-label-track.so lib-ladspa.so lib-lv2.so lib-math.so lib-menus.so lib-mixer.so lib-module-manager.so lib-music-information-retrieval.so lib-note-track.so lib-numeric-formats.so lib-nyquist-effects.so lib-playable-track.so lib-preference-pages.so lib-preferences.so lib-project-file-io.so lib-project-history.so lib-project-rate.so lib-project.so lib-realtime-effects.so lib-registries.so lib-sample-track.so lib-screen-geometry.so lib-shuttlegui.so lib-snapping.so lib-sqlite-helpers.so lib-stretching-sequence.so lib-string-utils.so lib-strings.so lib-tags.so lib-theme-resources.so lib-theme.so lib-time-and-pitch.so lib-time-frequency-selection.so lib-time-track.so lib-track-selection.so lib-track.so lib-transactions.so lib-utility.so lib-uuid.so lib-viewport.so lib-vst.so lib-wave-track-fft.so lib-wave-track-paint.so lib-wave-track-settings.so lib-wave-track.so lib-wx-init.so lib-wx-wrappers.so lib-xml.so mod-aup.so mod-cl.so mod-ffmpeg.so mod-flac.so mod-lof.so mod-midi-import-export.so mod-mp2.so mod-mp3.so mod-mpg123.so mod-ogg.so mod-opus.so mod-pcm.so mod-script-pipe.so mod-wavpack.so
+RDEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 media-libs/harfbuzz:0/6.0.0= media-libs/libsndfile media-libs/libsoundtouch:0/1= media-libs/portaudio[alsa] media-libs/portmidi media-libs/portsmf:0/1= media-libs/soxr media-sound/lame sys-apps/util-linux virtual/zlib:0/1= x11-libs/cairo[glib] x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3 x11-libs/pango x11-libs/wxGTK:3.2-gtk3/3.2=[X] media-libs/alsa-lib media-video/ffmpeg media-libs/flac:0/11-14=[cxx] media-libs/libid3tag:0/0.16.4= dev-libs/serd dev-libs/sord media-libs/lilv media-libs/lv2 media-libs/sratom media-libs/suil media-sound/mpg123-base media-libs/libogg media-libs/opus media-libs/opusfile media-sound/twolame media-libs/vamp-plugin-sdk media-libs/libvorbis media-sound/wavpack >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libFLAC++.so.11 libFLAC.so.14 libSoundTouch.so.1 libasound.so.2 libc.so.6 libexpat.so.1 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libid3tag.so.0 liblilv-0.so.0 libm.so.6 libmpg123.so.0 libogg.so.0 libopus.so.0 libopusfile.so.0 libportSMF.so.1 libportaudio.so.2 libportmidi.so.2 libsndfile.so.1 libsoxr.so.0 libsqlite3.so.0 libstdc++.so.6 libsuil-0.so.0 libtwolame.so.0 libuuid.so.1 libvamp-hostsdk.so.3 libvorbis.so.0 libvorbisenc.so.2 libvorbisfile.so.3 libwavpack.so.1 libwx_baseu-3.2.so.0 libwx_baseu_net-3.2.so.0 libwx_gtk3u_core-3.2.so.0 libwx_gtk3u_html-3.2.so.0 libwx_gtk3u_qa-3.2.so.0
+RESTRICT: test test
+SHA1: 37e5713679d296e5cc0d01bbc947194d174ca8d4
+SIZE: 16537600
+USE: abi_x86_64 alsa amd64 elibc_glibc ffmpeg flac id3tag kernel_linux ladspa lv2 mpg123 ogg opus portmixer twolame vamp vorbis wavpack
+MTIME: 1791251148
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/yacc app-alternatives/lex app-alternatives/yacc dev-lang/swig sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791234580
@@ -8423,6 +8447,29 @@ SHA1: 030d00a80fac3a4813e3d39f05f8ec054740745b
 SIZE: 993280
 USE: abi_x86_64 alsa amd64 dbus elibc_glibc kernel_linux
 MTIME: 1791229105
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 3
+BUILD_TIME: 1791251201
+CPV: media-sound/qsynth-1.0.2-r1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: dev-qt/qtbase:6[gui,network,widgets] dev-qt/qtsvg:6 media-sound/fluidsynth:0/3=[jack,alsa,pulseaudio]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +alsa debug jack pulseaudio
+KEYWORDS: amd64 ppc ppc64 x86
+LICENSE: GPL-2
+MD5: 44fe20515e0123feeec80388bb53e177
+PATH: pkgs-media-sound/qsynth-1.0.2-r1-3.gpkg.tar
+RDEPEND: dev-qt/qtbase:6[gui,network,widgets] dev-qt/qtsvg:6 media-sound/fluidsynth:0/3=[jack,alsa,pulseaudio] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libc.so.6 libfluidsynth.so.3 libgcc_s.so.1 libm.so.6 libpipewire-0.3.so.0 libstdc++.so.6
+SHA1: 8dd72bdfc8b40707c9bca46e8fce0ed3743c2966
+SIZE: 409600
+USE: abi_x86_64 alsa amd64 elibc_glibc jack kernel_linux pulseaudio
+MTIME: 1791251203
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
