@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791275927
-PACKAGES: 534
+TIMESTAMP: 1791276271
+PACKAGES: 550
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -133,6 +133,46 @@ MTIME: 1791083253
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-arch/xz-utils[extra-filters(+)]
+BUILD_ID: 2
+BUILD_TIME: 1791276105
+CPV: app-arch/7zip-26.03
+DEFINED_PHASES: compile install prepare setup
+EAPI: 8
+IUSE: uasm jwasm rar +symlink
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: LGPL-2 BSD
+MD5: 11e58a2465d4f6288cda5acaef49507e
+PATH: pkgs-app-arch/7zip-26.03-2.gpkg.tar
+PROVIDES: x86_64: 7z.so
+RDEPEND: !app-arch/p7zip >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+SHA1: c63d5796c33df30b46812e58eb65890d31eaade2
+SIZE: 2693120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux symlink
+MTIME: 1791276106
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791276182
+CPV: app-arch/advancecomp-2.6-r1
+DEFINED_PHASES: configure install test
+DEPEND: app-arch/bzip2:0/1= virtual/zlib:0/1=
+EAPI: 8
+KEYWORDS: ~alpha amd64 ~arm arm64 ~hppa ppc ppc64 ~riscv x86
+LICENSE: GPL-2+ Apache-2.0 LGPL-2.1+ MIT
+MD5: e0f217d49c821804b3333b257e0b93d2
+PATH: pkgs-app-arch/advancecomp-2.6-r1-1.gpkg.tar
+RDEPEND: app-arch/bzip2:0/1= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libbz2.so.1 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libz.so.1
+SHA1: e9d54884bd68ba02db748468d6085926a1f412fe
+SIZE: 296960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791276183
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 7
 BUILD_TIME: 1791057576
 CPV: app-arch/bzip2-1.0.8-r5
@@ -214,6 +254,23 @@ SHA1: 94366fe95a218b7edecf48f4ceabb6d7e52f9150
 SIZE: 819200
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc extra-filters kernel_linux nls
 MTIME: 1791058000
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791275933
+CPV: app-containers/containers-shortnames-2025.03.19_p20260615
+DEFINED_PHASES: install
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390
+LICENSE: Apache-2.0
+MD5: ca17a69cb8227d3df26e66a9703bed42
+PATH: pkgs-app-containers/containers-shortnames-2025.03.19_p20260615-1.gpkg.tar
+RDEPEND: !<app-containers/buildah-1.44.0 !<app-containers/podman-6.0.0 !<app-containers/skopeo-1.23
+SHA1: 432c30a4b290543b92e121c362b07fd30facb6db
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791275934
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -452,6 +509,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 1
+BUILD_TIME: 1791275938
+CPV: app-emulation/wine-gecko-2.47.4
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: +abi_x86_32 abi_x86_64 +shared
+KEYWORDS: amd64 x86
+LICENSE: Apache-2.0 BSD BSD-2 MIT MPL-2.0
+MD5: 90a365029eda017bc4d5b06f5cfe1962
+PATH: pkgs-app-emulation/wine-gecko-2.47.4-1.gpkg.tar
+SHA1: b550a2511a8d6af28cdc19446f265703e39cc810
+SIZE: 101509120
+SLOT: 2.47.4
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux shared
+MTIME: 1791275939
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
 BUILD_TIME: 1791091920
 CPV: app-emulation/wine-mono-10.4.1
 DEFINED_PHASES: install
@@ -466,6 +541,24 @@ SIZE: 81141760
 SLOT: 10.4.1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux shared
 MTIME: 1791091925
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791275940
+CPV: app-emulation/wine-mono-11.3.0
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: +shared
+KEYWORDS: amd64 arm64 x86
+LICENSE: BSD-2 GPL-2 LGPL-2.1 MIT MPL-1.1
+MD5: e165b744ab0cccbea258f1c1eba52b1b
+PATH: pkgs-app-emulation/wine-mono-11.3.0-1.gpkg.tar
+SHA1: ab22f3bff63e86734014d1f6bc62a0ebfde0acbf
+SIZE: 79104000
+SLOT: 11.3.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux shared
+MTIME: 1791275943
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -528,6 +621,27 @@ SHA1: 869f5788e0f5bc84ebbf79a406d481758868f39c
 SIZE: 1331200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_es
 MTIME: 1791065020
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791276176
+CPV: app-misc/fdupes-2.4.0
+DEFINED_PHASES: configure prepare
+DEPEND: dev-libs/libpcre2:0/3=[pcre32] sys-libs/ncurses:0/6=
+EAPI: 8
+IUSE: +ncurses sqlite
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: MIT
+MD5: 239bc226b8f85ad06453489b5eee96ca
+PATH: pkgs-app-misc/fdupes-2.4.0-1.gpkg.tar
+RDEPEND: dev-libs/libpcre2:0/3=[pcre32] sys-libs/ncurses:0/6= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libncursesw.so.6 libpcre2-32.so.0 libtinfow.so.6
+SHA1: 762245f35414c01768ac88994c3a1f6c4e5b6617
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ncurses
+MTIME: 1791276177
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2044,6 +2158,49 @@ MTIME: 1791058120
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791275919
+CPV: dev-libs/libmaxminddb-1.14.1
+DEFINED_PHASES: configure install prepare
+EAPI: 8
+IUSE: test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: Apache-2.0
+MD5: af96baf4b7f197f1b4a55f119d6e2be0
+PATH: pkgs-dev-libs/libmaxminddb-1.14.1-1.gpkg.tar
+PROVIDES: x86_64: libmaxminddb.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libm.so.6
+RESTRICT: test
+SHA1: cfce7eb0189110eca8591f327f744c57a8d669a9
+SIZE: 71680
+SLOT: 0/0.0.7
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791275920
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/netsurf-buildsystem
+BUILD_ID: 1
+BUILD_TIME: 1791275977
+CPV: dev-libs/libnsutils-0.1.1
+DEFINED_PHASES: compile install
+EAPI: 8
+KEYWORDS: amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: 80ef956ca8d65e3d20d319c5a0e7feba
+PATH: pkgs-dev-libs/libnsutils-0.1.1-1.gpkg.tar
+PROVIDES: x86_64: libnsutils.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+SHA1: 6e9453a29c0b1c6f78caef997e50fb5eb52d0fd6
+SIZE: 30720
+SLOT: 0/0.1.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791275978
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig >=app-portage/elt-patches-20250306
 BUILD_ID: 2
 BUILD_TIME: 1791058290
@@ -2491,6 +2648,89 @@ SHA1: 5da945c0b8381b1f37ebde936ec64c4a07546c4d
 SIZE: 624640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791092013
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791275922
+CPV: dev-libs/tree-sitter-lua-0.5.0
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug test python
+KEYWORDS: amd64 ~arm arm64 ~ppc ~ppc64 ~riscv x86
+LICENSE: MIT
+MD5: ad0acda819689a4f579158446a75b5e3
+PATH: pkgs-dev-libs/tree-sitter-lua-0.5.0-1.gpkg.tar
+PROVIDES: x86_64: libtree-sitter-lua.so.15.0
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: b276b48d6ca65089f5a9b02a4f9d45267000f5b6
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791275924
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791275926
+CPV: dev-libs/tree-sitter-markdown-0.5.3-r1
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug test python
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: f830ed6d5fcc7e2abbb0f2e6fcaad5f6
+PATH: pkgs-dev-libs/tree-sitter-markdown-0.5.3-r1-1.gpkg.tar
+PROVIDES: x86_64: libtree-sitter-markdown-inline.so.15.0 libtree-sitter-markdown.so.15.0
+RDEPEND: !dev-libs/tree-sitter-markdown-inline >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 393b052469a08cffe06de7382fac884d124ef4a4
+SIZE: 194560
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791275928
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791275928
+CPV: dev-libs/tree-sitter-query-0.8.0
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug test python
+KEYWORDS: amd64 ~arm arm64 ~ppc ~ppc64 ~riscv x86
+LICENSE: MIT
+MD5: 074e117c01b6f00ee933de2df375f598
+PATH: pkgs-dev-libs/tree-sitter-query-0.8.0-1.gpkg.tar
+PROVIDES: x86_64: libtree-sitter-query.so.15.0
+RDEPEND: >=sys-libs/glibc-2.43-r2
+RESTRICT: test
+SHA1: dd1c80080932006aed0bad81dbd0043be30ffdfb
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791275929
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791275932
+CPV: dev-libs/tree-sitter-vim-0.8.1
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: test
+KEYWORDS: amd64 ~arm arm64 ~ppc ~ppc64 ~riscv x86
+LICENSE: MIT
+MD5: 13c0ddb998e961ddeb0e5aeb24c53483
+PATH: pkgs-dev-libs/tree-sitter-vim-0.8.1-1.gpkg.tar
+PROVIDES: x86_64: libtree-sitter-vim.so.15
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: fa25d3b4635297b1e617c593bc931b09df0eda87
+SIZE: 204800
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791275933
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3957,6 +4197,27 @@ SIZE: 11591680
 SLOT: 3.0
 USE: abi_x86_64 amd64 deprecated elibc_glibc jit kernel_linux networking nls regex threads
 MTIME: 1791223341
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791275918
+CPV: dev-util/astyle-3.6.18
+DEFINED_PHASES: compile configure install preinst prepare setup unpack
+EAPI: 8
+IUSE: java static-libs java verify-sig
+KEYWORDS: ~amd64 ~arm64 ~ppc ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: 299c5dbc2abeed4c64d9a814a705c9de
+PATH: pkgs-dev-util/astyle-3.6.18-1.gpkg.tar
+PROVIDES: x86_64: libastyle.so.3
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libstdc++.so.6
+SHA1: 5880d112abf87084a4ca78f321961ae8474fc67d
+SIZE: 471040
+SLOT: 0/3.6.13
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791275920
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7915,6 +8176,27 @@ MTIME: 1791224497
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-build/netsurf-buildsystem virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791275980
+CPV: media-libs/libnspsl-0.1.7
+DEFINED_PHASES: compile install
+EAPI: 7
+KEYWORDS: amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: ab14dcaff439052338901cfc03e93d9d
+PATH: pkgs-media-libs/libnspsl-0.1.7-1.gpkg.tar
+PROVIDES: x86_64: libnspsl.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6
+SHA1: 202bdf6e112003c5807e4a1e0c63ba398d7d6ed8
+SIZE: 81920
+SLOT: 0/0.1.7
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791275981
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 7
 BUILD_TIME: 1791057536
 CPV: media-libs/libogg-1.3.6
@@ -8165,6 +8447,27 @@ SHA1: 591f51a86b555c5dfe827819ef8ec15d437f3578
 SIZE: 204800
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791226734
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 2
+BUILD_TIME: 1791276085
+CPV: media-libs/libxtract-0.6.6
+DEFINED_PHASES: configure install
+DEPEND: sci-libs/fftw:3.0
+EAPI: 8
+IUSE: doc fftw
+KEYWORDS: amd64 ~ppc ppc64 x86
+LICENSE: GPL-2
+MD5: a981e0beb43dbd149ae8c30fb7415f0b
+PATH: pkgs-media-libs/libxtract-0.6.6-2.gpkg.tar
+PROVIDES: x86_64: libxtract.so.0
+RDEPEND: sci-libs/fftw:3.0 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libfftw3f.so.3 libm.so.6
+SHA1: 737bef585b49aeff0441e7040d32fd2033bb3db2
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc fftw kernel_linux
+MTIME: 1791276087
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -9992,6 +10295,27 @@ SHA1: bd9427c63e48adf2f9e66e711eed7130c992f96a
 SIZE: 1863680
 USE: abi_x86_64 amd64 ap dbus elibc_glibc fils gui kernel_linux mbo mesh readline
 MTIME: 1791145290
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791276072
+CPV: sci-electronics/gnucap-20210107
+DEFINED_PHASES: -
+DEPEND: sys-libs/readline:0/8=
+EAPI: 8
+IUSE: examples
+KEYWORDS: amd64 ~ppc ~x86
+LICENSE: GPL-2
+MD5: 200c776d716115021cb12eda407bc8ff
+PATH: pkgs-sci-electronics/gnucap-20210107-1.gpkg.tar
+PROVIDES: x86_64: gnucap-default-plugins.so libgnucap.so
+RDEPEND: sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+SHA1: 0b8d71a60f6df41083c3ac35eb7634ec21ca89f0
+SIZE: 1003520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791276075
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
