@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791359588
-PACKAGES: 885
+TIMESTAMP: 1791359901
+PACKAGES: 890
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7936,6 +7936,30 @@ MTIME: 1791280660
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=kde-frameworks/kcmutils-6.27.0:6 sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791359615
+CPV: kde-apps/kamera-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=media-libs/libgphoto2-2.5.0:0/6= dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+ FDL-1.2
+MD5: 5aa51c295e8578ea8615ee76f26a6ceb
+PATH: pkgs-kde-apps/kamera-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: kcm_kamera.so kio_kamera.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=media-libs/libgphoto2-2.5.0:0/6= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libgphoto2.so.6 libgphoto2_port.so.12 libstdc++.so.6
+SHA1: 063c1041b8d8e8757d2481c3d5b6b47a21d12d15
+SIZE: 245760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791359616
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791314595
@@ -8490,6 +8514,42 @@ MTIME: 1791278764
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791359557
+CPV: kde-apps/kdeedu-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +webengine
+KEYWORDS: ~amd64 ~arm64
+LICENSE: metapackage
+MD5: 7d17f5053ebb7659946c470d7c16e78c
+PATH: pkgs-kde-apps/kdeedu-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=kde-apps/analitza-26.08.1:* >=kde-apps/artikulate-26.08.1:* >=kde-apps/blinken-26.08.1:* >=kde-apps/cantor-26.08.1:* >=kde-apps/kalzium-26.08.1:* >=kde-apps/kanagram-26.08.1:* >=kde-apps/kbruch-26.08.1:* >=kde-apps/kdeedu-data-26.08.1:* >=kde-apps/kgeography-26.08.1:* >=kde-apps/khangman-26.08.1:* >=kde-apps/kig-26.08.1:* >=kde-apps/kiten-26.08.1:* >=kde-apps/klettres-26.08.1:* >=kde-apps/kmplot-26.08.1:* >=kde-apps/kqtquickcharts-26.08.1:* >=kde-apps/ktouch-26.08.1:* >=kde-apps/kturtle-26.08.1:* >=kde-apps/kwordquiz-26.08.1:* >=kde-apps/libkeduvocdocument-26.08.1:* >=kde-apps/marble-26.08.1:* >=kde-apps/minuet-26.08.1:* >=kde-apps/rocs-26.08.1:* >=kde-apps/step-26.08.1:* >=kde-apps/kalgebra-26.08.1:* >=kde-apps/parley-26.08.1:*
+SHA1: 0a8ba5b50ab9885a39b64f8ed5eca45514f1c90c
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux webengine
+MTIME: 1791359558
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791359561
+CPV: kde-apps/kdegames-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: opengl python
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: metapackage
+MD5: f3487c22ca34093c6b8422517b107cc9
+PATH: pkgs-kde-apps/kdegames-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=games-puzzle/skladnik-26.08.1 >=kde-apps/bomber-26.08.1:* >=kde-apps/bovo-26.08.1:* >=kde-apps/granatier-26.08.1:* >=kde-apps/kapman-26.08.1:* >=kde-apps/katomic-26.08.1:* >=kde-apps/kblackbox-26.08.1:* >=kde-apps/kblocks-26.08.1:* >=kde-apps/kbounce-26.08.1:* >=kde-apps/kbreakout-26.08.1:* >=kde-apps/kdiamond-26.08.1:* >=kde-apps/kfourinline-26.08.1:* >=kde-apps/kgoldrunner-26.08.1:* >=kde-apps/kigo-26.08.1:* >=kde-apps/killbots-26.08.1:* >=kde-apps/kiriki-26.08.1:* >=kde-apps/kjumpingcube-26.08.1:* >=kde-apps/klickety-26.08.1:* >=kde-apps/klines-26.08.1:* >=kde-apps/kmahjongg-26.08.1:* >=kde-apps/kmines-26.08.1:* >=kde-apps/knavalbattle-26.08.1:* >=kde-apps/knetwalk-26.08.1:* >=kde-apps/knights-26.08.1:* >=kde-apps/kolf-26.08.1:* >=kde-apps/kollision-26.08.1:* >=kde-apps/konquest-26.08.1:* >=kde-apps/kpat-26.08.1:* >=kde-apps/kreversi-26.08.1:* >=kde-apps/kshisen-26.08.1:* >=kde-apps/ksirk-26.08.1:* >=kde-apps/ksnakeduel-26.08.1:* >=kde-apps/kspaceduel-26.08.1:* >=kde-apps/ksquares-26.08.1:* >=kde-apps/ktuberling-26.08.1:* >=kde-apps/libkdegames-26.08.1:* >=kde-apps/libkmahjongg-26.08.1:* >=kde-apps/lskat-26.08.1:* >=kde-apps/palapeli-26.08.1:* >=kde-apps/picmi-26.08.1:* >=kde-apps/ksudoku-26.08.1:* >=kde-apps/kubrick-26.08.1:*
+SHA1: da8d9fff1ca7f485a78b080aa48d82f81beee548
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux opengl
+MTIME: 1791359563
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791145214
@@ -8511,6 +8571,24 @@ SIZE: 61440
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791145215
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791359566
+CPV: kde-apps/kdenetwork-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +bittorrent dropbox samba +webengine +zeroconf
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: metapackage
+MD5: 5b22ac19271faeb569e208460b86d781
+PATH: pkgs-kde-apps/kdenetwork-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=kde-apps/kget-26.08.1:* >=net-im/tokodon-26.08.1 >=net-irc/konversation-26.08.1:* >=net-news/alligator-26.08.1 >=net-libs/libktorrent-26.08.1:* >=net-p2p/ktorrent-26.08.1:* >=kde-apps/kaccounts-integration-26.08.1:* >=kde-apps/kaccounts-providers-26.08.1:* >=kde-apps/signon-kwallet-extension-26.08.1:* >=kde-misc/kio-gdrive-26.08.1:* >=net-im/neochat-26.08.1 >=kde-apps/krdc-26.08.1:* >=kde-apps/krfb-26.08.1:* >=kde-misc/kdeconnect-26.08.1:* >=net-misc/kio-zeroconf-26.08.1:*
+SHA1: fd7f2104d2e481b670a8f804562cce69551da76e
+SIZE: 20480
+USE: abi_x86_64 amd64 bittorrent elibc_glibc kernel_linux webengine zeroconf
+MTIME: 1791359567
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8560,6 +8638,24 @@ SIZE: 40960
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791280248
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791359571
+CPV: kde-apps/kdeutils-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: 7zip gpg kwallet lrz plasma rar +webengine
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: metapackage
+MD5: 763d71486f6c61e75c01fb1599d47594
+PATH: pkgs-kde-apps/kdeutils-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=app-cdr/dolphin-plugins-mountiso-26.08.1:* >=app-cdr/isoimagewriter-26.08.1:* >=app-crypt/keepsecret-26.08.1:* >=app-crypt/keysmith-26.08.1 >=app-misc/francis-26.08.1 >=dev-libs/kweathercore-26.08.1:* >=kde-apps/ark-26.08.1:* >=kde-apps/filelight-26.08.1:* >=kde-apps/kate-26.08.1:* >=kde-apps/kbackup-26.08.1:* >=kde-apps/kcalc-26.08.1:* >=kde-apps/kcharselect-26.08.1:* >=kde-apps/kdebugsettings-26.08.1:* >=kde-apps/kdf-26.08.1:* >=kde-apps/kteatime-26.08.1:* >=kde-apps/ktimer-26.08.1:* >=kde-apps/sweeper-26.08.1:* >=kde-apps/yakuake-26.08.1:* >=kde-misc/kweather-26.08.1:* >=kde-misc/markdownpart-26.08.1:* >=sys-block/partitionmanager-26.08.1:* >=sys-libs/kpmcore-26.08.1:* >=kde-apps/kwalletmanager-26.08.1:* >=kde-misc/kclock-26.08.1 >=app-editors/ghostwriter-26.08.1 >=kde-apps/kimagemapeditor-26.08.1:*
+SHA1: 71c321b6beeb5ca781ae62049a7e6f5f3681609c
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux kwallet plasma webengine
+MTIME: 1791359572
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
