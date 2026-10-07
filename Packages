@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791358338
-PACKAGES: 871
+TIMESTAMP: 1791358645
+PACKAGES: 872
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15914,6 +15914,28 @@ SIZE: 2897920
 SLOT: 0/0.8
 USE: abi_x86_64 amd64 capi elibc_glibc kernel_linux
 MTIME: 1791090037
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist]
+BUILD_ID: 1
+BUILD_TIME: 1791358578
+CPV: media-video/smplayer-25.6.0_p20250903-r1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare
+DEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6/6.11.2=[dbus,gui,network,ssl,widgets,xml] dev-qt/qtdeclarative:6 virtual/zlib:0/1= x11-libs/libX11
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: bidi debug
+KEYWORDS: amd64 ~arm ~hppa ~ppc ~ppc64 x86
+LICENSE: GPL-2+ BSD-2
+MD5: 73ec3e73207d1ad7ef8ebb68e72d544f
+PATH: pkgs-media-video/smplayer-25.6.0_p20250903-r1-1.gpkg.tar
+RDEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6/6.11.2=[dbus,gui,network,ssl,widgets,xml] dev-qt/qtdeclarative:6 virtual/zlib:0/1= x11-libs/libX11 || ( media-video/mpv[libass(+),X] media-video/mplayer[libass,png,X] ) >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libX11.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6 libz.so.1
+SHA1: a788361d6af9e2aaae99c52bc49016c967604f31
+SIZE: 4608000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791358580
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
