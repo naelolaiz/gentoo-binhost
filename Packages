@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791415569
-PACKAGES: 945
+TIMESTAMP: 1791415878
+PACKAGES: 946
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6307,6 +6307,28 @@ MTIME: 1791063143
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/setuptools-scm-8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791415521
+CPV: dev-python/sip-6.17.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: doc test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: BSD-2 BSD
+MD5: ecd5aa18eb4496bf0abd7dd294a2eed9
+PATH: pkgs-dev-python/sip-6.17.0-1.gpkg.tar
+RDEPEND: dev-python/packaging[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: b66c6c46d288a0b1b85887dc52e7178dcb5cbde7
+SIZE: 1587200
+SLOT: 5
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791415523
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 3
 BUILD_TIME: 1791063527
@@ -7768,26 +7790,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig app-text/doxygen sys-devel/gettext dev-lang/swig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 dev-build/automake || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 3
-BUILD_TIME: 1791146948
+BUILD_ID: 4
+BUILD_TIME: 1791415722
 CPV: dev-vcs/subversion-1.14.5-r3
 DEFINED_PHASES: compile config configure install postinst postrm preinst prepare setup test
-DEPEND: app-arch/bzip2 app-arch/lz4 >=dev-db/sqlite-3.7.12 >=dev-libs/apr-1.5:1 >=dev-libs/apr-util-1.5:1 dev-libs/expat >=dev-libs/libutf8proc-2.5.0:0/2.11.3= >=net-libs/serf-1.3.4 sys-apps/file virtual/zlib:0/1= dev-qt/qtbase:6[dbus,gui] kde-frameworks/kcoreaddons:6 kde-frameworks/ki18n:6 kde-frameworks/kwallet:6 sys-apps/dbus >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath] dev-lang/perl:0/5.44=
+DEPEND: app-arch/bzip2 app-arch/lz4 >=dev-db/sqlite-3.7.12 >=dev-libs/apr-1.5:1 >=dev-libs/apr-util-1.5:1 dev-libs/expat >=dev-libs/libutf8proc-2.5.0:0/2.12.0= >=net-libs/serf-1.3.4 sys-apps/file virtual/zlib:0/1= dev-qt/qtbase:6[dbus,gui] kde-frameworks/kcoreaddons:6 kde-frameworks/ki18n:6 kde-frameworks/kwallet:6 sys-apps/dbus >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath] dev-lang/perl:0/5.44=
 EAPI: 8
 IUSE: apache2 berkdb debug doc extras keyring java kwallet nls perl plaintext-password-storage ruby sasl selinux test perl_features_debug perl_features_ithreads perl_features_quadmath apache2 java
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
 LICENSE: Apache-2.0 BSD MIT BSD-2 FSFAP unicode
-MD5: fa9cd67daebe81628d15dad2dc8157f6
-PATH: pkgs-dev-vcs/subversion-1.14.5-r3-3.gpkg.tar
+MD5: bb7fb3031b8a048c6347aa85a2b800e0
+PATH: pkgs-dev-vcs/subversion-1.14.5-r3-4.gpkg.tar
 PROVIDES: x86_64: _Client.so _Core.so _Delta.so _Fs.so _Ra.so _Repos.so _Wc.so libsvn_auth_kwallet-1.so.0 libsvn_client-1.so.0 libsvn_delta-1.so.0 libsvn_diff-1.so.0 libsvn_fs-1.so.0 libsvn_fs_fs-1.so.0 libsvn_fs_util-1.so.0 libsvn_fs_x-1.so.0 libsvn_ra-1.so.0 libsvn_ra_local-1.so.0 libsvn_ra_serf-1.so.0 libsvn_ra_svn-1.so.0 libsvn_repos-1.so.0 libsvn_subr-1.so.0 libsvn_swig_perl-1.so.0 libsvn_wc-1.so.0
-RDEPEND: app-arch/bzip2 app-arch/lz4 >=dev-db/sqlite-3.7.12 >=dev-libs/apr-1.5:1 >=dev-libs/apr-util-1.5:1 dev-libs/expat >=dev-libs/libutf8proc-2.5.0:0/2.11.3= >=net-libs/serf-1.3.4 sys-apps/file virtual/zlib:0/1= dev-qt/qtbase:6[dbus,gui] kde-frameworks/kcoreaddons:6 kde-frameworks/ki18n:6 kde-frameworks/kwallet:6 sys-apps/dbus >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath] dev-lang/perl:0/5.44= acct-group/svnusers acct-user/svn virtual/libintl dev-perl/URI >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+RDEPEND: app-arch/bzip2 app-arch/lz4 >=dev-db/sqlite-3.7.12 >=dev-libs/apr-1.5:1 >=dev-libs/apr-util-1.5:1 dev-libs/expat >=dev-libs/libutf8proc-2.5.0:0/2.12.0= >=net-libs/serf-1.3.4 sys-apps/file virtual/zlib:0/1= dev-qt/qtbase:6[dbus,gui] kde-frameworks/kcoreaddons:6 kde-frameworks/ki18n:6 kde-frameworks/kwallet:6 sys-apps/dbus >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath] dev-lang/perl:0/5.44= acct-group/svnusers acct-user/svn virtual/libintl dev-perl/URI >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
 REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Wallet.so.6 libQt6Core.so.6 libapr-1.so.0 libaprutil-1.so.0 libc.so.6 libdbus-1.so.3 libexpat.so.1 libgcc_s.so.1 liblz4.so.1 libmagic.so.1 libserf-1.so.1 libsqlite3.so.0 libstdc++.so.6 libutf8proc.so.3 libz.so.1
 RESTRICT: test
-SHA1: 398cc687cba429adf6cc3ac81bcf851a266f8b5d
+SHA1: 69b8e240aa8fef18798a6b81d40de3d34bab80cd
 SIZE: 6881280
 USE: abi_x86_64 amd64 doc elibc_glibc extras kernel_linux kwallet nls perl
-MTIME: 1791146950
+MTIME: 1791415725
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
