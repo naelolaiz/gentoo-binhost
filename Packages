@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1791322240
+TIMESTAMP: 1791347424
 PACKAGES: 852
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -2312,8 +2312,8 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1791123019
+BUILD_ID: 2
+BUILD_TIME: 1791347129
 CPV: dev-cpp/simdutf-9.2.1
 DEFINED_PHASES: compile configure install prepare setup test
 DEPEND: virtual/libiconv
@@ -2321,17 +2321,17 @@ EAPI: 8
 IUSE: atomic-base64 test doc
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: || ( Apache-2.0 MIT )
-MD5: 9accef04686ebb4120efdfc136d6ba1a
-PATH: pkgs-dev-cpp/simdutf-9.2.1-1.gpkg.tar
+MD5: a2d2846d4b66740117325a8276822a1e
+PATH: pkgs-dev-cpp/simdutf-9.2.1-2.gpkg.tar
 PROVIDES: x86_64: libsimdutf.so.36
 RDEPEND: virtual/libiconv >=sys-libs/glibc-2.43-r2
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libstdc++.so.6
 RESTRICT: test
-SHA1: 280992bc123dd4cddd84627cf190153286c9e7cd
+SHA1: f52e6f2e31aa484c29ea5e712844c0c11532701a
 SIZE: 389120
 SLOT: 0/36
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791123021
+USE: abi_x86_64 amd64 atomic-base64 elibc_glibc kernel_linux
+MTIME: 1791347130
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

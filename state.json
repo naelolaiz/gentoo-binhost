@@ -9,5 +9,10 @@
  },
  "gone": {},
  "schema": 1,
- "superseded": []
+ "superseded": [
+  {
+   "at": 1791347424,
+   "path": "pkgs-dev-cpp/simdutf-9.2.1-1.gpkg.tar"
+  }
+ ]
 }
