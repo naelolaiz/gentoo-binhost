@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791413737
-PACKAGES: 940
+TIMESTAMP: 1791414044
+PACKAGES: 942
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -13744,6 +13744,28 @@ MTIME: 1791076533
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: llvm-core/clang:23 llvm-core/clang-linker-config:23 || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791413792
+CPV: llvm-runtimes/compiler-rt-23.1.3
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: llvm-core/llvm:23
+EAPI: 8
+IUSE: +abi_x86_32 abi_x86_64 +atomic-builtins +clang debug test test verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )
+MD5: 048b3ae58399cb1c9ccd514cf55d5e8b
+PATH: pkgs-llvm-runtimes/compiler-rt-23.1.3-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r2
+RESTRICT: test test
+SHA1: a378f008d2115454900a04d0ee80af59228bf413
+SIZE: 133120
+SLOT: 23
+USE: abi_x86_32 abi_x86_64 amd64 atomic-builtins clang elibc_glibc kernel_linux
+MTIME: 1791413794
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: llvm-core/clang:23 llvm-core/clang-linker-config:23 llvm-runtimes/clang-rtlib-config:23 llvm-runtimes/clang-stdlib-config:23 llvm-runtimes/compiler-rt:23 net-libs/libtirpc || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791076658
@@ -13788,6 +13810,29 @@ SIZE: 931840
 SLOT: 0/23.1
 USE: abi_x86_32 abi_x86_64 amd64 clang elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1791076506
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl llvm-core/clang app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791413752
+CPV: llvm-runtimes/openmp-23.1.3
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+EAPI: 8
+IUSE: +clang debug fortran gdb-plugin hwloc offload ompt test cuda level-zero rocm abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~x86 ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )
+MD5: 89e6d933a32104e7c69589b8074be7cc
+PATH: pkgs-llvm-runtimes/openmp-23.1.3-1.gpkg.tar
+PROVIDES: x86_32: libomp.so x86_64: libomp.so
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: ld-linux.so.2 libc.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6
+RESTRICT: test
+SHA1: 2fc4071018f7e693cfa1704c1d58e8ec57dd5837
+SIZE: 931840
+SLOT: 0/23.1
+USE: abi_x86_32 abi_x86_64 amd64 clang elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1791413755
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
