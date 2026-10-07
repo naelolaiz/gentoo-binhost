@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791352259
-PACKAGES: 858
+TIMESTAMP: 1791352568
+PACKAGES: 860
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -789,6 +789,29 @@ SHA1: cb73719513949b02a75f536a623d8567188dd391
 SIZE: 3993600
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791311892
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 virtual/pkgconfig sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1791351790
+CPV: app-editors/gvim-9.2.1152
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: ~app-editors/vim-core-9.2.1152 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland x11-base/xorg-proto
+EAPI: 8
+IUSE: acl crypt cscope debug gtk4 lua minimal motif netbeans nls +pango perl python racket ruby selinux session sound tcl wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: 9ae2ecee13fbbc7da8322c5f9086c3d2
+PATH: pkgs-app-editors/gvim-9.2.1152-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: ~app-editors/vim-core-9.2.1152 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+RESTRICT: test
+SHA1: 4c6daa47dff7bae9c197a8c2f219aced36052ef7
+SIZE: 2396160
+USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1791351793
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10166,6 +10189,30 @@ SIZE: 20480
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux mobi pdf
 MTIME: 1791234241
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791352058
+CPV: kde-apps/umbrello-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/libxml2:2/16= dev-libs/libxslt >=dev-qt/qtbase-6.11.2:6[gui,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: php debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: GPL-2
+MD5: 58addce456a3227113aaea8a3eded3a4
+PATH: pkgs-kde-apps/umbrello-26.08.1-1.gpkg.tar
+RDEPEND: dev-libs/libxml2:2/16= dev-libs/libxslt >=dev-qt/qtbase-6.11.2:6[gui,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/umbrello:5 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6KIOWidgets.so.6 libKF6TextEditor.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libxml2.so.16 libxslt.so.1
+RESTRICT: test
+SHA1: 26565510fc97eeaeabbe73ee122b915eac18f57f
+SIZE: 6461440
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791352062
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
