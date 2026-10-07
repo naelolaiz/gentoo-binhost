@@ -133,12 +133,19 @@ works if compiler, headers and sources are identical, which is why a
 follow-up run pins the tree snapshot and the image, and why the builder
 keeps the toolchain of its stage3 instead of upgrading it.
 
+The tree is pinned for two days at most.  A follow-up run whose snapshot is
+older syncs a current tree and keeps only the image (and with it the
+compiler).  Without that limit, a chain that keeps reaching the time limit
+holds the binhost at the versions of the day it started: machines that
+synced since then find newer versions in their tree, no binary for them,
+and compile every update themselves.  A newer tree costs compiler cache hits
+only for packages whose sources changed, and those have to be built anyway.
+
 The chain of runs ends when a run reaches the limit without having
 published or compiled anything new, or when four runs in a row published
 nothing (one package that does not get finished); both are reported.  It
-also ends after 40 runs, without a report, because the tree it is pinned
-to is old by then.  The next daily run starts a new chain from a current
-tree.
+also ends after 40 runs, without a report.  The next daily run starts a new
+chain.
 
 ### Failures
 
@@ -224,8 +231,10 @@ working.
 - Only the Gentoo repository is built, no overlays.
 - One configuration.  A machine with different USE flags compiles the
   affected packages itself.
-- The tree the packages are built from is a daily snapshot; a machine that
-  synced later may find a few binaries ignored until the next run.
+- The tree the packages are built from is a daily snapshot, up to two days
+  old while a chain of runs is going on; a machine that synced later
+  compiles the versions that are newer in its tree until a run has built
+  them.
 - Using GitHub's hosted runners and release storage for this is within what
   the terms allow for a project's own builds, but GitHub decides; do not
   add anything that keeps the schedule alive artificially.

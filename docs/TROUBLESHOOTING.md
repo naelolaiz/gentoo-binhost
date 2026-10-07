@@ -98,9 +98,9 @@ checked by the publisher's own rules but not parsed by Portage.
   next daily run tries it again otherwise, and the tiers after it wait.
 
 A run summary that says **Chain ended: 40 runs in a row reached the time
-limit** is not a problem and opens no issue.  A chain keeps the tree
-snapshot it started with, and after that many runs the snapshot is old; the
-next daily run starts again from a current tree.
+limit** is not a problem and opens no issue; the next daily run starts a
+new chain.  A chain keeps its tree snapshot for at most two days, then moves
+to a current one.
 
 ## "The build container failed"
 

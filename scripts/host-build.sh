@@ -41,11 +41,17 @@ CONTAINER="binhost-builder"
 OUT="${WORK}/out"
 # A chain of runs that keeps hitting the time limit ends after this many runs
 # in a row that published nothing (one package that does not get finished),
-# and after this many runs altogether (the tree it is pinned to is stale).
+# and after this many runs altogether (a bound for a chain that never ends).
 MAX_IDLE=4
 MAX_STREAK=40
 # How long a continuation keeps the tree and image of the run it continues.
 PIN_SECONDS=$(( 48 * 3600 ))
+# How many days old the pinned tree snapshot may be.  Past that a
+# continuation syncs a current tree: otherwise a chain that keeps reaching
+# the time limit holds the binhost at the versions of the day it started,
+# for as long as it lasts, and machines that synced since compile every
+# update themselves.
+MAX_TREE_DAYS=2
 TICK_SECONDS=300
 
 binhost() {
@@ -144,6 +150,16 @@ if [[ -n "$updated" ]] && (( $(date +%s) - updated < PIN_SECONDS )); then
     TIERS=""
   fi
   log "Continuing an interrupted run (${streak} so far): tree ${pin_tree}, image ${pin_image}"
+  # The image stays: it carries the compiler, which is what the compiler
+  # cache depends on.  A newer tree only costs cache hits for the packages
+  # whose sources changed, and those have to be built anyway.
+  if [[ "$pin_tree" =~ ^[0-9]{8}$ ]]; then
+    tree_days=$(( ( $(date -u -d "$(date -u +%Y-%m-%d)" +%s) - $(date -u -d "$pin_tree" +%s) ) / 86400 ))
+    if (( tree_days > MAX_TREE_DAYS )); then
+      log "Tree ${pin_tree} is ${tree_days} days old; syncing a current one"
+      pin_tree=""
+    fi
+  fi
 fi
 
 # ── Image ───────────────────────────────────────────────────────────────
@@ -268,8 +284,8 @@ if [[ "$status" == deadline ]]; then
   elif (( idle >= MAX_IDLE )); then
     stop_reason="${MAX_IDLE} runs in a row reached the time limit without publishing a package (interrupted: $(result interrupted))"
   elif (( streak + 1 >= MAX_STREAK )); then
-    # Not a problem to report: the chain did its work, its tree is just old.
-    stop_note="${MAX_STREAK} runs in a row reached the time limit; the next daily run starts again from a current tree"
+    # Not a problem to report: the chain did its work.
+    stop_note="${MAX_STREAK} runs in a row reached the time limit; the next daily run starts a new chain"
   else
     next="true"
   fi
