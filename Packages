@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791358645
-PACKAGES: 872
+TIMESTAMP: 1791358960
+PACKAGES: 878
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -389,6 +389,29 @@ SHA1: 94366fe95a218b7edecf48f4ceabb6d7e52f9150
 SIZE: 819200
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc extra-filters kernel_linux nls
 MTIME: 1791058000
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791358663
+CPV: app-cdr/dolphin-plugins-mountiso-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=kde-apps/dolphin-26.08.1:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
+LICENSE: GPL-2+
+MD5: 47bf4f0d5a6f9fe8cad978f9a6deeeff
+PATH: pkgs-app-cdr/dolphin-plugins-mountiso-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: mountedisooverlay.so mountisoaction.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=kde-apps/dolphin-26.08.1:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-apps/dolphin-plugins-common-26.08.1 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6KIOWidgets.so.6 libKF6Solid.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+SHA1: 0b2a99e985c1c52dcc7e05e7f7ebc8ffd739d4d2
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791358664
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -877,6 +900,28 @@ SHA1: 5a1361b99a92cd6e8c74f4c80a2fa6330892fc24
 SIZE: 10864640
 USE: abi_x86_64 acl amd64 elibc_glibc kernel_linux nls
 MTIME: 1791217057
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/unzip sys-devel/bison x11-apps/bdftopcf >=x11-apps/mkfontscale-1.2.0 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1791358625
+CPV: app-emulation/dosemu-1.4.1_pre20130107-r7
+DEFINED_PHASES: compile configure install prepare pretend
+DEPEND: media-libs/libsdl >=sys-libs/slang-1.4 x11-libs/libX11 x11-libs/libXext x11-libs/libXxf86vm media-libs/alsa-lib sys-libs/gpm x11-base/xorg-proto
+EAPI: 8
+IUSE: X alsa debug fluidsynth gpm
+KEYWORDS: -* amd64 x86
+LICENSE: GPL-2
+MD5: b27c3c649045bf020e392c6d9f506574
+PATH: pkgs-app-emulation/dosemu-1.4.1_pre20130107-r7-1.gpkg.tar
+PROVIDES: x86_64: libplugin_X.so libplugin_alsa.so libplugin_gpm.so libplugin_sdl.so libplugin_term.so
+RDEPEND: media-libs/libsdl >=sys-libs/slang-1.4 x11-libs/libX11 x11-libs/libXext x11-libs/libXxf86vm media-libs/alsa-lib sys-libs/gpm x11-apps/xset >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libSDL-1.2.so.0 libX11.so.6 libXext.so.6 libXxf86vm.so.1 libasound.so.2 libc.so.6 libgpm.so.1 libm.so.6 libslang.so.2
+SHA1: e75c3e294e7c8ad5921a6c4ac29cae2fb7e9859a
+SIZE: 2519040
+USE: X abi_x86_64 alsa amd64 elibc_glibc gpm kernel_linux
+MTIME: 1791358627
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2045,6 +2090,29 @@ SHA1: 610256eb7dd5fef96f55507b691debb8d503a2b2
 SIZE: 81920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791276664
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791358760
+CPV: dev-build/dolphin-plugins-makefileactions-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,gui,widgets] >=kde-apps/dolphin-26.08.1:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: GPL-2+
+MD5: b3266d8f09a4492d55780e9fadca7bc4
+PATH: pkgs-dev-build/dolphin-plugins-makefileactions-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: makefileactions.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,gui,widgets] >=kde-apps/dolphin-26.08.1:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 !<kde-apps/dolphin-plugins-subversion-24.08.2-r1 >=kde-apps/dolphin-plugins-common-26.08.1 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: 7cb8a0badccc60361627e10615a6015b787cf1cf
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791358762
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7509,6 +7577,30 @@ MTIME: 1791278792
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791358797
+CPV: kde-apps/dolphin-plugins-git-26.08.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,gui,widgets] >=kde-apps/dolphin-26.08.1:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 9f2e7900b57724d5cba2a68f88de851c
+PATH: pkgs-kde-apps/dolphin-plugins-git-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: fileviewgitplugin.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,gui,widgets] >=kde-apps/dolphin-26.08.1:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 dev-vcs/git >=kde-apps/dolphin-plugins-common-26.08.1 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libdolphinvcs.so.6 libstdc++.so.6
+SHA1: acbc4358d803010aa93cde7fd7b8594039403695
+SIZE: 143360
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791358798
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791313043
@@ -8288,6 +8380,24 @@ SIZE: 256000
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791279480
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791358639
+CPV: kde-apps/kdecore-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +share +webengine
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
+LICENSE: metapackage
+MD5: 40be122c8ddd1d606f2ee7fe7a23a4be
+PATH: pkgs-kde-apps/kdecore-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=kde-apps/dolphin-26.08.1:* >=kde-apps/kdialog-26.08.1:* >=kde-apps/keditbookmarks-26.08.1:* >=kde-apps/kfind-26.08.1:* >=kde-apps/konsole-26.08.1:* >=kde-apps/kwrite-26.08.1:* >=kde-apps/khelpcenter-26.08.1:* || ( >=www-client/falkon-26.08.1 >=kde-apps/konqueror-26.08.1:* ) kde-frameworks/purpose:6
+SHA1: 4b5bcb650e88b5fcb5a5f7cfb818993f52ea4060
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux share webengine
+MTIME: 1791358640
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10348,6 +10458,29 @@ SHA1: 26565510fc97eeaeabbe73ee122b915eac18f57f
 SIZE: 6461440
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791352062
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791358740
+CPV: kde-apps/yakuake-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,wayland,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/konsole-26.08.1:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 kde-plasma/kwayland:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libX11 x11-libs/libxcb x11-libs/xcb-util dev-libs/plasma-wayland-protocols x11-base/xorg-proto dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: X debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2 LGPL-2
+MD5: 0909ae5156ae71f5c50dcbac69a50ae3
+PATH: pkgs-kde-apps/yakuake-26.08.1-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,wayland,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/konsole-26.08.1:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 kde-plasma/kwayland:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libX11 x11-libs/libxcb x11-libs/xcb-util || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6NotifyConfig.so.6 libKF6Parts.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libKWaylandClient.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libX11.so.6 libc.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-randr.so.0 libxcb.so.1
+SHA1: 673de9b13abbb99264a3a2dd29e6cc054369cbdf
+SIZE: 645120
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791358742
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
