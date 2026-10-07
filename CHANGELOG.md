@@ -10,6 +10,11 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ### Long runs
 
+- A chain of follow-up runs keeps its tree snapshot for at most two days,
+  then builds from a current tree.  Before, a chain built from the tree of
+  the day it started for as long as it lasted (four days and thirteen runs
+  in early October), and machines that synced in the meantime compiled
+  every update themselves.
 - Packages that finished building next to one that is still compiling are
   installed and published before a run stops at its time limit.
 - A chain of runs ends after four runs in a row that published nothing; a
