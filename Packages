@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791368010
-PACKAGES: 893
+TIMESTAMP: 1791368328
+PACKAGES: 897
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1851,6 +1851,29 @@ SHA1: 307ddcae9cc201b60776eed487ecfe301a3a8fd1
 SIZE: 307200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791277659
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/lex app-alternatives/yacc virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1791368099
+CPV: app-text/xdvik-22.87.06-r1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare
+DEPEND: >=media-libs/freetype-2.9.1-r2:2 x11-libs/libX11 x11-libs/libXi x11-libs/libXmu x11-libs/libXpm x11-libs/libXt >=x11-libs/libXaw-1.0.16 dev-libs/kpathsea:0/6.4.0=
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: motif neXt Xaw3d emacs
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-2
+MD5: 811067b29e9b0ca362395b20f0f6ab73
+PATH: pkgs-app-text/xdvik-22.87.06-r1-3.gpkg.tar
+RDEPEND: >=media-libs/freetype-2.9.1-r2:2 x11-libs/libX11 x11-libs/libXi x11-libs/libXmu x11-libs/libXpm x11-libs/libXt >=x11-libs/libXaw-1.0.16 dev-libs/kpathsea:0/6.4.0= virtual/latex-base >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libX11.so.6 libXaw.so.7 libXi.so.6 libXmu.so.6 libXpm.so.4 libXt.so.6 libc.so.6 libfreetype.so.6 libkpathsea.so.6 libm.so.6
+SHA1: fccc738b16b6b2aa763a0ef906e9776d420e0f34
+SIZE: 512000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791368100
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6612,6 +6635,44 @@ MTIME: 1791223341
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-texlive/texlive-latex virtual/latex-base >=sys-apps/texinfo-4.2-r5
+BUILD_ID: 1
+BUILD_TIME: 1791368067
+CPV: dev-tex/latex-beamer-3.78
+DEFINED_PHASES: compile install postinst postrm prepare
+EAPI: 8
+IUSE: doc
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-2 FDL-1.2 LPPL-1.3c
+MD5: 73de8e52274e8af2f56c36cff904644b
+PATH: pkgs-dev-tex/latex-beamer-3.78-1.gpkg.tar
+RDEPEND: >=dev-tex/pgf-1.10 dev-texlive/texlive-latexrecommended virtual/latex-base
+SHA1: ad5bfb1ca07cd1c08275e84d241c83b6cb28b3f0
+SIZE: 215040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791368069
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/latex-base >=sys-apps/texinfo-4.2-r5
+BUILD_ID: 1
+BUILD_TIME: 1791368061
+CPV: dev-tex/pgf-3.1.11a
+DEFINED_PHASES: compile install postinst postrm
+EAPI: 8
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-2 LPPL-1.3c FDL-1.2
+MD5: 059cb427096ac52b4bd1a3276525bf43
+PATH: pkgs-dev-tex/pgf-3.1.11a-1.gpkg.tar
+RDEPEND: dev-texlive/texlive-latexrecommended virtual/latex-base
+SHA1: b94d54b46e531aaba5a4e3ef7c1f1adfc11ec4ce
+SIZE: 1013760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791368063
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-text/texlive-core-2024 app-arch/xz-utils
 BUILD_ID: 1
 BUILD_TIME: 1791366276
@@ -8617,6 +8678,24 @@ SIZE: 61440
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791145215
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791368031
+CPV: kde-apps/kdemultimedia-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +cdrom +ffmpeg gstreamer
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: metapackage
+MD5: 39ac8aadb9aac267924d9bcdf4271bb0
+PATH: pkgs-kde-apps/kdemultimedia-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=kde-apps/dragon-26.08.1:* >=kde-apps/juk-26.08.1:* >=kde-apps/kdenlive-26.08.1:* >=kde-apps/kmix-26.08.1:* >=kde-apps/kwave-26.08.1:* >=media-sound/elisa-26.08.1:* >=media-sound/kasts-26.08.1 >=media-sound/krecorder-26.08.1 >=media-sound/audex-26.08.1 >=kde-apps/audiocd-kio-26.08.1:* >=kde-apps/k3b-26.08.1:* >=kde-apps/libkcddb-26.08.1:* >=kde-apps/ffmpegthumbs-26.08.1:*
+SHA1: 44cf3f6021caf0413bf8bba6f16d42b160580dc8
+SIZE: 20480
+USE: abi_x86_64 amd64 cdrom elibc_glibc ffmpeg kernel_linux
+MTIME: 1791368032
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
