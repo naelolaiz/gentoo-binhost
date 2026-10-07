@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791390849
-PACKAGES: 935
+TIMESTAMP: 1791391156
+PACKAGES: 936
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7329,6 +7329,28 @@ SHA1: 323d259f70d7d8c9b0de6b27964ac63f9eabf7ba
 SIZE: 1392640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
 MTIME: 1791071458
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791390795
+CPV: dev-util/mesa_clc-26.2.4
+DEFINED_PHASES: compile configure install setup test
+DEPEND: dev-util/spirv-tools dev-util/spirv-llvm-translator:22 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= =llvm-runtimes/libclc-22* dev-libs/expat >=virtual/zlib-1.2.8:0/1= x11-libs/libdrm
+EAPI: 8
+IUSE: video_cards_asahi video_cards_panfrost debug +llvm_slot_22 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21
+KEYWORDS: ~amd64 ~arm ~arm64 ~riscv ~x86
+LICENSE: MIT
+MD5: d25a5ee77a16b508836e7bf63e70e67e
+PATH: pkgs-dev-util/mesa_clc-26.2.4-1.gpkg.tar
+RDEPEND: dev-util/spirv-tools dev-util/spirv-llvm-translator:22 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= =llvm-runtimes/libclc-22* >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
+REQUIRES: x86_64: libLLVM.so.22.1 libLLVMSPIRVLib.so.22.1 libSPIRV-Tools-link.so libSPIRV-Tools-opt.so libSPIRV-Tools.so libc.so.6 libclang-cpp.so.22.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+SHA1: 4e62622055c2d6a5015ff0a142a7e07c41d642f0
+SIZE: 1392640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
+MTIME: 1791390799
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
