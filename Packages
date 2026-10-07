@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791352568
-PACKAGES: 860
+TIMESTAMP: 1791353478
+PACKAGES: 861
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -9935,6 +9935,32 @@ SIZE: 1505280
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791318745
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791353155
+CPV: kde-apps/marble-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,gui,network,sql,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 virtual/zlib:0/1= >=dev-qt/qtpositioning-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/krunner-6.27.0:6 >=dev-qt/qtwebengine-6.11.2:6[qml] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/protobuf:0/34.2.0= >=dev-qt/qtwebchannel-6.11.2:6 >=dev-qt/qtwebengine-6.11.2:6[widgets] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: aprs +dbus designer +geolocation gps +kde +pbf shapefile +webengine debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: ecf9b5aca9def02ab5b8c644dbf5eb74
+PATH: pkgs-kde-apps/marble-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: AnnotatePlugin.so AtmospherePlugin.so CachePlugin.so CompassFloatItem.so CrosshairsPlugin.so CycleStreetsPlugin.so EarthquakePlugin.so EclipsesPlugin.so ElevationProfileFloatItem.so ElevationProfileMarker.so FlightGearPositionProviderPlugin.so FoursquarePlugin.so GeoUriPlugin.so GosmoreReverseGeocodingPlugin.so GosmoreRoutingPlugin.so GpsInfo.so GpsbabelPlugin.so GpxPlugin.so GraticulePlugin.so HostipPlugin.so JsonPlugin.so KmlPlugin.so LatLonPlugin.so License.so LocalDatabasePlugin.so LocalOsmSearchPlugin.so LogPlugin.so MapQuestPlugin.so MapScaleFloatItem.so MeasureTool.so MonavPlugin.so NavigationFloatItem.so NominatimReverseGeocodingPlugin.so NominatimSearchPlugin.so NotesPlugin.so OSRMPlugin.so OpenDesktopPlugin.so OpenLocationCodeSearchPlugin.so OpenRouteServicePlugin.so OsmPlugin.so OverviewMap.so Photo.so Pn2Plugin.so PntPlugin.so PositionMarker.so PostalCode.so ProgressFloatItem.so QtPositioningPositionProviderPlugin.so RoutingPlugin.so RoutinoPlugin.so SatellitesPlugin.so Speedometer.so StarsPlugin.so SunPlugin.so Weather.so Wikipedia.so YoursPlugin.so libastro.so.1 libmarble_part.so libmarbledeclarative.so libmarbleimageprovider.so libmarblewidget-qt6.so.28 marble_thumbnail_geojson.so marble_thumbnail_gpx.so marble_thumbnail_kml.so marble_thumbnail_kmz.so marble_thumbnail_osm.so plasma_runner_marble.so
+RDEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,gui,network,sql,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 virtual/zlib:0/1= >=dev-qt/qtpositioning-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/krunner-6.27.0:6 >=dev-qt/qtwebengine-6.11.2:6[qml] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/protobuf:0/34.2.0= >=dev-qt/qtwebchannel-6.11.2:6 >=dev-qt/qtwebengine-6.11.2:6[widgets] dev-libs/kirigami-addons:6 >=dev-qt/qt5compat-6.11.2:6[qml] >=kde-frameworks/kirigami-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/marble:5 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6KIOGui.so.6 libKF6Parts.so.6 libKF6Runner.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6Positioning.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6WebChannel.so.6 libQt6WebEngineCore.so.6 libQt6WebEngineQuick.so.6 libQt6WebEngineWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libabsl_log_internal_check_op.so.2601.0.0 libabsl_log_internal_message.so.2601.0.0 libc.so.6 libm.so.6 libprotobuf.so.34.2.0 libstdc++.so.6 libz.so.1
+RESTRICT: test test
+SHA1: 1765ed702326aaa14c415f5b04599e94944c2286
+SIZE: 46295040
+SLOT: 6/26.08
+USE: abi_x86_64 amd64 dbus elibc_glibc geolocation handbook kde kernel_linux pbf webengine
+MTIME: 1791353162
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
