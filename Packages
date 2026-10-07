@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791370761
-PACKAGES: 902
+TIMESTAMP: 1791371086
+PACKAGES: 910
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -9,7 +9,7 @@ ACCEPT_RESTRICT: *
 ARCH: amd64
 CBUILD: x86_64-pc-linux-gnu
 CHOST: x86_64-pc-linux-gnu
-CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d
+CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/texmf/web2c
 ELIBC: glibc
 FEATURES: assume-digests binpkg-docompress binpkg-dostrip binpkg-logs binpkg-multi-instance binpkg-signing buildpkg buildpkg-live ccache compress-index config-protect-if-modified distlocks ebuild-locks fixlafiles ipc-sandbox merge-wait multilib-strict network-sandbox parallel-fetch pid-sandbox pkgdir-index-trusted preserve-libs protect-owned qa-unresolved-soname-deps sandbox strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr
 GENTOO_MIRRORS: http://distfiles.gentoo.org
@@ -1434,6 +1434,24 @@ SHA1: 5d9b54d77a2e096a935353058767436c712d2c0b
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791276488
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791370744
+CPV: app-misc/tmux-xpanes-4.2.0
+DEFINED_PHASES: install
+EAPI: 8
+KEYWORDS: amd64 x86
+LICENSE: MIT
+MD5: fda82a6f7b7164a3f9ac6d016b68e816
+PATH: pkgs-app-misc/tmux-xpanes-4.2.0-1.gpkg.tar
+RDEPEND: app-misc/tmux dev-lang/perl dev-libs/openssl:0
+RESTRICT: test
+SHA1: 18c80af0ee95b95efdffbecbba9ba121f0806833
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791370746
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7006,6 +7024,29 @@ MTIME: 1791358986
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791370713
+CPV: dev-util/massif-visualizer-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/kdiagram:6 >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/kgraphviewer-2.5.0:0 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +callgraph debug test
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: || ( GPL-2 GPL-3 )
+MD5: b198af2159cd38e0208baac847ff98bc
+PATH: pkgs-dev-util/massif-visualizer-26.08.1-1.gpkg.tar
+RDEPEND: dev-libs/kdiagram:6 >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/kgraphviewer-2.5.0:0 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !dev-util/massif-visualizer:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKChart6.so.3 libKF6Archive.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6Parts.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 96602381b658e2b753a24bc87da9f9067c38a1cb
+SIZE: 286720
+USE: abi_x86_64 amd64 callgraph elibc_glibc kernel_linux
+MTIME: 1791370714
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791071453
@@ -8541,6 +8582,24 @@ MTIME: 1791314869
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791370726
+CPV: kde-apps/kde-apps-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: accessibility +admin +education +games +graphics +multimedia +network pim sdk +utils
+KEYWORDS: ~amd64 ~arm64
+LICENSE: metapackage
+MD5: 902975113bc6a78fd39b859910687d8c
+PATH: pkgs-kde-apps/kde-apps-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=kde-apps/kdecore-meta-26.08.1:* >=kde-apps/kdeaccessibility-meta-26.08.1:* >=kde-apps/kdeadmin-meta-26.08.1:* >=kde-apps/kdeedu-meta-26.08.1:* >=kde-apps/kdegames-meta-26.08.1:* >=kde-apps/kdegraphics-meta-26.08.1:* >=kde-apps/kdemultimedia-meta-26.08.1:* >=kde-apps/kdenetwork-meta-26.08.1:* >=kde-apps/kdesdk-meta-26.08.1:* >=kde-apps/kdeutils-meta-26.08.1:*
+SHA1: 44cea0904ba266b5f91e4ce60dfab6e3432c81cb
+SIZE: 20480
+USE: abi_x86_64 accessibility admin amd64 education elibc_glibc games graphics kernel_linux multimedia network sdk utils
+MTIME: 1791370727
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791279187
@@ -8718,6 +8777,24 @@ MTIME: 1791359563
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791370719
+CPV: kde-apps/kdegraphics-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: color-management scanner +webengine
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: metapackage
+MD5: bf27d5acb80a7ac0bb99d1e4920c111b
+PATH: pkgs-kde-apps/kdegraphics-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=kde-apps/gwenview-26.08.1:* >=kde-apps/kamera-26.08.1:* >=kde-apps/kcolorchooser-26.08.1:* >=kde-apps/kdegraphics-mobipocket-26.08.1:* >=kde-apps/kolourpaint-26.08.1:* >=kde-apps/kruler-26.08.1:* >=kde-apps/libkdcraw-26.08.1:* >=kde-apps/libkexiv2-26.08.1:* >=kde-apps/okular-26.08.1:* >=kde-apps/svgpart-26.08.1:* >=kde-apps/thumbnailers-26.08.1:* >=media-gfx/kgraphviewer-26.08.1:* >=media-gfx/qrca-26.08.1:*
+SHA1: ab05f9169661411f292f8f1539127c2d0e73f841
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux webengine
+MTIME: 1791370720
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791145214
@@ -8801,6 +8878,24 @@ SIZE: 28579840
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux semantic-desktop
 MTIME: 1791269804
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791370722
+CPV: kde-apps/kdesdk-meta-26.08.1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +git mercurial perl php python subversion webengine
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: metapackage
+MD5: 2eb21c9992e9bda12dcc76696119914f
+PATH: pkgs-kde-apps/kdesdk-meta-26.08.1-1.gpkg.tar
+RDEPEND: >=dev-build/dolphin-plugins-makefileactions-26.08.1:* >=dev-util/massif-visualizer-26.08.1:* >=kde-apps/kapptemplate-26.08.1:* >=kde-apps/kcachegrind-26.08.1:* >=kde-apps/kde-dev-scripts-26.08.1:* >=kde-apps/kde-dev-utils-26.08.1:* >=kde-apps/kdesdk-thumbnailers-26.08.1:* >=kde-apps/kompare-26.08.1:* >=kde-apps/libkomparediff2-26.08.1:* >=kde-apps/lokalize-26.08.1:* >=kde-apps/poxml-26.08.1:* >=kde-apps/umbrello-26.08.1:* >=kde-apps/dolphin-plugins-git-26.08.1:* >=dev-util/kdevelop-26.08.1:* >=dev-util/kdevelop-python-26.08.1:*
+SHA1: d4351d6b2abe461530244148ed95dc314511a6bb
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc git kernel_linux python webengine
+MTIME: 1791370723
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -14757,6 +14852,29 @@ MTIME: 1791062085
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/perl dev-lang/yasm
+BUILD_ID: 6
+BUILD_TIME: 1791370947
+CPV: media-libs/libvpx-1.16.0
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: cpu_flags_ppc_vsx3 doc +highbitdepth postproc static-libs test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 arm arm64 ~loong ~ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: BSD
+MD5: 662971bcb15fe6f6336b473d9bbeec94
+PATH: pkgs-media-libs/libvpx-1.16.0-6.gpkg.tar
+PROVIDES: x86_64: libvpx.so.12
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 3500983b3293a1dfecc280d171f1a243eb17397b
+SIZE: 1372160
+SLOT: 0/12
+USE: abi_x86_64 amd64 elibc_glibc highbitdepth kernel_linux
+MTIME: 1791370948
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791226732
@@ -18841,6 +18959,30 @@ MTIME: 1791284139
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig || ( ( dev-lang/python:3.15 dev-python/sphinx[python_targets_python3_15(-)] dev-python/sphinx-rtd-theme[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/sphinx[python_targets_python3_14(-)] dev-python/sphinx-rtd-theme[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/sphinx[python_targets_python3_13(-)] dev-python/sphinx-rtd-theme[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/sphinx[python_targets_python3_12(-)] dev-python/sphinx-rtd-theme[python_targets_python3_12(-)] ) ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1791370785
+CPV: sys-fs/btrfs-progs-7.1
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
+DEPEND: dev-libs/lzo:2/2= sys-apps/util-linux:0/0= virtual/zlib:0/1= sys-fs/e2fsprogs:0/0= virtual/libudev:0/1= app-arch/zstd:0/1= >=sys-kernel/linux-headers-5.10 sys-apps/acl
+EAPI: 8
+IUSE: +convert +man experimental reiserfs static static-libs udev +zstd verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: GPL-2
+MD5: 6898a5b0f090800b05f2bcac8f4ce43b
+PATH: pkgs-sys-fs/btrfs-progs-7.1-2.gpkg.tar
+PROVIDES: x86_64: libbtrfs.so.0 libbtrfsutil.so.1
+RDEPEND: dev-libs/lzo:2/2= sys-apps/util-linux:0/0= virtual/zlib:0/1= sys-fs/e2fsprogs:0/0= virtual/libudev:0/1= app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libblkid.so.1 libc.so.6 libcom_err.so.2 libext2fs.so.2 liblzo2.so.2 libudev.so.1 libuuid.so.1 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 59538d20ef4bae84be8b233c861b79555e2c56f4
+SIZE: 1413120
+SLOT: 0/0
+USE: abi_x86_64 amd64 convert elibc_glibc kernel_linux man udev zstd
+MTIME: 1791370787
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791063490
@@ -19010,6 +19152,27 @@ SHA1: 45c3b291c8b07975aa253ac86f682e2be6166ff5
 SIZE: 122880
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791217273
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791370833
+CPV: sys-libs/libudev-compat-186-r1
+DEFINED_PHASES: compile configure install test unpack
+DEPEND: virtual/libudev:0/1[abi_x86_32(-),abi_x86_64(-)]
+EAPI: 7
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~x86
+LICENSE: LGPL-2.1+
+MD5: a66e8ae68b9acb1a9d9da8657e97fefa
+PATH: pkgs-sys-libs/libudev-compat-186-r1-1.gpkg.tar
+PROVIDES: x86_32: libudev.so.0 x86_64: libudev.so.0
+RDEPEND: virtual/libudev:0/1[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_32: libc.so.6 libudev.so.1 x86_64: libc.so.6 libudev.so.1
+SHA1: 5c201f516538cabefa0e480b307a358462d29080
+SIZE: 30720
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791370834
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
