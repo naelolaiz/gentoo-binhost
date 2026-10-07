@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791359273
-PACKAGES: 881
+TIMESTAMP: 1791359588
+PACKAGES: 885
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1489,6 +1489,30 @@ SHA1: 7410052157c06a430bf4c8264f3070bc9a9cf79b
 SIZE: 993280
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_en l10n_es nls unicode
 MTIME: 1791232073
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/pyqt-builder-1.10.3[python_targets_python3_14(-)] >=dev-python/sip-5[python_targets_python3_14(-)] virtual/pkgconfig dev-lang/rapydscript-ng
+BUILD_ID: 25
+BUILD_TIME: 1791359445
+CPV: app-text/calibre-8.9.0
+DEFINED_PHASES: compile install postinst postrm preinst prepare setup test unpack
+DEPEND: dev-lang/python:3.14[sqlite,ssl] app-i18n/uchardet >=app-text/hunspell-1.7:0/1.7= >=app-text/podofo-0.10.0:0/2= app-text/poppler[utils] dev-libs/hyphen:0/0= >=dev-libs/icu-57.1:0/78= dev-libs/openssl:0/3= dev-libs/snowball-stemmer:0/3.1= >=dev-python/apsw-3.25.2_p1[python_targets_python3_14(-)] dev-python/beautifulsoup4[python_targets_python3_14(-)] >=dev-python/css-parser-1.0.4[python_targets_python3_14(-)] dev-python/dnspython[python_targets_python3_14(-)] >=dev-python/feedparser-5.2.1[python_targets_python3_14(-)] >=dev-python/html2text-2019.8.11[python_targets_python3_14(-)] >=dev-python/html5-parser-0.4.9[python_targets_python3_14(-)] dev-python/jeepney[python_targets_python3_14(-)] >=dev-python/lxml-3.8.0[python_targets_python3_14(-)] dev-python/lxml-html-clean[python_targets_python3_14(-)] >=dev-python/markdown-3.0.1[python_targets_python3_14(-)] >=dev-python/mechanize-0.3.5[python_targets_python3_14(-)] >=dev-python/msgpack-0.6.2[python_targets_python3_14(-)] >=dev-python/netifaces-0.10.5[python_targets_python3_14(-)] >=dev-python/pillow-3.2.0[jpeg,truetype,webp,zlib,python_targets_python3_14(-)] >=dev-python/psutil-4.3.0[python_targets_python3_14(-)] >=dev-python/pychm-0.8.6[python_targets_python3_14(-)] dev-python/pykakasi[python_targets_python3_14(-)] >=dev-python/pygments-2.3.1[python_targets_python3_14(-)] >=dev-python/python-dateutil-2.5.3[python_targets_python3_14(-)] dev-python/pyqt6[gui,network,opengl,printsupport,quick,svg,widgets,python_targets_python3_14(-)] dev-python/pyqt6-webengine[widgets,python_targets_python3_14(-)] dev-python/regex[python_targets_python3_14(-)] dev-python/xxhash[python_targets_python3_14(-)] >=dev-python/zeroconf-0.75.0[python_targets_python3_14(-)] dev-qt/qtbase:6/6.11.2=[gui,widgets] dev-qt/qtimageformats:6 dev-util/desktop-file-utils dev-util/gtk-update-icon-cache media-fonts/liberation-fonts media-libs/fontconfig:1.0/1.0= >=media-libs/freetype-2:2/2= >=media-libs/libmtp-1.1.11:0/9= >=media-gfx/optipng-0.7.6 >=media-video/ffmpeg-6:0/60.62.62= virtual/libusb:1/1= x11-misc/shared-mime-info >=x11-misc/xdg-utils-1.0.2-r2 dev-python/fonttools[python_targets_python3_14(-)] >=dev-libs/mathjax-3:0/3.2.2= virtual/libudev dev-python/unrardll
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +font-subsetting ios speech +system-mathjax test +udisks unrar python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 verify-sig
+KEYWORDS: amd64 ~arm64
+LICENSE: GPL-3+ GPL-3 GPL-2+ GPL-2 GPL-1+ LGPL-3+ LGPL-2.1+ LGPL-2.1 BSD MIT Old-MIT Apache-2.0 public-domain || ( Artistic GPL-1+ ) CC-BY-3.0 OFL-1.1 PSF-2
+MD5: 5e18e0b1e5dc1d51da16c7e3f5798efb
+PATH: pkgs-app-text/calibre-8.9.0-25.gpkg.tar
+PROVIDES: x86_64: _patiencediff_c.so bzzdec.so cPalmdoc.so certgen.so fast_css_transform.so fast_html_entities.so ffmpeg.so freetype.so html_as_json.so html_syntax_highlighter.so hunspell.so hyphen.so icu.so imageops.so libheadless.so libmtp.so libusb.so lzx.so matcher.so msdes.so pictureflow.so podofo.so progress_indicator.so rcc_backend.so speedup.so sqlite_custom.so sqlite_extension.so tokenizer.so uchardet.so unicode_names.so
+RDEPEND: dev-lang/python:3.14[sqlite,ssl] app-i18n/uchardet >=app-text/hunspell-1.7:0/1.7= >=app-text/podofo-0.10.0:0/2= app-text/poppler[utils] dev-libs/hyphen:0/0= >=dev-libs/icu-57.1:0/78= dev-libs/openssl:0/3= dev-libs/snowball-stemmer:0/3.1= >=dev-python/apsw-3.25.2_p1[python_targets_python3_14(-)] dev-python/beautifulsoup4[python_targets_python3_14(-)] >=dev-python/css-parser-1.0.4[python_targets_python3_14(-)] dev-python/dnspython[python_targets_python3_14(-)] >=dev-python/feedparser-5.2.1[python_targets_python3_14(-)] >=dev-python/html2text-2019.8.11[python_targets_python3_14(-)] >=dev-python/html5-parser-0.4.9[python_targets_python3_14(-)] dev-python/jeepney[python_targets_python3_14(-)] >=dev-python/lxml-3.8.0[python_targets_python3_14(-)] dev-python/lxml-html-clean[python_targets_python3_14(-)] >=dev-python/markdown-3.0.1[python_targets_python3_14(-)] >=dev-python/mechanize-0.3.5[python_targets_python3_14(-)] >=dev-python/msgpack-0.6.2[python_targets_python3_14(-)] >=dev-python/netifaces-0.10.5[python_targets_python3_14(-)] >=dev-python/pillow-3.2.0[jpeg,truetype,webp,zlib,python_targets_python3_14(-)] >=dev-python/psutil-4.3.0[python_targets_python3_14(-)] >=dev-python/pychm-0.8.6[python_targets_python3_14(-)] dev-python/pykakasi[python_targets_python3_14(-)] >=dev-python/pygments-2.3.1[python_targets_python3_14(-)] >=dev-python/python-dateutil-2.5.3[python_targets_python3_14(-)] dev-python/pyqt6[gui,network,opengl,printsupport,quick,svg,widgets,python_targets_python3_14(-)] dev-python/pyqt6-webengine[widgets,python_targets_python3_14(-)] dev-python/regex[python_targets_python3_14(-)] dev-python/xxhash[python_targets_python3_14(-)] >=dev-python/zeroconf-0.75.0[python_targets_python3_14(-)] dev-qt/qtbase:6/6.11.2=[gui,widgets] dev-qt/qtimageformats:6 dev-util/desktop-file-utils dev-util/gtk-update-icon-cache media-fonts/liberation-fonts media-libs/fontconfig:1.0/1.0= >=media-libs/freetype-2:2/2= >=media-libs/libmtp-1.1.11:0/9= >=media-gfx/optipng-0.7.6 >=media-video/ffmpeg-6:0/60.62.62= virtual/libusb:1/1= x11-misc/shared-mime-info >=x11-misc/xdg-utils-1.0.2-r2 dev-python/fonttools[python_targets_python3_14(-)] >=dev-libs/mathjax-3:0/3.2.2= virtual/libudev dev-python/unrardll sys-fs/udisks:2 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libcrypto.so.3 libfreetype.so.6 libgcc_s.so.1 libhunspell-1.7.so.0 libhyphen.so.0 libicui18n.so.78 libicuuc.so.78 libm.so.6 libmtp.so.9 libpodofo.so.2 libpython3.14.so.1.0 libstdc++.so.6 libstemmer.so.3.1 libswresample.so.6 libuchardet.so.0 libusb-1.0.so.0
+RESTRICT: test
+SHA1: 53bf01c3c0db9e095cc88ea15c5d4283fb6d8492
+SIZE: 42455040
+USE: abi_x86_64 amd64 elibc_glibc font-subsetting kernel_linux python_single_target_python3_14 system-mathjax udisks unrar
+MTIME: 1791359456
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10254,6 +10278,30 @@ MTIME: 1791353162
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791359337
+CPV: kde-apps/minuet-26.08.1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/kirigami-addons:6 >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 media-libs/aubio:0/5= >=media-sound/fluidsynth-2.5.3:0/3= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: c888e99891ece644af60329bb9d824b6
+PATH: pkgs-kde-apps/minuet-26.08.1-1.gpkg.tar
+PROVIDES: x86_64: libminuetinterfaces.so.0.3.0 minuetaubiomicrophoneinputcontroller.so minuetfluidsynthsoundcontroller.so
+RDEPEND: dev-libs/kirigami-addons:6 >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 media-libs/aubio:0/5= >=media-sound/fluidsynth-2.5.3:0/3= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/minuet:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6QuickControls2.so.6 libaubio.so.5 libc.so.6 libfluidsynth.so.3 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+SHA1: f01867bfd4990a7e0541de7d93450d1be75475bf
+SIZE: 31313920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791359340
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791263528
@@ -15184,6 +15232,26 @@ MTIME: 1791282705
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 3
+BUILD_TIME: 1791359476
+CPV: media-plugins/vamp-aubio-plugins-0.5.1-r2
+DEFINED_PHASES: compile configure install prepare setup
+DEPEND: media-libs/aubio media-libs/vamp-plugin-sdk =sci-libs/fftw-3* || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] )
+EAPI: 8
+KEYWORDS: -* amd64 -x86
+LICENSE: GPL-2
+MD5: 0751f5600ad6171fee16fdaaf02ea84b
+PATH: pkgs-media-plugins/vamp-aubio-plugins-0.5.1-r2-3.gpkg.tar
+PROVIDES: x86_64: vamp-aubio.so
+RDEPEND: media-libs/aubio media-libs/vamp-plugin-sdk =sci-libs/fftw-3* >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libaubio.so.5 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libvamp-sdk.so.2
+SHA1: 4c86f7320c77999dad916af512b0e95dfc856705
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791359477
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791277492
 CPV: media-plugins/vamp-libxtract-plugins-0.6.6.20121204-r1
@@ -15573,6 +15641,28 @@ SHA1: 59aea1c4374141bedac79bf7e2a48cf6eb97d8d4
 SIZE: 1587200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791314638
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/unzip dev-qt/qttools:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791359537
+CPV: media-sound/kmidimon-1.4.1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6[gui,widgets] media-libs/alsa-lib >=media-sound/drumstick-2.10.0[alsa]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: amd64 x86
+LICENSE: GPL-2
+MD5: 89901a466024605baaa96d68f2760c33
+PATH: pkgs-media-sound/kmidimon-1.4.1-1.gpkg.tar
+RDEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6[gui,widgets] media-libs/alsa-lib >=media-sound/drumstick-2.10.0[alsa] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libdrumstick-alsa.so.2 libdrumstick-file.so.2 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+SHA1: 5eaf73d895487f01476c23353cecc85f4ecaec14
+SIZE: 501760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791359539
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
