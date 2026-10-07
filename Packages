@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791371430
-PACKAGES: 925
+TIMESTAMP: 1791371737
+PACKAGES: 926
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1048,6 +1048,29 @@ SIZE: 40407040
 SLOT: 0/7.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791111335
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/yasm-0.6.2 >=dev-build/kbuild-0.1.9998.3660 sys-devel/bin86 sys-power/iasl virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791371525
+CPV: app-emulation/virtualbox-guest-additions-7.2.18
+DEFINED_PHASES: compile configure install postinst postrm prepare
+DEPEND: acct-group/vboxguest acct-group/vboxsf acct-user/vboxguest sys-libs/pam virtual/zlib:0/1= ~app-emulation/virtualbox-guest-modules-7.2.18 sys-apps/dbus x11-apps/xrandr x11-apps/xrefresh x11-libs/libX11 x11-libs/libXext x11-libs/libXmu x11-libs/libXt x11-libs/libICE x11-libs/libSM x11-libs/libXau x11-libs/libXdmcp x11-base/xorg-proto
+EAPI: 8
+IUSE: +dbus gui
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: GPL-3 LGPL-2.1+ MIT || ( GPL-3 CDDL )
+MD5: 8b89dbf0ac51edae4d5c7559ed777c2d
+PATH: pkgs-app-emulation/virtualbox-guest-additions-7.2.18-1.gpkg.tar
+RDEPEND: acct-group/vboxguest acct-group/vboxsf acct-user/vboxguest sys-libs/pam virtual/zlib:0/1= ~app-emulation/virtualbox-guest-modules-7.2.18 sys-apps/dbus x11-apps/xrandr x11-apps/xrefresh x11-libs/libX11 x11-libs/libXext x11-libs/libXmu x11-libs/libXt >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+REQUIRES: x86_64: libc.so.6 libz.so.1
+SHA1: 91dbcaede6fb615b0d4e7070eb2ead24170a4bc3
+SIZE: 768000
+SLOT: 0/7.2
+USE: abi_x86_64 amd64 dbus elibc_glibc gui kernel_linux
+MTIME: 1791371539
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
