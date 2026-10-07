@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791414352
-PACKAGES: 943
+TIMESTAMP: 1791414659
+PACKAGES: 944
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3789,6 +3789,29 @@ SIZE: 122880
 SLOT: 1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux udev
 MTIME: 1791063513
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791414378
+CPV: dev-libs/libutf8proc-2.12.0
+DEFINED_PHASES: compile install prepare test
+EAPI: 8
+IUSE: cjk static-libs test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: MIT
+MD5: cc1df93ed369c578c05eeae9e430e9a3
+PATH: pkgs-dev-libs/libutf8proc-2.12.0-1.gpkg.tar
+PROVIDES: x86_64: libutf8proc.so.3
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 9107b27e4d7d2f41487758245109caaa75e290c3
+SIZE: 133120
+SLOT: 0/2.12.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791414379
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
