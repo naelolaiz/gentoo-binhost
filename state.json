@@ -7,7 +7,11 @@
   "tree_date": "20261006",
   "updated": 1791422782
  },
- "gone": {},
+ "gone": {
+  "media-libs/libsdl-1.2.74": 1791439398,
+  "sci-ml/ggml-0.25.3": 1791439398,
+  "sys-libs/libcap-ng-0.9.5-r1": 1791439398
+ },
  "schema": 1,
  "superseded": [
   {
