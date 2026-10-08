@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791438419
-PACKAGES: 957
+TIMESTAMP: 1791439332
+PACKAGES: 959
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5859,6 +5859,28 @@ MTIME: 1791278546
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/cffi[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791438346
+CPV: dev-python/pycryptodome-3.24.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/gmp:0/10.4= >=dev-libs/libtomcrypt-1.18.2-r1:0/1= dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2 Unlicense
+MD5: e0bd5a1f2a4e18c7c8910ea0ea01e2a9
+PATH: pkgs-dev-python/pycryptodome-3.24.0-1.gpkg.tar
+PROVIDES: x86_64: _ARC4.abi3.so _BLAKE2b.abi3.so _BLAKE2s.abi3.so _MD2.abi3.so _MD4.abi3.so _MD5.abi3.so _RIPEMD160.abi3.so _SHA1.abi3.so _SHA224.abi3.so _SHA256.abi3.so _SHA384.abi3.so _SHA512.abi3.so _Salsa20.abi3.so _chacha20.abi3.so _cpuid_c.abi3.so _curve25519.abi3.so _curve448.abi3.so _ec_ws.abi3.so _ed25519.abi3.so _ed448.abi3.so _ghash_clmul.abi3.so _ghash_portable.abi3.so _keccak.abi3.so _modexp.abi3.so _pkcs1_decode.abi3.so _poly1305.abi3.so _raw_aes.abi3.so _raw_aesni.abi3.so _raw_arc2.abi3.so _raw_blowfish.abi3.so _raw_cast.abi3.so _raw_cbc.abi3.so _raw_cfb.abi3.so _raw_ctr.abi3.so _raw_des.abi3.so _raw_des3.abi3.so _raw_ecb.abi3.so _raw_eksblowfish.abi3.so _raw_ocb.abi3.so _raw_ofb.abi3.so _scrypt.abi3.so _strxor.abi3.so
+RDEPEND: dev-libs/gmp:0/10.4= >=dev-libs/libtomcrypt-1.18.2-r1:0/1= dev-python/cffi[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libtomcrypt.so.1
+SHA1: 57e5af8d50b59091f7f3e0054acf62ae29740862
+SIZE: 2037760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791438348
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791277829
@@ -6348,6 +6370,30 @@ SHA1: e479cb5d570f07c485f7d40c5c40b919d71184d2
 SIZE: 29655040
 USE: abi_x86_64 amd64 elibc_glibc fortran kernel_linux python_targets_python3_14 test-rust
 MTIME: 1791285556
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/swig >=dev-python/cython-3.2.0[python_targets_python3_14(-)] >=dev-python/meson-python-0.15.0[python_targets_python3_14(-)] >=dev-python/pybind11-2.13.2[python_targets_python3_14(-)] >=dev-python/pytest-8.0.0[python_targets_python3_14(-)] >=dev-build/meson-1.5.0 dev-util/patchelf virtual/pkgconfig >=dev-python/pythran-0.19.0[python_targets_python3_14(-)] dev-python/pooch[python_targets_python3_14(-)] virtual/fortran >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/meson-python[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791439292
+CPV: dev-python/scipy-1.18.1
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: >=dev-python/numpy-2.0.0:0/2=[-index64(-),lapack,python_targets_python3_14(-)] >=media-libs/qhull-2020.2:0/8.1= virtual/cblas >=virtual/lapack-3.8 >=dev-libs/boost-1.91.0 >=dev-python/pythran-0.19.0[python_targets_python3_14(-)] virtual/fortran dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: doc +fortran index64 test-rust test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: BSD LGPL-2
+MD5: 157017dcaa086803826091e8f1205f08
+PATH: pkgs-dev-python/scipy-1.18.1-1.gpkg.tar
+PROVIDES: x86_64: __odrpack.cpython-314-x86_64-linux-gnu.so _ansari_swilk_statistics.cpython-314-x86_64-linux-gnu.so _arpacklib.cpython-314-x86_64-linux-gnu.so _batched_linalg.cpython-314-x86_64-linux-gnu.so _bglu_dense.cpython-314-x86_64-linux-gnu.so _biasedurn.cpython-314-x86_64-linux-gnu.so _ccallback_c.cpython-314-x86_64-linux-gnu.so _ckdtree.cpython-314-x86_64-linux-gnu.so _comb.cpython-314-x86_64-linux-gnu.so _core.cpython-314-x86_64-linux-gnu.so _csparsetools.cpython-314-x86_64-linux-gnu.so _ctest.cpython-314-x86_64-linux-gnu.so _cytest.cpython-314-x86_64-linux-gnu.so _cythonized_array_utils.cpython-314-x86_64-linux-gnu.so _cyutility.cpython-314-x86_64-linux-gnu.so _decomp_interpolative.cpython-314-x86_64-linux-gnu.so _decomp_update.cpython-314-x86_64-linux-gnu.so _dierckx.cpython-314-x86_64-linux-gnu.so _direct.cpython-314-x86_64-linux-gnu.so _distance_pybind.cpython-314-x86_64-linux-gnu.so _distance_wrap.cpython-314-x86_64-linux-gnu.so _dop.cpython-314-x86_64-linux-gnu.so _ellip_harm_2.cpython-314-x86_64-linux-gnu.so _fblas.cpython-314-x86_64-linux-gnu.so _fitpack.cpython-314-x86_64-linux-gnu.so _flapack.cpython-314-x86_64-linux-gnu.so _flow.cpython-314-x86_64-linux-gnu.so _fmm_core.cpython-314-x86_64-linux-gnu.so _fpumode.cpython-314-x86_64-linux-gnu.so _group_columns.cpython-314-x86_64-linux-gnu.so _gufuncs.cpython-314-x86_64-linux-gnu.so _hausdorff.cpython-314-x86_64-linux-gnu.so _hierarchy.cpython-314-x86_64-linux-gnu.so _highs_options.cpython-314-x86_64-linux-gnu.so _internal_matfuncs.cpython-314-x86_64-linux-gnu.so _interpnd.cpython-314-x86_64-linux-gnu.so _lbfgsb.cpython-314-x86_64-linux-gnu.so _linalg_pythran.cpython-314-x86_64-linux-gnu.so _lsap.cpython-314-x86_64-linux-gnu.so _matching.cpython-314-x86_64-linux-gnu.so _matfuncs_sqrtm_triu.cpython-314-x86_64-linux-gnu.so _max_len_seq_inner.cpython-314-x86_64-linux-gnu.so _min_spanning_tree.cpython-314-x86_64-linux-gnu.so _minpack.cpython-314-x86_64-linux-gnu.so _mio5_utils.cpython-314-x86_64-linux-gnu.so _mio_utils.cpython-314-x86_64-linux-gnu.so _moduleTNC.cpython-314-x86_64-linux-gnu.so _nd_image.cpython-314-x86_64-linux-gnu.so _ni_label.cpython-314-x86_64-linux-gnu.so _odepack.cpython-314-x86_64-linux-gnu.so _optimal_leaf_ordering.cpython-314-x86_64-linux-gnu.so _pava_pybind.cpython-314-x86_64-linux-gnu.so _peak_finding_utils.cpython-314-x86_64-linux-gnu.so _ppoly.cpython-314-x86_64-linux-gnu.so _propack.cpython-314-x86_64-linux-gnu.so _qhull.cpython-314-x86_64-linux-gnu.so _qmc_cy.cpython-314-x86_64-linux-gnu.so _qmvnt_cy.cpython-314-x86_64-linux-gnu.so _quadpack.cpython-314-x86_64-linux-gnu.so _rank_filter_1d.cpython-314-x86_64-linux-gnu.so _rbfinterp_pythran.cpython-314-x86_64-linux-gnu.so _reordering.cpython-314-x86_64-linux-gnu.so _rgi_cython.cpython-314-x86_64-linux-gnu.so _rigid_transform_cy.cpython-314-x86_64-linux-gnu.so _rotation_cy.cpython-314-x86_64-linux-gnu.so _shortest_path.cpython-314-x86_64-linux-gnu.so _sigtools.cpython-314-x86_64-linux-gnu.so _slsqplib.cpython-314-x86_64-linux-gnu.so _sobol.cpython-314-x86_64-linux-gnu.so _solve_toeplitz.cpython-314-x86_64-linux-gnu.so _sosfilt.cpython-314-x86_64-linux-gnu.so _sparsetools.cpython-314-x86_64-linux-gnu.so _specfun.cpython-314-x86_64-linux-gnu.so _special_ufuncs.cpython-314-x86_64-linux-gnu.so _spline.cpython-314-x86_64-linux-gnu.so _stats.cpython-314-x86_64-linux-gnu.so _stats_pythran.cpython-314-x86_64-linux-gnu.so _streams.cpython-314-x86_64-linux-gnu.so _superlu.cpython-314-x86_64-linux-gnu.so _test_ccallback.cpython-314-x86_64-linux-gnu.so _test_deprecation_call.cpython-314-x86_64-linux-gnu.so _test_deprecation_def.cpython-314-x86_64-linux-gnu.so _test_internal.cpython-314-x86_64-linux-gnu.so _test_multivariate.cpython-314-x86_64-linux-gnu.so _tools.cpython-314-x86_64-linux-gnu.so _traversal.cpython-314-x86_64-linux-gnu.so _trlib.cpython-314-x86_64-linux-gnu.so _uarray.cpython-314-x86_64-linux-gnu.so _ufuncs.cpython-314-x86_64-linux-gnu.so _ufuncs_cxx.cpython-314-x86_64-linux-gnu.so _upfirdn_apply.cpython-314-x86_64-linux-gnu.so _vode.cpython-314-x86_64-linux-gnu.so _voronoi.cpython-314-x86_64-linux-gnu.so _vq.cpython-314-x86_64-linux-gnu.so _zeros.cpython-314-x86_64-linux-gnu.so convolve.cpython-314-x86_64-linux-gnu.so cython_blas.cpython-314-x86_64-linux-gnu.so cython_lapack.cpython-314-x86_64-linux-gnu.so cython_special.cpython-314-x86_64-linux-gnu.so givens_elimination.cpython-314-x86_64-linux-gnu.so levyst.cpython-314-x86_64-linux-gnu.so messagestream.cpython-314-x86_64-linux-gnu.so pyduccfft.cpython-314-x86_64-linux-gnu.so rcont.cpython-314-x86_64-linux-gnu.so unuran_wrapper.cpython-314-x86_64-linux-gnu.so
+RDEPEND: >=dev-python/numpy-2.0.0:0/2=[-index64(-),lapack,python_targets_python3_14(-)] >=media-libs/qhull-2020.2:0/8.1= virtual/cblas >=virtual/lapack-3.8 dev-python/pillow[python_targets_python3_14(-)] virtual/fortran dev-lang/python:3.14[threads(+)] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libblas.so.3 libc.so.6 libgcc_s.so.1 libgfortran.so.5 liblapack.so.3 libm.so.6 libqhull_r.so.8.1 libstdc++.so.6
+RESTRICT: test
+SHA1: dd8af96eecfef8df84a6bef2e550ffa34ccac2bf
+SIZE: 30248960
+USE: abi_x86_64 amd64 elibc_glibc fortran kernel_linux python_targets_python3_14 test-rust
+MTIME: 1791439299
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
