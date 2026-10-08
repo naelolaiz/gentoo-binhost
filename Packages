@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791443377
-PACKAGES: 965
+TIMESTAMP: 1791445201
+PACKAGES: 971
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1030,6 +1030,29 @@ SHA1: 283bd41493d317b3cd77f89ac18278790a53db4e
 SIZE: 25845760
 USE: X abi_x86_64 aio alsa amd64 bzip2 curl elibc_glibc fdt filecaps gnutls gtk jack jpeg kernel_linux ncurses nls opengl oss pam pin-upstream-blobs pipewire png pulseaudio python_targets_python3_14 qemu_softmmu_targets_x86_64 sdl seccomp slirp udev usb vhost-net vnc wayland xattr
 MTIME: 1791232021
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14[ensurepip(-),ncurses,readline] dev-python/distlib[python_targets_python3_14(-)] dev-lang/perl >=dev-build/meson-0.63.0 >=dev-util/gdbus-codegen-2.80.5-r1 app-alternatives/ninja virtual/pkgconfig sys-devel/gettext virtual/pkgconfig
+BUILD_ID: 7
+BUILD_TIME: 1791444873
+CPV: app-emulation/qemu-10.2.3-r2
+DEFINED_PHASES: compile configure info install postinst postrm prepare pretend setup test unpack
+DEPEND: dev-libs/glib:2 virtual/zlib:0/1= sys-apps/attr >=x11-libs/pixman-0.28.0 dev-libs/libaio >=media-libs/alsa-lib-1.0.13 app-arch/bzip2 >=net-misc/curl-7.15.4 >=sys-apps/dtc-1.5.1 >=net-libs/gnutls-3.7.5:0/30.30= >=dev-libs/nettle-3.7.3:0/8-6= x11-libs/gtk+:3[wayland,X] virtual/jack media-libs/libjpeg-turbo:0/0.2= sys-libs/libcap-ng sys-libs/ncurses:0/6=[unicode(+)] sys-libs/ncurses:0/6= virtual/opengl media-libs/libepoxy media-libs/mesa media-libs/mesa[egl(+),gbm(+)] sys-libs/pam >=media-video/pipewire-0.3.60 >=media-libs/libpng-1.6.34:0/16= media-libs/libpulse media-libs/libsdl2[video] media-libs/libsdl2 >=sys-libs/libseccomp-2.1.0 net-libs/libslirp virtual/libudev:0/1= >=virtual/libusb-1-r2:1 ~sys-firmware/edk2-bin-202408[qemu_softmmu_targets_x86_64(+)] ~sys-firmware/ipxe-1.21.1_p20230601[binary,qemu] ~sys-firmware/seabios-bin-1.16.3 ~sys-firmware/sgabios-0.1_pre10[binary] >=sys-kernel/linux-headers-2.6.35
+EAPI: 8
+IDEPEND: sys-libs/libcap
+IUSE: accessibility +aio alsa bpf bzip2 capstone +curl debug doc +fdt fuse glusterfs +gnutls gtk infiniband iscsi io-uring jack +jpeg keyutils lzo multipath ncurses nfs nls numa opengl +oss pam passt +pin-upstream-blobs pipewire plugins +png pulseaudio python rbd sasl +seccomp sdl sdl-image selinux +slirp smartcard snappy spice ssh static-user systemtap test udev usb usbredir valgrind vde +vhost-net virgl virtfs +vnc vte wayland X xattr xdp xen zstd qemu_softmmu_targets_aarch64 qemu_softmmu_targets_alpha qemu_softmmu_targets_arm qemu_softmmu_targets_hppa qemu_softmmu_targets_i386 qemu_softmmu_targets_loongarch64 qemu_softmmu_targets_m68k qemu_softmmu_targets_microblaze qemu_softmmu_targets_microblazeel qemu_softmmu_targets_mips qemu_softmmu_targets_mips64 qemu_softmmu_targets_mips64el qemu_softmmu_targets_mipsel qemu_softmmu_targets_or1k qemu_softmmu_targets_ppc qemu_softmmu_targets_ppc64 qemu_softmmu_targets_riscv32 qemu_softmmu_targets_riscv64 qemu_softmmu_targets_s390x qemu_softmmu_targets_sh4 qemu_softmmu_targets_sh4eb qemu_softmmu_targets_sparc qemu_softmmu_targets_sparc64 qemu_softmmu_targets_x86_64 qemu_softmmu_targets_xtensa qemu_softmmu_targets_xtensaeb qemu_softmmu_targets_avr qemu_softmmu_targets_rx qemu_softmmu_targets_tricore qemu_user_targets_aarch64 qemu_user_targets_alpha qemu_user_targets_arm qemu_user_targets_hppa qemu_user_targets_i386 qemu_user_targets_loongarch64 qemu_user_targets_m68k qemu_user_targets_microblaze qemu_user_targets_microblazeel qemu_user_targets_mips qemu_user_targets_mips64 qemu_user_targets_mips64el qemu_user_targets_mipsel qemu_user_targets_or1k qemu_user_targets_ppc qemu_user_targets_ppc64 qemu_user_targets_riscv32 qemu_user_targets_riscv64 qemu_user_targets_s390x qemu_user_targets_sh4 qemu_user_targets_sh4eb qemu_user_targets_sparc qemu_user_targets_sparc64 qemu_user_targets_x86_64 qemu_user_targets_xtensa qemu_user_targets_xtensaeb qemu_user_targets_aarch64_be qemu_user_targets_armeb qemu_user_targets_hexagon qemu_user_targets_mipsn32 qemu_user_targets_mipsn32el qemu_user_targets_ppc64le qemu_user_targets_sparc32plus python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 +filecaps verify-sig
+KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv x86
+LICENSE: GPL-2 LGPL-2 BSD-2
+MD5: 3ff18a3df65f92236a975d6b9e07b675
+PATH: pkgs-app-emulation/qemu-10.2.3-r2-7.gpkg.tar
+RDEPEND: dev-libs/glib:2 virtual/zlib:0/1= sys-apps/attr >=x11-libs/pixman-0.28.0 dev-libs/libaio >=media-libs/alsa-lib-1.0.13 app-arch/bzip2 >=net-misc/curl-7.15.4 >=sys-apps/dtc-1.5.1 >=net-libs/gnutls-3.7.5:0/30.30= >=dev-libs/nettle-3.7.3:0/8-6= x11-libs/gtk+:3[wayland,X] virtual/jack media-libs/libjpeg-turbo:0/0.2= sys-libs/libcap-ng sys-libs/ncurses:0/6=[unicode(+)] sys-libs/ncurses:0/6= virtual/opengl media-libs/libepoxy media-libs/mesa media-libs/mesa[egl(+),gbm(+)] sys-libs/pam >=media-video/pipewire-0.3.60 >=media-libs/libpng-1.6.34:0/16= media-libs/libpulse media-libs/libsdl2[video] media-libs/libsdl2 >=sys-libs/libseccomp-2.1.0 net-libs/libslirp virtual/libudev:0/1= >=virtual/libusb-1-r2:1 ~sys-firmware/edk2-bin-202408[qemu_softmmu_targets_x86_64(+)] ~sys-firmware/ipxe-1.21.1_p20230601[binary,qemu] ~sys-firmware/seabios-bin-1.16.3 ~sys-firmware/sgabios-0.1_pre10[binary] acct-group/kvm >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libSDL2-2.0.so.0 libX11.so.6 libaio.so.1 libasound.so.2 libbz2.so.1 libc.so.6 libcairo.so.2 libcap-ng.so.0 libcurl.so.4 libdw.so.1 libepoxy.so.0 libfdt.so.1 libgbm.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 libgtk-3.so.0 libjack.so.0 libjpeg.so.62 libm.so.6 libncursesw.so.6 libpam.so.0 libpipewire-0.3.so.0 libpixman-1.so.0 libpng16.so.16 libpulse.so.0 libseccomp.so.2 libslirp.so.0 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0 libz.so.1
+RESTRICT: test
+SHA1: f80ed26c0c98f8b07a15f3fb90a7c95d9680efcb
+SIZE: 26142720
+USE: X abi_x86_64 aio alsa amd64 bzip2 curl elibc_glibc fdt filecaps gnutls gtk jack jpeg kernel_linux ncurses nls opengl oss pam pin-upstream-blobs pipewire png pulseaudio python_targets_python3_14 qemu_softmmu_targets_x86_64 sdl seccomp slirp udev usb vhost-net vnc wayland xattr
+MTIME: 1791444879
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -13521,6 +13544,29 @@ MTIME: 1791216604
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791443580
+CPV: kde-plasma/ksshaskpass-6.7.5-r1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[widgets] >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kwallet-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: a0ae2ca4b27ef40ee1f10d2334b89c61
+PATH: pkgs-kde-plasma/ksshaskpass-6.7.5-r1-1.gpkg.tar
+RDEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[widgets] >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kwallet-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/ksshaskpass:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6Widgets.so.6 libc.so.6 libqt6keychain.so.1 libstdc++.so.6
+SHA1: 5d10317c02c83787b7c223ca502bbe3084cf7c40
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791443584
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner >=kde-frameworks/kcmutils-6.26.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
 BUILD_ID: 8
 BUILD_TIME: 1791198595
@@ -20860,6 +20906,31 @@ MTIME: 1791390400
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/lex >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791444005
+CPV: x11-base/xorg-server-21.1.25
+DEFINED_PHASES: compile configure install postrm test unpack
+DEPEND: media-libs/libglvnd[X] dev-libs/libbsd dev-libs/openssl:0/3= >=x11-apps/iceauth-1.0.2 >=x11-apps/xauth-1.0.3 x11-apps/xkbcomp >=x11-libs/libdrm-2.4.89 >=x11-libs/libpciaccess-0.12.901 >=x11-libs/libXau-1.0.4 >=x11-libs/libXdmcp-1.0.2 >=x11-libs/libXfont2-2.0.1 >=x11-libs/libxkbfile-1.0.4 >=x11-libs/libxshmfence-1.1 >=x11-libs/pixman-0.27.2 >=x11-misc/xbitmaps-1.0.1 >=x11-misc/xkeyboard-config-2.4.1-r3 >=x11-libs/libxcvt-0.1.0 >=media-libs/mesa-18[X(+),egl(+),gbm(+)] >=media-libs/libepoxy-1.5.4[X,egl(+)] virtual/libudev:0/1= sys-apps/dbus sys-auth/elogind[pam] sys-auth/pambase[elogind] !!x11-drivers/nvidia-drivers[-libglvnd(+)] >=x11-base/xorg-proto-2021.4.99.2 >=x11-libs/xtrans-1.3.5 media-fonts/font-util
+EAPI: 8
+IUSE: xephyr xnest xorg xvfb debug +elogind minimal selinux suid systemd test +udev unwind xcsecurity
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: c430873de2668c0e6548c8b020bb4cf2
+PATH: pkgs-x11-base/xorg-server-21.1.25-1.gpkg.tar
+PDEPEND: >=x11-base/xorg-drivers-21.1
+PROVIDES: x86_64: inputtest_drv.so libexa.so libfbdevhw.so libglamoregl.so libglx.so libint10.so libshadow.so libshadowfb.so libvgahw.so libwfb.so modesetting_drv.so
+RDEPEND: media-libs/libglvnd[X] dev-libs/libbsd dev-libs/openssl:0/3= >=x11-apps/iceauth-1.0.2 >=x11-apps/xauth-1.0.3 x11-apps/xkbcomp >=x11-libs/libdrm-2.4.89 >=x11-libs/libpciaccess-0.12.901 >=x11-libs/libXau-1.0.4 >=x11-libs/libXdmcp-1.0.2 >=x11-libs/libXfont2-2.0.1 >=x11-libs/libxkbfile-1.0.4 >=x11-libs/libxshmfence-1.1 >=x11-libs/pixman-0.27.2 >=x11-misc/xbitmaps-1.0.1 >=x11-misc/xkeyboard-config-2.4.1-r3 >=x11-libs/libxcvt-0.1.0 >=media-libs/mesa-18[X(+),egl(+),gbm(+)] >=media-libs/libepoxy-1.5.4[X,egl(+)] virtual/libudev:0/1= sys-apps/dbus sys-auth/elogind[pam] sys-auth/pambase[elogind] !!x11-drivers/nvidia-drivers[-libglvnd(+)] gui-libs/display-manager-init >=x11-apps/xinit-1.3.3-r1 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libGL.so.1 libXau.so.6 libXdmcp.so.6 libXfont2.so.2 libbsd.so.0 libc.so.6 libcrypto.so.3 libdbus-1.so.3 libdrm.so.2 libepoxy.so.0 libgbm.so.1 libm.so.6 libpciaccess.so.0 libpixman-1.so.0 libudev.so.1 libxcvt.so.0 libxshmfence.so.1
+RESTRICT: test
+SHA1: 9c64554c212ce9a5a154b7c4d383959c8803162d
+SIZE: 3778560
+SLOT: 0/21.1.25
+USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux udev xorg
+MTIME: 1791444008
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/lex dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791443010
@@ -20883,9 +20954,31 @@ MTIME: 1791443011
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
+BUILD_ID: 16
+BUILD_TIME: 1791444950
+CPV: x11-drivers/xf86-input-libinput-1.5.0
+DEFINED_PHASES: compile configure install postinst postrm prepare pretend setup unpack
+DEPEND: >=dev-libs/libinput-1.23.0:0/10= >=x11-base/xorg-proto-2021.5 x11-base/xorg-proto >=x11-base/xorg-server-1.20[xorg]
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: MIT
+MD5: fe44b877dd5d9432c07faefb70457d02
+PATH: pkgs-x11-drivers/xf86-input-libinput-1.5.0-16.gpkg.tar
+PROVIDES: x86_64: libinput_drv.so
+RDEPEND: >=dev-libs/libinput-1.23.0:0/10= x11-base/xorg-server:0/21.1.25= >=x11-base/xorg-server-1.20[xorg] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "225811459439ecc2b41cd0a01ac8c3a2490a61b8"}
+REQUIRES: x86_64: libc.so.6 libinput.so.10 libm.so.6
+SHA1: 4041a386df5acc29872446d6e635f04b60693a67
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791444951
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig virtual/pkgconfig >=app-portage/elt-patches-20250306 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791216774
+BUILD_ID: 2
+BUILD_TIME: 1791444922
 CPV: x11-drivers/xf86-input-wacom-1.2.4
 DEFINED_PHASES: compile configure install postinst postrm prepare pretend setup test unpack
 DEPEND: x11-libs/libX11 x11-libs/libXext x11-libs/libXi x11-libs/libXrandr x11-libs/libXinerama virtual/libudev:0/1= x11-base/xorg-proto >=x11-base/xorg-server-1.20[xorg]
@@ -20893,17 +20986,60 @@ EAPI: 8
 IUSE: test
 KEYWORDS: ~alpha amd64 arm arm64 ~loong ppc ppc64 ~riscv ~sparc x86
 LICENSE: GPL-2+
-MD5: 143506922f7b31d1ebe11baeadb373f3
-PATH: pkgs-x11-drivers/xf86-input-wacom-1.2.4-1.gpkg.tar
+MD5: 13eff8d99e20071f554c6365561741d5
+PATH: pkgs-x11-drivers/xf86-input-wacom-1.2.4-2.gpkg.tar
 PROVIDES: x86_64: wacom_drv.so
-RDEPEND: x11-libs/libX11 x11-libs/libXext x11-libs/libXi x11-libs/libXrandr x11-libs/libXinerama virtual/libudev:0/1= x11-base/xorg-server:0/21.1.24= >=x11-base/xorg-server-1.20[xorg] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+RDEPEND: x11-libs/libX11 x11-libs/libXext x11-libs/libXi x11-libs/libXrandr x11-libs/libXinerama virtual/libudev:0/1= x11-base/xorg-server:0/21.1.25= >=x11-base/xorg-server-1.20[xorg] >=sys-libs/glibc-2.43-r2
 REQUIRES: x86_64: libX11.so.6 libXi.so.6 libXinerama.so.1 libXrandr.so.2 libc.so.6 libm.so.6 libudev.so.1
 RESTRICT: test
-SHA1: a4113e2d78edb4338967136f7a94e5f87288dc9b
+SHA1: 57e1b49696d6ead121b8b02d6405828f3fb45799
 SIZE: 368640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791216776
+MTIME: 1791444924
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 11
+BUILD_TIME: 1791444935
+CPV: x11-drivers/xf86-video-amdgpu-25.0.0-r1
+DEFINED_PHASES: compile configure install test unpack
+DEPEND: >=x11-libs/libdrm-2.4.89[video_cards_amdgpu] x11-base/xorg-server[-minimal] virtual/libudev:0/1= x11-base/xorg-proto >=x11-base/xorg-server-1.20:0/21.1.25=[xorg] >=x11-libs/libpciaccess-0.14
+EAPI: 8
+IUSE: udev
+KEYWORDS: amd64 arm64 ~loong ppc64 ~riscv x86
+LICENSE: MIT
+MD5: ce26080274fa2e3ba072ee9bf73c81ad
+PATH: pkgs-x11-drivers/xf86-video-amdgpu-25.0.0-r1-11.gpkg.tar
+PROVIDES: x86_64: amdgpu_drv.so
+RDEPEND: >=x11-libs/libdrm-2.4.89[video_cards_amdgpu] x11-base/xorg-server[-minimal] virtual/libudev:0/1= >=x11-base/xorg-server-1.20:0/21.1.25=[xorg] >=x11-libs/libpciaccess-0.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libdrm.so.2 libdrm_amdgpu.so.1 libgbm.so.1 libudev.so.1
+SHA1: 03996ee8ec71bac1d5c38421d6e2d4c3c141525f
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux udev
+MTIME: 1791444936
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
+BUILD_ID: 24
+BUILD_TIME: 1791444909
+CPV: x11-drivers/xf86-video-ati-22.0.0
+DEFINED_PHASES: compile configure install postinst postrm prepare pretend setup unpack
+DEPEND: media-libs/mesa >=x11-libs/libdrm-2.4.89[video_cards_radeon] >=x11-libs/libpciaccess-0.8.0 x11-base/xorg-server[-minimal] virtual/libudev:0/1= x11-base/xorg-proto x11-base/xorg-proto x11-base/xorg-server[-minimal] x11-libs/libdrm >=x11-base/xorg-server-1.20[xorg] >=x11-libs/libpciaccess-0.14
+EAPI: 8
+IUSE: udev
+KEYWORDS: ~alpha amd64 arm64 ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: MIT
+MD5: f689f7e1c628fa4704b5a92ac2624f34
+PATH: pkgs-x11-drivers/xf86-video-ati-22.0.0-24.gpkg.tar
+PROVIDES: x86_64: ati_drv.so radeon_drv.so
+RDEPEND: media-libs/mesa >=x11-libs/libdrm-2.4.89[video_cards_radeon] >=x11-libs/libpciaccess-0.8.0 x11-base/xorg-server[-minimal] virtual/libudev:0/1= x11-base/xorg-server:0/21.1.25= x11-base/xorg-server[-minimal] x11-libs/libdrm >=x11-base/xorg-server-1.20[xorg] >=x11-libs/libpciaccess-0.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libdrm_radeon.so.1 libgbm.so.1 libpciaccess.so.0 libudev.so.1
+SHA1: c0e50a41169a5f8c3cb231616b58736f8f9434fc
+SIZE: 491520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux udev
+MTIME: 1791444910
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
