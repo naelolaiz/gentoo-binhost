@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1791433553
+TIMESTAMP: 1791433860
 PACKAGES: 950
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -7333,23 +7333,23 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791252521
+BUILD_ID: 2
+BUILD_TIME: 1791433531
 CPV: dev-util/gource-0.55
 DEFINED_PHASES: configure install prepare
-DEPEND: dev-libs/boost:0/1.90.0= >=media-libs/glew-1.5:0/2.2= >=media-libs/libpng-1.2:0/16= media-libs/libsdl2[video,opengl,X] media-libs/sdl2-image[jpeg,png] dev-libs/libpcre2:0/3= dev-libs/tinyxml media-libs/libglvnd[X] media-libs/freetype:2 virtual/glu:0 >=media-libs/glm-0.9.3
+DEPEND: dev-libs/boost:0/1.91.0= >=media-libs/glew-1.5:0/2.2= >=media-libs/libpng-1.2:0/16= media-libs/libsdl2[video,opengl,X] media-libs/sdl2-image[jpeg,png] dev-libs/libpcre2:0/3= dev-libs/tinyxml media-libs/libglvnd[X] media-libs/freetype:2 virtual/glu:0 >=media-libs/glm-0.9.3
 EAPI: 8
 KEYWORDS: amd64 x86
 LICENSE: GPL-3+
-MD5: fa5439c063e49e5aad49145e46c9ebc2
-PATH: pkgs-dev-util/gource-0.55-1.gpkg.tar
-RDEPEND: dev-libs/boost:0/1.90.0= >=media-libs/glew-1.5:0/2.2= >=media-libs/libpng-1.2:0/16= media-libs/libsdl2[video,opengl,X] media-libs/sdl2-image[jpeg,png] dev-libs/libpcre2:0/3= dev-libs/tinyxml media-libs/libglvnd[X] media-libs/freetype:2 virtual/glu:0 media-fonts/freefont >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
-REQUIRES: x86_64: libGLEW.so.2.2 libGLU.so.1 libOpenGL.so.0 libSDL2-2.0.so.0 libSDL2_image-2.0.so.0 libboost_filesystem.so.1.90.0 libc.so.6 libfreetype.so.6 libgcc_s.so.1 libm.so.6 libpcre2-8.so.0 libpng16.so.16 libstdc++.so.6 libtinyxml.so.2
-SHA1: 3619973b2f3e455bb9bc197b03a8aca7ff389ce7
+MD5: 4c3d81cab8eab2533859f711e6e3facc
+PATH: pkgs-dev-util/gource-0.55-2.gpkg.tar
+RDEPEND: dev-libs/boost:0/1.91.0= >=media-libs/glew-1.5:0/2.2= >=media-libs/libpng-1.2:0/16= media-libs/libsdl2[video,opengl,X] media-libs/sdl2-image[jpeg,png] dev-libs/libpcre2:0/3= dev-libs/tinyxml media-libs/libglvnd[X] media-libs/freetype:2 virtual/glu:0 media-fonts/freefont >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
+REQUIRES: x86_64: libGLEW.so.2.2 libGLU.so.1 libOpenGL.so.0 libSDL2-2.0.so.0 libSDL2_image-2.0.so.0 libboost_filesystem.so.1.91.0 libc.so.6 libfreetype.so.6 libgcc_s.so.1 libm.so.6 libpcre2-8.so.0 libpng16.so.16 libstdc++.so.6 libtinyxml.so.2
+SHA1: d1cf9f859ecc52b22ac06de8131544190364e0e2
 SIZE: 501760
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791252522
+MTIME: 1791433532
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
