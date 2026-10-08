@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791437501
-PACKAGES: 956
+TIMESTAMP: 1791438419
+PACKAGES: 957
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -924,25 +924,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-util/gperf-3.1 >=sys-devel/gettext-0.20.1 virtual/libiconv virtual/libintl virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1791282833
+BUILD_ID: 2
+BUILD_TIME: 1791437655
 CPV: app-editors/neovim-0.12.5-r2
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
-DEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-lua/luv-1.52.1[lua_single_target_luajit(-)] dev-lua/lpeg[lua_targets_luajit(-)] dev-lua/mpack[lua_targets_luajit(-)] >=dev-libs/libutf8proc-2.11.3:0/2.11.3=[-cjk] >=dev-libs/libuv-1.50.0:0/1= >=dev-libs/libvterm-0.3.3 >=dev-libs/msgpack-3.0.0:0/2-c= =dev-libs/tree-sitter-0.26*:0/0.26.13= =dev-libs/tree-sitter-c-0.24* =dev-libs/tree-sitter-lua-0.5* =dev-libs/tree-sitter-markdown-0.5* =dev-libs/tree-sitter-query-0.8.0* =dev-libs/tree-sitter-vim-0.8* =dev-libs/tree-sitter-vimdoc-4* >=dev-libs/unibilium-2.1.2:0/4=
+DEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-lua/luv-1.52.1[lua_single_target_luajit(-)] dev-lua/lpeg[lua_targets_luajit(-)] dev-lua/mpack[lua_targets_luajit(-)] >=dev-libs/libutf8proc-2.11.3:0/2.12.0=[-cjk] >=dev-libs/libuv-1.50.0:0/1= >=dev-libs/libvterm-0.3.3 >=dev-libs/msgpack-3.0.0:0/2-c= =dev-libs/tree-sitter-0.26*:0/0.26.13= =dev-libs/tree-sitter-c-0.24* =dev-libs/tree-sitter-lua-0.5* =dev-libs/tree-sitter-markdown-0.5* =dev-libs/tree-sitter-query-0.8.0* =dev-libs/tree-sitter-vim-0.8* =dev-libs/tree-sitter-vimdoc-4* >=dev-libs/unibilium-2.1.2:0/4=
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +nvimpager test lua_single_target_luajit lua_single_target_lua5-1
 KEYWORDS: ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86
 LICENSE: Apache-2.0 vim
-MD5: fa04ea20d5ee092e213e8e08d6228d8a
-PATH: pkgs-app-editors/neovim-0.12.5-r2-1.gpkg.tar
-RDEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-lua/luv-1.52.1[lua_single_target_luajit(-)] dev-lua/lpeg[lua_targets_luajit(-)] dev-lua/mpack[lua_targets_luajit(-)] >=dev-libs/libutf8proc-2.11.3:0/2.11.3=[-cjk] >=dev-libs/libuv-1.50.0:0/1= >=dev-libs/libvterm-0.3.3 >=dev-libs/msgpack-3.0.0:0/2-c= =dev-libs/tree-sitter-0.26*:0/0.26.13= =dev-libs/tree-sitter-c-0.24* =dev-libs/tree-sitter-lua-0.5* =dev-libs/tree-sitter-markdown-0.5* =dev-libs/tree-sitter-query-0.8.0* =dev-libs/tree-sitter-vim-0.8* =dev-libs/tree-sitter-vimdoc-4* >=dev-libs/unibilium-2.1.2:0/4= app-eselect/eselect-vi >=sys-libs/glibc-2.43-r2
+MD5: 020babeccc5cd962c18d2e1b0c5694e5
+PATH: pkgs-app-editors/neovim-0.12.5-r2-2.gpkg.tar
+RDEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-lua/luv-1.52.1[lua_single_target_luajit(-)] dev-lua/lpeg[lua_targets_luajit(-)] dev-lua/mpack[lua_targets_luajit(-)] >=dev-libs/libutf8proc-2.11.3:0/2.12.0=[-cjk] >=dev-libs/libuv-1.50.0:0/1= >=dev-libs/libvterm-0.3.3 >=dev-libs/msgpack-3.0.0:0/2-c= =dev-libs/tree-sitter-0.26*:0/0.26.13= =dev-libs/tree-sitter-c-0.24* =dev-libs/tree-sitter-lua-0.5* =dev-libs/tree-sitter-markdown-0.5* =dev-libs/tree-sitter-query-0.8.0* =dev-libs/tree-sitter-vim-0.8* =dev-libs/tree-sitter-vimdoc-4* >=dev-libs/unibilium-2.1.2:0/4= app-eselect/eselect-vi >=sys-libs/glibc-2.43-r2
 REQUIRES: x86_64: /usr/lib64/lua/5.1/lpeg.so libc.so.6 libluajit-5.1.so.2 libluv.so.1 libm.so.6 libtree-sitter.so.0.26 libunibilium.so.4 libutf8proc.so.3 libuv.so.1
 RESTRICT: test test
-SHA1: 118ba07711653157448a27ae71b75df2d7d9df94
+SHA1: b6d093c68c631c343669b0a534d543e982ae6876
 SIZE: 8294400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux lua_single_target_luajit nvimpager
-MTIME: 1791282835
+MTIME: 1791437659
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -14444,6 +14444,28 @@ MTIME: 1791276242
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-build/autoconf-archive sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 16
+BUILD_TIME: 1791437901
+CPV: media-gfx/povray-3.7.0.0-r6
+DEFINED_PHASES: configure preinst prepare test
+DEPEND: dev-libs/boost:0/1.91.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= virtual/zlib:0/1= media-libs/tiff:0/6= media-libs/libsdl
+EAPI: 8
+IUSE: debug +io-restrictions tiff X test
+KEYWORDS: ~alpha amd64 ~arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86 ~x64-macos
+LICENSE: AGPL-3+ CC-BY-SA-3.0
+MD5: 9dbe644b1747dccf0913c2906b024bbe
+PATH: pkgs-media-gfx/povray-3.7.0.0-r6-16.gpkg.tar
+RDEPEND: dev-libs/boost:0/1.91.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= virtual/zlib:0/1= media-libs/tiff:0/6= media-libs/libsdl >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libSDL-1.2.so.0 libboost_thread.so.1.91.0 libc.so.6 libgcc_s.so.1 libjpeg.so.62 libm.so.6 libpng16.so.16 libstdc++.so.6 libtiff.so.6 libz.so.1
+RESTRICT: test
+SHA1: b9a55eab3089bce3bfddf7535b7263e119aa9ac7
+SIZE: 11970560
+USE: X abi_x86_64 amd64 elibc_glibc io-restrictions kernel_linux tiff
+MTIME: 1791437904
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791358005
@@ -18928,24 +18950,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791282477
+BUILD_ID: 2
+BUILD_TIME: 1791438305
 CPV: sci-ml/ollama-0.35.1
 DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.25.3=
+DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0=
 EAPI: 8
 KEYWORDS: ~amd64
 LICENSE: MIT
-MD5: 8c5526fa9311d269588156ae9a1b21b1
-PATH: pkgs-sci-ml/ollama-0.35.1-1.gpkg.tar
+MD5: 780467c3d9a0c1de8ccffb9c9266a61e
+PATH: pkgs-sci-ml/ollama-0.35.1-2.gpkg.tar
 PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.25.3= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r2
+RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r2
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
 RESTRICT: mirror test
-SHA1: 3f77d1c0e70ea4a39caa7d6a9cb2969d9cf8a394
-SIZE: 15462400
+SHA1: bb0719ff5724168e55f6e5a16a7885fe62f969c4
+SIZE: 15472640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791282482
+MTIME: 1791438310
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

@@ -11,6 +11,10 @@
  "schema": 1,
  "superseded": [
   {
+   "at": 1791438419,
+   "path": "pkgs-app-editors/neovim-0.12.5-r2-1.gpkg.tar"
+  },
+  {
    "at": 1791347424,
    "path": "pkgs-dev-cpp/simdutf-9.2.1-1.gpkg.tar"
   },
@@ -49,6 +53,10 @@
   {
    "at": 1791431426,
    "path": "pkgs-sci-mathematics/cgal-6.2-1.gpkg.tar"
+  },
+  {
+   "at": 1791438419,
+   "path": "pkgs-sci-ml/ollama-0.35.1-1.gpkg.tar"
   }
  ]
 }
