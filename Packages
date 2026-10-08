@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791431426
-PACKAGES: 949
+TIMESTAMP: 1791431732
+PACKAGES: 950
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4929,6 +4929,28 @@ SHA1: fbded067fd0af5355e65d5d300aa8a04a9e88827
 SIZE: 215040
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791278253
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791431386
+CPV: dev-python/filelock-4.0.12
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: MIT
+MD5: cd214c478667614ca58bd780488c0d55
+PATH: pkgs-dev-python/filelock-4.0.12-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
+RESTRICT: test
+SHA1: a764e1349215483f566633f7d6503189fa94af88
+SIZE: 337920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791431387
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
