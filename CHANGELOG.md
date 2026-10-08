@@ -8,6 +8,17 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Steam
+
+- New tier `26-steam` builds `games-util/steam-launcher` from the
+  [steam-overlay](https://github.com/anyc/steam-overlay) and publishes what
+  it pulls in beyond `25-steam-runtime` (xdg-desktop-portal, Xwayland,
+  PipeWire, ...).  The launcher itself is not published: its licence does
+  not allow it.  Machines need the overlay enabled and the licence accepted
+  (`package.license/00-binhost`); see `docs/STEAM.md`.
+- Overlays listed in `config/overlays.conf` are added next to the Gentoo
+  tree in the builder, the install check and `scripts/use-closure.sh`.
+
 ### Long runs
 
 - A chain of follow-up runs keeps its tree snapshot for at most two days,

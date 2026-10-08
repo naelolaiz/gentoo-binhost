@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tiers:
-        description: 'Tiers to build, space separated (smoke heavy desktop desktop-more steam-runtime kmod). Empty builds all of them.'
+        description: 'Tiers to build, space separated (smoke heavy desktop desktop-more steam-runtime steam kmod). Empty builds all of them.'
         required: false
         default: ''
       budget_minutes:

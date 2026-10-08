@@ -98,10 +98,10 @@ period.
 
 `scripts/container-build.sh` in the container:
 
-1. `scripts/setup-consumer.sh`: sync the tree, apply the profile from
-   `config/profiles/`, write `binrepos.conf` (this binhost and the official
-   one), trust the signing key.  The same script prepares the container of
-   the install check.
+1. `scripts/setup-consumer.sh`: sync the tree, add the overlays of
+   `config/overlays.conf`, apply the profile from `config/profiles/`, write
+   `binrepos.conf` (this binhost and the official one), trust the signing
+   key.  The same script prepares the container of the install check.
 2. Builder-only settings: `buildpkg`, signing, ccache, `MAKEOPTS`.
 3. Per tier: resolve with `emerge --pretend`, then build only the versions
    that have to be compiled.  A tier whose packages all exist as binaries
@@ -228,7 +228,9 @@ working.
 
 - A package whose non-cacheable part (linking, code generation, Rust)
   does not fit into one run cannot be built this way.
-- Only the Gentoo repository is built, no overlays.
+- Besides the Gentoo repository, only the overlays in
+  `config/overlays.conf` are built from.  They are downloaded fresh by
+  every container, also by a follow-up run that pins the Gentoo tree.
 - One configuration.  A machine with different USE flags compiles the
   affected packages itself.
 - The tree the packages are built from is a daily snapshot, up to two days

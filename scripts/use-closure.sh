@@ -30,6 +30,7 @@ GENERATED="${3:-}"
   || { sed -n '2,/^set -euo/s/^# \{0,1\}//p' "$0" >&2; exit 1; }
 
 bash "${SCRIPT_DIR}/sync-portage.sh"
+bash "${SCRIPT_DIR}/sync-overlays.sh"
 bash "${SCRIPT_DIR}/apply-profile.sh" "$PROFILE_NAME" "$GENTOO_PROFILE"
 rm -f "/etc/portage/package.use/${GENERATED}"
 

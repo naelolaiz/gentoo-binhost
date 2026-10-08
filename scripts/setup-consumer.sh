@@ -38,6 +38,7 @@ sync_args=()
 [[ -n "$TREE_DATE" ]] && sync_args+=(--revert "$TREE_DATE")
 [[ -n "$DATE_FILE" ]] && sync_args+=(--date-file "$DATE_FILE")
 bash "${SCRIPT_DIR}/sync-portage.sh" "${sync_args[@]}"
+bash "${SCRIPT_DIR}/sync-overlays.sh"
 
 bash "${SCRIPT_DIR}/apply-profile.sh" "$PROFILE_NAME" "$GENTOO_PROFILE"
 

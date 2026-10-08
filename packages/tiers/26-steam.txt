@@ -1,0 +1,16 @@
+# The Steam client: games-util/steam-launcher from the steam-overlay
+# (config/overlays.conf).
+#
+# The launcher may not be redistributed (RESTRICT=bindist), so it is built
+# here but never published; it only installs scripts and takes seconds on a
+# machine.  This tier is for everything it pulls in on top of the 32-bit
+# libraries of 25-steam-runtime (xdg-desktop-portal, Xwayland, PipeWire, the
+# controller udev rules, ...), built with the USE flags the launcher asks
+# for, so that installing Steam compiles nothing else.
+#
+# It also checks package.use/20-steam-multilib against the launcher's real
+# dependencies: when the ebuild starts to need another 32-bit library, this
+# tier stops resolving and the build reports it (docs/STEAM.md).
+#@ jobs=2
+
+games-util/steam-launcher

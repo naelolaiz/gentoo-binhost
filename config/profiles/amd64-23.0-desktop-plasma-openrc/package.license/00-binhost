@@ -1,3 +1,8 @@
 # Accept MPEG-4 license for faac — required by media-video/avidemux
 # (dependency chain: avidemux → avidemux-plugins[aac] → faac)
 media-libs/faac MPEG-4
+
+# Accept Valve's licence for the Steam launcher (steam-overlay, tier
+# 26-steam).  Its ebuild says RESTRICT="bindist", so it is built but never
+# published; the libraries it needs are.
+games-util/steam-launcher ValveSteamLicense

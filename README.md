@@ -97,6 +97,7 @@ file name order:
 | `20-desktop` | Plasma, Qt, KDE applications, audio production, CAD, tools |
 | `21-desktop-more` | the rest of what the machines have installed |
 | `25-steam-runtime` | the 32-bit libraries Steam needs |
+| `26-steam` | the Steam launcher (steam-overlay) and the rest of what it needs |
 | `30-kmod` | kernel and VirtualBox modules |
 
 Run a single tier from the Actions tab: **Build packages → Run workflow →
@@ -112,6 +113,7 @@ tiers**.
   check-workarounds.yml   weekly: reports configuration workarounds that can go
 config/
   binhost.conf            profile, stage3 image, official binhost, cache size
+  overlays.conf           ebuild repositories used next to the Gentoo tree
   no-publish.txt          packages that are built but never published
   profiles/<profile>/     make.conf, package.use, package.mask, package.license
   workarounds.json        self-checks for the workarounds in the profile
@@ -120,6 +122,7 @@ scripts/
   host-build.sh           one run on the CI host: container, publishing, follow-up
   container-build.sh      inside the container: resolve, build, report
   setup-consumer.sh       configure a container like a machine using the binhost
+  sync-overlays.sh        add the repositories of config/overlays.conf
   binhost.py              publisher: release assets and the index branch
   pkgindex.py             read, merge and validate Packages indexes
   portage-index.py        index checks done by Portage itself
