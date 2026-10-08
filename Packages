@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791415878
-PACKAGES: 946
+TIMESTAMP: 1791421615
+PACKAGES: 947
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -17798,6 +17798,30 @@ SIZE: 38533120
 SLOT: 0/26
 USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
 MTIME: 1791159935
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791421526
+CPV: net-libs/nodejs-26.10.0-r3
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test
+DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.8:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
+EAPI: 8
+IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
+LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
+MD5: ccd036ce06c58f371145054e8e4c8dee
+PATH: pkgs-net-libs/nodejs-26.10.0-r3-1.gpkg.tar
+RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.8:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.33 libsimdutf.so.36 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
+RESTRICT: test
+SHA1: b89959dad39bbad1a07ec50bada1f7d542ce96ad
+SIZE: 38379520
+SLOT: 0/26
+USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
+MTIME: 1791421536
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
