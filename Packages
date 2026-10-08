@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791442461
-PACKAGES: 962
+TIMESTAMP: 1791443070
+PACKAGES: 964
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6482,6 +6482,28 @@ SIZE: 1587200
 SLOT: 5
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791415523
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/setuptools-scm-8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791442879
+CPV: dev-python/sip-6.17.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: doc test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: BSD-2 BSD
+MD5: bb3b62d23ba1a7d76c90ecbe012c7cf2
+PATH: pkgs-dev-python/sip-6.17.0-r1-1.gpkg.tar
+RDEPEND: dev-python/packaging[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: ef8e94889931b91c98c0eacdd4fd2f555b58bc75
+SIZE: 1587200
+SLOT: 5
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791442881
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -20810,6 +20832,29 @@ SHA1: af9e8f6f6673f537fd08645d9ea21fb037026a91
 SIZE: 337920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791390400
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/lex dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791443010
+CPV: x11-base/xwayland-24.1.14
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/libbsd dev-libs/openssl:0/3= >=dev-libs/wayland-1.21.0 >=dev-libs/wayland-protocols-1.34 media-fonts/font-util >=media-libs/libepoxy-1.5.4[X,egl(+)] media-libs/libglvnd[X] >=media-libs/mesa-21.1[X(+),egl(+),gbm(+)] >=x11-libs/libdrm-2.4.116 >=x11-libs/libXau-1.0.4 x11-libs/libxcvt >=x11-libs/libXdmcp-1.0.2 >=x11-libs/libXfont2-2.0.1 x11-libs/libxkbfile >=x11-libs/libxshmfence-1.1 >=x11-libs/pixman-0.27.2 >=x11-misc/xkeyboard-config-2.4.1-r3 dev-libs/libei >=x11-base/xorg-proto-2024.1 >=x11-libs/xtrans-1.3.5
+EAPI: 8
+IUSE: libei selinux systemd test unwind xcsecurity
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 16b7011df5d1e9f8d90817e7f7dca8eb
+PATH: pkgs-x11-base/xwayland-24.1.14-1.gpkg.tar
+RDEPEND: dev-libs/libbsd dev-libs/openssl:0/3= >=dev-libs/wayland-1.21.0 >=dev-libs/wayland-protocols-1.34 media-fonts/font-util >=media-libs/libepoxy-1.5.4[X,egl(+)] media-libs/libglvnd[X] >=media-libs/mesa-21.1[X(+),egl(+),gbm(+)] >=x11-libs/libdrm-2.4.116 >=x11-libs/libXau-1.0.4 x11-libs/libxcvt >=x11-libs/libXdmcp-1.0.2 >=x11-libs/libXfont2-2.0.1 x11-libs/libxkbfile >=x11-libs/libxshmfence-1.1 >=x11-libs/pixman-0.27.2 >=x11-misc/xkeyboard-config-2.4.1-r3 dev-libs/libei x11-apps/xkbcomp >=sys-apps/xdg-desktop-portal-1.18.0 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "225811459439ecc2b41cd0a01ac8c3a2490a61b8"}
+REQUIRES: x86_64: libGL.so.1 libXau.so.6 libXdmcp.so.6 libXfont2.so.2 libbsd.so.0 libc.so.6 libcrypto.so.3 libdrm.so.2 libei.so.1 libepoxy.so.0 libgbm.so.1 libm.so.6 liboeffis.so.1 libpixman-1.so.0 libwayland-client.so.0 libxcvt.so.0 libxshmfence.so.1
+RESTRICT: test
+SHA1: ad6fd503651662f3c133bf470a88b45667c383ed
+SIZE: 1218560
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux libei
+MTIME: 1791443011
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
