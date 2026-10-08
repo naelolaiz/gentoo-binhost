@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791446123
-PACKAGES: 975
+TIMESTAMP: 1791446224
+PACKAGES: 976
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7576,6 +7576,27 @@ SHA1: 6cd4569c740a909129f30ff6f371c080f1ee7805
 SIZE: 14981120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791285854
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.27.0 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1791446142
+CPV: dev-util/github-cli-2.102.0
+DEFINED_PHASES: compile configure install unpack
+EAPI: 9
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv
+LICENSE: MIT Apache-2.0 BSD BSD-2 ISC MIT MPL-2.0 Unlicense
+MD5: 721ab1bcfa85c26aaedb3a0b8bc6fe92
+PATH: pkgs-dev-util/github-cli-2.102.0-1.gpkg.tar
+RDEPEND: >=dev-vcs/git-1.7.3 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "225811459439ecc2b41cd0a01ac8c3a2490a61b8"}
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: e7ec4684615f547f431e3a4dea3cde7d02271c37
+SIZE: 15011840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791446150
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
