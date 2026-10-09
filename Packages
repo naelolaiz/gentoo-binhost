@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791531297
-PACKAGES: 1000
+TIMESTAMP: 1791531917
+PACKAGES: 1005
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6040,6 +6040,27 @@ MTIME: 1791278186
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/ply:0/3.11=[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791531730
+CPV: dev-python/pycparser-3.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 72c71cdd2ff3b8670d9a7cc4063d4e9a
+PATH: pkgs-dev-python/pycparser-3.1-1.gpkg.tar
+RDEPEND: dev-python/ply:0/3.11=[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 11a5e2482d5776a591f0fd29b012631788da2441
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791531732
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-python/cffi[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791278542
@@ -6709,6 +6730,27 @@ MTIME: 1791063528
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791531510
+CPV: dev-python/snakeoil-0.11.7
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: BSD BSD-2 MIT
+MD5: 5e69bc98807a7aea8043ffc7949df3af
+PATH: pkgs-dev-python/snakeoil-0.11.7-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14[threads(+)]
+RESTRICT: test
+SHA1: 3fa650caae5d7f3fdef783ef2ef3c3faab064d35
+SIZE: 460800
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791531512
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791277999
@@ -6794,25 +6836,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791278166
+BUILD_ID: 2
+BUILD_TIME: 1791531553
 CPV: dev-python/tree-sitter-0.26.0_p20260816-r1
 DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: >=dev-libs/tree-sitter-0.26:0/0.26.13= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14
+DEPEND: >=dev-libs/tree-sitter-0.26:0/0.27.0= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14
 EAPI: 8
 IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: MIT
-MD5: 52472748e6f4be0baee19175cb6577f6
-PATH: pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-1.gpkg.tar
+MD5: a90346e218e3399de1cb6c5c43bd806a
+PATH: pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-2.gpkg.tar
 PROVIDES: x86_64: _binding.cpython-314-x86_64-linux-gnu.so
-RDEPEND: >=dev-libs/tree-sitter-0.26:0/0.26.13= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libc.so.6 libtree-sitter.so.0.26
+RDEPEND: >=dev-libs/tree-sitter-0.26:0/0.27.0= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libc.so.6 libtree-sitter.so.0.27
 RESTRICT: test
-SHA1: 0315b22bdca0b073bd7f6c31673416323679d3de
+SHA1: 9d8d0dd2e4aee144954883b2681e1baefabfab6c
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791278167
+MTIME: 1791531555
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -9807,6 +9849,24 @@ MTIME: 1791278764
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.0:0 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791531563
+CPV: kde-apps/kdeedu-data-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: fa85194dc952ef1ddeee98a392e8ed99
+PATH: pkgs-kde-apps/kdeedu-data-26.08.2-1.gpkg.tar
+SHA1: 81b0d39f44a5ee3bb01a3116bfdf914dc161143d
+SIZE: 419840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791531564
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791359557
 CPV: kde-apps/kdeedu-meta-26.08.1
@@ -11602,6 +11662,29 @@ SIZE: 92160
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791278906
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791531600
+CPV: kde-apps/libkdcraw-26.08.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-libs/libraw-0.16:0/0.22.1= dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 1259d245d05162a71cf1b3a3d19fa7c9
+PATH: pkgs-kde-apps/libkdcraw-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: libKDcrawQt6.so.5
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-libs/libraw-0.16:0/0.22.1= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libraw.so.25 libstdc++.so.6
+SHA1: 14a3b236114d9f5fd64363582d0a936500f1fb03
+SIZE: 92160
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791531602
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -20263,6 +20346,27 @@ SHA1: 347351894235485451deeaf89ba5a7a49129a521
 SIZE: 1546240
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791278438
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791531725
+CPV: sys-apps/pkgcore-0.12.46
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: BSD MIT
+MD5: 85832e3ed1f6f11ac3fe47d126b311e7
+PATH: pkgs-sys-apps/pkgcore-0.12.46-1.gpkg.tar
+RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: e64b9b645d5a6e1a93d0aafbcb9f5c10bbdf9b63
+SIZE: 1556480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791531728
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
