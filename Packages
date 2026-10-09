@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791568676
-PACKAGES: 1157
+TIMESTAMP: 1791568992
+PACKAGES: 1163
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8122,6 +8122,30 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
+BUILD_TIME: 1791568798
+CPV: dev-util/kdevelop-python-26.08.2
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+DEPEND: dev-lang/python:3.14 >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[gui,widgets] dev-util/kdevelop:6/26.08= >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 dev-util/kdevelop:6/26.08= dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 4bd97d00e510cc14dd233716032ea334
+PATH: pkgs-dev-util/kdevelop-python-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: kdevpdb.so kdevpythonlanguagesupport.so libkdevpythoncompletion.so libkdevpythonduchain.so libkdevpythonparser.so
+RDEPEND: dev-lang/python:3.14 >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[gui,widgets] dev-util/kdevelop:6/26.08= >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 dev-python/pycodestyle[python_targets_python3_14(-)] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !dev-util/kdevelop-python:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKDevPlatformDebugger.so.66 libKDevPlatformInterfaces.so.66 libKDevPlatformLanguage.so.66 libKDevPlatformOutputView.so.66 libKDevPlatformSerialization.so.66 libKDevPlatformUtil.so.66 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Parts.so.6 libKF6TextEditor.so.6 libKF6ThreadWeaver.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libc.so.6 libpython3.14.so.1.0 libstdc++.so.6
+RESTRICT: test test
+SHA1: 6cdb07ae681c8600433b109efaad4431f417de46
+SIZE: 2140160
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1791568799
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
 BUILD_TIME: 1791370713
 CPV: dev-util/massif-visualizer-26.08.1
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
@@ -10902,6 +10926,23 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 1
+BUILD_TIME: 1791568594
+CPV: kde-apps/kdeaccessibility-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+KEYWORDS: ~amd64 ~arm64 ~loong ~riscv ~x86
+LICENSE: metapackage
+MD5: 9e384198468ab639f8b7954963c930d1
+PATH: pkgs-kde-apps/kdeaccessibility-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=app-accessibility/kontrast-26.08.2:* >=kde-apps/kmag-26.08.2:* >=kde-apps/kmousetool-26.08.2:* >=kde-apps/kmouth-26.08.2:*
+SHA1: 4b156f6c766be559302502c2263ef1a5b335d557
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791568595
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
 BUILD_TIME: 1791355823
 CPV: kde-apps/kdeadmin-meta-26.08.1
 DEFINED_PHASES: -
@@ -11004,6 +11045,24 @@ MTIME: 1791358640
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791568591
+CPV: kde-apps/kdecore-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +share +webengine
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
+LICENSE: metapackage
+MD5: 2abff6f11ef7ec3decb5d1de1bf7d241
+PATH: pkgs-kde-apps/kdecore-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=kde-apps/dolphin-26.08.2:* >=kde-apps/kdialog-26.08.2:* >=kde-apps/keditbookmarks-26.08.2:* >=kde-apps/kfind-26.08.2:* >=kde-apps/konsole-26.08.2:* >=kde-apps/kwrite-26.08.2:* >=kde-apps/khelpcenter-26.08.2:* || ( >=www-client/falkon-26.08.2 >=kde-apps/konqueror-26.08.2:* ) kde-frameworks/purpose:6
+SHA1: 67620954bf0f1f210040a1e896edaee636b929c9
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux share webengine
+MTIME: 1791568593
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.0:0 app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791278762
@@ -11059,6 +11118,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 1
+BUILD_TIME: 1791568597
+CPV: kde-apps/kdeedu-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +webengine
+KEYWORDS: ~amd64 ~arm64
+LICENSE: metapackage
+MD5: 363715187b1b92ff0add423e3c940ab6
+PATH: pkgs-kde-apps/kdeedu-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=kde-apps/analitza-26.08.2:* >=kde-apps/artikulate-26.08.2:* >=kde-apps/blinken-26.08.2:* >=kde-apps/cantor-26.08.2:* >=kde-apps/kalzium-26.08.2:* >=kde-apps/kanagram-26.08.2:* >=kde-apps/kbruch-26.08.2:* >=kde-apps/kdeedu-data-26.08.2:* >=kde-apps/kgeography-26.08.2:* >=kde-apps/khangman-26.08.2:* >=kde-apps/kig-26.08.2:* >=kde-apps/kiten-26.08.2:* >=kde-apps/klettres-26.08.2:* >=kde-apps/kmplot-26.08.2:* >=kde-apps/kqtquickcharts-26.08.2:* >=kde-apps/ktouch-26.08.2:* >=kde-apps/kturtle-26.08.2:* >=kde-apps/kwordquiz-26.08.2:* >=kde-apps/libkeduvocdocument-26.08.2:* >=kde-apps/marble-26.08.2:* >=kde-apps/minuet-26.08.2:* >=kde-apps/rocs-26.08.2:* >=kde-apps/step-26.08.2:* >=kde-apps/kalgebra-26.08.2:* >=kde-apps/parley-26.08.2:*
+SHA1: 18a03a89f41ec4c8d1a4b560565c54c45e64f584
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux webengine
+MTIME: 1791568600
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
 BUILD_TIME: 1791359561
 CPV: kde-apps/kdegames-meta-26.08.1
 DEFINED_PHASES: -
@@ -11073,6 +11150,24 @@ SHA1: da8d9fff1ca7f485a78b080aa48d82f81beee548
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux opengl
 MTIME: 1791359563
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791568603
+CPV: kde-apps/kdegames-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: opengl python
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: metapackage
+MD5: 73caaee744393bbf43d00921a76a6405
+PATH: pkgs-kde-apps/kdegames-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=games-puzzle/skladnik-26.08.2 >=kde-apps/bomber-26.08.2:* >=kde-apps/bovo-26.08.2:* >=kde-apps/granatier-26.08.2:* >=kde-apps/kapman-26.08.2:* >=kde-apps/katomic-26.08.2:* >=kde-apps/kblackbox-26.08.2:* >=kde-apps/kblocks-26.08.2:* >=kde-apps/kbounce-26.08.2:* >=kde-apps/kbreakout-26.08.2:* >=kde-apps/kdiamond-26.08.2:* >=kde-apps/kfourinline-26.08.2:* >=kde-apps/kgoldrunner-26.08.2:* >=kde-apps/kigo-26.08.2:* >=kde-apps/killbots-26.08.2:* >=kde-apps/kiriki-26.08.2:* >=kde-apps/kjumpingcube-26.08.2:* >=kde-apps/klickety-26.08.2:* >=kde-apps/klines-26.08.2:* >=kde-apps/kmahjongg-26.08.2:* >=kde-apps/kmines-26.08.2:* >=kde-apps/knavalbattle-26.08.2:* >=kde-apps/knetwalk-26.08.2:* >=kde-apps/knights-26.08.2:* >=kde-apps/kolf-26.08.2:* >=kde-apps/kollision-26.08.2:* >=kde-apps/konquest-26.08.2:* >=kde-apps/kpat-26.08.2:* >=kde-apps/kreversi-26.08.2:* >=kde-apps/kshisen-26.08.2:* >=kde-apps/ksirk-26.08.2:* >=kde-apps/ksnakeduel-26.08.2:* >=kde-apps/kspaceduel-26.08.2:* >=kde-apps/ksquares-26.08.2:* >=kde-apps/ktuberling-26.08.2:* >=kde-apps/libkdegames-26.08.2:* >=kde-apps/libkmahjongg-26.08.2:* >=kde-apps/lskat-26.08.2:* >=kde-apps/palapeli-26.08.2:* >=kde-apps/picmi-26.08.2:* >=kde-apps/ksudoku-26.08.2:* >=kde-apps/kubrick-26.08.2:*
+SHA1: 5005fb119320de71be674ab212884c11805873c7
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux opengl
+MTIME: 1791568607
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11175,6 +11270,24 @@ SHA1: fd7f2104d2e481b670a8f804562cce69551da76e
 SIZE: 20480
 USE: abi_x86_64 amd64 bittorrent elibc_glibc kernel_linux webengine zeroconf
 MTIME: 1791359567
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791568622
+CPV: kde-apps/kdenetwork-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +bittorrent dropbox samba +webengine +zeroconf
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: metapackage
+MD5: 5074773d400e838d67f4856837214e08
+PATH: pkgs-kde-apps/kdenetwork-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=kde-apps/kget-26.08.2:* >=net-im/tokodon-26.08.2 >=net-irc/konversation-26.08.2:* >=net-news/alligator-26.08.2 >=net-libs/libktorrent-26.08.2:* >=net-p2p/ktorrent-26.08.2:* >=kde-apps/kaccounts-integration-26.08.2:* >=kde-apps/kaccounts-providers-26.08.2:* >=kde-apps/signon-kwallet-extension-26.08.2:* >=kde-misc/kio-gdrive-26.08.2:* >=net-im/neochat-26.08.2 >=kde-apps/krdc-26.08.2:* >=kde-apps/krfb-26.08.2:* >=kde-misc/kdeconnect-26.08.2:* >=net-misc/kio-zeroconf-26.08.2:*
+SHA1: 4a4889abcf4f744fd7718270c33132a4d7730a48
+SIZE: 20480
+USE: abi_x86_64 amd64 bittorrent elibc_glibc kernel_linux webengine zeroconf
+MTIME: 1791568623
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
