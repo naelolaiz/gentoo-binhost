@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791551612
-PACKAGES: 1132
+TIMESTAMP: 1791551919
+PACKAGES: 1133
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -10727,6 +10727,24 @@ SHA1: 6c3ea52cb96c0b33541d4a680c94575459afdd8b
 SIZE: 20480
 USE: abi_x86_64 amd64 cron elibc_glibc kernel_linux
 MTIME: 1791355824
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791551429
+CPV: kde-apps/kdeadmin-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +cron
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: metapackage
+MD5: 9604f6fab87b6adec2e0b91324c0bfd2
+PATH: pkgs-kde-apps/kdeadmin-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=app-admin/kio-admin-26.08.2:* >=kde-apps/ksystemlog-26.08.2:* >=kde-apps/kcron-26.08.2:*
+SHA1: 420d5d380af9712f0d33ba758e5ec71ca791b7c7
+SIZE: 20480
+USE: abi_x86_64 amd64 cron elibc_glibc kernel_linux
+MTIME: 1791551432
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
