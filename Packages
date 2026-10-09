@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791551919
-PACKAGES: 1133
+TIMESTAMP: 1791552235
+PACKAGES: 1138
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3744,6 +3744,30 @@ SIZE: 194560
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791312655
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791551499
+CPV: dev-libs/kweathercore-26.08.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[network] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtpositioning-6.11.2:6 >=kde-frameworks/kholidays-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug doc test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
+LICENSE: LGPL-2+
+MD5: 0d4e98b2c19d34fb94ba6680a9796275
+PATH: pkgs-dev-libs/kweathercore-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: libKWeatherCore.so.6 libkweathercoreqmlplugin.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[network] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtpositioning-6.11.2:6 >=kde-frameworks/kholidays-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Holidays.so.6 libKF6I18n.so.6 libKF6I18nLocaleData.so.6 libQt6Core.so.6 libQt6Network.so.6 libQt6Positioning.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 95081adb83d5bf0e3227e96bc581c6e9d880e1ff
+SIZE: 194560
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791551501
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8526,6 +8550,28 @@ MTIME: 1791359185
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: media-gfx/povray app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791551641
+CPV: games-puzzle/skladnik-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-apps/libkdegames-26.08.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 51e37c43e68bafd21d4f50cdefbd6a13
+PATH: pkgs-games-puzzle/skladnik-26.08.2-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-apps/libkdegames-26.08.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKDEGames6.so.6 libKF6ConfigCore.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: 0c1144a8546cd3a2572b04b21ebb2f3dcae27874
+SIZE: 563200
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791551643
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=sys-devel/gettext-0.19.8 >=app-eselect/eselect-pinentry-0.5 app-text/docbook-xml-dtd:4.3 dev-libs/libxslt virtual/pkgconfig dev-util/glib-utils app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791083174
@@ -13001,6 +13047,30 @@ MTIME: 1791359148
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: x11-misc/shared-mime-info app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791551772
+CPV: kde-apps/krdc-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[gui,wayland,widgets,xml] >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=net-misc/freerdp-2.10:3 net-libs/libssh:0/4= >=net-libs/libvncserver-0.9.15 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +rdp +ssh +vnc wayland debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: db33a3593174f405db278bd0c9d34719
+PATH: pkgs-kde-apps/krdc-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: krdc_rdpplugin.so krdc_vncplugin.so libkcm_krdc_rdpplugin.so libkcm_krdc_vncplugin.so libkrdccore.so.5
+RDEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[gui,wayland,widgets,xml] >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=net-misc/freerdp-2.10:3 net-libs/libssh:0/4= >=net-libs/libvncserver-0.9.15 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/krdc:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DNSSD.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6KCMUtils.so.6 libKF6KIOWidgets.so.6 libKF6NotifyConfig.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libfreerdp-client3.so.3 libfreerdp3.so.3 libqt6keychain.so.1 libssh.so.4 libstdc++.so.6 libvncclient.so.1 libwayland-client.so.0 libwinpr3.so.3
+SHA1: b73069fcc4d945d79de4ec7bdc6d89a228c5e4e1
+SIZE: 1925120
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux rdp ssh vnc wayland
+MTIME: 1791551775
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/gzip app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791318385
@@ -14430,6 +14500,30 @@ MTIME: 1791359340
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791551860
+CPV: kde-apps/minuet-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/kirigami-addons:6 >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 media-libs/aubio:0/5= >=media-sound/fluidsynth-2.5.3:0/3= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: d7ef506e893085b33f46caf74c302a74
+PATH: pkgs-kde-apps/minuet-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: libminuetinterfaces.so.0.3.0 minuetaubiomicrophoneinputcontroller.so minuetfluidsynthsoundcontroller.so
+RDEPEND: dev-libs/kirigami-addons:6 >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 media-libs/aubio:0/5= >=media-sound/fluidsynth-2.5.3:0/3= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/minuet:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6QuickControls2.so.6 libaubio.so.5 libc.so.6 libfluidsynth.so.3 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+SHA1: 4e8a48569c153f08c105624787c7ad3b4b117889
+SIZE: 31324160
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791551864
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791263528
@@ -14958,6 +15052,29 @@ SIZE: 645120
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791358742
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791551574
+CPV: kde-apps/yakuake-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,wayland,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/konsole-26.08.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 kde-plasma/kwayland:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libX11 x11-libs/libxcb x11-libs/xcb-util dev-libs/plasma-wayland-protocols x11-base/xorg-proto dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: X debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2 LGPL-2
+MD5: daa02ebf04792c9d9d2519dec70767ed
+PATH: pkgs-kde-apps/yakuake-26.08.2-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,wayland,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/konsole-26.08.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 kde-plasma/kwayland:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libX11 x11-libs/libxcb x11-libs/xcb-util || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6NotifyConfig.so.6 libKF6Parts.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libKWaylandClient.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libX11.so.6 libc.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-randr.so.0 libxcb.so.1
+SHA1: 4fee400a5dd022e6b78ee98ff8ca5e6fe4d15543
+SIZE: 645120
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791551576
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
