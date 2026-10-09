@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791520951
-PACKAGES: 978
+TIMESTAMP: 1791521259
+PACKAGES: 979
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4156,6 +4156,31 @@ SHA1: 45b1733141564dd4eade068bc0269f2a1f3ed322
 SIZE: 3614720
 USE: abi_x86_64 amd64 cpu_flags_x86_avx2 cpu_flags_x86_sse3 elibc_glibc kernel_linux utils
 MTIME: 1791093037
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl
+BUILD_ID: 1
+BUILD_TIME: 1791520959
+CPV: dev-libs/nss-3.131
+DEFINED_PHASES: compile config configure install postinst postrm prepare test
+DEPEND: >=dev-libs/nspr-4.39[abi_x86_64(-)] >=dev-db/sqlite-3.8.2[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] virtual/pkgconfig
+EAPI: 8
+IUSE: cacert test test-full +utils cpu_flags_ppc_altivec cpu_flags_x86_avx2 cpu_flags_x86_sse3 cpu_flags_ppc_vsx abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-solaris
+LICENSE: || ( MPL-2.0 GPL-2 LGPL-2.1 )
+MD5: 5b75169eb0c646c62b8a7bdd294bc3da
+PATH: pkgs-dev-libs/nss-3.131-1.gpkg.tar
+PROPERTIES: test_network
+PROVIDES: x86_64: libfreebl3.so libfreeblpriv3.so libnss3.so libnssckbi-testlib.so libnssckbi.so libnssdbm3.so libnsssysinit.so libnssutil3.so libsmime3.so libsoftokn3.so libssl3.so
+RDEPEND: >=dev-libs/nspr-4.39[abi_x86_64(-)] >=dev-db/sqlite-3.8.2[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] virtual/pkgconfig >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "2dd35e8a36074e628c68cae74a473f55622ce291"}
+REQUIRES: x86_64: libc.so.6 libnspr4.so libplc4.so libplds4.so libsqlite3.so.0 libz.so.1
+RESTRICT: test
+SHA1: e83f59e9733482b71ba4620952167efde837aae3
+SIZE: 3624960
+USE: abi_x86_64 amd64 cpu_flags_x86_avx2 cpu_flags_x86_sse3 elibc_glibc kernel_linux utils
+MTIME: 1791520963
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
