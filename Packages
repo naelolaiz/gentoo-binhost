@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791524605
-PACKAGES: 987
+TIMESTAMP: 1791524912
+PACKAGES: 988
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5712,6 +5712,27 @@ SHA1: 504bfc7600e54c60a4fd6ac2ca63f52324fddbdc
 SIZE: 143360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791064566
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/packaging-20.0[python_targets_python3_14(-)] >=dev-python/setuptools-64.0.0[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791524563
+CPV: dev-python/pbr-7.1.3
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: Apache-2.0
+MD5: 1a2ca16be3fd8ac230cba192c9fad925
+PATH: pkgs-dev-python/pbr-7.1.3-1.gpkg.tar
+RDEPEND: >=dev-python/packaging-20.0[python_targets_python3_14(-)] >=dev-python/setuptools-64.0.0[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)]
+RESTRICT: test
+SHA1: 031cfc8ae39cbdc9031c7e7ffa0bd9059bb3056d
+SIZE: 266240
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791524564
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
