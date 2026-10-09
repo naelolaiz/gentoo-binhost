@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791568992
-PACKAGES: 1163
+TIMESTAMP: 1791569314
+PACKAGES: 1172
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8167,6 +8167,29 @@ MTIME: 1791370714
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791569247
+CPV: dev-util/massif-visualizer-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/kdiagram:6 >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/kgraphviewer-2.5.0:0 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +callgraph debug test
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: || ( GPL-2 GPL-3 )
+MD5: 1d966d21be016ca425d694ea64f0f9c7
+PATH: pkgs-dev-util/massif-visualizer-26.08.2-1.gpkg.tar
+RDEPEND: dev-libs/kdiagram:6 >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/kgraphviewer-2.5.0:0 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !dev-util/massif-visualizer:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKChart6.so.3 libKF6Archive.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6Parts.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 3165c60bd17dad49b4ee974372c32c47f86afc51
+SIZE: 286720
+USE: abi_x86_64 amd64 callgraph elibc_glibc kernel_linux
+MTIME: 1791569248
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791071453
@@ -9951,6 +9974,29 @@ MTIME: 1791359616
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=kde-frameworks/kcmutils-6.27.0:6 sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791568869
+CPV: kde-apps/kamera-26.08.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=media-libs/libgphoto2-2.5.0:0/6= dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+ FDL-1.2
+MD5: 62fc51ad8d9e37ca18dc4bc49dc13cf6
+PATH: pkgs-kde-apps/kamera-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: kcm_kamera.so kio_kamera.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=media-libs/libgphoto2-2.5.0:0/6= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libgphoto2.so.6 libgphoto2_port.so.12 libstdc++.so.6
+SHA1: c589368579378da3c9815f6398c4fee1631d68ec
+SIZE: 245760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791568872
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791314595
@@ -10618,6 +10664,29 @@ MTIME: 1791370668
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791569128
+CPV: kde-apps/kcachegrind-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 0f2e9f87a5df5d408a951dba772406c9
+PATH: pkgs-kde-apps/kcachegrind-26.08.2-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 media-gfx/graphviz || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+SHA1: 5843b84b85f1c1c9543bbfce797b114d507ac230
+SIZE: 1607680
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791569129
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791279738
@@ -10815,6 +10884,25 @@ SHA1: 44cea0904ba266b5f91e4ce60dfab6e3432c81cb
 SIZE: 20480
 USE: abi_x86_64 accessibility admin amd64 education elibc_glibc games graphics kernel_linux multimedia network sdk utils
 MTIME: 1791370727
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791569261
+CPV: kde-apps/kde-apps-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: accessibility +admin +education +games +graphics +multimedia +network pim sdk +utils
+KEYWORDS: ~amd64 ~arm64
+LICENSE: metapackage
+MD5: b53d02cc2cd6c45662319824c5f1e204
+PATH: pkgs-kde-apps/kde-apps-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=kde-apps/kdecore-meta-26.08.2:* >=kde-apps/kdeaccessibility-meta-26.08.2:* >=kde-apps/kdeadmin-meta-26.08.2:* >=kde-apps/kdeedu-meta-26.08.2:* >=kde-apps/kdegames-meta-26.08.2:* >=kde-apps/kdegraphics-meta-26.08.2:* >=kde-apps/kdemultimedia-meta-26.08.2:* >=kde-apps/kdenetwork-meta-26.08.2:* >=kde-apps/kdesdk-meta-26.08.2:* >=kde-apps/kdeutils-meta-26.08.2:*
+REPO_REVISIONS: {"gentoo": "2dd35e8a36074e628c68cae74a473f55622ce291"}
+SHA1: 37fb00079c982e0217c81e1f887c5eefa5d0ae1c
+SIZE: 20480
+USE: abi_x86_64 accessibility admin amd64 education elibc_glibc games graphics kernel_linux multimedia network sdk utils
+MTIME: 1791569262
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11189,6 +11277,24 @@ MTIME: 1791370720
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791569188
+CPV: kde-apps/kdegraphics-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: color-management scanner +webengine
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: metapackage
+MD5: 2b599e87cbd50dfba4eae3c08e4ea776
+PATH: pkgs-kde-apps/kdegraphics-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=kde-apps/gwenview-26.08.2:* >=kde-apps/kamera-26.08.2:* >=kde-apps/kcolorchooser-26.08.2:* >=kde-apps/kdegraphics-mobipocket-26.08.2:* >=kde-apps/kolourpaint-26.08.2:* >=kde-apps/kruler-26.08.2:* >=kde-apps/libkdcraw-26.08.2:* >=kde-apps/libkexiv2-26.08.2:* >=kde-apps/okular-26.08.2:* >=kde-apps/svgpart-26.08.2:* >=kde-apps/thumbnailers-26.08.2:* >=media-gfx/kgraphviewer-26.08.2:* >=media-gfx/qrca-26.08.2:*
+SHA1: 0c72562cd2c4f5cd5c7ce7a6c5f8574b9a40853f
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux webengine
+MTIME: 1791569189
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791145214
@@ -11252,6 +11358,24 @@ SHA1: 44cf3f6021caf0413bf8bba6f16d42b160580dc8
 SIZE: 20480
 USE: abi_x86_64 amd64 cdrom elibc_glibc ffmpeg kernel_linux
 MTIME: 1791368032
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791569169
+CPV: kde-apps/kdemultimedia-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +cdrom +ffmpeg gstreamer
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: metapackage
+MD5: c7c68927795ba22e1be124318e4416da
+PATH: pkgs-kde-apps/kdemultimedia-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=kde-apps/dragon-26.08.2:* >=kde-apps/juk-26.08.2:* >=kde-apps/kdenlive-26.08.2:* >=kde-apps/kmix-26.08.2:* >=kde-apps/kwave-26.08.2:* >=media-sound/elisa-26.08.2:* >=media-sound/kasts-26.08.2 >=media-sound/krecorder-26.08.2 >=media-sound/audex-26.08.2 >=kde-apps/audiocd-kio-26.08.2:* >=kde-apps/k3b-26.08.2:* >=kde-apps/libkcddb-26.08.2:* >=kde-apps/ffmpegthumbs-26.08.2:*
+SHA1: 60b95706c29b452c164ba720b91cccafd7f50d6d
+SIZE: 20480
+USE: abi_x86_64 amd64 cdrom elibc_glibc ffmpeg kernel_linux
+MTIME: 1791569170
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11361,6 +11485,24 @@ MTIME: 1791370723
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1791569256
+CPV: kde-apps/kdesdk-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +git mercurial perl php python subversion webengine
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: metapackage
+MD5: 560251902a3c9804f2819f0f77eb7a42
+PATH: pkgs-kde-apps/kdesdk-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=dev-build/dolphin-plugins-makefileactions-26.08.2:* >=dev-util/massif-visualizer-26.08.2:* >=kde-apps/kapptemplate-26.08.2:* >=kde-apps/kcachegrind-26.08.2:* >=kde-apps/kde-dev-scripts-26.08.2:* >=kde-apps/kde-dev-utils-26.08.2:* >=kde-apps/kdesdk-thumbnailers-26.08.2:* >=kde-apps/kompare-26.08.2:* >=kde-apps/libkomparediff2-26.08.2:* >=kde-apps/lokalize-26.08.2:* >=kde-apps/poxml-26.08.2:* >=kde-apps/umbrello-26.08.2:* >=kde-apps/dolphin-plugins-git-26.08.2:* >=dev-util/kdevelop-26.08.2:* >=dev-util/kdevelop-python-26.08.2:*
+SHA1: 866173ccbe89dea4af4235303ba58636142814a0
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc git kernel_linux python webengine
+MTIME: 1791569257
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791280247
@@ -11422,6 +11564,24 @@ SHA1: 71c321b6beeb5ca781ae62049a7e6f5f3681609c
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux kwallet plasma webengine
 MTIME: 1791359572
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791568846
+CPV: kde-apps/kdeutils-meta-26.08.2
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: 7zip gpg kwallet lrz plasma rar +webengine
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: metapackage
+MD5: 9c577426985e0a19eef38c5f068bd7b7
+PATH: pkgs-kde-apps/kdeutils-meta-26.08.2-1.gpkg.tar
+RDEPEND: >=app-cdr/dolphin-plugins-mountiso-26.08.2:* >=app-cdr/isoimagewriter-26.08.2:* >=app-crypt/keepsecret-26.08.2:* >=app-crypt/keysmith-26.08.2 >=app-misc/francis-26.08.2 >=dev-libs/kweathercore-26.08.2:* >=kde-apps/ark-26.08.2:* >=kde-apps/filelight-26.08.2:* >=kde-apps/kate-26.08.2:* >=kde-apps/kbackup-26.08.2:* >=kde-apps/kcalc-26.08.2:* >=kde-apps/kcharselect-26.08.2:* >=kde-apps/kdebugsettings-26.08.2:* >=kde-apps/kdf-26.08.2:* >=kde-apps/kteatime-26.08.2:* >=kde-apps/ktimer-26.08.2:* >=kde-apps/sweeper-26.08.2:* >=kde-apps/yakuake-26.08.2:* >=kde-misc/kweather-26.08.2:* >=kde-misc/markdownpart-26.08.2:* >=sys-block/partitionmanager-26.08.2:* >=sys-libs/kpmcore-26.08.2:* >=kde-apps/kwalletmanager-26.08.2:* >=kde-misc/kclock-26.08.2 >=app-editors/ghostwriter-26.08.2 >=kde-apps/kimagemapeditor-26.08.2:*
+SHA1: 7a6e501a2b12e7c2ca93cce6000fd0123657f34c
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux kwallet plasma webengine
+MTIME: 1791568848
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -18458,6 +18618,29 @@ SHA1: d25f814619c6c942ef8326a11275f7402743d2fb
 SIZE: 1617920
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791370526
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791569082
+CPV: media-gfx/kgraphviewer-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/graphviz-2.30:0/6.8.7.2.4= dev-libs/boost dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2 GPL-2+ LGPL-2+ LGPL-2.1+ FDL-1.2
+MD5: 79da1a6c16ed9203cfba7e4a99902263
+PATH: pkgs-media-gfx/kgraphviewer-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: kgraphviewerpart.so libkgraphviewer.so.0
+RDEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/graphviz-2.30:0/6.8.7.2.4= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !media-gfx/kgraphviewer:5 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Parts.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libcgraph.so.8 libgvc.so.7 libm.so.6 libstdc++.so.6
+SHA1: 83aba7f48590454ee6ea3dd61a342a879b24ba3b
+SIZE: 1628160
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791569085
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
