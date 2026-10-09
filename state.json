@@ -1,12 +1,4 @@
 {
- "continue": {
-  "idle": 0,
-  "image": "gentoo/stage3@sha256:5f11ac3464d079014c700329d32cfad2e9955b477c3ef5ebb1db470353b32863",
-  "streak": 3,
-  "tiers": "",
-  "tree_date": "20261008",
-  "updated": 1791569340
- },
  "gone": {
   "app-emulation/qemu-10.2.3-r1": 1791446227,
   "dev-libs/kirigami-app-components-1.0.2": 1791446227,
