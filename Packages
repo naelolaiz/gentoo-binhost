@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791526134
-PACKAGES: 992
+TIMESTAMP: 1791527955
+PACKAGES: 995
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8717,6 +8717,32 @@ MTIME: 1791252460
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791527832
+CPV: kde-apps/dolphin-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,widgets,X,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6/6.30= >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-apps/baloo-widgets-26.08.2:6 >=kde-frameworks/baloo-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: semantic-desktop telemetry debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: b7608888d77ac5cd205c60f98080c3d7
+PATH: pkgs-kde-apps/dolphin-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: dolphinpart.so hidefileitemaction.so kcm_dolphingeneral.so kcm_dolphinviewmodes.so libdolphinprivate.so.6 libdolphinvcs.so.6 movetonewfolderitemaction.so setfoldericonitemaction.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,widgets,X,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6/6.30= >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-apps/baloo-widgets-26.08.2:6 >=kde-frameworks/baloo-6.27.0:6 >=kde-apps/kio-extras-26.08.2:6 >=kde-apps/thumbnailers-26.08.2:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "2dd35e8a36074e628c68cae74a473f55622ce291"}
+REQUIRES: x86_64: libKF6Baloo.so.6 libKF6BalooWidgets.so.6 libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6Codecs.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6FileMetaData.so.3 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6MultimediaWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: a38994cd5b8aa60bbfb8cb15f76a8ee18938d2ec
+SIZE: 6225920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux semantic-desktop
+MTIME: 1791527835
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6
 BUILD_ID: 1
 BUILD_TIME: 1791278791
@@ -9161,6 +9187,30 @@ SIZE: 2314240
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc filebrowser kernel_linux projects snippets
 MTIME: 1791249466
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791527501
+CPV: kde-apps/kate-addons-26.08.2
+DEFINED_PHASES: compile configure info install nofetch postinst prepare test unpack
+DEPEND: dev-cpp/gpgmepp:0/7= >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 ~kde-apps/kate-lib-26.08.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: +filebrowser lspclient +projects +snippets sql debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2 LGPL-2+ MIT
+MD5: a5dede592a51daae22f369e206b4155e
+PATH: pkgs-kde-apps/kate-addons-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: bookmarksplugin.so cmaketoolsplugin.so compilerexplorer.so eslintplugin.so externaltoolsplugin.so formatplugin.so katebacktracebrowserplugin.so katebuildplugin.so katecloseexceptplugin.so katecolorpickerplugin.so katectagsplugin.so katefilebrowserplugin.so katefiletreeplugin.so kategdbplugin.so kategitblameplugin.so kategpgplugin.so katekonsoleplugin.so kateprojectplugin.so katereplicodeplugin.so katesearchplugin.so kateshownonprintableplugin.so katesnippetsplugin.so katesymbolviewerplugin.so katexmlcheckplugin.so katexmltoolsplugin.so keyboardmacrosplugin.so ktexteditorpreviewplugin.so latexcompletionplugin.so openlinkplugin.so rainbowparens.so rbqlplugin.so tabswitcherplugin.so templateplugin.so textfilterplugin.so
+RDEPEND: dev-cpp/gpgmepp:0/7= >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 ~kde-apps/kate-lib-26.08.2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-apps/kate-common-26.08.2 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6SyntaxHighlighting.so.6 libKF6TextEditor.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Concurrent.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libgpgmepp.so.7 libkateprivate.so.26.08.2 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 93f006ab43b8c2fdc1e251fcd3097607b55e7e09
+SIZE: 2314240
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc filebrowser kernel_linux projects snippets
+MTIME: 1791527503
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10846,6 +10896,30 @@ SIZE: 3102720
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791251771
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791526881
+CPV: kde-apps/konsole-26.08.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-libs/icu:0/78= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland,X] >=kde-frameworks/kxmlgui-6.27.0:6 x11-libs/libxkbcommon dev-qt/qtbase:6
+EAPI: 8
+IUSE: ssh X debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: acf3061c6051ca3116dd021e639f3aed
+PATH: pkgs-kde-apps/konsole-26.08.2-1.gpkg.tar
+PROVIDES: x86_64: konsole_quickcommandsplugin.so konsole_sshmanagerplugin.so konsolepart.so libkonsoleapp.so.26.08.2 libkonsoleprivate.so.26.08.2
+RDEPEND: dev-libs/icu:0/78= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland,X] >=kde-frameworks/kxmlgui-6.27.0:6 x11-libs/libxkbcommon || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6NotifyConfig.so.6 libKF6Parts.so.6 libKF6Pty.so.6 libKF6Service.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Network.so.6 libQt6PrintSupport.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libicuuc.so.78 libm.so.6 libstdc++.so.6 libxkbcommon.so.0
+RESTRICT: test
+SHA1: f5ef0df7401ef2fd214c46396bc2dd08d7db0174
+SIZE: 3123200
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791526883
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
