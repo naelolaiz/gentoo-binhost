@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791607296
-PACKAGES: 1183
+TIMESTAMP: 1791607602
+PACKAGES: 1184
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16284,6 +16284,31 @@ SIZE: 122880
 SLOT: 6/6.30
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791085781
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791607270
+CPV: kde-frameworks/kdbusaddons-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] dev-qt/qtbase:6
+EAPI: 8
+IUSE: X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 86aecb3f15a6461353bdff7aa71e26ac
+PATH: pkgs-kde-frameworks/kdbusaddons-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6DBusAddons.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 21fb56dccd8ed985bbcf00ca9d107f210ffe67c2
+SIZE: 122880
+SLOT: 6/6.31
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791607272
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
