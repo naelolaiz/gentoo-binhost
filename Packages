@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791612521
-PACKAGES: 1216
+TIMESTAMP: 1791613131
+PACKAGES: 1218
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -17514,6 +17514,31 @@ MTIME: 1791146604
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791613096
+CPV: kde-frameworks/kpty-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 sys-libs/libutempter dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: ff30c35d538ebe7a044acce1e75321e5
+PATH: pkgs-kde-frameworks/kpty-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Pty.so.6
+RDEPEND: =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 sys-libs/libutempter >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6I18n.so.6 libQt6Core.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: ddabbb4c5aad21abe8beb6f82773bd894b4f2c3f
+SIZE: 92160
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791613098
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791145196
@@ -18164,6 +18189,30 @@ SIZE: 665600
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791146382
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791613070
+CPV: kde-frameworks/networkmanager-qt-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.10.1:6[dbus,network] >=dev-qt/qtdeclarative-6.10.1:6 >=net-misc/networkmanager-1.4.0-r1[-teamd] dev-qt/qtbase:6
+EAPI: 8
+IUSE: teamd debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2
+MD5: 7bdc36b10b9ec4b1b19ad99df326e77b
+PATH: pkgs-kde-frameworks/networkmanager-qt-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6NetworkManagerQt.so.6 libnetworkmanagerqtqml.so
+RDEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.10.1:6[dbus,network] >=dev-qt/qtdeclarative-6.10.1:6 >=net-misc/networkmanager-1.4.0-r1[-teamd] || ( >=net-misc/networkmanager-1.4.0-r1[elogind] >=net-misc/networkmanager-1.4.0-r1[systemd] ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Network.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 935b16a58207915489fcce43882459723119747e
+SIZE: 665600
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791613071
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
