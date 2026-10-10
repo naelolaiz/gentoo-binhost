@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791617435
-PACKAGES: 1241
+TIMESTAMP: 1791617746
+PACKAGES: 1244
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1145,6 +1145,29 @@ SHA1: d2df83c609fed6fbfd3d27a1e74687f3c8de1c9b
 SIZE: 2201600
 USE: X abi_x86_64 acl amd64 crypt elibc_glibc gpm kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1791232499
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1791617619
+CPV: app-editors/vim-9.2.1172
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl sys-apps/acl x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= >=sys-libs/gpm-1.19.3 ~app-editors/vim-core-9.2.1172 media-libs/libcanberra dev-libs/wayland x11-libs/libXt x11-base/xorg-proto
+EAPI: 8
+IUSE: X acl crypt cscope debug gpm images lua minimal nls pango perl python racket ruby selinux sound tcl terminal vim-pager wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: 7e0f98106bc8ca0c2eebd2c738fcd462
+PATH: pkgs-app-editors/vim-9.2.1172-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl sys-apps/acl x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= >=sys-libs/gpm-1.19.3 ~app-editors/vim-core-9.2.1172 media-libs/libcanberra dev-libs/wayland x11-libs/libXt >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libICE.so.6 libSM.so.6 libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgpm.so.1 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+SHA1: 577a4010aca830292df59769c0da944e24806ba9
+SIZE: 2201600
+USE: X abi_x86_64 acl amd64 crypt elibc_glibc gpm kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1791617621
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -16859,6 +16882,30 @@ MTIME: 1791242922
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791617520
+CPV: kde-frameworks/kdnssd-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[network] >=dev-qt/qtbase-6.10.1:6[dbus] net-dns/avahi[mdnsresponder-compat] dev-qt/qtbase:6
+EAPI: 8
+IUSE: minimal debug test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 82fac161c25fadd1a766a77ff4e36cbc
+PATH: pkgs-kde-frameworks/kdnssd-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6DNSSD.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[network] >=dev-qt/qtbase-6.10.1:6[dbus] net-dns/avahi[mdnsresponder-compat] sys-auth/nss-mdns >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: dd5d2ef4fab5350d71c7a749ee9493aedc3ac97d
+SIZE: 143360
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791617522
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/perl dev-perl/URI >=kde-frameworks/ki18n-6.30:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791086735
@@ -17775,6 +17822,30 @@ SIZE: 256000
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791234377
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791617617
+CPV: kde-frameworks/kpeople-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,sql,widgets] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kcontacts-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kitemviews-6.31*:6 =kde-frameworks/kwidgetsaddons-6.31*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: test debug test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1
+MD5: b63944fa14301a56b0045b3dc02dd8b1
+PATH: pkgs-kde-frameworks/kpeople-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: KPeopleVCard.so libKF6People.so.6 libKF6PeopleBackend.so.6 libKF6PeopleDeclarative.so libKF6PeopleWidgets.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,sql,widgets] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kcontacts-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kitemviews-6.31*:6 =kde-frameworks/kwidgetsaddons-6.31*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Contacts.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6ItemViews.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Sql.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: bb9282964d652d03fe1dc690e53fe4e54436823a
+SIZE: 256000
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791617619
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
