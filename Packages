@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791605455
-PACKAGES: 1173
+TIMESTAMP: 1791606062
+PACKAGES: 1174
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3264,6 +3264,32 @@ SIZE: 12472320
 SLOT: 3.14
 USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_19 ncurses readline sqlite ssl
 MTIME: 1791062456
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
+BUILD_ID: 1
+BUILD_TIME: 1791605978
+CPV: dev-lang/python-3.15.0
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test unpack
+DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
+EAPI: 8
+IUSE: bluetooth build debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl tail-call-interp test tk valgrind +llvm_slot_21 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: PSF-2
+MD5: e3f39c24a88bb776a86c5ff572bc5b37
+PATH: pkgs-dev-lang/python-3.15.0-1.gpkg.tar
+PDEPEND: dev-python/ensurepip-pip
+PROVIDES: x86_64: _bisect.cpython-315-x86_64-linux-gnu.so _blake2.cpython-315-x86_64-linux-gnu.so _bz2.cpython-315-x86_64-linux-gnu.so _codecs_cn.cpython-315-x86_64-linux-gnu.so _codecs_hk.cpython-315-x86_64-linux-gnu.so _codecs_iso2022.cpython-315-x86_64-linux-gnu.so _codecs_jp.cpython-315-x86_64-linux-gnu.so _codecs_kr.cpython-315-x86_64-linux-gnu.so _codecs_tw.cpython-315-x86_64-linux-gnu.so _csv.cpython-315-x86_64-linux-gnu.so _ctypes.cpython-315-x86_64-linux-gnu.so _ctypes_test.cpython-315-x86_64-linux-gnu.so _curses.cpython-315-x86_64-linux-gnu.so _curses_panel.cpython-315-x86_64-linux-gnu.so _dbm.cpython-315-x86_64-linux-gnu.so _decimal.cpython-315-x86_64-linux-gnu.so _elementtree.cpython-315-x86_64-linux-gnu.so _gdbm.cpython-315-x86_64-linux-gnu.so _hashlib.cpython-315-x86_64-linux-gnu.so _heapq.cpython-315-x86_64-linux-gnu.so _hmac.cpython-315-x86_64-linux-gnu.so _interpchannels.cpython-315-x86_64-linux-gnu.so _interpqueues.cpython-315-x86_64-linux-gnu.so _interpreters.cpython-315-x86_64-linux-gnu.so _json.cpython-315-x86_64-linux-gnu.so _lsprof.cpython-315-x86_64-linux-gnu.so _lzma.cpython-315-x86_64-linux-gnu.so _math_integer.cpython-315-x86_64-linux-gnu.so _md5.cpython-315-x86_64-linux-gnu.so _multibytecodec.cpython-315-x86_64-linux-gnu.so _multiprocessing.cpython-315-x86_64-linux-gnu.so _pickle.cpython-315-x86_64-linux-gnu.so _posixshmem.cpython-315-x86_64-linux-gnu.so _posixsubprocess.cpython-315-x86_64-linux-gnu.so _queue.cpython-315-x86_64-linux-gnu.so _random.cpython-315-x86_64-linux-gnu.so _remote_debugging.cpython-315-x86_64-linux-gnu.so _sha1.cpython-315-x86_64-linux-gnu.so _sha2.cpython-315-x86_64-linux-gnu.so _sha3.cpython-315-x86_64-linux-gnu.so _socket.cpython-315-x86_64-linux-gnu.so _sqlite3.cpython-315-x86_64-linux-gnu.so _ssl.cpython-315-x86_64-linux-gnu.so _statistics.cpython-315-x86_64-linux-gnu.so _struct.cpython-315-x86_64-linux-gnu.so _testbuffer.cpython-315-x86_64-linux-gnu.so _testcapi.cpython-315-x86_64-linux-gnu.so _testclinic.cpython-315-x86_64-linux-gnu.so _testclinic_limited.cpython-315-x86_64-linux-gnu.so _testimportmultiple.cpython-315-x86_64-linux-gnu.so _testinternalcapi.cpython-315-x86_64-linux-gnu.so _testlimitedcapi.cpython-315-x86_64-linux-gnu.so _testmultiphase.cpython-315-x86_64-linux-gnu.so _testsinglephase.cpython-315-x86_64-linux-gnu.so _uuid.cpython-315-x86_64-linux-gnu.so _xxtestfuzz.cpython-315-x86_64-linux-gnu.so _zoneinfo.cpython-315-x86_64-linux-gnu.so _zstd.cpython-315-x86_64-linux-gnu.so array.cpython-315-x86_64-linux-gnu.so binascii.cpython-315-x86_64-linux-gnu.so cmath.cpython-315-x86_64-linux-gnu.so fcntl.cpython-315-x86_64-linux-gnu.so grp.cpython-315-x86_64-linux-gnu.so libpython3.15.so.1.0 math.cpython-315-x86_64-linux-gnu.so mmap.cpython-315-x86_64-linux-gnu.so pyexpat.cpython-315-x86_64-linux-gnu.so readline.cpython-315-x86_64-linux-gnu.so resource.cpython-315-x86_64-linux-gnu.so select.cpython-315-x86_64-linux-gnu.so syslog.cpython-315-x86_64-linux-gnu.so termios.cpython-315-x86_64-linux-gnu.so unicodedata.cpython-315-x86_64-linux-gnu.so xxlimited.cpython-315-x86_64-linux-gnu.so xxlimited_35.cpython-315-x86_64-linux-gnu.so xxlimited_3_13.cpython-315-x86_64-linux-gnu.so xxsubtype.cpython-315-x86_64-linux-gnu.so zlib.cpython-315-x86_64-linux-gnu.so
+RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_15(-)] >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 3ea2f3580d98a0c7e078699e9f643e8e7042dbd9
+SIZE: 13578240
+SLOT: 3.15
+USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_21 ncurses readline sqlite ssl
+MTIME: 1791605982
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
