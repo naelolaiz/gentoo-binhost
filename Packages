@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791612211
-PACKAGES: 1213
+TIMESTAMP: 1791612521
+PACKAGES: 1216
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15736,6 +15736,30 @@ MTIME: 1791146553
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791612202
+CPV: kde-frameworks/attica-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[network] dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: 748d19c9ec99379e894565bef37b6a6c
+PATH: pkgs-kde-frameworks/attica-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Attica.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[network] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libQt6Core.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 0e9fd16078ce34e23391c8edb74c4e10d2eb6a0a
+SIZE: 266240
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791612203
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791204298
@@ -17108,6 +17132,30 @@ MTIME: 1791123246
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791612267
+CPV: kde-frameworks/kitemmodels-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtdeclarative-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 03f3d6d072237b59ef946ed26e53c181
+PATH: pkgs-kde-frameworks/kitemmodels-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6ItemModels.so.6 libitemmodelsplugin.so
+RDEPEND: >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: eb7515965a5db950f3d19fff462cffd0b38bcf63
+SIZE: 225280
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791612268
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791086864
@@ -17487,6 +17535,31 @@ SIZE: 266240
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791145197
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791612373
+CPV: kde-frameworks/kquickcharts-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug examples test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: f3f13a3bb8756cdfc82aebd76978d501
+PATH: pkgs-kde-frameworks/kquickcharts-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libQuickCharts.so.1 libQuickChartsControls.so.1 libQuickChartsControlsplugin.so libQuickChartsplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 44b99b778eb14977729153d6c9fc107c6eebdbdb
+SIZE: 266240
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791612374
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
