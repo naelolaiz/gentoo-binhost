@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791620913
-PACKAGES: 1258
+TIMESTAMP: 1791624480
+PACKAGES: 1260
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -354,6 +354,29 @@ SIZE: 133120
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791533604
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/yacc virtual/pkgconfig >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1791624431
+CPV: app-admin/sudo-1.9.17_p2-r1
+DEFINED_PHASES: configure install postinst prepare unpack
+DEPEND: virtual/zlib:0/1= virtual/libcrypt:0/2= sys-libs/pam dev-libs/openssl:0/3=
+EAPI: 8
+IUSE: gcrypt ldap nls offensive pam sasl +secure-path selinux +sendmail skey ssl sssd verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: ISC BSD
+MD5: 60b42e35729556ab759a8899de3e4c14
+PATH: pkgs-app-admin/sudo-1.9.17_p2-r1-1.gpkg.tar
+PROVIDES: x86_64: audit_json.so group_file.so libsudo_util.so.0 sudo_intercept.so sudo_noexec.so sudoers.so system_group.so
+RDEPEND: virtual/zlib:0/1= virtual/libcrypt:0/2= sys-libs/pam dev-libs/openssl:0/3= >=app-misc/editor-wrapper-3 virtual/editor sys-auth/pambase virtual/mta virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libpam.so.0 libssl.so.3 libz.so.1
+SHA1: 326a4fef06ae931e4ae6199d06c0ec821ff8c18b
+SIZE: 2211840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls pam secure-path sendmail ssl
+MTIME: 1791624432
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25743,6 +25766,28 @@ SHA1: 0defe71e0024a87d90d15ff7d96457ada3f47655
 SIZE: 15923200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791445996
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791624370
+CPV: sci-ml/ollama-0.40.2
+DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
+DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0=
+EAPI: 8
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: ffbe2a4ef1d86b0f7328255e10e26b35
+PATH: pkgs-sci-ml/ollama-0.40.2-1.gpkg.tar
+PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
+RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
+RESTRICT: mirror test
+SHA1: 8a0ab31f4203dff3e9ed663befd2448ac64cdffd
+SIZE: 15923200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791624373
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
