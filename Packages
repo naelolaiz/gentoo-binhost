@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791608215
-PACKAGES: 1186
+TIMESTAMP: 1791608527
+PACKAGES: 1191
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15899,6 +15899,30 @@ MTIME: 1791086696
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791608354
+CPV: kde-frameworks/karchive-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: app-arch/bzip2 app-arch/xz-utils virtual/zlib:0/1= dev-libs/openssl:0/3= app-arch/zstd:0/1= dev-qt/qtbase:6
+EAPI: 8
+IUSE: crypt +zstd debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2 LGPL-2.1
+MD5: d0a2740d30597e0d3686f6f9830365f0
+PATH: pkgs-kde-frameworks/karchive-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Archive.so.6
+RDEPEND: app-arch/bzip2 app-arch/xz-utils virtual/zlib:0/1= dev-libs/openssl:0/3= app-arch/zstd:0/1= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libbz2.so.1 libc.so.6 libcrypto.so.3 liblzma.so.5 libstdc++.so.6 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: ca73b48f0eacd929ab9c38435df87320d66a3306
+SIZE: 276480
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 crypt elibc_glibc kernel_linux zstd
+MTIME: 1791608356
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791180875
@@ -16041,6 +16065,29 @@ SIZE: 102400
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791087881
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791608309
+CPV: kde-frameworks/kcolorscheme-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kguiaddons-6.31*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 5a70aa5c3f041c1fc2eb98a1e00ddc8a
+PATH: pkgs-kde-frameworks/kcolorscheme-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6ColorScheme.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kguiaddons-6.31*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+SHA1: 1a413a2a5e2cb3357898e768a22e695ba9d5d38c
+SIZE: 102400
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791608310
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -16427,6 +16474,30 @@ SIZE: 573440
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
 MTIME: 1791086738
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl dev-perl/URI >=kde-frameworks/ki18n-6.31:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791608399
+CPV: kde-frameworks/kdoctools-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: app-text/docbook-xml-dtd:4.5 app-text/docbook-xsl-stylesheets app-text/sgml-common dev-libs/libxml2:2/16= dev-libs/libxslt =kde-frameworks/karchive-6.31*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: nls debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: 8f9feb0d7888d7370276d6608a25b09a
+PATH: pkgs-kde-frameworks/kdoctools-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6DocTools.so.6
+RDEPEND: app-text/docbook-xml-dtd:4.5 app-text/docbook-xsl-stylesheets app-text/sgml-common dev-libs/libxml2:2/16= dev-libs/libxslt =kde-frameworks/karchive-6.31*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6Archive.so.6 libQt6Core.so.6 libc.so.6 libexslt.so.0 libstdc++.so.6 libxml2.so.16 libxslt.so.1
+RESTRICT: test
+SHA1: 133d1e0384a4de929846531e7b6234ed3260dd7c
+SIZE: 583680
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
+MTIME: 1791608402
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17150,6 +17221,31 @@ MTIME: 1791086811
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=kde-frameworks/kdoctools-6.31:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791608473
+CPV: kde-frameworks/kservice-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,xml] =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: +man debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2 LGPL-2.1+
+MD5: 2b6014f06aa1b1abdf829f99b4dc5858
+PATH: pkgs-kde-frameworks/kservice-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Service.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,xml] =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libQt6Core.so.6 libQt6Xml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: 9d2d32bfc30df98537586bd3a8217180e87fe07d
+SIZE: 327680
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux man
+MTIME: 1791608475
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791180922
@@ -17416,6 +17512,30 @@ SIZE: 348160
 SLOT: 6/6.30
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
 MTIME: 1791087848
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] >=dev-qt/qtbase-6.10.1:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791608271
+CPV: kde-frameworks/kwindowsystem-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms dev-libs/plasma-wayland-protocols >=dev-libs/wayland-protocols-1.46 dev-qt/qtbase:6
+EAPI: 8
+IUSE: wayland X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( LGPL-2.1 LGPL-3 ) MIT
+MD5: 5457d1afcf69a0b92026eeb155ca530b
+PATH: pkgs-kde-frameworks/kwindowsystem-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: KF6WindowSystemKWaylandPlugin.so KF6WindowSystemX11Plugin.so libKF6WindowSystem.so.6 libKWindowSystem.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libX11.so.6 libXfixes.so.3 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-keysyms.so.1 libxcb-res.so.0 libxcb.so.1
+RESTRICT: test test
+SHA1: 1956978f2bc63d85c241ee0caa36ae136def2d34
+SIZE: 348160
+SLOT: 6/6.31
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
+MTIME: 1791608273
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
