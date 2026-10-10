@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791569314
-PACKAGES: 1172
+TIMESTAMP: 1791605455
+PACKAGES: 1173
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15776,6 +15776,27 @@ SHA1: d3861421fc407fb8da97cf9dad2fc24acbbb72a3
 SIZE: 235520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791063905
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791605310
+CPV: kde-frameworks/extra-cmake-modules-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+EAPI: 8
+IUSE: doc test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD
+MD5: 855021e4b5a8c85c0704228f5a4a273b
+PATH: pkgs-kde-frameworks/extra-cmake-modules-6.31.0-1.gpkg.tar
+RDEPEND: app-arch/libarchive[bzip2]
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+RESTRICT: test
+SHA1: 90711669bb814e8605caada36aea875e908311f9
+SIZE: 235520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791605312
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
