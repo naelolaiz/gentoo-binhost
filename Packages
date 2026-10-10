@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791620500
-PACKAGES: 1256
+TIMESTAMP: 1791620913
+PACKAGES: 1258
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -354,6 +354,30 @@ SIZE: 133120
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791533604
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.87.0:* >=dev-lang/rust-1.87.0:* ) app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1791620709
+CPV: app-antivirus/clamav-1.5.4
+DEFINED_PHASES: compile configure install postinst prepare setup test unpack
+DEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/3= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack
+EAPI: 8
+IUSE: doc clamonacc +clamapp experimental libclamav-only milter rar selinux +system-mspack systemd test debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: Apache-2.0 BSD BSD-2 GPL-2 ISC MIT UoI-NCSA ZLIB public-domain MPL-2.0 Unicode-3.0
+MD5: 035a87eff4a888dc0d5448e757e47fca
+PATH: pkgs-app-antivirus/clamav-1.5.4-1.gpkg.tar
+PROVIDES: x86_64: libclamav.so.12 libfreshclam.so.4
+RDEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/3= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.3 libcurl.so.4 libgcc_s.so.1 libjson-c.so.5 libm.so.6 libmspack.so.0 libncurses.so.6 libpcre2-8.so.0 libssl.so.3 libtinfo.so.6 libxml2.so.16 libz.so.1
+RESTRICT: test
+SHA1: e3fc4307b5333630d6ad55177a657405e1238cf5
+SIZE: 30494720
+SLOT: 0/sts
+USE: abi_x86_64 amd64 clamapp elibc_glibc kernel_linux system-mspack
+MTIME: 1791620716
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5376,6 +5400,28 @@ SHA1: 67fc742c35b04402ca649e21998cb21893dbe4ff
 SIZE: 573440
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791226089
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/uv-build[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791620726
+CPV: dev-python/dnspython-2.9.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: dnssec examples https quic test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86 ~x64-macos
+LICENSE: ISC
+MD5: d92db48db004c92a10aa9f3ba1b898e3
+PATH: pkgs-dev-python/dnspython-2.9.0-1.gpkg.tar
+RDEPEND: >=dev-python/idna-2.1[python_targets_python3_14(-)] dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+RESTRICT: test
+SHA1: c6b3ad2b2bd2bb08b73ef16e4ea9eada94a02797
+SIZE: 901120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791620728
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
