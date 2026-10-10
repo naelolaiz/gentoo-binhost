@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791610992
-PACKAGES: 1211
+TIMESTAMP: 1791611298
+PACKAGES: 1212
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4705,6 +4705,30 @@ SIZE: 573440
 SLOT: 0/33
 USE: abi_x86_64 all-impls amd64 elibc_glibc kernel_linux
 MTIME: 1791092290
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-apps/file sys-apps/grep virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1791611103
+CPV: dev-libs/simdjson-5.0.3
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: +all-impls nan test tools
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0 Boost-1.0 BSD MIT
+MD5: e0970d344d902b78b7efa96339279465
+PATH: pkgs-dev-libs/simdjson-5.0.3-1.gpkg.tar
+PROVIDES: x86_64: libsimdjson.so.34
+RDEPEND: >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 01baf73ec4158511b7123d871b9e392c5541b6c8
+SIZE: 870400
+SLOT: 0/34
+USE: abi_x86_64 all-impls amd64 elibc_glibc kernel_linux
+MTIME: 1791611104
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
