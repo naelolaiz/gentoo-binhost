@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791611298
-PACKAGES: 1212
+TIMESTAMP: 1791612211
+PACKAGES: 1213
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16934,6 +16934,29 @@ MTIME: 1791123191
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.10.1:6[wayland] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791612069
+CPV: kde-frameworks/kidletime-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=dev-libs/plasma-wayland-protocols-1.11.1 >=dev-libs/wayland-protocols-1.27:0 dev-qt/qtbase:6
+EAPI: 8
+IUSE: wayland X xscreensaver debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 75234d2902892c3734afef28d35273e3
+PATH: pkgs-kde-frameworks/kidletime-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: KF6IdleTimeWaylandPlugin.so KF6IdleTimeXcbPlugin0.so libKF6IdleTime.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6WaylandClient.so.6 libX11-xcb.so.1 libX11.so.6 libXext.so.6 libc.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-sync.so.1 libxcb.so.1
+SHA1: e2a242b4cae0b04bdd4ebc656b4d0dad2278e7c0
+SIZE: 102400
+SLOT: 6/6.31
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
+MTIME: 1791612070
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791252626
@@ -23570,25 +23593,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791523043
+BUILD_ID: 2
+BUILD_TIME: 1791611939
 CPV: net-libs/nodejs-26.11.1
 DEFINED_PHASES: compile configure install postinst prepare pretend setup test
-DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
+DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
 EAPI: 8
 IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
 LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
-MD5: 7ffe0526f4489aeae2e627cb4125266e
-PATH: pkgs-net-libs/nodejs-26.11.1-1.gpkg.tar
-RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.33 libsimdutf.so.36 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
+MD5: 51d3a1e5cc3e7f9515f83a1a88f4b869
+PATH: pkgs-net-libs/nodejs-26.11.1-2.gpkg.tar
+RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.34 libsimdutf.so.36 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
 RESTRICT: test
-SHA1: 377dfecadf2e437cbf425b321ed0422441929229
-SIZE: 38512640
+SHA1: 84d1dfc17aa0c371b899f491a88158c654b17437
+SIZE: 38604800
 SLOT: 0/26
 USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
-MTIME: 1791523054
+MTIME: 1791611949
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
