@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791607602
-PACKAGES: 1184
+TIMESTAMP: 1791607909
+PACKAGES: 1185
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16721,6 +16721,31 @@ SIZE: 1751040
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux openmp
 MTIME: 1791086371
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791607841
+CPV: kde-frameworks/kirigami-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare pretend setup test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[concurrent,dbus,gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: openmp debug examples test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 12f41e0bf5e1a54f44e9d722c2da7682
+PATH: pkgs-kde-frameworks/kirigami-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKirigami.so.6 libKirigamiControls.so.6 libKirigamiControlsplugin.so libKirigamiDelegates.so.6 libKirigamiDelegatesplugin.so libKirigamiDialogs.so.6 libKirigamiDialogsplugin.so libKirigamiForms.so.6 libKirigamiFormsPrivateCards.so.6 libKirigamiFormsPrivateCardsplugin.so libKirigamiFormsPrivateFlat.so.6 libKirigamiFormsPrivateFlatplugin.so libKirigamiFormsPrivateTemplates.so.6 libKirigamiFormsPrivateTemplatesplugin.so libKirigamiFormsplugin.so libKirigamiLayouts.so.6 libKirigamiLayoutsPrivate.so.6 libKirigamiLayoutsPrivateplugin.so libKirigamiLayoutsplugin.so libKirigamiPlatform.so.6 libKirigamiPlatformplugin.so libKirigamiPolyfill.so.6 libKirigamiPolyfillplugin.so libKirigamiPrimitives.so.6 libKirigamiPrimitivesplugin.so libKirigamiPrivate.so.6 libKirigamiPrivateplugin.so libKirigamiTemplates.so.6 libKirigamiTemplatesplugin.so libKirigamiplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[concurrent,dbus,gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libc.so.6 libgomp.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: 02e6a1b43881097e91598d2a9d0c073de611529b
+SIZE: 1761280
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux openmp
+MTIME: 1791607843
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
