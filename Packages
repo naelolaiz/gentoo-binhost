@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791618661
-PACKAGES: 1246
+TIMESTAMP: 1791618967
+PACKAGES: 1247
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -19618,6 +19618,31 @@ SIZE: 2488320
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791265471
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
+BUILD_ID: 1
+BUILD_TIME: 1791618769
+CPV: kde-plasma/spectacle-6.7.5-r1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.26.0:6 >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kcrash-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/kguiaddons-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kio-6.26.0:6 >=kde-frameworks/kirigami-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kservice-6.26.0:6 >=kde-frameworks/kstatusnotifieritem-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6[X] >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-frameworks/prison-6.26.0:6 >=kde-plasma/kpipewire-6.7.5:6 >=kde-plasma/layer-shell-qt-6.7.5:6 >=media-libs/kquickimageeditor-0.7.0.1:6 x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-libs/plasma-wayland-protocols-1.19.0 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: share debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+ FDL-1.3
+MD5: b8b330f34918b55592e87be39e461e45
+PATH: pkgs-kde-plasma/spectacle-6.7.5-r1-1.gpkg.tar
+RDEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.26.0:6 >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kcrash-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/kguiaddons-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kio-6.26.0:6 >=kde-frameworks/kirigami-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kservice-6.26.0:6 >=kde-frameworks/kstatusnotifieritem-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6[X] >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-frameworks/prison-6.26.0:6 >=kde-plasma/kpipewire-6.7.5:6 >=kde-plasma/layer-shell-qt-6.7.5:6 >=media-libs/kquickimageeditor-0.7.0.1:6 x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-qt/qtimageformats-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kimageformats-6.26.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/spectacle:5 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6PrisonScanner.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libKPipeWireRecord.so.6 libKQuickImageEditor.so.1 libKirigamiPlatform.so.6 libLayerShellQtInterface.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libtesseract.so.5 libwayland-client.so.0 libxcb-cursor.so.0 libxcb-image.so.0 libxcb-randr.so.0 libxcb-util.so.1 libxcb-xfixes.so.0 libxcb.so.1
+RESTRICT: test
+SHA1: 8c4dac4aa4945a1f5b769a4cf37aa8685a4cd8ef
+SIZE: 2478080
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1791618771
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
