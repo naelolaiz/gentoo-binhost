@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791613754
-PACKAGES: 1226
+TIMESTAMP: 1791614064
+PACKAGES: 1229
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -18455,6 +18455,31 @@ MTIME: 1791195848
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791614044
+CPV: kde-frameworks/prison-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtmultimedia-6.10.1:6 media-gfx/qrencode:0/4= media-libs/libdmtx >=media-libs/zxing-cpp-1.4.0:0/4= >=dev-qt/qtdeclarative-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: qml debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: aeb22cce0a8e556a38590fa990e03e15
+PATH: pkgs-kde-frameworks/prison-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Prison.so.6 libKF6PrisonScanner.so.6 libprisonquickplugin.so libprisonscannerquickplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtmultimedia-6.10.1:6 media-gfx/qrencode:0/4= media-libs/libdmtx >=media-libs/zxing-cpp-1.4.0:0/4= >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libZXing.so.4 libc.so.6 libdmtx.so.0 libgcc_s.so.1 libqrencode.so.4 libstdc++.so.6
+RESTRICT: test
+SHA1: 99556e56587c55204a66225f27f18ca2d61f1e47
+SIZE: 143360
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1791614045
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30:*
 BUILD_ID: 1
 BUILD_TIME: 1791244935
@@ -18502,6 +18527,30 @@ SIZE: 788480
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791181139
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791613834
+CPV: kde-frameworks/qqc2-desktop-style-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.11.2= =kde-frameworks/kcolorscheme-6.31*:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kiconthemes-6.31*:6 =kde-frameworks/kirigami-6.31*:6 =kde-frameworks/sonnet-6.31*:6[qml] dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2+ LGPL-3+ )
+MD5: 3af02bdba5adfbea01a13dfb7c49ec10
+PATH: pkgs-kde-frameworks/qqc2-desktop-style-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: liborg_kde_desktop.so liborg_kde_desktop_private.so libqqc2desktopstyleplugin.so org.kde.desktop.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.11.2= =kde-frameworks/kcolorscheme-6.31*:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kiconthemes-6.31*:6 =kde-frameworks/kirigami-6.31*:6 =kde-frameworks/sonnet-6.31*:6[qml] >=dev-qt/qt5compat-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6IconThemes.so.6 libKirigamiPlatform.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 2c39b2d543298f0b6dd9d306bd15bbf36ce9b501
+SIZE: 819200
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791613836
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -18646,6 +18695,30 @@ SIZE: 1904640
 SLOT: 6/6.30
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791181228
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
+BUILD_ID: 1
+BUILD_TIME: 1791613925
+CPV: kde-frameworks/syntax-highlighting-6.31.0
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,network] >=dev-qt/qtdeclarative-6.10.1:6 dev-libs/xerces-c dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: 1a3661040a88c0ec733c5258eb9ca826
+PATH: pkgs-kde-frameworks/syntax-highlighting-6.31.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6SyntaxHighlighting.so.6 libkquicksyntaxhighlightingplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 47e585283ee734b60b135553214f95fc2b4bec1d
+SIZE: 1914880
+SLOT: 6/6.31
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1791613927
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
