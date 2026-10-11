@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791695982
-PACKAGES: 1269
+TIMESTAMP: 1791696295
+PACKAGES: 1271
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5340,6 +5340,27 @@ MTIME: 1791226131
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791695898
+CPV: dev-python/cssselect-1.6.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test doc test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: BSD
+MD5: 6f77f73eda9c4288c2025e09de034a3f
+PATH: pkgs-dev-python/cssselect-1.6.0-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test test
+SHA1: 362e9171bf986fe77a1f720cf3095302cbbc39cc
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791695899
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791277847
@@ -5574,6 +5595,27 @@ SHA1: ff8844caefc3fc67a530eacd1fcd18fcb449728f
 SIZE: 337920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791226369
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791695903
+CPV: dev-python/filelock-4.1.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: MIT
+MD5: 91af21c684aeb90e902a088ecfdeeb2d
+PATH: pkgs-dev-python/filelock-4.1.0-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 8885576b9538b8dc4f16fd4de12bd07bd95fe821
+SIZE: 399360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791695904
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21128,25 +21170,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-build/make >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1791266092
+BUILD_ID: 2
+BUILD_TIME: 1791696179
 CPV: media-libs/avidemux-plugins-2.8.1_p20251019
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: ~media-libs/avidemux-core-2.8.1_p20251019:2.7[-nvenc,-vaapi,-vdpau] ~media-video/avidemux-2.8.1_p20251019:2.7[opengl,gui] dev-libs/fribidi media-libs/a52dec media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/libass:0/9= media-libs/libmad virtual/libiconv media-libs/faac media-libs/faad2 media-libs/alsa-lib media-libs/libdca virtual/jack media-libs/libsamplerate media-libs/libglvnd media-libs/libpulse dev-qt/qtbase:6[gui,opengl,widgets] media-libs/libvorbis media-libs/x264:0/164= media-libs/x265:0/215=
+DEPEND: ~media-libs/avidemux-core-2.8.1_p20251019:2.7[-nvenc,-vaapi,-vdpau] ~media-video/avidemux-2.8.1_p20251019:2.7[opengl,gui] dev-libs/fribidi media-libs/a52dec media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/libass:0/9= media-libs/libmad virtual/libiconv media-libs/faac media-libs/faad2 media-libs/alsa-lib media-libs/libdca virtual/jack media-libs/libsamplerate media-libs/libglvnd media-libs/libpulse dev-qt/qtbase:6[gui,opengl,widgets] media-libs/libvorbis media-libs/x264:0/164= media-libs/x265:0/217=
 EAPI: 8
 IUSE: aac aften alsa amr dcaenc dts fdk gui jack lame libaom libsamplerate nvenc opengl opus oss pulseaudio twolame vaapi vdpau vorbis vpx x264 x265 xvid
 KEYWORDS: ~amd64 ~x86
 LICENSE: GPL-2 MIT PSF-2 LGPL-2 OFL-1.1
-MD5: f69dc678560badadd4cc15a1487f93aa
-PATH: pkgs-media-libs/avidemux-plugins-2.8.1_p20251019-1.gpkg.tar
+MD5: 0488eeabc55394d8db69b19628e37292
+PATH: pkgs-media-libs/avidemux-plugins-2.8.1_p20251019-2.gpkg.tar
 PROVIDES: x86_64: libADM_ad_Mad.so libADM_ad_a52.so libADM_ad_alaw.so libADM_ad_dca.so libADM_ad_faad.so libADM_ad_ima_adpcm.so libADM_ad_lav.so libADM_ad_ms_adpcm.so libADM_ad_ulaw.so libADM_ad_vorbis.so libADM_ae_faac.so libADM_ae_lav_aac.so libADM_ae_lav_ac3.so libADM_ae_lav_mp2.so libADM_ae_pcm.so libADM_ae_vorbis.so libADM_av_alsaDMix.so libADM_av_alsaDefault.so libADM_av_alsaHw.so libADM_av_jack.so libADM_av_pulseAudio.so libADM_dm_asf.so libADM_dm_avsproxy.so libADM_dm_flv.so libADM_dm_matroska.so libADM_dm_mp4.so libADM_dm_mxf.so libADM_dm_opendml.so libADM_dm_pic.so libADM_dm_ps.so libADM_dm_ts.so libADM_mx_avi.so libADM_mx_dummy.so libADM_mx_ffPS.so libADM_mx_ffTS.so libADM_mx_flv.so libADM_mx_mkv.so libADM_mx_mov.so libADM_mx_mp4.so libADM_mx_raw.so libADM_mx_webm.so libADM_script_tinyPy.so libADM_ve_ffDv.so libADM_ve_ffFlv1.so libADM_ve_ffMpeg2.so libADM_ve_ffMpeg4.so libADM_ve_ffv1.so libADM_ve_huff.so libADM_ve_jpeg.so libADM_ve_null.so libADM_ve_utvideo.so libADM_ve_x264_QT6.so libADM_ve_x264_other.so libADM_ve_x265_QT6.so libADM_ve_x265_other.so libADM_ve_yv12.so libADM_vf_CropCli.so libADM_vf_DgBob.so libADM_vf_FluxSmooth.so libADM_vf_HueCli.so libADM_vf_HueQT6.so libADM_vf_ZoomCli.so libADM_vf_aarotate.so libADM_vf_addBorders.so libADM_vf_admIvtc.so libADM_vf_aiEnhanceCli.so libADM_vf_aiEnhanceQT6.so libADM_vf_analyzerCli.so libADM_vf_analyzerQT6.so libADM_vf_artCartoonCli.so libADM_vf_artCartoonQT6.so libADM_vf_artCharcoalCli.so libADM_vf_artCharcoalQT6.so libADM_vf_artChromaHoldCli.so libADM_vf_artChromaHoldQT6.so libADM_vf_artChromaKeyCli.so libADM_vf_artChromaKeyQT6.so libADM_vf_artColorEffectCli.so libADM_vf_artColorEffectQT6.so libADM_vf_artDynThresholdCli.so libADM_vf_artDynThresholdQT6.so libADM_vf_artGridCli.so libADM_vf_artGridQT6.so libADM_vf_artMirrorCli.so libADM_vf_artMirrorQT6.so libADM_vf_artPixelizeCli.so libADM_vf_artPixelizeQT6.so libADM_vf_artPosterizeCli.so libADM_vf_artPosterizeQT6.so libADM_vf_artVHSCli.so libADM_vf_artVHSQT6.so libADM_vf_artVignetteCli.so libADM_vf_artVignetteQT6.so libADM_vf_ascii.so libADM_vf_asharpQT6.so libADM_vf_avsfilter.so libADM_vf_black.so libADM_vf_blackenBordersCli.so libADM_vf_blackenBordersQT6.so libADM_vf_blend.so libADM_vf_blurCli.so libADM_vf_blurQT6.so libADM_vf_changeFps.so libADM_vf_chromaShiftCli.so libADM_vf_chromaShiftQT6.so libADM_vf_colorBalanceCli.so libADM_vf_colorBalanceQT6.so libADM_vf_colorTempCli.so libADM_vf_colorTempQT6.so libADM_vf_colorYuv.so libADM_vf_contrastCli.so libADM_vf_contrastQT6.so libADM_vf_cropQT6.so libADM_vf_cubicLUTCli.so libADM_vf_cubicLUTQT6.so libADM_vf_debandCli.so libADM_vf_debandQT6.so libADM_vf_decimateFrame.so libADM_vf_delogoHQCli.so libADM_vf_delogoHQQT6.so libADM_vf_denoise3d.so libADM_vf_denoise3dhq.so libADM_vf_dummy.so libADM_vf_eq2Cli.so libADM_vf_eq2QT6.so libADM_vf_fadeFromImageCli.so libADM_vf_fadeFromImageQT6.so libADM_vf_fadeInCli.so libADM_vf_fadeInQT6.so libADM_vf_fadeOutCli.so libADM_vf_fadeOutQT6.so libADM_vf_fadeThroughCli.so libADM_vf_fadeThroughQT6.so libADM_vf_fadeTo.so libADM_vf_fadeToBlack.so libADM_vf_fieldsAlign.so libADM_vf_fitToSizeCli.so libADM_vf_fitToSizeQT6.so libADM_vf_flat360Cli.so libADM_vf_flat360QT6.so libADM_vf_flipCli.so libADM_vf_flipQT6.so libADM_vf_gauss.so libADM_vf_glBenchmark.so libADM_vf_glResize.so libADM_vf_grainCli.so libADM_vf_grainQT6.so libADM_vf_hzstackField.so libADM_vf_imageStabCli.so libADM_vf_imageStabQT6.so libADM_vf_ivtcDupeRemover.so libADM_vf_kernelDeint.so libADM_vf_largeMedian.so libADM_vf_lavDeint.so libADM_vf_logoCli.so libADM_vf_logoQT6.so libADM_vf_lumaOnly.so libADM_vf_lumaStabCli.so libADM_vf_lumaStabQT6.so libADM_vf_mean.so libADM_vf_median.so libADM_vf_mergeField.so libADM_vf_mpdelogoCli.so libADM_vf_mpdelogoQT6.so libADM_vf_msharpenCli.so libADM_vf_msharpenQT6.so libADM_vf_negative.so libADM_vf_printInfo.so libADM_vf_quadTransCli.so libADM_vf_quadTransQT6.so libADM_vf_removePlane.so libADM_vf_resampleFps.so libADM_vf_rotate.so libADM_vf_rotateGlFrag2.so libADM_vf_sampleGlFrag2.so libADM_vf_sampleGlVertex.so libADM_vf_separateField.so libADM_vf_shaderLoaderGl.so libADM_vf_sharpen.so libADM_vf_ssa.so libADM_vf_stackField.so libADM_vf_stillimage.so libADM_vf_swapUV.so libADM_vf_swscaleResizeQT6.so libADM_vf_swscaleResize_cli.so libADM_vf_telecide.so libADM_vf_unstackField.so libADM_vf_waveletDenoiseCli.so libADM_vf_waveletDenoiseQT6.so libADM_vf_waveletSharpCli.so libADM_vf_waveletSharpQT6.so libADM_vf_yadif.so libADM_vf_zoomQT6.so
-RDEPEND: ~media-libs/avidemux-core-2.8.1_p20251019:2.7[-nvenc,-vaapi,-vdpau] ~media-video/avidemux-2.8.1_p20251019:2.7[opengl,gui] dev-libs/fribidi media-libs/a52dec media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/libass:0/9= media-libs/libmad virtual/libiconv media-libs/faac media-libs/faad2 media-libs/alsa-lib media-libs/libdca virtual/jack media-libs/libsamplerate media-libs/libglvnd media-libs/libpulse dev-qt/qtbase:6[gui,opengl,widgets] media-libs/libvorbis media-libs/x264:0/164= media-libs/x265:0/215= !<media-libs/avidemux-plugins-2.8.1_p20251019 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libADM6avcodec.so.61 libADM6avformat.so.61 libADM6avutil.so.59 libADM6postproc.so.58 libADM_UIQT66.so libADM_audioParser6.so libADM_core6.so libADM_coreAudio6.so libADM_coreAudioDevice6.so libADM_coreAudioEncoder6.so libADM_coreDemuxer6.so libADM_coreDemuxerMpeg6.so libADM_coreImage6.so libADM_coreImageLoader6.so libADM_coreMuxer6.so libADM_coreScript.so libADM_coreSubtitles6.so libADM_coreUI6.so libADM_coreUtils6.so libADM_coreVideoCodec6.so libADM_coreVideoEncoder6.so libADM_coreVideoFilter6.so libADM_openGLQT66.so libOpenGL.so.0 libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6Widgets.so.6 liba52.so.0 libasound.so.2 libass.so.9 libc.so.6 libdca.so.0 libfaac.so.0 libfaad.so.2 libgcc_s.so.1 libjack.so.0 libm.so.6 libmad.so.0 libpulse.so.0 libstdc++.so.6 libvorbis.so.0 libvorbisenc.so.2 libx264.so.164 libx265.so.215
-SHA1: 119f05919a3a271e392e6c8a1f0bf682aea23d26
+RDEPEND: ~media-libs/avidemux-core-2.8.1_p20251019:2.7[-nvenc,-vaapi,-vdpau] ~media-video/avidemux-2.8.1_p20251019:2.7[opengl,gui] dev-libs/fribidi media-libs/a52dec media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/libass:0/9= media-libs/libmad virtual/libiconv media-libs/faac media-libs/faad2 media-libs/alsa-lib media-libs/libdca virtual/jack media-libs/libsamplerate media-libs/libglvnd media-libs/libpulse dev-qt/qtbase:6[gui,opengl,widgets] media-libs/libvorbis media-libs/x264:0/164= media-libs/x265:0/217= !<media-libs/avidemux-plugins-2.8.1_p20251019 >=sys-libs/glibc-2.43-r2
+REPO_REVISIONS: {"gentoo": "effb0d9903c8cb79df76557c474811f892986ed0"}
+REQUIRES: x86_64: libADM6avcodec.so.61 libADM6avformat.so.61 libADM6avutil.so.59 libADM6postproc.so.58 libADM_UIQT66.so libADM_audioParser6.so libADM_core6.so libADM_coreAudio6.so libADM_coreAudioDevice6.so libADM_coreAudioEncoder6.so libADM_coreDemuxer6.so libADM_coreDemuxerMpeg6.so libADM_coreImage6.so libADM_coreImageLoader6.so libADM_coreMuxer6.so libADM_coreScript.so libADM_coreSubtitles6.so libADM_coreUI6.so libADM_coreUtils6.so libADM_coreVideoCodec6.so libADM_coreVideoEncoder6.so libADM_coreVideoFilter6.so libADM_openGLQT66.so libOpenGL.so.0 libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6Widgets.so.6 liba52.so.0 libasound.so.2 libass.so.9 libc.so.6 libdca.so.0 libfaac.so.0 libfaad.so.2 libgcc_s.so.1 libjack.so.0 libm.so.6 libmad.so.0 libpulse.so.0 libstdc++.so.6 libvorbis.so.0 libvorbisenc.so.2 libx264.so.164 libx265.so.217
+SHA1: a3539b913f54138e8590504a67400a6b47e34d46
 SIZE: 2017280
 SLOT: 2.7
 USE: aac abi_x86_64 alsa amd64 dts elibc_glibc gui jack kernel_linux libsamplerate opengl pulseaudio vorbis x264 x265
-MTIME: 1791266097
+MTIME: 1791696184
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -24069,25 +24112,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/awk virtual/pkgconfig || ( dev-lang/nasm dev-lang/yasm )
-BUILD_ID: 6
-BUILD_TIME: 1791524970
+BUILD_ID: 7
+BUILD_TIME: 1791696081
 CPV: media-video/ffmpeg-compat-6.1.6
 DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXv[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] app-arch/bzip2[abi_x86_64(-)] media-libs/dav1d:0/7=[abi_x86_64(-)] x11-libs/libdrm[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] media-libs/lcms:2[abi_x86_64(-)] media-libs/libass:0/9=[abi_x86_64(-)] media-libs/lilv[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/openal[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] media-libs/rubberband:0/3=[abi_x86_64(-)] media-libs/libsdl2[sound(+),video(+),abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] >=gnome-base/librsvg-2.52:2[abi_x86_64(-)] x11-libs/cairo[abi_x86_64(-)] media-libs/libtheora:0/2=[encode,abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] media-libs/harfbuzz:0/6.0.0=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/libvorbis[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/215=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] x11-base/xorg-proto >=sys-kernel/linux-headers-6 media-libs/ladspa-sdk dev-util/opencl-headers dev-util/vulkan-headers
+DEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXv[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] app-arch/bzip2[abi_x86_64(-)] media-libs/dav1d:0/7=[abi_x86_64(-)] x11-libs/libdrm[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] media-libs/lcms:2[abi_x86_64(-)] media-libs/libass:0/9=[abi_x86_64(-)] media-libs/lilv[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/openal[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] media-libs/rubberband:0/3=[abi_x86_64(-)] media-libs/libsdl2[sound(+),video(+),abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] >=gnome-base/librsvg-2.52:2[abi_x86_64(-)] x11-libs/cairo[abi_x86_64(-)] media-libs/libtheora:0/2=[encode,abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] media-libs/harfbuzz:0/6.0.0=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/libvorbis[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] x11-base/xorg-proto >=sys-kernel/linux-headers-6 media-libs/ladspa-sdk dev-util/opencl-headers dev-util/vulkan-headers
 EAPI: 8
 IUSE: X alsa amf amrenc amr appkit bluray bs2b bzip2 cdio chromaprint codec2 cuda-clang +dav1d +drm fdk flite +fontconfig frei0r fribidi gcrypt gme gmp +gnutls +gpl gsm iec61883 ieee1394 jack jpeg2k jpegxl kvazaar ladspa lame lcms libaom libaribb24 +libass libcaca libilbc libplacebo librtmp libsoxr lv2 lzma modplug nvenc ocr openal opencl opengl openh264 openmpt openssl opus +postproc pulseaudio qsv rabbitmq rav1e rubberband samba sdl shaderc snappy sndio sofa speex srt ssh svg svt-av1 theora +truetype twolame v4l vaapi vdpau vidstab vorbis vpx vulkan webp x264 x265 +xml xvid zeromq zimg +zlib zvbi soc abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~arm64-macos ~x64-macos
 LICENSE: GPL-2+
-MD5: 936214fa9f3655fcfb05cb440da02fb5
-PATH: pkgs-media-video/ffmpeg-compat-6.1.6-6.gpkg.tar
+MD5: 7e74f3c632cd6d2cb716f0003c96a79b
+PATH: pkgs-media-video/ffmpeg-compat-6.1.6-7.gpkg.tar
 PROVIDES: x86_64: libavcodec.so.60 libavdevice.so.60 libavfilter.so.9 libavformat.so.60 libavutil.so.58 libpostproc.so.57 libswresample.so.4 libswscale.so.7
-RDEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXv[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] app-arch/bzip2[abi_x86_64(-)] media-libs/dav1d:0/7=[abi_x86_64(-)] x11-libs/libdrm[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] media-libs/lcms:2[abi_x86_64(-)] media-libs/libass:0/9=[abi_x86_64(-)] media-libs/lilv[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/openal[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] media-libs/rubberband:0/3=[abi_x86_64(-)] media-libs/libsdl2[sound(+),video(+),abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] >=gnome-base/librsvg-2.52:2[abi_x86_64(-)] x11-libs/cairo[abi_x86_64(-)] media-libs/libtheora:0/2=[encode,abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] media-libs/harfbuzz:0/6.0.0=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/libvorbis[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/215=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libGL.so.1 libOpenCL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXv.so.1 libasound.so.2 libass.so.9 libbz2.so.1 libc.so.6 libcairo.so.2 libdav1d.so.7 libdrm.so.2 libfontconfig.so.1 libfreetype.so.6 libglib-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 libharfbuzz.so.0 libjack.so.0 libjxl.so.0.12 libjxl_threads.so.0.12 liblcms2.so.2 liblilv-0.so.0 libm.so.6 libopenal.so.1 libopenjp2.so.7 libpulse.so.0 librsvg-2.so.2 librubberband.so.3 libtheoradec.so.2 libtheoraenc.so.2 libv4l2.so.0 libvorbis.so.0 libvorbisenc.so.2 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.215 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-xfixes.so.0 libxcb.so.1 libxml2.so.16 libz.so.1
-SHA1: 375427aa21a1050fe0d5a54b883855def13f5251
+RDEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXv[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] app-arch/bzip2[abi_x86_64(-)] media-libs/dav1d:0/7=[abi_x86_64(-)] x11-libs/libdrm[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] media-libs/lcms:2[abi_x86_64(-)] media-libs/libass:0/9=[abi_x86_64(-)] media-libs/lilv[abi_x86_64(-)] media-libs/lv2[abi_x86_64(-)] media-libs/openal[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] media-libs/rubberband:0/3=[abi_x86_64(-)] media-libs/libsdl2[sound(+),video(+),abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] >=gnome-base/librsvg-2.52:2[abi_x86_64(-)] x11-libs/cairo[abi_x86_64(-)] media-libs/libtheora:0/2=[encode,abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] media-libs/harfbuzz:0/6.0.0=[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/libvorbis[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+REQUIRES: x86_64: libGL.so.1 libOpenCL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXv.so.1 libasound.so.2 libass.so.9 libbz2.so.1 libc.so.6 libcairo.so.2 libdav1d.so.7 libdrm.so.2 libfontconfig.so.1 libfreetype.so.6 libglib-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 libharfbuzz.so.0 libjack.so.0 libjxl.so.0.12 libjxl_threads.so.0.12 liblcms2.so.2 liblilv-0.so.0 libm.so.6 libopenal.so.1 libopenjp2.so.7 libpulse.so.0 librsvg-2.so.2 librubberband.so.3 libtheoradec.so.2 libtheoraenc.so.2 libv4l2.so.0 libvorbis.so.0 libvorbisenc.so.2 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-xfixes.so.0 libxcb.so.1 libxml2.so.16 libz.so.1
+SHA1: 96b43f5720456964f17e7bc8474d5f92abf3d8ac
 SIZE: 10004480
 SLOT: 6/58.60.60
 USE: X abi_x86_64 alsa amd64 bzip2 dav1d drm elibc_glibc fontconfig gnutls gpl jack jpeg2k jpegxl kernel_linux ladspa lcms libass lv2 openal opencl opengl postproc pulseaudio rubberband sdl svg theora truetype v4l vorbis vulkan webp x264 x265 xml zlib
-MTIME: 1791524974
+MTIME: 1791696085
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

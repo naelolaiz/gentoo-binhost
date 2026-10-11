@@ -242,6 +242,10 @@
    "path": "pkgs-media-gfx/openscad-2026.09.18_pre-1.gpkg.tar"
   },
   {
+   "at": 1791696295,
+   "path": "pkgs-media-libs/avidemux-plugins-2.8.1_p20251019-1.gpkg.tar"
+  },
+  {
    "at": 1791695982,
    "path": "pkgs-media-libs/libheif-1.23.6-1.gpkg.tar"
   },
@@ -260,6 +264,10 @@
   {
    "at": 1791526134,
    "path": "pkgs-media-video/ffmpeg-compat-6.1.6-5.gpkg.tar"
+  },
+  {
+   "at": 1791696295,
+   "path": "pkgs-media-video/ffmpeg-compat-6.1.6-6.gpkg.tar"
   },
   {
    "at": 1791612211,
