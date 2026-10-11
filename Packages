@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791696295
-PACKAGES: 1271
+TIMESTAMP: 1791696607
+PACKAGES: 1274
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2015,6 +2015,27 @@ SHA1: a1c32fcc58323f8865418c26df283e8566027423
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791102456
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14[xml(+),threads(+)] >=dev-build/meson-1.2.1-r1 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1791696468
+CPV: app-portage/gentoolkit-0.8.2
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: >=sys-apps/portage-3.0.57[python_targets_python3_14(-)]
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2
+MD5: 526eac74339322d240c1285f031b8ebd
+PATH: pkgs-app-portage/gentoolkit-0.8.2-1.gpkg.tar
+RDEPEND: >=sys-apps/portage-3.0.57[python_targets_python3_14(-)] dev-lang/python:3.14[xml(+),threads(+)] app-alternatives/awk sys-apps/gentoo-functions virtual/tmpfiles
+RESTRICT: test
+SHA1: 066d5d97845ec332088b86b7fcc8643cedc73ef6
+SIZE: 3543040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791696470
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6929,6 +6950,27 @@ MTIME: 1791278287
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791696424
+CPV: dev-python/python-discovery-1.6.2
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: acd5526a8c1789e8d4db8699489c29a2
+PATH: pkgs-dev-python/python-discovery-1.6.2-1.gpkg.tar
+RDEPEND: >=dev-python/filelock-3.16.1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 3cc26b69456ceea13f3672cf2a39291f71731dc4
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791696425
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791282852
@@ -7293,6 +7335,27 @@ SHA1: 207e4b890f25b64c9668537912f7b4c3867cc2df
 SIZE: 174080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791278000
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791696417
+CPV: dev-python/soupsieve-3.0.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: f2769a60f4531ccaa17681c128423b67
+PATH: pkgs-dev-python/soupsieve-3.0.1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: dab699fce497642a9799fc26763c6e1655c16810
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1791696419
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
