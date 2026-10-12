@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791696915
-PACKAGES: 1274
+TIMESTAMP: 1791778034
+PACKAGES: 1275
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2056,6 +2056,27 @@ SHA1: dff085c08fec6cd0ceea494f2acddb3c194c8822
 SIZE: 2252800
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux net nls readline
 MTIME: 1791057931
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1791777900
+CPV: app-shells/bash-5.3_p20-r1
+DEFINED_PHASES: compile configure install postinst preinst prepare setup test unpack
+DEPEND: >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl >=sys-libs/readline-8.3:0/8=
+EAPI: 8
+IUSE: afs bashlogger examples mem-scramble +net nls plugins pgo +readline verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+
+MD5: 2d8bcdf2e9e174dd6a90612482be135c
+PATH: pkgs-app-shells/bash-5.3_p20-r1-1.gpkg.tar
+RDEPEND: >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl >=sys-libs/readline-8.3:0/8= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "5ab8824f772a5c6146f7dca7d610bcd3324684f4"}
+REQUIRES: x86_64: libc.so.6 libreadline.so.8 libtinfo.so.6
+SHA1: 0f70ff97368aa2a2d3d10fdbda6ed5f5f3efdba6
+SIZE: 2273280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux net nls readline
+MTIME: 1791777902
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
