@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791781073
-PACKAGES: 1280
+TIMESTAMP: 1791781380
+PACKAGES: 1281
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6286,6 +6286,31 @@ SIZE: 10833920
 SLOT: 0/2
 USE: abi_x86_64 amd64 cpu_flags_x86_avx2 cpu_flags_x86_sse4_2 cpudetection elibc_glibc kernel_linux lapack python_targets_python3_14
 MTIME: 1791264729
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=virtual/cblas-3.8 >=virtual/lapack-3.8 >=dev-build/meson-1.5.2 >=dev-python/cython-3.1.0[python_targets_python3_14(-)] virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/meson-python[python_targets_python3_14(-)] virtual/fortran
+BUILD_ID: 1
+BUILD_TIME: 1791781197
+CPV: dev-python/numpy-2.5.4
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: dev-lang/python:3.14[threads(+)] virtual/fortran
+EAPI: 8
+IUSE: big-endian +cpudetection index64 +lapack cpu_flags_arm_neon cpu_flags_arm_neon-fp16 cpu_flags_arm_vfpv4 cpu_flags_arm_asimd cpu_flags_arm_asimdhp cpu_flags_arm_asimddp cpu_flags_arm_asimdfhm cpu_flags_arm_sve cpu_flags_ppc_vsx cpu_flags_ppc_vsx2 cpu_flags_ppc_vsx3 cpu_flags_ppc_vsx4 cpu_flags_x86_avx2 cpu_flags_x86_avx512bw cpu_flags_x86_avx512dq cpu_flags_x86_avx512vl cpu_flags_x86_avx512_bf16 cpu_flags_x86_avx512_bitalg cpu_flags_x86_avx512_fp16 cpu_flags_x86_avx512_vbmi2 cpu_flags_x86_sse4_2 test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: BSD 0BSD MIT ZLIB CC0-1.0
+MD5: ff29e3276e1147a2a0974e952af30281
+PATH: pkgs-dev-python/numpy-2.5.4-1.gpkg.tar
+PROVIDES: x86_64: _bounded_integers.cpython-314-x86_64-linux-gnu.so _common.cpython-314-x86_64-linux-gnu.so _generator.cpython-314-x86_64-linux-gnu.so _mt19937.cpython-314-x86_64-linux-gnu.so _multiarray_tests.cpython-314-x86_64-linux-gnu.so _multiarray_umath.cpython-314-x86_64-linux-gnu.so _operand_flag_tests.cpython-314-x86_64-linux-gnu.so _pcg64.cpython-314-x86_64-linux-gnu.so _philox.cpython-314-x86_64-linux-gnu.so _pocketfft_umath.cpython-314-x86_64-linux-gnu.so _rational_tests.cpython-314-x86_64-linux-gnu.so _sfc64.cpython-314-x86_64-linux-gnu.so _simd.cpython-314-x86_64-linux-gnu.so _struct_ufunc_tests.cpython-314-x86_64-linux-gnu.so _umath_linalg.cpython-314-x86_64-linux-gnu.so _umath_tests.cpython-314-x86_64-linux-gnu.so bit_generator.cpython-314-x86_64-linux-gnu.so lapack_lite.cpython-314-x86_64-linux-gnu.so mtrand.cpython-314-x86_64-linux-gnu.so
+RDEPEND: >=virtual/cblas-3.8 >=virtual/lapack-3.8 dev-lang/python:3.14[threads(+)] virtual/fortran >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "5ab8824f772a5c6146f7dca7d610bcd3324684f4"}
+REQUIRES: x86_64: libc.so.6 libcblas.so.3 libgcc_s.so.1 liblapack.so.3 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 29e41076f59b0fd5434bfcbe14621f55f394e617
+SIZE: 10905600
+SLOT: 0/2
+USE: abi_x86_64 amd64 cpu_flags_x86_avx2 cpu_flags_x86_sse4_2 cpudetection elibc_glibc kernel_linux lapack python_targets_python3_14
+MTIME: 1791781201
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
