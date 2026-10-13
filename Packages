@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1791866290
-PACKAGES: 1295
+TIMESTAMP: 1791866360
+PACKAGES: 1296
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8735,24 +8735,23 @@ MTIME: 1791285854
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-lang/go-1.27.0 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip
-BUILD_ID: 1
-BUILD_TIME: 1791446142
+BDEPEND: >=dev-lang/go-1.27.0 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip
+BUILD_ID: 2
+BUILD_TIME: 1791866261
 CPV: dev-util/github-cli-2.102.0
 DEFINED_PHASES: compile configure install unpack
 EAPI: 9
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv
 LICENSE: MIT Apache-2.0 BSD BSD-2 ISC MIT MPL-2.0 Unlicense
-MD5: 721ab1bcfa85c26aaedb3a0b8bc6fe92
-PATH: pkgs-dev-util/github-cli-2.102.0-1.gpkg.tar
-RDEPEND: >=dev-vcs/git-1.7.3 >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "225811459439ecc2b41cd0a01ac8c3a2490a61b8"}
+MD5: b77a29ecd13b1e364d61800b775fa890
+PATH: pkgs-dev-util/github-cli-2.102.0-2.gpkg.tar
+RDEPEND: >=dev-vcs/git-1.7.3 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6
 RESTRICT: test
-SHA1: e7ec4684615f547f431e3a4dea3cde7d02271c37
-SIZE: 15011840
+SHA1: a37f9b336ed7a7058aedde26c39db5b198515b1d
+SIZE: 15022080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791446150
+MTIME: 1791866268
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -9437,23 +9436,23 @@ MTIME: 1791147488
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-lang/go-1.25.0 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip
-BUILD_ID: 1
-BUILD_TIME: 1791285961
+BDEPEND: >=dev-lang/go-1.25.0 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip
+BUILD_ID: 2
+BUILD_TIME: 1791866198
 CPV: dev-vcs/git-lfs-3.8.0
 DEFINED_PHASES: compile install postinst test unpack
 EAPI: 8
 IUSE: doc test
 KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
 LICENSE: Apache-2.0 BSD BSD-2 BSD-4 ISC MIT
-MD5: f10d2b9c13a6301debd40eb81ed13171
-PATH: pkgs-dev-vcs/git-lfs-3.8.0-1.gpkg.tar
-RDEPEND: dev-vcs/git >=sys-libs/glibc-2.43-r2
+MD5: 835fc1e8178d77131af2f728b439abc5
+PATH: pkgs-dev-vcs/git-lfs-3.8.0-2.gpkg.tar
+RDEPEND: dev-vcs/git >=sys-libs/glibc-2.43-r4
 RESTRICT: test
-SHA1: 7c30fab648a53600841c8592591a03552d2b36d8
-SIZE: 5775360
+SHA1: 2bd83f45ec29913a525fadd16280e0074ebe9013
+SIZE: 5785600
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791285962
+MTIME: 1791866200
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -9475,6 +9474,28 @@ SHA1: abc091f2fcb1e4370a1dd47d7616c4249971b27a
 SIZE: 409600
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1791285998
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-apps/coreutils[-multicall] dev-lang/python:3.14[sqlite] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1791866275
+CPV: dev-vcs/pre-commit-4.7.0
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: dev-lang/python:3.14[sqlite]
+EAPI: 8
+IUSE: test python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64 ~hppa ~ppc ~ppc64 ~x86
+LICENSE: MIT
+MD5: b20dabc60e09392d875a04a1f511ab03
+PATH: pkgs-dev-vcs/pre-commit-4.7.0-1.gpkg.tar
+RDEPEND: dev-vcs/git >=dev-python/cfgv-2.0.0[python_targets_python3_14(-)] >=dev-python/identify-1.0.0[python_targets_python3_14(-)] >=dev-python/nodeenv-0.11.1[python_targets_python3_14(-)] >=dev-python/pyyaml-5.1[python_targets_python3_14(-)] >=dev-python/virtualenv-20.10.0[python_targets_python3_14(-)] dev-lang/python:3.14[sqlite]
+REPO_REVISIONS: {"gentoo": "4696089e782c20b5f0c04952f6698d6a8cc1acb4"}
+RESTRICT: test
+SHA1: 62c4e69d07d1b41b8cb1cb2da7767c353e71c966
+SIZE: 409600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1791866276
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
