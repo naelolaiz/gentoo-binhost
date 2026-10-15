@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792036928
-PACKAGES: 1304
+TIMESTAMP: 1792037235
+PACKAGES: 1305
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -27191,6 +27191,30 @@ SHA1: 4ee82ad5f78366578ebee5b943529d7a011e28ba
 SIZE: 4331520
 USE: abi_x86_64 amd64 elibc_glibc ipc kernel_linux native-extensions python_targets_python3_14 rsync-verify xattr
 MTIME: 1791694488
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14[bzip2(+),threads(+)] >=app-arch/tar-1.27 >=dev-build/meson-1.3.0-r1 >=sys-apps/sed-4.0.5 sys-devel/patch dev-lang/python:3.14[ssl(+)] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1792036876
+CPV: sys-apps/portage-3.0.83-r1
+DEFINED_PHASES: compile configure install postinst preinst prepare pretend setup test
+EAPI: 8
+IUSE: apidoc build doc gentoo-dev +ipc +native-extensions +rsync-verify selinux test xattr python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: 5a15a60c9f4af229d2e484da26b62535
+PATH: pkgs-sys-apps/portage-3.0.83-r1-1.gpkg.tar
+PDEPEND: >=net-misc/rsync-2.6.4 >=sys-apps/coreutils-6.4 >=sys-apps/file-5.44-r3
+PROVIDES: x86_64: _parser.cpython-314-x86_64-linux-gnu.so _whirlpool.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-lang/python:3.14[bzip2(+),threads(+)] >=acct-user/portage-0-r4 >=app-arch/tar-1.27 app-arch/zstd >=app-misc/pax-utils-0.1.17 dev-lang/python-exec:2 >=sys-apps/baselayout-2.9 >=sys-apps/findutils-4.9 >=app-admin/eselect-1.2 app-portage/getuto >=app-shells/bash-5.3:0 dev-util/debugedit >=sec-keys/openpgp-keys-gentoo-release-20240703 >=sys-apps/sed-4.0.5 app-alternatives/gpg[ssl(-)] >=app-portage/gemato-14.5[python_targets_python3_14(-)] sys-apps/util-linux >=sys-apps/sandbox-2.2 >=sys-apps/install-xattr-0.3 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "fd22ede8b33076059979caa504293d24d64841b8"}
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 8019bfc87710694d72f4284a2ed3402557ddd93e
+SIZE: 4331520
+USE: abi_x86_64 amd64 elibc_glibc ipc kernel_linux native-extensions python_targets_python3_14 rsync-verify xattr
+MTIME: 1792036879
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
