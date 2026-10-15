@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792043592
-PACKAGES: 1310
+TIMESTAMP: 1792043720
+PACKAGES: 1311
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -800,6 +800,29 @@ SHA1: f5430a45ef65e23b09136046f4433a774a4e1924
 SIZE: 33648640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux seccomp
 MTIME: 1791866071
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-go/go-md2man >=dev-lang/go-1.26.0 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1792043632
+CPV: app-containers/podman-6.1.4
+DEFINED_PHASES: compile install postinst prepare setup unpack
+DEPEND: app-containers/catatonit >=app-containers/conmon-2.1.10 >=app-containers/container-libs-0.68.0[extra(-)] app-crypt/gpgme:1/45.0= dev-db/sqlite:3 dev-libs/libassuan:0/3.0= dev-libs/libgpg-error:0/0= sys-apps/shadow:0/6= sys-libs/libseccomp:0/0=
+EAPI: 8
+IUSE: apparmor btrfs cron +seccomp selinux systemd wrapper
+KEYWORDS: ~amd64 ~arm64 ~loong ~riscv
+LICENSE: Apache-2.0 BSD BSD-2 CC-BY-SA-4.0 ISC MIT MPL-2.0
+MD5: f02f1e2dd81a6fe7e47619161cb64fd8
+PATH: pkgs-app-containers/podman-6.1.4-1.gpkg.tar
+RDEPEND: app-containers/catatonit >=app-containers/conmon-2.1.10 >=app-containers/container-libs-0.68.0[extra(-)] app-crypt/gpgme:1/45.0= dev-db/sqlite:3 dev-libs/libassuan:0/3.0= dev-libs/libgpg-error:0/0= sys-apps/shadow:0/6= sys-libs/libseccomp:0/0= virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "fd22ede8b33076059979caa504293d24d64841b8"}
+REQUIRES: x86_64: libc.so.6 libgpgme.so.45 libseccomp.so.2 libsqlite3.so.0 libsubid.so.6
+RESTRICT: test
+SHA1: ac9ca428e8957e9506ed2363924274cf94ff457b
+SIZE: 33689600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux seccomp
+MTIME: 1792043636
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
