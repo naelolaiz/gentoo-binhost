@@ -24,6 +24,9 @@ dev-python/pyside uitools
 media-video/ffmpeg bluray lame libaom liblc3 lzma ocr opencl openh264 opus rav1e svt-av1
 media-video/pipewire extra gsettings gstreamer jack-client loudness pipewire-alsa
 media-video/mpv bluray cdda dvd dvb gamepad jack jpeg lcms openal pipewire pulseaudio rubberband tools wayland xv
+# Browser sources, scripting, remote control, SRT/RIST output.  Its Lua
+# scripting supports LuaJIT only.
+media-video/obs-studio browser lua lua_single_target_luajit mpegts python speex websocket
 media-libs/libde265 dec265 enc265 tools
 media-libs/libheif ffmpeg gdk-pixbuf openh264 tools
 media-libs/mesa video_cards_intel video_cards_radeon video_cards_nouveau -opencl

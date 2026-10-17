@@ -129,6 +129,7 @@ media-sound/gigedit
 media-sound/kmidimon
 media-sound/mhwaveedit
 media-sound/pavucontrol
+media-sound/qpwgraph
 media-sound/sonic-visualiser
 media-sound/timidity++
 
@@ -138,7 +139,10 @@ media-gfx/gnofract4d
 media-gfx/quat
 media-libs/avidemux-plugins
 media-libs/exiftool
+media-plugins/obs-pipewire-audio-capture
+media-plugins/obs-source-record
 media-video/mpv
+media-video/obs-studio
 media-video/smplayer
 x11-misc/xaos
 
