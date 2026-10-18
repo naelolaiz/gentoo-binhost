@@ -281,6 +281,10 @@
  "schema": 1,
  "superseded": [
   {
+   "at": 1792316925,
+   "path": "pkgs-app-containers/aardvark-dns-2.1.0-1.gpkg.tar"
+  },
+  {
    "at": 1791866290,
    "path": "pkgs-app-containers/podman-6.1.2-1.gpkg.tar"
   },
