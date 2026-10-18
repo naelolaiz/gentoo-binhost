@@ -309,6 +309,10 @@
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.18-1.gpkg.tar"
   },
   {
+   "at": 1792320575,
+   "path": "pkgs-app-emulation/virtualbox-modules-7.2.18-2.gpkg.tar"
+  },
+  {
    "at": 1792317244,
    "path": "pkgs-app-misc/task-3.4.2-1.gpkg.tar"
   },
@@ -345,6 +349,10 @@
    "path": "pkgs-dev-util/gource-0.55-1.gpkg.tar"
   },
   {
+   "at": 1792320575,
+   "path": "pkgs-dev-util/kdevelop-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1791437501,
    "path": "pkgs-dev-util/schroot-1.6.13_p7-r2-1.gpkg.tar"
   },
@@ -365,8 +373,16 @@
    "path": "pkgs-kde-apps/dolphin-26.08.2-1.gpkg.tar"
   },
   {
+   "at": 1792320575,
+   "path": "pkgs-kde-apps/kalgebra-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1792318477,
    "path": "pkgs-kde-misc/kclock-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1792320575,
+   "path": "pkgs-kde-misc/kweather-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1791614672,
