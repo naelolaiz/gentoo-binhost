@@ -281,6 +281,10 @@
  "schema": 1,
  "superseded": [
   {
+   "at": 1792318477,
+   "path": "pkgs-app-antivirus/clamav-1.5.4-1.gpkg.tar"
+  },
+  {
    "at": 1792316925,
    "path": "pkgs-app-containers/aardvark-dns-2.1.0-1.gpkg.tar"
   },
@@ -359,6 +363,10 @@
   {
    "at": 1791618661,
    "path": "pkgs-kde-apps/dolphin-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1792318477,
+   "path": "pkgs-kde-misc/kclock-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1791614672,

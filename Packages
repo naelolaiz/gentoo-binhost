@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792317244
-PACKAGES: 1448
+TIMESTAMP: 1792318477
+PACKAGES: 1454
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -490,9 +490,9 @@ MTIME: 1792308815
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.87.0:* >=dev-lang/rust-1.87.0:* ) app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791620709
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.90.0:* >=dev-lang/rust-1.90.0:* ) app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1792317223
 CPV: app-antivirus/clamav-1.5.4
 DEFINED_PHASES: compile configure install postinst prepare setup test unpack
 DEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/3= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack
@@ -500,17 +500,17 @@ EAPI: 8
 IUSE: doc clamonacc +clamapp experimental libclamav-only milter rar selinux +system-mspack systemd test debug
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: Apache-2.0 BSD BSD-2 GPL-2 ISC MIT UoI-NCSA ZLIB public-domain MPL-2.0 Unicode-3.0
-MD5: 035a87eff4a888dc0d5448e757e47fca
-PATH: pkgs-app-antivirus/clamav-1.5.4-1.gpkg.tar
+MD5: 85342d7c06cc5051d259de47e41e362f
+PATH: pkgs-app-antivirus/clamav-1.5.4-2.gpkg.tar
 PROVIDES: x86_64: libclamav.so.12 libfreshclam.so.4
-RDEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/3= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack virtual/tmpfiles >=sys-libs/glibc-2.43-r2
+RDEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/3= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack virtual/tmpfiles >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.3 libcurl.so.4 libgcc_s.so.1 libjson-c.so.5 libm.so.6 libmspack.so.0 libncurses.so.6 libpcre2-8.so.0 libssl.so.3 libtinfo.so.6 libxml2.so.16 libz.so.1
 RESTRICT: test
-SHA1: e3fc4307b5333630d6ad55177a657405e1238cf5
-SIZE: 30494720
+SHA1: 815ec36753c726770993b3525ec5e7a8871d61e8
+SIZE: 30986240
 SLOT: 0/sts
 USE: abi_x86_64 amd64 clamapp elibc_glibc kernel_linux system-mspack
-MTIME: 1791620716
+MTIME: 1792317229
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1351,6 +1351,29 @@ SHA1: eb5644270c2cd7aa4a0245fe0e334c64d423cf3c
 SIZE: 2396160
 USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1791620286
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 virtual/pkgconfig sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1792317398
+CPV: app-editors/gvim-9.2.1202
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: ~app-editors/vim-core-9.2.1202 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland x11-base/xorg-proto
+EAPI: 8
+IUSE: acl crypt cscope debug gtk4 images lua minimal motif netbeans nls +pango perl python racket ruby selinux session sound tcl wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: 5de893d36a2006b8ef01d30970865552
+PATH: pkgs-app-editors/gvim-9.2.1202-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: ~app-editors/vim-core-9.2.1202 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+RESTRICT: test
+SHA1: d85baf6ca3731728324b41d451b99d01e7ec17b4
+SIZE: 2498560
+USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1792317400
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7996,6 +8019,26 @@ MTIME: 1791437317
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/setuptools-scm[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792317243
+CPV: dev-python/pyqt-builder-1.20.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD-2
+MD5: 84932e154b19206839dcad36a0adad88
+PATH: pkgs-dev-python/pyqt-builder-1.20.1-1.gpkg.tar
+RDEPEND: dev-python/packaging[python_targets_python3_14(-)] >=dev-python/sip-6.7[python_targets_python3_14(-)] dev-lang/python:3.14
+SHA1: 5be7acf47e1c5151a4780c316f324c8c52351ff9
+SIZE: 143360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792317244
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/pyqt-builder-1.19[python_targets_python3_14(-)] >=dev-python/sip-6.15[python_targets_python3_14(-)] >=dev-qt/qtbase-6.11:6 virtual/pkgconfig dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/sip[python_targets_python3_14(-)]
 BUILD_ID: 7
 BUILD_TIME: 1791312519
@@ -8122,6 +8165,27 @@ SHA1: 3cc26b69456ceea13f3672cf2a39291f71731dc4
 SIZE: 163840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791696425
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792317239
+CPV: dev-python/python-discovery-1.6.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 55f160cd31482a17441aa4199dbabd48
+PATH: pkgs-dev-python/python-discovery-1.6.3-1.gpkg.tar
+RDEPEND: >=dev-python/filelock-3.16.1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: e18a5a2c08dcfdeb489d7ab6eb722a39249127d0
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792317240
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21157,25 +21221,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1791544589
+BUILD_ID: 2
+BUILD_TIME: 1792318145
 CPV: kde-misc/kclock-26.08.2
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/7= >=dev-libs/plasma-wayland-protocols-1.8 >=dev-libs/wayland-protocols-1.21 dev-qt/qtbase:6
+DEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/8= >=dev-libs/plasma-wayland-protocols-1.8 >=dev-libs/wayland-protocols-1.21 dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: debug
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
 LICENSE: CC0-1.0 CC-BY-4.0 GPL-2+ GPL-3+ LGPL-2.1+
-MD5: 478e4821274e480461e385fa2d2c3630
-PATH: pkgs-kde-misc/kclock-26.08.2-1.gpkg.tar
+MD5: 2f7d6af38838db8091ec532e0e2deddb
+PATH: pkgs-kde-misc/kclock-26.08.2-2.gpkg.tar
 PROVIDES: x86_64: org.kde.plasma.kclock_1x2.so
-RDEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/7= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6JobWidgets.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6Svg.so.6 libKF6WindowSystem.so.6 libPlasma.so.7 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
-SHA1: ce3822f13e95b1dd9ca40b5f6559ae7f43dbce4c
-SIZE: 788480
+RDEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/8= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6JobWidgets.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6Svg.so.6 libKF6WindowSystem.so.6 libPlasma.so.8 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
+SHA1: 40071983867776063fc595936d32954a680388b5
+SIZE: 798720
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791544590
+MTIME: 1792318146
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27101,6 +27165,28 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-qt/qttools:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792317840
+CPV: media-sound/qpwgraph-1.0.2
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: dev-qt/qtbase:6[gui,network,widgets,xml] dev-qt/qtsvg:6 media-video/pipewire:0/0.4= media-libs/alsa-lib
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: alsa
+KEYWORDS: ~amd64
+LICENSE: GPL-2
+MD5: 4a4f8736bdba872d7d81b065eb80a0be
+PATH: pkgs-media-sound/qpwgraph-1.0.2-1.gpkg.tar
+RDEPEND: dev-qt/qtbase:6[gui,network,widgets,xml] dev-qt/qtsvg:6 media-video/pipewire:0/0.4= media-libs/alsa-lib >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libasound.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libpipewire-0.3.so.0 libstdc++.so.6
+SHA1: ab6803716fc912b1c1c7a62cd82b6ccadce809f0
+SIZE: 368640
+USE: abi_x86_64 alsa amd64 elibc_glibc kernel_linux
+MTIME: 1792317841
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 3
 BUILD_TIME: 1791251201
 CPV: media-sound/qsynth-1.0.2-r1
@@ -27416,6 +27502,29 @@ SIZE: 2969600
 SLOT: 0/2
 USE: X abi_x86_64 alsa amd64 bluray cdda cli drm dvb dvd egl elibc_glibc gamepad iconv jack jpeg kernel_linux lcms libmpv lua lua_single_target_luajit openal pipewire pulseaudio python_single_target_python3_14 rubberband tools uchardet vulkan wayland xv zlib
 MTIME: 1791286811
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: kde-frameworks/extra-cmake-modules:0 dev-lang/swig dev-lang/swig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792318351
+CPV: media-video/obs-studio-32.2.2
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.2=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +alsa browser decklink fdk jack lua mpegts nvenc pulseaudio python qsv screencast sndio speex test-input truetype v4l vlc wayland websocket +lua_single_target_luajit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: Boost-1.0 GPL-2+ MIT Unlicense
+MD5: ba262e7d0a6cc59da17c15b040b8fc50
+PATH: pkgs-media-video/obs-studio-32.2.2-1.gpkg.tar
+PROVIDES: x86_64: _obspython.so frontend-tools.so image-source.so libEGL.so libGLESv2.so libcef.so libobs-frontend-api.so.30 libobs-opengl.so.30 libobs-scripting.so.30 libobs.so.30 libvk_swiftshader.so libvulkan.so.1 linux-alsa.so linux-capture.so linux-jack.so linux-pipewire.so linux-pulseaudio.so linux-v4l2.so obs-browser.so obs-ffmpeg.so obs-filters.so obs-outputs.so obs-transitions.so obs-vst.so obs-websocket.so obs-x264.so obslua.so rtmp-services.so text-freetype2.so
+RDEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.2=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libEGL.so.1 libGLX.so.0 libOpenGL.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libX11-xcb.so.1 libX11.so.6 libXcomposite.so.1 libXdamage.so.1 libXext.so.6 libXfixes.so.3 libXrandr.so.2 libasound.so.2 libatk-1.0.so.0 libatk-bridge-2.0.so.0 libatspi.so.0 libavcodec.so.62 libavdevice.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libcups.so.2 libcurl.so.4 libdbus-1.so.3 libdl.so.2 libdrm.so.2 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjack.so.0 libjansson.so.4 libluajit-5.1.so.2 libm.so.6 libmbedcrypto-3.so.16 libmbedtls-3.so.21 libmbedx509-3.so.7 libnspr4.so libnss3.so libnssutil3.so libpci.so.3 libpipewire-0.3.so.0 libpthread.so.0 libpulse.so.0 libpython3.14.so.1.0 libqrcodegencpp.so.1 librist.so.4 librnnoise.so.0 libsmime3.so libspeexdsp.so.1 libsrt.so.1.5 libstdc++.so.6 libswresample.so.6 libswscale.so.9 libudev.so.1 libuuid.so.1 libv4l2.so.0 libva-drm.so.2 libva.so.2 libwayland-client.so.0 libwayland-egl.so.1 libx264.so.164 libxcb-composite.so.0 libxcb-randr.so.0 libxcb-shm.so.0 libxcb-xfixes.so.0 libxcb-xinerama.so.0 libxcb-xinput.so.0 libxcb.so.1 libxkbcommon.so.0 libz.so.1
+SHA1: 00767a7699bff313096d86952ed68197ef37cc18
+SIZE: 128655360
+USE: abi_x86_64 alsa amd64 browser elibc_glibc jack kernel_linux lua lua_single_target_luajit mpegts pulseaudio python python_single_target_python3_14 screencast speex truetype v4l wayland websocket
+MTIME: 1792318358
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29606,6 +29715,28 @@ SHA1: 722b37c2773a08c9eb53670e68301ea2cbd776c8
 SIZE: 16343040
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791865944
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792317756
+CPV: sci-ml/ollama-0.40.5
+DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
+DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.27.0=
+EAPI: 8
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: fb49dc615970b8da2c7a853880dcf4c7
+PATH: pkgs-sci-ml/ollama-0.40.5-1.gpkg.tar
+PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
+RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.27.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
+RESTRICT: mirror test
+SHA1: dca7be005ce60b0b10970c04796fd12a3296f47b
+SIZE: 16629760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792317760
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
