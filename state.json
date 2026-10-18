@@ -1,4 +1,12 @@
 {
+ "continue": {
+  "idle": 0,
+  "image": "gentoo/stage3@sha256:7d0d089b2a67a93be30802a638c8ac4a82346cd06f9e0f030b3f73c09e36e2f6",
+  "streak": 1,
+  "tiers": "",
+  "tree_date": "20261017",
+  "updated": 1792311771
+ },
  "gone": {
   "app-accessibility/kontrast-26.08.1": 1791624491,
   "app-admin/kio-admin-26.08.1": 1791624491,
