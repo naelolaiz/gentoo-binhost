@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792308036
-PACKAGES: 1400
+TIMESTAMP: 1792311107
+PACKAGES: 1425
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -464,6 +464,29 @@ SHA1: 326a4fef06ae931e4ae6199d06c0ec821ff8c18b
 SIZE: 2211840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls pam secure-path sendmail ssl
 MTIME: 1791624432
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/docbook-xml-dtd:4.1.2 >=app-text/xmlto-0.0.22 dev-perl/XML-Parser dev-util/desktop-file-utils >=sys-devel/gettext-0.20 virtual/pkgconfig dev-lang/python:3.14[xml(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)] virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792308814
+CPV: app-admin/system-config-printer-1.5.18-r3
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: dev-libs/glib:2 net-print/cups[dbus] virtual/libusb:1 >=virtual/udev-172 x11-libs/gtk+:3[introspection] x11-libs/libnotify[introspection] x11-libs/pango[introspection] dev-lang/python:3.14[xml(+)]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: keyring policykit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha amd64 ~arm arm64 ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2+
+MD5: f24ce5ab5eec478de4f37d97b93de04e
+PATH: pkgs-app-admin/system-config-printer-1.5.18-r3-1.gpkg.tar
+RDEPEND: dev-libs/glib:2 net-print/cups[dbus] virtual/libusb:1 >=virtual/udev-172 x11-libs/gtk+:3[introspection] x11-libs/libnotify[introspection] x11-libs/pango[introspection] dev-python/dbus-python[python_targets_python3_14(-)] dev-python/pycairo[python_targets_python3_14(-)] dev-python/pycups[python_targets_python3_14(-)] dev-python/pygobject:3[python_targets_python3_14(-)] dev-python/requests[python_targets_python3_14(-)] dev-python/urllib3[python_targets_python3_14(-)] net-print/cups-pk-helper dev-lang/python:3.14[xml(+)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcups.so.2 libglib-2.0.so.0 libudev.so.1 libusb-1.0.so.0
+RESTRICT: test
+SHA1: 17ce7cf66e83404d22d8f5983209bdcaf9341f77
+SIZE: 1792000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux policykit python_single_target_python3_14
+MTIME: 1792308815
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1396,6 +1419,28 @@ SHA1: 577a4010aca830292df59769c0da944e24806ba9
 SIZE: 2201600
 USE: X abi_x86_64 acl amd64 crypt elibc_glibc gpm kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1791617621
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1792308923
+CPV: app-editors/vim-9.2.1202
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl sys-apps/acl x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= >=sys-libs/gpm-1.19.3 ~app-editors/vim-core-9.2.1202 media-libs/libcanberra dev-libs/wayland x11-libs/libXt x11-base/xorg-proto
+EAPI: 8
+IUSE: X acl crypt cscope debug gpm images lua minimal nls pango perl python racket ruby selinux sound tcl terminal vim-pager wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: 263ce1bb94c9de88c1fdd2ea0d8f222c
+PATH: pkgs-app-editors/vim-9.2.1202-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl sys-apps/acl x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= >=sys-libs/gpm-1.19.3 ~app-editors/vim-core-9.2.1202 media-libs/libcanberra dev-libs/wayland x11-libs/libXt >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libICE.so.6 libSM.so.6 libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgpm.so.1 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+SHA1: 05ed50ce99ccab43ec26f3ac45a53cb512407814
+SIZE: 2293760
+USE: X abi_x86_64 acl amd64 crypt elibc_glibc gpm kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1792308926
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5870,9 +5915,9 @@ MTIME: 1791278618
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-python/setuptools-61[python_targets_python3_14(-)] dev-python/setuptools-rust[python_targets_python3_14(-)] >=dev-python/setuptools-scm-6.4[python_targets_python3_14(-)] || ( >=dev-lang/rust-bin-1.85.0:* >=dev-lang/rust-1.85.0:* ) dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791226351
+BDEPEND: >=dev-python/setuptools-61[python_targets_python3_14(-)] dev-python/setuptools-rust[python_targets_python3_14(-)] >=dev-python/setuptools-scm-6.4[python_targets_python3_14(-)] || ( >=dev-lang/rust-bin-1.90.0:* >=dev-lang/rust-1.90.0:* ) dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1792307870
 CPV: dev-python/cbor2-6.1.5
 DEFINED_PHASES: compile configure install prepare setup test unpack
 DEPEND: dev-lang/python:3.14
@@ -5880,16 +5925,16 @@ EAPI: 8
 IUSE: test debug python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug verify-provenance
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: MIT Apache-2.0-with-LLVM-exceptions MIT Unicode-3.0
-MD5: 1540340f6cffa0fa1dfe1df7a08694c4
-PATH: pkgs-dev-python/cbor2-6.1.5-1.gpkg.tar
+MD5: 4adbb2eb8769945e7793bac6770f34e8
+PATH: pkgs-dev-python/cbor2-6.1.5-2.gpkg.tar
 PROVIDES: x86_64: _cbor2.cpython-314-x86_64-linux-gnu.so
-RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
+RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6
 RESTRICT: test
-SHA1: 7e9669992f1461d3ae3fe0e647d5687601481927
+SHA1: 8df61305c5909febb497c5a3396b1b384ade570c
 SIZE: 450560
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791226354
+MTIME: 1792307872
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8998,6 +9043,30 @@ SIZE: 163840
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux ssl
 MTIME: 1791145050
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792307917
+CPV: dev-qt/qtimageformats-6.11.2
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.2:6[gui] media-libs/libwebp:0/7= media-libs/tiff:0/6= media-libs/libmng:0/2=
+EAPI: 8
+IUSE: mng custom-cflags test
+KEYWORDS: amd64 arm arm64 ~hppa ~loong ppc64 ~riscv x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 7f78b3140fd734f6b51378d386738b3b
+PATH: pkgs-dev-qt/qtimageformats-6.11.2-1.gpkg.tar
+PROVIDES: x86_64: libqicns.so libqmng.so libqtga.so libqtiff.so libqwbmp.so libqwebp.so
+RDEPEND: ~dev-qt/qtbase-6.11.2:6[gui] media-libs/libwebp:0/7= media-libs/tiff:0/6= media-libs/libmng:0/2= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libmng.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3
+RESTRICT: test
+SHA1: 2a4852a2c3818068b3bc8a6f3fecf5e381530f0f
+SIZE: 102400
+SLOT: 6/6.11.2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux mng
+MTIME: 1792307918
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21141,6 +21210,31 @@ MTIME: 1792299282
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792308802
+CPV: kde-plasma/bluedevil-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/bluez-qt-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 8f5ebe52f81231d8c155b7dbb139bdfd
+PATH: pkgs-kde-plasma/bluedevil-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: bluedevil.so kcm_bluetooth.so kio_bluetooth.so kio_obexftp.so libbluedevilcomponents.so libbluetoothplugin.so org.kde.plasma.bluetooth.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/bluez-qt-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= >=kde-frameworks/kirigami-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/bluedevil:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6BluezQt.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libPlasma.so.8 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 44ca4bbf4aa44e17c14d69bd41bc5a91cf9bb3f9
+SIZE: 860160
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1792308804
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
 BUILD_ID: 1
 BUILD_TIME: 1792298133
@@ -21200,6 +21294,51 @@ SIZE: 2191360
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792305523
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/sassc || ( ( dev-lang/python:3.15 dev-python/pycairo[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/pycairo[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/pycairo[python_targets_python3_12(-)] ) ) >=kde-plasma/breeze-6.8.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792308534
+CPV: kde-plasma/breeze-gtk-6.8.0
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+DEPEND: dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-2.1+
+MD5: 70417556a3d4c78fcc6b0ede30f2ba02
+PATH: pkgs-kde-plasma/breeze-gtk-6.8.0-1.gpkg.tar
+RDEPEND: || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/breeze-gtk:5
+SHA1: cb53d4683f5c212eb866b2d79319378d63dc5386
+SIZE: 235520
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792308535
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.14.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792308446
+CPV: kde-plasma/drkonqi-legacy-6.3.80_p20250417
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare setup test unpack
+DEPEND: dev-lang/python:3.14 >=dev-qt/qtbase-6.8.1:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.8.1:6 >=kde-frameworks/kconfig-6.14.0:6 >=kde-frameworks/kcoreaddons-6.14.0:6 >=kde-frameworks/kcrash-6.14.0:6 >=kde-frameworks/ki18n-6.14.0:6 >=kde-frameworks/kidletime-6.14.0:6 >=kde-frameworks/kio-6.14.0:6 >=kde-frameworks/kjobwidgets-6.14.0:6 >=kde-frameworks/knotifications-6.14.0:6 >=kde-frameworks/kservice-6.14.0:6 >=kde-frameworks/kstatusnotifieritem-6.14.0:6 >=kde-frameworks/kwallet-6.14.0:6 >=kde-frameworks/kwidgetsaddons-6.14.0:6 >=kde-frameworks/kwindowsystem-6.14.0:6 >=kde-frameworks/syntax-highlighting-6.14.0:6 >=sys-auth/polkit-qt-0.175.0[qt6(+)] >=dev-qt/qtbase-6.8.1:6[concurrent] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug test python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: b4af80d80bade8d415509cea0e77c332
+PATH: pkgs-kde-plasma/drkonqi-legacy-6.3.80_p20250417-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14 >=dev-qt/qtbase-6.8.1:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.8.1:6 >=kde-frameworks/kconfig-6.14.0:6 >=kde-frameworks/kcoreaddons-6.14.0:6 >=kde-frameworks/kcrash-6.14.0:6 >=kde-frameworks/ki18n-6.14.0:6 >=kde-frameworks/kidletime-6.14.0:6 >=kde-frameworks/kio-6.14.0:6 >=kde-frameworks/kjobwidgets-6.14.0:6 >=kde-frameworks/knotifications-6.14.0:6 >=kde-frameworks/kservice-6.14.0:6 >=kde-frameworks/kstatusnotifieritem-6.14.0:6 >=kde-frameworks/kwallet-6.14.0:6 >=kde-frameworks/kwidgetsaddons-6.14.0:6 >=kde-frameworks/kwindowsystem-6.14.0:6 >=kde-frameworks/syntax-highlighting-6.14.0:6 >=sys-auth/polkit-qt-0.175.0[qt6(+)] !kde-plasma/drkonqi dev-libs/elfutils[utils] >=kde-frameworks/kirigami-6.14.0:6 >=kde-frameworks/kitemmodels-6.14.0:6 dev-python/psutil[python_targets_python3_14(-)] dev-python/pygdbmi[python_targets_python3_14(-)] || ( >=dev-debug/gdb-12 llvm-core/lldb ) || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/drkonqi-legacy:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IdleTime.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6StatusNotifierItem.so.6 libKF6SyntaxHighlighting.so.6 libKF6Wallet.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test test
+SHA1: 07daf8cf25cdfe749a2fd0490ab532d9bd2e9f3e
+SIZE: 757760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1792308448
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21271,6 +21410,30 @@ MTIME: 1792123761
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/sassc app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792308098
+CPV: kde-plasma/kde-gtk-config-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.11.2:6[dbus,gui] >=dev-qt/qtsvg-6.11.2:6 gnome-base/gsettings-desktop-schemas >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kdecoration-6.8.0:6 x11-libs/gtk+:3[X] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-3
+MD5: 15dfd17e1d9e29aa3ca868dccbf95fd4
+PATH: pkgs-kde-plasma/kde-gtk-config-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: gtkconfig.so libcolorreload-gtk-module.so libwindow-decorations-gtk-module.so
+RDEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.11.2:6[dbus,gui] >=dev-qt/qtsvg-6.11.2:6 gnome-base/gsettings-desktop-schemas >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kdecoration-6.8.0:6 x11-libs/gtk+:3[X] x11-misc/xsettingsd || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kde-gtk-config:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6GuiAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Svg.so.6 libc.so.6 libgdk-3.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libkdecorations3.so.6 libkdecorations3private.so.2 libstdc++.so.6
+SHA1: 69ed661ea0fe103b8f8f60d21505ec852faaa1eb
+SIZE: 143360
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792308099
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
 BUILD_ID: 1
 BUILD_TIME: 1792297542
@@ -21293,6 +21456,31 @@ SIZE: 153600
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792297543
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792310387
+CPV: kde-plasma/kdeplasma-addons-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare setup test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kholidays-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/krunner-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kunitconversion-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/sonnet-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= dev-libs/icu:0/78= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +alternate-calendar led share webengine debug debug +handbook
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2 LGPL-2 GPL-3 MIT Unicode-3.0 ZLIB
+MD5: 7241fc3e28234b78f0709e6f39076076
+PATH: pkgs-kde-plasma/kdeplasma-addons-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: alternatecalendar.so astronomicalevents.so bbcukmet.so dwd.so envcan.so kcm_krunner_charrunner.so kcm_krunner_dictionary.so kcm_krunner_spellcheck.so krunner_charrunner.so krunner_colors.so krunner_dictionary.so krunner_katesessions.so krunner_konsoleprofiles.so krunner_spellcheck.so kwin_cube_config.so libfifteenpuzzleplugin.so libplasma_wallpaper_potdplugin.so libplasmacalendaralternatecalendarconfig.so libplasmacalendarastronomicaleventsconfig.so libplasmapotdprovidercore.so.2 libplasmaweatherdata.so.6 libplasmaweatherion.so.6 libprofiles_qml_plugin.so noaa.so org.kde.datetime.so org.kde.plasma.addons.katesessions.so org.kde.plasma.binaryclock.so org.kde.plasma.calculator.so org.kde.plasma.colorpicker.so org.kde.plasma.comic.so org.kde.plasma.diskquota.so org.kde.plasma.fifteenpuzzle.so org.kde.plasma.fuzzyclock.so org.kde.plasma.grouping.so org.kde.plasma.keyboardindicator.so org.kde.plasma.konsoleprofiles.so org.kde.plasma.mediaframe.so org.kde.plasma.notes.so org.kde.plasma.quicklaunch.so org.kde.plasma.timer.so org.kde.plasma.userswitcher.so org.kde.plasma.weather.so plasma_comic.so plasma_potd_apodprovider.so plasma_potd_bingprovider.so plasma_potd_flickrprovider.so plasma_potd_simonstalenhagprovider.so plasma_potd_wcpotdprovider.so unitconverter.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kholidays-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/krunner-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kunitconversion-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/sonnet-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= dev-libs/icu:0/78= !<kde-plasma/plasma-workspace-6.4.80 dev-libs/kirigami-addons:6 >=dev-qt/qtquick3d-6.11.2:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kdeplasma-addons:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6CalendarEvents.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6Holidays.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Package.so.6 libKF6Runner.so.6 libKF6Service.so.6 libKF6SonnetCore.so.6 libKF6Svg.so.6 libKF6UnitConversion.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libPlasma.so.8 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libicui18n.so.78 libicuuc.so.78 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: d1468c74bf3e57de432332e6da3ede27bde45c57
+SIZE: 2805760
+SLOT: 6
+USE: abi_x86_64 alternate-calendar amd64 elibc_glibc handbook kernel_linux
+MTIME: 1792310392
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21362,6 +21550,30 @@ SIZE: 184320
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792299214
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792309087
+CPV: kde-plasma/kinfocenter-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,-gles2-only,gui,vulkan,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtgraphs-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 media-libs/libglvnd virtual/libudev:0/1= x11-libs/libdrm virtual/libusb:1 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: gles2-only usb debug +handbook
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 6724b8f240fa8631e35788a32563300c
+PATH: pkgs-kde-plasma/kinfocenter-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: kcm_about-distro.so kcm_audio_information.so kcm_block_devices.so kcm_cpu.so kcm_edid.so kcm_egl.so kcm_energyinfo.so kcm_firmware_security.so kcm_glx.so kcm_interrupts.so kcm_kwinsupportinfo.so kcm_memory.so kcm_network.so kcm_opencl.so kcm_pci.so kcm_samba.so kcm_sensors.so kcm_usb.so kcm_vaapi.so kcm_vulkan.so kcm_wayland.so kcm_xserver.so libKInfoCenterInternal.so libKInfoCenterInternalplugin.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,-gles2-only,gui,vulkan,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtgraphs-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 media-libs/libglvnd virtual/libudev:0/1= x11-libs/libdrm virtual/libusb:1 >=dev-qt/qttools-6.11.2:6[qdbus] >=kde-frameworks/kirigami-6.30.0:6 >=kde-plasma/systemsettings-6.8.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kinfocenter:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libEGL.so.1 libKF6AuthCore.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Service.so.6 libKF6Solid.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Widgets.so.6 libc.so.6 libdrm.so.2 libstdc++.so.6 libudev.so.1 libusb-1.0.so.0
+SHA1: ed66972d5567c48f1c985c0a7b428247ebeb0fd9
+SIZE: 1198080
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux usb
+MTIME: 1792309090
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21485,6 +21697,30 @@ SIZE: 81920
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791443584
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792308049
+CPV: kde-plasma/ksshaskpass-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwallet-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 26e3c53c24961b78bf2ef3abb0946240
+PATH: pkgs-kde-plasma/ksshaskpass-6.8.0-1.gpkg.tar
+RDEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwallet-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/ksshaskpass:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libqt6keychain.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 6493e75aa897985b0af5d72b6c3ffdf9df48dcee
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792308050
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21990,6 +22226,31 @@ MTIME: 1791266943
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792311006
+CPV: kde-plasma/plasma-disks-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 sys-apps/smartmontools dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64
+LICENSE: || ( GPL-3 GPL-2 )
+MD5: 7e5646af00d1ac26320392594c694e08
+PATH: pkgs-kde-plasma/plasma-disks-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: kcm_disks.so smart.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 sys-apps/smartmontools kde-plasma/kinfocenter:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma-disks:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "4edbd3620f15b7f80340a3190c8127b91fa19054"}
+REQUIRES: x86_64: libKF6AuthCore.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6Solid.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+SHA1: 47ef137ad92c621cf72b9c3fde091d2129eeb091
+SIZE: 245760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1792311007
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
 BUILD_ID: 1
 BUILD_TIME: 1792299430
@@ -22049,6 +22310,105 @@ SHA1: 5116bbef526dd189f42ee5aa6ead9f86214f473e
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792305525
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792310586
+CPV: kde-plasma/plasma-nm-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/openssl:0/3= dev-libs/qcoro[dbus] >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/modemmanager-qt-6.30.0:6 >=kde-frameworks/networkmanager-qt-6.30.0:6[-teamd] >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= net-misc/mobile-broadband-provider-info net-misc/networkmanager[-teamd] >=net-misc/modemmanager-1.20 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: openconnect teamd debug test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2 LGPL-2.1
+MD5: 52657c6cde5395a539066415ce9a50be
+PATH: pkgs-kde-plasma/plasma-nm-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: kcm_cellular_network.so kcm_mobile_hotspot.so kcm_mobile_wifi.so kcm_mobile_wired.so kcm_networkmanagement.so libplasmanm_cellular.so libplasmanm_cellularplugin.so libplasmanm_editor.so libplasmanm_internal.so libplasmanm_internalplugin.so networkmanagement.so org.kde.plasma.networkmanagement.so plasmanetworkmanagement_fortisslvpnui.so plasmanetworkmanagement_iodineui.so plasmanetworkmanagement_l2tpui.so plasmanetworkmanagement_libreswanui.so plasmanetworkmanagement_openvpnui.so plasmanetworkmanagement_pptpui.so plasmanetworkmanagement_sshui.so plasmanetworkmanagement_sstpui.so plasmanetworkmanagement_strongswanui.so plasmanetworkmanagement_vpncui.so
+RDEPEND: dev-libs/openssl:0/3= dev-libs/qcoro[dbus] >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/modemmanager-qt-6.30.0:6 >=kde-frameworks/networkmanager-qt-6.30.0:6[-teamd] >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= net-misc/mobile-broadband-provider-info net-misc/networkmanager[-teamd] dev-libs/kirigami-addons:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kquickcharts-6.30.0:6 >=kde-frameworks/prison-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma-nm:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6ModemManagerQt.so.6 libKF6NetworkManagerQt.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libPlasma.so.8 libQCoro6DBus.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6QuickWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libcrypto.so.3 libglib-2.0.so.0 libgobject-2.0.so.0 libnm.so.0 libqt6keychain.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 3572203381a15f4f2a1c0e6540c821821e28489e
+SIZE: 2928640
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792310588
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792310733
+CPV: kde-plasma/plasma-pa-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= media-libs/libcanberra media-libs/libpulse >=media-libs/pulseaudio-qt-1.6.0:0/5= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: f7ee8f6ed7b65aad4d8fc5f0781adf40
+PATH: pkgs-kde-plasma/plasma-pa-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: audioshortcutsservice.so kcm_pulseaudio.so libplasma-volume-declarative.so libplasma-volume.so.6 org.kde.plasma.volume.so
+RDEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-plasma/libplasma-6.8.0:6/8= media-libs/libcanberra media-libs/libpulse >=media-libs/pulseaudio-qt-1.6.0:0/5= dev-libs/kirigami-addons:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 x11-themes/sound-theme-freedesktop || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma-pa:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6PulseAudioQt.so.5 libKF6StatusNotifierItem.so.6 libPlasma.so.8 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libcanberra.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libm.so.6 libpulse.so.0 libstdc++.so.6
+RESTRICT: test test
+SHA1: a9d54b212a76cf2d4f5561890e4574057ff23478
+SIZE: 686080
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1792310735
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792309407
+CPV: kde-plasma/plasma-systemmonitor-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/kirigami-addons-1.1.0:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/libksysguard-6.8.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: || ( GPL-3 GPL-2 )
+MD5: 2ae5a62f5b1e68f69d560b565fd2d93c
+PATH: pkgs-kde-plasma/plasma-systemmonitor-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: libPlasmaSystemMonitorPage.so libPlasmaSystemMonitorPageplugin.so libPlasmaSystemMonitorTable.so libPlasmaSystemMonitorTableplugin.so
+RDEPEND: >=dev-libs/kirigami-addons-1.1.0:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/libksysguard-6.8.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 >=kde-frameworks/kquickcharts-6.30.0:6 >=kde-plasma/ksystemstats-6.8.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma-systemmonitor:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6ItemModels.so.6 libKF6KIOGui.so.6 libKF6NewStuffCore.so.6 libKF6Service.so.6 libKF6WindowSystem.so.6 libKSysGuardSensorFaces.so.2 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: c860d0d273492a3428d0a42c8b6758e0c678f5a9
+SIZE: 737280
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792309409
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792308746
+CPV: kde-plasma/plasma-vault-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare pretend test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcodecs-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-plasma/libksysguard-6.8.0:6 >=kde-plasma/libplasma-6.8.0:6/8= >=kde-plasma/plasma-activities-6.8.0:6/7= >=kde-frameworks/networkmanager-qt-6.30.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: networkmanager debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-3
+MD5: fa718760be4f705f49f412517e43a1e1
+PATH: pkgs-kde-plasma/plasma-vault-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: org.kde.plasma.vault.so plasmavault.so plasmavaultfileitemaction.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcodecs-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-plasma/libksysguard-6.8.0:6 >=kde-plasma/libplasma-6.8.0:6/8= >=kde-plasma/plasma-activities-6.8.0:6/7= >=kde-frameworks/networkmanager-qt-6.30.0:6 >=app-crypt/gocryptfs-1.8 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma-vault:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NetworkManagerQt.so.6 libKF6Service.so.6 libKF6WidgetsAddons.so.6 libPlasma.so.8 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libprocesscore.so.11 libstdc++.so.6
+SHA1: 0826572e92d6da3333a4ae6dc11a09941082182c
+SIZE: 481280
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux networkmanager
+MTIME: 1792308747
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -22118,6 +22478,30 @@ SIZE: 308531200
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792306220
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792308527
+CPV: kde-plasma/plasma5support-6.8.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,sql,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kholidays-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kidletime-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kunitconversion-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/plasma-activities-6.8.0:6/7= dev-qt/qtbase:6
+EAPI: 8
+IUSE: activities geolocation ksysguard debug doc test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2+ LGPL-2+
+MD5: 046b1d4da88fb9a6dda4478034fd3706
+PATH: pkgs-kde-plasma/plasma5support-6.8.0-1.gpkg.tar
+PROVIDES: x86_64: libPlasma5Support.so.6 libplasma5supportplugin.so libweather_ion.so.7 plasma_engine_activities.so plasma_engine_apps.so plasma_engine_bbcukmet.so plasma_engine_dwd.so plasma_engine_envcan.so plasma_engine_executable.so plasma_engine_favicons.so plasma_engine_filebrowser.so plasma_engine_hotplug.so plasma_engine_keystate.so plasma_engine_mouse.so plasma_engine_noaa.so plasma_engine_packagekit.so plasma_engine_places.so plasma_engine_powermanagement.so plasma_engine_soliddevice.so plasma_engine_time.so plasma_engine_weather.so plasma_engine_wettercom.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,sql,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kholidays-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kidletime-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kunitconversion-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/plasma-activities-6.8.0:6/7= !kde-plasma/plasma-workspace:5 !<kde-plasma/plasma-workspace-6.5.90:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma5support:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6Holidays.so.6 libKF6I18n.so.6 libKF6IdleTime.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6UnitConversion.so.6 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Sql.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: f48848d960c970bd1503ebd71bfee52bb2f10da6
+SIZE: 1597440
+SLOT: 6
+USE: abi_x86_64 activities amd64 elibc_glibc kernel_linux
+MTIME: 1792308528
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27478,6 +27862,29 @@ MTIME: 1791180816
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792308026
+CPV: net-mail/mailutils-3.21
+DEFINED_PHASES: configure install prepare setup
+DEPEND: !mail-filter/libsieve !mail-client/mailx sys-libs/ncurses:0/6= sys-libs/readline:0/8= dev-libs/libltdl:0 virtual/libcrypt:0/2= virtual/mta sys-libs/gdbm:0/6= sys-devel/gettext sys-libs/pam:0/0= net-libs/gnutls:0/30.30=
+EAPI: 8
+IUSE: berkdb bidi +clients emacs gdbm sasl guile kerberos kyotocabinet ldap mysql nls pam postgres python servers split-usr ssl static-libs test +threads tcpd tokyocabinet guile_single_target_2-2 guile_single_target_3-0 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: GPL-3+ LGPL-3+
+MD5: a860a9d7cb970ea65b7edc7bd79c367e
+PATH: pkgs-net-mail/mailutils-3.21-1.gpkg.tar
+PROVIDES: x86_64: editheader.so libmailutils.so.9 libmu_auth.so.9 libmu_dbm.so.9 libmu_dotmail.so.9 libmu_imap.so.9 libmu_maildir.so.9 libmu_mailer.so.9 libmu_mbox.so.9 libmu_mh.so.9 libmu_pop.so.9 libmu_sieve.so.9 libmuaux.so.9 list.so moderator.so numaddr.so pipe.so spamd.so timestamp.so uidnew.so vacation.so
+RDEPEND: !mail-filter/libsieve !mail-client/mailx sys-libs/ncurses:0/6= sys-libs/readline:0/8= dev-libs/libltdl:0 virtual/libcrypt:0/2= virtual/mta sys-libs/gdbm:0/6= sys-devel/gettext sys-libs/pam:0/0= net-libs/gnutls:0/30.30= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libgdbm.so.6 libgnutls.so.30 libltdl.so.7 libpam.so.0 libreadline.so.8 libtinfo.so.6
+RESTRICT: test
+SHA1: ed194fab8bd1bc1279fb049473e387c0af9c0ebb
+SIZE: 2744320
+USE: abi_x86_64 amd64 clients elibc_glibc gdbm guile_single_target_3-0 kernel_linux nls pam python_single_target_python3_14 ssl threads
+MTIME: 1792308029
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: acct-group/ntp acct-user/ntp virtual/pkgconfig virtual/pkgconfig virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791281878
@@ -27868,6 +28275,68 @@ MTIME: 1791547812
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-util/gdbus-codegen-2.80.5-r1 >=sys-devel/gettext-0.18.3 virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792310908
+CPV: net-print/cups-browsed-2.1.1-r1
+DEFINED_PHASES: configure install test
+DEPEND: dev-libs/glib:2 >=net-print/cups-2 >=net-print/cups-filters-2.0.0
+EAPI: 8
+IUSE: test selinux zeroconf
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: Apache-2.0
+MD5: 5a96ca9705ca3ae4b47a8af63141ab67
+PATH: pkgs-net-print/cups-browsed-2.1.1-r1-1.gpkg.tar
+RDEPEND: dev-libs/glib:2 >=net-print/cups-2 >=net-print/cups-filters-2.0.0 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcups.so.2 libcupsfilters.so.2 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libppd.so.2
+RESTRICT: test
+SHA1: 6d2eb211426b7ba7e2bef9689ea24d5ee5e9d799
+SIZE: 204800
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792310909
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=sys-devel/gettext-0.18.3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792310896
+CPV: net-print/cups-filters-2.0.1-r1
+DEFINED_PHASES: configure prepare
+DEPEND: net-print/libcupsfilters net-print/libppd >=net-print/cups-1.7.3
+EAPI: 8
+IUSE: +foomatic
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: Apache-2.0
+MD5: bd1534dd43ccac17e842b382a7bf41c9
+PATH: pkgs-net-print/cups-filters-2.0.1-r1-1.gpkg.tar
+RDEPEND: net-print/libcupsfilters net-print/libppd >=net-print/cups-1.7.3 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcups.so.2 libcupsfilters.so.2 libm.so.6 libppd.so.2
+RESTRICT: test
+SHA1: c34ed194960874c738a2401e8ea530662f0d2bed
+SIZE: 256000
+USE: abi_x86_64 amd64 elibc_glibc foomatic kernel_linux
+MTIME: 1792310897
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1792310911
+CPV: net-print/cups-meta-2
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: +browsed +foomatic pdf +postscript +poppler zeroconf
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: metapackage
+MD5: 2cd1f9edc68791d4fe6b790f20e8b170
+PATH: pkgs-net-print/cups-meta-2-1.gpkg.tar
+RDEPEND: net-print/cups net-print/libppd[postscript,poppler] net-print/libcupsfilters[pdf,poppler(+)] net-print/cups-filters[foomatic] net-print/cups-browsed app-text/mupdf >=app-text/ghostscript-gpl-9.09[cups]
+SHA1: 9f08d65521239d83baefaec8d69a8fe21b41ce86
+SIZE: 20480
+USE: abi_x86_64 amd64 browsed elibc_glibc foomatic kernel_linux pdf poppler postscript
+MTIME: 1792310912
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-util/gdbus-codegen-2.80.5-r1 virtual/pkgconfig sys-devel/gettext app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1792305968
@@ -27909,6 +28378,28 @@ SHA1: 7addcb2d240ce4c0dd87e214bb60507787d22983
 SIZE: 737280
 USE: abi_x86_64 amd64 dbus elibc_glibc exif jpeg kernel_linux pdf png poppler postscript tiff
 MTIME: 1791226948
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=sys-devel/gettext-0.18.3 virtual/pkgconfig >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1792310881
+CPV: net-print/libppd-2.1.1
+DEFINED_PHASES: configure install prepare
+DEPEND: >=net-print/cups-2 net-print/libcupsfilters !<net-print/cups-filters-2.0.0 virtual/zlib:0/1= >=app-text/ghostscript-gpl-9.09[cups] >=app-text/poppler-0.32[utils]
+EAPI: 8
+IUSE: +postscript +poppler
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: Apache-2.0
+MD5: 77e8f4289d843e47db42219c8e4aaaab
+PATH: pkgs-net-print/libppd-2.1.1-1.gpkg.tar
+PROVIDES: x86_64: libppd.so.2
+RDEPEND: >=net-print/cups-2 net-print/libcupsfilters !<net-print/cups-filters-2.0.0 virtual/zlib:0/1= >=app-text/ghostscript-gpl-9.09[cups] >=app-text/poppler-0.32[utils] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcups.so.2 libcupsfilters.so.2 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libz.so.1
+SHA1: 4d12a63e1affb44bf0931526e4205aa90c3c2ddc
+SIZE: 399360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux poppler postscript
+MTIME: 1792310881
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29160,6 +29651,26 @@ MTIME: 1791063400
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792310932
+CPV: sys-apps/smartmontools-7.5-r1
+DEFINED_PHASES: configure install postinst prepare unpack
+EAPI: 8
+IUSE: caps +daemon selinux static systemd +update-drivedb verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos
+LICENSE: GPL-2
+MD5: e80c65acf642e7c4fe7ac75bb5947419
+PATH: pkgs-sys-apps/smartmontools-7.5-r1-1.gpkg.tar
+RDEPEND: virtual/mailx app-alternatives/gpg || ( net-misc/curl net-misc/wget www-client/lynx dev-vcs/subversion ) >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+SHA1: e83532dbabb13a32da78d7b9b1e7c6499d6ff19b
+SIZE: 788480
+USE: abi_x86_64 amd64 daemon elibc_glibc kernel_linux update-drivedb
+MTIME: 1792310933
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-text/docbook-xml-dtd:4.2 app-text/docbook-xml-dtd:4.5 app-text/docbook-xsl-stylesheets dev-libs/libxslt dev-util/gperf dev-util/patchelf >=sys-apps/coreutils-8.16 sys-devel/gettext virtual/pkgconfig dev-python/jinja2[python_targets_python3_14(-)] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791062797
@@ -30341,6 +30852,22 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 1
+BUILD_TIME: 1792310838
+CPV: virtual/mailx-4
+DEFINED_PHASES: -
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+MD5: 5432664e89bb5bcf4d42380e40c84eda
+PATH: pkgs-virtual/mailx-4-1.gpkg.tar
+RDEPEND: || ( net-mail/mailutils[clients] mail-client/mailx mail-client/s-nail )
+SHA1: 4080de3c67d61eb4e05d5661da71f3660221bd2d
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792310839
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
 BUILD_TIME: 1792307840
 CPV: virtual/mta-1-r2
 DEFINED_PHASES: -
@@ -31292,6 +31819,28 @@ MTIME: 1791228902
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/docutils dev-qt/qttools[linguist] kde-frameworks/extra-cmake-modules:0 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792310813
+CPV: x11-misc/sddm-0.21.0_p20260819-r1
+DEFINED_PHASES: compile configure install postinst prepare setup test unpack
+DEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower
+EAPI: 8
+IUSE: +elogind systemd test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+ MIT CC-BY-3.0 CC-BY-SA-3.0 public-domain
+MD5: b37c76f5e65b37cbf02ec832adc2ab47
+PATH: pkgs-x11-misc/sddm-0.21.0_p20260819-r1-1.gpkg.tar
+RDEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower gui-apps/sddm-gentoo-config gui-libs/display-manager-init virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libXau.so.6 libc.so.6 libgcc_s.so.1 libpam.so.0 libstdc++.so.6 libxcb-xkb.so.1 libxcb.so.1
+RESTRICT: test
+SHA1: 7ed43ce869f8f02415bde5ae6984b06e9b5c5e08
+SIZE: 3840000
+USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux
+MTIME: 1792310815
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/gettext virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791082964
@@ -31354,6 +31903,26 @@ SHA1: 77566c486feec602f38f232378de99bf1a07be6f
 SIZE: 92160
 USE: abi_x86_64 amd64 elibc_glibc gtk kernel_linux
 MTIME: 1792307454
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gettext virtual/pkgconfig app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1792308822
+CPV: x11-misc/xdg-user-dirs-gtk-0.16
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: dev-libs/glib:2 >=x11-libs/gtk+-3.5.1:3 >=x11-misc/xdg-user-dirs-0.14
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2+
+MD5: 6a6039db4f4e339888e4276bef27f566
+PATH: pkgs-x11-misc/xdg-user-dirs-gtk-0.16-1.gpkg.tar
+RDEPEND: dev-libs/glib:2 >=x11-libs/gtk+-3.5.1:3 >=x11-misc/xdg-user-dirs-0.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0
+SHA1: 35f434c619233b63966fb96c402bf54686bfc903
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792308824
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
