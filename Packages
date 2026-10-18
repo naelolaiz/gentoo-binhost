@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792299742
-PACKAGES: 1343
+TIMESTAMP: 1792300350
+PACKAGES: 1344
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -21513,6 +21513,31 @@ SIZE: 1013760
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791241877
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792300025
+CPV: kde-plasma/xdg-desktop-portal-kde-6.8.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.2=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.0:6 >=kde-plasma/kwayland-6.8.0:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon >=dev-libs/plasma-wayland-protocols-1.22.0 >=dev-libs/wayland-protocols-1.25 >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-2+
+MD5: 82fdd0891023bdd413528cec12fc6449
+PATH: pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.0-1.gpkg.tar
+RDEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.2=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.0:6 >=kde-plasma/kwayland-6.8.0:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon kde-misc/kio-fuse:6 sys-apps/xdg-desktop-portal || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/xdg-desktop-portal-kde:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "4edbd3620f15b7f80340a3190c8127b91fa19054"}
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6IconThemes.so.6 libKF6ItemViews.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6WindowSystem.so.6 libKPipeWireMonitor.so.6 libKWaylandClient.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0 libxkbcommon.so.0
+RESTRICT: test
+SHA1: 317bd38faf21b430fd82544c481a66dd9abeac4b
+SIZE: 1003520
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792300026
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
