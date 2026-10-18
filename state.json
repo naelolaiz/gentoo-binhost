@@ -285,6 +285,10 @@
    "path": "pkgs-app-containers/aardvark-dns-2.1.0-1.gpkg.tar"
   },
   {
+   "at": 1792317244,
+   "path": "pkgs-app-containers/netavark-2.1.0-1.gpkg.tar"
+  },
+  {
    "at": 1791866290,
    "path": "pkgs-app-containers/podman-6.1.2-1.gpkg.tar"
   },
@@ -299,6 +303,10 @@
   {
    "at": 1791782363,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.18-1.gpkg.tar"
+  },
+  {
+   "at": 1792317244,
+   "path": "pkgs-app-misc/task-3.4.2-1.gpkg.tar"
   },
   {
    "at": 1792297581,
