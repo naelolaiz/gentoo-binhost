@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792387853
-PACKAGES: 1466
+TIMESTAMP: 1792388470
+PACKAGES: 1472
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5501,6 +5501,27 @@ MTIME: 1791228952
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-build/rocm-cmake llvm-core/clang:23 llvm-core/lld:23 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792388360
+CPV: dev-libs/rocm-device-libs-10.1.0
+DEFINED_PHASES: compile configure install prepare setup test unpack
+EAPI: 8
+IUSE: test +llvm_slot_23
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: e0fb46a6c1e9a4f448d42b4e8a95b25f
+PATH: pkgs-dev-libs/rocm-device-libs-10.1.0-1.gpkg.tar
+REPO_REVISIONS: {"gentoo": "66af616dea1157d9b66048be51d88a68f858ef55"}
+RESTRICT: test
+SHA1: 76f67b23628f1a60f82a09a1372b441823013b5c
+SIZE: 696320
+SLOT: 0/10.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_23
+MTIME: 1792388361
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-build/rocm-cmake llvm-core/clang:22 llvm-core/lld:22 app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791286090
@@ -5541,6 +5562,30 @@ SIZE: 901120
 SLOT: 0/7.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
 MTIME: 1791287116
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792388264
+CPV: dev-libs/roct-thunk-interface-10.1.0
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: sys-process/numactl x11-libs/libdrm[video_cards_amdgpu]
+EAPI: 8
+IUSE: test +llvm_slot_23
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: 0fbd1c81578bad6e4df45d065a565351
+PATH: pkgs-dev-libs/roct-thunk-interface-10.1.0-1.gpkg.tar
+PROVIDES: x86_64: libhsakmt.so.1
+RDEPEND: sys-process/numactl x11-libs/libdrm[video_cards_amdgpu] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libdrm.so.2 libdrm_amdgpu.so.1 libnuma.so.1
+RESTRICT: test
+SHA1: c0b4d32fad0c414b10954f6a88c2453377aeb7a7
+SIZE: 235520
+SLOT: 0/10.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_23
+MTIME: 1792388264
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8090,6 +8135,27 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
+BUILD_TIME: 1792388037
+CPV: dev-python/pypdf-6.21.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD
+MD5: b6e66be2312e070d9c23dc81da395bba
+PATH: pkgs-dev-python/pypdf-6.21.1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 8e7a0b44bd3abdbaef06db40be337113e91972d4
+SIZE: 1269760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792388038
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
 BUILD_TIME: 1791277833
 CPV: dev-python/pyphen-0.18.1
 DEFINED_PHASES: compile configure install prepare test unpack
@@ -9137,6 +9203,27 @@ SHA1: c74656058f4cd2dea85dfd9a9d8bc268a4b73532
 SIZE: 337920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791442221
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792388273
+CPV: dev-python/virtualenv-21.14.10
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: bb85a3373412e553561e1a2d96b0bf87
+PATH: pkgs-dev-python/virtualenv-21.14.10-1.gpkg.tar
+RDEPEND: >=dev-python/distlib-0.3.7[python_targets_python3_14(-)] >=dev-python/filelock-3.24.2[python_targets_python3_14(-)] >=dev-python/packaging-23.1[python_targets_python3_14(-)] >=dev-python/platformdirs-3.9.1[python_targets_python3_14(-)] >=dev-python/python-discovery-1.6[python_targets_python3_14(-)] dev-python/ensurepip-pip >=dev-python/ensurepip-setuptools-70.1 dev-python/ensurepip-wheel dev-lang/python:3.14
+RESTRICT: test
+SHA1: c6f002c51e77d58a48d46152bbdb674e56e07d33
+SIZE: 348160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792388274
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -23468,6 +23555,50 @@ SIZE: 30720
 SLOT: 23
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791076452
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: llvm-core/llvm:23 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792388203
+CPV: llvm-core/lld-23.1.3
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: ~llvm-core/llvm-23.1.3[-debug,zstd] virtual/zlib:0/1= app-arch/zstd:0/1= ~llvm-core/llvm-23.1.3[llvm_targets_AArch64] ~llvm-core/llvm-23.1.3[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.3[llvm_targets_ARM] ~llvm-core/llvm-23.1.3[llvm_targets_AVR] ~llvm-core/llvm-23.1.3[llvm_targets_BPF] ~llvm-core/llvm-23.1.3[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.3[llvm_targets_Lanai] ~llvm-core/llvm-23.1.3[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.3[llvm_targets_Mips] ~llvm-core/llvm-23.1.3[llvm_targets_MSP430] ~llvm-core/llvm-23.1.3[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.3[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.3[llvm_targets_RISCV] ~llvm-core/llvm-23.1.3[llvm_targets_Sparc] ~llvm-core/llvm-23.1.3[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.3[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.3[llvm_targets_VE] ~llvm-core/llvm-23.1.3[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.3[llvm_targets_X86] ~llvm-core/llvm-23.1.3[llvm_targets_XCore]
+EAPI: 8
+IUSE: debug test zstd test llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA
+MD5: 45d91673cc04fb2ec3916ca7b6f12a6c
+PATH: pkgs-llvm-core/lld-23.1.3-1.gpkg.tar
+PDEPEND: >=llvm-core/lld-toolchain-symlinks-16-r2:23
+PROVIDES: x86_64: liblldCOFF.so.23.1 liblldCommon.so.23.1 liblldELF.so.23.1 liblldMachO.so.23.1 liblldMinGW.so.23.1 liblldWasm.so.23.1
+RDEPEND: ~llvm-core/llvm-23.1.3[-debug,zstd] virtual/zlib:0/1= app-arch/zstd:0/1= !llvm-core/lld:0 ~llvm-core/llvm-23.1.3[llvm_targets_AArch64] ~llvm-core/llvm-23.1.3[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.3[llvm_targets_ARM] ~llvm-core/llvm-23.1.3[llvm_targets_AVR] ~llvm-core/llvm-23.1.3[llvm_targets_BPF] ~llvm-core/llvm-23.1.3[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.3[llvm_targets_Lanai] ~llvm-core/llvm-23.1.3[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.3[llvm_targets_Mips] ~llvm-core/llvm-23.1.3[llvm_targets_MSP430] ~llvm-core/llvm-23.1.3[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.3[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.3[llvm_targets_RISCV] ~llvm-core/llvm-23.1.3[llvm_targets_Sparc] ~llvm-core/llvm-23.1.3[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.3[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.3[llvm_targets_VE] ~llvm-core/llvm-23.1.3[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.3[llvm_targets_X86] ~llvm-core/llvm-23.1.3[llvm_targets_XCore] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libLLVM.so.23.1 libc.so.6 libgcc_s.so.1 libstdc++.so.6 libz.so.1 libzstd.so.1
+RESTRICT: test test
+SHA1: a4ea1dece06d50ff3b05e014d3913cdca3861a37
+SIZE: 2908160
+SLOT: 23/23.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore zstd
+MTIME: 1792388205
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1792388245
+CPV: llvm-core/lld-toolchain-symlinks-23
+DEFINED_PHASES: install
+EAPI: 8
+IUSE: multilib-symlinks native-symlinks
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: public-domain
+MD5: 4fefb56d963f7397ad36310455357068
+PATH: pkgs-llvm-core/lld-toolchain-symlinks-23-1.gpkg.tar
+RDEPEND: llvm-core/lld:23
+SHA1: f550717edc0c14644a27c6cf9b588019472ddf5e
+SIZE: 20480
+SLOT: 23
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792388245
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
