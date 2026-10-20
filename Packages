@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792469613
-PACKAGES: 1481
+TIMESTAMP: 1792470104
+PACKAGES: 1488
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6137,6 +6137,28 @@ MTIME: 1791278220
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-arch/unzip dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792469741
+CPV: dev-python/apsw-3.54.1.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-db/sqlite-3.54.1:3 dev-lang/python:3.14
+EAPI: 8
+IUSE: doc python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc64 ~x86
+LICENSE: ZLIB
+MD5: 3115e7088f8f3403b6d6df1f555bf930
+PATH: pkgs-dev-python/apsw-3.54.1.0-1.gpkg.tar
+PROVIDES: x86_64: __init__.cpython-314-x86_64-linux-gnu.so _unicode.cpython-314-x86_64-linux-gnu.so
+RDEPEND: >=dev-db/sqlite-3.54.1:3 dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libsqlite3.so.0
+SHA1: 65593690c3230dd72aa439b59a218e8b2be45102
+SIZE: 1935360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792469743
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791278191
@@ -8500,6 +8522,27 @@ MTIME: 1792317240
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792469750
+CPV: dev-python/python-discovery-1.6.4
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: c3e36c253384ed8f12abcc1b9ac1a386
+PATH: pkgs-dev-python/python-discovery-1.6.4-1.gpkg.tar
+RDEPEND: >=dev-python/filelock-3.16.1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: cf2ad2dc695d6fcc5c2849189967b4f14ec0e697
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792469752
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791282852
@@ -9338,6 +9381,27 @@ SHA1: c6f002c51e77d58a48d46152bbdb674e56e07d33
 SIZE: 348160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1792388274
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792469906
+CPV: dev-python/virtualenv-21.14.11
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: d04471f6fda3f710d051ccd495a477a0
+PATH: pkgs-dev-python/virtualenv-21.14.11-1.gpkg.tar
+RDEPEND: >=dev-python/distlib-0.3.7[python_targets_python3_14(-)] >=dev-python/filelock-3.24.2[python_targets_python3_14(-)] >=dev-python/packaging-23.1[python_targets_python3_14(-)] >=dev-python/platformdirs-3.9.1[python_targets_python3_14(-)] >=dev-python/python-discovery-1.6[python_targets_python3_14(-)] dev-python/ensurepip-pip >=dev-python/ensurepip-setuptools-70.1 dev-python/ensurepip-wheel dev-lang/python:3.14
+RESTRICT: test
+SHA1: 379e6ab52e889d1e15b1894fb09df997afefddc1
+SIZE: 348160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792469907
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30164,6 +30228,30 @@ MTIME: 1792316003
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792469880
+CPV: sci-ml/ggml-0.27.0-r1
+DEFINED_PHASES: compile configure install prepare pretend setup test
+DEPEND: media-libs/vulkan-loader dev-util/vulkan-headers
+EAPI: 8
+IUSE: cpu_flags_x86_amx_bf16 cpu_flags_x86_amx_int8 cpu_flags_x86_amx_tile cpu_flags_x86_avx cpu_flags_x86_avx_vnni cpu_flags_x86_avx2 cpu_flags_x86_avx512_bf16 cpu_flags_x86_avx512bw cpu_flags_x86_avx512f cpu_flags_x86_avx512vbmi cpu_flags_x86_avx512_vnni cpu_flags_x86_bmi2 cpu_flags_x86_fma3 cpu_flags_x86_f16c cpu_flags_x86_sse4_2 cuda openmp rocm test vulkan +amdgpu_targets_gfx908 +amdgpu_targets_gfx90a +amdgpu_targets_gfx942 +amdgpu_targets_gfx950 +amdgpu_targets_gfx1030 +amdgpu_targets_gfx1100 +amdgpu_targets_gfx1101 +amdgpu_targets_gfx1200 +amdgpu_targets_gfx1201 amdgpu_targets_gfx803 amdgpu_targets_gfx900 amdgpu_targets_gfx906 amdgpu_targets_gfx940 amdgpu_targets_gfx941 amdgpu_targets_gfx1010 amdgpu_targets_gfx1011 amdgpu_targets_gfx1012 amdgpu_targets_gfx1031 amdgpu_targets_gfx1102 amdgpu_targets_gfx1103 amdgpu_targets_gfx1150 amdgpu_targets_gfx1151
+KEYWORDS: ~amd64 ~arm64
+LICENSE: MIT
+MD5: f914b9699b2feef9a94da040debf6892
+PATH: pkgs-sci-ml/ggml-0.27.0-r1-1.gpkg.tar
+PROVIDES: x86_64: libggml-base.so.0 libggml-cpu.so.0 libggml-vulkan.so.0 libggml.so.0
+RDEPEND: media-libs/vulkan-loader >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libgomp.so.1 libm.so.6 libstdc++.so.6 libvulkan.so.1
+RESTRICT: test
+SHA1: 00c716069b31c6485806710afda963d14e90a99c
+SIZE: 8949760
+SLOT: 0/0.27.0
+USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux openmp vulkan
+MTIME: 1792469882
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip virtual/pkgconfig
 BUILD_ID: 2
 BUILD_TIME: 1791438305
@@ -30675,6 +30763,24 @@ SHA1: a9033cde5f01c7ffae3bb3087ab625f00b2a249e
 SIZE: 122880
 USE: abi_x86_64 amd64 bios64 boot elibc_glibc kernel_linux uefi64
 MTIME: 1791277488
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gcc:*
+BUILD_ID: 1
+BUILD_TIME: 1792469676
+CPV: sys-apps/memtest86+-9.00
+DEFINED_PHASES: compile install postinst postrm preinst prepare prerm pretend setup
+EAPI: 8
+IUSE: bios32 bios64 +boot uefi32 uefi64 iso32 iso64 secureboot
+KEYWORDS: ~amd64 ~loong ~x86
+LICENSE: GPL-2
+MD5: 8b7fe1c336104738c0c4be8917f7083b
+PATH: pkgs-sys-apps/memtest86_p_-9.00-1.gpkg.tar
+SHA1: 768edbeb1d2db3bf18861bf9e2630374899618ce
+SIZE: 153600
+USE: abi_x86_64 amd64 bios64 boot elibc_glibc kernel_linux uefi64
+MTIME: 1792469678
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31340,6 +31446,31 @@ MTIME: 1791370787
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig || ( ( dev-lang/python:3.15 dev-python/sphinx[python_targets_python3_15(-)] dev-python/sphinx-rtd-theme[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/sphinx[python_targets_python3_14(-)] dev-python/sphinx-rtd-theme[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/sphinx[python_targets_python3_13(-)] dev-python/sphinx-rtd-theme[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/sphinx[python_targets_python3_12(-)] dev-python/sphinx-rtd-theme[python_targets_python3_12(-)] ) ) virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792470018
+CPV: sys-fs/btrfs-progs-7.1-r1
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
+DEPEND: sys-apps/util-linux:0/0= virtual/zlib:0/1= sys-fs/e2fsprogs:0/0= dev-libs/lzo:2/2= virtual/libudev:0/1= app-arch/zstd:0/1= >=sys-kernel/linux-headers-5.10 sys-apps/acl
+EAPI: 8
+IUSE: +convert +man experimental +lzo reiserfs static static-libs udev +zstd verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: GPL-2
+MD5: 84375c8dc8c7f9c6967cde155bbd7ed4
+PATH: pkgs-sys-fs/btrfs-progs-7.1-r1-1.gpkg.tar
+PROVIDES: x86_64: libbtrfs.so.0 libbtrfsutil.so.1
+RDEPEND: sys-apps/util-linux:0/0= virtual/zlib:0/1= sys-fs/e2fsprogs:0/0= dev-libs/lzo:2/2= virtual/libudev:0/1= app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "34281bc55f9334864a9c8b14be757bddf814f643"}
+REQUIRES: x86_64: libblkid.so.1 libc.so.6 libcom_err.so.2 libext2fs.so.2 liblzo2.so.2 libudev.so.1 libuuid.so.1 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 817c876abf4cfef853a3d5767c7314ad2b88bbbc
+SIZE: 1361920
+SLOT: 0/0
+USE: abi_x86_64 amd64 convert elibc_glibc kernel_linux lzo man udev zstd
+MTIME: 1792470019
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791063490
@@ -31466,6 +31597,25 @@ SHA1: d8567f2a6dc7e3679594dff5cd96eedb8187cd54
 SIZE: 248627200
 USE: abi_x86_64 amd64 elibc_glibc firmware kernel_linux python_single_target_python3_14
 MTIME: 1791286005
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1792469989
+CPV: sys-kernel/genkernel-4.3.18-r1
+DEFINED_PHASES: compile install postinst prepare setup unpack
+DEPEND: app-text/asciidoc
+EAPI: 8
+IUSE: ibm +firmware systemd python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: 8646a31c5aea06961ff5b6938b0018d9
+PATH: pkgs-sys-kernel/genkernel-4.3.18-r1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14 app-alternatives/cpio app-alternatives/bc app-alternatives/yacc app-alternatives/lex >=app-misc/pax-utils-1.2.2 app-portage/elt-patches app-portage/portage-utils dev-build/autoconf dev-build/autoconf-archive dev-build/automake dev-build/cmake dev-build/libtool dev-util/gperf sys-apps/sandbox virtual/pkgconfig sys-libs/glibc[static-libs(+)] sys-kernel/linux-firmware
+SHA1: 2f420cd522128f892b86347e7d2f9b6224c742e1
+SIZE: 248627200
+USE: abi_x86_64 amd64 elibc_glibc firmware kernel_linux python_single_target_python3_14
+MTIME: 1792469991
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
