@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792468693
-PACKAGES: 1478
+TIMESTAMP: 1792469304
+PACKAGES: 1480
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -28018,6 +28018,31 @@ MTIME: 1791091770
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/meson-0.59 virtual/pkgconfig >=dev-util/gdbus-codegen-2.80.5-r1 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792469196
+CPV: media-video/pipewire-1.6.9-r1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/60.62.62= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.10.0:1.0 media-libs/gst-plugins-base:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/3= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes
+EAPI: 8
+IUSE: man bluetooth elogind dbus doc echo-cancel extra ffmpeg fftw flatpak gstreamer gsettings ieee1394 jack-client jack-sdk libcamera loudness lv2 modemmanager pipewire-alsa readline roc selinux pulseaudio sound-server sofa ssl system-service systemd test v4l X zeroconf abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: MIT LGPL-2.1+ GPL-2
+MD5: 847baa46ec10342cedc4a576b6d1af08
+PATH: pkgs-media-video/pipewire-1.6.9-r1-1.gpkg.tar
+PDEPEND: >=media-video/wireplumber-0.5.2
+PROVIDES: x86_64: libasound_module_ctl_pipewire.so libasound_module_pcm_pipewire.so libgstpipewire.so libjack.so.0 libjacknet.so.0 libjackserver.so.0 libpipewire-0.3.so.0 libpipewire-module-access.so libpipewire-module-adapter.so libpipewire-module-avb.so libpipewire-module-client-device.so libpipewire-module-client-node.so libpipewire-module-combine-stream.so libpipewire-module-echo-cancel.so libpipewire-module-fallback-sink.so libpipewire-module-filter-chain.so libpipewire-module-jack-tunnel.so libpipewire-module-jackdbus-detect.so libpipewire-module-link-factory.so libpipewire-module-loopback.so libpipewire-module-metadata.so libpipewire-module-netjack2-driver.so libpipewire-module-netjack2-manager.so libpipewire-module-parametric-equalizer.so libpipewire-module-pipe-tunnel.so libpipewire-module-portal.so libpipewire-module-profiler.so libpipewire-module-protocol-native.so libpipewire-module-protocol-pulse.so libpipewire-module-protocol-simple.so libpipewire-module-pulse-tunnel.so libpipewire-module-raop-sink.so libpipewire-module-rt.so libpipewire-module-rtkit.so libpipewire-module-rtp-sap.so libpipewire-module-rtp-sink.so libpipewire-module-rtp-source.so libpipewire-module-session-manager.so libpipewire-module-spa-device-factory.so libpipewire-module-spa-device.so libpipewire-module-spa-node-factory.so libpipewire-module-spa-node.so libpipewire-module-vban-recv.so libpipewire-module-vban-send.so libpipewire-module-x11-bell.so libpw-v4l2.so libspa-aec-null.so libspa-alsa.so libspa-audioconvert.so libspa-audiomixer.so libspa-audiotestsrc.so libspa-avb.so libspa-bluez5.so libspa-codec-bluez5-aac.so libspa-codec-bluez5-aptx.so libspa-codec-bluez5-faststream.so libspa-codec-bluez5-g722.so libspa-codec-bluez5-hfp-cvsd.so libspa-codec-bluez5-hfp-lc3-a127.so libspa-codec-bluez5-hfp-lc3-swb.so libspa-codec-bluez5-hfp-msbc.so libspa-codec-bluez5-lc3.so libspa-codec-bluez5-ldac.so libspa-codec-bluez5-opus-g.so libspa-codec-bluez5-opus.so libspa-codec-bluez5-sbc.so libspa-control.so libspa-dbus.so libspa-ffmpeg.so libspa-filter-graph-plugin-builtin.so libspa-filter-graph-plugin-ebur128.so libspa-filter-graph-plugin-ffmpeg.so libspa-filter-graph-plugin-ladspa.so libspa-filter-graph-plugin-lv2.so libspa-filter-graph.so libspa-jack.so libspa-support.so libspa-v4l2.so libspa-videoconvert.so libspa-videotestsrc.so libspa-volume.so libspa.so
+RDEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/60.62.62= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.10.0:1.0 media-libs/gst-plugins-base:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/3= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXfixes.so.3 libasound.so.2 libavcodec.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libbluetooth.so.3 libc.so.6 libcanberra.so.0 libcrypto.so.3 libdbus-1.so.3 libebur128.so.1 libelogind.so.0 libfdk-aac.so.2 libfftw3f.so.3 libfreeaptx.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0 liblc3.so.1 libldacBT_abr.so.2 libldacBT_enc.so.2 liblilv-0.so.0 libm.so.6 libncursesw.so.6 libopus.so.0 libpulse.so.0 libreadline.so.8 libsbc.so.1 libsndfile.so.1 libswscale.so.9 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0
+RESTRICT: test
+SHA1: 0f78b9f09198639fb38739ba30a1b542f4ee8987
+SIZE: 5386240
+SLOT: 0/0.4
+USE: X abi_x86_64 amd64 bluetooth dbus elibc_glibc elogind extra ffmpeg fftw gsettings gstreamer jack-client kernel_linux loudness lv2 pipewire-alsa pulseaudio readline sound-server ssl v4l
+MTIME: 1792469198
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-lang/nasm-2.15 >=dev-util/cargo-c-0.6.3 || ( >=dev-lang/rust-bin-1.90.0:* >=dev-lang/rust-1.90.0:* )
 BUILD_ID: 2
 BUILD_TIME: 1792209186
@@ -28084,6 +28109,30 @@ SIZE: 645120
 SLOT: 0/0.5
 USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux lua_single_target_lua5-4
 MTIME: 1791084843
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-libs/glib >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils sys-devel/gettext >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792469052
+CPV: media-video/wireplumber-0.5.18-r1
+DEFINED_PHASES: compile configure install postinst setup test
+DEPEND: dev-lang/lua:5.4 >=dev-libs/glib-2.68 >=media-video/pipewire-1.0.5-r1:0/0.4= virtual/libintl sys-auth/elogind
+EAPI: 8
+IUSE: doc doc elogind selinux system-service systemd test lua_single_target_lua5-3 lua_single_target_lua5-4
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: MIT
+MD5: c45c090e78e30262fb083938d2d69647
+PATH: pkgs-media-video/wireplumber-0.5.18-r1-1.gpkg.tar
+PROVIDES: x86_64: libwireplumber-0.5.so.0 libwireplumber-module-dbus-connection.so libwireplumber-module-default-nodes-api.so libwireplumber-module-file-monitor-api.so libwireplumber-module-log-settings.so libwireplumber-module-logind.so libwireplumber-module-lua-scripting.so libwireplumber-module-mixer-api.so libwireplumber-module-modem-manager.so libwireplumber-module-mpris.so libwireplumber-module-notifications-api.so libwireplumber-module-portal-permissionstore.so libwireplumber-module-reserve-device.so libwireplumber-module-settings.so libwireplumber-module-si-audio-adapter.so libwireplumber-module-si-node.so libwireplumber-module-si-standard-link.so libwireplumber-module-standard-event-source.so
+RDEPEND: dev-lang/lua:5.4 >=dev-libs/glib-2.68 >=media-video/pipewire-1.0.5-r1:0/0.4= virtual/libintl sys-auth/elogind >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libelogind.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 liblua5.4.so.0 libm.so.6 libpipewire-0.3.so.0
+RESTRICT: test
+SHA1: f2ab97e5ee4731256bd2aa24d6464df139297815
+SIZE: 665600
+SLOT: 0/0.5
+USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux lua_single_target_lua5-4
+MTIME: 1792469053
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
