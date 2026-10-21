@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792578285
-PACKAGES: 1527
+TIMESTAMP: 1792578591
+PACKAGES: 1528
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -22167,6 +22167,25 @@ SIZE: 2191360
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792305523
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1792578318
+CPV: kde-plasma/breeze-grub-6.8.1
+DEFINED_PHASES: compile configure info install nofetch prepare unpack
+EAPI: 9
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-3+
+MD5: 0702d282e8b80d497cb7b16675605b06
+PATH: pkgs-kde-plasma/breeze-grub-6.8.1-1.gpkg.tar
+RDEPEND: !kde-plasma/breeze-grub:5
+REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
+SHA1: 59d74737a934f9f08ee5ba7ec0ffb494fa7a3f86
+SIZE: 2191360
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792578319
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
