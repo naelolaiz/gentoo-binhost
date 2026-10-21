@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792569412
-PACKAGES: 1514
+TIMESTAMP: 1792569719
+PACKAGES: 1515
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -23991,6 +23991,30 @@ SIZE: 1269760
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux widgets
 MTIME: 1792298577
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792569563
+CPV: kde-plasma/union-6.8.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-libs/cxx-rust-cssparser-1.1.0 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtshadertools-6.11.2:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: doc tools +widgets debug examples test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: || ( LGPL-2.1 LGPL-3 ) GPL-3 BSD-2
+MD5: 879a37d44068f29da9e035b223a2a045
+PATH: pkgs-kde-plasma/union-6.8.1-1.gpkg.tar
+PROVIDES: x86_64: UnionWidgetsStyle.so libUnion.so.6 libUnionQuickImpl.so.6 libUnionQuickImplplugin.so libUnionQuickStyle.so.6 libUnionQuickStyleplugin.so org.kde.union.so union-colorprovider-kcolorscheme.so union-input-css.so union-platform-plasma.so
+RDEPEND: >=dev-libs/cxx-rust-cssparser-1.1.0 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtshadertools-6.11.2:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 kde-plasma/breeze:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/union:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6IconThemes.so.6 libKirigamiPlatform.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6Widgets.so.6 libc.so.6 libcxx-rust-cssparser.so.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 7c97dafa43063cb1e7d99835b4dddb54e63c3c7c
+SIZE: 1269760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux widgets
+MTIME: 1792569564
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
