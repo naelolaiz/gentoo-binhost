@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792591413
-PACKAGES: 1569
+TIMESTAMP: 1792591728
+PACKAGES: 1570
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -33580,6 +33580,27 @@ SIZE: 201758720
 SLOT: 7.2.9
 USE: abi_x86_64 amd64 elibc_glibc initramfs kernel_linux
 MTIME: 1791371245
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1792591342
+CPV: sys-kernel/gentoo-sources-7.3.0
+DEFINED_PHASES: compile install postinst postrm preinst prepare pretend setup test unpack
+EAPI: 8
+IUSE: experimental symlink build vanilla
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: a9d577eb2e50543d2d178b5d1cd09118
+PATH: pkgs-sys-kernel/gentoo-sources-7.3.0-1.gpkg.tar
+RDEPEND: app-alternatives/cpio dev-lang/perl app-alternatives/bc dev-build/make sys-devel/bison sys-devel/flex sys-libs/binutils-libs >=sys-libs/ncurses-5.2 virtual/libelf virtual/pkgconfig
+REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
+RESTRICT: binchecks strip
+SHA1: 706e0209c3c9a90976ae5476948a05e692d44ad9
+SIZE: 242954240
+SLOT: 7.3.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792591384
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
