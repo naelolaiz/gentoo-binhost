@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792604414
-PACKAGES: 1571
+TIMESTAMP: 1792604724
+PACKAGES: 1572
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1721,6 +1721,29 @@ SIZE: 552960
 SLOT: 0/7.2
 USE: abi_x86_64 amd64 dist-kernel elibc_glibc kernel_linux strip
 MTIME: 1792320489
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/pahole sys-apps/kmod[tools]
+BUILD_ID: 1
+BUILD_TIME: 1792604382
+CPV: app-emulation/virtualbox-modules-7.2.22
+DEFINED_PHASES: compile install postinst setup
+DEPEND: virtual/linux-sources
+EAPI: 8
+IDEPEND: sys-apps/kmod[tools]
+IUSE: dist-kernel modules-compress modules-sign +strip
+KEYWORDS: ~amd64
+LICENSE: GPL-3
+MD5: 9d9781fa1d1b2280cf3adf1cc0389216
+PATH: pkgs-app-emulation/virtualbox-modules-7.2.22-1.gpkg.tar
+RDEPEND: sys-apps/kmod[tools] virtual/dist-kernel:0/7.2.11= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
+SHA1: b0798fd6c1d496359bfcae0459aaa88237e488c3
+SIZE: 552960
+SLOT: 0/7.2
+USE: abi_x86_64 amd64 dist-kernel elibc_glibc kernel_linux strip
+MTIME: 1792604383
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
