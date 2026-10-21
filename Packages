@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792578591
-PACKAGES: 1528
+TIMESTAMP: 1792578900
+PACKAGES: 1529
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3867,6 +3867,27 @@ SIZE: 60395520
 SLOT: 0/1.27.2
 USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc kernel_linux
 MTIME: 1791865048
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( >=dev-lang/go-1.24.6 >=dev-lang/go-bootstrap-1.24.6 )
+BUILD_ID: 1
+BUILD_TIME: 1792578611
+CPV: dev-lang/go-1.27.3
+DEFINED_PHASES: compile install test
+EAPI: 9
+IUSE: cpu_flags_x86_sse2
+KEYWORDS: -* ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~s390 ~x86 ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 2190dcfab70c2c9d57a991025c4f8e1e
+PATH: pkgs-dev-lang/go-1.27.3-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
+RESTRICT: strip
+SHA1: aa07a9dea36d975fac59bfc555a3ba8ea249794f
+SIZE: 60395520
+SLOT: 0/1.27.3
+USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc kernel_linux
+MTIME: 1792578625
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
