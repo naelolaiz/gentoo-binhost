@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1792588057
+TIMESTAMP: 1792588133
 PACKAGES: 1568
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -10545,23 +10545,23 @@ MTIME: 1791285854
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-lang/go-1.27.0 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip
-BUILD_ID: 2
-BUILD_TIME: 1791866261
+BDEPEND: >=dev-lang/go-1.27.0 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip
+BUILD_ID: 3
+BUILD_TIME: 1792588032
 CPV: dev-util/github-cli-2.102.0
 DEFINED_PHASES: compile configure install unpack
 EAPI: 9
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv
+KEYWORDS: amd64 arm64 ~loong ppc64 ~riscv
 LICENSE: MIT Apache-2.0 BSD BSD-2 ISC MIT MPL-2.0 Unlicense
-MD5: b77a29ecd13b1e364d61800b775fa890
-PATH: pkgs-dev-util/github-cli-2.102.0-2.gpkg.tar
+MD5: 40cf928272ddb6889a31cb7dba11cc4b
+PATH: pkgs-dev-util/github-cli-2.102.0-3.gpkg.tar
 RDEPEND: >=dev-vcs/git-1.7.3 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6
 RESTRICT: test
-SHA1: a37f9b336ed7a7058aedde26c39db5b198515b1d
+SHA1: a8b3cecc3ecec12ff6e41ba7e1c76b5b01fea6e4
 SIZE: 15022080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791866268
+MTIME: 1792588040
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11267,23 +11267,24 @@ MTIME: 1792298983
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-lang/go-1.25.0 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip
-BUILD_ID: 2
-BUILD_TIME: 1791866198
+BDEPEND: >=dev-lang/go-1.25.0 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip
+BUILD_ID: 3
+BUILD_TIME: 1792588068
 CPV: dev-vcs/git-lfs-3.8.0
 DEFINED_PHASES: compile install postinst test unpack
 EAPI: 8
 IUSE: doc test
 KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
 LICENSE: Apache-2.0 BSD BSD-2 BSD-4 ISC MIT
-MD5: 835fc1e8178d77131af2f728b439abc5
-PATH: pkgs-dev-vcs/git-lfs-3.8.0-2.gpkg.tar
+MD5: a45ae07e5d6330b6cf6b2699bb800d40
+PATH: pkgs-dev-vcs/git-lfs-3.8.0-3.gpkg.tar
 RDEPEND: dev-vcs/git >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
 RESTRICT: test
-SHA1: 2bd83f45ec29913a525fadd16280e0074ebe9013
+SHA1: be5c8d4ab2b3418e48d57047c278b8103a4e0204
 SIZE: 5785600
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791866200
+MTIME: 1792588070
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
