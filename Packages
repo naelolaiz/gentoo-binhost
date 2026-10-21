@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792588133
-PACKAGES: 1568
+TIMESTAMP: 1792591413
+PACKAGES: 1569
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1635,6 +1635,23 @@ SIZE: 40407040
 SLOT: 0/7.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791111335
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1792591282
+CPV: app-emulation/virtualbox-additions-7.2.22
+DEFINED_PHASES: install unpack
+EAPI: 8
+KEYWORDS: ~amd64
+LICENSE: GPL-3 || ( GPL-3 CDDL )
+MD5: a6eed539d48f3bf98971f6a11f29f252
+PATH: pkgs-app-emulation/virtualbox-additions-7.2.22-1.gpkg.tar
+SHA1: e656c9f10ab12de652bb6b4e3ef340b7071aa7ba
+SIZE: 40509440
+SLOT: 0/7.2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792591283
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
