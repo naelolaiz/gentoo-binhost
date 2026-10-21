@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792554554
-PACKAGES: 1489
+TIMESTAMP: 1792554861
+PACKAGES: 1490
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -23717,6 +23717,25 @@ SHA1: e7a11408add5ddf6cb1b40b5be6545b3fc524c78
 SIZE: 40960
 USE: abi_x86_64 amd64 cet elibc_glibc kernel_linux
 MTIME: 1791389048
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1792554535
+CPV: llvm-core/clang-common-23.1.4
+DEFINED_PHASES: compile install postinst postrm preinst prepare pretend unpack
+EAPI: 8
+IDEPEND: sys-devel/gcc-config sys-devel/gcc-config
+IUSE: default-compiler-rt default-libcxx default-lld bootstrap-prefix cet emacs hardened llvm-libunwind verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA
+MD5: 18f53c13641e67a4fb41093bae4d2705
+PATH: pkgs-llvm-core/clang-common-23.1.4-1.gpkg.tar
+PDEPEND: sys-devel/gcc sys-devel/gcc sys-devel/binutils llvm-runtimes/clang-runtime
+SHA1: 70909ca391108115ee9486bfd5dd955ce5814317
+SIZE: 40960
+USE: abi_x86_64 amd64 cet elibc_glibc kernel_linux
+MTIME: 1792554536
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
