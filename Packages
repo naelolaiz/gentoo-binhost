@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792578900
-PACKAGES: 1529
+TIMESTAMP: 1792579226
+PACKAGES: 1532
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -23407,6 +23407,27 @@ MTIME: 1792306170
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792579013
+CPV: kde-plasma/ocean-sound-theme-6.8.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: CC-BY-SA-4.0
+MD5: 72fe643651316ae7a6f960adb361855c
+PATH: pkgs-kde-plasma/ocean-sound-theme-6.8.1-1.gpkg.tar
+RDEPEND: >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/ocean-sound-theme:5
+SHA1: 285860a7afb9a0de28357afdd7d39eaace6721d5
+SIZE: 2088960
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792579014
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791242683
@@ -23496,6 +23517,27 @@ SIZE: 1996800
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792306292
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1792579066
+CPV: kde-plasma/oxygen-sounds-6.8.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2+
+MD5: 67145c2f8b16775e03dc7d6712377fc8
+PATH: pkgs-kde-plasma/oxygen-sounds-6.8.1-1.gpkg.tar
+RDEPEND: || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/oxygen-sounds:5
+SHA1: 3d85902b9552951b0743dabdc8a33c7d9b092069
+SIZE: 1996800
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792579067
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -23993,6 +24035,25 @@ SIZE: 308531200
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792306220
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6 kde-frameworks/extra-cmake-modules:0 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792579021
+CPV: kde-plasma/plasma-workspace-wallpapers-6.8.1
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 1c68b0d048971432bc4bb32793045db8
+PATH: pkgs-kde-plasma/plasma-workspace-wallpapers-6.8.1-1.gpkg.tar
+RDEPEND: !kde-plasma/plasma-workspace-wallpapers:5
+SHA1: 5e4fa4e519cc35c2ccdd1c038ab08e9a53d9b8ee
+SIZE: 308531200
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792579054
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33331,26 +33392,26 @@ MTIME: 1791367896
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-lang/go-1.26.4:0/1.27.2= >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1791865574
+BDEPEND: >=dev-lang/go-1.26.4:0/1.27.3= >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1792578967
 CPV: www-apps/gitea-1.27.3
 DEFINED_PHASES: compile configure install postinst prepare unpack
 DEPEND: acct-group/git acct-user/git[gitea] sys-libs/pam
 EAPI: 8
 IDEPEND: sys-libs/libcap
 IUSE: +acct gogit pam sqlite pie +filecaps
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~riscv ~x86
+KEYWORDS: amd64 ~arm ~arm64 ~loong ~riscv ~x86
 LICENSE: Apache-2.0 BSD BSD-2 CC0-1.0 ISC MIT MPL-2.0
-MD5: 170d956a7af928a14b6414cdf6b4214d
-PATH: pkgs-www-apps/gitea-1.27.3-2.gpkg.tar
+MD5: c8e4fd91f2122e57255a09989d36622a
+PATH: pkgs-www-apps/gitea-1.27.3-3.gpkg.tar
 RDEPEND: acct-group/git acct-user/git[gitea] sys-libs/pam virtual/tmpfiles >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libpam.so.0
 RESTRICT: test
-SHA1: 326b006706b79b69e5ce3d8235d83ff579c9ba8e
+SHA1: abf4b2174891e09b8c858ab01a745b036e57558a
 SIZE: 44922880
 USE: abi_x86_64 acct amd64 elibc_glibc filecaps gogit kernel_linux pam sqlite
-MTIME: 1791865581
+MTIME: 1792578974
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
