@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792680216
-PACKAGES: 1589
+TIMESTAMP: 1792680831
+PACKAGES: 1592
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7931,6 +7931,27 @@ SHA1: 6171b6af5f7930705a6f90fd07ac4d73b1e5cda0
 SIZE: 1085440
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 test-rust
 MTIME: 1791282867
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/cachecontrol-0.14.3[python_targets_python3_14(-)] >=dev-python/dependency-groups-1.3.0[python_targets_python3_14(-)] >=dev-python/distlib-0.4.0[python_targets_python3_14(-)] >=dev-python/distro-1.9.0[python_targets_python3_14(-)] >=dev-python/msgpack-1.1.1[python_targets_python3_14(-)] >=dev-python/packaging-26.2[python_targets_python3_14(-)] >=dev-python/platformdirs-4.3.8[python_targets_python3_14(-)] >=dev-python/pyproject-hooks-1.2.0[python_targets_python3_14(-)] >=dev-python/requests-2.33.1[python_targets_python3_14(-)] >=dev-python/rich-14.1.0[python_targets_python3_14(-)] >=dev-python/resolvelib-1.2.0[python_targets_python3_14(-)] >=dev-python/setuptools-70.3.0[python_targets_python3_14(-)] >=dev-python/tomli-w-1.2.0[python_targets_python3_14(-)] >=dev-python/truststore-0.10.1[python_targets_python3_14(-)] >=dev-python/typing-extensions-4.13.2[python_targets_python3_14(-)] dev-lang/python:3.14[ssl(+),threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792680675
+CPV: dev-python/pip-26.2.2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14[ssl(+),threads(+)]
+EAPI: 8
+IUSE: test test-rust python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 1ae4ef4acf29e45a9d6908fd36d943e4
+PATH: pkgs-dev-python/pip-26.2.2-1.gpkg.tar
+RDEPEND: >=dev-python/cachecontrol-0.14.3[python_targets_python3_14(-)] >=dev-python/dependency-groups-1.3.0[python_targets_python3_14(-)] >=dev-python/distlib-0.4.0[python_targets_python3_14(-)] >=dev-python/distro-1.9.0[python_targets_python3_14(-)] >=dev-python/msgpack-1.1.1[python_targets_python3_14(-)] >=dev-python/packaging-26.2[python_targets_python3_14(-)] >=dev-python/platformdirs-4.3.8[python_targets_python3_14(-)] >=dev-python/pyproject-hooks-1.2.0[python_targets_python3_14(-)] >=dev-python/requests-2.33.1[python_targets_python3_14(-)] >=dev-python/rich-14.1.0[python_targets_python3_14(-)] >=dev-python/resolvelib-1.2.0[python_targets_python3_14(-)] >=dev-python/setuptools-70.3.0[python_targets_python3_14(-)] >=dev-python/tomli-w-1.2.0[python_targets_python3_14(-)] >=dev-python/truststore-0.10.1[python_targets_python3_14(-)] >=dev-python/typing-extensions-4.13.2[python_targets_python3_14(-)] dev-lang/python:3.14[ssl(+),threads(+)]
+RESTRICT: test
+SHA1: b9613aa492ecef22b63081fae2bdc43017e8b089
+SIZE: 1085440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 test-rust
+MTIME: 1792680677
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31642,6 +31663,28 @@ MTIME: 1791282940
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792680694
+CPV: net-misc/yt-dlp-2026.10.21
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: +deno test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: amd64 arm arm64 ~hppa ppc ppc64 ~riscv x86 ~arm64-macos ~x64-macos
+LICENSE: Unlicense
+MD5: b509da881ee8237f0e35b32e823c5c67
+PATH: pkgs-net-misc/yt-dlp-2026.10.21-1.gpkg.tar
+RDEPEND: dev-python/pycryptodome[python_targets_python3_14(-)] =dev-python/yt-dlp-ejs-0.8*[python_targets_python3_14(-)] >=dev-lang/deno-bin-2.9.8 dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "371519bd206e55f49a87c581e4d5035e20562f5c"}
+RESTRICT: test
+SHA1: cb3eacc28882c44a09a842f151dcc5d9a9f7c4ce
+SIZE: 7700480
+USE: abi_x86_64 amd64 deno elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792680697
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791312949
@@ -32687,6 +32730,28 @@ SHA1: b08fe61fa4ad763ba32d53e11b37e1096c4b9f2b
 SIZE: 16640000
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792587628
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792680658
+CPV: sci-ml/ollama-0.40.7
+DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
+DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0=
+EAPI: 8
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: a71057c7e186a3dad108f5da7c32a4a7
+PATH: pkgs-sci-ml/ollama-0.40.7-1.gpkg.tar
+PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
+RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
+RESTRICT: mirror test
+SHA1: aebb6292d9340e0539735c64c9f8ad24f3db3468
+SIZE: 16762880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792680662
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
