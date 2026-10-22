@@ -393,10 +393,6 @@
    "path": "pkgs-app-crypt/age-1.3.1-r1-2.gpkg.tar"
   },
   {
-   "at": 1791438419,
-   "path": "pkgs-app-editors/neovim-0.12.5-r2-1.gpkg.tar"
-  },
-  {
    "at": 1792681346,
    "path": "pkgs-app-emulation/qemu-10.2.3-r1-1.gpkg.tar"
   },
@@ -457,16 +453,8 @@
    "path": "pkgs-dev-util/github-cli-2.102.0-2.gpkg.tar"
   },
   {
-   "at": 1791433860,
-   "path": "pkgs-dev-util/gource-0.55-1.gpkg.tar"
-  },
-  {
    "at": 1792320575,
    "path": "pkgs-dev-util/kdevelop-26.08.2-1.gpkg.tar"
-  },
-  {
-   "at": 1791437501,
-   "path": "pkgs-dev-util/schroot-1.6.13_p7-r2-1.gpkg.tar"
   },
   {
    "at": 1792299120,
@@ -479,10 +467,6 @@
   {
    "at": 1792588133,
    "path": "pkgs-dev-vcs/git-lfs-3.8.0-2.gpkg.tar"
-  },
-  {
-   "at": 1791415878,
-   "path": "pkgs-dev-vcs/subversion-1.14.5-r3-3.gpkg.tar"
   },
   {
    "at": 1792678372,
@@ -529,14 +513,6 @@
    "path": "pkgs-llvm-core/llvm-23.1.4-1.gpkg.tar"
   },
   {
-   "at": 1791436881,
-   "path": "pkgs-media-gfx/inkscape-1.4.4-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1791433553,
-   "path": "pkgs-media-gfx/openscad-2026.09.18_pre-1.gpkg.tar"
-  },
-  {
    "at": 1791696295,
    "path": "pkgs-media-libs/avidemux-plugins-2.8.1_p20251019-1.gpkg.tar"
   },
@@ -547,10 +523,6 @@
   {
    "at": 1792681346,
    "path": "pkgs-media-libs/libsdl-1.2.74-1.gpkg.tar"
-  },
-  {
-   "at": 1791433553,
-   "path": "pkgs-media-sound/guitarix-0.47.0-r2-1.gpkg.tar"
   },
   {
    "at": 1791520951,
@@ -577,24 +549,8 @@
    "path": "pkgs-net-libs/nodejs-26.11.1-1.gpkg.tar"
   },
   {
-   "at": 1791431116,
-   "path": "pkgs-sci-electronics/kicad-10.0.5-1.gpkg.tar"
-  },
-  {
-   "at": 1791433553,
-   "path": "pkgs-sci-electronics/pulseview-0.4.2_p20250515-1.gpkg.tar"
-  },
-  {
-   "at": 1791431426,
-   "path": "pkgs-sci-mathematics/cgal-6.2-1.gpkg.tar"
-  },
-  {
    "at": 1792681346,
    "path": "pkgs-sci-ml/ggml-0.25.3-1.gpkg.tar"
-  },
-  {
-   "at": 1791438419,
-   "path": "pkgs-sci-ml/ollama-0.35.1-1.gpkg.tar"
   },
   {
    "at": 1792681346,
@@ -615,10 +571,6 @@
   {
    "at": 1792579226,
    "path": "pkgs-www-apps/gitea-1.27.3-2.gpkg.tar"
-  },
-  {
-   "at": 1791445201,
-   "path": "pkgs-x11-drivers/xf86-input-wacom-1.2.4-1.gpkg.tar"
   },
   {
    "at": 1791696915,
