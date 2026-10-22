@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1792678372
+TIMESTAMP: 1792678678
 PACKAGES: 1581
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -25219,8 +25219,8 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1792584834
+BUILD_ID: 2
+BUILD_TIME: 1792678374
 CPV: kde-plasma/sddm-kcm-6.8.1
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
 DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/karchive-6.30.0:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 dev-qt/qtbase:6
@@ -25229,16 +25229,16 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: debug
 KEYWORDS: ~amd64 ~arm64
 LICENSE: GPL-2+
-MD5: 347338aa74455c57b6c841d23302324a
-PATH: pkgs-kde-plasma/sddm-kcm-6.8.1-1.gpkg.tar
+MD5: cd9b697933bedf24f0f562b7ccd6f4ca
+PATH: pkgs-kde-plasma/sddm-kcm-6.8.1-2.gpkg.tar
 PROVIDES: x86_64: kcm_sddm.so
-RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/karchive-6.30.0:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 x11-misc/sddm || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/sddm-kcm:5 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/karchive-6.30.0:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 gui-apps/sddm || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/sddm-kcm:5 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6Archive.so.6 libKF6AuthCore.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6KIOGui.so.6 libKF6Service.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
-SHA1: 687fb9cb48892d1267c86169b8a2b0127542ac76
+SHA1: a51f46f9e1c76d134306a266d1c28b53580ccf93
 SIZE: 235520
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792584835
+MTIME: 1792678375
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
