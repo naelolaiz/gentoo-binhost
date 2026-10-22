@@ -15,16 +15,20 @@
   "app-crypt/keepsecret-26.08.1": 1791624491,
   "app-crypt/keysmith-26.08.1": 1791624491,
   "app-editors/ghostwriter-26.08.1": 1791624491,
-  "app-emulation/qemu-10.2.3-r1": 1791446227,
   "app-misc/francis-26.08.1": 1791624491,
   "dev-build/dolphin-plugins-makefileactions-26.08.1": 1791624491,
-  "dev-libs/kirigami-app-components-1.0.2": 1791446227,
+  "dev-lang/deno-bin-2.9.7": 1792681346,
   "dev-libs/kweathercore-26.08.1": 1791624491,
   "dev-libs/libzip-1.12": 1792320577,
   "dev-libs/libzip-1.12-r1": 1792320577,
   "dev-python/pycryptodome-3.23.0": 1791866363,
   "dev-python/pycryptodome-3.24.0": 1791866363,
-  "dev-python/sip-6.17.0": 1791446227,
+  "dev-python/uv-0.12.23": 1792681346,
+  "dev-python/uv-0.13.1": 1792681346,
+  "dev-python/uv-0.13.3": 1792681346,
+  "dev-python/uv-build-0.12.23": 1792681346,
+  "dev-python/uv-build-0.13.1": 1792681346,
+  "dev-python/uv-build-0.13.3": 1792681346,
   "dev-util/kdevelop-26.08.1": 1791624491,
   "dev-util/kdevelop-python-26.08.1": 1791624491,
   "dev-util/massif-visualizer-26.08.1": 1791624491,
@@ -180,6 +184,7 @@
   "kde-apps/yakuake-26.08.1": 1791624491,
   "kde-frameworks/attica-6.30.0": 1792128533,
   "kde-frameworks/baloo-6.30.0": 1792128533,
+  "kde-frameworks/baloo-6.31.0": 1792681346,
   "kde-frameworks/bluez-qt-6.30.0": 1792128533,
   "kde-frameworks/breeze-icons-6.30.0": 1792128533,
   "kde-frameworks/extra-cmake-modules-6.30.0": 1792128533,
@@ -326,7 +331,6 @@
   "media-gfx/kio-mobi-thumbnailer-26.08.1": 1791624491,
   "media-gfx/kio-ps-thumbnailer-26.08.1": 1791624491,
   "media-gfx/qrca-26.08.1": 1791624491,
-  "media-libs/libsdl-1.2.74": 1791439398,
   "media-sound/audex-26.08.1": 1791624491,
   "media-sound/elisa-26.08.1": 1791624491,
   "media-sound/kasts-26.08.1": 1791624491,
@@ -339,24 +343,24 @@
   "net-misc/kio-zeroconf-26.08.1": 1791624491,
   "net-news/alligator-26.08.1": 1791624491,
   "net-p2p/ktorrent-26.08.1": 1791624491,
-  "sci-ml/ggml-0.25.3": 1791439398,
   "sci-ml/ggml-0.26.0": 1792320577,
   "sci-ml/ggml-0.27.0": 1792470107,
-  "sci-ml/ollama-0.35.1": 1791446227,
   "sci-ml/ollama-0.40.0": 1791624491,
   "sci-ml/ollama-0.40.2": 1791782366,
   "sci-ml/ollama-0.40.3": 1792320577,
   "sci-ml/ollama-0.40.5": 1792390605,
   "sci-ml/ollama-0.40.6": 1792609995,
+  "sci-ml/ollama-0.40.6-r1": 1792681346,
   "sys-block/partitionmanager-26.08.1": 1791624491,
   "sys-fs/btrfs-progs-7.1": 1792470107,
   "sys-kernel/gentoo-kernel-bin-7.2.10": 1792320577,
   "sys-kernel/gentoo-kernel-bin-7.2.9": 1792320577,
   "sys-libs/kpmcore-26.08.1": 1791624491,
-  "sys-libs/libcap-ng-0.9.5-r1": 1791439398,
   "virtual/dist-kernel-7.2.10": 1792320577,
   "virtual/dist-kernel-7.2.9": 1792320577,
-  "www-client/falkon-26.08.1": 1791624491
+  "www-client/falkon-26.08.1": 1791624491,
+  "x11-misc/sddm-0.21.0_p20260819": 1792681346,
+  "x11-misc/sddm-0.21.0_p20260819-r1": 1792681346
  },
  "schema": 1,
  "superseded": [
@@ -393,6 +397,10 @@
    "path": "pkgs-app-editors/neovim-0.12.5-r2-1.gpkg.tar"
   },
   {
+   "at": 1792681346,
+   "path": "pkgs-app-emulation/qemu-10.2.3-r1-1.gpkg.tar"
+  },
+  {
    "at": 1791782363,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.18-1.gpkg.tar"
   },
@@ -417,12 +425,20 @@
    "path": "pkgs-dev-libs/kirigami-addons-1.15.0-1.gpkg.tar"
   },
   {
+   "at": 1792681346,
+   "path": "pkgs-dev-libs/kirigami-app-components-1.0.2-1.gpkg.tar"
+  },
+  {
    "at": 1792311107,
    "path": "pkgs-dev-python/cbor2-6.1.5-1.gpkg.tar"
   },
   {
    "at": 1792642694,
    "path": "pkgs-dev-python/packaging-26.3-2.gpkg.tar"
+  },
+  {
+   "at": 1792681346,
+   "path": "pkgs-dev-python/sip-6.17.0-1.gpkg.tar"
   },
   {
    "at": 1791531917,
@@ -529,6 +545,10 @@
    "path": "pkgs-media-libs/libheif-1.23.6-1.gpkg.tar"
   },
   {
+   "at": 1792681346,
+   "path": "pkgs-media-libs/libsdl-1.2.74-1.gpkg.tar"
+  },
+  {
    "at": 1791433553,
    "path": "pkgs-media-sound/guitarix-0.47.0-r2-1.gpkg.tar"
   },
@@ -569,12 +589,24 @@
    "path": "pkgs-sci-mathematics/cgal-6.2-1.gpkg.tar"
   },
   {
+   "at": 1792681346,
+   "path": "pkgs-sci-ml/ggml-0.25.3-1.gpkg.tar"
+  },
+  {
    "at": 1791438419,
    "path": "pkgs-sci-ml/ollama-0.35.1-1.gpkg.tar"
   },
   {
+   "at": 1792681346,
+   "path": "pkgs-sci-ml/ollama-0.35.1-2.gpkg.tar"
+  },
+  {
    "at": 1791866290,
    "path": "pkgs-sci-ml/ollama-0.40.3-1.gpkg.tar"
+  },
+  {
+   "at": 1792681346,
+   "path": "pkgs-sys-libs/libcap-ng-0.9.5-r1-1.gpkg.tar"
   },
   {
    "at": 1791865656,
