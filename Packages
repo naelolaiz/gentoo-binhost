@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792678678
-PACKAGES: 1581
+TIMESTAMP: 1792678989
+PACKAGES: 1582
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2970,6 +2970,29 @@ SHA1: 1ac0f44a776547594327c670a2501947be4835ac
 SIZE: 21268480
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux luajittex xetex
 MTIME: 1791264762
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-apps/ed sys-devel/flex virtual/pkgconfig >=app-portage/elt-patches-20250306
+BUILD_ID: 2
+BUILD_TIME: 1792678901
+CPV: app-text/texlive-core-2024-r3
+DEFINED_PHASES: compile configure install postinst postrm prepare test
+DEPEND: x11-libs/libX11 x11-libs/libXmu sci-libs/mpfi virtual/zlib:0/1= >=media-libs/harfbuzz-1.4.5:0/6.0.0=[icu,graphite] >=media-libs/libpng-1.2.43-r2:0/16= media-libs/gd[png] media-gfx/graphite2:0/0= media-gfx/potrace:0/0= >=x11-libs/cairo-1.12 >=x11-libs/pixman-0.18 dev-libs/zziplib:0/13= app-text/libpaper:0/2= dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= >=dev-libs/ptexenc-1.4.6 >=app-text/teckit-2.5.10 media-libs/fontconfig media-libs/freetype:2 >=dev-libs/icu-50:0/78= >=dev-libs/kpathsea-6.4.0:0/6.4.0=
+EAPI: 8
+IUSE: cjk X doc source tk +luajittex xetex xindy
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: BSD CC-BY-SA-4.0 GPL-1+ GPL-2 GPL-2+ GPL-3+ MIT TeX-other-free
+MD5: 89aca745b7d1c030d57d7d4fe23b8886
+PATH: pkgs-app-text/texlive-core-2024-r3-2.gpkg.tar
+PROVIDES: x86_64: libsynctex.so.2 libtexlua53.so.5 libtexluajit.so.2
+RDEPEND: x11-libs/libX11 x11-libs/libXmu sci-libs/mpfi virtual/zlib:0/1= >=media-libs/harfbuzz-1.4.5:0/6.0.0=[icu,graphite] >=media-libs/libpng-1.2.43-r2:0/16= media-libs/gd[png] media-gfx/graphite2:0/0= media-gfx/potrace:0/0= >=x11-libs/cairo-1.12 >=x11-libs/pixman-0.18 dev-libs/zziplib:0/13= app-text/libpaper:0/2= dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= >=dev-libs/ptexenc-1.4.6 >=app-text/teckit-2.5.10 media-libs/fontconfig media-libs/freetype:2 >=dev-libs/icu-50:0/78= >=dev-libs/kpathsea-6.4.0:0/6.4.0= virtual/perl-Getopt-Long app-misc/ca-certificates dev-perl/File-HomeDir dev-perl/Log-Dispatch dev-perl/Unicode-LineBreak dev-perl/YAML-Tiny !<dev-texlive/texlive-basic-2023 !<dev-texlive/texlive-mathscience-2023 !<dev-texlive/texlive-langother-2023 !<dev-texlive/texlive-music-2023 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "371519bd206e55f49a87c581e4d5035e20562f5c"}
+REQUIRES: x86_64: libTECkit.so.0 libX11.so.6 libc.so.6 libcairo.so.2 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libgraphite2.so.3 libharfbuzz.so.0 libicui18n.so.78 libicuuc.so.78 libkpathsea.so.6 libm.so.6 libmpfi.so.0 libmpfr.so.6 libpaper.so.2 libpixman-1.so.0 libpng16.so.16 libpotrace.so.0 libptexenc.so.1 libstdc++.so.6 libz.so.1 libzzip.so.13
+SHA1: 8445209a6b0d3d4989c4d54cac44ef4369acc0d0
+SIZE: 21493760
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux luajittex xetex
+MTIME: 1792678908
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -24579,23 +24602,22 @@ MTIME: 1792315526
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BUILD_ID: 1
-BUILD_TIME: 1792585544
+BUILD_ID: 2
+BUILD_TIME: 1792678384
 CPV: kde-plasma/plasma-meta-6.8.1
 DEFINED_PHASES: postinst
 EAPI: 9
 IUSE: accessibility +backup bluetooth +browser-integration +crash-handler crypt cups discover +display-manager +elogind +firewall flatpak grub gtk +kwallet +networkmanager ocr oxygen-theme plymouth pulseaudio rdp +sddm sdk +smart systemd thunderbolt unsupported virtualkeyboard wacom +wallpapers webengine +xwayland
 KEYWORDS: ~amd64 ~arm64
 LICENSE: metapackage
-MD5: ceaee288ed655546e07f9664f9725a40
-PATH: pkgs-kde-plasma/plasma-meta-6.8.1-1.gpkg.tar
-RDEPEND: >=kde-plasma/aurorae-6.8.1:6 >=kde-plasma/kactivitymanagerd-6.8.1:6 >=kde-plasma/kde-cli-tools-6.8.1:6 >=kde-plasma/kde-cli-tools-common-6.8.1 >=kde-plasma/kdecoration-6.8.1:6 >=kde-plasma/kdeplasma-addons-6.8.1:6 >=kde-plasma/keditfiletype-6.8.1 >=kde-plasma/kglobalacceld-6.8.1:6 >=kde-plasma/kinfocenter-6.8.1:6 >=kde-plasma/kmenuedit-6.8.1:6 >=kde-plasma/knighttime-6.8.1:6 >=kde-plasma/kpipewire-6.8.1:6 >=kde-plasma/kscreen-6.8.1:6 >=kde-plasma/kscreenlocker-6.8.1:6 >=kde-plasma/ksshaskpass-6.8.1:6 >=kde-plasma/ksystemstats-6.8.1:6 >=kde-plasma/kwayland-6.8.1:6 >=kde-plasma/kwin-6.8.1:6[lock] >=kde-plasma/kwrited-6.8.1:6 >=kde-plasma/layer-shell-qt-6.8.1:6 >=kde-plasma/libkscreen-6.8.1:6 >=kde-plasma/libksysguard-6.8.1:6 >=kde-plasma/libplasma-6.8.1:6 >=kde-plasma/milou-6.8.1:6 >=kde-plasma/ocean-sound-theme-6.8.1:6 >=kde-plasma/plasma-activities-6.8.1:6 >=kde-plasma/plasma-activities-stats-6.8.1:6 >=kde-plasma/plasma-desktop-6.8.1:6 >=kde-plasma/plasma-integration-6.8.1:6 >=kde-plasma/plasma-systemmonitor-6.8.1:6 >=kde-plasma/plasma-welcome-6.8.1:6 >=kde-plasma/plasma-workspace-6.8.1:6 >=kde-plasma/plasma5support-6.8.1:6 >=kde-plasma/polkit-kde-agent-6.8.1:* >=kde-plasma/powerdevil-6.8.1:6 >=kde-plasma/qqc2-breeze-style-6.8.1:6 >=kde-plasma/systemsettings-6.8.1:6 >=kde-plasma/xdg-desktop-portal-kde-6.8.1:6 sys-apps/dbus[elogind] sys-auth/polkit[elogind] sys-fs/udisks:2[elogind] >=kde-plasma/kup-6.8.1:6 >=kde-plasma/bluedevil-6.8.1:6 >=kde-plasma/plasma-browser-integration-6.8.1:6 >=kde-plasma/drkonqi-legacy-6.3.80_p20250417:6 >=kde-plasma/plasma-vault-6.8.1:6 >=kde-plasma/print-manager-6.8.1:6 net-print/cups-meta >=kde-plasma/sddm-kcm-6.8.1:6 >=x11-misc/sddm-0.21.0_p20240302[elogind] sys-auth/elogind[pam] >=kde-plasma/breeze-grub-6.8.1:6 >=kde-plasma/breeze-gtk-6.8.1:6 >=kde-plasma/kde-gtk-config-6.8.1:6 sys-apps/xdg-desktop-portal-gtk x11-misc/appmenu-gtk-module >=kde-plasma/kwallet-pam-6.8.1:6 >=kde-plasma/plasma-nm-6.8.1:6 net-misc/networkmanager[elogind] >=kde-frameworks/oxygen-icons-6.0.0:* >=kde-plasma/oxygen-6.8.1:6 >=kde-plasma/oxygen-sounds-6.8.1:6 >=kde-plasma/plasma-pa-6.8.1:6 >=kde-plasma/plasma-disks-6.8.1:6 !gui-apps/qt6ct >=kde-plasma/plasma-desktop-6.8.1:6[input_devices_wacom] >=kde-plasma/plasma-workspace-wallpapers-6.8.1:6 >=gui-apps/xwaylandvideobridge-0.5.0 >=kde-plasma/spectacle-6.8.1:6 <kde-plasma/spectacle-15
-REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
-SHA1: 08d1c94e2608f69ad9a15e73e819239a373be3cd
+MD5: 1fce1e971cca19887f3c8cf207537f33
+PATH: pkgs-kde-plasma/plasma-meta-6.8.1-2.gpkg.tar
+RDEPEND: >=kde-plasma/aurorae-6.8.1:6 >=kde-plasma/kactivitymanagerd-6.8.1:6 >=kde-plasma/kde-cli-tools-6.8.1:6 >=kde-plasma/kde-cli-tools-common-6.8.1 >=kde-plasma/kdecoration-6.8.1:6 >=kde-plasma/kdeplasma-addons-6.8.1:6 >=kde-plasma/keditfiletype-6.8.1 >=kde-plasma/kglobalacceld-6.8.1:6 >=kde-plasma/kinfocenter-6.8.1:6 >=kde-plasma/kmenuedit-6.8.1:6 >=kde-plasma/knighttime-6.8.1:6 >=kde-plasma/kpipewire-6.8.1:6 >=kde-plasma/kscreen-6.8.1:6 >=kde-plasma/kscreenlocker-6.8.1:6 >=kde-plasma/ksshaskpass-6.8.1:6 >=kde-plasma/ksystemstats-6.8.1:6 >=kde-plasma/kwayland-6.8.1:6 >=kde-plasma/kwin-6.8.1:6[lock] >=kde-plasma/kwrited-6.8.1:6 >=kde-plasma/layer-shell-qt-6.8.1:6 >=kde-plasma/libkscreen-6.8.1:6 >=kde-plasma/libksysguard-6.8.1:6 >=kde-plasma/libplasma-6.8.1:6 >=kde-plasma/milou-6.8.1:6 >=kde-plasma/ocean-sound-theme-6.8.1:6 >=kde-plasma/plasma-activities-6.8.1:6 >=kde-plasma/plasma-activities-stats-6.8.1:6 >=kde-plasma/plasma-desktop-6.8.1:6 >=kde-plasma/plasma-integration-6.8.1:6 >=kde-plasma/plasma-systemmonitor-6.8.1:6 >=kde-plasma/plasma-welcome-6.8.1:6 >=kde-plasma/plasma-workspace-6.8.1:6 >=kde-plasma/plasma5support-6.8.1:6 >=kde-plasma/polkit-kde-agent-6.8.1:* >=kde-plasma/powerdevil-6.8.1:6 >=kde-plasma/qqc2-breeze-style-6.8.1:6 >=kde-plasma/systemsettings-6.8.1:6 >=kde-plasma/xdg-desktop-portal-kde-6.8.1:6 sys-apps/dbus[elogind] sys-auth/polkit[elogind] sys-fs/udisks:2[elogind] >=kde-plasma/kup-6.8.1:6 >=kde-plasma/bluedevil-6.8.1:6 >=kde-plasma/plasma-browser-integration-6.8.1:6 >=kde-plasma/drkonqi-legacy-6.3.80_p20250417:6 >=kde-plasma/plasma-vault-6.8.1:6 >=kde-plasma/print-manager-6.8.1:6 net-print/cups-meta >=kde-plasma/sddm-kcm-6.8.1:6 >=gui-apps/sddm-0.21.0_p20240302[elogind] sys-auth/elogind[pam] >=kde-plasma/breeze-grub-6.8.1:6 >=kde-plasma/breeze-gtk-6.8.1:6 >=kde-plasma/kde-gtk-config-6.8.1:6 sys-apps/xdg-desktop-portal-gtk x11-misc/appmenu-gtk-module >=kde-plasma/kwallet-pam-6.8.1:6 >=kde-plasma/plasma-nm-6.8.1:6 net-misc/networkmanager[elogind] >=kde-frameworks/oxygen-icons-6.0.0:* >=kde-plasma/oxygen-6.8.1:6 >=kde-plasma/oxygen-sounds-6.8.1:6 >=kde-plasma/plasma-pa-6.8.1:6 >=kde-plasma/plasma-disks-6.8.1:6 !gui-apps/qt6ct >=kde-plasma/plasma-desktop-6.8.1:6[input_devices_wacom] >=kde-plasma/plasma-workspace-wallpapers-6.8.1:6 >=gui-apps/xwaylandvideobridge-0.5.0 >=kde-plasma/spectacle-6.8.1:6 <kde-plasma/spectacle-15
+SHA1: 134e7fa54d669bbea1de332e7d1832f99e771abe
 SIZE: 30720
 SLOT: 6
 USE: abi_x86_64 amd64 backup bluetooth browser-integration crash-handler crypt cups display-manager elibc_glibc elogind grub gtk kernel_linux kwallet networkmanager oxygen-theme pulseaudio sddm smart wacom wallpapers xwayland
-MTIME: 1792585545
+MTIME: 1792678385
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
