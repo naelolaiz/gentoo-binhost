@@ -409,6 +409,10 @@
    "path": "pkgs-dev-python/cbor2-6.1.5-1.gpkg.tar"
   },
   {
+   "at": 1792642694,
+   "path": "pkgs-dev-python/packaging-26.3-2.gpkg.tar"
+  },
+  {
    "at": 1791531917,
    "path": "pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-1.gpkg.tar"
   },
@@ -479,6 +483,10 @@
   {
    "at": 1791614984,
    "path": "pkgs-kde-plasma/kwin-x11-6.7.5-r1-5.gpkg.tar"
+  },
+  {
+   "at": 1792642694,
+   "path": "pkgs-llvm-core/llvm-23.1.4-1.gpkg.tar"
   },
   {
    "at": 1791436881,
