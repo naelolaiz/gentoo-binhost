@@ -389,6 +389,10 @@
    "path": "pkgs-app-emulation/qemu-10.2.3-r1-1.gpkg.tar"
   },
   {
+   "at": 1792735060,
+   "path": "pkgs-app-emulation/qemu-10.2.3-r2-7.gpkg.tar"
+  },
+  {
    "at": 1791782363,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.18-1.gpkg.tar"
   },
@@ -507,6 +511,10 @@
   {
    "at": 1792733242,
    "path": "pkgs-llvm-core/llvm-23.1.4-2.gpkg.tar"
+  },
+  {
+   "at": 1792735060,
+   "path": "pkgs-media-libs/aubio-0.4.9-r5-3.gpkg.tar"
   },
   {
    "at": 1791696295,
