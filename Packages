@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792736587
-PACKAGES: 1609
+TIMESTAMP: 1792736900
+PACKAGES: 1613
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -883,6 +883,28 @@ MTIME: 1791278630
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-go/go-md2man-2.0.7
+BUILD_ID: 1
+BUILD_TIME: 1792736832
+CPV: app-containers/container-libs-0.70.0
+DEFINED_PHASES: compile install postinst
+DEPEND: app-containers/containers-shortnames >=sys-fs/fuse-overlayfs-1.16 >=app-containers/crun-1.25.1 >=app-containers/netavark-2.0.0 >=net-misc/passt-2026.05.26 !app-containers/containers-image !app-containers/containers-common !app-containers/containers-storage !<app-containers/buildah-1.44.0 !<app-containers/podman-6.0.0 !<app-containers/skopeo-1.23
+EAPI: 9
+IUSE: +extra
+KEYWORDS: ~amd64 ~arm64 ~loong ~riscv
+LICENSE: Apache-2.0
+MD5: b9582b5d62618a670393f58423e7abbd
+PATH: pkgs-app-containers/container-libs-0.70.0-1.gpkg.tar
+RDEPEND: app-containers/containers-shortnames >=sys-fs/fuse-overlayfs-1.16 >=app-containers/crun-1.25.1 >=app-containers/netavark-2.0.0 >=net-misc/passt-2026.05.26 !app-containers/containers-image !app-containers/containers-common !app-containers/containers-storage !<app-containers/buildah-1.44.0 !<app-containers/podman-6.0.0 !<app-containers/skopeo-1.23
+REPO_REVISIONS: {"gentoo": "ec70e4457d4726a276980642220e77a6aa7c88f2"}
+RESTRICT: test
+SHA1: d6f2fab5b45b1123f433c82ec8eab9067c1dcc63
+SIZE: 102400
+USE: abi_x86_64 amd64 elibc_glibc extra kernel_linux
+MTIME: 1792736834
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791275933
 CPV: app-containers/containers-shortnames-2025.03.19_p20260615
@@ -1441,6 +1463,29 @@ SHA1: b6d093c68c631c343669b0a534d543e982ae6876
 SIZE: 8294400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux lua_single_target_luajit nvimpager
 MTIME: 1791437659
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-util/gperf-3.1 >=sys-devel/gettext-0.20.1 virtual/libiconv virtual/libintl virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792736218
+CPV: app-editors/neovim-0.12.6
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-lua/luv-1.52.1[lua_single_target_luajit(-)] dev-lua/lpeg[lua_targets_luajit(-)] dev-lua/mpack[lua_targets_luajit(-)] >=dev-libs/libutf8proc-2.11.3:0/2.12.0=[-cjk] >=dev-libs/libuv-1.50.0:0/1= >=dev-libs/libvterm-0.3.3 >=dev-libs/msgpack-3.0.0:0/2-c= =dev-libs/tree-sitter-0.26*:0/0.26.13= =dev-libs/tree-sitter-c-0.24* =dev-libs/tree-sitter-lua-0.5* =dev-libs/tree-sitter-markdown-0.5* =dev-libs/tree-sitter-query-0.8.0* =dev-libs/tree-sitter-vim-0.8* =dev-libs/tree-sitter-vimdoc-4* >=dev-libs/unibilium-2.1.2:0/4=
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +nvimpager test lua_single_target_luajit lua_single_target_lua5-1
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86
+LICENSE: Apache-2.0 vim
+MD5: 93201bba563937891bb90bfaae0778f1
+PATH: pkgs-app-editors/neovim-0.12.6-1.gpkg.tar
+RDEPEND: dev-lang/luajit:2/2.1.1787165859= >=dev-lua/luv-1.52.1[lua_single_target_luajit(-)] dev-lua/lpeg[lua_targets_luajit(-)] dev-lua/mpack[lua_targets_luajit(-)] >=dev-libs/libutf8proc-2.11.3:0/2.12.0=[-cjk] >=dev-libs/libuv-1.50.0:0/1= >=dev-libs/libvterm-0.3.3 >=dev-libs/msgpack-3.0.0:0/2-c= =dev-libs/tree-sitter-0.26*:0/0.26.13= =dev-libs/tree-sitter-c-0.24* =dev-libs/tree-sitter-lua-0.5* =dev-libs/tree-sitter-markdown-0.5* =dev-libs/tree-sitter-query-0.8.0* =dev-libs/tree-sitter-vim-0.8* =dev-libs/tree-sitter-vimdoc-4* >=dev-libs/unibilium-2.1.2:0/4= app-eselect/eselect-vi >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: /usr/lib64/lua/5.1/lpeg.so libc.so.6 libluajit-5.1.so.2 libluv.so.1 libm.so.6 libtree-sitter.so.0.26 libunibilium.so.4 libutf8proc.so.3 libuv.so.1
+RESTRICT: test test
+SHA1: 902d6cd86a67ca318f6162e8f1613cfb0e886293
+SIZE: 8407040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux lua_single_target_luajit nvimpager
+MTIME: 1792736221
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10219,6 +10264,27 @@ SHA1: 379e6ab52e889d1e15b1894fb09df997afefddc1
 SIZE: 348160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1792469907
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792736250
+CPV: dev-python/virtualenv-21.14.12
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: a673fd29bece2af1c3a02c30ac4a8612
+PATH: pkgs-dev-python/virtualenv-21.14.12-1.gpkg.tar
+RDEPEND: >=dev-python/distlib-0.3.7[python_targets_python3_14(-)] >=dev-python/filelock-3.24.2[python_targets_python3_14(-)] >=dev-python/packaging-23.1[python_targets_python3_14(-)] >=dev-python/platformdirs-3.9.1[python_targets_python3_14(-)] >=dev-python/python-discovery-1.6[python_targets_python3_14(-)] dev-python/ensurepip-pip >=dev-python/ensurepip-setuptools-70.1 dev-python/ensurepip-wheel dev-lang/python:3.14
+RESTRICT: test
+SHA1: 4186be7c2484ee586ad2b343b1728466eebca11a
+SIZE: 348160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792736251
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32970,6 +33036,28 @@ SHA1: aebb6292d9340e0539735c64c9f8ad24f3db3468
 SIZE: 16762880
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792680662
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792736814
+CPV: sci-ml/ollama-0.40.8
+DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
+DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0=
+EAPI: 8
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: bce123b637ba8d2989fa3a82f52d11d7
+PATH: pkgs-sci-ml/ollama-0.40.8-1.gpkg.tar
+PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
+RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
+RESTRICT: mirror test
+SHA1: c6b153fa920189d239b81d58777f89be5cde1ed1
+SIZE: 16814080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792736818
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
