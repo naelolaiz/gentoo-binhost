@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792821734
-PACKAGES: 1620
+TIMESTAMP: 1792822955
+PACKAGES: 1624
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8507,6 +8507,27 @@ MTIME: 1791620119
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/ply:0/3.11=[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792822858
+CPV: dev-python/pycparser-3.12
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 86d3c579c68c8a008f78b1596e324908
+PATH: pkgs-dev-python/pycparser-3.12-1.gpkg.tar
+RDEPEND: dev-python/ply:0/3.11=[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 2fc14c421622c94de7e161bfc04776442d7971c2
+SIZE: 225280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792822859
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-python/cffi[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791278542
@@ -10359,6 +10380,28 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
 BUILD_ID: 1
+BUILD_TIME: 1792822861
+CPV: dev-python/virtualenv-21.14.13
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 05d5aa5a6492d369f870615e96f37161
+PATH: pkgs-dev-python/virtualenv-21.14.13-1.gpkg.tar
+RDEPEND: >=dev-python/distlib-0.3.7[python_targets_python3_14(-)] >=dev-python/filelock-3.24.2[python_targets_python3_14(-)] >=dev-python/packaging-23.1[python_targets_python3_14(-)] >=dev-python/platformdirs-3.9.1[python_targets_python3_14(-)] >=dev-python/python-discovery-1.6[python_targets_python3_14(-)] dev-python/ensurepip-pip >=dev-python/ensurepip-setuptools-70.1 dev-python/ensurepip-wheel dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "8939c3d8854b01c9a460dc545191bfef14a4ed7c"}
+RESTRICT: test
+SHA1: e4523ab2802462d98a996d38315cdb9436eec77c
+SIZE: 358400
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792822862
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
 BUILD_TIME: 1791278633
 CPV: dev-python/virtualenv-21.14.5
 DEFINED_PHASES: compile configure install prepare test unpack
@@ -12043,6 +12086,26 @@ SHA1: be5c8d4ab2b3418e48d57047c278b8103a4e0204
 SIZE: 5785600
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792588070
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.25.0 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip
+BUILD_ID: 1
+BUILD_TIME: 1792821805
+CPV: dev-vcs/git-lfs-3.8.1
+DEFINED_PHASES: compile install postinst test unpack
+EAPI: 8
+IUSE: doc test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0 BSD BSD-2 BSD-4 ISC MIT
+MD5: a62f25dc7d27738c4f8b6eb77c1498ca
+PATH: pkgs-dev-vcs/git-lfs-3.8.1-1.gpkg.tar
+RDEPEND: dev-vcs/git >=sys-libs/glibc-2.43-r4
+RESTRICT: test
+SHA1: b35ae0940e4806f0b005e9eb310392981d7ab200
+SIZE: 5775360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792821806
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30807,6 +30870,29 @@ SHA1: 00767a7699bff313096d86952ed68197ef37cc18
 SIZE: 128655360
 USE: abi_x86_64 alsa amd64 browser elibc_glibc jack kernel_linux lua lua_single_target_luajit mpegts pulseaudio python python_single_target_python3_14 screencast speex truetype v4l wayland websocket
 MTIME: 1792318358
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: kde-frameworks/extra-cmake-modules:0 dev-lang/swig dev-lang/swig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1792822825
+CPV: media-video/obs-studio-33.0.0
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.2=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +alsa browser decklink fdk jack lua mpegts nvenc pulseaudio python qsv screencast sndio speex test-input truetype v4l vlc wayland websocket +lua_single_target_luajit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: Boost-1.0 GPL-2+ MIT Unlicense
+MD5: 00a234464fcab9ee8ce1d8441ad49348
+PATH: pkgs-media-video/obs-studio-33.0.0-1.gpkg.tar
+PROVIDES: x86_64: _obspython.so frontend-tools.so image-source.so libEGL.so libGLESv2.so libcef.so libobs-frontend-api.so.30 libobs-opengl.so.30 libobs-scripting.so.30 libobs.so.30 libvk_swiftshader.so libvulkan.so.1 linux-alsa.so linux-capture.so linux-jack.so linux-pipewire.so linux-pulseaudio.so linux-v4l2.so obs-browser.so obs-ffmpeg.so obs-filters.so obs-outputs.so obs-transitions.so obs-vst.so obs-websocket.so obs-x264.so obslua.so rtmp-services.so text-freetype2.so
+RDEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.2=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libEGL.so.1 libGLX.so.0 libOpenGL.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libX11-xcb.so.1 libX11.so.6 libXcomposite.so.1 libXdamage.so.1 libXext.so.6 libXfixes.so.3 libXrandr.so.2 libasound.so.2 libatk-1.0.so.0 libatk-bridge-2.0.so.0 libatspi.so.0 libavcodec.so.62 libavdevice.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libcups.so.2 libcurl.so.4 libdbus-1.so.3 libdl.so.2 libdrm.so.2 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjack.so.0 libjansson.so.4 libluajit-5.1.so.2 libm.so.6 libmbedcrypto-3.so.16 libmbedtls-3.so.21 libmbedx509-3.so.7 libnspr4.so libnss3.so libnssutil3.so libpci.so.3 libpipewire-0.3.so.0 libpthread.so.0 libpulse.so.0 libpython3.14.so.1.0 libqrcodegencpp.so.1 librist.so.4 librnnoise.so.0 libsmime3.so libspeexdsp.so.1 libsrt.so.1.5 libstdc++.so.6 libswresample.so.6 libswscale.so.9 libudev.so.1 libuuid.so.1 libv4l2.so.0 libva-drm.so.2 libva.so.2 libwayland-client.so.0 libwayland-egl.so.1 libx264.so.164 libxcb-composite.so.0 libxcb-randr.so.0 libxcb-shm.so.0 libxcb-xfixes.so.0 libxcb-xinerama.so.0 libxcb-xinput.so.0 libxcb.so.1 libxkbcommon.so.0 libz.so.1
+SHA1: c64776feb1f1bd6f3d6a5c457ae263c9bc7366b5
+SIZE: 152668160
+USE: abi_x86_64 alsa amd64 browser elibc_glibc jack kernel_linux lua lua_single_target_luajit mpegts pulseaudio python python_single_target_python3_14 screencast speex truetype v4l wayland websocket
+MTIME: 1792822832
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
