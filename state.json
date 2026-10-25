@@ -398,10 +398,6 @@
    "path": "pkgs-kde-apps/dolphin-26.08.1-1.gpkg.tar"
   },
   {
-   "at": 1791618661,
-   "path": "pkgs-kde-apps/dolphin-26.08.2-1.gpkg.tar"
-  },
-  {
    "at": 1792907262,
    "path": "pkgs-kde-apps/dolphin-plugins-common-26.08.1-1.gpkg.tar"
   },
@@ -994,14 +990,6 @@
    "path": "pkgs-kde-misc/markdownpart-26.08.1-1.gpkg.tar"
   },
   {
-   "at": 1791614672,
-   "path": "pkgs-kde-plasma/kwin-6.7.5-r1-8.gpkg.tar"
-  },
-  {
-   "at": 1791614984,
-   "path": "pkgs-kde-plasma/kwin-x11-6.7.5-r1-5.gpkg.tar"
-  },
-  {
    "at": 1792678989,
    "path": "pkgs-kde-plasma/plasma-meta-6.8.1-1.gpkg.tar"
   },
@@ -1038,14 +1026,6 @@
    "path": "pkgs-media-libs/aubio-0.4.9-r5-3.gpkg.tar"
   },
   {
-   "at": 1791696295,
-   "path": "pkgs-media-libs/avidemux-plugins-2.8.1_p20251019-1.gpkg.tar"
-  },
-  {
-   "at": 1791695982,
-   "path": "pkgs-media-libs/libheif-1.23.6-1.gpkg.tar"
-  },
-  {
    "at": 1792816581,
    "path": "pkgs-media-libs/libheif-1.23.6-2.gpkg.tar"
   },
@@ -1070,16 +1050,8 @@
    "path": "pkgs-media-sound/krecorder-26.08.1-1.gpkg.tar"
   },
   {
-   "at": 1791695676,
-   "path": "pkgs-media-video/ffmpeg-8.1.3-2.gpkg.tar"
-  },
-  {
    "at": 1792816274,
    "path": "pkgs-media-video/ffmpeg-8.1.3-3.gpkg.tar"
-  },
-  {
-   "at": 1791696295,
-   "path": "pkgs-media-video/ffmpeg-compat-6.1.6-6.gpkg.tar"
   },
   {
    "at": 1792209517,
@@ -1160,10 +1132,6 @@
   {
    "at": 1792907262,
    "path": "pkgs-www-client/falkon-26.08.1-1.gpkg.tar"
-  },
-  {
-   "at": 1791696915,
-   "path": "pkgs-x11-terms/ghostty-1.3.1-1.gpkg.tar"
   }
  ]
 }
