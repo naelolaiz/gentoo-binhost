@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792907061
-PACKAGES: 1631
+TIMESTAMP: 1792907259
+PACKAGES: 1636
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1440,6 +1440,29 @@ SHA1: d85baf6ca3731728324b41d451b99d01e7ec17b4
 SIZE: 2498560
 USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1792317400
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 virtual/pkgconfig sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1792907095
+CPV: app-editors/gvim-9.2.1229
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: ~app-editors/vim-core-9.2.1229 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland x11-base/xorg-proto
+EAPI: 8
+IUSE: acl crypt cscope debug gtk4 images lua minimal motif netbeans nls +pango perl python racket ruby selinux session sound tcl wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: 710cee31e287cc611a1a809eb1f5ab4c
+PATH: pkgs-app-editors/gvim-9.2.1229-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: ~app-editors/vim-core-9.2.1229 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+RESTRICT: test
+SHA1: cab60d6d60ae8a64d9bbb4de53852c873cd607bf
+SIZE: 2498560
+USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1792907098
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10090,25 +10113,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
-BUILD_ID: 4
-BUILD_TIME: 1792736159
+BUILD_ID: 5
+BUILD_TIME: 1792906971
 CPV: dev-python/tree-sitter-0.26.0_p20260816-r1
 DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: >=dev-libs/tree-sitter-0.26:0/0.26.13= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14
+DEPEND: >=dev-libs/tree-sitter-0.26:0/0.27.1= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14
 EAPI: 8
 IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: MIT
-MD5: e997abf104c7520ad78b5a3179ac7aa2
-PATH: pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-4.gpkg.tar
+MD5: 560e6aac58043fcbb464e9d9537538a3
+PATH: pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-5.gpkg.tar
 PROVIDES: x86_64: _binding.cpython-314-x86_64-linux-gnu.so
-RDEPEND: >=dev-libs/tree-sitter-0.26:0/0.26.13= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libtree-sitter.so.0.26
+RDEPEND: >=dev-libs/tree-sitter-0.26:0/0.27.1= <dev-libs/tree-sitter-0.28 dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libtree-sitter.so.0.27
 RESTRICT: test
-SHA1: ea7b9957591c2e28b05abc2d736efb1ae98adcca
+SHA1: 757cbf4fe326dac88f84278eeee00af201a9debc
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1792736160
+MTIME: 1792906972
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11953,6 +11976,48 @@ SHA1: 076bb87de7bda2afd0fdc3e60b111c1d43134460
 SIZE: 757760
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791531762
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.48[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792907128
+CPV: dev-util/pkgcheck-0.10.49
+DEFINED_PHASES: compile configure install postinst postrm prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: emacs test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: BSD MIT
+MD5: 65c03419146f487dcfe24a35f90578d4
+PATH: pkgs-dev-util/pkgcheck-0.10.49-1.gpkg.tar
+RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.48[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: eeb93a568361c6952453b21d243bb4fcbdf497c8
+SIZE: 757760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792907129
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/flit-core-3.8[python_targets_python3_14(-)] >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792907134
+CPV: dev-util/pkgdev-0.2.19
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: doc doc test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: BSD MIT
+MD5: 4c83545938db44dafeb0eb564cf46981
+PATH: pkgs-dev-util/pkgdev-0.2.19-1.gpkg.tar
+RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.42[python_targets_python3_14(-)] >=dev-util/pkgcheck-0.10.43[python_targets_python3_14(-)] >=dev-python/tabulate-0.9.0[python_targets_python3_14(-)] dev-vcs/git dev-lang/python:3.14
+RESTRICT: test
+SHA1: e2089639cab435e05959aaea308f4ee4764ba82b
+SIZE: 225280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792907135
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33960,6 +34025,27 @@ MTIME: 1792316869
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792907115
+CPV: sys-apps/pkgcore-0.12.48
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: BSD MIT
+MD5: 3af73189742fff87dfe48e2b71fd9137
+PATH: pkgs-sys-apps/pkgcore-0.12.48-1.gpkg.tar
+RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 29f9311fcaab0fd9f9a2da67bc43f5b24e495f58
+SIZE: 1566720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792907116
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14[bzip2(+),threads(+)] >=app-arch/tar-1.27 >=dev-build/meson-1.3.0-r1 >=sys-apps/sed-4.0.5 sys-devel/patch dev-lang/python:3.14[ssl(+)] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 5
 BUILD_TIME: 1791390578
@@ -34558,6 +34644,31 @@ SIZE: 1361920
 SLOT: 0/0
 USE: abi_x86_64 amd64 convert elibc_glibc kernel_linux lzo man udev zstd
 MTIME: 1792470019
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig || ( ( dev-lang/python:3.15 dev-python/sphinx[python_targets_python3_15(-)] dev-python/sphinx-rtd-theme[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/sphinx[python_targets_python3_14(-)] dev-python/sphinx-rtd-theme[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/sphinx[python_targets_python3_13(-)] dev-python/sphinx-rtd-theme[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/sphinx[python_targets_python3_12(-)] dev-python/sphinx-rtd-theme[python_targets_python3_12(-)] ) ) virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1792907168
+CPV: sys-fs/btrfs-progs-7.3
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
+DEPEND: >=sys-apps/util-linux-2.31:0/0= virtual/zlib:0/1= sys-fs/e2fsprogs:0/0= dev-libs/lzo:2/2= virtual/libudev:0/1= app-arch/zstd:0/1= >=sys-kernel/linux-headers-5.10 sys-apps/acl
+EAPI: 8
+IUSE: +convert +man experimental +lzo reiserfs static static-libs udev +zstd verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: a6505c7427b3e11937e8fc8a4535fd69
+PATH: pkgs-sys-fs/btrfs-progs-7.3-1.gpkg.tar
+PROVIDES: x86_64: libbtrfs.so.0 libbtrfsutil.so.1
+RDEPEND: >=sys-apps/util-linux-2.31:0/0= virtual/zlib:0/1= sys-fs/e2fsprogs:0/0= dev-libs/lzo:2/2= virtual/libudev:0/1= app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "2ddd40f4d512bfe87ec500e83e150eca4d5766c4"}
+REQUIRES: x86_64: libblkid.so.1 libc.so.6 libcom_err.so.2 libext2fs.so.2 liblzo2.so.2 libudev.so.1 libuuid.so.1 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: b7948351fc1d1a38007890a997853ae0365c9b37
+SIZE: 1382400
+SLOT: 0/0
+USE: abi_x86_64 amd64 convert elibc_glibc kernel_linux lzo man udev zstd
+MTIME: 1792907170
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
