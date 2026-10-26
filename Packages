@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792994542
-PACKAGES: 1462
+TIMESTAMP: 1792994599
+PACKAGES: 1461
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -29391,28 +29391,6 @@ SIZE: 8949760
 SLOT: 0/0.27.0
 USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux openmp vulkan
 MTIME: 1792469882
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.1= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791624370
-CPV: sci-ml/ollama-0.40.2
-DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0=
-EAPI: 8
-KEYWORDS: ~amd64
-LICENSE: MIT
-MD5: ffbe2a4ef1d86b0f7328255e10e26b35
-PATH: pkgs-sci-ml/ollama-0.40.2-1.gpkg.tar
-PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
-RESTRICT: mirror test
-SHA1: 8a0ab31f4203dff3e9ed663befd2448ac64cdffd
-SIZE: 15923200
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791624373
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

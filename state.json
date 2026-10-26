@@ -1,10 +1,13 @@
 {
  "gone": {
   "app-containers/podman-6.1.2": 1792736914,
+  "app-crypt/gnupg-2.5.24-r1": 1792994546,
   "dev-lang/deno-bin-2.9.7": 1792681346,
   "dev-libs/json-c-0.19-r2": 1792907262,
   "dev-libs/libzip-1.12": 1792320577,
   "dev-libs/libzip-1.12-r1": 1792320577,
+  "dev-python/ensurepip-pip-26.2.1": 1792994546,
+  "dev-python/ensurepip-pip-26.2.2": 1792994546,
   "dev-python/pycryptodome-3.23.0": 1791866363,
   "dev-python/pycryptodome-3.24.0": 1791866363,
   "dev-python/uv-0.12.23": 1792681346,
@@ -165,7 +168,6 @@
   "net-libs/nodejs-26.12.0": 1792736914,
   "sci-ml/ggml-0.26.0": 1792320577,
   "sci-ml/ggml-0.27.0": 1792470107,
-  "sci-ml/ollama-0.40.2": 1791782366,
   "sci-ml/ollama-0.40.3": 1792320577,
   "sci-ml/ollama-0.40.5": 1792390605,
   "sci-ml/ollama-0.40.6": 1792609995,
@@ -1112,6 +1114,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-sci-ml/ollama-0.40.0-1.gpkg.tar"
+  },
+  {
+   "at": 1792994546,
+   "path": "pkgs-sci-ml/ollama-0.40.2-1.gpkg.tar"
   },
   {
    "at": 1791866290,
