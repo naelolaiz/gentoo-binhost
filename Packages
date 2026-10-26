@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792991567
-PACKAGES: 1461
+TIMESTAMP: 1792994542
+PACKAGES: 1462
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1185,6 +1185,27 @@ SHA1: deb0928f4330d6e382a72320da24ebcd6cba4491
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791371098
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-perl/Locale-gettext sys-apps/help2man virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1792994494
+CPV: app-crypt/sbsigntools-0.9.5_p1
+DEFINED_PHASES: prepare
+DEPEND: dev-libs/openssl:0/3= sys-apps/util-linux sys-boot/gnu-efi sys-libs/binutils-libs
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-3 LGPL-3 LGPL-2.1 CC0-1.0
+MD5: 1a696a5205ae984208790e319ad3b2be
+PATH: pkgs-app-crypt/sbsigntools-0.9.5_p1-1.gpkg.tar
+RDEPEND: dev-libs/openssl:0/3= sys-apps/util-linux >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "a95cf37ef03876fc65648e601295814f52dc191c"}
+REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libuuid.so.1
+SHA1: ff8d91417d8ce81b273b7a0dc0354ed7fbe0f64b
+SIZE: 102400
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1792994495
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -26362,25 +26383,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qttools-6.7.2:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.9.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.9.0:*
-BUILD_ID: 1
-BUILD_TIME: 1791370409
+BUILD_ID: 2
+BUILD_TIME: 1792994399
 CPV: media-sound/amarok-3.3.3
 DEFINED_PHASES: compile config configure info install nofetch postinst postrm preinst prepare setup test unpack
-DEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.7.2:6[dbus,gui,network,sql,widgets,xml] >=dev-qt/qtdeclarative-6.7.2:6 >=dev-qt/qtsvg-6.7.2:6 >=dev-qt/qttools-6.7.2:6[designer] >=kde-frameworks/attica-6.9.0:6 >=kde-frameworks/karchive-6.9.0:6 >=kde-frameworks/kcmutils-6.9.0:6 >=kde-frameworks/kcodecs-6.9.0:6 >=kde-frameworks/kcolorscheme-6.9.0:6 >=kde-frameworks/kcompletion-6.9.0:6 >=kde-frameworks/kconfig-6.9.0:6 >=kde-frameworks/kconfigwidgets-6.9.0:6 >=kde-frameworks/kcoreaddons-6.9.0:6 >=kde-frameworks/kcrash-6.9.0:6 >=kde-frameworks/kdbusaddons-6.9.0:6 >=kde-frameworks/kdeclarative-6.9.0:6 >=kde-frameworks/kglobalaccel-6.9.0:6 >=kde-frameworks/kguiaddons-6.9.0:6 >=kde-frameworks/ki18n-6.9.0:6 >=kde-frameworks/kiconthemes-6.9.0:6 >=kde-frameworks/kio-6.9.0:6 >=kde-frameworks/kitemviews-6.9.0:6 >=kde-frameworks/knewstuff-6.9.0:6 >=kde-frameworks/knotifications-6.9.0:6 >=kde-frameworks/kpackage-6.9.0:6 >=kde-frameworks/kservice-6.9.0:6 >=kde-frameworks/kstatusnotifieritem-6.9.0:6 >=kde-frameworks/ktexteditor-6.9.0:6 >=kde-frameworks/ktextwidgets-6.9.0:6 >=kde-frameworks/kwidgetsaddons-6.9.0:6 >=kde-frameworks/kwindowsystem-6.9.0:6[X] >=kde-frameworks/kxmlgui-6.9.0:6 >=kde-frameworks/solid-6.9.0:6 >=kde-frameworks/threadweaver-6.9.0:6 media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0 >=media-libs/taglib-1.12:0/2= sci-libs/fftw:3.0 virtual/opengl virtual/zlib:0/1= dev-db/mysql-connector-c:0/21= dev-qt/qtbase:6
+DEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.7.2:6[dbus,gui,network,sql,widgets,xml] >=dev-qt/qtdeclarative-6.7.2:6 >=dev-qt/qtsvg-6.7.2:6 >=dev-qt/qttools-6.7.2:6[designer] >=kde-frameworks/attica-6.9.0:6 >=kde-frameworks/karchive-6.9.0:6 >=kde-frameworks/kcmutils-6.9.0:6 >=kde-frameworks/kcodecs-6.9.0:6 >=kde-frameworks/kcolorscheme-6.9.0:6 >=kde-frameworks/kcompletion-6.9.0:6 >=kde-frameworks/kconfig-6.9.0:6 >=kde-frameworks/kconfigwidgets-6.9.0:6 >=kde-frameworks/kcoreaddons-6.9.0:6 >=kde-frameworks/kcrash-6.9.0:6 >=kde-frameworks/kdbusaddons-6.9.0:6 >=kde-frameworks/kdeclarative-6.9.0:6 >=kde-frameworks/kglobalaccel-6.9.0:6 >=kde-frameworks/kguiaddons-6.9.0:6 >=kde-frameworks/ki18n-6.9.0:6 >=kde-frameworks/kiconthemes-6.9.0:6 >=kde-frameworks/kio-6.9.0:6 >=kde-frameworks/kitemviews-6.9.0:6 >=kde-frameworks/knewstuff-6.9.0:6 >=kde-frameworks/knotifications-6.9.0:6 >=kde-frameworks/kpackage-6.9.0:6 >=kde-frameworks/kservice-6.9.0:6 >=kde-frameworks/kstatusnotifieritem-6.9.0:6 >=kde-frameworks/ktexteditor-6.9.0:6 >=kde-frameworks/ktextwidgets-6.9.0:6 >=kde-frameworks/kwidgetsaddons-6.9.0:6 >=kde-frameworks/kwindowsystem-6.9.0:6[X] >=kde-frameworks/kxmlgui-6.9.0:6 >=kde-frameworks/solid-6.9.0:6 >=kde-frameworks/threadweaver-6.9.0:6 media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0 >=media-libs/taglib-1.12:0/2= sci-libs/fftw:3.0 virtual/opengl virtual/zlib:0/1= dev-db/mysql-connector-c:0/24= dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: ipod lastfm mariadb mtp podcast webengine X zeroconf debug +handbook
 KEYWORDS: ~amd64 ~arm64
 LICENSE: GPL-2
-MD5: 5ebe67c69ebf3c98d9f50a4abe4a6449
-PATH: pkgs-media-sound/amarok-3.3.3-1.gpkg.tar
+MD5: e0f2a9b0e57db1a29dc10b8e1c3d694e
+PATH: pkgs-media-sound/amarok-3.3.3-2.gpkg.tar
 PROVIDES: x86_64: amarok_collection-audiocdcollection.so amarok_collection-mysqlcollection.so amarok_collection-playdarcollection.so amarok_collection-umscollection.so amarok_importer-amarok.so amarok_importer-banshee.so amarok_importer-clementine.so amarok_importer-fastforward.so amarok_importer-itunes.so amarok_importer-rhythmbox.so amarok_service_ampache.so amarok_service_magnatunestore.so amarok_service_opmldirectory.so amarok_storage-mysqlserverstorage.so kcm_amarok_service_ampache.so kcm_amarok_service_magnatunestore.so libamarok-sqlcollection.so.1 libamarok-transcoding.so.1 libamarok_context_applet_albums.so libamarok_context_applet_analyzer.so libamarok_context_applet_currenttrack.so libamarok_context_applet_lyrics.so libamarok_context_applet_photos.so libamarokcore.so.1 libamaroklib.so.1 libamarokpud.so libamarokshared.so.1 libampache_account_login.so libqml_plugin.so
-RDEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.7.2:6[dbus,gui,network,sql,widgets,xml] >=dev-qt/qtdeclarative-6.7.2:6 >=dev-qt/qtsvg-6.7.2:6 >=dev-qt/qttools-6.7.2:6[designer] >=kde-frameworks/attica-6.9.0:6 >=kde-frameworks/karchive-6.9.0:6 >=kde-frameworks/kcmutils-6.9.0:6 >=kde-frameworks/kcodecs-6.9.0:6 >=kde-frameworks/kcolorscheme-6.9.0:6 >=kde-frameworks/kcompletion-6.9.0:6 >=kde-frameworks/kconfig-6.9.0:6 >=kde-frameworks/kconfigwidgets-6.9.0:6 >=kde-frameworks/kcoreaddons-6.9.0:6 >=kde-frameworks/kcrash-6.9.0:6 >=kde-frameworks/kdbusaddons-6.9.0:6 >=kde-frameworks/kdeclarative-6.9.0:6 >=kde-frameworks/kglobalaccel-6.9.0:6 >=kde-frameworks/kguiaddons-6.9.0:6 >=kde-frameworks/ki18n-6.9.0:6 >=kde-frameworks/kiconthemes-6.9.0:6 >=kde-frameworks/kio-6.9.0:6 >=kde-frameworks/kitemviews-6.9.0:6 >=kde-frameworks/knewstuff-6.9.0:6 >=kde-frameworks/knotifications-6.9.0:6 >=kde-frameworks/kpackage-6.9.0:6 >=kde-frameworks/kservice-6.9.0:6 >=kde-frameworks/kstatusnotifieritem-6.9.0:6 >=kde-frameworks/ktexteditor-6.9.0:6 >=kde-frameworks/ktextwidgets-6.9.0:6 >=kde-frameworks/kwidgetsaddons-6.9.0:6 >=kde-frameworks/kwindowsystem-6.9.0:6[X] >=kde-frameworks/kxmlgui-6.9.0:6 >=kde-frameworks/solid-6.9.0:6 >=kde-frameworks/threadweaver-6.9.0:6 media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0 >=media-libs/taglib-1.12:0/2= sci-libs/fftw:3.0 virtual/opengl virtual/zlib:0/1= dev-db/mysql-connector-c:0/21= >=kde-frameworks/kirigami-6.9.0:6 media-plugins/gst-plugins-meta:1.0 media-video/ffmpeg || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6ItemViews.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Package.so.6 libKF6Solid.so.6 libKF6StatusNotifierItem.so.6 libKF6TextEditor.so.6 libKF6TextWidgets.so.6 libKF6ThreadWeaver.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6UiTools.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libfftw3.so.3 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstreamer-1.0.so.0 libm.so.6 libmysqlclient.so.21 libstdc++.so.6 libtag.so.2
-SHA1: b2b3ee5935afdcfec966a410c357666753b84b87
-SIZE: 48424960
+RDEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.7.2:6[dbus,gui,network,sql,widgets,xml] >=dev-qt/qtdeclarative-6.7.2:6 >=dev-qt/qtsvg-6.7.2:6 >=dev-qt/qttools-6.7.2:6[designer] >=kde-frameworks/attica-6.9.0:6 >=kde-frameworks/karchive-6.9.0:6 >=kde-frameworks/kcmutils-6.9.0:6 >=kde-frameworks/kcodecs-6.9.0:6 >=kde-frameworks/kcolorscheme-6.9.0:6 >=kde-frameworks/kcompletion-6.9.0:6 >=kde-frameworks/kconfig-6.9.0:6 >=kde-frameworks/kconfigwidgets-6.9.0:6 >=kde-frameworks/kcoreaddons-6.9.0:6 >=kde-frameworks/kcrash-6.9.0:6 >=kde-frameworks/kdbusaddons-6.9.0:6 >=kde-frameworks/kdeclarative-6.9.0:6 >=kde-frameworks/kglobalaccel-6.9.0:6 >=kde-frameworks/kguiaddons-6.9.0:6 >=kde-frameworks/ki18n-6.9.0:6 >=kde-frameworks/kiconthemes-6.9.0:6 >=kde-frameworks/kio-6.9.0:6 >=kde-frameworks/kitemviews-6.9.0:6 >=kde-frameworks/knewstuff-6.9.0:6 >=kde-frameworks/knotifications-6.9.0:6 >=kde-frameworks/kpackage-6.9.0:6 >=kde-frameworks/kservice-6.9.0:6 >=kde-frameworks/kstatusnotifieritem-6.9.0:6 >=kde-frameworks/ktexteditor-6.9.0:6 >=kde-frameworks/ktextwidgets-6.9.0:6 >=kde-frameworks/kwidgetsaddons-6.9.0:6 >=kde-frameworks/kwindowsystem-6.9.0:6[X] >=kde-frameworks/kxmlgui-6.9.0:6 >=kde-frameworks/solid-6.9.0:6 >=kde-frameworks/threadweaver-6.9.0:6 media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0 >=media-libs/taglib-1.12:0/2= sci-libs/fftw:3.0 virtual/opengl virtual/zlib:0/1= dev-db/mysql-connector-c:0/24= >=kde-frameworks/kirigami-6.9.0:6 media-plugins/gst-plugins-meta:1.0 media-video/ffmpeg || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6ItemViews.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Package.so.6 libKF6Solid.so.6 libKF6StatusNotifierItem.so.6 libKF6TextEditor.so.6 libKF6TextWidgets.so.6 libKF6ThreadWeaver.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6UiTools.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libfftw3.so.3 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstreamer-1.0.so.0 libm.so.6 libmysqlclient.so.24 libstdc++.so.6 libtag.so.2
+SHA1: cb15d6eab69a229c05644a1aefcf4b9e7b9acfc8
+SIZE: 48588800
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
-MTIME: 1791370419
+MTIME: 1792994411
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
