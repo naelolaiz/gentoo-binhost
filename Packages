@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1792990050
-PACKAGES: 1459
+TIMESTAMP: 1792991567
+PACKAGES: 1461
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8740,6 +8740,29 @@ MTIME: 1792587775
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/cffi[python_targets_python3_14(-)] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1792990103
+CPV: dev-python/pycryptodome-4.2.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/gmp:0/10.4= dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2 MIT Unlicense
+MD5: 8c04bd07aa1ad4f52b359591c9f2bf27
+PATH: pkgs-dev-python/pycryptodome-4.2.0-1.gpkg.tar
+PROVIDES: x86_64: _ARC4.abi3.so _BLAKE2b.abi3.so _BLAKE2s.abi3.so _MD2.abi3.so _MD4.abi3.so _MD5.abi3.so _RIPEMD160.abi3.so _SHA1.abi3.so _SHA224.abi3.so _SHA224_shani.abi3.so _SHA256.abi3.so _SHA256_shani.abi3.so _SHA384.abi3.so _SHA512.abi3.so _Salsa20.abi3.so _Salsa20_avx2_bmi2.abi3.so _chacha20.abi3.so _chacha20_avx2_bmi2.abi3.so _cpuid_c.abi3.so _curve25519.abi3.so _ec_nat.abi3.so _ec_nat_bmi2_adx.abi3.so _ed25519.abi3.so _ghash_clmul.abi3.so _ghash_portable.abi3.so _k12.abi3.so _k12_avx2_bmi2.abi3.so _keccak.abi3.so _keccak_avx2_bmi2.abi3.so _mldsa.abi3.so _mldsa_avx2_bmi2.abi3.so _mlkem.abi3.so _mlkem_avx2_bmi2.abi3.so _nat.abi3.so _nat_bmi2_adx.abi3.so _pkcs1_decode.abi3.so _poly1305.abi3.so _raw_aes.abi3.so _raw_aesni.abi3.so _raw_arc2.abi3.so _raw_blowfish.abi3.so _raw_cast.abi3.so _raw_cbc.abi3.so _raw_cfb.abi3.so _raw_ctr.abi3.so _raw_des.abi3.so _raw_des3.abi3.so _raw_ecb.abi3.so _raw_eksblowfish.abi3.so _raw_ocb.abi3.so _raw_ofb.abi3.so _scrypt.abi3.so _strxor.abi3.so
+RDEPEND: dev-libs/gmp:0/10.4= dev-python/cffi[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: ffc16137ea518a0f5d84063fc7c559062aa66682
+SIZE: 2150400
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1792990108
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1792305952
@@ -9163,6 +9186,29 @@ SHA1: cc2a33e51669b94b1eda08a60e5ae27829423bbe
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791437296
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/pyqt-builder-1.19[python_targets_python3_14(-)] >=dev-python/sip-6.15[python_targets_python3_14(-)] >=dev-qt/qtbase-6.11:6 dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/sip[python_targets_python3_14(-)]
+BUILD_ID: 7
+BUILD_TIME: 1792991368
+CPV: dev-python/pyqt6-webengine-6.11.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-python/pyqt6-6.11[gui,ssl,webchannel,python_targets_python3_14(-)] >=dev-qt/qtbase-6.11:6[gui,widgets] >=dev-qt/qtwebengine-6.11:6[widgets] dev-python/pyqt6[network,printsupport,widgets] dev-lang/python:3.14
+EAPI: 8
+IUSE: debug quick +widgets python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: amd64 arm64
+LICENSE: GPL-3
+MD5: 64c9ad892329651fe1c3c0dc1d0bb60b
+PATH: pkgs-dev-python/pyqt6-webengine-6.11.0-7.gpkg.tar
+PROVIDES: x86_64: QtWebEngineCore.abi3.so QtWebEngineWidgets.abi3.so
+RDEPEND: >=dev-python/pyqt6-6.11[gui,ssl,webchannel,python_targets_python3_14(-)] >=dev-qt/qtbase-6.11:6[gui,widgets] >=dev-qt/qtwebengine-6.11:6[widgets] dev-python/pyqt6[network,printsupport,widgets] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "a95cf37ef03876fc65648e601295814f52dc191c"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6WebEngineCore.so.6 libQt6WebEngineWidgets.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: 93f852df01621468fda3211828fa348facff3751
+SIZE: 215040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 widgets
+MTIME: 1792991369
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -26937,25 +26983,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791286333
+BUILD_ID: 2
+BUILD_TIME: 1792991251
 CPV: media-sound/sonic-visualiser-5.2.1
 DEFINED_PHASES: compile configure install postinst postrm preinst test
-DEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.4.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse
+DEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.5.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: id3tag jack mad ogg opus osc +portaudio pulseaudio test
 KEYWORDS: amd64 x86
 LICENSE: GPL-2
-MD5: c6a41e2c5c24ea5605409faac445fa62
-PATH: pkgs-media-sound/sonic-visualiser-5.2.1-1.gpkg.tar
-RDEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.4.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libasound.so.2 libbz2.so.1 libc.so.6 libcapnp.so.1.4.0 libfftw3.so.3 libfishsound.so.1 libgcc_s.so.1 libkj.so.1.4.0 liblo.so.7 liblrdf.so.2 libm.so.6 libmad.so.0 liboggz.so.2 libpulse.so.0 librubberband.so.3 libsamplerate.so.0 libserd-0.so.0 libsndfile.so.1 libsord-0.so.0 libstdc++.so.6 libvamp-hostsdk.so.3
+MD5: b48715a4f56884a1fae8d237b0ee333e
+PATH: pkgs-media-sound/sonic-visualiser-5.2.1-2.gpkg.tar
+RDEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.5.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libasound.so.2 libbz2.so.1 libc.so.6 libcapnp.so.1.5.0 libfftw3.so.3 libfishsound.so.1 libgcc_s.so.1 libkj.so.1.5.0 liblo.so.7 liblrdf.so.2 libm.so.6 libmad.so.0 liboggz.so.2 libpulse.so.0 librubberband.so.3 libsamplerate.so.0 libserd-0.so.0 libsndfile.so.1 libsord-0.so.0 libstdc++.so.6 libvamp-hostsdk.so.3
 RESTRICT: test
-SHA1: 2dd2b41b0b35afbb21c1bf5bb87598ed3c1217e8
-SIZE: 5058560
+SHA1: e254a6f144eb4a9e8593e6bd1086d3525a185c8d
+SIZE: 5140480
 USE: abi_x86_64 amd64 elibc_glibc jack kernel_linux mad ogg osc portaudio pulseaudio
-MTIME: 1791286335
+MTIME: 1792991252
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
