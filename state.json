@@ -1000,6 +1000,10 @@
    "path": "pkgs-kde-frameworks/kjobwidgets-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793106422,
+   "path": "pkgs-kde-frameworks/kstatusnotifieritem-6.31.0-1.gpkg.tar"
+  },
+  {
    "at": 1793078103,
    "path": "pkgs-kde-frameworks/kwindowsystem-6.31.0-1.gpkg.tar"
   },
@@ -1044,8 +1048,16 @@
    "path": "pkgs-kde-plasma/kdesu-gui-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1793106422,
+   "path": "pkgs-kde-plasma/kwayland-6.8.1-1.gpkg.tar"
+  },
+  {
    "at": 1793080881,
    "path": "pkgs-kde-plasma/layer-shell-qt-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793106422,
+   "path": "pkgs-kde-plasma/libkscreen-6.8.1-1.gpkg.tar"
   },
   {
    "at": 1793080248,
