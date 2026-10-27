@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793078103
+TIMESTAMP: 1793078716
 PACKAGES: 1470
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -17530,26 +17530,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791608817
+BUILD_ID: 2
+BUILD_TIME: 1793078673
 CPV: kde-frameworks/kglobalaccel-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtbase-6.10.1:6/6.11.2=[X] dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtbase-6.10.1:6/6.11.3=[X] dev-qt/qtbase:6
 EAPI: 8
 IUSE: X debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 70c28a6df6f844535828012e8182009b
-PATH: pkgs-kde-frameworks/kglobalaccel-6.31.0-1.gpkg.tar
+MD5: 903f3e16da548bae272eee535f57a69b
+PATH: pkgs-kde-frameworks/kglobalaccel-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: libKF6GlobalAccel.so.6
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtbase-6.10.1:6/6.11.2=[X] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtbase-6.10.1:6/6.11.3=[X] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
 REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
 RESTRICT: test
-SHA1: e7201674827ac249fa392b25df1909de4b20650e
+SHA1: ce3de44eb28ede12eb87eae2b091a17231d5e17f
 SIZE: 153600
 SLOT: 6/6.31
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791608819
+MTIME: 1793078675
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17579,27 +17580,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.10.1:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791606803
+BUILD_ID: 2
+BUILD_TIME: 1793078574
 CPV: kde-frameworks/kguiaddons-6.31.0
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.2=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 >=dev-libs/plasma-wayland-protocols-1.15.0 >=dev-libs/wayland-protocols-1.39 x11-base/xorg-proto x11-libs/libxcb dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 >=dev-libs/plasma-wayland-protocols-1.15.0 >=dev-libs/wayland-protocols-1.39 x11-base/xorg-proto x11-libs/libxcb dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: dbus wayland X debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 486be76e19270570261e85c1c1077d67
-PATH: pkgs-kde-frameworks/kguiaddons-6.31.0-1.gpkg.tar
+MD5: fc5314e49028314eea4af1dd0d96d35b
+PATH: pkgs-kde-frameworks/kguiaddons-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: libKF6GuiAddons.so.6 libkguiaddonsqml.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.2=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 !<kde-frameworks/kguiaddons-5.116.0-r2:5[-kf6compat(-)] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 !<kde-frameworks/kguiaddons-5.116.0-r2:5[-kf6compat(-)] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libX11.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
 RESTRICT: test
-SHA1: 361605e3dd8b2c90515fd38f3f66c38c8f5f4e91
+SHA1: 11b6884b954c33b60bf3b921521e9de0e9e65a00
 SIZE: 245760
 SLOT: 6/6.31
 USE: X abi_x86_64 amd64 dbus elibc_glibc kernel_linux wayland
-MTIME: 1791606805
+MTIME: 1793078575
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17726,26 +17727,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791608539
+BUILD_ID: 2
+BUILD_TIME: 1793078627
 CPV: kde-frameworks/kiconthemes-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.31*:6 =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcolorscheme-6.31*:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kwidgetsaddons-6.31*:6 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.31*:6 =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcolorscheme-6.31*:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kwidgetsaddons-6.31*:6 dev-qt/qtbase:6
 EAPI: 8
 IUSE: debug designer test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 8284f43307a58d0a2a461151a3955d5f
-PATH: pkgs-kde-frameworks/kiconthemes-6.31.0-1.gpkg.tar
+MD5: 755057f75e80270a2d60a3632a893b93
+PATH: pkgs-kde-frameworks/kiconthemes-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: KIconEnginePlugin.so libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libiconthemesplugin.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.31*:6 =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcolorscheme-6.31*:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kwidgetsaddons-6.31*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libKF6Archive.so.6 libKF6BreezeIcons.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6I18n.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.31*:6 =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcolorscheme-6.31*:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kwidgetsaddons-6.31*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6BreezeIcons.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6I18n.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
 RESTRICT: test test
-SHA1: 4bd5390502a14b2d089be34acca50f51ef2b61b2
-SIZE: 235520
+SHA1: 1b72edb13787bbd2a1503caeba89fa833db606a6
+SIZE: 245760
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791608541
+MTIME: 1793078628
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17921,27 +17922,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791607841
+BUILD_ID: 2
+BUILD_TIME: 1793078464
 CPV: kde-frameworks/kirigami-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare pretend setup test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[concurrent,dbus,gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.3=[concurrent,dbus,gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 dev-qt/qtbase:6
 EAPI: 8
 IUSE: openmp debug examples test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 12f41e0bf5e1a54f44e9d722c2da7682
-PATH: pkgs-kde-frameworks/kirigami-6.31.0-1.gpkg.tar
+MD5: 5ef23b03617d1f2ec6798b46a8b78a98
+PATH: pkgs-kde-frameworks/kirigami-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: libKirigami.so.6 libKirigamiControls.so.6 libKirigamiControlsplugin.so libKirigamiDelegates.so.6 libKirigamiDelegatesplugin.so libKirigamiDialogs.so.6 libKirigamiDialogsplugin.so libKirigamiForms.so.6 libKirigamiFormsPrivateCards.so.6 libKirigamiFormsPrivateCardsplugin.so libKirigamiFormsPrivateFlat.so.6 libKirigamiFormsPrivateFlatplugin.so libKirigamiFormsPrivateTemplates.so.6 libKirigamiFormsPrivateTemplatesplugin.so libKirigamiFormsplugin.so libKirigamiLayouts.so.6 libKirigamiLayoutsPrivate.so.6 libKirigamiLayoutsPrivateplugin.so libKirigamiLayoutsplugin.so libKirigamiPlatform.so.6 libKirigamiPlatformplugin.so libKirigamiPolyfill.so.6 libKirigamiPolyfillplugin.so libKirigamiPrimitives.so.6 libKirigamiPrimitivesplugin.so libKirigamiPrivate.so.6 libKirigamiPrivateplugin.so libKirigamiTemplates.so.6 libKirigamiTemplatesplugin.so libKirigamiplugin.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.2=[concurrent,dbus,gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.3=[concurrent,dbus,gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libc.so.6 libgomp.so.1 libm.so.6 libstdc++.so.6
 RESTRICT: test test
-SHA1: 02e6a1b43881097e91598d2a9d0c073de611529b
+SHA1: d6367c15825e3148df4afe158b3fbd285ddeef2a
 SIZE: 1761280
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux openmp
-MTIME: 1791607843
+MTIME: 1793078465
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
