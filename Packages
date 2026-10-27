@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793074148
-PACKAGES: 1463
+TIMESTAMP: 1793075964
+PACKAGES: 1465
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -10952,6 +10952,31 @@ MTIME: 1791195629
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-arch/libarchive[zstd] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793075704
+CPV: dev-qt/qtbase-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: virtual/zlib:0/1= dev-libs/openssl:0/3= virtual/libudev:0/1= app-arch/zstd:0/1= app-crypt/libb2 dev-libs/double-conversion:0/3= dev-libs/glib:2 dev-libs/libpcre2:0/3=[pcre16,unicode(+)] dev-libs/icu:0/78= sys-apps/dbus dev-libs/md4c media-libs/fontconfig >=media-libs/freetype-2.13.1:2 media-libs/harfbuzz:0/6.0.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= x11-libs/libdrm x11-libs/libxkbcommon[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/xcb-util-cursor x11-libs/xcb-util-image x11-libs/xcb-util-keysyms x11-libs/xcb-util-renderutil x11-libs/xcb-util-wm dev-libs/libinput:0/10= media-libs/libglvnd[X] dev-libs/wayland net-print/cups x11-libs/gdk-pixbuf:2 >=x11-libs/gtk+-3.24.41-r1:3[X,wayland] x11-libs/pango net-libs/libproxy dev-db/sqlite:3 x11-base/xorg-proto dev-util/vulkan-headers dev-util/wayland-scanner
+EAPI: 8
+IUSE: +X accessibility eglfs evdev gles2-only +libinput opengl renderdoc tslib vulkan wayland +widgets +ssl +udev zstd brotli gssapi libproxy sctp +concurrent +dbus +gui +network +sql +xml icu io-uring journald syslog mysql oci8 odbc postgres +sqlite cups gtk nls custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 0d4d13656ec16a7112e0ea1b7e2b02e7
+PATH: pkgs-dev-qt/qtbase-6.11.3-1.gpkg.tar
+PDEPEND: ~dev-qt/qttranslations-6.11.3:6
+PROVIDES: x86_64: libQt6Concurrent.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Sql.so.6 libQt6Test.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libQt6WlShellIntegration.so.6 libQt6XcbQpa.so.6 libQt6Xml.so.6 libbradient.so libcomposeplatforminputcontextplugin.so libcupsprintersupport.so libdmabuf-server.so libdrm-egl-server.so libfullscreen-shell-v1.so libibusplatforminputcontextplugin.so libqcertonlybackend.so libqconnman.so libqgif.so libqglib.so libqgtk3.so libqico.so libqjpeg.so libqlibinputplugin.so libqlinuxfb.so libqminimal.so libqnetworkmanager.so libqoffscreen.so libqopensslbackend.so libqsqlite.so libqt-plugin-wayland-egl.so libqtuiotouchplugin.so libqvkkhrdisplay.so libqvnc.so libqwayland.so libqxcb-egl-integration.so libqxcb-glx-integration.so libqxcb.so libqxdgdesktopportal.so libshm-emulation-server.so libvulkan-server.so libwl-shell-plugin.so libxdg-shell.so
+RDEPEND: virtual/zlib:0/1= dev-libs/openssl:0/3= virtual/libudev:0/1= app-arch/zstd:0/1= app-crypt/libb2 dev-libs/double-conversion:0/3= dev-libs/glib:2 dev-libs/libpcre2:0/3=[pcre16,unicode(+)] dev-libs/icu:0/78= sys-apps/dbus dev-libs/md4c media-libs/fontconfig >=media-libs/freetype-2.13.1:2 media-libs/harfbuzz:0/6.0.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= x11-libs/libdrm x11-libs/libxkbcommon[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/xcb-util-cursor x11-libs/xcb-util-image x11-libs/xcb-util-keysyms x11-libs/xcb-util-renderutil x11-libs/xcb-util-wm dev-libs/libinput:0/10= media-libs/libglvnd[X] dev-libs/wayland net-print/cups x11-libs/gdk-pixbuf:2 >=x11-libs/gtk+-3.24.41-r1:3[X,wayland] x11-libs/pango net-libs/libproxy dev-db/sqlite:3 !<dev-qt/qt3d-6.11.3:6 !<dev-qt/qt5compat-6.11.3:6 !<dev-qt/qtcharts-6.11.3:6 !<dev-qt/qtconnectivity-6.11.3:6 !<dev-qt/qtdeclarative-6.11.3:6 !<dev-qt/qtgraphs-6.11.3:6 !<dev-qt/qthttpserver-6.11.3:6 !<dev-qt/qtimageformats-6.11.3:6 !<dev-qt/qtlanguageserver-6.11.3:6 !<dev-qt/qtlocation-6.11.3:6 !<dev-qt/qtmultimedia-6.11.3:6 !<dev-qt/qtnetworkauth-6.11.3:6 !<dev-qt/qtpositioning-6.11.3:6 !<dev-qt/qtquick3d-6.11.3:6 !<dev-qt/qtquicktimeline-6.11.3:6 !<dev-qt/qtremoteobjects-6.11.3:6 !<dev-qt/qtscxml-6.11.3:6 !<dev-qt/qtsensors-6.11.3:6 !<dev-qt/qtserialbus-6.11.3:6 !<dev-qt/qtserialport-6.11.3:6 !<dev-qt/qtshadertools-6.11.3:6 !<dev-qt/qtspeech-6.11.3:6 !<dev-qt/qtsvg-6.11.3:6 !<dev-qt/qttools-6.11.3:6 !<dev-qt/qtvirtualkeyboard-6.11.3:6 !<dev-qt/qtwayland-6.11.3:6 !<dev-qt/qtwebchannel-6.11.3:6 !<dev-qt/qtwebengine-6.11.3:6 !<dev-qt/qtwebsockets-6.11.3:6 !<dev-qt/qtwebview-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libEGL.so.1 libGLX.so.0 libICE.so.6 libOpenGL.so.0 libSM.so.6 libX11-xcb.so.1 libX11.so.6 libb2.so.1 libc.so.6 libcrypto.so.3 libcups.so.2 libdbus-1.so.3 libdouble-conversion.so.3 libdrm.so.2 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libharfbuzz.so.0 libicui18n.so.78 libicuuc.so.78 libinput.so.10 libjpeg.so.62 libm.so.6 libmd4c.so.0 libpango-1.0.so.0 libpcre2-16.so.0 libpng16.so.16 libproxy.so.1 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libudev.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxcb-cursor.so.0 libxcb-glx.so.0 libxcb-icccm.so.4 libxcb-image.so.0 libxcb-keysyms.so.1 libxcb-randr.so.0 libxcb-render-util.so.0 libxcb-render.so.0 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-sync.so.1 libxcb-xfixes.so.0 libxcb-xinput.so.0 libxcb-xkb.so.1 libxcb.so.1 libxkbcommon-x11.so.0 libxkbcommon.so.0 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 2809a904270121698d59bb1cc47a7a5c3ec8d82b
+SIZE: 19558400
+SLOT: 6/6.11.3
+USE: X abi_x86_64 amd64 concurrent cups dbus elibc_glibc gtk gui icu kernel_linux libinput libproxy network nls opengl sql sqlite ssl udev vulkan wayland widgets xml zstd
+MTIME: 1793075715
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: ~dev-qt/qtshadertools-6.11.2:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1792306399
@@ -11046,6 +11071,30 @@ SIZE: 102400
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791145085
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793075794
+CPV: dev-qt/qtsvg-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[gui,widgets] virtual/zlib:0/1=
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 8c49ce5c98cb725a7d851bb4465d5eaf
+PATH: pkgs-dev-qt/qtsvg-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Svg.so.6 libQt6SvgWidgets.so.6 libqsvg.so libqsvgicon.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[gui,widgets] virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: 3431f62b4c2f7e0d836fc0fa4f138cb9702d331e
+SIZE: 399360
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793075795
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
