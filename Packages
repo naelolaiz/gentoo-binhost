@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793081195
-PACKAGES: 1480
+TIMESTAMP: 1793095555
+PACKAGES: 1481
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -28678,6 +28678,32 @@ SIZE: 54671360
 SLOT: 6/0
 USE: X abi_x86_64 amd64 avif cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc gstreamer introspection jpegxl kernel_linux keyring lcms pdf seccomp spell wayland
 MTIME: 1791180816
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) || ( ( dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] ) ( dev-lang/ruby:3.2 virtual/rubygems[ruby_targets_ruby32(-)] ) ( dev-lang/ruby:3.4 virtual/rubygems[ruby_targets_ruby34(-)] ) ( dev-lang/ruby:4.0 virtual/rubygems[ruby_targets_ruby40(-)] ) ) app-accessibility/at-spi2-core dev-lang/perl >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils dev-util/gperf dev-util/unifdef sys-devel/bison sys-devel/gettext virtual/pkgconfig dev-util/wayland-scanner >=app-portage/elt-patches-20250306 app-arch/xz-utils app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793095411
+CPV: net-libs/webkit-gtk-2.54.2-r400
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
+DEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/gtk+:3[introspection,wayland,X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: aqua avif cpu_flags_x86_sse cpu_flags_x86_sse2 custom-cflags examples gamepad keyring +gstreamer +introspection pdf jpegxl lcms seccomp spell systemd wayland X
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2+ BSD
+MD5: 8baeb1dc3f41a32b934d930b1befcdbd
+PATH: pkgs-net-libs/webkit-gtk-2.54.2-r400-1.gpkg.tar
+PROVIDES: x86_64: libjavascriptcoregtk-4.1.so.0 libwebkit2gtk-4.1.so.0 libwebkit2gtkinjectedbundle.so
+RDEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/gtk+:3[introspection,wayland,X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
+REQUIRES: x86_64: libX11.so.6 libatk-1.0.so.0 libatomic.so.1 libavif.so.16 libc.so.6 libcairo.so.2 libdrm.so.2 libenchant-2.so.2 libepoxy.so.0 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgcrypt.so.20 libgdk-3.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstapp-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstfft-1.0.so.0 libgstgl-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libgtk-3.so.0 libharfbuzz-icu.so.0 libharfbuzz.so.0 libhyphen.so.0 libicui18n.so.78 libicuuc.so.78 libjpeg.so.62 libjxl.so.0.12 liblcms2.so.2 libm.so.6 libpango-1.0.so.0 libpng16.so.16 libseccomp.so.2 libsecret-1.so.0 libsoup-3.0.so.0 libsqlite3.so.0 libstdc++.so.6 libtasn1.so.6 libwayland-client.so.0 libwayland-server.so.0 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libwoff2dec.so.1.0.2 libxml2.so.16 libxslt.so.1 libz.so.1
+RESTRICT: test
+SHA1: 9d9202caa07b0fe25699d96a716eba6dd81fd29a
+SIZE: 54108160
+SLOT: 4.1/0
+USE: X abi_x86_64 amd64 avif cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc gstreamer introspection jpegxl kernel_linux keyring lcms pdf seccomp spell wayland
+MTIME: 1793095421
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
