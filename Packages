@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793080561
-PACKAGES: 1471
+TIMESTAMP: 1793080881
+PACKAGES: 1477
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6063,6 +6063,29 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 5
+BUILD_TIME: 1793080763
+CPV: dev-libs/qcoro-0.13.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-qt/qtbase:6[dbus,network] dev-qt/qtbase:6[gui] dev-qt/qtdeclarative:6/6.11.3=
+EAPI: 8
+IUSE: dbus examples +network qml test websockets
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: b1dd4ab8004070b2a7108180f642bbc8
+PATH: pkgs-dev-libs/qcoro-0.13.0-5.gpkg.tar
+PROVIDES: x86_64: libQCoro6Core.so.0 libQCoro6DBus.so.0 libQCoro6Network.so.0 libQCoro6Qml.so.0 libQCoro6Quick.so.0
+RDEPEND: dev-qt/qtbase:6[dbus,network] dev-qt/qtbase:6[gui] dev-qt/qtdeclarative:6/6.11.3= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 447b7471b7e90a11e6e21ab2198e94304709259b
+SIZE: 184320
+USE: abi_x86_64 amd64 dbus elibc_glibc kernel_linux network qml
+MTIME: 1793080764
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791287177
 CPV: dev-libs/qgpgme-2.2.0-r1
@@ -11076,6 +11099,30 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
+BUILD_TIME: 1793080781
+CPV: dev-qt/qthttpserver-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[network,ssl]
+EAPI: 8
+IUSE: +ssl websockets custom-cflags test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 9f483f700e5dcc3b7e775e903600fe53
+PATH: pkgs-dev-qt/qthttpserver-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6HttpServer.so.6
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[network,ssl] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: a4c395ab267fa326ceebc2100bb457bef7f1a802
+SIZE: 174080
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ssl
+MTIME: 1793080781
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
 BUILD_TIME: 1792307917
 CPV: dev-qt/qtimageformats-6.11.2
 DEFINED_PHASES: compile configure install prepare test unpack
@@ -11095,6 +11142,30 @@ SIZE: 102400
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux mng
 MTIME: 1792307918
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: ~dev-qt/qtshadertools-6.11.3:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793080704
+CPV: dev-qt/qtquick3d-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,opengl,vulkan,widgets] ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquicktimeline-6.11.3:6 ~dev-qt/qtshadertools-6.11.3:6 media-libs/assimp:0/6= virtual/zlib:0/1= dev-util/vulkan-headers
+EAPI: 8
+IUSE: opengl vulkan custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: a1c13e9c50b91a2cc39cf4cad6f323b3
+PATH: pkgs-dev-qt/qtquick3d-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Quick3D.so.6 libQt6Quick3DAssetImport.so.6 libQt6Quick3DAssetUtils.so.6 libQt6Quick3DEffects.so.6 libQt6Quick3DGlslParser.so.6 libQt6Quick3DHelpers.so.6 libQt6Quick3DHelpersImpl.so.6 libQt6Quick3DIblBaker.so.6 libQt6Quick3DParticleEffects.so.6 libQt6Quick3DParticles.so.6 libQt6Quick3DRuntimeRender.so.6 libQt6Quick3DUtils.so.6 libassimp.so libqmldbg_quick3dprofiler.so libqquick3dplugin.so libqtquick3dassetutilsplugin.so libqtquick3deffectplugin.so libqtquick3dhelpersimplplugin.so libqtquick3dhelpersplugin.so libqtquick3dparticleeffectsplugin.so libqtquick3dparticles3dplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,opengl,vulkan,widgets] ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquicktimeline-6.11.3:6 ~dev-qt/qtshadertools-6.11.3:6 media-libs/assimp:0/6= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Concurrent.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6QmlModels.so.6 libQt6Quick.so.6 libQt6QuickTimeline.so.6 libQt6ShaderTools.so.6 libQt6Widgets.so.6 libassimp.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: cfbcabfff8f1f4c901865abb0ec13e00758a53ce
+SIZE: 9441280
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux opengl vulkan
+MTIME: 1793080707
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11145,6 +11216,31 @@ SIZE: 102400
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791145085
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793080829
+CPV: dev-qt/qtserialport-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6 virtual/libudev:0/1=
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 29dd5330df1648df791972aa4b8a44a9
+PATH: pkgs-dev-qt/qtserialport-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6SerialPort.so.6
+RDEPEND: ~dev-qt/qtbase-6.11.3:6 virtual/libudev:0/1= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
+REQUIRES: x86_64: libQt6Core.so.6 libc.so.6 libstdc++.so.6 libudev.so.1
+RESTRICT: test
+SHA1: 584ef67fbc689678b234e42d7bc4158ce9bd061c
+SIZE: 102400
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793080830
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11218,6 +11314,30 @@ SIZE: 163840
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791145070
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793080798
+CPV: dev-qt/qttasktree-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,network]
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: ad1f75c500d4ee8e263b90738c2bd314
+PATH: pkgs-dev-qt/qttasktree-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6TaskTree.so.6
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,network] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: fdb4fed96e1e7f2cdf5b31de9b2ae45007c7da33
+SIZE: 163840
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793080799
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11314,6 +11434,30 @@ SIZE: 972800
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
 MTIME: 1791227669
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793080818
+CPV: dev-qt/qtwebsockets-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[network,ssl] ~dev-qt/qtdeclarative-6.11.3:6
+EAPI: 8
+IUSE: qml +ssl custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 43a1b75b7a6f6dddfae5aeb7699f647b
+PATH: pkgs-dev-qt/qtwebsockets-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6WebSockets.so.6 libqmlwebsocketsplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[network,ssl] ~dev-qt/qtdeclarative-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Network.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: c8baab3e74d52cf6dc7e4ecbdac3a8060282125c
+SIZE: 174080
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml ssl
+MTIME: 1793080819
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21318,25 +21462,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1792568890
+BUILD_ID: 2
+BUILD_TIME: 1793080734
 CPV: kde-plasma/layer-shell-qt-6.8.1
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,wayland] >=dev-qt/qtdeclarative-6.11.2:6 x11-libs/libxkbcommon dev-libs/wayland-protocols dev-qt/qtbase:6
+DEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,wayland] >=dev-qt/qtdeclarative-6.11.2:6 x11-libs/libxkbcommon dev-libs/wayland-protocols dev-qt/qtbase:6
 EAPI: 8
 IUSE: debug
 KEYWORDS: ~amd64 ~arm64
 LICENSE: LGPL-3+
-MD5: 1f96bcbf04f8c57323886d075b0e292e
-PATH: pkgs-kde-plasma/layer-shell-qt-6.8.1-1.gpkg.tar
+MD5: e1582cc0719ac70adeba46108dbe104f
+PATH: pkgs-kde-plasma/layer-shell-qt-6.8.1-2.gpkg.tar
 PROVIDES: x86_64: libLayerShellQtInterface.so.6 libLayerShellQtQml.so liblayer-shell.so
-RDEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,wayland] >=dev-qt/qtdeclarative-6.11.2:6 x11-libs/libxkbcommon || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/layer-shell-qt:5 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,wayland] >=dev-qt/qtdeclarative-6.11.2:6 x11-libs/libxkbcommon || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/layer-shell-qt:5 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libc.so.6 libstdc++.so.6 libwayland-client.so.0
-SHA1: 99283a9ab33bd6e088cc76566e853ecc4e5fe289
+SHA1: a6f83bb9050ee154a8dc28e63bb2817fa736394e
 SIZE: 81920
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792568891
+MTIME: 1793080734
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
