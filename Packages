@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793077486
-PACKAGES: 1468
+TIMESTAMP: 1793078103
+PACKAGES: 1470
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -11222,6 +11222,52 @@ MTIME: 1791085354
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793077877
+CPV: dev-qt/qttools-6.11.3
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[widgets] ~dev-qt/qtbase-6.11.3:6[concurrent,network,sql,sqlite] ~dev-qt/qtbase-6.11.3:6[network,xml,zstd] app-arch/zstd:0/1= ~dev-qt/qtbase-6.11.3:6[dbus,xml] llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= ~dev-qt/qtdeclarative-6.11.3:6[widgets] ~dev-qt/qtbase-6.11.3:6[network,-gles2-only,vulkan] ~dev-qt/qtbase-6.11.3:6[opengl] dev-util/vulkan-headers
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +assistant designer distancefieldgenerator gles2-only kmap2qmap +linguist opengl pixeltool +qdbus qdoc qml qmlls qtattributionsscanner qtdiag qtplugininfo vulkan +widgets zstd +llvm_slot_22 llvm_slot_17 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21 custom-cflags
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 8268e564bd1d1bb34da7ad7328debf31
+PATH: pkgs-dev-qt/qttools-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Designer.so.6 libQt6DesignerComponents.so.6 libQt6Help.so.6 libQt6UiTools.so.6 libqquickwidget.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[widgets] ~dev-qt/qtbase-6.11.3:6[concurrent,network,sql,sqlite] ~dev-qt/qtbase-6.11.3:6[network,xml,zstd] app-arch/zstd:0/1= ~dev-qt/qtbase-6.11.3:6[dbus,xml] llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= ~dev-qt/qtdeclarative-6.11.3:6[widgets] ~dev-qt/qtbase-6.11.3:6[network,-gles2-only,vulkan] ~dev-qt/qtbase-6.11.3:6[opengl] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libLLVM.so.22.1 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libclang-cpp.so.22.1 libclang.so.22.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libzstd.so.1
+RESTRICT: test
+SHA1: bfa66cd11054e751fb2e0555dffde1c5e2cdefd4
+SIZE: 8908800
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 assistant custom-cflags designer elibc_glibc kernel_linux linguist llvm_slot_22 opengl pixeltool qdbus qdoc qml qtattributionsscanner qtdiag qtplugininfo vulkan widgets zstd
+MTIME: 1793077881
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: ~dev-qt/qttools-6.11.3:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793077893
+CPV: dev-qt/qttranslations-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6
+EAPI: 8
+IUSE: custom-cflags
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 24a3f3bb6bc7447cd25ce9ee757a6692
+PATH: pkgs-dev-qt/qttranslations-6.11.3-1.gpkg.tar
+RESTRICT: test
+SHA1: 67eb0b700701dff7dd999af1884ab96080b3ecfa
+SIZE: 2990080
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793077894
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791227667
@@ -17149,27 +17195,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791607270
+BUILD_ID: 2
+BUILD_TIME: 1793078036
 CPV: kde-frameworks/kdbusaddons-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.3=[gui,X] dev-qt/qtbase:6
 EAPI: 8
 IUSE: X debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 86aecb3f15a6461353bdff7aa71e26ac
-PATH: pkgs-kde-frameworks/kdbusaddons-6.31.0-1.gpkg.tar
+MD5: 6708f63de5ee937f10f688d67a980076
+PATH: pkgs-kde-frameworks/kdbusaddons-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: libKF6DBusAddons.so.6
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus] >=dev-qt/qtbase-6.10.1:6/6.11.3=[gui,X] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
 REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
 RESTRICT: test
-SHA1: 21fb56dccd8ed985bbcf00ca9d107f210ffe67c2
+SHA1: 2b92a349e1cd31f186a6c5f09dc00ccce88d30f6
 SIZE: 122880
 SLOT: 6/6.31
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791607272
+MTIME: 1793078037
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -19080,26 +19126,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] >=dev-qt/qtbase-6.10.1:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791608271
+BUILD_ID: 2
+BUILD_TIME: 1793078000
 CPV: kde-frameworks/kwindowsystem-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms dev-libs/plasma-wayland-protocols >=dev-libs/wayland-protocols-1.46 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.3=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms dev-libs/plasma-wayland-protocols >=dev-libs/wayland-protocols-1.46 dev-qt/qtbase:6
 EAPI: 8
 IUSE: wayland X debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: || ( LGPL-2.1 LGPL-3 ) MIT
-MD5: 5457d1afcf69a0b92026eeb155ca530b
-PATH: pkgs-kde-frameworks/kwindowsystem-6.31.0-1.gpkg.tar
+MD5: bd4a28d4346bebbd06b3923da3f946a3
+PATH: pkgs-kde-frameworks/kwindowsystem-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: KF6WindowSystemKWaylandPlugin.so KF6WindowSystemX11Plugin.so libKF6WindowSystem.so.6 libKWindowSystem.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.2=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.3=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libX11.so.6 libXfixes.so.3 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-keysyms.so.1 libxcb-res.so.0 libxcb.so.1
 RESTRICT: test test
-SHA1: 1956978f2bc63d85c241ee0caa36ae136def2d34
-SIZE: 348160
+SHA1: b75106f6754e27cb36464174f638f248e1a233ef
+SIZE: 358400
 SLOT: 6/6.31
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
-MTIME: 1791608273
+MTIME: 1793078001
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
