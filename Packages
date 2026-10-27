@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793080881
-PACKAGES: 1477
+TIMESTAMP: 1793081195
+PACKAGES: 1480
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -11025,6 +11025,30 @@ MTIME: 1793075715
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793080962
+CPV: dev-qt/qtcharts-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[-gles2-only,gui,opengl,widgets] ~dev-qt/qtdeclarative-6.11.3:6[opengl]
+EAPI: 8
+IUSE: gles2-only qml custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: fd01ad70770131cbb386683ee6eaed9c
+PATH: pkgs-dev-qt/qtcharts-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Charts.so.6 libQt6ChartsQml.so.6 libqtchartsqml2plugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[-gles2-only,gui,opengl,widgets] ~dev-qt/qtdeclarative-6.11.3:6[opengl] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 9a0484c9e12bfa8edad107f5dc8aa7e738e587fd
+SIZE: 1075200
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1793080964
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) ~dev-qt/qtshadertools-6.11.3:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1793077355
@@ -11142,6 +11166,30 @@ SIZE: 102400
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux mng
 MTIME: 1792307918
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793080980
+CPV: dev-qt/qtimageformats-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[gui] media-libs/libwebp:0/7= media-libs/tiff:0/6= media-libs/libmng:0/2=
+EAPI: 8
+IUSE: mng custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 20dbe5f08d48a9b35bfa400122d0b481
+PATH: pkgs-dev-qt/qtimageformats-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libqicns.so libqmng.so libqtga.so libqtiff.so libqwbmp.so libqwebp.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[gui] media-libs/libwebp:0/7= media-libs/tiff:0/6= media-libs/libmng:0/2= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libmng.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3
+RESTRICT: test
+SHA1: 69363f93b077c2be7f625517cbbcc3d46ed1f1f2
+SIZE: 102400
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux mng
+MTIME: 1793080981
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11434,6 +11482,30 @@ SIZE: 972800
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
 MTIME: 1791227669
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793081004
+CPV: dev-qt/qtwebchannel-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent] ~dev-qt/qtdeclarative-6.11.3:6
+EAPI: 8
+IUSE: qml custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 431721cada66a77551934c03d8a2a81e
+PATH: pkgs-dev-qt/qtwebchannel-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6WebChannel.so.6 libQt6WebChannelQuick.so.6 libwebchannelquickplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent] ~dev-qt/qtdeclarative-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 54f5c2c4afc2191f3baebb56c524651370036f39
+SIZE: 194560
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1793081005
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -20611,23 +20683,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1792568955
+BUILD_ID: 2
+BUILD_TIME: 1793081035
 CPV: kde-plasma/kdesu-gui-6.8.1
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] dev-qt/qtbase:6
 EAPI: 8
 IUSE: X debug
 KEYWORDS: ~amd64 ~arm64
 LICENSE: GPL-2
-MD5: 897930f934286219fd22d70dcab5e21b
-PATH: pkgs-kde-plasma/kdesu-gui-6.8.1-1.gpkg.tar
-RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] !<kde-plasma/kde-cli-tools-6.1.4-r2:*[kdesu(+)] >=kde-plasma/kde-cli-tools-common-6.8.1 sys-apps/dbus[X] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kdesu-gui:5 >=sys-libs/glibc-2.43-r4
+MD5: 491a70782e974c06fdbdc6ed5a3a5690
+PATH: pkgs-kde-plasma/kdesu-gui-6.8.1-2.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] !<kde-plasma/kde-cli-tools-6.1.4-r2:*[kdesu(+)] >=kde-plasma/kde-cli-tools-common-6.8.1 sys-apps/dbus[X] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kdesu-gui:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Su.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
-SHA1: b8900375cc15a55f975ec66a9c7c3e8e8ec0eebc
+SHA1: 8d059bc591f27a4845f01d5b183f3a890d13ee89
 SIZE: 61440
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792568956
+MTIME: 1793081036
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
