@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793080248
-PACKAGES: 1470
+TIMESTAMP: 1793080561
+PACKAGES: 1471
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -11100,6 +11100,31 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
+BUILD_TIME: 1793080408
+CPV: dev-qt/qtquicktimeline-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6 ~dev-qt/qtdeclarative-6.11.3:6
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 7503675c7f7e9886a1e899935cafc268
+PATH: pkgs-dev-qt/qtquicktimeline-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6QuickTimeline.so.6 libQt6QuickTimelineBlendTrees.so.6 libqtquicktimelineblendtreesplugin.so libqtquicktimelineplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6 ~dev-qt/qtdeclarative-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: ebd736da2c8420945665927058cd78d00b96b058
+SIZE: 122880
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793080409
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
 BUILD_TIME: 1791145084
 CPV: dev-qt/qtserialport-6.11.2
 DEFINED_PHASES: compile configure install prepare test unpack
@@ -17774,25 +17799,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.10.1:6[wayland] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791612069
+BUILD_ID: 2
+BUILD_TIME: 1793080379
 CPV: kde-frameworks/kidletime-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=dev-libs/plasma-wayland-protocols-1.11.1 >=dev-libs/wayland-protocols-1.27:0 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=dev-libs/plasma-wayland-protocols-1.11.1 >=dev-libs/wayland-protocols-1.27:0 dev-qt/qtbase:6
 EAPI: 8
 IUSE: wayland X xscreensaver debug
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 75234d2902892c3734afef28d35273e3
-PATH: pkgs-kde-frameworks/kidletime-6.31.0-1.gpkg.tar
+MD5: 3354e1a6777d77da81b8d10e6bd0f61a
+PATH: pkgs-kde-frameworks/kidletime-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: KF6IdleTimeWaylandPlugin.so KF6IdleTimeXcbPlugin0.so libKF6IdleTime.so.6
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.2=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6WaylandClient.so.6 libX11-xcb.so.1 libX11.so.6 libXext.so.6 libc.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-sync.so.1 libxcb.so.1
-SHA1: e2a242b4cae0b04bdd4ebc656b4d0dad2278e7c0
+SHA1: 4bb70702f9b2b3feffd1823f2a0633ecdae35424
 SIZE: 102400
 SLOT: 6/6.31
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
-MTIME: 1791612070
+MTIME: 1793080379
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
