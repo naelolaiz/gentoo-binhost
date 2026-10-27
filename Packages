@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793120244
-PACKAGES: 1484
+TIMESTAMP: 1793120553
+PACKAGES: 1486
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -11218,6 +11218,30 @@ MTIME: 1793119735
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: ~dev-qt/qtshadertools-6.11.3:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793120268
+CPV: dev-qt/qtmultimedia-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.11.3:6[X,concurrent,-eglfs] media-video/ffmpeg:0/60.62.62= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.11.3:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquick3d-6.11.3:6 x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers
+EAPI: 8
+IUSE: +X alsa +dbus eglfs +ffmpeg gstreamer opengl pipewire pulseaudio qml +v4l vaapi vulkan wayland custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 4b166960a767a4236c96acc75042a6bb
+PATH: pkgs-dev-qt/qtmultimedia-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Multimedia.so.6 libQt6MultimediaQuick.so.6 libQt6MultimediaWidgets.so.6 libQt6Quick3DSpatialAudio.so.6 libQt6SpatialAudio.so.6 libffmpegmediaplugin.so libquick3dspatialaudioplugin.so libquickmultimediaplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.11.3:6[X,concurrent,-eglfs] media-video/ffmpeg:0/60.62.62= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.11.3:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquick3d-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Quick3D.so.6 libQt6Widgets.so.6 libX11.so.6 libXext.so.6 libXrandr.so.2 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libm.so.6 libpulse.so.0 libstdc++.so.6 libswresample.so.6 libswscale.so.9
+RESTRICT: test
+SHA1: 6620f59f52492ac8a082ce96a34930e159d0b420
+SIZE: 2652160
+SLOT: 6/6.11.3
+USE: X abi_x86_64 alsa amd64 dbus elibc_glibc ffmpeg kernel_linux opengl pipewire pulseaudio qml v4l vulkan wayland
+MTIME: 1793120271
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1793119651
@@ -11363,6 +11387,31 @@ SIZE: 2508800
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793075956
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793120309
+CPV: dev-qt/qtspeech-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6 ~dev-qt/qtmultimedia-6.11.3:6 ~dev-qt/qtdeclarative-6.11.3:6 app-accessibility/speech-dispatcher
+EAPI: 8
+IUSE: flite qml +speechd custom-cflags
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 5fdb7724652e21c9df6135d0a73deb8e
+PATH: pkgs-dev-qt/qtspeech-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6TextToSpeech.so.6 libqtexttospeech_mock.so libqtexttospeech_speechd.so libtexttospeechqmlplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6 ~dev-qt/qtmultimedia-6.11.3:6 ~dev-qt/qtdeclarative-6.11.3:6 app-accessibility/speech-dispatcher >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libc.so.6 libspeechd.so.2 libstdc++.so.6
+RESTRICT: test
+SHA1: d362003a2f277df96f556d27c9b86a938db58ffd
+SIZE: 163840
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml speechd
+MTIME: 1793120310
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
