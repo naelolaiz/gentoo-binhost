@@ -2,10 +2,10 @@
  "continue": {
   "idle": 0,
   "image": "gentoo/stage3@sha256:6691b67cb70aecff7681269124886316a55f2a52d4487a24f42df3dc7631dd74",
-  "streak": 2,
+  "streak": 3,
   "tiers": "",
   "tree_date": "20261026",
-  "updated": 1793107040
+  "updated": 1793124486
  },
  "gone": {
   "app-containers/podman-6.1.2": 1792736914,
