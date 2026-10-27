@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793079634
+TIMESTAMP: 1793079941
 PACKAGES: 1470
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -20211,26 +20211,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1792562030
+BUILD_ID: 2
+BUILD_TIME: 1793079614
 CPV: kde-plasma/kde-cli-tools-6.8.1
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,X] dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,X] dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: X debug
 KEYWORDS: ~amd64 ~arm64
 LICENSE: GPL-2
-MD5: c858d575a240cae12f8ecc25ea326024
-PATH: pkgs-kde-plasma/kde-cli-tools-6.8.1-1.gpkg.tar
-RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[gui,X] >=kde-plasma/kde-cli-tools-common-6.8.1 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kde-cli-tools:5 >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
+MD5: d12dafd735307082d7434f978c4d9d31
+PATH: pkgs-kde-plasma/kde-cli-tools-6.8.1-2.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,X] >=kde-plasma/kde-cli-tools-common-6.8.1 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kde-cli-tools:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
 REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Service.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
-SHA1: 980690104d7b06c83344273bacdd7d1680b94ee2
+SHA1: 7ce6f7c730da9deaa002154b88cdc93d50289322
 SIZE: 112640
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792562031
+MTIME: 1793079616
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
