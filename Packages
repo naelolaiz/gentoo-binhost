@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793128007
-PACKAGES: 1487
+TIMESTAMP: 1793164624
+PACKAGES: 1489
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -11604,6 +11604,30 @@ SIZE: 194560
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
 MTIME: 1793081005
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( ( dev-lang/python:3.14 dev-python/html5lib[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/html5lib[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/html5lib[python_targets_python3_12(-)] ) ) dev-util/gperf net-libs/nodejs[icu,ssl] sys-devel/bison sys-devel/flex app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793164317
+CPV: dev-qt/qtwebengine-6.11.3
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test unpack
+DEPEND: app-arch/snappy:0/1.1= dev-libs/expat dev-libs/libxml2:2/16=[icu] dev-libs/libxslt dev-libs/nspr dev-libs/nss ~dev-qt/qtbase-6.11.3:6[-accessibility,gui,opengl,ssl,vulkan,widgets] ~dev-qt/qtdeclarative-6.11.3:6[widgets] ~dev-qt/qtwebchannel-6.11.3:6[qml] media-libs/fontconfig media-libs/freetype media-libs/harfbuzz:0/6.0.0= media-libs/lcms:2 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[gbm(+)] media-libs/openjpeg:2/7= media-libs/opus media-libs/tiff:0/6= sys-apps/dbus sys-apps/pciutils virtual/libudev:0/1= virtual/minizip:0/1= virtual/zlib:0/1= x11-libs/libX11 x11-libs/libXcomposite x11-libs/libXdamage x11-libs/libXext x11-libs/libXfixes x11-libs/libXrandr x11-libs/libXtst x11-libs/libdrm x11-libs/libxcb:0/1.12= x11-libs/libxkbcommon x11-libs/libxkbfile media-libs/alsa-lib media-libs/libglvnd[X] media-libs/libpulse[glib] dev-libs/glib:2 media-video/pipewire:0/0.4= dev-libs/icu:0/78= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) media-libs/libglvnd x11-base/xorg-proto x11-libs/libXcursor x11-libs/libXi x11-libs/libxshmfence media-libs/libepoxy[egl(+)]
+EAPI: 8
+IUSE: accessibility +alsa bindist custom-cflags designer geolocation +jumbo-build kerberos opengl +pdfium pulseaudio qml screencast +system-icu vaapi vulkan webdriver +widgets custom-cflags test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: dff7f44f753b3fbf1624b8a495817a62
+PATH: pkgs-dev-qt/qtwebengine-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Pdf.so.6 libQt6PdfQuick.so.6 libQt6PdfWidgets.so.6 libQt6WebEngineCore.so.6 libQt6WebEngineQuick.so.6 libQt6WebEngineQuickDelegatesQml.so.6 libQt6WebEngineWidgets.so.6 libpdfquickplugin.so libqpdf.so libqtwebenginequickdelegatesplugin.so libqtwebenginequickplugin.so
+RDEPEND: app-arch/snappy:0/1.1= dev-libs/expat dev-libs/libxml2:2/16=[icu] dev-libs/libxslt dev-libs/nspr dev-libs/nss ~dev-qt/qtbase-6.11.3:6[-accessibility,gui,opengl,ssl,vulkan,widgets] ~dev-qt/qtdeclarative-6.11.3:6[widgets] ~dev-qt/qtwebchannel-6.11.3:6[qml] media-libs/fontconfig media-libs/freetype media-libs/harfbuzz:0/6.0.0= media-libs/lcms:2 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[gbm(+)] media-libs/openjpeg:2/7= media-libs/opus media-libs/tiff:0/6= sys-apps/dbus sys-apps/pciutils virtual/libudev:0/1= virtual/minizip:0/1= virtual/zlib:0/1= x11-libs/libX11 x11-libs/libXcomposite x11-libs/libXdamage x11-libs/libXext x11-libs/libXfixes x11-libs/libXrandr x11-libs/libXtst x11-libs/libdrm x11-libs/libxcb:0/1.12= x11-libs/libxkbcommon x11-libs/libxkbfile media-libs/alsa-lib media-libs/libglvnd[X] media-libs/libpulse[glib] dev-libs/glib:2 media-video/pipewire:0/0.4= dev-libs/icu:0/78= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libGLX.so.0 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6WebChannel.so.6 libQt6WebChannelQuick.so.6 libQt6Widgets.so.6 libX11.so.6 libXcomposite.so.1 libXdamage.so.1 libXext.so.6 libXfixes.so.3 libXrandr.so.2 libXtst.so.6 libasound.so.2 libc.so.6 libdbus-1.so.3 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libharfbuzz-subset.so.0 libharfbuzz.so.0 libicui18n.so.78 libicuuc.so.78 libjpeg.so.62 liblcms2.so.2 libm.so.6 libminizip.so.1 libnspr4.so libnss3.so libnssutil3.so libopenjp2.so.7 libopus.so.0 libpipewire-0.3.so.0 libpng16.so.16 libpulse.so.0 libsmime3.so libsnappy.so.1 libstdc++.so.6 libtiff.so.6 libudev.so.1 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libxcb-dri3.so.0 libxcb.so.1 libxkbcommon.so.0 libxkbfile.so.1 libxml2.so.16 libxslt.so.1 libz.so.1
+RESTRICT: test
+SHA1: 6f20b763367f6873742dd1079ddce5630b1003ae
+SIZE: 120750080
+SLOT: 6/6.11.3
+USE: abi_x86_64 alsa amd64 bindist elibc_glibc jumbo-build kernel_linux opengl pdfium pulseaudio qml screencast system-icu vulkan widgets
+MTIME: 1793164384
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25393,6 +25417,32 @@ SIZE: 1546240
 SLOT: 0/1.23
 USE: abi_x86_64 amd64 aom de265 elibc_glibc ffmpeg gdk-pixbuf gui jpeg jpeg2k kernel_linux kvazaar openh264 threads tools webp x264 x265
 MTIME: 1792816361
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793164558
+CPV: media-libs/libheif-1.23.7
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend test
+DEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +aom dav1d +de265 doc ffmpeg gdk-pixbuf geotiff gui +jpeg +jpeg2k +kvazaar openh264 rav1e svt-av1 test test-full +threads tools +webp x264 x265 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-3 MIT
+MD5: ac37ce1ec817f611ca2b69ddab2dfe3f
+PATH: pkgs-media-libs/libheif-1.23.7-1.gpkg.tar
+PROVIDES: x86_64: libheif-j2kdec.so libheif-j2kenc.so libheif.so.1 libpixbufloader-heif.so
+RDEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
+REQUIRES: x86_64: libSDL2-2.0.so.0 libaom.so.3 libavcodec.so.62 libavutil.so.60 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libde265.so.0 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjpeg.so.62 libkvazaar.so.7 libm.so.6 libopenh264.so.8 libopenjp2.so.7 libpng16.so.16 libsharpyuv.so.0 libstdc++.so.6 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libz.so.1
+RESTRICT: test
+SHA1: dc5294db998acfead47387a54e051352d1fadaa4
+SIZE: 1566720
+SLOT: 0/1.23
+USE: abi_x86_64 amd64 aom de265 elibc_glibc ffmpeg gdk-pixbuf gui jpeg jpeg2k kernel_linux kvazaar openh264 threads tools webp x264 x265
+MTIME: 1793164559
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
