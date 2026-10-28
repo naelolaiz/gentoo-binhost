@@ -300,6 +300,10 @@
    "path": "pkgs-dev-python/packaging-26.3-2.gpkg.tar"
   },
   {
+   "at": 1793174662,
+   "path": "pkgs-dev-python/pyqt6-6.11.0-r1-7.gpkg.tar"
+  },
+  {
    "at": 1792681346,
    "path": "pkgs-dev-python/sip-6.17.0-1.gpkg.tar"
   },
@@ -820,6 +824,10 @@
    "path": "pkgs-kde-apps/kruler-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793174662,
+   "path": "pkgs-kde-apps/kruler-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-kde-apps/kshisen-26.08.1-1.gpkg.tar"
   },
@@ -1198,6 +1206,14 @@
   {
    "at": 1792816274,
    "path": "pkgs-media-video/ffmpeg-8.1.3-3.gpkg.tar"
+  },
+  {
+   "at": 1793174662,
+   "path": "pkgs-media-video/mpv-0.41.0-r2-25.gpkg.tar"
+  },
+  {
+   "at": 1793174662,
+   "path": "pkgs-media-video/obs-studio-33.0.0-1.gpkg.tar"
   },
   {
    "at": 1792209517,

@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793171619
-PACKAGES: 1494
+TIMESTAMP: 1793174662
+PACKAGES: 1496
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -9241,25 +9241,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-python/pyqt-builder-1.19[python_targets_python3_14(-)] >=dev-python/sip-6.15[python_targets_python3_14(-)] >=dev-qt/qtbase-6.11:6 virtual/pkgconfig dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/sip[python_targets_python3_14(-)]
-BUILD_ID: 7
-BUILD_TIME: 1791312519
+BUILD_ID: 8
+BUILD_TIME: 1793174453
 CPV: dev-python/pyqt6-6.11.0-r1
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: >=dev-qt/qtbase-6.11:6/6.11.2=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.11:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtwebengine-6.11:6[pdfium,widgets] >=dev-qt/qtdeclarative-6.11:6[widgets] >=dev-qt/qtdeclarative-6.11:6[opengl] >=dev-qt/qtsvg-6.11:6 >=dev-qt/qtwebchannel-6.11:6 dev-util/vulkan-headers dev-lang/python:3.14
+DEPEND: >=dev-qt/qtbase-6.11:6/6.11.3=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.11:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtwebengine-6.11:6[pdfium,widgets] >=dev-qt/qtdeclarative-6.11:6[widgets] >=dev-qt/qtdeclarative-6.11:6[opengl] >=dev-qt/qtsvg-6.11:6 >=dev-qt/qtwebchannel-6.11:6 dev-util/vulkan-headers dev-lang/python:3.14
 EAPI: 8
 IUSE: +X bluetooth +dbus debug designer examples gles2-only +gui help multimedia +network nfc opengl pdfium positioning +printsupport qml quick quick3d remoteobjects scxml serialport sensors spatialaudio speech +sql +ssl svg testlib webchannel websockets vulkan wayland +widgets +xml python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
 KEYWORDS: amd64 arm arm64 ~loong ~ppc ppc64 ~riscv x86
 LICENSE: GPL-3
-MD5: 9cfe902d384fd68fd3734cdec967f15f
-PATH: pkgs-dev-python/pyqt6-6.11.0-r1-7.gpkg.tar
+MD5: 87867f4a63de223d5f898382dbe7cc14
+PATH: pkgs-dev-python/pyqt6-6.11.0-r1-8.gpkg.tar
 PROVIDES: x86_64: QtBluetooth.abi3.so QtCore.abi3.so QtDBus.abi3.so QtGui.abi3.so QtNetwork.abi3.so QtOpenGL.abi3.so QtOpenGLWidgets.abi3.so QtPdf.abi3.so QtPdfWidgets.abi3.so QtPrintSupport.abi3.so QtQml.abi3.so QtQuick.abi3.so QtQuickWidgets.abi3.so QtSql.abi3.so QtSvg.abi3.so QtSvgWidgets.abi3.so QtWebChannel.abi3.so QtWidgets.abi3.so QtXml.abi3.so pyqt6.abi3.so
-RDEPEND: >=dev-qt/qtbase-6.11:6/6.11.2=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.11:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtwebengine-6.11:6[pdfium,widgets] >=dev-qt/qtdeclarative-6.11:6[widgets] >=dev-qt/qtdeclarative-6.11:6[opengl] >=dev-qt/qtsvg-6.11:6 >=dev-qt/qtwebchannel-6.11:6 >=dev-python/pyqt6-sip-13.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+RDEPEND: >=dev-qt/qtbase-6.11:6/6.11.3=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.11:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtwebengine-6.11:6[pdfium,widgets] >=dev-qt/qtdeclarative-6.11:6[widgets] >=dev-qt/qtdeclarative-6.11:6[opengl] >=dev-qt/qtsvg-6.11:6 >=dev-qt/qtwebchannel-6.11:6 >=dev-python/pyqt6-sip-13.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Bluetooth.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6Pdf.so.6 libQt6PdfWidgets.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6WebChannel.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libdbus-1.so.3 libm.so.6 libstdc++.so.6
-SHA1: 67143a2e98daf74031eb3916791f384e528c3695
-SIZE: 4444160
+SHA1: 81b252e322f1707ab60ed71b0447a0ac7f402ba7
+SIZE: 4495360
 USE: X abi_x86_64 amd64 bluetooth dbus elibc_glibc gui kernel_linux network opengl pdfium printsupport python_targets_python3_14 qml quick sql ssl svg vulkan wayland webchannel widgets xml
-MTIME: 1791312521
+MTIME: 1793174455
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11384,6 +11383,30 @@ SIZE: 122880
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793080409
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793171472
+CPV: dev-qt/qtscxml-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[gui] ~dev-qt/qtdeclarative-6.11.3:6
+EAPI: 8
+IUSE: qml custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: df8e7c8bc3aec037c7049e456117ca50
+PATH: pkgs-dev-qt/qtscxml-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Scxml.so.6 libQt6ScxmlQml.so.6 libQt6StateMachine.so.6 libQt6StateMachineQml.so.6 libdeclarative_scxmlplugin.so libqscxmlecmascriptdatamodel.so libqtqmlstatemachineplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[gui] ~dev-qt/qtdeclarative-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 86930b1f7783aad6aade7f120ac77b1dbcadc228
+SIZE: 696320
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1793171474
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15666,25 +15689,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1791532480
+BUILD_ID: 2
+BUILD_TIME: 1793171464
 CPV: kde-apps/kruler-26.08.2
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libxcb dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libxcb dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: X debug +handbook
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: GPL-2+ FDL-1.2
-MD5: b5d2c2f7f4588bd786e7d60d3ca39620
-PATH: pkgs-kde-apps/kruler-26.08.2-1.gpkg.tar
-RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.2=[X] x11-libs/libxcb || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
+MD5: d90d33d6956f44208712d1adf4a1c7e9
+PATH: pkgs-kde-apps/kruler-26.08.2-2.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libxcb || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6Notifications.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
-SHA1: f26cf028ef753e35cff2ee4e4c803b63ef49291d
+SHA1: f8f48a827b9e489bf1f883cde4a477f697625ada
 SIZE: 348160
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
-MTIME: 1791532481
+MTIME: 1793171466
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27988,27 +28011,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-build/meson-1.3.0 virtual/pkgconfig dev-python/docutils dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 25
-BUILD_TIME: 1791286809
+BUILD_ID: 27
+BUILD_TIME: 1793171616
 CPV: media-video/mpv-0.41.0-r2
 DEFINED_PHASES: compile configure install postinst postrm preinst setup test
-DEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/360=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers >=dev-libs/wayland-protocols-1.41
+DEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers >=dev-libs/wayland-protocols-1.41
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +X +alsa aqua archive bluray cdda +cli coreaudio debug +drm dvb dvd +egl gamepad +iconv jack javascript jpeg lcms libcaca +libmpv +lua nvenc openal pipewire pulseaudio rubberband sdl selinux sixel sndio soc test tools +uchardet vaapi vdpau +vulkan wayland xv zimg zlib lua_single_target_luajit lua_single_target_lua5-1 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv x86
 LICENSE: LGPL-2.1+ GPL-2+ BSD ISC MIT
-MD5: bed6a433a0ee687889dc1bf643277631
-PATH: pkgs-media-video/mpv-0.41.0-r2-25.gpkg.tar
+MD5: 242498754da0ff41dd9932b75a9d7c04
+PATH: pkgs-media-video/mpv-0.41.0-r2-27.gpkg.tar
 PROVIDES: x86_64: libmpv.so.2
-RDEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/360=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= dev-lang/python:3.14 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libEGL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXfixes.so.3 libXpresent.so.1 libXrandr.so.2 libXss.so.1 libXv.so.1 libasound.so.2 libass.so.9 libavcodec.so.62 libavdevice.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libbluray.so.3 libc.so.6 libcdio.so.21 libcdio_cdda.so.2 libcdio_paranoia.so.2 libdisplay-info.so.4 libdrm.so.2 libdvdnav.so.4 libgbm.so.1 libjack.so.0 libjpeg.so.62 liblcms2.so.2 libluajit-5.1.so.2 libm.so.6 libopenal.so.1 libpipewire-0.3.so.0 libplacebo.so.360 libpulse.so.0 librubberband.so.3 libswresample.so.6 libswscale.so.9 libuchardet.so.0 libvulkan.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libz.so.1
+RDEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libEGL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXfixes.so.3 libXpresent.so.1 libXrandr.so.2 libXss.so.1 libXv.so.1 libasound.so.2 libass.so.9 libavcodec.so.62 libavdevice.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libbluray.so.3 libc.so.6 libcdio.so.21 libcdio_cdda.so.2 libcdio_paranoia.so.2 libdisplay-info.so.4 libdrm.so.2 libdvdnav.so.4 libgbm.so.1 libjack.so.0 libjpeg.so.62 liblcms2.so.2 libluajit-5.1.so.2 libm.so.6 libopenal.so.1 libpipewire-0.3.so.0 libplacebo.so.387 libpulse.so.0 librubberband.so.3 libswresample.so.6 libswscale.so.9 libuchardet.so.0 libvulkan.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libz.so.1
 RESTRICT: test
-SHA1: 157b69999a7521b0a49f2ae72d524d0b4120c38d
-SIZE: 2969600
+SHA1: 50d7668d3028062a9d867336c806c1072e86c138
+SIZE: 3061760
 SLOT: 0/2
 USE: X abi_x86_64 alsa amd64 bluray cdda cli drm dvb dvd egl elibc_glibc gamepad iconv jack jpeg kernel_linux lcms libmpv lua lua_single_target_luajit openal pipewire pulseaudio python_single_target_python3_14 rubberband tools uchardet vulkan wayland xv zlib
-MTIME: 1791286811
+MTIME: 1793171617
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -28036,25 +28059,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: kde-frameworks/extra-cmake-modules:0 dev-lang/swig dev-lang/swig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1792822825
+BUILD_ID: 2
+BUILD_TIME: 1793174464
 CPV: media-video/obs-studio-33.0.0
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
-DEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.2=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator
+DEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.3=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +alsa browser decklink fdk jack lua mpegts nvenc pulseaudio python qsv screencast sndio speex test-input truetype v4l vlc wayland websocket +lua_single_target_luajit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
 LICENSE: Boost-1.0 GPL-2+ MIT Unlicense
-MD5: 00a234464fcab9ee8ce1d8441ad49348
-PATH: pkgs-media-video/obs-studio-33.0.0-1.gpkg.tar
+MD5: bb952d0e0b7bff05fcf54ac2ee67d3b5
+PATH: pkgs-media-video/obs-studio-33.0.0-2.gpkg.tar
 PROVIDES: x86_64: _obspython.so frontend-tools.so image-source.so libEGL.so libGLESv2.so libcef.so libobs-frontend-api.so.30 libobs-opengl.so.30 libobs-scripting.so.30 libobs.so.30 libvk_swiftshader.so libvulkan.so.1 linux-alsa.so linux-capture.so linux-jack.so linux-pipewire.so linux-pulseaudio.so linux-v4l2.so obs-browser.so obs-ffmpeg.so obs-filters.so obs-outputs.so obs-transitions.so obs-vst.so obs-websocket.so obs-x264.so obslua.so rtmp-services.so text-freetype2.so
-RDEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.2=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator >=sys-libs/glibc-2.43-r4
+RDEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.3=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/60.62.62=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libEGL.so.1 libGLX.so.0 libOpenGL.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libX11-xcb.so.1 libX11.so.6 libXcomposite.so.1 libXdamage.so.1 libXext.so.6 libXfixes.so.3 libXrandr.so.2 libasound.so.2 libatk-1.0.so.0 libatk-bridge-2.0.so.0 libatspi.so.0 libavcodec.so.62 libavdevice.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libcups.so.2 libcurl.so.4 libdbus-1.so.3 libdl.so.2 libdrm.so.2 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjack.so.0 libjansson.so.4 libluajit-5.1.so.2 libm.so.6 libmbedcrypto-3.so.16 libmbedtls-3.so.21 libmbedx509-3.so.7 libnspr4.so libnss3.so libnssutil3.so libpci.so.3 libpipewire-0.3.so.0 libpthread.so.0 libpulse.so.0 libpython3.14.so.1.0 libqrcodegencpp.so.1 librist.so.4 librnnoise.so.0 libsmime3.so libspeexdsp.so.1 libsrt.so.1.5 libstdc++.so.6 libswresample.so.6 libswscale.so.9 libudev.so.1 libuuid.so.1 libv4l2.so.0 libva-drm.so.2 libva.so.2 libwayland-client.so.0 libwayland-egl.so.1 libx264.so.164 libxcb-composite.so.0 libxcb-randr.so.0 libxcb-shm.so.0 libxcb-xfixes.so.0 libxcb-xinerama.so.0 libxcb-xinput.so.0 libxcb.so.1 libxkbcommon.so.0 libz.so.1
-SHA1: c64776feb1f1bd6f3d6a5c457ae263c9bc7366b5
+SHA1: 97b60007ad8dbcdddad89c9eaeeb516a18e610f9
 SIZE: 152668160
 USE: abi_x86_64 alsa amd64 browser elibc_glibc jack kernel_linux lua lua_single_target_luajit mpegts pulseaudio python python_single_target_python3_14 screencast speex truetype v4l wayland websocket
-MTIME: 1792822832
+MTIME: 1793174472
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29382,6 +29405,27 @@ SHA1: cb3eacc28882c44a09a842f151dcc5d9a9f7c4ce
 SIZE: 7700480
 USE: abi_x86_64 amd64 deno elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1792680697
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793171415
+CPV: net-misc/yt-dlp-2026.10.26
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: +deno test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: amd64 arm arm64 ~hppa ppc ppc64 ~riscv x86 ~arm64-macos ~x64-macos
+LICENSE: Unlicense
+MD5: 636083ea4f5c2d0f7256273033dac80a
+PATH: pkgs-net-misc/yt-dlp-2026.10.26-1.gpkg.tar
+RDEPEND: dev-python/pycryptodome[python_targets_python3_14(-)] =dev-python/yt-dlp-ejs-0.8*[python_targets_python3_14(-)] >=dev-lang/deno-bin-2.9.8 dev-lang/python:3.14
+RESTRICT: test
+SHA1: 2416bf586082375a6ec2b73adfde33a41c179fbf
+SIZE: 7690240
+USE: abi_x86_64 amd64 deno elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793171421
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
