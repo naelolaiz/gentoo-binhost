@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793164624
-PACKAGES: 1489
+TIMESTAMP: 1793165842
+PACKAGES: 1493
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -11049,6 +11049,30 @@ MTIME: 1793080964
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793165050
+CPV: dev-qt/qtconnectivity-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6 ~dev-qt/qtbase-6.11.3:6[dbus,network] net-wireless/bluez:0/3=
+EAPI: 8
+IUSE: +bluetooth neard nfc smartcard custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 1a5f951ecf45ccecdcd9cedfa624f197
+PATH: pkgs-dev-qt/qtconnectivity-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Bluetooth.so.6
+RDEPEND: ~dev-qt/qtbase-6.11.3:6 ~dev-qt/qtbase-6.11.3:6[dbus,network] net-wireless/bluez:0/3= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Network.so.6 libbluetooth.so.3 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 945a1e5edb3dd227dab7f1d0be22f771e6a88510
+SIZE: 614400
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 bluetooth elibc_glibc kernel_linux
+MTIME: 1793165051
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) ~dev-qt/qtshadertools-6.11.3:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1793077355
@@ -11094,6 +11118,30 @@ SIZE: 583680
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792306400
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: ~dev-qt/qtshadertools-6.11.3:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793165117
+CPV: dev-qt/qtgraphs-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[gui,widgets] ~dev-qt/qtdeclarative-6.11.3:6
+EAPI: 8
+IUSE: quick3d custom-cflags test
+KEYWORDS: ~amd64 ~arm64 ~ppc64
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 1a27d76962dad69b908c4b6fcdcc068e
+PATH: pkgs-dev-qt/qtgraphs-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6Graphs.so.6 libgraphsplugin.so
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[gui,widgets] ~dev-qt/qtdeclarative-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickShapes.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: dc2dbec083edb6c05b57756084d87fd1dce72c06
+SIZE: 583680
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793165118
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11239,6 +11287,30 @@ SIZE: 2652160
 SLOT: 6/6.11.3
 USE: X abi_x86_64 alsa amd64 dbus elibc_glibc ffmpeg kernel_linux opengl pipewire pulseaudio qml v4l vulkan wayland
 MTIME: 1793120271
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793164968
+CPV: dev-qt/qtnetworkauth-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.11.3:6[gui,network]
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 7929fda7e13e436e68b9094532257067
+PATH: pkgs-dev-qt/qtnetworkauth-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6NetworkAuth.so.6
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[gui,network] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: c77eda208877e17e9cb50a7573152cf97750c4fc
+SIZE: 184320
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793164969
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11580,6 +11652,30 @@ SIZE: 972800
 SLOT: 6/6.11.2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
 MTIME: 1791227669
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793165405
+CPV: dev-qt/qtwayland-6.11.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-libs/wayland ~dev-qt/qtbase-6.11.3:6[gui,opengl,wayland] media-libs/libglvnd x11-libs/libxkbcommon ~dev-qt/qtdeclarative-6.11.3:6
+EAPI: 8
+IUSE: gnome qml custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 29a6eee92177cd9eaa130e90319e7ef1
+PATH: pkgs-dev-qt/qtwayland-6.11.3-1.gpkg.tar
+PROVIDES: x86_64: libQt6WaylandCompositor.so.6 libQt6WaylandCompositorIviapplication.so.6 libQt6WaylandCompositorPresentationTime.so.6 libQt6WaylandCompositorWLShell.so.6 libQt6WaylandCompositorXdgShell.so.6 libQt6WaylandEglCompositorHwIntegration.so.6 libivi-shell.so libqt-shell.so libqt-wayland-compositor-dmabuf-server-buffer.so libqt-wayland-compositor-drm-egl-server-buffer.so libqt-wayland-compositor-shm-emulation-server.so libqt-wayland-compositor-vulkan-server.so libqt-wayland-compositor-wayland-egl.so libqt-wayland-compositor-wayland-eglstream-controller.so libqwaylandcompositorplugin.so libwaylandcompositoriviapplicationplugin.so libwaylandcompositorpresentationtimeplugin.so libwaylandcompositorqtshellplugin.so libwaylandcompositorwlshellplugin.so libwaylandcompositorxdgshellplugin.so libwaylandtexturesharingextensionplugin.so libwaylandtexturesharingplugin.so
+RDEPEND: dev-libs/wayland ~dev-qt/qtbase-6.11.3:6[gui,opengl,wayland] media-libs/libglvnd x11-libs/libxkbcommon ~dev-qt/qtdeclarative-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libEGL.so.1 libOpenGL.so.0 libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGL.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0 libwayland-server.so.0 libxkbcommon.so.0
+RESTRICT: test
+SHA1: d75195da8f3386d1b73c274693c0d20e69a4eff2
+SIZE: 993280
+SLOT: 6/6.11.3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1793165407
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -13122,8 +13218,8 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1792818384
+BUILD_ID: 2
+BUILD_TIME: 1793165623
 CPV: gui-libs/kddockwidgets-2.5.1
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: dev-cpp/nlohmann_json
@@ -13131,17 +13227,17 @@ EAPI: 8
 IUSE: qml
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: || ( GPL-2 GPL-3 ) BSD MIT
-MD5: 8c5d2e9a8bfeb7107ab8cef447f210e1
-PATH: pkgs-gui-libs/kddockwidgets-2.5.1-1.gpkg.tar
+MD5: 83d8deb78c5d4c7212f33aa0b3e056a3
+PATH: pkgs-gui-libs/kddockwidgets-2.5.1-2.gpkg.tar
 PROVIDES: x86_64: libkddockwidgets-qt6.so.4
-RDEPEND: dev-qt/qtbase:6/6.11.2=[X,widgets] dev-qt/qtdeclarative:6/6.11.2= >=sys-libs/glibc-2.43-r4
+RDEPEND: dev-qt/qtbase:6/6.11.3=[X,widgets] dev-qt/qtdeclarative:6/6.11.3= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
 RESTRICT: test
-SHA1: 57c5d44a31843a53b4dbb4bcb4ad32000f681ceb
+SHA1: e3b7a596a7b1f8e75c9ad8f7c0a5aa41f8f04735
 SIZE: 1064960
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
-MTIME: 1792818385
+MTIME: 1793165624
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
