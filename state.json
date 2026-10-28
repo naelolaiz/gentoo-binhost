@@ -230,16 +230,8 @@
    "path": "pkgs-app-containers/netavark-2.1.0-1.gpkg.tar"
   },
   {
-   "at": 1791866290,
-   "path": "pkgs-app-containers/podman-6.1.2-1.gpkg.tar"
-  },
-  {
    "at": 1792588057,
    "path": "pkgs-app-containers/podman-6.1.4-1.gpkg.tar"
-  },
-  {
-   "at": 1791865970,
-   "path": "pkgs-app-crypt/age-1.3.1-r1-1.gpkg.tar"
   },
   {
    "at": 1792587137,
@@ -334,10 +326,6 @@
    "path": "pkgs-dev-python/sip-6.17.0-1.gpkg.tar"
   },
   {
-   "at": 1791865970,
-   "path": "pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-2.gpkg.tar"
-  },
-  {
    "at": 1792736587,
    "path": "pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-3.gpkg.tar"
   },
@@ -348,10 +336,6 @@
   {
    "at": 1793119625,
    "path": "pkgs-dev-qt/qt-creator-20.0.2-1.gpkg.tar"
-  },
-  {
-   "at": 1791866360,
-   "path": "pkgs-dev-util/github-cli-2.102.0-1.gpkg.tar"
   },
   {
    "at": 1792588133,
@@ -376,10 +360,6 @@
   {
    "at": 1792299120,
    "path": "pkgs-dev-vcs/git-2.56.0-1.gpkg.tar"
-  },
-  {
-   "at": 1791866360,
-   "path": "pkgs-dev-vcs/git-lfs-3.8.0-1.gpkg.tar"
   },
   {
    "at": 1792588133,
@@ -1326,10 +1306,6 @@
    "path": "pkgs-sci-ml/ollama-0.40.2-1.gpkg.tar"
   },
   {
-   "at": 1791866290,
-   "path": "pkgs-sci-ml/ollama-0.40.3-1.gpkg.tar"
-  },
-  {
    "at": 1792728706,
    "path": "pkgs-sys-apps/systemd-utils-262-1.gpkg.tar"
   },
@@ -1344,10 +1320,6 @@
   {
    "at": 1792681346,
    "path": "pkgs-sys-libs/libcap-ng-0.9.5-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1791865656,
-   "path": "pkgs-www-apps/gitea-1.27.3-1.gpkg.tar"
   },
   {
    "at": 1792579226,
