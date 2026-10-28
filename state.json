@@ -412,6 +412,10 @@
    "path": "pkgs-kde-apps/dolphin-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793170703,
+   "path": "pkgs-kde-apps/dolphin-26.08.2-2.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-kde-apps/dolphin-plugins-common-26.08.1-1.gpkg.tar"
   },
@@ -438,6 +442,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-kde-apps/gwenview-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793170703,
+   "path": "pkgs-kde-apps/gwenview-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -1040,6 +1048,10 @@
    "path": "pkgs-kde-misc/kdeconnect-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793170703,
+   "path": "pkgs-kde-misc/kdeconnect-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-kde-misc/kio-gdrive-26.08.1-1.gpkg.tar"
   },
@@ -1092,6 +1104,10 @@
    "path": "pkgs-kde-plasma/oxygen-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1793170703,
+   "path": "pkgs-kde-plasma/plasma-desktop-6.8.1-1.gpkg.tar"
+  },
+  {
    "at": 1793119937,
    "path": "pkgs-kde-plasma/plasma-integration-6.8.1-1.gpkg.tar"
   },
@@ -1106,6 +1122,10 @@
   {
    "at": 1792678678,
    "path": "pkgs-kde-plasma/sddm-kcm-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793170703,
+   "path": "pkgs-kde-plasma/spectacle-6.8.1-1.gpkg.tar"
   },
   {
    "at": 1793120244,
