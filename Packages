@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793313503
-PACKAGES: 1549
+TIMESTAMP: 1793313826
+PACKAGES: 1552
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -22923,6 +22923,27 @@ MTIME: 1792579014
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793313476
+CPV: kde-plasma/ocean-sound-theme-6.8.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: CC-BY-SA-4.0
+MD5: a3750405d6d85060ec5cd488d5aff29e
+PATH: pkgs-kde-plasma/ocean-sound-theme-6.8.2-1.gpkg.tar
+RDEPEND: >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/ocean-sound-theme:5
+SHA1: 6624d2d74c920254856ad240c1edc2e5426cc04c
+SIZE: 2088960
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793313477
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791242683
@@ -23058,6 +23079,27 @@ SIZE: 1996800
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792579067
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793313608
+CPV: kde-plasma/oxygen-sounds-6.8.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2+
+MD5: bad51b30a1e012443ef7ca2cf4250697
+PATH: pkgs-kde-plasma/oxygen-sounds-6.8.2-1.gpkg.tar
+RDEPEND: || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/oxygen-sounds:5
+SHA1: 7c512b638c57a94a8caf1338b92f8c3fe05d9807
+SIZE: 1996800
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793313609
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -23889,6 +23931,25 @@ SIZE: 308531200
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792579054
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6 kde-frameworks/extra-cmake-modules:0 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793313512
+CPV: kde-plasma/plasma-workspace-wallpapers-6.8.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 1aff2500ed439f0495334711e1b7a3bf
+PATH: pkgs-kde-plasma/plasma-workspace-wallpapers-6.8.2-1.gpkg.tar
+RDEPEND: !kde-plasma/plasma-workspace-wallpapers:5
+SHA1: 3ca63915e80f767f4eb15f918fa7199270a17a9e
+SIZE: 308531200
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793313541
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
