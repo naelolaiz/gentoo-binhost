@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793266347
-PACKAGES: 1536
+TIMESTAMP: 1793267270
+PACKAGES: 1540
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7979,6 +7979,27 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
+BUILD_TIME: 1793266750
+CPV: dev-python/lxml-html-clean-0.4.6
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm64
+LICENSE: BSD
+MD5: d34a28c27260ef427a4f8e6799f02ae7
+PATH: pkgs-dev-python/lxml-html-clean-0.4.6-1.gpkg.tar
+RDEPEND: >=dev-python/lxml-6.1.1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 30be89f4f1890e5263ffba2416899f839711c272
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793266751
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
 BUILD_TIME: 1791065095
 CPV: dev-python/mako-1.4.3
 DEFINED_PHASES: compile configure install prepare test
@@ -9279,6 +9300,27 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
+BUILD_TIME: 1793266747
+CPV: dev-python/pypdf-6.21.3
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD
+MD5: 583257fb57feb2531b25e751c38c9e30
+PATH: pkgs-dev-python/pypdf-6.21.3-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: dfbba6cee28f801bc525dc6ebab726a24945b2b4
+SIZE: 1290240
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793266747
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
 BUILD_TIME: 1791277833
 CPV: dev-python/pyphen-0.18.1
 DEFINED_PHASES: compile configure install prepare test unpack
@@ -10546,6 +10588,29 @@ SHA1: 01d574571a05fdbff7012099a613c50a0d5cd4d4
 SIZE: 17479680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792735990
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
+BUILD_ID: 1
+BUILD_TIME: 1793266931
+CPV: dev-python/uv-0.13.6
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1=
+EAPI: 8
+IUSE: test debug
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT ) Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
+MD5: 9b8d87250123035e917984f7a9c6a6c5
+PATH: pkgs-dev-python/uv-0.13.6-1.gpkg.tar
+PROPERTIES: test_network
+RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
+RESTRICT: test
+SHA1: cab49183c7fc97389aa7b2eec1fe25d9d762aeaa
+SIZE: 17448960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793266940
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31144,6 +31209,30 @@ SIZE: 8949760
 SLOT: 0/0.27.0
 USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux openmp vulkan
 MTIME: 1792469882
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793266669
+CPV: sci-ml/ggml-0.28.0
+DEFINED_PHASES: compile configure install prepare pretend setup test
+DEPEND: media-libs/vulkan-loader dev-util/vulkan-headers
+EAPI: 8
+IUSE: cpu_flags_x86_amx_bf16 cpu_flags_x86_amx_int8 cpu_flags_x86_amx_tile cpu_flags_x86_avx cpu_flags_x86_avx_vnni cpu_flags_x86_avx2 cpu_flags_x86_avx512_bf16 cpu_flags_x86_avx512bw cpu_flags_x86_avx512f cpu_flags_x86_avx512vbmi cpu_flags_x86_avx512_vnni cpu_flags_x86_bmi2 cpu_flags_x86_fma3 cpu_flags_x86_f16c cpu_flags_x86_sse4_2 cuda openmp rocm test vulkan +amdgpu_targets_gfx908 +amdgpu_targets_gfx90a +amdgpu_targets_gfx942 +amdgpu_targets_gfx950 +amdgpu_targets_gfx1030 +amdgpu_targets_gfx1100 +amdgpu_targets_gfx1101 +amdgpu_targets_gfx1200 +amdgpu_targets_gfx1201 amdgpu_targets_gfx803 amdgpu_targets_gfx900 amdgpu_targets_gfx906 amdgpu_targets_gfx940 amdgpu_targets_gfx941 amdgpu_targets_gfx1010 amdgpu_targets_gfx1011 amdgpu_targets_gfx1012 amdgpu_targets_gfx1031 amdgpu_targets_gfx1102 amdgpu_targets_gfx1103 amdgpu_targets_gfx1150 amdgpu_targets_gfx1151
+KEYWORDS: ~amd64 ~arm64
+LICENSE: MIT
+MD5: 1a32afc527e84e8805d946d71db41077
+PATH: pkgs-sci-ml/ggml-0.28.0-1.gpkg.tar
+PROVIDES: x86_64: libggml-base.so.0 libggml-cpu.so.0 libggml-vulkan.so.0 libggml.so.0
+RDEPEND: media-libs/vulkan-loader >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libgomp.so.1 libm.so.6 libstdc++.so.6 libvulkan.so.1
+RESTRICT: test
+SHA1: 218afb1a06494ab47d46d0b456c51b08591e3ec8
+SIZE: 9123840
+SLOT: 0/0.28.0
+USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux openmp vulkan
+MTIME: 1793266673
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
