@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793250667
-PACKAGES: 1506
+TIMESTAMP: 1793250975
+PACKAGES: 1508
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -20856,6 +20856,30 @@ MTIME: 1793079616
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793250743
+CPV: kde-plasma/kde-cli-tools-6.8.2
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,X] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: X debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: c0ac59fdbfecb0c4c9af8b2a100bc416
+PATH: pkgs-kde-plasma/kde-cli-tools-6.8.2-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,X] >=kde-plasma/kde-cli-tools-common-6.8.2 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kde-cli-tools:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "173f14c35a62688c25ff4770aae355e1b29fd630"}
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Service.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: 907c55180961360e2700ed3cf39e0df8a987de2c
+SIZE: 112640
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793250744
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6 kde-frameworks/kdoctools:6
 BUILD_ID: 1
 BUILD_TIME: 1792123759
@@ -20892,6 +20916,25 @@ SHA1: 555c8f39a7ada3001ba5cc1ba13c8fc08b3e559c
 SIZE: 860160
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1792561934
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6 kde-frameworks/kdoctools:6
+BUILD_ID: 1
+BUILD_TIME: 1793250641
+CPV: kde-plasma/kde-cli-tools-common-6.8.2
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+EAPI: 8
+IUSE: +handbook
+KEYWORDS: ~amd64 ~arm64 ~loong
+LICENSE: GPL-2+ FDL-1.2
+MD5: 6ee72acda497aef1483371b0a36e65e9
+PATH: pkgs-kde-plasma/kde-cli-tools-common-6.8.2-1.gpkg.tar
+RDEPEND: !<kde-plasma/kde-cli-tools-6.1.4-r2:* !kde-plasma/kde-cli-tools-common:5
+SHA1: a60cb4257ba87a115af129d54f76c396e1a7cb4e
+SIZE: 860160
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1793250643
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
