@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793258922
-PACKAGES: 1533
+TIMESTAMP: 1793261038
+PACKAGES: 1534
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1658,6 +1658,30 @@ SHA1: 4d461f24c3dfdf62e6864f03386e2e14066e30af
 SIZE: 27136000
 USE: X abi_x86_64 aio alsa amd64 bzip2 curl elibc_glibc fdt filecaps gnutls gtk jack jpeg kernel_linux ncurses nls opengl oss pam pin-upstream-blobs pipewire png pulseaudio python_targets_python3_14 qemu_softmmu_targets_x86_64 sdl seccomp slirp udev usb vhost-net vnc wayland xattr
 MTIME: 1792819546
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14[ensurepip(-),ncurses,readline] dev-python/distlib[python_targets_python3_14(-)] dev-lang/perl >=dev-build/meson-0.63.0 >=dev-util/gdbus-codegen-2.80.5-r1 app-alternatives/ninja virtual/pkgconfig sys-devel/gettext virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793260774
+CPV: app-emulation/qemu-11.1.2-r1
+DEFINED_PHASES: compile configure info install postinst postrm prepare pretend setup test unpack
+DEPEND: dev-libs/glib:2 virtual/zlib:0/1= sys-apps/attr >=x11-libs/pixman-0.28.0 dev-libs/libaio >=media-libs/alsa-lib-1.0.13 app-arch/bzip2 >=net-misc/curl-7.15.4 >=sys-apps/dtc-1.5.1 dev-libs/gmp >=net-libs/gnutls-3.7.5:0/30.30= >=dev-libs/nettle-3.7.3:0/8-6=[gmp] >=dev-libs/nettle-3.7.3:0/8-6= x11-libs/gtk+:3[wayland,X] virtual/jack media-libs/libjpeg-turbo:0/0.2= sys-libs/libcap-ng sys-libs/ncurses:0/6=[unicode(+)] sys-libs/ncurses:0/6= virtual/opengl media-libs/libepoxy media-libs/mesa media-libs/mesa[egl(+),gbm(+)] sys-libs/pam >=media-video/pipewire-0.3.60 >=media-libs/libpng-1.6.34:0/16= media-libs/libpulse media-libs/libsdl2[video] media-libs/libsdl2 >=sys-libs/libseccomp-2.1.0 net-libs/libslirp virtual/libudev:0/1= >=virtual/libusb-1-r2:1 x11-libs/libX11 =sys-firmware/edk2-bin-202408*[qemu_softmmu_targets_x86_64(+)] ~sys-firmware/ipxe-1.21.1_p20230601[binary,qemu] ~sys-firmware/seabios-bin-1.16.3 ~sys-firmware/sgabios-0.1_pre10[binary] >=sys-kernel/linux-headers-2.6.35
+EAPI: 8
+IDEPEND: sys-libs/libcap
+IUSE: accessibility +aio alsa bpf bzip2 capstone +curl debug doc elfutils +fdt fuse +gnutls gtk infiniband iscsi io-uring jack +jpeg keyutils lzo multipath ncurses nfs nls numa opengl +oss pam passt +pin-upstream-blobs pipewire plugins +png pulseaudio python rbd sasl +seccomp sdl sdl-image selinux +slirp smartcard snappy spice ssh static-user systemtap test udev usb usbredir valgrind vde +vhost-net virgl virtfs +vnc vte wayland X xattr xdp xen zstd qemu_softmmu_targets_aarch64 qemu_softmmu_targets_alpha qemu_softmmu_targets_arm qemu_softmmu_targets_hexagon qemu_softmmu_targets_hppa qemu_softmmu_targets_i386 qemu_softmmu_targets_loongarch64 qemu_softmmu_targets_m68k qemu_softmmu_targets_microblaze qemu_softmmu_targets_mips qemu_softmmu_targets_mips64 qemu_softmmu_targets_mips64el qemu_softmmu_targets_mipsel qemu_softmmu_targets_or1k qemu_softmmu_targets_ppc qemu_softmmu_targets_ppc64 qemu_softmmu_targets_riscv32 qemu_softmmu_targets_riscv64 qemu_softmmu_targets_s390x qemu_softmmu_targets_sh4 qemu_softmmu_targets_sh4eb qemu_softmmu_targets_sparc qemu_softmmu_targets_sparc64 qemu_softmmu_targets_x86_64 qemu_softmmu_targets_xtensa qemu_softmmu_targets_xtensaeb qemu_softmmu_targets_avr qemu_softmmu_targets_rx qemu_softmmu_targets_tricore qemu_user_targets_aarch64 qemu_user_targets_alpha qemu_user_targets_arm qemu_user_targets_hexagon qemu_user_targets_hppa qemu_user_targets_i386 qemu_user_targets_loongarch64 qemu_user_targets_m68k qemu_user_targets_microblaze qemu_user_targets_mips qemu_user_targets_mips64 qemu_user_targets_mips64el qemu_user_targets_mipsel qemu_user_targets_or1k qemu_user_targets_ppc qemu_user_targets_ppc64 qemu_user_targets_riscv32 qemu_user_targets_riscv64 qemu_user_targets_s390x qemu_user_targets_sh4 qemu_user_targets_sh4eb qemu_user_targets_sparc qemu_user_targets_sparc64 qemu_user_targets_x86_64 qemu_user_targets_xtensa qemu_user_targets_xtensaeb qemu_user_targets_aarch64_be qemu_user_targets_armeb qemu_user_targets_microblazeel qemu_user_targets_mipsn32 qemu_user_targets_mipsn32el qemu_user_targets_ppc64le qemu_user_targets_sparc32plus python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 +filecaps verify-sig
+KEYWORDS: -alpha ~amd64 -arm ~arm64 -hppa -m68k -mips -ppc ~ppc64 -x86
+LICENSE: GPL-2 LGPL-2 BSD-2
+MD5: 3f53097d38aa63732d4d91a9246f74d1
+PATH: pkgs-app-emulation/qemu-11.1.2-r1-1.gpkg.tar
+RDEPEND: dev-libs/glib:2 virtual/zlib:0/1= sys-apps/attr >=x11-libs/pixman-0.28.0 dev-libs/libaio >=media-libs/alsa-lib-1.0.13 app-arch/bzip2 >=net-misc/curl-7.15.4 >=sys-apps/dtc-1.5.1 dev-libs/gmp >=net-libs/gnutls-3.7.5:0/30.30= >=dev-libs/nettle-3.7.3:0/8-6=[gmp] >=dev-libs/nettle-3.7.3:0/8-6= x11-libs/gtk+:3[wayland,X] virtual/jack media-libs/libjpeg-turbo:0/0.2= sys-libs/libcap-ng sys-libs/ncurses:0/6=[unicode(+)] sys-libs/ncurses:0/6= virtual/opengl media-libs/libepoxy media-libs/mesa media-libs/mesa[egl(+),gbm(+)] sys-libs/pam >=media-video/pipewire-0.3.60 >=media-libs/libpng-1.6.34:0/16= media-libs/libpulse media-libs/libsdl2[video] media-libs/libsdl2 >=sys-libs/libseccomp-2.1.0 net-libs/libslirp virtual/libudev:0/1= >=virtual/libusb-1-r2:1 x11-libs/libX11 =sys-firmware/edk2-bin-202408*[qemu_softmmu_targets_x86_64(+)] ~sys-firmware/ipxe-1.21.1_p20230601[binary,qemu] ~sys-firmware/seabios-bin-1.16.3 ~sys-firmware/sgabios-0.1_pre10[binary] acct-group/kvm >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "173f14c35a62688c25ff4770aae355e1b29fd630"}
+REQUIRES: x86_64: libSDL2-2.0.so.0 libX11.so.6 libaio.so.1 libasound.so.2 libbz2.so.1 libc.so.6 libcairo.so.2 libcap-ng.so.0 libcurl.so.4 libepoxy.so.0 libfdt.so.1 libgbm.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmp.so.10 libgnutls.so.30 libgobject-2.0.so.0 libgtk-3.so.0 libhogweed.so.6 libjack.so.0 libjpeg.so.62 libm.so.6 libncursesw.so.6 libnettle.so.8 libpam.so.0 libpipewire-0.3.so.0 libpixman-1.so.0 libpng16.so.16 libpulse.so.0 libseccomp.so.2 libslirp.so.0 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0 libz.so.1
+RESTRICT: test
+SHA1: 22fef521e46567dddf64ce65b5cff699fb43568c
+SIZE: 27136000
+USE: X abi_x86_64 aio alsa amd64 bzip2 curl elibc_glibc fdt filecaps gnutls gtk jack jpeg kernel_linux ncurses nls opengl oss pam pin-upstream-blobs pipewire png pulseaudio python_targets_python3_14 qemu_softmmu_targets_x86_64 sdl seccomp slirp udev usb vhost-net vnc wayland xattr
+MTIME: 1793260780
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
