@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793250048
-PACKAGES: 1503
+TIMESTAMP: 1793250358
+PACKAGES: 1505
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4952,6 +4952,31 @@ SIZE: 7577600
 SLOT: 2
 USE: abi_x86_32 abi_x86_64 amd64 dbus elf elibc_glibc introspection kernel_linux mime xattr
 MTIME: 1791082467
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/docbook-xsl-stylesheets >=dev-build/meson-1.4.0 dev-libs/libxslt >=sys-devel/gettext-0.19.8 dev-python/docutils || ( dev-lang/python:3.15[xml(+)] dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) virtual/pkgconfig || ( ( dev-lang/python:3.15[xml(+)] dev-python/setuptools[python_targets_python3_15(-)] ) ( dev-lang/python:3.14[xml(+)] dev-python/setuptools[python_targets_python3_14(-)] ) ( dev-lang/python:3.13[xml(+)] dev-python/setuptools[python_targets_python3_13(-)] ) ( dev-lang/python:3.12[xml(+)] dev-python/setuptools[python_targets_python3_12(-)] ) ) virtual/pkgconfig sys-devel/bison app-alternatives/lex || ( dev-lang/python:3.15[xml(+)] dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793250197
+CPV: dev-libs/glib-2.88.4
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: !<dev-libs/gobject-introspection-1.86.0 !<dev-util/gdbus-codegen-2.88.4 >=virtual/libiconv-0-r1[abi_x86_32(-),abi_x86_64(-)] >=dev-libs/libpcre2-10.32:0/3=[abi_x86_32(-),abi_x86_64(-),unicode(+)] >=dev-libs/libffi-3.0.13-r1:0/8=[abi_x86_32(-),abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] >=virtual/libintl-0-r2[abi_x86_32(-),abi_x86_64(-)] >=sys-apps/util-linux-2.23[abi_x86_32(-),abi_x86_64(-)] virtual/libelf:0/1=
+EAPI: 8
+IUSE: dbus debug +elf doc +introspection +mime selinux static-libs sysprof systemtap test utils xattr abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: LGPL-2.1+
+MD5: 5b3c5ee9f3495abe4b2c18980c6ec04b
+PATH: pkgs-dev-libs/glib-2.88.4-1.gpkg.tar
+PDEPEND: gnome-base/dconf x11-misc/shared-mime-info
+PROVIDES: x86_32: libgio-2.0.so.0 libgirepository-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgthread-2.0.so.0 x86_64: libgio-2.0.so.0 libgirepository-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgthread-2.0.so.0
+RDEPEND: !<dev-libs/gobject-introspection-1.86.0 !<dev-util/gdbus-codegen-2.88.4 >=virtual/libiconv-0-r1[abi_x86_32(-),abi_x86_64(-)] >=dev-libs/libpcre2-10.32:0/3=[abi_x86_32(-),abi_x86_64(-),unicode(+)] >=dev-libs/libffi-3.0.13-r1:0/8=[abi_x86_32(-),abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] >=virtual/libintl-0-r2[abi_x86_32(-),abi_x86_64(-)] >=sys-apps/util-linux-2.23[abi_x86_32(-),abi_x86_64(-)] virtual/libelf:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_32: libc.so.6 libffi.so.8 libm.so.6 libmount.so.1 libpcre2-8.so.0 libz.so.1 x86_64: libc.so.6 libelf.so.1 libffi.so.8 libm.so.6 libmount.so.1 libpcre2-8.so.0 libz.so.1
+RESTRICT: test
+SHA1: f98b91cbe3f298f0694a10d24381b228cbc81d07
+SIZE: 7772160
+SLOT: 2
+USE: abi_x86_32 abi_x86_64 amd64 dbus elf elibc_glibc introspection kernel_linux mime xattr
+MTIME: 1793250201
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12197,6 +12222,27 @@ SHA1: 02cdc0b627bb547fc2f0503204c9b622eb4c7eaa
 SIZE: 184320
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1791083012
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-libs/libxslt app-text/docbook-xsl-stylesheets >=dev-python/docutils-0.21.1 app-arch/xz-utils dev-lang/python:3.14[xml(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793250240
+CPV: dev-util/gdbus-codegen-2.88.4
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: dev-lang/python:3.14[xml(+)] >=dev-libs/glib-2.88.4 dev-lang/python:3.14[xml(+)]
+EAPI: 8
+IUSE: python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: LGPL-2+
+MD5: 53ded0fb5d62de8c7f689a7015afdc74
+PATH: pkgs-dev-util/gdbus-codegen-2.88.4-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14[xml(+)] >=dev-libs/glib-2.88.4 dev-lang/python:3.14[xml(+)]
+REPO_REVISIONS: {"gentoo": "173f14c35a62688c25ff4770aae355e1b29fd630"}
+SHA1: 07accd4a02a5e7b7782154e1a62d80d025c0d224
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1793250242
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
