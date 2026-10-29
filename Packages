@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793253141
-PACKAGES: 1522
+TIMESTAMP: 1793253450
+PACKAGES: 1524
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -21952,6 +21952,31 @@ MTIME: 1793106293
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] >=dev-qt/qttools-6.11.2:6[linguist] >=dev-util/wayland-scanner-1.19.0 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793253398
+CPV: kde-plasma/kwayland-6.8.2
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-libs/wayland-1.26.0 >=dev-qt/qtbase-6.11.2:6/6.11.3=[concurrent,gui,opengl,wayland] media-libs/libglvnd >=dev-libs/plasma-wayland-protocols-1.23.0 >=dev-libs/wayland-protocols-1.15 sys-kernel/linux-headers dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm ~arm64
+LICENSE: LGPL-2.1
+MD5: 6eef9950ca2b8d8e78eb4dd6aa68bd5e
+PATH: pkgs-kde-plasma/kwayland-6.8.2-1.gpkg.tar
+PROVIDES: x86_64: libKWaylandClient.so.6
+RDEPEND: >=dev-libs/wayland-1.26.0 >=dev-qt/qtbase-6.11.2:6/6.11.3=[concurrent,gui,opengl,wayland] media-libs/libglvnd || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "173f14c35a62688c25ff4770aae355e1b29fd630"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6WaylandClient.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
+RESTRICT: test test
+SHA1: f7f9737f787d5cd1541b73934a8b5b83be7ca6aa
+SIZE: 348160
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793253399
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner >=kde-frameworks/kcmutils-6.26.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
 BUILD_ID: 9
 BUILD_TIME: 1791614418
@@ -22266,6 +22291,31 @@ SIZE: 921600
 SLOT: 6/11
 USE: abi_x86_64 amd64 elibc_glibc filecaps kernel_linux
 MTIME: 1792569684
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793253275
+CPV: kde-plasma/libksysguard-6.8.2
+DEFINED_PHASES: compile configure info install nofetch postinst prepare test unpack
+DEPEND: dev-libs/libnl:3 >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6[qml] >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 net-libs/libpcap sys-apps/lm-sensors:0/5.0.0= virtual/libudev:0/1= virtual/zlib:0/1= x11-libs/libdrm dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: sys-libs/libcap
+IUSE: debug test +filecaps
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-2+
+MD5: 7bb8fbd91323e5045fa7f2c296b7d1b8
+PATH: pkgs-kde-plasma/libksysguard-6.8.2-1.gpkg.tar
+PROVIDES: x86_64: ksysguard_plugin_gpu.so ksysguard_plugin_network.so ksysguard_sensorface.so libFormatterplugin.so libKSysGuardFormatter.so.2 libKSysGuardSensorFaces.so.2 libKSysGuardSensors.so.2 libKSysGuardSystemStats.so.2 libSensorFacesPrivate.so libSensorFacesplugin.so libSensorsplugin.so libprocesscore.so.11 libprocesscoreplugin.so
+RDEPEND: dev-libs/libnl:3 >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6[qml] >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 net-libs/libpcap sys-apps/lm-sensors:0/5.0.0= virtual/libudev:0/1= virtual/zlib:0/1= x11-libs/libdrm >=dev-qt/qt5compat-6.11.2:6[qml] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/libksysguard:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6AuthCore.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigQml.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Package.so.6 libKF6Service.so.6 libKF6Solid.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libdrm.so.2 libgcc_s.so.1 libm.so.6 libnl-3.so.200 libpcap.so.1 libsensors.so.5 libstdc++.so.6 libudev.so.1
+RESTRICT: test
+SHA1: 0d44b1a19546a1d626c42f36124b03363f5842a2
+SIZE: 921600
+SLOT: 6/11
+USE: abi_x86_64 amd64 elibc_glibc filecaps kernel_linux
+MTIME: 1793253277
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
