@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793254986
-PACKAGES: 1530
+TIMESTAMP: 1793255899
+PACKAGES: 1532
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8139,6 +8139,29 @@ SHA1: 3df908d1f69c5100ad711ce9275157fff14f8096
 SIZE: 163840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux native-extensions python_targets_python3_14
 MTIME: 1791226111
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/cython-3.3.0[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793255542
+CPV: dev-python/msgpack-1.2.4
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: +native-extensions test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 debug verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: Apache-2.0
+MD5: 9308bee22a9a13d20fb252bcc26b0194
+PATH: pkgs-dev-python/msgpack-1.2.4-1.gpkg.tar
+PROVIDES: x86_64: _cmsgpack.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 4c7fd220ab542c754b9343155facbb868d1038a0
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux native-extensions python_targets_python3_14
+MTIME: 1793255543
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25732,6 +25755,29 @@ SHA1: 3b1c0ad9755f077bab405b17d2e0a82a50a8fbe1
 SIZE: 174080
 USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux python_targets_python3_14 vala
 MTIME: 1791226261
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/glib-utils virtual/pkgconfig dev-lang/vala:0.56 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793255597
+CPV: media-libs/gexiv2-0.14.7-r2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=media-gfx/exiv2-0.26:0/0.28= >=dev-libs/glib-2.46.0:2 >=dev-libs/gobject-introspection-1.82.0-r2:0/0=
+EAPI: 8
+IUSE: gtk-doc +introspection python test +vala python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2.1+ GPL-2+
+MD5: 2cadbfca02f284234b9754b9ac731e8f
+PATH: pkgs-media-libs/gexiv2-0.14.7-r2-1.gpkg.tar
+PROVIDES: x86_64: libgexiv2.so.2
+RDEPEND: >=media-gfx/exiv2-0.26:0/0.28= >=dev-libs/glib-2.46.0:2 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libexiv2.so.28 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: faf5a749c4f81ff3549f358a58818f73bc79195d
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux python_targets_python3_14 vala
+MTIME: 1793255599
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
