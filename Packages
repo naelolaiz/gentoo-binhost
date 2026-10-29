@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793255899
-PACKAGES: 1532
+TIMESTAMP: 1793258922
+PACKAGES: 1533
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -28452,6 +28452,30 @@ SHA1: e81ed5c583677311febca56cb0ab1c9368cbaecb
 SIZE: 89077760
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux pipewire
 MTIME: 1791234040
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-qt/qttools:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793258634
+CPV: media-sound/musescore-4.7.6
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test unpack
+DEPEND: dev-libs/pugixml dev-qt/qtbase:6[concurrent,dbus,gui,network,opengl,ssl,widgets,xml,X] dev-qt/qt5compat:6[qml] dev-qt/qtdeclarative:6 dev-qt/qtnetworkauth:6 dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/flac:0/11-14= media-libs/freetype media-libs/harfbuzz:0/6.0.0= media-libs/libopusenc media-libs/libsndfile[-minimal] media-libs/opus media-sound/lame virtual/zlib:0/1= media-video/pipewire:0/0.4= dev-libs/utfcpp
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: jack pipewire test video websockets
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: GPL-2
+MD5: f691e4aed23074c8c795b6ec4b426b14
+PATH: pkgs-media-sound/musescore-4.7.6-1.gpkg.tar
+RDEPEND: dev-libs/pugixml dev-qt/qtbase:6[concurrent,dbus,gui,network,opengl,ssl,widgets,xml,X] dev-qt/qt5compat:6[qml] dev-qt/qtdeclarative:6 dev-qt/qtnetworkauth:6 dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/flac:0/11-14= media-libs/freetype media-libs/harfbuzz:0/6.0.0= media-libs/libopusenc media-libs/libsndfile[-minimal] media-libs/opus media-sound/lame virtual/zlib:0/1= media-video/pipewire:0/0.4= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "173f14c35a62688c25ff4770aae355e1b29fd630"}
+REQUIRES: x86_64: libFLAC++.so.11 libFLAC.so.14 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6NetworkAuth.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libasound.so.2 libc.so.6 libfreetype.so.6 libgcc_s.so.1 libharfbuzz.so.0 libm.so.6 libmp3lame.so.0 libopusenc.so.0 libpipewire-0.3.so.0 libpugixml.so.1 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: 7dffb8b79292e646e179b7e094825b343147cf6f
+SIZE: 90071040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux pipewire
+MTIME: 1793258641
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
