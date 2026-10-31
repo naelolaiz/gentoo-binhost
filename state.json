@@ -35,81 +35,9 @@
   "dev-util/mesa_clc-26.2.3": 1793267741,
   "dev-util/mesa_clc-26.2.4": 1793267741,
   "dev-vcs/git-lfs-3.8.0": 1792822958,
-  "kde-frameworks/attica-6.30.0": 1792128533,
-  "kde-frameworks/baloo-6.30.0": 1792128533,
   "kde-frameworks/baloo-6.31.0": 1792681346,
   "kde-frameworks/baloo-6.31.0-r1": 1793336013,
-  "kde-frameworks/bluez-qt-6.30.0": 1792128533,
-  "kde-frameworks/breeze-icons-6.30.0": 1792128533,
-  "kde-frameworks/extra-cmake-modules-6.30.0": 1792128533,
-  "kde-frameworks/frameworkintegration-6.30.0": 1792128533,
-  "kde-frameworks/karchive-6.30.0": 1792128533,
-  "kde-frameworks/kauth-6.30.0": 1792128533,
-  "kde-frameworks/kbookmarks-6.30.0": 1792128533,
-  "kde-frameworks/kcalendarcore-6.30.0": 1792128533,
-  "kde-frameworks/kcmutils-6.30.0": 1792128533,
-  "kde-frameworks/kcodecs-6.30.0": 1792128533,
-  "kde-frameworks/kcolorscheme-6.30.0": 1792128533,
-  "kde-frameworks/kcompletion-6.30.0": 1792128533,
-  "kde-frameworks/kconfig-6.30.0": 1792128533,
-  "kde-frameworks/kconfigwidgets-6.30.0": 1792128533,
-  "kde-frameworks/kcontacts-6.30.0": 1792128533,
-  "kde-frameworks/kcoreaddons-6.30.0": 1792128533,
-  "kde-frameworks/kcrash-6.30.0": 1792128533,
-  "kde-frameworks/kdbusaddons-6.30.0": 1792128533,
-  "kde-frameworks/kdeclarative-6.30.0": 1792128533,
-  "kde-frameworks/kded-6.30.0": 1792128533,
-  "kde-frameworks/kdesu-6.30.0": 1792128533,
-  "kde-frameworks/kdnssd-6.30.0": 1792128533,
-  "kde-frameworks/kdoctools-6.30.0": 1792128533,
-  "kde-frameworks/kfilemetadata-6.30.0": 1792128533,
-  "kde-frameworks/kglobalaccel-6.30.0": 1792128533,
-  "kde-frameworks/kguiaddons-6.30.0": 1792128533,
-  "kde-frameworks/kholidays-6.30.0": 1792128533,
-  "kde-frameworks/ki18n-6.30.0": 1792128533,
-  "kde-frameworks/kiconthemes-6.30.0": 1792128533,
-  "kde-frameworks/kidletime-6.30.0": 1792128533,
-  "kde-frameworks/kimageformats-6.30.0": 1792128533,
-  "kde-frameworks/kio-6.30.0": 1792128533,
-  "kde-frameworks/kirigami-6.30.0": 1792128533,
-  "kde-frameworks/kitemmodels-6.30.0": 1792128533,
-  "kde-frameworks/kitemviews-6.30.0": 1792128533,
-  "kde-frameworks/kjobwidgets-6.30.0": 1792128533,
-  "kde-frameworks/knewstuff-6.30.0": 1792128533,
-  "kde-frameworks/knotifications-6.30.0": 1792128533,
-  "kde-frameworks/knotifyconfig-6.30.0": 1792128533,
-  "kde-frameworks/kpackage-6.30.0": 1792128533,
-  "kde-frameworks/kparts-6.30.0": 1792128533,
-  "kde-frameworks/kpeople-6.30.0": 1792128533,
-  "kde-frameworks/kplotting-6.30.0": 1792128533,
-  "kde-frameworks/kpty-6.30.0": 1792128533,
-  "kde-frameworks/kquickcharts-6.30.0": 1792128533,
-  "kde-frameworks/krunner-6.30.0": 1792128533,
-  "kde-frameworks/ksecretd-services-6.30.0": 1792128533,
-  "kde-frameworks/kservice-6.30.0": 1792128533,
-  "kde-frameworks/kstatusnotifieritem-6.30.0": 1792128533,
-  "kde-frameworks/ksvg-6.30.0": 1792128533,
-  "kde-frameworks/ktexteditor-6.30.0": 1792128533,
   "kde-frameworks/ktexteditor-6.31.0": 1793336013,
-  "kde-frameworks/ktexttemplate-6.30.0": 1792128533,
-  "kde-frameworks/ktextwidgets-6.30.0": 1792128533,
-  "kde-frameworks/kunitconversion-6.30.0": 1792128533,
-  "kde-frameworks/kwallet-6.30.0": 1792128533,
-  "kde-frameworks/kwallet-runtime-6.30.0": 1792128533,
-  "kde-frameworks/kwidgetsaddons-6.30.0": 1792128533,
-  "kde-frameworks/kwindowsystem-6.30.0": 1792128533,
-  "kde-frameworks/kxmlgui-6.30.0": 1792128533,
-  "kde-frameworks/modemmanager-qt-6.30.0": 1792128533,
-  "kde-frameworks/networkmanager-qt-6.30.0": 1792128533,
-  "kde-frameworks/oxygen-icons-6.30.0": 1792128533,
-  "kde-frameworks/prison-6.30.0": 1792128533,
-  "kde-frameworks/purpose-6.30.0": 1792128533,
-  "kde-frameworks/qqc2-desktop-style-6.30.0": 1792128533,
-  "kde-frameworks/solid-6.30.0": 1792128533,
-  "kde-frameworks/sonnet-6.30.0": 1792128533,
-  "kde-frameworks/syndication-6.30.0": 1792128533,
-  "kde-frameworks/syntax-highlighting-6.30.0": 1792128533,
-  "kde-frameworks/threadweaver-6.30.0": 1792128533,
   "kde-plasma/aurorae-6.8.0": 1792609995,
   "kde-plasma/aurorae-6.8.1": 1793267741,
   "kde-plasma/bluedevil-6.8.0": 1792609995,
@@ -260,6 +188,7 @@
   "sci-ml/ggml-0.26.0": 1792320577,
   "sci-ml/ggml-0.27.0": 1792470107,
   "sci-ml/ggml-0.27.0-r1": 1793267741,
+  "sci-ml/ollama-0.40.10": 1793423460,
   "sci-ml/ollama-0.40.3": 1792320577,
   "sci-ml/ollama-0.40.5": 1792390605,
   "sci-ml/ollama-0.40.6": 1792609995,
@@ -1115,52 +1044,340 @@
    "path": "pkgs-kde-apps/yakuake-26.08.2-1.gpkg.tar"
   },
   {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/attica-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/baloo-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/bluez-qt-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/breeze-icons-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/extra-cmake-modules-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/frameworkintegration-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/karchive-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kauth-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kbookmarks-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcalendarcore-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcmutils-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcodecs-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcolorscheme-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcompletion-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kconfig-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kconfigwidgets-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcontacts-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcoreaddons-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kcrash-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kdbusaddons-6.30.0-1.gpkg.tar"
+  },
+  {
    "at": 1793078103,
    "path": "pkgs-kde-frameworks/kdbusaddons-6.31.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kdeclarative-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kded-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kdesu-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kdnssd-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kdoctools-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kfilemetadata-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kglobalaccel-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1793078716,
    "path": "pkgs-kde-frameworks/kglobalaccel-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kguiaddons-6.30.0-1.gpkg.tar"
+  },
+  {
    "at": 1793078716,
    "path": "pkgs-kde-frameworks/kguiaddons-6.31.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kholidays-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/ki18n-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kiconthemes-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1793078716,
    "path": "pkgs-kde-frameworks/kiconthemes-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kidletime-6.30.0-1.gpkg.tar"
+  },
+  {
    "at": 1793080561,
    "path": "pkgs-kde-frameworks/kidletime-6.31.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kimageformats-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kio-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1793079634,
    "path": "pkgs-kde-frameworks/kio-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kirigami-6.30.0-1.gpkg.tar"
+  },
+  {
    "at": 1793078716,
    "path": "pkgs-kde-frameworks/kirigami-6.31.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kitemmodels-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kitemviews-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kjobwidgets-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1793079025,
    "path": "pkgs-kde-frameworks/kjobwidgets-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/knewstuff-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/knotifications-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/knotifyconfig-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kpackage-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kparts-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kpeople-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kplotting-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kpty-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kquickcharts-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/krunner-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/ksecretd-services-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kservice-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kstatusnotifieritem-6.30.0-1.gpkg.tar"
+  },
+  {
    "at": 1793106422,
    "path": "pkgs-kde-frameworks/kstatusnotifieritem-6.31.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/ksvg-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/ktexteditor-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/ktexttemplate-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/ktextwidgets-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kunitconversion-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kwallet-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kwallet-runtime-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kwidgetsaddons-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kwindowsystem-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1793078103,
    "path": "pkgs-kde-frameworks/kwindowsystem-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/kxmlgui-6.30.0-1.gpkg.tar"
+  },
+  {
    "at": 1793079025,
    "path": "pkgs-kde-frameworks/kxmlgui-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/modemmanager-qt-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/networkmanager-qt-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/oxygen-icons-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/prison-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/purpose-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/qqc2-desktop-style-6.30.0-1.gpkg.tar"
+  },
+  {
    "at": 1793106732,
    "path": "pkgs-kde-frameworks/qqc2-desktop-style-6.31.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/solid-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/sonnet-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/syndication-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/syntax-highlighting-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793423460,
+   "path": "pkgs-kde-frameworks/threadweaver-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1792907262,
