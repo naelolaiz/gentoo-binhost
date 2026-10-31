@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793418360
-PACKAGES: 1587
+TIMESTAMP: 1793418971
+PACKAGES: 1589
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6529,6 +6529,29 @@ MTIME: 1793332713
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-apps/file sys-apps/grep virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793418786
+CPV: dev-libs/simdjson-5.1.0
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: +all-impls nan test tools
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0 Boost-1.0 BSD MIT
+MD5: eac5dcf219701299dc92f09db6773a14
+PATH: pkgs-dev-libs/simdjson-5.1.0-1.gpkg.tar
+PROVIDES: x86_64: libsimdjson.so.36
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: e9d1c6ba6fcc6e9944a119b20c8fb8c829ec456d
+SIZE: 911360
+SLOT: 0/36
+USE: abi_x86_64 all-impls amd64 elibc_glibc kernel_linux
+MTIME: 1793418787
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791092012
 CPV: dev-libs/stb-20260415-r1
@@ -12994,6 +13017,27 @@ SHA1: 65a87c3325180755ab9a55d1e869cffacd6206e1
 SIZE: 163840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791062203
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1793418828
+CPV: dev-util/patchelf-0.19.3
+DEFINED_PHASES: configure prepare
+EAPI: 9
+IUSE: test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: GPL-3
+MD5: f653dde7606b549144ef5ae4a7784d3e
+PATH: pkgs-dev-util/patchelf-0.19.3-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 289e1c09ac2ec0ed811fd07e0124aef9cc12565c
+SIZE: 174080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793418829
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
