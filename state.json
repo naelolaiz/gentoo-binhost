@@ -280,6 +280,10 @@
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-3.gpkg.tar"
   },
   {
+   "at": 1793515401,
+   "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-4.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-app-misc/francis-26.08.1-1.gpkg.tar"
   },
@@ -390,6 +394,14 @@
   {
    "at": 1792907262,
    "path": "pkgs-dev-util/massif-visualizer-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793515401,
+   "path": "pkgs-dev-util/pkgcheck-0.10.49-1.gpkg.tar"
+  },
+  {
+   "at": 1793515401,
+   "path": "pkgs-dev-util/pkgdev-0.2.19-1.gpkg.tar"
   },
   {
    "at": 1792299120,
@@ -1646,6 +1658,10 @@
   {
    "at": 1792994546,
    "path": "pkgs-sci-ml/ollama-0.40.2-1.gpkg.tar"
+  },
+  {
+   "at": 1793515401,
+   "path": "pkgs-sys-apps/pkgcore-0.12.48-1.gpkg.tar"
   },
   {
    "at": 1792728706,
