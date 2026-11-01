@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793514154
-PACKAGES: 1541
+TIMESTAMP: 1793514760
+PACKAGES: 1542
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -26933,6 +26933,31 @@ SIZE: 2734080
 SLOT: 0/7
 USE: abi_x86_64 amd64 elibc_glibc ffmpeg frei0r gtk jack kernel_linux libsamplerate opengl python_single_target_python3_14 qt6 rubberband sdl vorbis xml
 MTIME: 1791267748
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793514590
+CPV: media-libs/mlt-7.42.0
+DEFINED_PHASES: compile configure install prepare pretend setup test
+DEPEND: >=media-libs/libebur128-1.2.2:0/1= sci-libs/fftw:3.0/3= media-video/ffmpeg:0/60.62.62= media-plugins/frei0r-plugins media-libs/fontconfig media-libs/libexif x11-libs/gdk-pixbuf:2 x11-libs/pango virtual/jack dev-libs/glib:2 >=dev-libs/libxml2-2.5:2/16= media-libs/ladspa-sdk >=media-libs/libsamplerate-0.1.2 media-libs/lilv:0/0= media-libs/libglvnd media-video/movit dev-qt/qtbase:6[gui,network,opengl,widgets,xml] dev-qt/qtsvg:6 media-libs/libexif x11-libs/libX11 media-libs/rubberband:0/3= media-libs/libsdl2[X,opengl,video] media-libs/sdl2-image media-libs/libvorbis >=dev-libs/libxml2-2.5:2/16=
+EAPI: 8
+IUSE: debug ffmpeg frei0r +gpl gtk jack ladspa libplacebo libsamplerate lv2 opencv openfx opengl python qt6 rtaudio rnnoise rubberband sdl sox test vdpau vidstab vorbis xine xml python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1 GPL-2 GPL-3
+MD5: 36125621677b79f2583b63ef42c4563e
+PATH: pkgs-media-libs/mlt-7.42.0-1.gpkg.tar
+PROVIDES: x86_64: libmlt++-7.so.7 libmlt-7.so.7 libmltavformat.so libmltcore.so libmltdecklink.so libmltfrei0r.so libmltgdk.so libmltglaxnimate-qt6.so libmltjackrack.so libmltkdenlive.so libmltladspa.so libmltmovit.so libmltnormalize.so libmltoldfilm.so libmltplus.so libmltplusgpl.so libmltqt6.so libmltresample.so libmltrubberband.so libmltsdl2.so libmltvorbis.so libmltxml.so
+RDEPEND: >=media-libs/libebur128-1.2.2:0/1= sci-libs/fftw:3.0/3= media-video/ffmpeg:0/60.62.62= media-plugins/frei0r-plugins media-libs/fontconfig media-libs/libexif x11-libs/gdk-pixbuf:2 x11-libs/pango virtual/jack dev-libs/glib:2 >=dev-libs/libxml2-2.5:2/16= media-libs/ladspa-sdk >=media-libs/libsamplerate-0.1.2 media-libs/lilv:0/0= media-libs/libglvnd media-video/movit dev-qt/qtbase:6[gui,network,opengl,widgets,xml] dev-qt/qtsvg:6 media-libs/libexif x11-libs/libX11 media-libs/rubberband:0/3= media-libs/libsdl2[X,opengl,video] media-libs/sdl2-image media-libs/libvorbis >=dev-libs/libxml2-2.5:2/16= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
+REQUIRES: x86_64: libGLX.so.0 libOpenGL.so.0 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libSDL2-2.0.so.0 libX11.so.6 libavcodec.so.62 libavdevice.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libc.so.6 libebur128.so.1 libepoxy.so.0 libexif.so.12 libfftw3.so.3 libfontconfig.so.1 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libjack.so.0 liblilv-0.so.0 libm.so.6 libmovit.so.8 libpango-1.0.so.0 libpangoft2-1.0.so.0 librubberband.so.3 libsamplerate.so.0 libstdc++.so.6 libswresample.so.6 libswscale.so.9 libvorbisfile.so.3 libxml2.so.16 libz.so.1
+RESTRICT: test
+SHA1: 729350bf67e9c8f41f06d38ed24aac9c2145d4b4
+SIZE: 2816000
+SLOT: 0/7
+USE: abi_x86_64 amd64 elibc_glibc ffmpeg frei0r gpl gtk jack kernel_linux ladspa libsamplerate lv2 opengl python_single_target_python3_14 qt6 rubberband sdl vorbis xml
+MTIME: 1793514592
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
