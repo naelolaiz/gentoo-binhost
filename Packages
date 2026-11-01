@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793512009
-PACKAGES: 1536
+TIMESTAMP: 1793512319
+PACKAGES: 1537
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8422,24 +8422,23 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791065309
+BUILD_ID: 2
+BUILD_TIME: 1793512167
 CPV: dev-python/myst-parser-5.1.0
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: dev-lang/python:3.14
 EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+IUSE: test python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: MIT
-MD5: c3af3e90c7013d449532e7e5672b4595
-PATH: pkgs-dev-python/myst-parser-5.1.0-1.gpkg.tar
+MD5: 06f5ccf22296752fc4e1506dee736ac4
+PATH: pkgs-dev-python/myst-parser-5.1.0-2.gpkg.tar
 RDEPEND: >=dev-python/docutils-0.20[python_targets_python3_14(-)] dev-python/jinja2[python_targets_python3_14(-)] <dev-python/markdown-it-py-5[python_targets_python3_14(-)] >=dev-python/markdown-it-py-4.2[python_targets_python3_14(-)] <dev-python/mdit-py-plugins-0.7[python_targets_python3_14(-)] >=dev-python/mdit-py-plugins-0.6.1[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] <dev-python/sphinx-10[python_targets_python3_14(-)] >=dev-python/sphinx-8[python_targets_python3_14(-)] dev-lang/python:3.14
-REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
 RESTRICT: test
-SHA1: be15f5da5696aefe8130e66e314ed62ad1d69216
+SHA1: 986c07505395b0feb6707455a1552e9c42d01d4b
 SIZE: 307200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791065310
+MTIME: 1793512168
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -13634,6 +13633,30 @@ SIZE: 1679360
 SLOT: 23
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791079572
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793512130
+CPV: dev-util/spirv-llvm-translator-23.1.2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-util/spirv-tools[abi_x86_64(-)] llvm-core/llvm:23/23.1=[abi_x86_64(-)] >=dev-util/spirv-headers-1.4.357.0
+EAPI: 8
+IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~riscv ~x86
+LICENSE: UoI-NCSA
+MD5: 2acc173cd4f347493e3f49d913ac7f72
+PATH: pkgs-dev-util/spirv-llvm-translator-23.1.2-1.gpkg.tar
+PROVIDES: x86_64: libLLVMSPIRVLib.so.23.1
+RDEPEND: dev-util/spirv-tools[abi_x86_64(-)] llvm-core/llvm:23/23.1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libLLVM.so.23.1 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 5fe5db2c9035145b41c12d3c1d9adc9b3fe71daa
+SIZE: 1751040
+SLOT: 23
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793512132
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -34472,9 +34495,9 @@ MTIME: 1791276283
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=gnome-base/librsvg-2.48:2 sys-devel/gettext virtual/pkgconfig x11-libs/gtk+:3 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791083385
+BDEPEND: sys-devel/gettext virtual/pkgconfig x11-libs/gtk+:3 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 2
+BUILD_TIME: 1793512217
 CPV: x11-themes/adwaita-icon-theme-50.0
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
 DEPEND: >=x11-themes/hicolor-icon-theme-0.10
@@ -34483,15 +34506,15 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: branding
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: || ( LGPL-3 CC-BY-SA-3.0 ) CC-BY-SA-4.0
-MD5: ed971ad7238846b9089a426bf1a91c63
-PATH: pkgs-x11-themes/adwaita-icon-theme-50.0-1.gpkg.tar
+MD5: 4ce61c3d8ba305cb1288b3b8a7acc020
+PATH: pkgs-x11-themes/adwaita-icon-theme-50.0-2.gpkg.tar
 RDEPEND: >=x11-themes/hicolor-icon-theme-0.10 >=gnome-base/librsvg-2.48:2 x11-themes/adwaita-icon-theme-legacy
-REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
 RESTRICT: binchecks strip
-SHA1: abfd686260e613a3a71bba899b4301113b361809
+SHA1: 0c1681baf6e2d59b4a8ba209fad178b117117253
 SIZE: 829440
 USE: abi_x86_64 amd64 branding elibc_glibc kernel_linux
-MTIME: 1791083386
+MTIME: 1793512218
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
