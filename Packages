@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793512319
+TIMESTAMP: 1793512931
 PACKAGES: 1537
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -14068,29 +14068,28 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-build/meson-1.5.0 || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/pygobject:3[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/pygobject:3[python_targets_python3_12(-)] ) ) dev-python/docutils >=dev-libs/glib-2.82 >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils >=sys-devel/gettext-0.19.7 virtual/pkgconfig media-libs/shaderc >=dev-util/wayland-scanner-1.24.0 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791520015
+BUILD_ID: 2
+BUILD_TIME: 1793512750
 CPV: gui-libs/gtk-4.22.5-r1
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
-DEPEND: >=dev-libs/glib-2.84:2 >=x11-libs/cairo-1.18.2[glib,svg(+),X] >=x11-libs/pango-1.56.0[introspection] >=dev-libs/fribidi-1.0.6 >=media-libs/harfbuzz-8.4.0:0/6.0.0= >=x11-libs/gdk-pixbuf-2.30:2[introspection] media-libs/libpng:0/16= media-libs/mesa[vulkan,wayland,X] media-libs/tiff:0/6= media-libs/libjpeg-turbo:0/0.2= >=media-libs/libepoxy-1.4[egl(+),X(+)] >=media-libs/graphene-1.10.0[introspection] app-text/iso-codes x11-misc/shared-mime-info >=net-print/cups-2.0 >=dev-libs/gobject-introspection-1.84:0/0= >=media-libs/vulkan-loader-1.3:0/0=[wayland,X] >=dev-libs/wayland-1.24.0 >=dev-libs/wayland-protocols-1.44 >=x11-libs/libxkbcommon-0.2 media-libs/fontconfig x11-libs/libX11 >=x11-libs/libXi-1.8 x11-libs/libXext >=x11-libs/libXrandr-1.5 x11-libs/libXcursor x11-libs/libXfixes x11-libs/libXdamage x11-libs/libXinerama x11-libs/libdrm sys-kernel/linux-headers x11-base/xorg-proto
+DEPEND: >=dev-libs/glib-2.84:2 >=x11-libs/cairo-1.18.2[glib,svg(+),X] >=x11-libs/pango-1.56.0[introspection] >=dev-libs/fribidi-1.0.6 >=media-libs/harfbuzz-8.4.0:0/6.0.0= >=x11-libs/gdk-pixbuf-2.30:2[introspection] media-libs/libpng:0/16= media-libs/mesa[vulkan,wayland,X] media-libs/tiff:0/6= media-libs/libjpeg-turbo:0/0.2= >=media-libs/libepoxy-1.4[egl(+),X(+)] >=media-libs/graphene-1.10.0[introspection] app-text/iso-codes x11-misc/shared-mime-info >=net-print/cups-2.0 >=dev-libs/gobject-introspection-1.84:0/0= >=media-libs/vulkan-loader-1.3:0/0=[wayland,X] >=dev-libs/wayland-1.24.0 >=dev-libs/wayland-protocols-1.44 >=x11-libs/libxkbcommon-0.2 media-libs/fontconfig x11-libs/libX11 >=x11-libs/libXi-1.8 x11-libs/libXext >=x11-libs/libXrandr-1.5 x11-libs/libXcursor x11-libs/libXfixes x11-libs/libXdamage x11-libs/libXinerama x11-libs/libdrm sys-kernel/linux-headers >=dev-util/vulkan-headers-1.3 x11-base/xorg-proto
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: aqua broadway cloudproviders colord cups examples gstreamer gtk-doc +introspection sysprof test vulkan wayland +X cpu_flags_x86_f16c test
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: LGPL-2+
-MD5: d206c7647f0bb848996f247aaff2f7ae
-PATH: pkgs-gui-libs/gtk-4.22.5-r1-1.gpkg.tar
+MD5: b8a181d64c1448dafb08e5aa837654eb
+PATH: pkgs-gui-libs/gtk-4.22.5-r1-2.gpkg.tar
 PDEPEND: >=x11-themes/adwaita-icon-theme-3.14
 PROVIDES: x86_64: libgtk-4.so.1
-RDEPEND: >=dev-libs/glib-2.84:2 >=x11-libs/cairo-1.18.2[glib,svg(+),X] >=x11-libs/pango-1.56.0[introspection] >=dev-libs/fribidi-1.0.6 >=media-libs/harfbuzz-8.4.0:0/6.0.0= >=x11-libs/gdk-pixbuf-2.30:2[introspection] media-libs/libpng:0/16= media-libs/mesa[vulkan,wayland,X] media-libs/tiff:0/6= media-libs/libjpeg-turbo:0/0.2= >=media-libs/libepoxy-1.4[egl(+),X(+)] >=media-libs/graphene-1.10.0[introspection] app-text/iso-codes x11-misc/shared-mime-info >=net-print/cups-2.0 >=dev-libs/gobject-introspection-1.84:0/0= >=media-libs/vulkan-loader-1.3:0/0=[wayland,X] >=dev-libs/wayland-1.24.0 >=dev-libs/wayland-protocols-1.44 >=x11-libs/libxkbcommon-0.2 media-libs/fontconfig x11-libs/libX11 >=x11-libs/libXi-1.8 x11-libs/libXext >=x11-libs/libXrandr-1.5 x11-libs/libXcursor x11-libs/libXfixes x11-libs/libXdamage x11-libs/libXinerama >=dev-util/gtk-update-icon-cache-3 >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "2dd35e8a36074e628c68cae74a473f55622ce291"}
+RDEPEND: >=dev-libs/glib-2.84:2 >=x11-libs/cairo-1.18.2[glib,svg(+),X] >=x11-libs/pango-1.56.0[introspection] >=dev-libs/fribidi-1.0.6 >=media-libs/harfbuzz-8.4.0:0/6.0.0= >=x11-libs/gdk-pixbuf-2.30:2[introspection] media-libs/libpng:0/16= media-libs/mesa[vulkan,wayland,X] media-libs/tiff:0/6= media-libs/libjpeg-turbo:0/0.2= >=media-libs/libepoxy-1.4[egl(+),X(+)] >=media-libs/graphene-1.10.0[introspection] app-text/iso-codes x11-misc/shared-mime-info >=net-print/cups-2.0 >=dev-libs/gobject-introspection-1.84:0/0= >=media-libs/vulkan-loader-1.3:0/0=[wayland,X] >=dev-libs/wayland-1.24.0 >=dev-libs/wayland-protocols-1.44 >=x11-libs/libxkbcommon-0.2 media-libs/fontconfig x11-libs/libX11 >=x11-libs/libXi-1.8 x11-libs/libXext >=x11-libs/libXrandr-1.5 x11-libs/libXcursor x11-libs/libXfixes x11-libs/libXdamage x11-libs/libXinerama >=dev-util/gtk-update-icon-cache-3 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libX11.so.6 libXcursor.so.1 libXdamage.so.1 libXext.so.6 libXfixes.so.3 libXi.so.6 libXinerama.so.1 libXrandr.so.2 libc.so.6 libcairo-gobject.so.2 libcairo-script-interpreter.so.2 libcairo.so.2 libcups.so.2 libepoxy.so.0 libfontconfig.so.1 libfribidi.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgraphene-1.0.so.0 libharfbuzz-subset.so.0 libharfbuzz.so.0 libjpeg.so.62 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpng16.so.16 libtiff.so.6 libvulkan.so.1 libwayland-client.so.0 libwayland-egl.so.1 libxkbcommon.so.0
 RESTRICT: test
-SHA1: d35698a1743a46ce2484b8af4001e2bb113f1692
-SIZE: 14704640
+SHA1: bf674278f1f8feb8f0c6717cb7f18bd3394a2c53
+SIZE: 15134720
 SLOT: 4
 USE: X abi_x86_64 amd64 cpu_flags_x86_f16c cups elibc_glibc introspection kernel_linux vulkan wayland
-MTIME: 1791520019
+MTIME: 1793512753
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -24199,27 +24198,28 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 virtual/pkgconfig dev-python/myst-parser[python_targets_python3_14(-)] dev-python/sphinx[python_targets_python3_14(-)] app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1792568343
+BUILD_ID: 2
+BUILD_TIME: 1793512882
 CPV: llvm-core/clang-23.1.4-r1
 DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
 DEPEND: ~llvm-core/llvm-23.1.4:23/23.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] ~llvm-core/llvm-23.1.4[llvm_targets_AArch64] ~llvm-core/llvm-23.1.4[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.4[llvm_targets_ARM] ~llvm-core/llvm-23.1.4[llvm_targets_AVR] ~llvm-core/llvm-23.1.4[llvm_targets_BPF] ~llvm-core/llvm-23.1.4[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.4[llvm_targets_Lanai] ~llvm-core/llvm-23.1.4[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.4[llvm_targets_Mips] ~llvm-core/llvm-23.1.4[llvm_targets_MSP430] ~llvm-core/llvm-23.1.4[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.4[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.4[llvm_targets_RISCV] ~llvm-core/llvm-23.1.4[llvm_targets_Sparc] ~llvm-core/llvm-23.1.4[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.4[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.4[llvm_targets_VE] ~llvm-core/llvm-23.1.4[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.4[llvm_targets_X86] ~llvm-core/llvm-23.1.4[llvm_targets_XCore]
 EAPI: 8
-IUSE: debug doc +extra ieee-long-double +pie +static-analyzer test xml test doc llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+IUSE: debug doc +extra ieee-long-double +pie +static-analyzer test xml test doc llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
 LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA MIT
-MD5: 14d97fb496cfb2acbde84f15e35c8b41
-PATH: pkgs-llvm-core/clang-23.1.4-r1-1.gpkg.tar
+MD5: d37bf502f34cdbe8e8812118ffa58389
+PATH: pkgs-llvm-core/clang-23.1.4-r1-2.gpkg.tar
 PDEPEND: llvm-runtimes/clang-runtime:23 llvm-core/clang-toolchain-symlinks:23
 PROVIDES: x86_64: libclang-cpp.so.23.1 libclang.so.23.1
 RDEPEND: dev-lang/python:3.14 ~llvm-core/llvm-23.1.4:23/23.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] >=llvm-core/clang-common-23.1.4 ~llvm-core/llvm-23.1.4[llvm_targets_AArch64] ~llvm-core/llvm-23.1.4[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.4[llvm_targets_ARM] ~llvm-core/llvm-23.1.4[llvm_targets_AVR] ~llvm-core/llvm-23.1.4[llvm_targets_BPF] ~llvm-core/llvm-23.1.4[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.4[llvm_targets_Lanai] ~llvm-core/llvm-23.1.4[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.4[llvm_targets_Mips] ~llvm-core/llvm-23.1.4[llvm_targets_MSP430] ~llvm-core/llvm-23.1.4[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.4[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.4[llvm_targets_RISCV] ~llvm-core/llvm-23.1.4[llvm_targets_Sparc] ~llvm-core/llvm-23.1.4[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.4[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.4[llvm_targets_VE] ~llvm-core/llvm-23.1.4[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.4[llvm_targets_X86] ~llvm-core/llvm-23.1.4[llvm_targets_XCore] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
 REQUIRES: x86_64: libLLVM.so.23.1 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
 RESTRICT: test test
-SHA1: 74b3de596cc6abb054d6dd28e1067cb6bea4cf8f
+SHA1: fcf9cd0538f1155190925541d42e59faca8e2122
 SIZE: 65720320
 SLOT: 23/23.1
 USE: abi_x86_64 amd64 elibc_glibc extra kernel_linux llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore pie python_single_target_python3_14 static-analyzer xml
-MTIME: 1792568359
+MTIME: 1793512894
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

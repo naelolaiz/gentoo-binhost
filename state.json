@@ -408,6 +408,10 @@
    "path": "pkgs-gui-libs/gtk-4.22.5-1.gpkg.tar"
   },
   {
+   "at": 1793512931,
+   "path": "pkgs-gui-libs/gtk-4.22.5-r1-1.gpkg.tar"
+  },
+  {
    "at": 1793165842,
    "path": "pkgs-gui-libs/kddockwidgets-2.5.1-1.gpkg.tar"
   },
@@ -1486,6 +1490,10 @@
   {
    "at": 1793120244,
    "path": "pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793512931,
+   "path": "pkgs-llvm-core/clang-23.1.4-r1-1.gpkg.tar"
   },
   {
    "at": 1792642694,
