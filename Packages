@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793505367
-PACKAGES: 1530
+TIMESTAMP: 1793512009
+PACKAGES: 1536
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -10512,24 +10512,135 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1792679804
+BUILD_ID: 5
+BUILD_TIME: 1793511870
+CPV: dev-python/sphinxcontrib-applehelp-2.0.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 78f27eefd3b1ef9450c8971d7de800d6
+PATH: pkgs-dev-python/sphinxcontrib-applehelp-2.0.0-r1-5.gpkg.tar
+PDEPEND: >=dev-python/sphinx-5[python_targets_python3_14(-)]
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 8fb86033cf01f7e4b11767749c89d2debb744160
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793511872
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 5
+BUILD_TIME: 1793511878
+CPV: dev-python/sphinxcontrib-devhelp-2.0.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 2c1ac5ba31e618a3097f2708d7b5f64d
+PATH: pkgs-dev-python/sphinxcontrib-devhelp-2.0.0-r1-5.gpkg.tar
+PDEPEND: >=dev-python/sphinx-5[python_targets_python3_14(-)]
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: d9a27a49e4c4f75fb9648a684b135244a5ebc081
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793511879
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 5
+BUILD_TIME: 1793511885
+CPV: dev-python/sphinxcontrib-htmlhelp-2.1.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: fa29d085e45ad22b7e0f7427f1b59c73
+PATH: pkgs-dev-python/sphinxcontrib-htmlhelp-2.1.0-r1-5.gpkg.tar
+PDEPEND: >=dev-python/sphinx-5[python_targets_python3_14(-)]
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 12c39576eafe036e6e93e29ce8599fbf98fda566
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793511886
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1793511892
 CPV: dev-python/sphinxcontrib-jsmath-2.0.0
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: dev-lang/python:3.14
 EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+IUSE: test python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
 LICENSE: BSD-2
-MD5: 8b2b3c061082f8930438d60b05a4ab51
-PATH: pkgs-dev-python/sphinxcontrib-jsmath-2.0.0-1.gpkg.tar
+MD5: de3ee7b1afa8f0189f2e11bf4f89b83f
+PATH: pkgs-dev-python/sphinxcontrib-jsmath-2.0.0-2.gpkg.tar
 PDEPEND: >=dev-python/sphinx-5.0[python_targets_python3_14(-)]
 RDEPEND: dev-lang/python:3.14
 RESTRICT: test
-SHA1: 3a64cc2c6d402ba76c7c9aa039d8f2dc56d64e4c
+SHA1: fd0ce75696709ba6b3689792ea9bfc41c1a1175f
 SIZE: 61440
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1792679805
+MTIME: 1793511894
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 5
+BUILD_TIME: 1793511900
+CPV: dev-python/sphinxcontrib-qthelp-2.0.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 0c9f40470b685ae284452fdc8aa4da24
+PATH: pkgs-dev-python/sphinxcontrib-qthelp-2.0.0-r1-5.gpkg.tar
+PDEPEND: >=dev-python/sphinx-5[python_targets_python3_14(-)]
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 9c5d4b9ff62ae7ded675c5d7beb21c84f158b39e
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793511901
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 5
+BUILD_TIME: 1793511907
+CPV: dev-python/sphinxcontrib-serializinghtml-2.0.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD-2
+MD5: 42a8a588d7318beb0628c2c6b2a6ae7b
+PATH: pkgs-dev-python/sphinxcontrib-serializinghtml-2.0.0-r1-5.gpkg.tar
+PDEPEND: >=dev-python/sphinx-5[python_targets_python3_14(-)]
+RDEPEND: dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
+RESTRICT: test
+SHA1: fcb63bd68b52a6aacc6d6be1be77584863e49faf
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793511908
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -23960,6 +24071,31 @@ SIZE: 1003520
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793254660
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 10
+BUILD_TIME: 1793511850
+CPV: llvm-core/clang-22.1.8
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
+DEPEND: ~llvm-core/llvm-22.1.8:22/22.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] ~llvm-core/llvm-22.1.8[llvm_targets_AArch64] ~llvm-core/llvm-22.1.8[llvm_targets_AMDGPU] ~llvm-core/llvm-22.1.8[llvm_targets_ARM] ~llvm-core/llvm-22.1.8[llvm_targets_AVR] ~llvm-core/llvm-22.1.8[llvm_targets_BPF] ~llvm-core/llvm-22.1.8[llvm_targets_Hexagon] ~llvm-core/llvm-22.1.8[llvm_targets_Lanai] ~llvm-core/llvm-22.1.8[llvm_targets_LoongArch] ~llvm-core/llvm-22.1.8[llvm_targets_Mips] ~llvm-core/llvm-22.1.8[llvm_targets_MSP430] ~llvm-core/llvm-22.1.8[llvm_targets_NVPTX] ~llvm-core/llvm-22.1.8[llvm_targets_PowerPC] ~llvm-core/llvm-22.1.8[llvm_targets_RISCV] ~llvm-core/llvm-22.1.8[llvm_targets_Sparc] ~llvm-core/llvm-22.1.8[llvm_targets_SPIRV] ~llvm-core/llvm-22.1.8[llvm_targets_SystemZ] ~llvm-core/llvm-22.1.8[llvm_targets_VE] ~llvm-core/llvm-22.1.8[llvm_targets_WebAssembly] ~llvm-core/llvm-22.1.8[llvm_targets_X86] ~llvm-core/llvm-22.1.8[llvm_targets_XCore]
+EAPI: 8
+IUSE: debug doc +extra ieee-long-double +pie +static-analyzer test xml test doc llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA MIT
+MD5: 8d2d43adbae1de2ee0c886a96a1ecdc2
+PATH: pkgs-llvm-core/clang-22.1.8-10.gpkg.tar
+PDEPEND: llvm-runtimes/clang-runtime:22 llvm-core/clang-toolchain-symlinks:22
+PROVIDES: x86_64: libclang-cpp.so.22.1 libclang.so.22.1
+RDEPEND: dev-lang/python:3.14 ~llvm-core/llvm-22.1.8:22/22.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] >=llvm-core/clang-common-22.1.8 !<llvm-core/llvm-22.1.0-r2:22 ~llvm-core/llvm-22.1.8[llvm_targets_AArch64] ~llvm-core/llvm-22.1.8[llvm_targets_AMDGPU] ~llvm-core/llvm-22.1.8[llvm_targets_ARM] ~llvm-core/llvm-22.1.8[llvm_targets_AVR] ~llvm-core/llvm-22.1.8[llvm_targets_BPF] ~llvm-core/llvm-22.1.8[llvm_targets_Hexagon] ~llvm-core/llvm-22.1.8[llvm_targets_Lanai] ~llvm-core/llvm-22.1.8[llvm_targets_LoongArch] ~llvm-core/llvm-22.1.8[llvm_targets_Mips] ~llvm-core/llvm-22.1.8[llvm_targets_MSP430] ~llvm-core/llvm-22.1.8[llvm_targets_NVPTX] ~llvm-core/llvm-22.1.8[llvm_targets_PowerPC] ~llvm-core/llvm-22.1.8[llvm_targets_RISCV] ~llvm-core/llvm-22.1.8[llvm_targets_Sparc] ~llvm-core/llvm-22.1.8[llvm_targets_SPIRV] ~llvm-core/llvm-22.1.8[llvm_targets_SystemZ] ~llvm-core/llvm-22.1.8[llvm_targets_VE] ~llvm-core/llvm-22.1.8[llvm_targets_WebAssembly] ~llvm-core/llvm-22.1.8[llvm_targets_X86] ~llvm-core/llvm-22.1.8[llvm_targets_XCore] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libLLVM.so.22.1 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: ee9937e655fc244861df7acbc60d784a11779f8d
+SIZE: 62443520
+SLOT: 22/22.1
+USE: abi_x86_64 amd64 elibc_glibc extra kernel_linux llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore pie python_single_target_python3_14 static-analyzer xml
+MTIME: 1793511860
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
