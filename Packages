@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793505061
-PACKAGES: 1529
+TIMESTAMP: 1793505367
+PACKAGES: 1530
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -13474,6 +13474,30 @@ SIZE: 1658880
 SLOT: 22
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791065710
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793505189
+CPV: dev-util/spirv-llvm-translator-22.1.7
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~riscv ~x86
+LICENSE: UoI-NCSA
+MD5: 869dfa0a26f8b06ecdf0becebd83947e
+PATH: pkgs-dev-util/spirv-llvm-translator-22.1.7-1.gpkg.tar
+PROVIDES: x86_64: libLLVMSPIRVLib.so.22.1
+RDEPEND: dev-util/spirv-tools[abi_x86_64(-)] llvm-core/llvm:22/22.1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
+REQUIRES: x86_64: libLLVM.so.22.1 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 4d6bbbe1a6255baa9d1ab96e6bc4337b7e6e9eb3
+SIZE: 1720320
+SLOT: 22
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793505191
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
