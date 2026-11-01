@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793513540
-PACKAGES: 1539
+TIMESTAMP: 1793513848
+PACKAGES: 1540
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -29047,6 +29047,30 @@ MTIME: 1791093736
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1793513626
+CPV: net-dialup/ppp-2.5.5
+DEFINED_PHASES: configure install postinst prepare setup
+DEPEND: dev-libs/openssl:0/3= virtual/libcrypt:0/2= sys-libs/pam
+EAPI: 8
+IUSE: activefilter atm pam selinux systemd
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: BSD GPL-2
+MD5: f7a3dfcfcf60a9aedf0edba2f3b17056
+PATH: pkgs-net-dialup/ppp-2.5.5-1.gpkg.tar
+PDEPEND: net-dialup/ppp-scripts
+PROVIDES: x86_64: dhcpv6relay.so minconn.so openl2tp.so passwordfd.so pppoe.so pppol2tp.so radattr.so radius.so radrealms.so winbind.so
+RDEPEND: dev-libs/openssl:0/3= virtual/libcrypt:0/2= sys-libs/pam virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.3 libpam.so.0 libssl.so.3
+SHA1: d1aecf8f49603d503eb29719f6c46c18a5143c6f
+SIZE: 471040
+SLOT: 0/2.5.5
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux pam
+MTIME: 1793513627
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-text/xmltoman dev-util/glib-utils sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
 BUILD_ID: 2
 BUILD_TIME: 1793165820
@@ -30037,26 +30061,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-text/docbook-xsl-stylesheets >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils >=sys-devel/gettext-0.17 virtual/pkgconfig || ( ( dev-lang/python:3.15 dev-python/pygobject:3[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/pygobject:3[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/pygobject:3[python_targets_python3_12(-)] ) ) dev-lang/perl dev-libs/libxslt >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791145575
+BUILD_ID: 2
+BUILD_TIME: 1793513822
 CPV: net-misc/networkmanager-1.58.1-r3
 DEFINED_PHASES: compile configure install postinst postrm prepare setup test
-DEPEND: sys-apps/util-linux[abi_x86_64(-)] >=virtual/libudev-175:0/1=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] net-libs/libndp >=dev-libs/glib-2.42:2[abi_x86_64(-)] >=net-wireless/bluez-5:0/3= net-misc/curl >=sys-auth/elogind-219 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= net-misc/mobile-broadband-provider-info >=net-misc/modemmanager-0.7.991:0/1= dev-libs/nspr[abi_x86_64(-)] >=dev-libs/nss-3.11[abi_x86_64(-)] >=sys-auth/polkit-0.106 >=net-dialup/ppp-2.4.5:0/2.5.4=[ipv6(+)] >=dev-libs/jansson-2.7:0/4= >=dev-libs/newt-0.52.15 sys-libs/slang sys-libs/readline:0/8= >=sys-kernel/linux-headers-3.18 net-libs/libndp[abi_x86_64(-)]
+DEPEND: sys-apps/util-linux[abi_x86_64(-)] >=virtual/libudev-175:0/1=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] net-libs/libndp >=dev-libs/glib-2.42:2[abi_x86_64(-)] >=net-wireless/bluez-5:0/3= net-misc/curl >=sys-auth/elogind-219 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= net-misc/mobile-broadband-provider-info >=net-misc/modemmanager-0.7.991:0/1= dev-libs/nspr[abi_x86_64(-)] >=dev-libs/nss-3.11[abi_x86_64(-)] >=sys-auth/polkit-0.106 >=net-dialup/ppp-2.4.5:0/2.5.5=[ipv6(+)] >=dev-libs/jansson-2.7:0/4= >=dev-libs/newt-0.52.15 sys-libs/slang sys-libs/readline:0/8= >=sys-kernel/linux-headers-3.18 net-libs/libndp[abi_x86_64(-)]
 EAPI: 8
 IUSE: audit bluetooth clat +concheck connection-sharing debug dhcpcd elogind gnutls gtk-doc +introspection iptables iwd libedit +modemmanager nbft +nss nftables ofono ovs policykit +ppp psl resolvconf selinux syslog systemd teamd test +tools vala +wext +wifi abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: GPL-2+ LGPL-2.1+
-MD5: c58f789d5e8113477e943d49c84dd6cf
-PATH: pkgs-net-misc/networkmanager-1.58.1-r3-1.gpkg.tar
+MD5: a4736ee139cd78962fdb9f1078754943
+PATH: pkgs-net-misc/networkmanager-1.58.1-r3-2.gpkg.tar
 PROVIDES: x86_64: libnm-device-plugin-adsl.so libnm-device-plugin-bluetooth.so libnm-device-plugin-wifi.so libnm-device-plugin-wwan.so libnm-ppp-plugin.so libnm-wwan.so libnm.so.0 nm-pppd-plugin.so
-RDEPEND: sys-apps/util-linux[abi_x86_64(-)] >=virtual/libudev-175:0/1=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] net-libs/libndp >=dev-libs/glib-2.42:2[abi_x86_64(-)] >=net-wireless/bluez-5:0/3= net-misc/curl >=sys-auth/elogind-219 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= net-misc/mobile-broadband-provider-info >=net-misc/modemmanager-0.7.991:0/1= dev-libs/nspr[abi_x86_64(-)] >=dev-libs/nss-3.11[abi_x86_64(-)] >=sys-auth/polkit-0.106 >=net-dialup/ppp-2.4.5:0/2.5.4=[ipv6(+)] >=dev-libs/jansson-2.7:0/4= >=dev-libs/newt-0.52.15 sys-libs/slang sys-libs/readline:0/8= acct-group/plugdev || ( net-misc/iputils[arping(+)] net-analyzer/arping ) >=net-wireless/wpa_supplicant-0.7.3-r3[dbus] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libbluetooth.so.3 libc.so.6 libcurl.so.4 libelogind.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libjansson.so.4 libmm-glib.so.0 libndp.so.0 libnewt.so.0.52 libnspr4.so libnss3.so libreadline.so.8 libslang.so.2 libsmime3.so libudev.so.1
+RDEPEND: sys-apps/util-linux[abi_x86_64(-)] >=virtual/libudev-175:0/1=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] net-libs/libndp >=dev-libs/glib-2.42:2[abi_x86_64(-)] >=net-wireless/bluez-5:0/3= net-misc/curl >=sys-auth/elogind-219 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= net-misc/mobile-broadband-provider-info >=net-misc/modemmanager-0.7.991:0/1= dev-libs/nspr[abi_x86_64(-)] >=dev-libs/nss-3.11[abi_x86_64(-)] >=sys-auth/polkit-0.106 >=net-dialup/ppp-2.4.5:0/2.5.5=[ipv6(+)] >=dev-libs/jansson-2.7:0/4= >=dev-libs/newt-0.52.15 sys-libs/slang sys-libs/readline:0/8= acct-group/plugdev || ( net-misc/iputils[arping(+)] net-analyzer/arping ) >=net-wireless/wpa_supplicant-0.7.3-r3[dbus] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
+REQUIRES: x86_64: libbluetooth.so.3 libc.so.6 libcurl.so.4 libelogind.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libjansson.so.4 libmm-glib.so.0 libndp.so.0 libnewt.so.0.52 libnspr4.so libnss3.so libreadline.so.8 libslang.so.2 libsmime3.so libudev.so.1
 RESTRICT: test test
-SHA1: 3b5318124bb5becfa48cb252b4f654782192c1d6
-SIZE: 7628800
+SHA1: e54ad986dcd1a93444747725b391cc48258b3fd7
+SIZE: 7864320
 USE: abi_x86_64 amd64 bluetooth concheck elibc_glibc elogind introspection kernel_linux modemmanager nss policykit ppp tools wext wifi
-MTIME: 1791145577
+MTIME: 1793513824
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
