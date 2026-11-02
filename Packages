@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793591992
-PACKAGES: 1554
+TIMESTAMP: 1793592303
+PACKAGES: 1556
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6894,6 +6894,25 @@ MTIME: 1791076688
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-util/wayland-scanner-1.25.0 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793592008
+CPV: dev-libs/wayland-protocols-1.50
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: ecfcb9a626c45766d5284daccf757a89
+PATH: pkgs-dev-libs/wayland-protocols-1.50-1.gpkg.tar
+RESTRICT: test
+SHA1: f5ccc457d6c5491088014d9c808da763ed4eadd4
+SIZE: 215040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793592009
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791277792
@@ -9440,6 +9459,32 @@ SIZE: 481280
 SLOT: 3
 USE: abi_x86_64 amd64 cairo elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791083212
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array dev-lang/python:3.14
+BUILD_ID: 1
+BUILD_TIME: 1793592206
+CPV: dev-python/pygobject-3.58.1
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
+DEPEND: >=dev-libs/glib-2.80:2 >=dev-libs/gobject-introspection-1.84:0/0= dev-libs/libffi:0/8= >=dev-python/pycairo-1.16.0[python_targets_python3_14(-)] x11-libs/cairo[glib] dev-lang/python:3.14
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +cairo test test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: LGPL-2.1+
+MD5: ce9a1a42cd74a664c0bf465ca4d3ca44
+PATH: pkgs-dev-python/pygobject-3.58.1-1.gpkg.tar
+PROVIDES: x86_64: _gi.cpython-314-x86_64-linux-gnu.so _gi_cairo.cpython-314-x86_64-linux-gnu.so
+RDEPEND: >=dev-libs/glib-2.80:2 >=dev-libs/gobject-introspection-1.84:0/0= dev-libs/libffi:0/8= >=dev-python/pycairo-1.16.0[python_targets_python3_14(-)] x11-libs/cairo[glib] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "5b83b28984b9349d88d415b1318677d18bc8e695"}
+REQUIRES: x86_64: libc.so.6 libcairo-gobject.so.2 libcairo.so.2 libffi.so.8 libgirepository-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0
+RESTRICT: test test
+SHA1: 8717a6fdcb9ee256b4886bddc1c680072a9dd918
+SIZE: 491520
+SLOT: 3
+USE: abi_x86_64 amd64 cairo elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793592207
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
