@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793591068
-PACKAGES: 1551
+TIMESTAMP: 1793591375
+PACKAGES: 1552
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1438,6 +1438,27 @@ SHA1: cab60d6d60ae8a64d9bbb4de53852c873cd607bf
 SIZE: 2498560
 USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1792907098
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1793591134
+CPV: app-editors/nano-9.3
+DEFINED_PHASES: configure install postrm prepare unpack
+DEPEND: >=sys-libs/ncurses-5.9-r1:0/6=[unicode(+)] virtual/libintl
+EAPI: 8
+IUSE: debug justify magic minimal ncurses nls +spell unicode verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+ LGPL-2.1+ || ( GPL-3+ FDL-1.2+ )
+MD5: df1423250dc9012063bcc670900a68d6
+PATH: pkgs-app-editors/nano-9.3-1.gpkg.tar
+RDEPEND: >=sys-libs/ncurses-5.9-r1:0/6=[unicode(+)] virtual/libintl >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libncursesw.so.6 libtinfow.so.6
+SHA1: 811974468ee3325c7eada7ae817b21f20396e4fb
+SIZE: 849920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ncurses nls spell unicode
+MTIME: 1793591136
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
