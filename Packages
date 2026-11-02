@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793596289
-PACKAGES: 1565
+TIMESTAMP: 1793596613
+PACKAGES: 1573
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -395,6 +395,27 @@ SHA1: 8c76b17513a665e517f185ba297dbcadf4b4eef9
 SIZE: 71680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux unicode zlib
 MTIME: 1792305726
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/autoconf-archive virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793596111
+CPV: app-admin/metalog-20260902
+DEFINED_PHASES: configure install postinst preinst prepare
+DEPEND: dev-libs/libpcre2:0/3= virtual/zlib:0/1=
+EAPI: 8
+IUSE: unicode zlib
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: 00447dc1ee810f5dac9b09774ccd0fbb
+PATH: pkgs-app-admin/metalog-20260902-1.gpkg.tar
+RDEPEND: dev-libs/libpcre2:0/3= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libpcre2-8.so.0 libz.so.1
+SHA1: 0c29e2013826895d1588190684d100bef68f4d35
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux unicode zlib
+MTIME: 1793596112
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1674,6 +1695,26 @@ SHA1: 38a391d60c622ba0fcc40a6c3d35b350e3d17bfe
 SIZE: 10874880
 USE: abi_x86_64 acl amd64 elibc_glibc kernel_linux nls
 MTIME: 1792906635
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71
+BUILD_ID: 1
+BUILD_TIME: 1793596123
+CPV: app-editors/vim-core-9.2.1275
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=sys-libs/ncurses-5.2-r2:0
+EAPI: 8
+IUSE: nls acl minimal
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: f7681ff3af7746ea11c3b5b8b7115429
+PATH: pkgs-app-editors/vim-core-9.2.1275-1.gpkg.tar
+RDEPEND: dev-util/xxd
+SHA1: ffbccff80355efcacfec3ded7dd3f09b4b4a8927
+SIZE: 10936320
+USE: abi_x86_64 acl amd64 elibc_glibc kernel_linux nls
+MTIME: 1793596128
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4214,6 +4255,29 @@ SHA1: 11add9573f2b1ae5ab38ddc1088926b33c4a9aa8
 SIZE: 6768640
 USE: abi_x86_64 amd64 cet debuginfod elibc_glibc guile_single_target_3-0 kernel_linux nls python python_single_target_python3_14 server xml
 MTIME: 1792818298
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/xz-utils sys-apps/texinfo app-alternatives/yacc sys-devel/gettext virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793596287
+CPV: dev-debug/gdb-18.1-r2
+DEFINED_PHASES: configure install postinst prepare setup test
+DEPEND: dev-libs/mpfr:0/6= dev-libs/gmp:0/10.4= >=sys-libs/ncurses-5.2-r2:0/6= >=sys-libs/readline-7:0/8= virtual/zlib:0/1= dev-libs/elfutils[debuginfod(-)] dev-lang/python:3.14 dev-libs/expat
+EAPI: 8
+IUSE: cet +debuginfod guile lzma multitarget nls +python rocm +server sim source-highlight test vanilla +xml xxhash zstd guile_single_target_2-2 guile_single_target_3-0 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-3+ LGPL-2.1+
+MD5: 05dc7e8a1bbbb47d76afa19b3ba0f8cb
+PATH: pkgs-dev-debug/gdb-18.1-r2-1.gpkg.tar
+PROVIDES: x86_64: libinproctrace.so
+RDEPEND: dev-libs/mpfr:0/6= dev-libs/gmp:0/10.4= >=sys-libs/ncurses-5.2-r2:0/6= >=sys-libs/readline-7:0/8= virtual/zlib:0/1= dev-libs/elfutils[debuginfod(-)] dev-lang/python:3.14 dev-libs/expat >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libdebuginfod.so.1 libexpat.so.1 libgcc_s.so.1 libgmp.so.10 libm.so.6 libmpfr.so.6 libncursesw.so.6 libpython3.14.so.1.0 libreadline.so.8 libstdc++.so.6 libtinfow.so.6 libz.so.1
+RESTRICT: test
+SHA1: 4d8751511da74d2d5fff7bd6b4f4459e5fcd9bcd
+SIZE: 6768640
+USE: abi_x86_64 amd64 cet debuginfod elibc_glibc guile_single_target_3-0 kernel_linux nls python python_single_target_python3_14 server xml
+MTIME: 1793596291
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27405,6 +27469,28 @@ MTIME: 1791223710
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1793596078
+CPV: media-libs/opusfile-0.12-r2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/3=[abi_x86_64(-)]
+EAPI: 8
+IUSE: doc fixed-point +float +http static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: BSD
+MD5: 2c3ed25cd24af85e84ed70209c28d85d
+PATH: pkgs-media-libs/opusfile-0.12-r2-1.gpkg.tar
+PROVIDES: x86_64: libopusfile.so.0 libopusurl.so.0
+RDEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/3=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libm.so.6 libogg.so.0 libopus.so.0 libssl.so.3
+SHA1: f45f1559ee41120c308544d891156e5bc69303b6
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc float http kernel_linux
+MTIME: 1793596079
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 15
 BUILD_TIME: 1791228116
@@ -29913,6 +29999,29 @@ MTIME: 1791221475
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/perl virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793596280
+CPV: net-libs/libwebsockets-5.1.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/3=
+EAPI: 8
+IUSE: access-log caps cgi client dbus extensions generic-sessions http-proxy http2 ipv6 +lejp libev libevent libuv mbedtls peer-limits server-status smtp socks5 sqlite3 ssl threads zip
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: MIT
+MD5: 36b234f2b043fcf716ad2b4377ec295e
+PATH: pkgs-net-libs/libwebsockets-5.1.0-1.gpkg.tar
+PROVIDES: x86_64: libwebsockets.so.23
+RDEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/3= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcap.so.2 libcrypto.so.3 libdbus-1.so.3 libssl.so.3
+SHA1: 93fc92789fac67a71cc4e3eaaf2a91622f7c8300
+SIZE: 1054720
+SLOT: 0/22
+USE: abi_x86_64 amd64 dbus elibc_glibc ipv6 kernel_linux lejp ssl
+MTIME: 1793596282
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791122991
@@ -30758,6 +30867,24 @@ SHA1: 9f08d65521239d83baefaec8d69a8fe21b41ce86
 SIZE: 20480
 USE: abi_x86_64 amd64 browsed elibc_glibc foomatic kernel_linux pdf poppler postscript
 MTIME: 1792310912
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1793596500
+CPV: net-print/cups-meta-2-r1
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: +browsed +foomatic foomatic-db-ppds pdf +postscript +poppler zeroconf
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86
+LICENSE: metapackage
+MD5: 10c0f35b0fa5df174b094a4615a9974e
+PATH: pkgs-net-print/cups-meta-2-r1-1.gpkg.tar
+RDEPEND: net-print/cups net-print/libppd[postscript,poppler] net-print/libcupsfilters[pdf,poppler(+)] net-print/cups-filters[foomatic] net-print/cups-browsed app-text/mupdf >=app-text/ghostscript-gpl-9.09[cups]
+SHA1: b038fd1b476b1113cc531c9555a1d2c32b83ef03
+SIZE: 20480
+USE: abi_x86_64 amd64 browsed elibc_glibc foomatic kernel_linux pdf poppler postscript
+MTIME: 1793596501
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31844,6 +31971,26 @@ MTIME: 1791113412
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-apps/texinfo || ( >=app-arch/xz-utils-5.4.0 app-arch/plzip app-arch/pdlzip app-arch/lzip )
+BUILD_ID: 1
+BUILD_TIME: 1793596053
+CPV: sys-apps/ed-1.22.6
+DEFINED_PHASES: configure unpack
+EAPI: 8
+IUSE: verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2+
+MD5: d30c8c076fd02437dd67c43230ce0a1e
+PATH: pkgs-sys-apps/ed-1.22.6-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 713f2ca8b9e0dfb262e7b88778a893806bccba19
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793596053
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-arch/xz-utils virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791216654
@@ -31926,6 +32073,25 @@ SHA1: abfd6a157beeb11836c6e8fb870b98a53ba1f048
 SIZE: 81920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791226529
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( ( dev-lang/python:3.14 dev-python/pefile[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/pefile[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/pefile[python_targets_python3_12(-)] ) ) sys-apps/uswid virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793596487
+CPV: sys-apps/fwupd-efi-1.9
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: >=sys-boot/gnu-efi-3.0.18
+EAPI: 8
+IUSE: secureboot verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: c83ad6beea0182ba074500f22414e4e2
+PATH: pkgs-sys-apps/fwupd-efi-1.9-1.gpkg.tar
+SHA1: a9b3914d6f2d2949f8f140d3a587a23f59559b1b
+SIZE: 81920
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793596488
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
