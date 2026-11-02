@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793596613
-PACKAGES: 1573
+TIMESTAMP: 1793597232
+PACKAGES: 1576
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1615,6 +1615,28 @@ SHA1: 9823f7b88a6df152b360f86b705c9278c0900b39
 SIZE: 2293760
 USE: X abi_x86_64 acl amd64 crypt elibc_glibc gpm kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1792906744
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1793596586
+CPV: app-editors/vim-9.2.1275
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl sys-apps/acl x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= >=sys-libs/gpm-1.19.3 ~app-editors/vim-core-9.2.1275 media-libs/libcanberra dev-libs/wayland x11-libs/libXt x11-base/xorg-proto
+EAPI: 8
+IUSE: X acl crypt cscope debug gpm images lua minimal nls pango perl python racket ruby selinux sound tcl terminal vim-pager wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: db6c14baf556202dd730efe832e56f57
+PATH: pkgs-app-editors/vim-9.2.1275-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= virtual/libintl sys-apps/acl x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= >=sys-libs/gpm-1.19.3 ~app-editors/vim-core-9.2.1275 media-libs/libcanberra dev-libs/wayland x11-libs/libXt >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libICE.so.6 libSM.so.6 libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgpm.so.1 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+SHA1: e0b230f0ffbe08be896b9ee8c27ac41847cf86a4
+SIZE: 2293760
+USE: X abi_x86_64 acl amd64 crypt elibc_glibc gpm kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1793596589
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25471,6 +25493,31 @@ MTIME: 1791267143
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/lex dev-build/libtool virtual/pkgconfig >=sys-devel/gettext-0.14.5 virtual/pkgconfig >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1793597098
+CPV: media-gfx/graphviz-16.1.0
+DEFINED_PHASES: configure install postinst postrm prepare setup
+DEPEND: >=dev-libs/expat-2 >=dev-libs/glib-2.11.1:2 dev-libs/libltdl >=media-libs/freetype-2.1.10 >=media-libs/gd-2.0.34:2/3=[fontconfig,jpeg,png,truetype,zlib] media-libs/libjpeg-turbo:0/0.2= >=media-libs/libpng-1.2:0/16= virtual/zlib:0/1= virtual/libiconv >=x11-libs/cairo-1.1.10[svg(+)] >=x11-libs/pango-1.12 x11-libs/gdk-pixbuf:2 x11-libs/gtk+:2 app-text/poppler dev-qt/qtbase:6[gui,widgets] gnome-base/librsvg media-libs/libwebp:0/7= x11-libs/libX11 x11-base/xorg-proto
+EAPI: 8
+IUSE: aalib +cairo devil doc examples gtk2 gts guile lasi nls pdf perl postscript python qt6 ruby svg tcl webp X guile_single_target_2-2 guile_single_target_3-0 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: CPL-1.0
+MD5: 35edc5a858b2d4ffb20d30a28e9fe8bb
+PATH: pkgs-media-gfx/graphviz-16.1.0-1.gpkg.tar
+PROVIDES: x86_64: libcdt.so.6 libcgraph.so.10 libgvc.so.7 libgvplugin_core.so.8 libgvplugin_dot_layout.so.8 libgvplugin_gd.so.8 libgvplugin_gdk.so.8 libgvplugin_kitty.so.8 libgvplugin_neato_layout.so.8 libgvplugin_pango.so.8 libgvplugin_poppler.so.8 libgvplugin_rsvg.so.8 libgvplugin_vt.so.8 libgvplugin_webp.so.8 libgvplugin_xlib.so.8 libgvpr.so.2 libpathplan.so.4 libxdot.so.5
+RDEPEND: >=dev-libs/expat-2 >=dev-libs/glib-2.11.1:2 dev-libs/libltdl >=media-libs/freetype-2.1.10 >=media-libs/gd-2.0.34:2/3=[fontconfig,jpeg,png,truetype,zlib] media-libs/libjpeg-turbo:0/0.2= >=media-libs/libpng-1.2:0/16= virtual/zlib:0/1= virtual/libiconv >=x11-libs/cairo-1.1.10[svg(+)] >=x11-libs/pango-1.12 x11-libs/gdk-pixbuf:2 x11-libs/gtk+:2 app-text/poppler dev-qt/qtbase:6[gui,widgets] gnome-base/librsvg media-libs/libwebp:0/7= x11-libs/libX11 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "5b83b28984b9349d88d415b1318677d18bc8e695"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libX11.so.6 libc.so.6 libcairo.so.2 libexpat.so.1 libgcc_s.so.1 libgd.so.3 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libltdl.so.7 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libwebp.so.7 libz.so.1
+RESTRICT: test
+SHA1: 89287d3c3d9a05b689201e3708260434a5cf51b9
+SIZE: 3061760
+SLOT: 0/6.10.7.2.4.5
+USE: X abi_x86_64 amd64 cairo elibc_glibc gtk2 guile_single_target_3-0 kernel_linux nls pdf python_single_target_python3_14 qt6 svg webp
+MTIME: 1793597100
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 2
 BUILD_TIME: 1791268078
@@ -26609,28 +26656,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1793164558
+BUILD_ID: 2
+BUILD_TIME: 1793596598
 CPV: media-libs/libheif-1.23.7
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend test
-DEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)]
+DEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/61.63.63=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)]
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +aom dav1d +de265 doc ffmpeg gdk-pixbuf geotiff gui +jpeg +jpeg2k +kvazaar openh264 rav1e svt-av1 test test-full +threads tools +webp x264 x265 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 arm arm64 ~loong ppc64 ~riscv x86
 LICENSE: GPL-3 MIT
-MD5: ac37ce1ec817f611ca2b69ddab2dfe3f
-PATH: pkgs-media-libs/libheif-1.23.7-1.gpkg.tar
+MD5: 192050c5d9cfa5402650183635304242
+PATH: pkgs-media-libs/libheif-1.23.7-2.gpkg.tar
 PROVIDES: x86_64: libheif-j2kdec.so libheif-j2kenc.so libheif.so.1 libpixbufloader-heif.so
-RDEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "1135d7e7b8b8e739939067e2a7e838ae6ef52f9c"}
-REQUIRES: x86_64: libSDL2-2.0.so.0 libaom.so.3 libavcodec.so.62 libavutil.so.60 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libde265.so.0 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjpeg.so.62 libkvazaar.so.7 libm.so.6 libopenh264.so.8 libopenjp2.so.7 libpng16.so.16 libsharpyuv.so.0 libstdc++.so.6 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libz.so.1
+RDEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/61.63.63=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libSDL2-2.0.so.0 libaom.so.3 libavcodec.so.63 libavutil.so.61 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libde265.so.0 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjpeg.so.62 libkvazaar.so.7 libm.so.6 libopenh264.so.8 libopenjp2.so.7 libpng16.so.16 libsharpyuv.so.0 libstdc++.so.6 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libz.so.1
 RESTRICT: test
-SHA1: dc5294db998acfead47387a54e051352d1fadaa4
+SHA1: 63349f45b14b9f8e27261cb9e297aa480d50fe7a
 SIZE: 1566720
 SLOT: 0/1.23
 USE: abi_x86_64 amd64 aom de265 elibc_glibc ffmpeg gdk-pixbuf gui jpeg jpeg2k kernel_linux kvazaar openh264 threads tools webp x264 x265
-MTIME: 1793164559
+MTIME: 1793596599
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32054,6 +32100,30 @@ SHA1: f11d900925191ed7a6fc9cb00dc3506101db7fc7
 SIZE: 9164800
 USE: abi_x86_64 amd64 amdgpu bash-completion bluetooth elibc_glibc elogind gnutls introspection kernel_linux policykit python_single_target_python3_14 readline uefi verify-sig
 MTIME: 1791241141
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/vala:0.56 dev-python/jinja2[python_targets_python3_14(-)] >=dev-build/meson-1.3.2 sys-apps/hwdata virtual/pkgconfig >=app-shells/bash-completion-2.0 >=dev-libs/gobject-introspection-1.82.0-r2 dev-python/pycairo[python_targets_python3_14(-)] dev-python/pygobject:3[cairo,python_targets_python3_14(-)] x11-libs/pango[introspection] sec-keys/openpgp-keys-hughsie >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( app-alternatives/gpg app-crypt/gnupg[-alternatives(-)] ) >=app-portage/gemato-20.15 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793596992
+CPV: sys-apps/fwupd-2.1.9
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND: dev-lang/python:3.14 >=app-arch/gcab-1.0 app-arch/xz-utils dev-db/sqlite:3 >=dev-libs/glib-2.72:2 >=dev-libs/libxmlb-0.3.19:0/2=[introspection] >=dev-libs/libusb-1.0.27 dev-python/pygobject:3[python_targets_python3_14(-)] net-libs/libmnl:0/0.2.0= >=net-misc/curl-7.62.0 sys-apps/util-linux virtual/zlib:0/1= >=x11-libs/libdrm-2.4.113[video_cards_amdgpu] >=sys-auth/elogind-211 >=net-libs/gnutls-3.6.0:0/30.30= >=sys-auth/polkit-0.114 sys-libs/readline:0/8= sys-apps/fwupd-efi sys-boot/efibootmgr sys-fs/udisks sys-libs/efivar x11-libs/pango[introspection] virtual/os-headers
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: amdgpu bash-completion bluetooth elogind +gnutls gtk-doc introspection minimal modemmanager policykit selinux seccomp systemd test tpm readline uefi valgrind python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 verify-sig test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: ebea433996bc468762a77b6b90fdb028
+PATH: pkgs-sys-apps/fwupd-2.1.9-1.gpkg.tar
+PROVIDES: x86_64: libfwupd.so.3 libfwupdengine.so libfwupdplugin.so libfwupdutil.so
+RDEPEND: dev-lang/python:3.14 >=app-arch/gcab-1.0 app-arch/xz-utils dev-db/sqlite:3 >=dev-libs/glib-2.72:2 >=dev-libs/libxmlb-0.3.19:0/2=[introspection] >=dev-libs/libusb-1.0.27 dev-python/pygobject:3[python_targets_python3_14(-)] net-libs/libmnl:0/0.2.0= >=net-misc/curl-7.62.0 sys-apps/util-linux virtual/zlib:0/1= >=x11-libs/libdrm-2.4.113[video_cards_amdgpu] >=sys-auth/elogind-211 >=net-libs/gnutls-3.6.0:0/30.30= >=sys-auth/polkit-0.114 sys-libs/readline:0/8= sys-apps/fwupd-efi sys-boot/efibootmgr sys-fs/udisks sys-libs/efivar sys-apps/dbus >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libblkid.so.1 libc.so.6 libcurl.so.4 libdrm.so.2 libdrm_amdgpu.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 liblzma.so.5 libmnl.so.0 libpolkit-gobject-1.so.0 libreadline.so.8 libsqlite3.so.0 libusb-1.0.so.0 libxmlb.so.2 libz.so.1
+RESTRICT: test test
+SHA1: a692baf03e26ff2a5d68d83c2faefa1af2a249a9
+SIZE: 9431040
+USE: abi_x86_64 amd64 amdgpu bash-completion bluetooth elibc_glibc elogind gnutls introspection kernel_linux policykit python_single_target_python3_14 readline uefi verify-sig
+MTIME: 1793596994
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
