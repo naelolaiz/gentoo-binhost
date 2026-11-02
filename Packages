@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793597232
-PACKAGES: 1576
+TIMESTAMP: 1793597852
+PACKAGES: 1580
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1459,6 +1459,29 @@ SHA1: cab60d6d60ae8a64d9bbb4de53852c873cd607bf
 SIZE: 2498560
 USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1792907098
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 virtual/pkgconfig sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1793597646
+CPV: app-editors/gvim-9.2.1275
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: ~app-editors/vim-core-9.2.1275 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland x11-base/xorg-proto
+EAPI: 8
+IUSE: acl crypt cscope debug gtk4 images lua minimal motif netbeans nls +pango perl python racket ruby selinux session sound tcl wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: 59170f114b83b501fbe15bf31fed5736
+PATH: pkgs-app-editors/gvim-9.2.1275-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: ~app-editors/vim-core-9.2.1275 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+RESTRICT: test
+SHA1: 3073bdea05531195cf80e15907e2b00abe3a1285
+SIZE: 2498560
+USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1793597648
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4325,6 +4348,28 @@ MTIME: 1791277584
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1793597521
+CPV: dev-debug/strace-7.3
+DEFINED_PHASES: configure install prepare test unpack
+DEPEND: sys-libs/ncurses:0/6=
+EAPI: 8
+IUSE: aio ncurses perl selinux static test unwind elfutils verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: LGPL-2.1+
+MD5: 6bcf262f2b02db049aa40443fa66aca0
+PATH: pkgs-dev-debug/strace-7.3-1.gpkg.tar
+RDEPEND: sys-libs/ncurses:0/6= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libtinfo.so.6
+RESTRICT: test
+SHA1: 3952ad0d9f2956d53d0af9f855c88f7cb2194ff8
+SIZE: 1351680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ncurses
+MTIME: 1793597524
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-arch/unzip
 BUILD_ID: 1
 BUILD_TIME: 1791276644
@@ -5104,6 +5149,29 @@ SHA1: 4e2365b4c92756318439f5a98fd8905e6507c2fe
 SIZE: 880640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792297468
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/libcrypt >=sys-libs/gdbm-1.10-r1 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793597490
+CPV: dev-libs/cyrus-sasl-2.1.28-r6
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: net-mail/mailbase virtual/libcrypt:0/2= >=sys-libs/gdbm-1.10-r1:0/6=[abi_x86_64(-)] >=sys-libs/pam-0-r1[abi_x86_64(-)] >=dev-libs/openssl-1.0.1h-r2:0/3=[abi_x86_64(-)]
+EAPI: 8
+IUSE: authdaemond berkdb gdbm kerberos ldapdb openldap mysql ntlm pam postgres selinux sqlite srp ssl static-libs urandom abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-with-attribution
+MD5: d34706c3c164081c4c543e6bf3e2a615
+PATH: pkgs-dev-libs/cyrus-sasl-2.1.28-r6-1.gpkg.tar
+PROVIDES: x86_64: libanonymous.so.3 libcrammd5.so.3 libdigestmd5.so.3 liblogin.so.3 libotp.so.3 libplain.so.3 libsasl2.so.3 libsasldb.so.3 libscram.so.3
+RDEPEND: net-mail/mailbase virtual/libcrypt:0/2= >=sys-libs/gdbm-1.10-r1:0/6=[abi_x86_64(-)] >=sys-libs/pam-0-r1[abi_x86_64(-)] >=dev-libs/openssl-1.0.1h-r2:0/3=[abi_x86_64(-)] virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.3 libgdbm.so.6 libpam.so.0
+SHA1: c18ab6d21dbd034d9bcc5a8c2399fd842322e985
+SIZE: 378880
+SLOT: 2
+USE: abi_x86_64 amd64 elibc_glibc gdbm kernel_linux pam ssl
+MTIME: 1793597492
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8740,6 +8808,28 @@ SHA1: d3e04fb74ad8d03bb92732b77bcf36892e50c95d
 SIZE: 122880
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1793420788
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793597505
+CPV: dev-python/nodeenv-1.12.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm64 ~hppa ~ppc ~ppc64 ~x86
+LICENSE: BSD
+MD5: 0b5c98ab8f211190b563f330e2a04ab3
+PATH: pkgs-dev-python/nodeenv-1.12.0-1.gpkg.tar
+PROPERTIES: test_network
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test test
+SHA1: bbbdc128d651dcdeecc08d102e3a985e5072b000
+SIZE: 143360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793597506
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25568,25 +25658,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1791569082
+BUILD_ID: 2
+BUILD_TIME: 1793597735
 CPV: media-gfx/kgraphviewer-26.08.2
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/graphviz-2.30:0/6.8.7.2.4= dev-libs/boost dev-qt/qtbase:6
+DEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/graphviz-2.30:0/6.10.7.2.4.5= dev-libs/boost dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: debug +handbook
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: GPL-2 GPL-2+ LGPL-2+ LGPL-2.1+ FDL-1.2
-MD5: 79da1a6c16ed9203cfba7e4a99902263
-PATH: pkgs-media-gfx/kgraphviewer-26.08.2-1.gpkg.tar
+MD5: 85cdc0171b8355e746ab1c0ef03056df
+PATH: pkgs-media-gfx/kgraphviewer-26.08.2-2.gpkg.tar
 PROVIDES: x86_64: kgraphviewerpart.so libkgraphviewer.so.0
-RDEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/graphviz-2.30:0/6.8.7.2.4= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !media-gfx/kgraphviewer:5 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Parts.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libcgraph.so.8 libgvc.so.7 libm.so.6 libstdc++.so.6
-SHA1: 83aba7f48590454ee6ea3dd61a342a879b24ba3b
-SIZE: 1628160
+RDEPEND: >=dev-qt/qt5compat-6.11.2:6 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=media-gfx/graphviz-2.30:0/6.10.7.2.4.5= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !media-gfx/kgraphviewer:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Parts.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libcgraph.so.10 libgvc.so.7 libm.so.6 libstdc++.so.6
+SHA1: 58d5be5f51416e96e5ef2160cc84587fe8e351dd
+SIZE: 1638400
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
-MTIME: 1791569085
+MTIME: 1793597737
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
