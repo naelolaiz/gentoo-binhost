@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793597852
-PACKAGES: 1580
+TIMESTAMP: 1793598161
+PACKAGES: 1581
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -12100,6 +12100,29 @@ SHA1: df4f1f58c76b74471785ef37f93d8d047c78a995
 SIZE: 1351680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux native-extensions python_targets_python3_14
 MTIME: 1791278503
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/cython-3.3.0[python_targets_python3_14(-)] >=dev-python/setuptools-65.6.3[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/poetry-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793597811
+CPV: dev-python/zeroconf-0.153.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: +native-extensions test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~x86
+LICENSE: LGPL-2.1+
+MD5: 8deac26623618967e6e5c2149cc16d5d
+PATH: pkgs-dev-python/zeroconf-0.153.0-1.gpkg.tar
+PROVIDES: x86_64: __init__.cpython-314-x86_64-linux-gnu.so _cache.cpython-314-x86_64-linux-gnu.so _dns.cpython-314-x86_64-linux-gnu.so _history.cpython-314-x86_64-linux-gnu.so _listener.cpython-314-x86_64-linux-gnu.so _record_update.cpython-314-x86_64-linux-gnu.so _updates.cpython-314-x86_64-linux-gnu.so answers.cpython-314-x86_64-linux-gnu.so browser.cpython-314-x86_64-linux-gnu.so incoming.cpython-314-x86_64-linux-gnu.so info.cpython-314-x86_64-linux-gnu.so ipaddress.cpython-314-x86_64-linux-gnu.so multicast_outgoing_queue.cpython-314-x86_64-linux-gnu.so outgoing.cpython-314-x86_64-linux-gnu.so query_handler.cpython-314-x86_64-linux-gnu.so record_manager.cpython-314-x86_64-linux-gnu.so registry.cpython-314-x86_64-linux-gnu.so time.cpython-314-x86_64-linux-gnu.so
+RDEPEND: >=dev-python/ifaddr-0.1.7[python_targets_python3_14(-)] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: a742d6118643bfaba0c3d7a3671887bfb4471420
+SIZE: 1402880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux native-extensions python_targets_python3_14
+MTIME: 1793597812
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
