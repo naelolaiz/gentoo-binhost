@@ -2,8 +2,15 @@
  "gone": {
   "app-containers/podman-6.1.2": 1792736914,
   "app-crypt/gnupg-2.5.24-r1": 1792994546,
+  "app-editors/gvim-9.2.1152": 1793598458,
+  "app-editors/gvim-9.2.1172": 1793598458,
+  "app-editors/vim-9.2.1152": 1793598458,
+  "app-editors/vim-9.2.1172": 1793598458,
+  "app-editors/vim-core-9.2.1152": 1793598458,
+  "app-editors/vim-core-9.2.1172": 1793598458,
   "app-emulation/qemu-10.2.3-r2": 1793267741,
   "app-emulation/qemu-11.1.2": 1793267741,
+  "dev-cpp/simdutf-9.2.1": 1793598458,
   "dev-lang/deno-bin-2.9.7": 1792681346,
   "dev-lang/python-3.13.16": 1793181205,
   "dev-lang/python-3.13.17": 1793181205,
@@ -13,9 +20,8 @@
   "dev-lang/python-3.14.9_p1": 1793181205,
   "dev-lang/python-3.15.0": 1793181205,
   "dev-lang/python-3.15.1": 1793181205,
+  "dev-libs/boost-1.91.0-r2": 1793598458,
   "dev-libs/json-c-0.19-r2": 1792907262,
-  "dev-libs/libzip-1.12": 1792320577,
-  "dev-libs/libzip-1.12-r1": 1792320577,
   "dev-libs/nss-3.130": 1793336013,
   "dev-libs/nss-3.131": 1793336013,
   "dev-libs/nss-3.131.1": 1793336013,
@@ -34,7 +40,9 @@
   "dev-util/cargo-c-0.10.25": 1792907262,
   "dev-util/mesa_clc-26.2.3": 1793267741,
   "dev-util/mesa_clc-26.2.4": 1793267741,
+  "dev-util/spirv-llvm-translator-22.1.7": 1793598458,
   "dev-util/spirv-llvm-translator-23.1.1": 1793515404,
+  "dev-util/spirv-llvm-translator-23.1.2": 1793598458,
   "dev-vcs/git-lfs-3.8.0": 1792822958,
   "kde-frameworks/baloo-6.31.0": 1792681346,
   "kde-frameworks/baloo-6.31.0-r1": 1793336013,
@@ -186,11 +194,10 @@
   "net-libs/webkit-gtk-2.54.1-r400": 1793181205,
   "net-libs/webkit-gtk-2.54.1-r600": 1793181205,
   "net-misc/yt-dlp-2026.08.19": 1793181205,
-  "sci-ml/ggml-0.26.0": 1792320577,
   "sci-ml/ggml-0.27.0": 1792470107,
   "sci-ml/ggml-0.27.0-r1": 1793267741,
   "sci-ml/ollama-0.40.10": 1793423460,
-  "sci-ml/ollama-0.40.3": 1792320577,
+  "sci-ml/ollama-0.40.10-r1": 1793598458,
   "sci-ml/ollama-0.40.5": 1792390605,
   "sci-ml/ollama-0.40.6": 1792609995,
   "sci-ml/ollama-0.40.6-r1": 1792681346,
@@ -198,10 +205,6 @@
   "sci-ml/ollama-0.40.8": 1793267741,
   "sys-apps/portage-3.0.83": 1793515404,
   "sys-fs/btrfs-progs-7.1": 1792470107,
-  "sys-kernel/gentoo-kernel-bin-7.2.10": 1792320577,
-  "sys-kernel/gentoo-kernel-bin-7.2.9": 1792320577,
-  "virtual/dist-kernel-7.2.10": 1792320577,
-  "virtual/dist-kernel-7.2.9": 1792320577,
   "x11-libs/libX11-1.8.13": 1793267741,
   "x11-libs/libXrender-0.9.12": 1793267741,
   "x11-misc/sddm-0.21.0_p20260819": 1792681346,
@@ -308,6 +311,14 @@
   {
    "at": 1792907262,
    "path": "pkgs-dev-libs/kweathercore-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793598458,
+   "path": "pkgs-dev-libs/libzip-1.12-1.gpkg.tar"
+  },
+  {
+   "at": 1793598458,
+   "path": "pkgs-dev-libs/libzip-1.12-r1-1.gpkg.tar"
   },
   {
    "at": 1792311107,
@@ -1654,6 +1665,10 @@
    "path": "pkgs-sci-ml/ggml-0.25.3-1.gpkg.tar"
   },
   {
+   "at": 1793598458,
+   "path": "pkgs-sci-ml/ggml-0.26.0-1.gpkg.tar"
+  },
+  {
    "at": 1792681346,
    "path": "pkgs-sci-ml/ollama-0.35.1-2.gpkg.tar"
   },
@@ -1664,6 +1679,10 @@
   {
    "at": 1792994546,
    "path": "pkgs-sci-ml/ollama-0.40.2-1.gpkg.tar"
+  },
+  {
+   "at": 1793598458,
+   "path": "pkgs-sci-ml/ollama-0.40.3-2.gpkg.tar"
   },
   {
    "at": 1793515401,
@@ -1678,12 +1697,28 @@
    "path": "pkgs-sys-block/partitionmanager-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793598458,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.10-1.gpkg.tar"
+  },
+  {
+   "at": 1793598458,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.9-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-sys-libs/kpmcore-26.08.1-1.gpkg.tar"
   },
   {
    "at": 1792681346,
    "path": "pkgs-sys-libs/libcap-ng-0.9.5-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1793598458,
+   "path": "pkgs-virtual/dist-kernel-7.2.10-1.gpkg.tar"
+  },
+  {
+   "at": 1793598458,
+   "path": "pkgs-virtual/dist-kernel-7.2.9-1.gpkg.tar"
   },
   {
    "at": 1792579226,

@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793598455
-PACKAGES: 1582
+TIMESTAMP: 1793598536
+PACKAGES: 1574
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6078,56 +6078,6 @@ SIZE: 184320
 SLOT: 0/2
 USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux lzma zstd
 MTIME: 1791226185
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1791779520
-CPV: dev-libs/libzip-1.12
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: virtual/zlib:0/1= app-arch/bzip2:0/1= dev-libs/openssl:0/3=
-EAPI: 8
-IUSE: bzip2 gnutls lzma ssl test tools zstd
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
-LICENSE: BSD
-MD5: 1a11e9fe675613d835d1236072ed855c
-PATH: pkgs-dev-libs/libzip-1.12-1.gpkg.tar
-PROVIDES: x86_64: libzip.so.5
-RDEPEND: virtual/zlib:0/1= app-arch/bzip2:0/1= dev-libs/openssl:0/3= >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "5ab8824f772a5c6146f7dca7d610bcd3324684f4"}
-REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.3 libz.so.1
-RESTRICT: test
-SHA1: 2f9daccc236968b9c339187d014829ad8ea80cc7
-SIZE: 307200
-SLOT: 0/5
-USE: abi_x86_64 amd64 bzip2 elibc_glibc kernel_linux ssl
-MTIME: 1791779522
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1792037352
-CPV: dev-libs/libzip-1.12-r1
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: virtual/zlib:0/1= app-arch/bzip2:0/1= dev-libs/openssl:0/3=
-EAPI: 8
-IUSE: bzip2 gnutls lzma ssl test tools zstd
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
-LICENSE: BSD
-MD5: f5f72754c192a85fe11480e9d972f2fc
-PATH: pkgs-dev-libs/libzip-1.12-r1-1.gpkg.tar
-PROVIDES: x86_64: libzip.so.5
-RDEPEND: virtual/zlib:0/1= app-arch/bzip2:0/1= dev-libs/openssl:0/3= >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "fd22ede8b33076059979caa504293d24d64841b8"}
-REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.3 libz.so.1
-RESTRICT: test
-SHA1: 26d7282847b70165b5374a30f05dd003e1df0121
-SIZE: 307200
-SLOT: 0/5
-USE: abi_x86_64 amd64 bzip2 elibc_glibc kernel_linux ssl
-MTIME: 1792037353
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31687,30 +31637,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
-BUILD_TIME: 1791437269
-CPV: sci-ml/ggml-0.26.0
-DEFINED_PHASES: compile configure install prepare pretend setup test
-DEPEND: media-libs/vulkan-loader dev-util/vulkan-headers
-EAPI: 8
-IUSE: cpu_flags_x86_amx_bf16 cpu_flags_x86_amx_int8 cpu_flags_x86_amx_tile cpu_flags_x86_avx cpu_flags_x86_avx_vnni cpu_flags_x86_avx2 cpu_flags_x86_avx512_bf16 cpu_flags_x86_avx512bw cpu_flags_x86_avx512f cpu_flags_x86_avx512vbmi cpu_flags_x86_avx512_vnni cpu_flags_x86_bmi2 cpu_flags_x86_fma3 cpu_flags_x86_f16c cpu_flags_x86_sse4_2 cuda openmp rocm test vulkan +amdgpu_targets_gfx908 +amdgpu_targets_gfx90a +amdgpu_targets_gfx942 +amdgpu_targets_gfx950 +amdgpu_targets_gfx1030 +amdgpu_targets_gfx1100 +amdgpu_targets_gfx1101 +amdgpu_targets_gfx1200 +amdgpu_targets_gfx1201 amdgpu_targets_gfx803 amdgpu_targets_gfx900 amdgpu_targets_gfx906 amdgpu_targets_gfx940 amdgpu_targets_gfx941 amdgpu_targets_gfx1010 amdgpu_targets_gfx1011 amdgpu_targets_gfx1012 amdgpu_targets_gfx1031 amdgpu_targets_gfx1102 amdgpu_targets_gfx1103 amdgpu_targets_gfx1150 amdgpu_targets_gfx1151
-KEYWORDS: ~amd64 ~arm64
-LICENSE: MIT
-MD5: 01768a618b203da3dd75f1c55fd27865
-PATH: pkgs-sci-ml/ggml-0.26.0-1.gpkg.tar
-PROVIDES: x86_64: libggml-base.so.0 libggml-cpu.so.0 libggml-vulkan.so.0 libggml.so.0
-RDEPEND: media-libs/vulkan-loader >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libgomp.so.1 libm.so.6 libstdc++.so.6 libvulkan.so.1
-RESTRICT: test
-SHA1: 7869f0a17021c329b83074d9c29b54214aae7ada
-SIZE: 9871360
-SLOT: 0/0.26.0
-USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux openmp vulkan
-MTIME: 1791437271
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
 BUILD_TIME: 1792315999
 CPV: sci-ml/ggml-0.27.0
 DEFINED_PHASES: compile configure install prepare pretend setup test
@@ -31846,28 +31772,6 @@ SHA1: cc001528e68ec83a9b712d512eb898582ee5cf69
 SIZE: 20910080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793598358
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1791865940
-CPV: sci-ml/ollama-0.40.3
-DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0=
-EAPI: 8
-KEYWORDS: ~amd64
-LICENSE: MIT
-MD5: 797d3c455cc99ea47c1e35cefb1eb32a
-PATH: pkgs-sci-ml/ollama-0.40.3-2.gpkg.tar
-PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.25.3:0/0.26.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
-RESTRICT: mirror test
-SHA1: 722b37c2773a08c9eb53670e68301ea2cbd776c8
-SIZE: 16343040
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791865944
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33349,30 +33253,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/bc app-alternatives/lex app-alternatives/yacc dev-util/pahole sys-libs/binutils-libs virtual/libelf app-crypt/sbsigntools
 BUILD_ID: 1
-BUILD_TIME: 1791782228
-CPV: sys-kernel/gentoo-kernel-bin-7.2.10
-DEFINED_PHASES: config configure install postinst postrm preinst prepare pretend test unpack
-EAPI: 8
-IDEPEND: || ( >=sys-kernel/installkernel-14[dracut(-)] >=sys-kernel/installkernel-14[ugrd(-)] )
-IUSE: debug +initramfs test generic-uki modules-compress verify-sig
-KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
-LICENSE: GPL-2
-MD5: da85d203a6fb1e240673a1cd41fcbd5c
-PATH: pkgs-sys-kernel/gentoo-kernel-bin-7.2.10-1.gpkg.tar
-PDEPEND: >=virtual/dist-kernel-7.2.10
-RDEPEND: sys-apps/kmod[lzma] virtual/libelf >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libelf.so.1 libopcodes-2.47.0.gentoo-sys-libs-binutils-libs-st-def.so libxxhash.so.0 libz.so.1
-RESTRICT: test
-SHA1: 390dbbb571dc9c7b1025b9e63ccd425531ada793
-SIZE: 201830400
-SLOT: 7.2.10
-USE: abi_x86_64 amd64 elibc_glibc initramfs kernel_linux
-MTIME: 1791782265
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-alternatives/bc app-alternatives/lex app-alternatives/yacc dev-util/pahole sys-libs/binutils-libs virtual/libelf app-crypt/sbsigntools
-BUILD_ID: 1
 BUILD_TIME: 1792320422
 CPV: sys-kernel/gentoo-kernel-bin-7.2.11
 DEFINED_PHASES: config configure install postinst postrm preinst prepare pretend test unpack
@@ -33464,30 +33344,6 @@ SIZE: 203294720
 SLOT: 7.2.14
 USE: abi_x86_64 amd64 elibc_glibc initramfs kernel_linux
 MTIME: 1793423353
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-alternatives/bc app-alternatives/lex app-alternatives/yacc dev-util/pahole sys-libs/binutils-libs virtual/libelf app-crypt/sbsigntools
-BUILD_ID: 1
-BUILD_TIME: 1791371199
-CPV: sys-kernel/gentoo-kernel-bin-7.2.9
-DEFINED_PHASES: config configure install postinst postrm preinst prepare pretend test unpack
-EAPI: 8
-IDEPEND: || ( >=sys-kernel/installkernel-14[dracut(-)] >=sys-kernel/installkernel-14[ugrd(-)] )
-IUSE: debug +initramfs test generic-uki modules-compress verify-sig
-KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
-LICENSE: GPL-2
-MD5: 01429a1195f844bedbd3fc01b5147897
-PATH: pkgs-sys-kernel/gentoo-kernel-bin-7.2.9-1.gpkg.tar
-PDEPEND: >=virtual/dist-kernel-7.2.9
-RDEPEND: sys-apps/kmod[lzma] virtual/libelf >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libelf.so.1 libopcodes-2.47.0.gentoo-sys-libs-binutils-libs-st-def.so libxxhash.so.0 libz.so.1
-RESTRICT: test
-SHA1: 846a5bec04830fb07b9d086b412d0cb7dfd5e397
-SIZE: 201758720
-SLOT: 7.2.9
-USE: abi_x86_64 amd64 elibc_glibc initramfs kernel_linux
-MTIME: 1791371245
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33882,23 +33738,6 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 1
-BUILD_TIME: 1791782289
-CPV: virtual/dist-kernel-7.2.10
-DEFINED_PHASES: -
-EAPI: 8
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-MD5: 82bd31be35174a59df6d3b6b01cda4d3
-PATH: pkgs-virtual/dist-kernel-7.2.10-1.gpkg.tar
-RDEPEND: || ( ~sys-kernel/gentoo-kernel-7.2.10 ~sys-kernel/gentoo-kernel-bin-7.2.10 ~sys-kernel/vanilla-kernel-7.2.10 ~sys-kernel/gentoo-kernel-modprep-7.2.10 )
-SHA1: b943c81dd23f8938fce4aab57bfe04406fbfb5a0
-SIZE: 20480
-SLOT: 0/7.2.10
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791782290
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BUILD_ID: 1
 BUILD_TIME: 1792320476
 CPV: virtual/dist-kernel-7.2.11
 DEFINED_PHASES: -
@@ -33963,23 +33802,6 @@ SIZE: 20480
 SLOT: 0/7.2.14
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793423372
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BUILD_ID: 1
-BUILD_TIME: 1791371271
-CPV: virtual/dist-kernel-7.2.9
-DEFINED_PHASES: -
-EAPI: 8
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-MD5: fcb83a74c48d990220f1954db8724f87
-PATH: pkgs-virtual/dist-kernel-7.2.9-1.gpkg.tar
-RDEPEND: || ( ~sys-kernel/gentoo-kernel-7.2.9 ~sys-kernel/gentoo-kernel-bin-7.2.9 ~sys-kernel/vanilla-kernel-7.2.9 ~sys-kernel/gentoo-kernel-modprep-7.2.9 )
-SHA1: c2cefba083fc3f9061499f10ba9e27c47b919036
-SIZE: 20480
-SLOT: 0/7.2.9
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791371273
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
