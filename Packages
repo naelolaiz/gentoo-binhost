@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793593848
-PACKAGES: 1561
+TIMESTAMP: 1793594463
+PACKAGES: 1564
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3989,6 +3989,30 @@ MTIME: 1792901877
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793594251
+CPV: dev-cpp/simdutf-9.3.3
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: virtual/libiconv
+EAPI: 8
+IUSE: test doc
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: || ( Apache-2.0 MIT )
+MD5: 7883c9e6158796e5a5a8b3425063a797
+PATH: pkgs-dev-cpp/simdutf-9.3.3-1.gpkg.tar
+PROVIDES: x86_64: libsimdutf.so.37
+RDEPEND: virtual/libiconv >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 522384e44c7beaff7e882f39642b1faed8231fd5
+SIZE: 419840
+SLOT: 0/37
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793594252
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791226043
@@ -4877,6 +4901,30 @@ SIZE: 19609600
 SLOT: 0/1.91.0
 USE: abi_x86_64 amd64 bzip2 context elibc_glibc icu kernel_linux nls python python_targets_python3_14 stacktrace zlib
 MTIME: 1791415479
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/b2-5.1.0
+BUILD_ID: 1
+BUILD_TIME: 1793594183
+CPV: dev-libs/boost-1.91.0-r3
+DEFINED_PHASES: compile configure install postinst preinst prepare setup test
+DEPEND: dev-libs/openssl:0/3= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)]
+EAPI: 8
+IUSE: bzip2 +context debug doc icu lzma +nls mpi numpy python +stacktrace test test-full tools zlib zstd python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: Boost-1.0
+MD5: 7db8e922f4c6ba41c79341e558a1884d
+PATH: pkgs-dev-libs/boost-1.91.0-r3-1.gpkg.tar
+PROVIDES: x86_64: libboost_atomic.so.1.91.0 libboost_charconv.so.1.91.0 libboost_chrono.so.1.91.0 libboost_cobalt.so.1.91.0 libboost_cobalt_io.so.1.91.0 libboost_cobalt_io_ssl.so.1.91.0 libboost_container.so.1.91.0 libboost_context.so.1.91.0 libboost_contract.so.1.91.0 libboost_coroutine.so.1.91.0 libboost_date_time.so.1.91.0 libboost_fiber.so.1.91.0 libboost_filesystem.so.1.91.0 libboost_graph.so.1.91.0 libboost_iostreams.so.1.91.0 libboost_json.so.1.91.0 libboost_locale.so.1.91.0 libboost_log.so.1.91.0 libboost_log_setup.so.1.91.0 libboost_math_c99.so.1.91.0 libboost_math_c99f.so.1.91.0 libboost_math_c99l.so.1.91.0 libboost_math_tr1.so.1.91.0 libboost_math_tr1f.so.1.91.0 libboost_math_tr1l.so.1.91.0 libboost_nowide.so.1.91.0 libboost_prg_exec_monitor.so.1.91.0 libboost_process.so.1.91.0 libboost_program_options.so.1.91.0 libboost_python314.so.1.91.0 libboost_random.so.1.91.0 libboost_regex.so.1.91.0 libboost_serialization.so.1.91.0 libboost_stacktrace_addr2line.so.1.91.0 libboost_stacktrace_basic.so.1.91.0 libboost_stacktrace_noop.so.1.91.0 libboost_thread.so.1.91.0 libboost_timer.so.1.91.0 libboost_type_erasure.so.1.91.0 libboost_unit_test_framework.so.1.91.0 libboost_url.so.1.91.0 libboost_wave.so.1.91.0 libboost_wserialization.so.1.91.0
+RDEPEND: dev-libs/openssl:0/3= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.3 libgcc_s.so.1 libicudata.so.78 libicui18n.so.78 libicuuc.so.78 libm.so.6 libssl.so.3 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: 97865934248dd68cfbaf0083576cff272f293c15
+SIZE: 19783680
+SLOT: 0/1.91.0
+USE: abi_x86_64 amd64 bzip2 context elibc_glibc icu kernel_linux nls python python_targets_python3_14 stacktrace zlib
+MTIME: 1793594225
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -34543,6 +34591,32 @@ SHA1: b0442c974deb975ec9ec29be65827099dfe06a40
 SIZE: 552960
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux udev video_cards_amdgpu video_cards_intel video_cards_nouveau video_cards_radeon
 MTIME: 1791063467
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/glib-utils virtual/pkgconfig app-text/docbook-xsl-ns-stylesheets dev-libs/libxslt app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793594355
+CPV: x11-libs/libnotify-0.8.9
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=dev-libs/glib-2.62:2[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[introspection,abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0=
+EAPI: 8
+IDEPEND: app-eselect/eselect-notify-send
+IUSE: gtk-doc +introspection test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2.1+
+MD5: f445c9ad6f723b95a3b5e85b19d8471f
+PATH: pkgs-x11-libs/libnotify-0.8.9-1.gpkg.tar
+PDEPEND: virtual/notification-daemon
+PROVIDES: x86_64: libnotify.so.4
+RDEPEND: >=dev-libs/glib-2.62:2[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[introspection,abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "5b83b28984b9349d88d415b1318677d18bc8e695"}
+REQUIRES: x86_64: libc.so.6 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0
+RESTRICT: test
+SHA1: 6ea4f0d988d2090cb23ffdc847043be8037a7dfa
+SIZE: 102400
+USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux
+MTIME: 1793594355
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
