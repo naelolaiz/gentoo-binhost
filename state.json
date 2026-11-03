@@ -221,6 +221,10 @@
    "path": "pkgs-app-admin/kio-admin-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793683417,
+   "path": "pkgs-app-arch/libarchive-3.8.11-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-app-cdr/dolphin-plugins-mountiso-26.08.1-1.gpkg.tar"
   },
@@ -1621,6 +1625,10 @@
    "path": "pkgs-net-misc/networkmanager-1.58.1-r3-1.gpkg.tar"
   },
   {
+   "at": 1793683417,
+   "path": "pkgs-net-misc/openssh-10.6_p1-1.gpkg.tar"
+  },
+  {
    "at": 1793683100,
    "path": "pkgs-net-misc/wget-1.25.0-r3-1.gpkg.tar"
   },
@@ -1671,6 +1679,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-sys-block/partitionmanager-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793683417,
+   "path": "pkgs-sys-fs/cryptsetup-2.8.8-1.gpkg.tar"
   },
   {
    "at": 1793598458,
