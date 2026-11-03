@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793686502
+TIMESTAMP: 1793686808
 PACKAGES: 1592
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -29927,26 +29927,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1793513626
+BUILD_ID: 2
+BUILD_TIME: 1793686550
 CPV: net-dialup/ppp-2.5.5
 DEFINED_PHASES: configure install postinst prepare setup
-DEPEND: dev-libs/openssl:0/3= virtual/libcrypt:0/2= sys-libs/pam
+DEPEND: dev-libs/openssl:0/4= virtual/libcrypt:0/2= sys-libs/pam
 EAPI: 8
 IUSE: activefilter atm pam selinux systemd
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: BSD GPL-2
-MD5: f7a3dfcfcf60a9aedf0edba2f3b17056
-PATH: pkgs-net-dialup/ppp-2.5.5-1.gpkg.tar
+MD5: be71ef236c008cd760dea20d03430c84
+PATH: pkgs-net-dialup/ppp-2.5.5-2.gpkg.tar
 PDEPEND: net-dialup/ppp-scripts
 PROVIDES: x86_64: dhcpv6relay.so minconn.so openl2tp.so passwordfd.so pppoe.so pppol2tp.so radattr.so radius.so radrealms.so winbind.so
-RDEPEND: dev-libs/openssl:0/3= virtual/libcrypt:0/2= sys-libs/pam virtual/tmpfiles >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.3 libpam.so.0 libssl.so.3
-SHA1: d1aecf8f49603d503eb29719f6c46c18a5143c6f
+RDEPEND: dev-libs/openssl:0/4= virtual/libcrypt:0/2= sys-libs/pam virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.4 libpam.so.0 libssl.so.4
+SHA1: d1b682f02cc57f963c334ac82098fd07b4038eca
 SIZE: 471040
 SLOT: 0/2.5.5
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux pam
-MTIME: 1793513627
+MTIME: 1793686551
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
