@@ -457,6 +457,10 @@
    "path": "pkgs-dev-util/massif-visualizer-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793712173,
+   "path": "pkgs-dev-util/perf-7.2-1.gpkg.tar"
+  },
+  {
    "at": 1793515401,
    "path": "pkgs-dev-util/pkgcheck-0.10.49-1.gpkg.tar"
   },
@@ -1795,6 +1799,10 @@
   {
    "at": 1793683100,
    "path": "pkgs-net-misc/wget-1.25.0-r3-1.gpkg.tar"
+  },
+  {
+   "at": 1793712173,
+   "path": "pkgs-net-misc/yt-dlp-2026.10.26-1.gpkg.tar"
   },
   {
    "at": 1792907262,
