@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793694070
+TIMESTAMP: 1793694682
 PACKAGES: 1594
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -12382,9 +12382,9 @@ MTIME: 1793597812
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qttools-6.7.3:6[linguist] >=dev-qt/qttools-6.7.3:6[qdoc,qtattributionsscanner] app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 3
-BUILD_TIME: 1793253983
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qttools-6.7.3:6[linguist] >=dev-qt/qttools-6.7.3:6[qdoc,qtattributionsscanner] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 4
+BUILD_TIME: 1793694387
 CPV: dev-qt/qt-creator-20.0.2
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
 DEPEND: app-arch/libarchive:0/13= dev-cpp/yaml-cpp:0/0.9= >=dev-qt/qtbase-6.7.3:6/6.11.3=[concurrent,dbus,gui,network,ssl,widgets,xml] >=dev-qt/qtdeclarative-6.7.3:6/6.11.3= >=dev-qt/qthttpserver-6.7.3:6 >=dev-qt/qttasktree-6.7.3:6 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= >=dev-qt/qttools-6.7.3:6[designer] >=dev-qt/qttools-6.7.3:6[assistant] app-crypt/libsecret dev-libs/glib:2 >=dev-qt/qtquick3d-6.7.3:6/6.11.3= >=dev-qt/qtsvg-6.7.3:6 >=dev-qt/qtwebsockets-6.7.3:6 >=dev-qt/qtserialport-6.7.3:6 >=dev-qt/qtsvg-6.7.3:6 app-arch/zstd:0/1= dev-libs/elfutils >=dev-qt/qtcharts-6.7.3:6 >=dev-qt/qtshadertools-6.7.3:6
@@ -12393,16 +12393,16 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +clang designer doc +help keyring plugin-dev qmldesigner serialterminal +svg test +tracing webengine +llvm_slot_22 llvm_slot_20 llvm_slot_21 llvm_slot_23
 KEYWORDS: amd64
 LICENSE: GPL-3
-MD5: 2f255827ed869459f5b3e365a26bbb6c
-PATH: pkgs-dev-qt/qt-creator-20.0.2-3.gpkg.tar
+MD5: f8a36d9884b190c3ca5e7af68a622eca
+PATH: pkgs-dev-qt/qt-creator-20.0.2-4.gpkg.tar
 PROVIDES: x86_64: libAcpClient.so libAcpLib.so.20 libAdvancedDockingSystem.so.20 libAggregation.so.20 libAndroid.so libAnt.so libAppStatisticsMonitor.so libAutoTest.so libAutotoolsProjectManager.so libAxivion.so libBareMetal.so libBazaar.so libBeautifier.so libBinEditor.so libBoot2Qt.so libCMakeProjectManager.so libCPlusPlus.so.20 libCVS.so libCargo.so libClangCodeModel.so libClangFormat.so libClangTools.so libClassView.so libClearCase.so libCmdBridgeClient.so.20 libCoco.so libCodePaster.so libCompilationDatabaseProjectManager.so libCompilerExplorer.so libConan.so libCopilot.so libCore.so libCppEditor.so libCppcheck.so libCtfVisualizer.so libDebugger.so libDesigner.so libDevContainer.so.20 libDevContainerPlugin.so libDiffEditor.so libDocker.so libDotnet.so libEffectComposer.so libEmacsKeys.so libExtensionManager.so libExtensionSystem.so.20 libFakeVim.so libFossil.so libGLSL.so.20 libGLSLEditor.so libGNProjectManager.so libGenericProjectManager.so libGit.so libGitLab.so libGradle.so libHelloWorld.so libHelp.so libImageViewer.so libIncrediBuild.so libIos.so libKSyntaxHighlighting.so.20 libLanguageClient.so libLanguageServerProtocol.so.20 libLanguageUtils.so.20 libLearning.so libLua.so libLuaLanguageClient.so libMacros.so libMcpServerLib.so.20 libMcuSupport.so libMercurial.so libMesonProjectManager.so libModelEditor.so libModeling.so.20 libMultiPropertyEditor.so libNanotrace.so.20 libNim.so libPerfProfiler.so libPerforce.so libProParser.so.20 libProjectExplorer.so libPython.so libQbsProjectManager.so libQmakeProjectManager.so libQmlDebug.so.20 libQmlDesigner.so libQmlDesignerCore.so.20 libQmlEditorWidgets.so.20 libQmlJS.so.20 libQmlJSEditor.so libQmlJSTools.so libQmlPreview.so libQmlProfiler.so libQmlProjectManager.so libQnx.so libQtApplicationManagerIntegration.so libQtSupport.so libRemoteLinux.so libResourceEditor.so libSafeRenderer.so libScreenRecorder.so libScxmlEditor.so libSerialTerminal.so libSilverSearcher.so libSqlite.so.20 libSquish.so libSubversion.so libSwift.so libTerminal.so libTerminalLib.so.20 libTextEditor.so libTodo.so libTracing.so.20 libUpdateInfo.so libUtils.so.20 libValgrind.so libVcpkg.so libVcsBase.so libWebAssembly.so libWelcome.so libZenMode.so libcomponentsplugin.so libmcpserver.so libptracepreload.so.20 libqlitehtml.so.20 libqmlpreviewplugin.so libqtkeychain.so.20 libqtquickplugin.so
 RDEPEND: app-arch/libarchive:0/13= dev-cpp/yaml-cpp:0/0.9= >=dev-qt/qtbase-6.7.3:6/6.11.3=[concurrent,dbus,gui,network,ssl,widgets,xml] >=dev-qt/qtdeclarative-6.7.3:6/6.11.3= >=dev-qt/qthttpserver-6.7.3:6 >=dev-qt/qttasktree-6.7.3:6 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= >=dev-qt/qttools-6.7.3:6[designer] >=dev-qt/qttools-6.7.3:6[assistant] app-crypt/libsecret dev-libs/glib:2 >=dev-qt/qtquick3d-6.7.3:6/6.11.3= >=dev-qt/qtsvg-6.7.3:6 >=dev-qt/qtwebsockets-6.7.3:6 >=dev-qt/qtserialport-6.7.3:6 >=dev-qt/qtsvg-6.7.3:6 app-arch/zstd:0/1= dev-libs/elfutils >=dev-qt/qtcharts-6.7.3:6 >=dev-qt/qtshadertools-6.7.3:6 >=dev-qt/qtimageformats-6.7.3:6 >=dev-qt/qtquicktimeline-6.7.3:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libLLVM.so.22.1 libQt6Charts.so.6 libQt6Concurrent.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Designer.so.6 libQt6DesignerComponents.so.6 libQt6Gui.so.6 libQt6Help.so.6 libQt6HttpServer.so.6 libQt6Network.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Quick3D.so.6 libQt6Quick3DAssetImport.so.6 libQt6Quick3DAssetUtils.so.6 libQt6Quick3DParticles.so.6 libQt6Quick3DRuntimeRender.so.6 libQt6Quick3DUtils.so.6 libQt6QuickWidgets.so.6 libQt6SerialPort.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6TaskTree.so.6 libQt6Test.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libarchive.so.13 libc.so.6 libclang-cpp.so.22.1 libdw.so.1 libelf.so.1 libgcc_s.so.1 libglib-2.0.so.0 libm.so.6 libstdc++.so.6 libyaml-cpp.so.0.9 libzstd.so.1
 RESTRICT: test
-SHA1: 8b5afe9c8d58a5ce658e5e8c1e6607dad5d25ffa
+SHA1: ceee7100117d21fb0c90b6ad33de40de306ac80f
 SIZE: 96788480
 USE: abi_x86_64 amd64 clang designer doc elibc_glibc help kernel_linux keyring llvm_slot_22 plugin-dev qmldesigner serialterminal svg tracing
-MTIME: 1793254011
+MTIME: 1793694414
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12700,26 +12700,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: ~dev-qt/qtshadertools-6.11.3:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1793120268
+BUILD_ID: 2
+BUILD_TIME: 1793694516
 CPV: dev-qt/qtmultimedia-6.11.3
 DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.11.3:6[X,concurrent,-eglfs] media-video/ffmpeg:0/60.62.62= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.11.3:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquick3d-6.11.3:6 x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers
+DEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.11.3:6[X,concurrent,-eglfs] media-video/ffmpeg:0/61.63.63= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.11.3:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquick3d-6.11.3:6 x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers
 EAPI: 8
 IUSE: +X alsa +dbus eglfs +ffmpeg gstreamer opengl pipewire pulseaudio qml +v4l vaapi vulkan wayland custom-cflags test
 KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc64 ~riscv ~x86
 LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
-MD5: 4b166960a767a4236c96acc75042a6bb
-PATH: pkgs-dev-qt/qtmultimedia-6.11.3-1.gpkg.tar
+MD5: eeda4938372d570924e4d84be3818658
+PATH: pkgs-dev-qt/qtmultimedia-6.11.3-2.gpkg.tar
 PROVIDES: x86_64: libQt6Multimedia.so.6 libQt6MultimediaQuick.so.6 libQt6MultimediaWidgets.so.6 libQt6Quick3DSpatialAudio.so.6 libQt6SpatialAudio.so.6 libffmpegmediaplugin.so libquick3dspatialaudioplugin.so libquickmultimediaplugin.so
-RDEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.11.3:6[X,concurrent,-eglfs] media-video/ffmpeg:0/60.62.62= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.11.3:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquick3d-6.11.3:6 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Quick3D.so.6 libQt6Widgets.so.6 libX11.so.6 libXext.so.6 libXrandr.so.2 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libm.so.6 libpulse.so.0 libstdc++.so.6 libswresample.so.6 libswscale.so.9
+RDEPEND: ~dev-qt/qtbase-6.11.3:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.11.3:6[X,concurrent,-eglfs] media-video/ffmpeg:0/61.63.63= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.11.3:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.11.3:6 ~dev-qt/qtquick3d-6.11.3:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Quick3D.so.6 libQt6Widgets.so.6 libX11.so.6 libXext.so.6 libXrandr.so.2 libavcodec.so.63 libavformat.so.63 libavutil.so.61 libc.so.6 libm.so.6 libpulse.so.0 libstdc++.so.6 libswresample.so.7 libswscale.so.10
 RESTRICT: test
-SHA1: 6620f59f52492ac8a082ce96a34930e159d0b420
+SHA1: 602df6dd5bf5fc60e3bb7c0c74c652e20d6f4ead
 SIZE: 2652160
 SLOT: 6/6.11.3
 USE: X abi_x86_64 alsa amd64 dbus elibc_glibc ffmpeg kernel_linux opengl pipewire pulseaudio qml v4l vulkan wayland
-MTIME: 1793120271
+MTIME: 1793694518
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
