@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793685267
-PACKAGES: 1589
+TIMESTAMP: 1793685576
+PACKAGES: 1590
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1250,6 +1250,30 @@ SHA1: fe4311a6f504820463428fee46b27ce4ea4cdbb8
 SIZE: 1208320
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux libffi nls
 MTIME: 1792987783
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 2
+BUILD_TIME: 1793685331
+CPV: app-crypt/qca-2.3.12
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6 >=dev-libs/openssl-1.1:0/4=
+EAPI: 8
+IUSE: botan debug doc examples gcrypt gpg logger nss pkcs11 sasl softstore +ssl test
+KEYWORDS: amd64 ~arm arm64 ~loong ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1
+MD5: aa00b2e98e0c623f76e7d507488c94c9
+PATH: pkgs-app-crypt/qca-2.3.12-2.gpkg.tar
+PROVIDES: x86_64: libqca-ossl.so libqca-qt6.so.2
+RDEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6 >=dev-libs/openssl-1.1:0/4= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Core5Compat.so.6 libc.so.6 libcrypto.so.4 libgcc_s.so.1 libssl.so.4 libstdc++.so.6
+RESTRICT: test
+SHA1: beb30e4df8d34881f695023f3e3acf3f5c244d67
+SIZE: 921600
+SLOT: 2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux ssl
+MTIME: 1793685332
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -18454,26 +18478,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791608354
+BUILD_ID: 2
+BUILD_TIME: 1793685405
 CPV: kde-frameworks/karchive-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: app-arch/bzip2 app-arch/xz-utils virtual/zlib:0/1= dev-libs/openssl:0/3= app-arch/zstd:0/1= dev-qt/qtbase:6
+DEPEND: app-arch/bzip2 app-arch/xz-utils virtual/zlib:0/1= dev-libs/openssl:0/4= app-arch/zstd:0/1= dev-qt/qtbase:6
 EAPI: 8
 IUSE: crypt +zstd debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: GPL-2 LGPL-2.1
-MD5: d0a2740d30597e0d3686f6f9830365f0
-PATH: pkgs-kde-frameworks/karchive-6.31.0-1.gpkg.tar
+MD5: c5fcc00eba8e7d37948f390328d16b24
+PATH: pkgs-kde-frameworks/karchive-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: libKF6Archive.so.6
-RDEPEND: app-arch/bzip2 app-arch/xz-utils virtual/zlib:0/1= dev-libs/openssl:0/3= app-arch/zstd:0/1= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libQt6Core.so.6 libbz2.so.1 libc.so.6 libcrypto.so.3 liblzma.so.5 libstdc++.so.6 libz.so.1 libzstd.so.1
+RDEPEND: app-arch/bzip2 app-arch/xz-utils virtual/zlib:0/1= dev-libs/openssl:0/4= app-arch/zstd:0/1= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libQt6Core.so.6 libbz2.so.1 libc.so.6 libcrypto.so.4 liblzma.so.5 libstdc++.so.6 libz.so.1 libzstd.so.1
 RESTRICT: test
-SHA1: ca73b48f0eacd929ab9c38435df87320d66a3306
-SIZE: 276480
+SHA1: d897ea179bd82671a0bcc2a0f3a29208b2ecb597
+SIZE: 286720
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 crypt elibc_glibc kernel_linux zstd
-MTIME: 1791608356
+MTIME: 1793685407
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
