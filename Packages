@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793682481
-PACKAGES: 1579
+TIMESTAMP: 1793682792
+PACKAGES: 1581
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5266,6 +5266,28 @@ SHA1: 2fd95a265b3c1f35937f85bb5f85898f64f18d18
 SIZE: 1945600
 USE: abi_x86_32 abi_x86_64 amd64 bzip2 debuginfod elibc_glibc kernel_linux libarchive lzma nls utils
 MTIME: 1792555030
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1793682627
+CPV: dev-libs/expat-2.10.0
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: examples static-libs test unicode abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: a464deafc4c957e807eb660273908ded
+PATH: pkgs-dev-libs/expat-2.10.0-1.gpkg.tar
+PROVIDES: x86_32: libexpat.so.1 libexpatw.so.1 x86_64: libexpat.so.1 libexpatw.so.1
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_32: libc.so.6 x86_64: libc.so.6
+RESTRICT: test
+SHA1: d6a33741548ebca86f92b28b16b1ae8d3ceb3e82
+SIZE: 378880
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux unicode
+MTIME: 1793682629
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30857,6 +30879,29 @@ MTIME: 1792735343
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1793682677
+CPV: net-misc/rsync-3.5.1
+DEFINED_PHASES: configure install postinst prepare setup unpack
+DEPEND: >=dev-libs/popt-1.19 >=virtual/acl-2.4.0 virtual/libiconv dev-libs/openssl:0/4= >=dev-libs/xxhash-0.8
+EAPI: 8
+IUSE: acl examples iconv idn lz4 rrsync ssl stunnel system-zlib test xattr +xxhash zstd python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3 GPL-3+ GPL-2
+MD5: 156666846af575e832002ba21af90e2c
+PATH: pkgs-net-misc/rsync-3.5.1-3.gpkg.tar
+RDEPEND: >=dev-libs/popt-1.19 >=virtual/acl-2.4.0 virtual/libiconv dev-libs/openssl:0/4= >=dev-libs/xxhash-0.8 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libacl.so.1 libc.so.6 libcrypto.so.4 libpopt.so.0 libxxhash.so.0
+RESTRICT: test
+SHA1: cc1f2e58d6e816e7e538fd8bfad960a149c6596e
+SIZE: 573440
+USE: abi_x86_64 acl amd64 elibc_glibc iconv kernel_linux python_single_target_python3_14 ssl xattr xxhash
+MTIME: 1793682678
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1792305591
 CPV: net-misc/socat-1.8.1.3
@@ -32084,25 +32129,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-arch/xz-utils dev-lang/perl sys-apps/help2man sys-apps/texinfo
-BUILD_ID: 1
-BUILD_TIME: 1791061765
+BUILD_ID: 3
+BUILD_TIME: 1793682563
 CPV: sys-apps/coreutils-9.12
 DEFINED_PHASES: configure install postinst prepare setup test unpack
-DEPEND: sys-apps/acl dev-libs/openssl:0/3= sys-apps/attr virtual/libintl
+DEPEND: sys-apps/acl dev-libs/openssl:0/4= sys-apps/attr virtual/libintl
 EAPI: 8
 IUSE: acl caps gmp hostname kill multicall nls +openssl selinux +split-usr static test test-full vanilla xattr verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: GPL-3+
-MD5: 978f06a147562a3ce52de51e9b7e0dd9
-PATH: pkgs-sys-apps/coreutils-9.12-1.gpkg.tar
+MD5: 635b41728cfa5a1e150095e027491cf6
+PATH: pkgs-sys-apps/coreutils-9.12-3.gpkg.tar
 PROVIDES: x86_64: libstdbuf.so
-RDEPEND: sys-apps/acl dev-libs/openssl:0/3= sys-apps/attr virtual/libintl !<app-forensics/tct-1.18-r1 !<net-fs/netatalk-2.0.3-r4 !net-mail/base64 !sys-apps/mktemp !<sys-apps/sandbox-2.10-r4 !<sys-apps/shadow-4.19.0_rc1 !sys-apps/stat !<sys-apps/util-linux-2.13 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libacl.so.1 libattr.so.1 libc.so.6 libcrypto.so.3
+RDEPEND: sys-apps/acl dev-libs/openssl:0/4= sys-apps/attr virtual/libintl !<app-forensics/tct-1.18-r1 !<net-fs/netatalk-2.0.3-r4 !net-mail/base64 !sys-apps/mktemp !<sys-apps/sandbox-2.10-r4 !<sys-apps/shadow-4.19.0_rc1 !sys-apps/stat !<sys-apps/util-linux-2.13 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libacl.so.1 libattr.so.1 libc.so.6 libcrypto.so.4
 RESTRICT: test
-SHA1: 2a43eb36d2bdfd2e24d2b701f954a6d4a53ec777
-SIZE: 4567040
+SHA1: c98655283777af1d6c3b6a062bb5d2553c7f466f
+SIZE: 4628480
 USE: abi_x86_64 acl amd64 elibc_glibc kernel_linux nls openssl xattr
-MTIME: 1791061768
+MTIME: 1793682567
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
