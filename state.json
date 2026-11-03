@@ -321,6 +321,10 @@
    "path": "pkgs-dev-libs/boost-1.91.0-r3-1.gpkg.tar"
   },
   {
+   "at": 1793709692,
+   "path": "pkgs-dev-libs/capnproto-1.5.0-1.gpkg.tar"
+  },
+  {
    "at": 1792681346,
    "path": "pkgs-dev-libs/kirigami-app-components-1.0.2-1.gpkg.tar"
   },
@@ -1723,6 +1727,10 @@
   {
    "at": 1793694070,
    "path": "pkgs-net-libs/nodejs-26.12.1-6.gpkg.tar"
+  },
+  {
+   "at": 1793709692,
+   "path": "pkgs-net-libs/srt-1.5.4-r1-1.gpkg.tar"
   },
   {
    "at": 1793683100,
