@@ -229,6 +229,10 @@
    "path": "pkgs-app-admin/kio-admin-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793711862,
+   "path": "pkgs-app-admin/sudo-1.9.17_p2-r1-1.gpkg.tar"
+  },
+  {
    "at": 1793711550,
    "path": "pkgs-app-antivirus/clamav-1.5.4-2.gpkg.tar"
   },
@@ -1769,6 +1773,10 @@
    "path": "pkgs-net-misc/curl-8.23.0-r1-1.gpkg.tar"
   },
   {
+   "at": 1793711862,
+   "path": "pkgs-net-misc/freerdp-3.32.2-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-net-misc/kio-zeroconf-26.08.1-1.gpkg.tar"
   },
@@ -1879,6 +1887,10 @@
   {
    "at": 1793181146,
    "path": "pkgs-www-client/falkon-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1793711862,
+   "path": "pkgs-www-client/falkon-26.08.2-2.gpkg.tar"
   },
   {
    "at": 1793710627,
