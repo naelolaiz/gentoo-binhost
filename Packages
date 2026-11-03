@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793709692
-PACKAGES: 1602
+TIMESTAMP: 1793710316
+PACKAGES: 1605
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3172,6 +3172,31 @@ MTIME: 1793706423
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 8
+BUILD_TIME: 1793710193
+CPV: app-text/podofo-0.10.3-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/openssl:0/4= media-libs/fontconfig:1.0/1.0= media-libs/freetype:2/2= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= dev-libs/libxml2:2/16= media-libs/tiff:0/6= virtual/zlib:0/1=
+EAPI: 8
+IUSE: idn jpeg tiff png fontconfig test tools
+KEYWORDS: amd64 ~arm ~arm64 ~hppa ppc ppc64 ~sparc x86
+LICENSE: LGPL-2+
+MD5: b68107e6850f25dd78de893ff795a683
+PATH: pkgs-app-text/podofo-0.10.3-r1-8.gpkg.tar
+PROVIDES: x86_64: libpodofo.so.2
+RDEPEND: dev-libs/openssl:0/4= media-libs/fontconfig:1.0/1.0= media-libs/freetype:2/2= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= dev-libs/libxml2:2/16= media-libs/tiff:0/6= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libjpeg.so.62 libm.so.6 libpng16.so.16 libstdc++.so.6 libtiff.so.6 libxml2.so.16 libz.so.1
+RESTRICT: test
+SHA1: c2bde329fd6d08675e7e6260e7386ba6505acf7e
+SIZE: 1474560
+SLOT: 0/2
+USE: abi_x86_64 amd64 elibc_glibc fontconfig jpeg kernel_linux png tiff
+MTIME: 1793710194
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-util/glib-utils-2.80 virtual/pkgconfig dev-qt/qtbase:6 app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791123573
@@ -4279,25 +4304,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-arch/zstd dev-libs/openssl virtual/zlib app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1792989846
+BUILD_ID: 2
+BUILD_TIME: 1793709678
 CPV: dev-db/mysql-connector-c-26.10.0
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: >=app-arch/lz4-1.9.4:0/1.10.0-meson= app-arch/zstd:0/1= dev-libs/openssl:0/3= net-libs/libtirpc:0/3= >=virtual/zlib-1.2.13:0/1=
+DEPEND: >=app-arch/lz4-1.9.4:0/1.10.0-meson= app-arch/zstd:0/1= dev-libs/openssl:0/4= net-libs/libtirpc:0/3= >=virtual/zlib-1.2.13:0/1=
 EAPI: 8
 IUSE: fido2 kerberos ldap static-libs
 KEYWORDS: ~amd64 -arm ~arm64 -hppa -mips -ppc ~ppc64 ~riscv ~s390 ~sparc -x86 ~x64-macos ~x64-solaris
 LICENSE: GPL-2
-MD5: c6399913635648e83bb84c9973203518
-PATH: pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar
+MD5: 2f7b69dfb57e9cb04e534bc065bf2e03
+PATH: pkgs-dev-db/mysql-connector-c-26.10.0-2.gpkg.tar
 PROVIDES: x86_64: authentication_oci_client.so authentication_openid_connect_client.so libmysqlclient.so.24 mysql_native_password.so
-RDEPEND: >=app-arch/lz4-1.9.4:0/1.10.0-meson= app-arch/zstd:0/1= dev-libs/openssl:0/3= net-libs/libtirpc:0/3= >=virtual/zlib-1.2.13:0/1= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libgcc_s.so.1 libresolv.so.2 libssl.so.3 libstdc++.so.6 libz.so.1 libzstd.so.1
-SHA1: abef053268bd96c698fca9f151a8b1f68bfdf79d
+RDEPEND: >=app-arch/lz4-1.9.4:0/1.10.0-meson= app-arch/zstd:0/1= dev-libs/openssl:0/4= net-libs/libtirpc:0/3= >=virtual/zlib-1.2.13:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libgcc_s.so.1 libresolv.so.2 libssl.so.4 libstdc++.so.6 libz.so.1 libzstd.so.1
+SHA1: 9e1340efc3ec2898f0e55f776a893b0ece75e029
 SIZE: 5099520
 SLOT: 0/24
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792989857
+MTIME: 1793709691
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5322,25 +5347,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/libcrypt >=sys-libs/gdbm-1.10-r1 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1793597490
+BUILD_ID: 2
+BUILD_TIME: 1793709694
 CPV: dev-libs/cyrus-sasl-2.1.28-r6
 DEFINED_PHASES: compile configure install postinst prepare test
-DEPEND: net-mail/mailbase virtual/libcrypt:0/2= >=sys-libs/gdbm-1.10-r1:0/6=[abi_x86_64(-)] >=sys-libs/pam-0-r1[abi_x86_64(-)] >=dev-libs/openssl-1.0.1h-r2:0/3=[abi_x86_64(-)]
+DEPEND: net-mail/mailbase virtual/libcrypt:0/2= >=sys-libs/gdbm-1.10-r1:0/6=[abi_x86_64(-)] >=sys-libs/pam-0-r1[abi_x86_64(-)] >=dev-libs/openssl-1.0.1h-r2:0/4=[abi_x86_64(-)]
 EAPI: 8
 IUSE: authdaemond berkdb gdbm kerberos ldapdb openldap mysql ntlm pam postgres selinux sqlite srp ssl static-libs urandom abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: BSD-with-attribution
-MD5: d34706c3c164081c4c543e6bf3e2a615
-PATH: pkgs-dev-libs/cyrus-sasl-2.1.28-r6-1.gpkg.tar
+MD5: 5d183a76707e59c43468b6b4ac034df4
+PATH: pkgs-dev-libs/cyrus-sasl-2.1.28-r6-2.gpkg.tar
 PROVIDES: x86_64: libanonymous.so.3 libcrammd5.so.3 libdigestmd5.so.3 liblogin.so.3 libotp.so.3 libplain.so.3 libsasl2.so.3 libsasldb.so.3 libscram.so.3
-RDEPEND: net-mail/mailbase virtual/libcrypt:0/2= >=sys-libs/gdbm-1.10-r1:0/6=[abi_x86_64(-)] >=sys-libs/pam-0-r1[abi_x86_64(-)] >=dev-libs/openssl-1.0.1h-r2:0/3=[abi_x86_64(-)] virtual/tmpfiles >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.3 libgdbm.so.6 libpam.so.0
-SHA1: c18ab6d21dbd034d9bcc5a8c2399fd842322e985
+RDEPEND: net-mail/mailbase virtual/libcrypt:0/2= >=sys-libs/gdbm-1.10-r1:0/6=[abi_x86_64(-)] >=sys-libs/pam-0-r1[abi_x86_64(-)] >=dev-libs/openssl-1.0.1h-r2:0/4=[abi_x86_64(-)] virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.4 libgdbm.so.6 libpam.so.0
+SHA1: 34d984cad75fa79c328f270cad96ccbd0ce60b3b
 SIZE: 378880
 SLOT: 2
 USE: abi_x86_64 amd64 elibc_glibc gdbm kernel_linux pam ssl
-MTIME: 1793597492
+MTIME: 1793709696
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27399,9 +27424,9 @@ MTIME: 1791223771
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( ( dev-lang/python:3.14 dev-python/jinja2[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/jinja2[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/jinja2[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1793171245
+BDEPEND: || ( ( dev-lang/python:3.15 dev-python/jinja2[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/jinja2[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/jinja2[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/jinja2[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 2
+BUILD_TIME: 1793710157
 CPV: media-libs/libplacebo-7.387.0
 DEFINED_PHASES: compile configure install prepare setup test unpack
 DEPEND: media-libs/lcms:2[abi_x86_64(-)] media-libs/libglvnd[abi_x86_64(-)] media-libs/shaderc[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] >=dev-util/vulkan-headers-1.4 dev-libs/xxhash[abi_x86_64(-)]
@@ -27409,17 +27434,17 @@ EAPI: 8
 IUSE: +lcms libdovi llvm-libunwind +opengl +shaderc test unwind +vulkan +xxhash abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2.1+ || ( Apache-2.0 Boost-1.0 MIT ) public-domain MIT
-MD5: a6070d6caac75bf1f8466374fb47cdc7
-PATH: pkgs-media-libs/libplacebo-7.387.0-1.gpkg.tar
+MD5: 350ee160e89e1ae863fad024726fdc08
+PATH: pkgs-media-libs/libplacebo-7.387.0-2.gpkg.tar
 PROVIDES: x86_64: libplacebo.so.387
 RDEPEND: media-libs/lcms:2[abi_x86_64(-)] media-libs/libglvnd[abi_x86_64(-)] media-libs/shaderc[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 liblcms2.so.2 libm.so.6 libshaderc_shared.so.1 libstdc++.so.6 libvulkan.so.1
 RESTRICT: test
-SHA1: 80c5d87f40a1c1db984de4fd3bd364e7c655a332
+SHA1: e82c912623d02988768cc2be35425345c2390dca
 SIZE: 716800
 SLOT: 0/387
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux lcms opengl shaderc vulkan xxhash
-MTIME: 1793171246
+MTIME: 1793710158
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32281,6 +32306,30 @@ MTIME: 1793266673
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-libs/opencl-icd-loader media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793710143
+CPV: sci-ml/ggml-0.28.0-r1
+DEFINED_PHASES: compile configure install prepare pretend setup test
+DEPEND: media-libs/vulkan-loader dev-util/opencl-headers dev-util/vulkan-headers
+EAPI: 8
+IUSE: cpu_flags_x86_amx_bf16 cpu_flags_x86_amx_int8 cpu_flags_x86_amx_tile cpu_flags_x86_avx cpu_flags_x86_avx_vnni cpu_flags_x86_avx2 cpu_flags_x86_avx512_bf16 cpu_flags_x86_avx512bw cpu_flags_x86_avx512f cpu_flags_x86_avx512vbmi cpu_flags_x86_avx512_vnni cpu_flags_x86_bmi2 cpu_flags_x86_fma3 cpu_flags_x86_f16c cpu_flags_x86_sse4_2 cuda opencl openmp rocm test vulkan +amdgpu_targets_gfx908 +amdgpu_targets_gfx90a +amdgpu_targets_gfx942 +amdgpu_targets_gfx950 +amdgpu_targets_gfx1030 +amdgpu_targets_gfx1100 +amdgpu_targets_gfx1101 +amdgpu_targets_gfx1200 +amdgpu_targets_gfx1201 amdgpu_targets_gfx803 amdgpu_targets_gfx900 amdgpu_targets_gfx906 amdgpu_targets_gfx940 amdgpu_targets_gfx941 amdgpu_targets_gfx1010 amdgpu_targets_gfx1011 amdgpu_targets_gfx1012 amdgpu_targets_gfx1031 amdgpu_targets_gfx1102 amdgpu_targets_gfx1103 amdgpu_targets_gfx1150 amdgpu_targets_gfx1151
+KEYWORDS: ~amd64 ~arm64
+LICENSE: MIT
+MD5: 992238b09a7f2f5b9252829049947f07
+PATH: pkgs-sci-ml/ggml-0.28.0-r1-1.gpkg.tar
+PROVIDES: x86_64: libggml-base.so.0 libggml-cpu.so.0 libggml-opencl.so.0 libggml-vulkan.so.0 libggml.so.0
+RDEPEND: media-libs/vulkan-loader >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libOpenCL.so.1 libc.so.6 libgcc_s.so.1 libgomp.so.1 libm.so.6 libstdc++.so.6 libvulkan.so.1
+RESTRICT: test
+SHA1: 5865f3b56533f5ec08ce0237e822a52a3c1c0071
+SIZE: 9963520
+SLOT: 0/0.28.0
+USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux opencl openmp vulkan
+MTIME: 1793710145
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1793267552
@@ -33736,6 +33785,27 @@ SHA1: a9f720cee27038be1f5dbd99479ae12e1f095fe6
 SIZE: 256000
 USE: abi_x86_64 amd64 elibc_glibc gui kernel_linux
 MTIME: 1791281844
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( >=app-arch/xz-utils-5.4.0 app-arch/plzip app-arch/pdlzip app-arch/lzip )
+BUILD_ID: 1
+BUILD_TIME: 1793709667
+CPV: sys-fs/mtools-4.0.50
+DEFINED_PHASES: configure install unpack
+DEPEND: virtual/libiconv x11-libs/libICE x11-libs/libXau x11-libs/libSM x11-libs/libX11 x11-libs/libXt
+EAPI: 8
+IUSE: gui
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-3
+MD5: bbce0266cb2ef9bdea5cbbb0d5a7a8b7
+PATH: pkgs-sys-fs/mtools-4.0.50-1.gpkg.tar
+RDEPEND: virtual/libiconv x11-libs/libICE x11-libs/libXau x11-libs/libSM x11-libs/libX11 x11-libs/libXt >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libc.so.6
+SHA1: 1a7fb964f027308a4bb17770412238256c2d5e5c
+SIZE: 256000
+USE: abi_x86_64 amd64 elibc_glibc gui kernel_linux
+MTIME: 1793709668
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

@@ -313,6 +313,10 @@
    "path": "pkgs-dev-build/dolphin-plugins-makefileactions-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793710316,
+   "path": "pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar"
+  },
+  {
    "at": 1793686502,
    "path": "pkgs-dev-lang/ruby-3.3.13-1.gpkg.tar"
   },
@@ -323,6 +327,10 @@
   {
    "at": 1793709692,
    "path": "pkgs-dev-libs/capnproto-1.5.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793710316,
+   "path": "pkgs-dev-libs/cyrus-sasl-2.1.28-r6-1.gpkg.tar"
   },
   {
    "at": 1792681346,
@@ -1595,6 +1603,10 @@
   {
    "at": 1793597232,
    "path": "pkgs-media-libs/libheif-1.23.7-1.gpkg.tar"
+  },
+  {
+   "at": 1793710316,
+   "path": "pkgs-media-libs/libplacebo-7.387.0-1.gpkg.tar"
   },
   {
    "at": 1792681346,
