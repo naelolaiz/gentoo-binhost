@@ -1609,12 +1609,20 @@
    "path": "pkgs-net-libs/nodejs-26.12.1-5.gpkg.tar"
   },
   {
+   "at": 1793683100,
+   "path": "pkgs-net-misc/curl-8.23.0-r1-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-net-misc/kio-zeroconf-26.08.1-1.gpkg.tar"
   },
   {
    "at": 1793513848,
    "path": "pkgs-net-misc/networkmanager-1.58.1-r3-1.gpkg.tar"
+  },
+  {
+   "at": 1793683100,
+   "path": "pkgs-net-misc/wget-1.25.0-r3-1.gpkg.tar"
   },
   {
    "at": 1792907262,

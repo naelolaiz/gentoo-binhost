@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793682792
+TIMESTAMP: 1793683100
 PACKAGES: 1581
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -30699,25 +30699,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/perl virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1792987376
+BUILD_ID: 2
+BUILD_TIME: 1793682829
 CPV: net-misc/curl-8.23.0-r1
 DEFINED_PHASES: compile configure install postinst prepare test unpack
-DEPEND: >=virtual/zlib-1.2.5:0/1=[abi_x86_64(-)] >=net-dns/c-ares-1.16.0:0/2=[abi_x86_64(-)] >=net-libs/nghttp2-1.15.0:0/1.14=[abi_x86_64(-)] >=net-libs/nghttp3-1.1.0[abi_x86_64(-)] >=net-libs/libpsl-0.16.0[abi_x86_64(-)] >=net-libs/ngtcp2-1.20.0-r1[openssl,ssl,abi_x86_64(-)] >=dev-libs/openssl-3.0.0:0/3=[abi_x86_64(-)]
+DEPEND: >=virtual/zlib-1.2.5:0/1=[abi_x86_64(-)] >=net-dns/c-ares-1.16.0:0/2=[abi_x86_64(-)] >=net-libs/nghttp2-1.15.0:0/1.14=[abi_x86_64(-)] >=net-libs/nghttp3-1.1.0[abi_x86_64(-)] >=net-libs/libpsl-0.16.0[abi_x86_64(-)] >=net-libs/ngtcp2-1.20.0-r1[openssl,ssl,abi_x86_64(-)] >=dev-libs/openssl-3.0.0:0/4=[abi_x86_64(-)]
 EAPI: 8
 IUSE: +adns +alt-svc brotli debug ech +ftp gnutls gopher +hsts +http2 +http3 +httpsrr idn +imap kerberos ldap mbedtls +openssl +pop3 +psl +quic rustls sasl-scram +smtp ssh ssl static-libs test telnet +tftp +websockets zstd curl_ssl_gnutls curl_ssl_mbedtls +curl_ssl_openssl curl_ssl_rustls abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: BSD curl ISC
-MD5: 9041dbac8ab77f00023aad60a0bf0641
-PATH: pkgs-net-misc/curl-8.23.0-r1-1.gpkg.tar
+MD5: 7ef6cdde8d105d3268ef42a15712209a
+PATH: pkgs-net-misc/curl-8.23.0-r1-2.gpkg.tar
 PROVIDES: x86_64: libcurl.so.4
-RDEPEND: >=virtual/zlib-1.2.5:0/1=[abi_x86_64(-)] >=net-dns/c-ares-1.16.0:0/2=[abi_x86_64(-)] >=net-libs/nghttp2-1.15.0:0/1.14=[abi_x86_64(-)] >=net-libs/nghttp3-1.1.0[abi_x86_64(-)] >=net-libs/libpsl-0.16.0[abi_x86_64(-)] >=net-libs/ngtcp2-1.20.0-r1[openssl,ssl,abi_x86_64(-)] >=dev-libs/openssl-3.0.0:0/3=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcares.so.2 libcrypto.so.3 libnghttp2.so.14 libnghttp3.so.9 libngtcp2.so.16 libngtcp2_crypto_ossl.so.0 libpsl.so.5 libssl.so.3 libz.so.1
+RDEPEND: >=virtual/zlib-1.2.5:0/1=[abi_x86_64(-)] >=net-dns/c-ares-1.16.0:0/2=[abi_x86_64(-)] >=net-libs/nghttp2-1.15.0:0/1.14=[abi_x86_64(-)] >=net-libs/nghttp3-1.1.0[abi_x86_64(-)] >=net-libs/libpsl-0.16.0[abi_x86_64(-)] >=net-libs/ngtcp2-1.20.0-r1[openssl,ssl,abi_x86_64(-)] >=dev-libs/openssl-3.0.0:0/4=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcares.so.2 libcrypto.so.4 libnghttp2.so.14 libnghttp3.so.9 libngtcp2.so.16 libngtcp2_crypto_ossl.so.0 libpsl.so.5 libssl.so.4 libz.so.1
 RESTRICT: test
-SHA1: 5b0513310d581ace9c856b3ed9e3dfb1677e040f
+SHA1: 1961153ffcb37ad78c6ac551ef85c9f7200e3f3b
 SIZE: 1597440
 USE: abi_x86_64 adns alt-svc amd64 curl_ssl_openssl elibc_glibc ftp hsts http2 http3 httpsrr imap kernel_linux openssl pop3 psl quic smtp ssl tftp websockets
-MTIME: 1792987381
+MTIME: 1793682835
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30924,24 +30924,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( >=app-arch/xz-utils-5.4.0 app-arch/plzip app-arch/pdlzip app-arch/lzip ) app-arch/xz-utils dev-lang/perl sys-apps/texinfo virtual/pkgconfig sys-devel/gettext
-BUILD_ID: 1
-BUILD_TIME: 1791079107
+BUILD_ID: 2
+BUILD_TIME: 1793682910
 CPV: net-misc/wget-1.25.0-r3
 DEFINED_PHASES: configure prepare setup unpack
-DEPEND: dev-libs/libpcre2 net-libs/libpsl dev-libs/openssl:0/3= virtual/zlib:0/1=
+DEPEND: dev-libs/libpcre2 net-libs/libpsl dev-libs/openssl:0/4= virtual/zlib:0/1=
 EAPI: 8
 IUSE: debug gnutls idn libproxy metalink nls ntlm pcre +psl +ssl static test uuid zlib verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: GPL-3+
-MD5: 7eba0a3dd22127d3ed091b5dc9e649cb
-PATH: pkgs-net-misc/wget-1.25.0-r3-1.gpkg.tar
-RDEPEND: dev-libs/libpcre2 net-libs/libpsl dev-libs/openssl:0/3= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libpcre2-8.so.0 libpsl.so.5 libssl.so.3 libz.so.1
+MD5: 1316496d9ee83f4a68995884730b47f6
+PATH: pkgs-net-misc/wget-1.25.0-r3-2.gpkg.tar
+RDEPEND: dev-libs/libpcre2 net-libs/libpsl dev-libs/openssl:0/4= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libpcre2-8.so.0 libpsl.so.5 libssl.so.4 libz.so.1
 RESTRICT: test
-SHA1: 7a2b1e2e53c29458581bdbaf3f225c849f1d4ad7
-SIZE: 921600
+SHA1: e106c1ccaf8750f34dff6fbe0635923e6416e01d
+SIZE: 931840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls pcre psl ssl zlib
-MTIME: 1791079109
+MTIME: 1793682912
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
