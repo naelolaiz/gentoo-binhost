@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793706319
+TIMESTAMP: 1793706631
 PACKAGES: 1597
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -1092,26 +1092,26 @@ MTIME: 1792987950
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip
-BUILD_ID: 1
-BUILD_TIME: 1792307805
+BDEPEND: virtual/pkgconfig >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip
+BUILD_ID: 14
+BUILD_TIME: 1793706178
 CPV: app-crypt/gocryptfs-2.6.1-r1
 DEFINED_PHASES: compile install prepare test unpack
-DEPEND: dev-libs/openssl:0/3=
+DEPEND: dev-libs/openssl:0/4=
 EAPI: 8
 IUSE: test selinux verify-sig
 KEYWORDS: amd64 arm64 ~ppc64 ~riscv ~x86
 LICENSE: MIT Apache-2.0 BSD MIT
-MD5: 5cc8f38aa0eb2006dfb74610e963f33f
-PATH: pkgs-app-crypt/gocryptfs-2.6.1-r1-1.gpkg.tar
+MD5: 5b99aa64c40fe76c9a0aa802b1abfe27
+PATH: pkgs-app-crypt/gocryptfs-2.6.1-r1-14.gpkg.tar
 PROPERTIES: test_privileged
-RDEPEND: dev-libs/openssl:0/3= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3
+RDEPEND: dev-libs/openssl:0/4= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4
 RESTRICT: test test
-SHA1: 7a5b7969667d0f768d89602bd45aa72353b256e6
-SIZE: 5529600
+SHA1: f0f1888b2e89160b1e5519224902ceba1ae62df0
+SIZE: 5509120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792307807
+MTIME: 1793706180
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3126,26 +3126,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791226458
+BUILD_ID: 2
+BUILD_TIME: 1793706419
 CPV: app-text/mupdf-1.28.2
 DEFINED_PHASES: compile install postinst postrm preinst prepare
-DEPEND: dev-libs/gumbo:0/4= media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[truetype] media-libs/jbig2dec:0/0.20= media-libs/libpng:0/16= >=media-libs/libjpeg-turbo-1.5.3-r2:0/0.2= net-misc/curl >=dev-lang/mujs-1.3.8:0/1.3.9= >=media-libs/openjpeg-2.1:2/7= >=media-libs/freeglut-3.0.0 >=dev-libs/openssl-1.1:0/3= virtual/zlib:0/1= media-libs/libglvnd[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr x11-base/xorg-proto
+DEPEND: dev-libs/gumbo:0/4= media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[truetype] media-libs/jbig2dec:0/0.20= media-libs/libpng:0/16= >=media-libs/libjpeg-turbo-1.5.3-r2:0/0.2= net-misc/curl >=dev-lang/mujs-1.3.8:0/1.3.9= >=media-libs/openjpeg-2.1:2/7= >=media-libs/freeglut-3.0.0 >=dev-libs/openssl-1.1:0/4= virtual/zlib:0/1= media-libs/libglvnd[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr x11-base/xorg-proto
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: archive barcode brotli +javascript +jpeg2k opengl ssl X
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: AGPL-3
-MD5: 201903edd0bb693a856ca9f21bee0948
-PATH: pkgs-app-text/mupdf-1.28.2-1.gpkg.tar
+MD5: 7506ab851eac5c8874e14a8c1e3a567a
+PATH: pkgs-app-text/mupdf-1.28.2-2.gpkg.tar
 PROVIDES: x86_64: libmupdf.so.1.28.2
-RDEPEND: dev-libs/gumbo:0/4= media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[truetype] media-libs/jbig2dec:0/0.20= media-libs/libpng:0/16= >=media-libs/libjpeg-turbo-1.5.3-r2:0/0.2= net-misc/curl >=dev-lang/mujs-1.3.8:0/1.3.9= >=media-libs/openjpeg-2.1:2/7= >=media-libs/freeglut-3.0.0 >=dev-libs/openssl-1.1:0/3= virtual/zlib:0/1= media-libs/libglvnd[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libGL.so.1 libX11.so.6 libXext.so.6 libXrandr.so.2 libc.so.6 libcrypto.so.3 libfreetype.so.6 libgumbo.so.4 libharfbuzz.so.0 libjbig2dec.so.0 libjpeg.so.62 libm.so.6 libmujs.so.1.3.9 libopenjp2.so.7 libz.so.1
-SHA1: bb11bc407786145634f2d96d3943cb3f2528ab94
-SIZE: 37027840
+RDEPEND: dev-libs/gumbo:0/4= media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[truetype] media-libs/jbig2dec:0/0.20= media-libs/libpng:0/16= >=media-libs/libjpeg-turbo-1.5.3-r2:0/0.2= net-misc/curl >=dev-lang/mujs-1.3.8:0/1.3.9= >=media-libs/openjpeg-2.1:2/7= >=media-libs/freeglut-3.0.0 >=dev-libs/openssl-1.1:0/4= virtual/zlib:0/1= media-libs/libglvnd[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libGL.so.1 libX11.so.6 libXext.so.6 libXrandr.so.2 libc.so.6 libcrypto.so.4 libfreetype.so.6 libgumbo.so.4 libharfbuzz.so.0 libjbig2dec.so.0 libjpeg.so.62 libm.so.6 libmujs.so.1.3.9 libopenjp2.so.7 libz.so.1
+SHA1: e8a1b06691105f1a2094318411b9037c4e2c876e
+SIZE: 37109760
 SLOT: 0/1.28.2
 USE: X abi_x86_64 amd64 elibc_glibc javascript jpeg2k kernel_linux opengl ssl
-MTIME: 1791226462
+MTIME: 1793706423
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
