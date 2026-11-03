@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793708162
-PACKAGES: 1600
+TIMESTAMP: 1793709079
+PACKAGES: 1601
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -20309,6 +20309,32 @@ MTIME: 1793168646
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793708896
+CPV: kde-misc/kdeconnect-26.08.2-r1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/libei dev-libs/openssl:0/4= >=dev-libs/wayland-1.15.0 >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6[qml] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kpeople-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 sys-apps/dbus >=media-libs/pulseaudio-qt-1.4:0/5= x11-libs/libfakekey x11-libs/libX11 x11-libs/libXtst x11-libs/libxkbcommon dev-libs/wayland-protocols dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: bluetooth pulseaudio telephony X debug test selinux
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: GPL-2+
+MD5: 9cb9f5c2d68d8770b7258bc29fa9c6c8
+PATH: pkgs-kde-misc/kdeconnect-26.08.2-r1-1.gpkg.tar
+PROVIDES: x86_64: kdeconnect.so kdeconnect_battery.so kdeconnect_clipboard.so kdeconnect_connectivity_report.so kdeconnect_contacts.so kdeconnect_digitizer.so kdeconnect_findmyphone.so kdeconnect_findthisdevice.so kdeconnect_lockdevice.so kdeconnect_mousepad.so kdeconnect_mpriscontrol.so kdeconnect_mprisremote.so kdeconnect_notifications.so kdeconnect_pausemusic.so kdeconnect_ping.so kdeconnect_presenter.so kdeconnect_remotecommands.so kdeconnect_remotecontrol.so kdeconnect_remotekeyboard.so kdeconnect_remotesystemvolume.so kdeconnect_runcommand.so kdeconnect_screensaver_inhibit.so kdeconnect_sendnotifications.so kdeconnect_sftp.so kdeconnect_share.so kdeconnect_shareinputdevices.so kdeconnect_shareinputdevicesremote.so kdeconnect_sms.so kdeconnect_systemvolume.so kdeconnect_telephony.so kdeconnect_virtualmonitor.so kdeconnectfileitemaction.so libkdeconnect_findthisdevice_qmlhelper.so libkdeconnectcore.so.26 libkdeconnectdeclarativeplugin.so
+RDEPEND: dev-libs/libei dev-libs/openssl:0/4= >=dev-libs/wayland-1.15.0 >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6[qml] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kpeople-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 sys-apps/dbus >=media-libs/pulseaudio-qt-1.4:0/5= x11-libs/libfakekey x11-libs/libX11 x11-libs/libXtst x11-libs/libxkbcommon dev-libs/kirigami-addons:6 >=dev-qt/qt5compat-6.11.2:6[qml] >=dev-qt/qtmultimedia-6.11.2:6[qml] >=dev-qt/qttools-6.11.2:6[qdbus] >=kde-frameworks/kdeclarative-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 kde-plasma/libplasma:6 net-fs/sshfs || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6People.so.6 libKF6PulseAudioQt.so.5 libKF6Service.so.6 libKF6Solid.so.6 libKF6StatusNotifierItem.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libX11.so.6 libXtst.so.6 libc.so.6 libcrypto.so.4 libdbus-1.so.3 libei.so.1 libevdev.so.2 libfakekey.so.0 libstdc++.so.6 libwayland-client.so.0 libxkbcommon.so.0
+RESTRICT: test test
+SHA1: 38a814c437297f88112012fd3aa892c25de3a7cf
+SIZE: 2109440
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux pulseaudio
+MTIME: 1793708898
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.9.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.9.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791228611
@@ -23725,27 +23751,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1793316282
+BUILD_ID: 2
+BUILD_TIME: 1793708096
 CPV: kde-plasma/plasma-nm-6.8.2
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: dev-libs/openssl:0/3= dev-libs/qcoro[dbus] >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/modemmanager-qt-6.30.0:6 >=kde-frameworks/networkmanager-qt-6.30.0:6[-teamd] >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/libplasma-6.8.2:6/8= net-misc/mobile-broadband-provider-info net-misc/networkmanager[-teamd] >=net-misc/modemmanager-1.20 dev-qt/qtbase:6
+DEPEND: dev-libs/openssl:0/4= dev-libs/qcoro[dbus] >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/modemmanager-qt-6.30.0:6 >=kde-frameworks/networkmanager-qt-6.30.0:6[-teamd] >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/libplasma-6.8.2:6/8= net-misc/mobile-broadband-provider-info net-misc/networkmanager[-teamd] >=net-misc/modemmanager-1.20 dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: openconnect teamd debug test
 KEYWORDS: ~amd64 ~arm64
 LICENSE: GPL-2 LGPL-2.1
-MD5: 0bde191e44fab04e95b72bfc08ee4ad4
-PATH: pkgs-kde-plasma/plasma-nm-6.8.2-1.gpkg.tar
+MD5: e021da90c243436f30b3c04fe866e879
+PATH: pkgs-kde-plasma/plasma-nm-6.8.2-2.gpkg.tar
 PROVIDES: x86_64: kcm_cellular_network.so kcm_mobile_hotspot.so kcm_mobile_wifi.so kcm_mobile_wired.so kcm_networkmanagement.so libplasmanm_cellular.so libplasmanm_cellularplugin.so libplasmanm_editor.so libplasmanm_internal.so libplasmanm_internalplugin.so networkmanagement.so org.kde.plasma.networkmanagement.so plasmanetworkmanagement_fortisslvpnui.so plasmanetworkmanagement_iodineui.so plasmanetworkmanagement_l2tpui.so plasmanetworkmanagement_libreswanui.so plasmanetworkmanagement_openvpnui.so plasmanetworkmanagement_pptpui.so plasmanetworkmanagement_sshui.so plasmanetworkmanagement_sstpui.so plasmanetworkmanagement_strongswanui.so plasmanetworkmanagement_vpncui.so
-RDEPEND: dev-libs/openssl:0/3= dev-libs/qcoro[dbus] >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/modemmanager-qt-6.30.0:6 >=kde-frameworks/networkmanager-qt-6.30.0:6[-teamd] >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/libplasma-6.8.2:6/8= net-misc/mobile-broadband-provider-info net-misc/networkmanager[-teamd] dev-libs/kirigami-addons:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kquickcharts-6.30.0:6 >=kde-frameworks/prison-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma-nm:5 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6ModemManagerQt.so.6 libKF6NetworkManagerQt.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libPlasma.so.8 libQCoro6DBus.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6QuickWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libcrypto.so.3 libglib-2.0.so.0 libgobject-2.0.so.0 libnm.so.0 libqt6keychain.so.1 libstdc++.so.6
+RDEPEND: dev-libs/openssl:0/4= dev-libs/qcoro[dbus] >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/modemmanager-qt-6.30.0:6 >=kde-frameworks/networkmanager-qt-6.30.0:6[-teamd] >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/libplasma-6.8.2:6/8= net-misc/mobile-broadband-provider-info net-misc/networkmanager[-teamd] dev-libs/kirigami-addons:6 >=kde-frameworks/kdeclarative-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kquickcharts-6.30.0:6 >=kde-frameworks/prison-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma-nm:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6ModemManagerQt.so.6 libKF6NetworkManagerQt.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libPlasma.so.8 libQCoro6DBus.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6QuickWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libcrypto.so.4 libglib-2.0.so.0 libgobject-2.0.so.0 libnm.so.0 libqt6keychain.so.1 libstdc++.so.6
 RESTRICT: test
-SHA1: 51d0bb17ce13c01fb31e1845247b5eda7c0907a8
-SIZE: 2928640
+SHA1: 4997f54a5bd7f1b8e528f52667c7ac8812832f8c
+SIZE: 2918400
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793316284
+MTIME: 1793708098
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
