@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793598536
-PACKAGES: 1574
+TIMESTAMP: 1793682481
+PACKAGES: 1579
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1251,6 +1251,30 @@ SHA1: fe4311a6f504820463428fee46b27ce4ea4cdbb8
 SIZE: 1208320
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux libffi nls
 MTIME: 1792987783
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gettext
+BUILD_ID: 2
+BUILD_TIME: 1793682401
+CPV: app-crypt/rhash-1.4.6-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/openssl:0/4=[abi_x86_64(-)]
+EAPI: 8
+IUSE: cpu_flags_x86_sha debug nls ssl static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: 0BSD
+MD5: 08e32d6d47848f2421979edf495d46e8
+PATH: pkgs-app-crypt/rhash-1.4.6-r1-2.gpkg.tar
+PROVIDES: x86_64: librhash.so.1
+RDEPEND: dev-libs/openssl:0/4=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4
+SHA1: 51cb40632766d90d6446f7491498d65db073139e
+SIZE: 276480
+SLOT: 0/1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls ssl
+MTIME: 1793682402
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6382,6 +6406,31 @@ MTIME: 1791059490
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-lang/perl-5
+BUILD_ID: 1
+BUILD_TIME: 1793682092
+CPV: dev-libs/openssl-4.1.0
+DEFINED_PHASES: compile configure install postinst preinst prepare setup test unpack
+DEPEND: !<net-misc/openssh-9.2_p1-r3
+EAPI: 8
+IUSE: +asm cpu_flags_x86_sse2 fips ktls +quic rfc3779 sctp static-libs test tls-compression vanilla weak-ssl-ciphers abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: Apache-2.0
+MD5: cdfd343a3811f019d05c71900f32ab5d
+PATH: pkgs-dev-libs/openssl-4.1.0-1.gpkg.tar
+PDEPEND: app-misc/ca-certificates
+PROVIDES: x86_64: legacy.so libcrypto.so.4 libssl.so.4
+RDEPEND: !<net-misc/openssh-9.2_p1-r3 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: bb88a7efed1fb130537e0f88c42319d9b413fdb2
+SIZE: 8622080
+SLOT: 0/4
+USE: abi_x86_64 amd64 asm cpu_flags_x86_sse2 elibc_glibc kernel_linux quic
+MTIME: 1793682125
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791092233
@@ -7192,6 +7241,29 @@ SHA1: 4c4feaeec5384471faa55465899624aa4fbec740
 SIZE: 942080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791277482
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-libs/openssl:0/4= >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath]
+BUILD_ID: 3
+BUILD_TIME: 1793682291
+CPV: dev-perl/Net-SSLeay-1.960.0-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/openssl:0/4= >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath]
+EAPI: 8
+IUSE: minimal examples perl_features_debug perl_features_ithreads perl_features_quadmath test examples
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: Artistic-2
+MD5: 0d4910b11364250e9c79b10557c78ea0
+PATH: pkgs-dev-perl/Net-SSLeay-1.960.0-r1-3.gpkg.tar
+PROVIDES: x86_64: SSLeay.so
+RDEPEND: dev-libs/openssl:0/4= >=dev-lang/perl-5.38.2-r3[-perl_features_debug,-perl_features_ithreads,-perl_features_quadmath] dev-lang/perl:0/5.44= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libssl.so.4
+RESTRICT: test
+SHA1: 965c904364b9156f81c76d56fe833ccb0d11613a
+SIZE: 317440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793682293
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30178,6 +30250,30 @@ MTIME: 1791063162
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793682384
+CPV: net-libs/nghttp2-1.71.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=dev-libs/libxml2-2.7.7:2/16=[abi_x86_64(-)]
+EAPI: 8
+IUSE: debug hpack-tools systemd test utils xml abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: b27948c1963ff3565123de0e1dbbf74b
+PATH: pkgs-net-libs/nghttp2-1.71.0-1.gpkg.tar
+PROVIDES: x86_64: libnghttp2.so.14
+RDEPEND: >=dev-libs/libxml2-2.7.7:2/16=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: f60c9d972b7eede7a0911a696fa463b23135b8fb
+SIZE: 225280
+SLOT: 0/1.14
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux xml
+MTIME: 1793682385
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306
 BUILD_ID: 1
 BUILD_TIME: 1791058046
@@ -30201,26 +30297,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig >=app-portage/elt-patches-20250306
-BUILD_ID: 1
-BUILD_TIME: 1791059682
+BUILD_ID: 3
+BUILD_TIME: 1793682272
 CPV: net-libs/ngtcp2-1.25.0
 DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: >=dev-libs/openssl-3.5:0/3=[abi_x86_64(-)]
+DEPEND: >=dev-libs/openssl-3.5:0/4=[abi_x86_64(-)]
 EAPI: 8
 IUSE: gnutls +openssl +ssl abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~sparc x86 ~arm64-macos ~x64-macos
 LICENSE: MIT
-MD5: c16e64c3e7361f2ab91f2c85c9ee9c4d
-PATH: pkgs-net-libs/ngtcp2-1.25.0-1.gpkg.tar
+MD5: f15af103fdf2aea4d13159daa4e1ab2c
+PATH: pkgs-net-libs/ngtcp2-1.25.0-3.gpkg.tar
 PROVIDES: x86_64: libngtcp2.so.16 libngtcp2_crypto_ossl.so.0
-RDEPEND: >=dev-libs/openssl-3.5:0/3=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libssl.so.3
-SHA1: ad685ee0e0b0f436f91556e4abb1b2cb773d5c18
-SIZE: 286720
+RDEPEND: >=dev-libs/openssl-3.5:0/4=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libssl.so.4
+SHA1: ead725332964c382432520b0e36ab6849a3e74ba
+SIZE: 296960
 SLOT: 0/0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux openssl ssl
-MTIME: 1791059682
+MTIME: 1793682273
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33002,6 +33097,27 @@ SHA1: 96134d98d1e95b80829d72b8f2053e745bb0724d
 SIZE: 3317760
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791284139
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1793682243
+CPV: sys-devel/patch-2.8.1
+DEFINED_PHASES: configure install test unpack
+DEPEND: sys-apps/attr
+EAPI: 8
+IUSE: static test xattr verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+
+MD5: e93bf880d557d558617855a781d19606
+PATH: pkgs-sys-devel/patch-2.8.1-1.gpkg.tar
+RDEPEND: sys-apps/attr >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libattr.so.1 libc.so.6
+RESTRICT: test
+SHA1: 2afb6076f6d93f48eadac14ccae08734bcb21ae1
+SIZE: 174080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux xattr
+MTIME: 1793682244
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
