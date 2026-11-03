@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793686808
-PACKAGES: 1592
+TIMESTAMP: 1793687121
+PACKAGES: 1594
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5157,26 +5157,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-build/b2-5.1.0
-BUILD_ID: 1
-BUILD_TIME: 1793594183
+BUILD_ID: 2
+BUILD_TIME: 1793686857
 CPV: dev-libs/boost-1.91.0-r3
 DEFINED_PHASES: compile configure install postinst preinst prepare setup test
-DEPEND: dev-libs/openssl:0/3= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)]
+DEPEND: dev-libs/openssl:0/4= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)]
 EAPI: 8
 IUSE: bzip2 +context debug doc icu lzma +nls mpi numpy python +stacktrace test test-full tools zlib zstd python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: Boost-1.0
-MD5: 7db8e922f4c6ba41c79341e558a1884d
-PATH: pkgs-dev-libs/boost-1.91.0-r3-1.gpkg.tar
+MD5: c628d1bbfae5ee9aed4e52ee59d54ca2
+PATH: pkgs-dev-libs/boost-1.91.0-r3-2.gpkg.tar
 PROVIDES: x86_64: libboost_atomic.so.1.91.0 libboost_charconv.so.1.91.0 libboost_chrono.so.1.91.0 libboost_cobalt.so.1.91.0 libboost_cobalt_io.so.1.91.0 libboost_cobalt_io_ssl.so.1.91.0 libboost_container.so.1.91.0 libboost_context.so.1.91.0 libboost_contract.so.1.91.0 libboost_coroutine.so.1.91.0 libboost_date_time.so.1.91.0 libboost_fiber.so.1.91.0 libboost_filesystem.so.1.91.0 libboost_graph.so.1.91.0 libboost_iostreams.so.1.91.0 libboost_json.so.1.91.0 libboost_locale.so.1.91.0 libboost_log.so.1.91.0 libboost_log_setup.so.1.91.0 libboost_math_c99.so.1.91.0 libboost_math_c99f.so.1.91.0 libboost_math_c99l.so.1.91.0 libboost_math_tr1.so.1.91.0 libboost_math_tr1f.so.1.91.0 libboost_math_tr1l.so.1.91.0 libboost_nowide.so.1.91.0 libboost_prg_exec_monitor.so.1.91.0 libboost_process.so.1.91.0 libboost_program_options.so.1.91.0 libboost_python314.so.1.91.0 libboost_random.so.1.91.0 libboost_regex.so.1.91.0 libboost_serialization.so.1.91.0 libboost_stacktrace_addr2line.so.1.91.0 libboost_stacktrace_basic.so.1.91.0 libboost_stacktrace_noop.so.1.91.0 libboost_thread.so.1.91.0 libboost_timer.so.1.91.0 libboost_type_erasure.so.1.91.0 libboost_unit_test_framework.so.1.91.0 libboost_url.so.1.91.0 libboost_wave.so.1.91.0 libboost_wserialization.so.1.91.0
-RDEPEND: dev-libs/openssl:0/3= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.3 libgcc_s.so.1 libicudata.so.78 libicui18n.so.78 libicuuc.so.78 libm.so.6 libssl.so.3 libstdc++.so.6 libz.so.1
+RDEPEND: dev-libs/openssl:0/4= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.4 libgcc_s.so.1 libicudata.so.78 libicui18n.so.78 libicuuc.so.78 libm.so.6 libssl.so.4 libstdc++.so.6 libz.so.1
 RESTRICT: test
-SHA1: 97865934248dd68cfbaf0083576cff272f293c15
+SHA1: 317476ed79737fc94ab7d1f5de35f86313f0fff9
 SIZE: 19783680
 SLOT: 0/1.91.0
 USE: abi_x86_64 amd64 bzip2 context elibc_glibc icu kernel_linux nls python python_targets_python3_14 stacktrace zlib
-MTIME: 1793594225
+MTIME: 1793686892
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5767,6 +5767,29 @@ SIZE: 122880
 SLOT: 0/2
 USE: abi_x86_64 amd64 cxx elibc_glibc kernel_linux
 MTIME: 1791276756
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig || ( ( dev-lang/python:3.14 dev-python/jinja2[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/jinja2[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/jinja2[python_targets_python3_12(-)] ) ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793686912
+CPV: dev-libs/libei-1.6.0-r1
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: >=dev-libs/libevdev-1.9.902 >=sys-auth/elogind-237
+EAPI: 8
+IUSE: elogind systemd test
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: MIT
+MD5: 3da354c67b0bd9bb37f5170138e06862
+PATH: pkgs-dev-libs/libei-1.6.0-r1-1.gpkg.tar
+PROVIDES: x86_64: libei.so.1 libeis.so.1 liboeffis.so.1
+RDEPEND: >=dev-libs/libevdev-1.9.902 >=sys-auth/elogind-237 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libelogind.so.0 libevdev.so.2 libxkbcommon.so.0
+RESTRICT: test
+SHA1: 53e3143f2821295cee5c49ef4d5111678dcfe6d3
+SIZE: 194560
+USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux
+MTIME: 1793686913
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30700,6 +30723,30 @@ MTIME: 1793418941
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( ( dev-lang/python:3.14 >=dev-build/scons-4.4.0[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-build/scons-4.4.0[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-build/scons-4.4.0[python_targets_python3_12(-)] ) )
+BUILD_ID: 4
+BUILD_TIME: 1793686925
+CPV: net-libs/serf-1.3.10
+DEFINED_PHASES: compile install prepare setup test
+DEPEND: dev-libs/apr:1/1.7= dev-libs/apr-util:1/1= dev-libs/openssl:0/4= virtual/zlib:0/1=
+EAPI: 8
+IUSE: kerberos
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: Apache-2.0
+MD5: c3f94d4cb14a70b09a86099b329c94e6
+PATH: pkgs-net-libs/serf-1.3.10-4.gpkg.tar
+PROVIDES: x86_64: libserf-1.so.1
+RDEPEND: dev-libs/apr:1/1.7= dev-libs/apr-util:1/1= dev-libs/openssl:0/4= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libapr-1.so.0 libaprutil-1.so.0 libc.so.6 libcrypto.so.4 libssl.so.4 libz.so.1
+RESTRICT: test
+SHA1: 783a4d97080b6cfd7f370f03e49e0188223f6421
+SIZE: 112640
+SLOT: 1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793686926
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1792315801
@@ -31438,24 +31485,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791145289
+BUILD_ID: 2
+BUILD_TIME: 1793687075
 CPV: net-wireless/wpa_supplicant-2.12
 DEFINED_PHASES: compile configure install postinst prepare setup
-DEPEND: >=dev-libs/openssl-1.0.2k:0/3= sys-apps/dbus >=dev-libs/libnl-3.2:3 dev-qt/qtbase:6[gui,widgets] dev-qt/qtsvg:6 sys-libs/ncurses:0/6= sys-libs/readline:0/8=
+DEPEND: >=dev-libs/openssl-1.0.2k:0/4= sys-apps/dbus >=dev-libs/libnl-3.2:3 dev-qt/qtbase:6[gui,widgets] dev-qt/qtsvg:6 sys-libs/ncurses:0/6= sys-libs/readline:0/8=
 EAPI: 8
 IUSE: +ap broadcom-sta dbus eap-sim eapol-test +fils gui macsec +mbo +mesh p2p privsep readline selinux smartcard tkip uncommon-eap-types wep wps
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: || ( GPL-2 BSD )
-MD5: baefac3e8fc4a1be6feae76c0cf9c1c9
-PATH: pkgs-net-wireless/wpa_supplicant-2.12-1.gpkg.tar
-RDEPEND: >=dev-libs/openssl-1.0.2k:0/3= sys-apps/dbus >=dev-libs/libnl-3.2:3 dev-qt/qtbase:6[gui,widgets] dev-qt/qtsvg:6 sys-libs/ncurses:0/6= sys-libs/readline:0/8= net-wireless/wireless-regdb >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
-REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libcrypto.so.3 libdbus-1.so.3 libgcc_s.so.1 libnl-3.so.200 libnl-genl-3.so.200 libreadline.so.8 libssl.so.3 libstdc++.so.6
-SHA1: bd9427c63e48adf2f9e66e711eed7130c992f96a
-SIZE: 1863680
+MD5: 975b1eed199a2c5a5258d6ef1f3ce675
+PATH: pkgs-net-wireless/wpa_supplicant-2.12-2.gpkg.tar
+RDEPEND: >=dev-libs/openssl-1.0.2k:0/4= sys-apps/dbus >=dev-libs/libnl-3.2:3 dev-qt/qtbase:6[gui,widgets] dev-qt/qtsvg:6 sys-libs/ncurses:0/6= sys-libs/readline:0/8= net-wireless/wireless-regdb >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libcrypto.so.4 libdbus-1.so.3 libgcc_s.so.1 libnl-3.so.200 libnl-genl-3.so.200 libreadline.so.8 libssl.so.4 libstdc++.so.6
+SHA1: c49e96d861479bc2562d76a9282aa157c9e51139
+SIZE: 1945600
 USE: abi_x86_64 amd64 ap dbus elibc_glibc fils gui kernel_linux mbo mesh readline
-MTIME: 1791145290
+MTIME: 1793687076
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

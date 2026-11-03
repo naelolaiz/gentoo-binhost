@@ -293,6 +293,10 @@
    "path": "pkgs-dev-lang/ruby-3.3.13-1.gpkg.tar"
   },
   {
+   "at": 1793687121,
+   "path": "pkgs-dev-libs/boost-1.91.0-r3-1.gpkg.tar"
+  },
+  {
    "at": 1792681346,
    "path": "pkgs-dev-libs/kirigami-app-components-1.0.2-1.gpkg.tar"
   },
@@ -1679,6 +1683,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-net-p2p/ktorrent-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793687121,
+   "path": "pkgs-net-wireless/wpa_supplicant-2.12-1.gpkg.tar"
   },
   {
    "at": 1792681346,
