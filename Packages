@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793705094
-PACKAGES: 1595
+TIMESTAMP: 1793706319
+PACKAGES: 1597
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3229,26 +3229,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/perl app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1791221838
+BUILD_ID: 2
+BUILD_TIME: 1793706084
 CPV: app-text/qpdf-12.4.2
 DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: media-libs/libjpeg-turbo:0/0.2= virtual/zlib:0/1= dev-libs/openssl:0/3=
+DEPEND: media-libs/libjpeg-turbo:0/0.2= virtual/zlib:0/1= dev-libs/openssl:0/4=
 EAPI: 8
 IUSE: doc examples gnutls test zopfli verify-sig
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: || ( Apache-2.0 Artistic-2 )
-MD5: ba29c69f7d52f55b523929eaaf4b8636
-PATH: pkgs-app-text/qpdf-12.4.2-1.gpkg.tar
+MD5: 4d7806918eccae48196c44b8faf330b9
+PATH: pkgs-app-text/qpdf-12.4.2-2.gpkg.tar
 PROVIDES: x86_64: libqpdf.so.30
-RDEPEND: media-libs/libjpeg-turbo:0/0.2= virtual/zlib:0/1= dev-libs/openssl:0/3= >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libgcc_s.so.1 libjpeg.so.62 libstdc++.so.6 libz.so.1
+RDEPEND: media-libs/libjpeg-turbo:0/0.2= virtual/zlib:0/1= dev-libs/openssl:0/4= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libgcc_s.so.1 libjpeg.so.62 libstdc++.so.6 libz.so.1
 RESTRICT: test
-SHA1: ac4fd82041d540308c7f1608d5cb0ea84596a513
-SIZE: 3532800
+SHA1: f50d87cf8435d70ea57dbfc26c1b01a701da6414
+SIZE: 3788800
 SLOT: 0/12.1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791221840
+MTIME: 1793706086
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4661,6 +4661,31 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
 BUILD_ID: 1
+BUILD_TIME: 1793705872
+CPV: dev-lang/python-3.13.18_p1
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/4=
+EAPI: 8
+IUSE: bluetooth debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl test tk valgrind +llvm_slot_18 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: PSF-2
+MD5: 1911b5d6bce8782b55c2a00a88ad3959
+PATH: pkgs-dev-lang/python-3.13.18_p1-1.gpkg.tar
+PDEPEND: dev-python/ensurepip-pip
+PROVIDES: x86_64: _asyncio.cpython-313-x86_64-linux-gnu.so _bisect.cpython-313-x86_64-linux-gnu.so _blake2.cpython-313-x86_64-linux-gnu.so _bz2.cpython-313-x86_64-linux-gnu.so _codecs_cn.cpython-313-x86_64-linux-gnu.so _codecs_hk.cpython-313-x86_64-linux-gnu.so _codecs_iso2022.cpython-313-x86_64-linux-gnu.so _codecs_jp.cpython-313-x86_64-linux-gnu.so _codecs_kr.cpython-313-x86_64-linux-gnu.so _codecs_tw.cpython-313-x86_64-linux-gnu.so _contextvars.cpython-313-x86_64-linux-gnu.so _csv.cpython-313-x86_64-linux-gnu.so _ctypes.cpython-313-x86_64-linux-gnu.so _ctypes_test.cpython-313-x86_64-linux-gnu.so _curses.cpython-313-x86_64-linux-gnu.so _curses_panel.cpython-313-x86_64-linux-gnu.so _datetime.cpython-313-x86_64-linux-gnu.so _dbm.cpython-313-x86_64-linux-gnu.so _decimal.cpython-313-x86_64-linux-gnu.so _elementtree.cpython-313-x86_64-linux-gnu.so _gdbm.cpython-313-x86_64-linux-gnu.so _hashlib.cpython-313-x86_64-linux-gnu.so _heapq.cpython-313-x86_64-linux-gnu.so _interpchannels.cpython-313-x86_64-linux-gnu.so _interpqueues.cpython-313-x86_64-linux-gnu.so _interpreters.cpython-313-x86_64-linux-gnu.so _json.cpython-313-x86_64-linux-gnu.so _lsprof.cpython-313-x86_64-linux-gnu.so _lzma.cpython-313-x86_64-linux-gnu.so _md5.cpython-313-x86_64-linux-gnu.so _multibytecodec.cpython-313-x86_64-linux-gnu.so _multiprocessing.cpython-313-x86_64-linux-gnu.so _opcode.cpython-313-x86_64-linux-gnu.so _pickle.cpython-313-x86_64-linux-gnu.so _posixshmem.cpython-313-x86_64-linux-gnu.so _posixsubprocess.cpython-313-x86_64-linux-gnu.so _queue.cpython-313-x86_64-linux-gnu.so _random.cpython-313-x86_64-linux-gnu.so _sha1.cpython-313-x86_64-linux-gnu.so _sha2.cpython-313-x86_64-linux-gnu.so _sha3.cpython-313-x86_64-linux-gnu.so _socket.cpython-313-x86_64-linux-gnu.so _sqlite3.cpython-313-x86_64-linux-gnu.so _ssl.cpython-313-x86_64-linux-gnu.so _statistics.cpython-313-x86_64-linux-gnu.so _struct.cpython-313-x86_64-linux-gnu.so _testbuffer.cpython-313-x86_64-linux-gnu.so _testcapi.cpython-313-x86_64-linux-gnu.so _testclinic.cpython-313-x86_64-linux-gnu.so _testclinic_limited.cpython-313-x86_64-linux-gnu.so _testexternalinspection.cpython-313-x86_64-linux-gnu.so _testimportmultiple.cpython-313-x86_64-linux-gnu.so _testinternalcapi.cpython-313-x86_64-linux-gnu.so _testlimitedcapi.cpython-313-x86_64-linux-gnu.so _testmultiphase.cpython-313-x86_64-linux-gnu.so _testsinglephase.cpython-313-x86_64-linux-gnu.so _uuid.cpython-313-x86_64-linux-gnu.so _xxtestfuzz.cpython-313-x86_64-linux-gnu.so _zoneinfo.cpython-313-x86_64-linux-gnu.so array.cpython-313-x86_64-linux-gnu.so binascii.cpython-313-x86_64-linux-gnu.so cmath.cpython-313-x86_64-linux-gnu.so fcntl.cpython-313-x86_64-linux-gnu.so grp.cpython-313-x86_64-linux-gnu.so libpython3.13.so.1.0 math.cpython-313-x86_64-linux-gnu.so mmap.cpython-313-x86_64-linux-gnu.so pyexpat.cpython-313-x86_64-linux-gnu.so readline.cpython-313-x86_64-linux-gnu.so resource.cpython-313-x86_64-linux-gnu.so select.cpython-313-x86_64-linux-gnu.so syslog.cpython-313-x86_64-linux-gnu.so termios.cpython-313-x86_64-linux-gnu.so unicodedata.cpython-313-x86_64-linux-gnu.so xxlimited.cpython-313-x86_64-linux-gnu.so xxlimited_35.cpython-313-x86_64-linux-gnu.so xxsubtype.cpython-313-x86_64-linux-gnu.so zlib.cpython-313-x86_64-linux-gnu.so
+RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/4= dev-lang/python-exec[python_targets_python3_13(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libb2.so.1 libbz2.so.1 libc.so.6 libcrypto.so.4 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.4 libtinfow.so.6 libuuid.so.1 libz.so.1
+RESTRICT: test
+SHA1: ba3f53c0af640145544d839f2460606f9425e31d
+SIZE: 11909120
+SLOT: 3.13
+USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_18 ncurses readline sqlite ssl
+MTIME: 1793705876
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
+BUILD_ID: 1
 BUILD_TIME: 1793073779
 CPV: dev-lang/python-3.14.10
 DEFINED_PHASES: compile configure install prepare pretend setup test unpack
@@ -5834,6 +5859,30 @@ SHA1: bcf998f23d466f89d66624ea7b211319c3155be4
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792728566
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-portage/elt-patches-20250306
+BUILD_ID: 2
+BUILD_TIME: 1793705508
+CPV: dev-libs/libevent-2.1.13
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=dev-libs/openssl-1.0.1h-r2:0/4=[abi_x86_64(-)]
+EAPI: 8
+IUSE: +clock-gettime debug malloc-replacement +ssl static-libs test verbose-debug abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 340fd6e4b2138d994903126e618b98b6
+PATH: pkgs-dev-libs/libevent-2.1.13-2.gpkg.tar
+PROVIDES: x86_64: libevent-2.1.so.7 libevent_core-2.1.so.7 libevent_extra-2.1.so.7 libevent_openssl-2.1.so.7 libevent_pthreads-2.1.so.7
+RDEPEND: >=dev-libs/openssl-1.0.1h-r2:0/4=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libssl.so.4
+RESTRICT: test
+SHA1: 9873e116d047a81d876373b9b29b7b0e8c9ef0c6
+SIZE: 430080
+SLOT: 0/2.1-7
+USE: abi_x86_64 amd64 clock-gettime elibc_glibc kernel_linux ssl
+MTIME: 1793705509
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27913,24 +27962,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1793596078
+BUILD_ID: 2
+BUILD_TIME: 1793705581
 CPV: media-libs/opusfile-0.12-r2
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/3=[abi_x86_64(-)]
+DEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/4=[abi_x86_64(-)]
 EAPI: 8
 IUSE: doc fixed-point +float +http static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: BSD
-MD5: 2c3ed25cd24af85e84ed70209c28d85d
-PATH: pkgs-media-libs/opusfile-0.12-r2-1.gpkg.tar
+MD5: 68fc7e7176afc5e21668f964784a7d73
+PATH: pkgs-media-libs/opusfile-0.12-r2-2.gpkg.tar
 PROVIDES: x86_64: libopusfile.so.0 libopusurl.so.0
-RDEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/3=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libm.so.6 libogg.so.0 libopus.so.0 libssl.so.3
-SHA1: f45f1559ee41120c308544d891156e5bc69303b6
+RDEPEND: media-libs/libogg[abi_x86_64(-)] media-libs/opus[abi_x86_64(-)] dev-libs/openssl:0/4=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libm.so.6 libogg.so.0 libopus.so.0 libssl.so.4
+SHA1: 9c56d03a2f4aa464110ac9c31e9b8cbaa915423e
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc float http kernel_linux
-MTIME: 1793596079
+MTIME: 1793705582
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30469,25 +30518,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/perl virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1793596280
+BUILD_ID: 2
+BUILD_TIME: 1793705780
 CPV: net-libs/libwebsockets-5.1.0
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/3=
+DEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/4=
 EAPI: 8
 IUSE: access-log caps cgi client dbus extensions generic-sessions http-proxy http2 ipv6 +lejp libev libevent libuv mbedtls peer-limits server-status smtp socks5 sqlite3 ssl threads zip
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: MIT
-MD5: 36b234f2b043fcf716ad2b4377ec295e
-PATH: pkgs-net-libs/libwebsockets-5.1.0-1.gpkg.tar
+MD5: a1bb2f58dc1f99cff9b8e38131dc58b7
+PATH: pkgs-net-libs/libwebsockets-5.1.0-2.gpkg.tar
 PROVIDES: x86_64: libwebsockets.so.23
-RDEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/3= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcap.so.2 libcrypto.so.3 libdbus-1.so.3 libssl.so.3
-SHA1: 93fc92789fac67a71cc4e3eaaf2a91622f7c8300
+RDEPEND: virtual/zlib:0/1= sys-apps/dbus dev-libs/openssl:0/4= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcap.so.2 libcrypto.so.4 libdbus-1.so.3 libssl.so.4
+SHA1: 3242fe1ef43f86a8208507ba9db56a56fc698359
 SIZE: 1054720
 SLOT: 0/22
 USE: abi_x86_64 amd64 dbus elibc_glibc ipv6 kernel_linux lejp ssl
-MTIME: 1793596282
+MTIME: 1793705782
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31192,24 +31241,24 @@ MTIME: 1793682678
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BUILD_ID: 1
-BUILD_TIME: 1792305591
+BUILD_ID: 2
+BUILD_TIME: 1793705541
 CPV: net-misc/socat-1.8.1.3
 DEFINED_PHASES: configure install test
-DEPEND: >=dev-libs/openssl-3:0/3= sys-libs/readline:0/8=
+DEPEND: >=dev-libs/openssl-3:0/4= sys-libs/readline:0/8=
 EAPI: 8
 IUSE: ipv6 readline ssl tcpd
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
 LICENSE: GPL-2
-MD5: 8fc1c3430e10967074eb6f763ff265e9
-PATH: pkgs-net-misc/socat-1.8.1.3-1.gpkg.tar
-RDEPEND: >=dev-libs/openssl-3:0/3= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libcrypto.so.3 libreadline.so.8 libssl.so.3
+MD5: e70a0adc2f4cb9a3e2b34ba6435fabc9
+PATH: pkgs-net-misc/socat-1.8.1.3-2.gpkg.tar
+RDEPEND: >=dev-libs/openssl-3:0/4= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libreadline.so.8 libssl.so.4
 RESTRICT: test
-SHA1: 54101bb0f752839db0ea2da00fe5d2a08c858f4c
+SHA1: bd3e4a791aec60b73ec87d9c686ed0f481d869ae
 SIZE: 430080
 USE: abi_x86_64 amd64 elibc_glibc ipv6 kernel_linux readline ssl
-MTIME: 1792305593
+MTIME: 1793705542
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
