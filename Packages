@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1793710627
+TIMESTAMP: 1793711550
 PACKAGES: 1606
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -466,26 +466,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.90.0:* >=dev-lang/rust-1.90.0:* ) app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1792317223
+BUILD_ID: 3
+BUILD_TIME: 1793710877
 CPV: app-antivirus/clamav-1.5.4
 DEFINED_PHASES: compile configure install postinst prepare setup test unpack
-DEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/3= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack
+DEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/4= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack
 EAPI: 8
 IUSE: doc clamonacc +clamapp experimental libclamav-only milter rar selinux +system-mspack systemd test debug
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: Apache-2.0 BSD BSD-2 GPL-2 ISC MIT UoI-NCSA ZLIB public-domain MPL-2.0 Unicode-3.0
-MD5: 85342d7c06cc5051d259de47e41e362f
-PATH: pkgs-app-antivirus/clamav-1.5.4-2.gpkg.tar
+MD5: 347044a42ffc3853bfef9569552f70e1
+PATH: pkgs-app-antivirus/clamav-1.5.4-3.gpkg.tar
 PROVIDES: x86_64: libclamav.so.12 libfreshclam.so.4
-RDEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/3= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack virtual/tmpfiles >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.3 libcurl.so.4 libgcc_s.so.1 libjson-c.so.5 libm.so.6 libmspack.so.0 libncurses.so.6 libpcre2-8.so.0 libssl.so.3 libtinfo.so.6 libxml2.so.16 libz.so.1
+RDEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/4= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.4 libcurl.so.4 libgcc_s.so.1 libjson-c.so.5 libm.so.6 libmspack.so.0 libncurses.so.6 libpcre2-8.so.0 libssl.so.4 libtinfo.so.6 libxml2.so.16 libz.so.1
 RESTRICT: test
-SHA1: 815ec36753c726770993b3525ec5e7a8871d61e8
+SHA1: fcdc6071d499c87b7ac3443a0a05cd49ec4b1b11
 SIZE: 30986240
 SLOT: 0/sts
 USE: abi_x86_64 amd64 clamapp elibc_glibc kernel_linux system-mspack
-MTIME: 1792317229
+MTIME: 1793710884
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1162,25 +1162,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1791544138
+BUILD_ID: 2
+BUILD_TIME: 1793711153
 CPV: app-crypt/keysmith-26.08.2
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-libs/kirigami-addons-1.7.0:6 dev-libs/libsodium:0/26= dev-libs/openssl:0/3= >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
+DEPEND: >=dev-libs/kirigami-addons-1.7.0:6 dev-libs/libsodium:0/26= dev-libs/openssl:0/4= >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: debug test
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~x86
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
 LICENSE: GPL-3+
-MD5: 6be5044d14004e7f6d0b9370984cfe93
-PATH: pkgs-app-crypt/keysmith-26.08.2-1.gpkg.tar
-RDEPEND: >=dev-libs/kirigami-addons-1.7.0:6 dev-libs/libsodium:0/26= dev-libs/openssl:0/3= >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6QuickControls2.so.6 libQt6Widgets.so.6 libc.so.6 libcrypto.so.3 libsodium.so.26 libstdc++.so.6
+MD5: a297218e1289430d1bcf02273fe120e1
+PATH: pkgs-app-crypt/keysmith-26.08.2-2.gpkg.tar
+RDEPEND: >=dev-libs/kirigami-addons-1.7.0:6 dev-libs/libsodium:0/26= dev-libs/openssl:0/4= >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6QuickControls2.so.6 libQt6Widgets.so.6 libc.so.6 libcrypto.so.4 libsodium.so.26 libstdc++.so.6
 RESTRICT: test
-SHA1: 2810629e6796daae057585f6e1c821198337c13d
-SIZE: 378880
+SHA1: 73d96c2d3fa7c1a93ebfb5bb717700dd71f0cdf7
+SIZE: 389120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791544140
+MTIME: 1793711154
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29808,27 +29808,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-build/meson-1.3.0 virtual/pkgconfig dev-python/docutils dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 27
-BUILD_TIME: 1793171616
+BUILD_ID: 30
+BUILD_TIME: 1793711243
 CPV: media-video/mpv-0.41.0-r2
 DEFINED_PHASES: compile configure install postinst postrm preinst setup test
-DEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers >=dev-libs/wayland-protocols-1.41
+DEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/61.63.63=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers >=dev-libs/wayland-protocols-1.41
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
-IUSE: +X +alsa aqua archive bluray cdda +cli coreaudio debug +drm dvb dvd +egl gamepad +iconv jack javascript jpeg lcms libcaca +libmpv +lua nvenc openal pipewire pulseaudio rubberband sdl selinux sixel sndio soc test tools +uchardet vaapi vdpau +vulkan wayland xv zimg zlib lua_single_target_luajit lua_single_target_lua5-1 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+IUSE: +X +alsa aqua archive bluray cdda +cli coreaudio debug +drm dvb dvd +egl gamepad +iconv jack javascript jpeg lcms libcaca +libmpv +lua nvenc openal pipewire pulseaudio rubberband sdl selinux sixel sndio soc test tools +uchardet vaapi vdpau +vulkan wayland xv zimg zlib lua_single_target_luajit lua_single_target_lua5-1 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
 KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv x86
 LICENSE: LGPL-2.1+ GPL-2+ BSD ISC MIT
-MD5: 242498754da0ff41dd9932b75a9d7c04
-PATH: pkgs-media-video/mpv-0.41.0-r2-27.gpkg.tar
+MD5: 16449abe35fc524ca8a421182f0f6523
+PATH: pkgs-media-video/mpv-0.41.0-r2-30.gpkg.tar
 PROVIDES: x86_64: libmpv.so.2
-RDEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/60.62.62=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libEGL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXfixes.so.3 libXpresent.so.1 libXrandr.so.2 libXss.so.1 libXv.so.1 libasound.so.2 libass.so.9 libavcodec.so.62 libavdevice.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libbluray.so.3 libc.so.6 libcdio.so.21 libcdio_cdda.so.2 libcdio_paranoia.so.2 libdisplay-info.so.4 libdrm.so.2 libdvdnav.so.4 libgbm.so.1 libjack.so.0 libjpeg.so.62 liblcms2.so.2 libluajit-5.1.so.2 libm.so.6 libopenal.so.1 libpipewire-0.3.so.0 libplacebo.so.387 libpulse.so.0 librubberband.so.3 libswresample.so.6 libswscale.so.9 libuchardet.so.0 libvulkan.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libz.so.1
+RDEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.349.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/61.63.63=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] dev-libs/wayland x11-libs/libxkbcommon virtual/zlib:0/1= dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libEGL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXfixes.so.3 libXpresent.so.1 libXrandr.so.2 libXss.so.1 libXv.so.1 libasound.so.2 libass.so.9 libavcodec.so.63 libavdevice.so.63 libavfilter.so.12 libavformat.so.63 libavutil.so.61 libbluray.so.3 libc.so.6 libcdio.so.21 libcdio_cdda.so.2 libcdio_paranoia.so.2 libdisplay-info.so.4 libdrm.so.2 libdvdnav.so.4 libgbm.so.1 libjack.so.0 libjpeg.so.62 liblcms2.so.2 libluajit-5.1.so.2 libm.so.6 libopenal.so.1 libpipewire-0.3.so.0 libplacebo.so.387 libpulse.so.0 librubberband.so.3 libswresample.so.7 libswscale.so.10 libuchardet.so.0 libvulkan.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libz.so.1
 RESTRICT: test
-SHA1: 50d7668d3028062a9d867336c806c1072e86c138
+SHA1: 07c03f8d5d040a079142f3c60f460203147e7f0a
 SIZE: 3061760
 SLOT: 0/2
 USE: X abi_x86_64 alsa amd64 bluray cdda cli drm dvb dvd egl elibc_glibc gamepad iconv jack jpeg kernel_linux lcms libmpv lua lua_single_target_luajit openal pipewire pulseaudio python_single_target_python3_14 rubberband tools uchardet vulkan wayland xv zlib
-MTIME: 1793171617
+MTIME: 1793711245
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30378,26 +30378,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1791533440
+BUILD_ID: 2
+BUILD_TIME: 1793711402
 CPV: net-libs/libktorrent-26.08.2
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-libs/gmp-6.0.0a:0/10.4= >=dev-libs/openssl-3:0/3= >=dev-qt/qtbase-6.11.2:6[network,xml] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=dev-libs/boost-1.71 dev-qt/qtbase:6
+DEPEND: >=dev-libs/gmp-6.0.0a:0/10.4= >=dev-libs/openssl-3:0/4= >=dev-qt/qtbase-6.11.2:6[network,xml] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=dev-libs/boost-1.71 dev-qt/qtbase:6
 EAPI: 8
 IUSE: xfs debug test
 KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
 LICENSE: GPL-2+
-MD5: 2147d2d09b4abfad7f964d817922926a
-PATH: pkgs-net-libs/libktorrent-26.08.2-1.gpkg.tar
+MD5: 98eb8a9ec1ac2dda7da2744b1931eeab
+PATH: pkgs-net-libs/libktorrent-26.08.2-2.gpkg.tar
 PROVIDES: x86_64: libKTorrent6.so.6
-RDEPEND: >=dev-libs/gmp-6.0.0a:0/10.4= >=dev-libs/openssl-3:0/3= >=dev-qt/qtbase-6.11.2:6[network,xml] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 !dev-libs/botan[gmp(-)] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libKF6Archive.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libQt6Core.so.6 libQt6Network.so.6 libQt6Xml.so.6 libc.so.6 libcrypto.so.3 libgcc_s.so.1 libgmp.so.10 libm.so.6 libstdc++.so.6
+RDEPEND: >=dev-libs/gmp-6.0.0a:0/10.4= >=dev-libs/openssl-3:0/4= >=dev-qt/qtbase-6.11.2:6[network,xml] >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 !dev-libs/botan[gmp(-)] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libQt6Core.so.6 libQt6Network.so.6 libQt6Xml.so.6 libc.so.6 libcrypto.so.4 libgcc_s.so.1 libgmp.so.10 libm.so.6 libstdc++.so.6
 RESTRICT: test
-SHA1: d75f79017b0600003fec6aff4fef03f2f55fae6d
-SIZE: 1003520
+SHA1: 0557018c6e8664e75cf2496885f7b1d757191303
+SIZE: 1024000
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791533442
+MTIME: 1793711403
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30496,26 +30497,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 5
-BUILD_TIME: 1793175702
+BUILD_ID: 6
+BUILD_TIME: 1793711270
 CPV: net-libs/libquotient-0.9.6.1
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-libs/olm dev-libs/openssl:0/3= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.11.3=[gui,network,sql,ssl] dev-qt/qtmultimedia:6
+DEPEND: dev-libs/olm dev-libs/openssl:0/4= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.11.3=[gui,network,sql,ssl] dev-qt/qtmultimedia:6
 EAPI: 8
 IUSE: test
 KEYWORDS: amd64 arm64 ~ppc64 ~x86
 LICENSE: LGPL-2+
-MD5: ab2faa57a1b3b67f773e4954c123960c
-PATH: pkgs-net-libs/libquotient-0.9.6.1-5.gpkg.tar
+MD5: 498b32f4d7b5bc198f5da7ea233231ce
+PATH: pkgs-net-libs/libquotient-0.9.6.1-6.gpkg.tar
 PROVIDES: x86_64: libQuotientQt6.so.0.9
-RDEPEND: dev-libs/olm dev-libs/openssl:0/3= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.11.3=[gui,network,sql,ssl] dev-qt/qtmultimedia:6 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Sql.so.6 libc.so.6 libcrypto.so.3 libm.so.6 libolm.so.3 libqt6keychain.so.1 libstdc++.so.6
+RDEPEND: dev-libs/olm dev-libs/openssl:0/4= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.11.3=[gui,network,sql,ssl] dev-qt/qtmultimedia:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Sql.so.6 libc.so.6 libcrypto.so.4 libm.so.6 libolm.so.3 libqt6keychain.so.1 libstdc++.so.6
 RESTRICT: test
-SHA1: b56588b48b9ac8cbb2a9bc8d10b0190c02679ff2
+SHA1: e7540a018130aa79ff6a184363c42a84f8e984ad
 SIZE: 1341440
 SLOT: 0/0.9.6.1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793175703
+MTIME: 1793711271
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

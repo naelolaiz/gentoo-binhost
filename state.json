@@ -229,6 +229,10 @@
    "path": "pkgs-app-admin/kio-admin-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793711550,
+   "path": "pkgs-app-antivirus/clamav-1.5.4-2.gpkg.tar"
+  },
+  {
    "at": 1793683417,
    "path": "pkgs-app-arch/libarchive-3.8.11-1.gpkg.tar"
   },
@@ -259,6 +263,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-app-crypt/keysmith-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793711550,
+   "path": "pkgs-app-crypt/keysmith-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -1661,6 +1669,10 @@
    "path": "pkgs-media-video/mpv-0.41.0-r2-25.gpkg.tar"
   },
   {
+   "at": 1793711550,
+   "path": "pkgs-media-video/mpv-0.41.0-r2-27.gpkg.tar"
+  },
+  {
    "at": 1793174662,
    "path": "pkgs-media-video/obs-studio-33.0.0-1.gpkg.tar"
   },
@@ -1703,6 +1715,14 @@
   {
    "at": 1792907262,
    "path": "pkgs-net-libs/libktorrent-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793711550,
+   "path": "pkgs-net-libs/libktorrent-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1793711550,
+   "path": "pkgs-net-libs/libquotient-0.9.6.1-5.gpkg.tar"
   },
   {
    "at": 1793686502,
