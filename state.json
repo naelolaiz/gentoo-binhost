@@ -289,6 +289,10 @@
    "path": "pkgs-dev-build/dolphin-plugins-makefileactions-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1793686502,
+   "path": "pkgs-dev-lang/ruby-3.3.13-1.gpkg.tar"
+  },
+  {
    "at": 1792681346,
    "path": "pkgs-dev-libs/kirigami-app-components-1.0.2-1.gpkg.tar"
   },
@@ -1615,6 +1619,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-net-libs/libktorrent-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793686502,
+   "path": "pkgs-net-libs/libssh-0.12.2-1.gpkg.tar"
   },
   {
    "at": 1793682481,
