@@ -1193,6 +1193,10 @@
    "path": "pkgs-kde-frameworks/kfilemetadata-6.30.0-1.gpkg.tar"
   },
   {
+   "at": 1793697421,
+   "path": "pkgs-kde-frameworks/kfilemetadata-6.31.0-1.gpkg.tar"
+  },
+  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kglobalaccel-6.30.0-1.gpkg.tar"
   },
@@ -1457,6 +1461,10 @@
    "path": "pkgs-kde-plasma/kdesu-gui-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1793697421,
+   "path": "pkgs-kde-plasma/kpipewire-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1793167368,
    "path": "pkgs-kde-plasma/kscreen-6.8.1-1.gpkg.tar"
   },
@@ -1563,6 +1571,10 @@
   {
    "at": 1793595982,
    "path": "pkgs-media-libs/opencv-4.14.0-1.gpkg.tar"
+  },
+  {
+   "at": 1793697421,
+   "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-1.gpkg.tar"
   },
   {
    "at": 1792994542,
