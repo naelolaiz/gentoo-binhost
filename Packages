@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793735235
-PACKAGES: 1598
+TIMESTAMP: 1793763948
+PACKAGES: 1600
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -30636,6 +30636,28 @@ MTIME: 1791058047
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1793763614
+CPV: net-libs/nghttp3-1.19.0
+DEFINED_PHASES: compile configure install prepare test unpack
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: f19638464be662d00f90ee1f7ea7b4bc
+PATH: pkgs-net-libs/nghttp3-1.19.0-1.gpkg.tar
+PROVIDES: x86_64: libnghttp3.so.9
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 5607301c4468f746e440e6549e9881cc828901ff
+SIZE: 153600
+SLOT: 0/0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793763615
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig >=app-portage/elt-patches-20250306
 BUILD_ID: 3
 BUILD_TIME: 1793682272
@@ -34086,6 +34108,29 @@ SIZE: 1187840
 SLOT: 0/8
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux unicode
 MTIME: 1791057879
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793763667
+CPV: sys-libs/readline-8.3_p6-r1
+DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
+DEPEND: >=sys-libs/ncurses-5.9-r3:0/6=[unicode(+),abi_x86_64(-)]
+EAPI: 8
+IUSE: static-libs +unicode utils abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+
+MD5: 85535545eeb22a18e58e15d26b145ec5
+PATH: pkgs-sys-libs/readline-8.3_p6-r1-1.gpkg.tar
+PROVIDES: x86_64: libhistory.so.8 libreadline.so.8
+RDEPEND: >=sys-libs/ncurses-5.9-r3:0/6=[unicode(+),abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libtinfow.so.6
+SHA1: 1a4bfa92e4f7c3c8e088cf391364b82e300f3d0a
+SIZE: 1198080
+SLOT: 0/8
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux unicode
+MTIME: 1793763668
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
