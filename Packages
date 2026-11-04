@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793805951
-PACKAGES: 1625
+TIMESTAMP: 1793806271
+PACKAGES: 1631
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3163,6 +3163,27 @@ SIZE: 737280
 SLOT: 0/1.7
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_en l10n_es ncurses nls readline
 MTIME: 1791062109
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1793805970
+CPV: app-text/lcdf-typetools-2.110
+DEFINED_PHASES: configure
+DEPEND: virtual/tex-base dev-libs/kpathsea:0/6.4.2=
+EAPI: 8
+IUSE: +kpathsea
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: GPL-2+
+MD5: 9fe01883c37c3ab91bec8300f732aee8
+PATH: pkgs-app-text/lcdf-typetools-2.110-3.gpkg.tar
+RDEPEND: virtual/tex-base dev-libs/kpathsea:0/6.4.2= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libkpathsea.so.6 libm.so.6 libstdc++.so.6
+SHA1: c750c14639c8ff289ea56bc915c135e019338f74
+SIZE: 1044480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux kpathsea
+MTIME: 1793805974
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10660,6 +10681,26 @@ MTIME: 1793266966
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-python/setuptools-scm[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793805905
+CPV: dev-python/pyqt-builder-1.21.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD-2
+MD5: 44c3bd6863e4b471d50d8071ec8f0433
+PATH: pkgs-dev-python/pyqt-builder-1.21.0-1.gpkg.tar
+RDEPEND: dev-python/packaging[python_targets_python3_14(-)] >=dev-python/sip-6.7[python_targets_python3_14(-)] dev-lang/python:3.14
+SHA1: 8e7aa633fa29cd52dd89bf39cbcbd79991faa339
+SIZE: 153600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793805906
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/pyqt-builder-1.19[python_targets_python3_14(-)] >=dev-python/sip-6.15[python_targets_python3_14(-)] >=dev-qt/qtbase-6.11:6 virtual/pkgconfig dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/sip[python_targets_python3_14(-)]
 BUILD_ID: 8
 BUILD_TIME: 1793174453
@@ -12277,6 +12318,27 @@ SHA1: 1bd0e014e4f75b64bead2927a485f1cb74480571
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1793266962
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793805871
+CPV: dev-python/uv-build-0.13.7
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT )
+MD5: 8ae969349f7cbd187d47873f02c2bdbc
+PATH: pkgs-dev-python/uv-build-0.13.7-1.gpkg.tar
+RDEPEND: >=dev-python/uv-0.13.7 dev-lang/python:3.14
+RESTRICT: test
+SHA1: b6e8e6bf2923320adb36d3e27101b831e6929e5c
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793805872
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -13937,6 +13999,26 @@ MTIME: 1793805682
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1793805921
+CPV: dev-texlive/texlive-fontutils-2026_p61207
+DEFINED_PHASES: compile install postinst postrm unpack
+DEPEND: >=dev-texlive/texlive-basic-2026
+EAPI: 9
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: Artistic BSD GPL-1+ GPL-2 LPPL-1.1 LPPL-1.3c TeX TeX-other-free public-domain
+MD5: 422cf27223288c559830d0b0307236fb
+PATH: pkgs-dev-texlive/texlive-fontutils-2026_p61207-1.gpkg.tar
+RDEPEND: >=dev-texlive/texlive-basic-2026 >=app-text/ps2pkm-1.8_p20260301 >=app-text/ttf2pk2-2.0_p20260301 >=app-text/texlive-core-2026
+SHA1: abd57a732cc67756d0ff95dd3915a1d5e351bc76
+SIZE: 5345280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805922
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-text/texlive-core-2024 app-arch/xz-utils
 BUILD_ID: 1
 BUILD_TIME: 1791366276
@@ -14020,6 +14102,27 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
 BUILD_ID: 1
+BUILD_TIME: 1793805981
+CPV: dev-texlive/texlive-latexrecommended-2026_p77082
+DEFINED_PHASES: compile install postinst postrm unpack
+DEPEND: >=dev-texlive/texlive-latex-2026
+EAPI: 9
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: CC0-1.0 GPL-1+ LPPL-1.0 LPPL-1.1 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain
+MD5: 7ca6528ab50c69067be8716593a40b4d
+PATH: pkgs-dev-texlive/texlive-latexrecommended-2026_p77082-1.gpkg.tar
+PDEPEND: >=dev-tex/latex-beamer-3.77
+RDEPEND: >=dev-texlive/texlive-latex-2026 >=app-text/texlive-core-2026
+SHA1: 1b2bd8ae8911bcc321c0f419ff8c13b721b1c3cc
+SIZE: 3041280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805983
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
 BUILD_TIME: 1793804056
 CPV: dev-texlive/texlive-metapost-2026_p73627
 DEFINED_PHASES: compile install postinst postrm unpack
@@ -14056,6 +14159,27 @@ SHA1: 4ddf0a1d20b6db84740a34268518bcd11e9106f7
 SIZE: 1310720
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793805671
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1793805995
+CPV: dev-texlive/texlive-xetex-2026_p77786
+DEFINED_PHASES: compile install postinst postrm setup unpack
+DEPEND: >=app-text/texlive-core-2026[xetex] >=dev-texlive/texlive-basic-2026 >=dev-texlive/texlive-latex-2026 !!<dev-texlive/texlive-latexextra-2023
+EAPI: 9
+IUSE: X doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: Apache-2.0 CC-BY-4.0 CC-BY-SA-4.0 FDL-1.1+ GPL-1+ GPL-3 LGPL-2+ LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain
+MD5: ea60a923cebdcc2b66d11d055e688589
+PATH: pkgs-dev-texlive/texlive-xetex-2026_p77786-1.gpkg.tar
+RDEPEND: >=app-text/texlive-core-2026[xetex] >=dev-texlive/texlive-basic-2026 >=dev-texlive/texlive-latex-2026 !<dev-texlive/texlive-publishers-2026 >=app-text/texlive-core-2026
+REPO_REVISIONS: {"gentoo": "e99406921148088a6990e6b921440a2808a223a6"}
+SHA1: edd8740178e13240197e9598a7fcd692852cc008
+SIZE: 6717440
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805996
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
