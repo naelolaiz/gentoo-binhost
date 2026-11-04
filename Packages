@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793764254
-PACKAGES: 1601
+TIMESTAMP: 1793764568
+PACKAGES: 1604
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2460,6 +2460,25 @@ SHA1: 5a877d76f2d0dff80f29e6021d7a996588974e9f
 SIZE: 153600
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792555200
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 )
+BUILD_ID: 1
+BUILD_TIME: 1793764498
+CPV: app-misc/ca-certificates-20260816.3.131.1-r1
+DEFINED_PHASES: compile install postinst prepare setup unpack
+EAPI: 8
+IUSE: cacert
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MPL-1.1
+MD5: 5f946a4cfb4d25b244ebe259441198f4
+PATH: pkgs-app-misc/ca-certificates-20260816.3.131.1-r1-1.gpkg.tar
+REPO_REVISIONS: {"gentoo": "e99406921148088a6990e6b921440a2808a223a6"}
+SHA1: 96e9f98fdbedfb3d0692b434119eb6a9c5d686cb
+SIZE: 153600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793764500
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8151,6 +8170,27 @@ SHA1: bb7142513eea558cb4541dadae483ad9c75e64ff
 SIZE: 1382400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 test-rust
 MTIME: 1792814400
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14[ssl(+),threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793764468
+CPV: dev-python/ensurepip-pip-26.3
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14[ssl(+),threads(+)]
+EAPI: 8
+IUSE: test test-rust test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT Apache-2.0 MIT MIT BSD-2 Apache-2.0 BSD MIT Apache-2.0 MIT MPL-2.0 MIT MIT MIT Apache-2.0 || ( Apache-2.0 MIT ) MIT ISC PSF-2
+MD5: a944427693321817da5f8b5eebe2a4c2
+PATH: pkgs-dev-python/ensurepip-pip-26.3-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14[ssl(+),threads(+)]
+RESTRICT: test test
+SHA1: a50b81a99e3110cd4cfa694643993f163488ae26
+SIZE: 1454080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 test-rust
+MTIME: 1793764469
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33397,6 +33437,28 @@ SHA1: 6c7edfbe58204407c43f4634d23bbd26c0a76a7b
 SIZE: 2508800
 USE: abi_x86_64 amd64 elibc_glibc kde kernel_linux policykit wayland
 MTIME: 1791284484
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=sys-devel/gettext-0.12.1-r2 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793764349
+CPV: sys-block/parted-3.8
+DEFINED_PHASES: configure install prepare unpack
+DEPEND: >=sys-fs/e2fsprogs-1.27 sys-apps/util-linux >=sys-libs/ncurses-5.7-r7:0/6= >=sys-libs/readline-5.2:0/8=
+EAPI: 9
+IUSE: +debug device-mapper nls readline static-libs verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-3+
+MD5: 371e49fcb62d75eb1395494d43838fc7
+PATH: pkgs-sys-block/parted-3.8-1.gpkg.tar
+PROVIDES: x86_64: libparted-fs-resize.so.0 libparted.so.2
+RDEPEND: >=sys-fs/e2fsprogs-1.27 sys-apps/util-linux >=sys-libs/ncurses-5.7-r7:0/6= >=sys-libs/readline-5.2:0/8= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libblkid.so.1 libc.so.6 libreadline.so.8 libtinfo.so.6 libuuid.so.1
+SHA1: be42e0f7dd3b80cb1106e0b1c38a0647db5f9d90
+SIZE: 931840
+USE: abi_x86_64 amd64 debug elibc_glibc kernel_linux nls readline
+MTIME: 1793764350
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
