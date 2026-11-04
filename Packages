@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793807194
-PACKAGES: 1634
+TIMESTAMP: 1793807310
+PACKAGES: 1638
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3026,6 +3026,27 @@ MTIME: 1793765887
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 5
+BUILD_TIME: 1793807189
+CPV: app-text/dvipng-1.18
+DEFINED_PHASES: configure
+DEPEND: >=dev-libs/kpathsea-6.2.1:0/6.4.2= media-libs/gd:2/3=[jpeg,png] media-libs/libpng:0/16= virtual/latex-base virtual/zlib:0/1= >=media-libs/freetype-2.1.5 virtual/texi2dvi virtual/pkgconfig
+EAPI: 8
+IUSE: truetype test
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
+LICENSE: LGPL-3+ Texinfo-manual
+MD5: 48c37b54979dd15bf7f04bcda8421361
+PATH: pkgs-app-text/dvipng-1.18-5.gpkg.tar
+RDEPEND: >=dev-libs/kpathsea-6.2.1:0/6.4.2= media-libs/gd:2/3=[jpeg,png] media-libs/libpng:0/16= virtual/latex-base virtual/zlib:0/1= >=media-libs/freetype-2.1.5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libfreetype.so.6 libgd.so.3 libkpathsea.so.6 libm.so.6
+RESTRICT: test
+SHA1: 67e432823dce5f0071d5f1c2dd3b93d55475cdd6
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux truetype
+MTIME: 1793807190
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig
 BUILD_ID: 2
 BUILD_TIME: 1793803333
@@ -3440,6 +3461,24 @@ MTIME: 1791370432
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1793807192
+CPV: app-text/texlive-2026
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: cjk context extra games graphics humanities luatex metapost music pdfannotextractor png pstricks publishers science tex4ht texi2html truetype xetex xml X l10n_af l10n_ar l10n_as l10n_bg l10n_bn l10n_br l10n_ca l10n_cs l10n_cy l10n_da l10n_de l10n_el l10n_en l10n_eo l10n_es l10n_et l10n_eu l10n_fa l10n_fi l10n_fr l10n_ga l10n_gl l10n_gu l10n_he l10n_hi l10n_hr l10n_hsb l10n_hu l10n_hy l10n_ia l10n_id l10n_is l10n_it l10n_ja l10n_ko l10n_kn l10n_la l10n_lo l10n_lt l10n_lv l10n_ml l10n_mn l10n_mr l10n_nb l10n_nl l10n_nn l10n_no l10n_or l10n_pa l10n_pl l10n_pt l10n_rm l10n_ro l10n_ru l10n_sa l10n_sco l10n_sk l10n_sl l10n_sq l10n_sr l10n_sv l10n_ta l10n_te l10n_th l10n_tk l10n_tr l10n_uk l10n_vi l10n_zh
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: metapackage
+MD5: 2a959d6df725262b0c8bd90017ace302
+PATH: pkgs-app-text/texlive-2026-1.gpkg.tar
+RDEPEND: >=app-text/texlive-core-2026 app-text/psutils >=dev-texlive/texlive-fontutils-2026 media-gfx/sam2p sys-apps/texinfo app-text/t1utils >=app-text/lcdf-typetools-2.92[kpathsea] >=app-text/ttf2pk2-2.0_p20260301 app-text/ps2eps app-text/dvipng >=app-text/xdvik-22.87 >=dev-texlive/texlive-basic-2026 >=dev-texlive/texlive-fontsrecommended-2026 >=dev-texlive/texlive-latex-2026 >=dev-texlive/texlive-latexrecommended-2026 >=dev-texlive/texlive-plaingeneric-2026 >=dev-texlive/texlive-formatsextra-2026 >=dev-texlive/texlive-langenglish-2026 >=dev-texlive/texlive-langspanish-2026
+SHA1: 063d4db16a7d2e8677f6b245335121a597fa1c95
+SIZE: 20480
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux l10n_en l10n_es png truetype xml
+MTIME: 1793807193
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-apps/ed sys-devel/flex virtual/pkgconfig >=app-portage/elt-patches-20250306
 BUILD_ID: 2
 BUILD_TIME: 1791264753
@@ -3528,25 +3567,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/lex app-alternatives/yacc virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 3
-BUILD_TIME: 1791368099
+BUILD_ID: 4
+BUILD_TIME: 1793807151
 CPV: app-text/xdvik-22.87.06-r1
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare
-DEPEND: >=media-libs/freetype-2.9.1-r2:2 x11-libs/libX11 x11-libs/libXi x11-libs/libXmu x11-libs/libXpm x11-libs/libXt >=x11-libs/libXaw-1.0.16 dev-libs/kpathsea:0/6.4.0=
+DEPEND: >=media-libs/freetype-2.9.1-r2:2 x11-libs/libX11 x11-libs/libXi x11-libs/libXmu x11-libs/libXpm x11-libs/libXt >=x11-libs/libXaw-1.0.16 dev-libs/kpathsea:0/6.4.2=
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: motif neXt Xaw3d emacs
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
 LICENSE: GPL-2
-MD5: 811067b29e9b0ca362395b20f0f6ab73
-PATH: pkgs-app-text/xdvik-22.87.06-r1-3.gpkg.tar
-RDEPEND: >=media-libs/freetype-2.9.1-r2:2 x11-libs/libX11 x11-libs/libXi x11-libs/libXmu x11-libs/libXpm x11-libs/libXt >=x11-libs/libXaw-1.0.16 dev-libs/kpathsea:0/6.4.0= virtual/latex-base >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+MD5: a5fec78657ff446b26f30e49c188534a
+PATH: pkgs-app-text/xdvik-22.87.06-r1-4.gpkg.tar
+RDEPEND: >=media-libs/freetype-2.9.1-r2:2 x11-libs/libX11 x11-libs/libXi x11-libs/libXmu x11-libs/libXpm x11-libs/libXt >=x11-libs/libXaw-1.0.16 dev-libs/kpathsea:0/6.4.2= virtual/latex-base >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libX11.so.6 libXaw.so.7 libXi.so.6 libXmu.so.6 libXpm.so.4 libXt.so.6 libc.so.6 libfreetype.so.6 libkpathsea.so.6 libm.so.6
-SHA1: fccc738b16b6b2aa763a0ef906e9776d420e0f34
-SIZE: 512000
+SHA1: 3136abaefebda4d4b0ac5e19c4bc2b9ddb2467e4
+SIZE: 522240
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791368100
+MTIME: 1793807152
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10230,6 +10268,29 @@ SHA1: ffc16137ea518a0f5d84063fc7c559062aa66682
 SIZE: 2150400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1792990108
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/cffi[python_targets_python3_14(-)] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/python:3.14[threads(+)] >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793807156
+CPV: dev-python/pycryptodome-4.3.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/gmp:0/10.4= dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2 MIT Unlicense
+MD5: e23d72dca5ad5e6db3872cf2d33f21c0
+PATH: pkgs-dev-python/pycryptodome-4.3.0-1.gpkg.tar
+PROVIDES: x86_64: _ARC4.abi3.so _BLAKE2b.abi3.so _BLAKE2s.abi3.so _MD2.abi3.so _MD4.abi3.so _MD5.abi3.so _RIPEMD160.abi3.so _SHA1.abi3.so _SHA224.abi3.so _SHA224_shani.abi3.so _SHA256.abi3.so _SHA256_shani.abi3.so _SHA384.abi3.so _SHA512.abi3.so _Salsa20.abi3.so _Salsa20_avx2_bmi2.abi3.so _chacha20.abi3.so _chacha20_avx2_bmi2.abi3.so _cpuid_c.abi3.so _curve25519.abi3.so _ec_nat.abi3.so _ec_nat_bmi2_adx.abi3.so _ed25519.abi3.so _ghash_clmul.abi3.so _ghash_portable.abi3.so _k12.abi3.so _k12_avx2_bmi2.abi3.so _keccak.abi3.so _keccak_avx2_bmi2.abi3.so _mldsa.abi3.so _mldsa_avx2_bmi2.abi3.so _mlkem.abi3.so _mlkem_avx2_bmi2.abi3.so _nat.abi3.so _nat_bmi2_adx.abi3.so _pkcs1_decode.abi3.so _poly1305.abi3.so _raw_aes.abi3.so _raw_aesni.abi3.so _raw_arc2.abi3.so _raw_blowfish.abi3.so _raw_cast.abi3.so _raw_cbc.abi3.so _raw_cfb.abi3.so _raw_ctr.abi3.so _raw_des.abi3.so _raw_des3.abi3.so _raw_ecb.abi3.so _raw_eksblowfish.abi3.so _raw_ocb.abi3.so _raw_ofb.abi3.so _scrypt.abi3.so _strxor.abi3.so
+RDEPEND: dev-libs/gmp:0/10.4= dev-python/cffi[python_targets_python3_14(-)] dev-lang/python:3.14[threads(+)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 865a2b95589cf7366d7057fe7d5d95e3d54ad770
+SIZE: 2191360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793807159
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -34655,6 +34716,25 @@ SHA1: 4a33471aa8711a0349091a37d66e9f5775cfbc3c
 SIZE: 51200
 USE: abi_x86_64 amd64 dracut elibc_glibc kernel_linux
 MTIME: 1791371139
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1793807259
+CPV: sys-kernel/installkernel-70-r1
+DEFINED_PHASES: install postinst setup
+EAPI: 8
+IUSE: dracut efistub grub refind systemd systemd-boot ugrd uki ukify
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: GPL-2+
+MD5: 55db8c281106697f8e0181b442cfa58b
+PATH: pkgs-sys-kernel/installkernel-70-r1-1.gpkg.tar
+RDEPEND: !<=sys-kernel/installkernel-systemd-3 sys-apps/gentoo-functions >=sys-kernel/dracut-110 !=sys-apps/systemd-255.2-r1 !=sys-apps/systemd-255.2-r0 !~sys-apps/systemd-255.1 !~sys-apps/systemd-255.0 !=sys-apps/systemd-254.8-r0 !=sys-apps/systemd-254.7-r0 !~sys-apps/systemd-254.6 !<=sys-apps/systemd-254.5-r1
+REPO_REVISIONS: {"gentoo": "e99406921148088a6990e6b921440a2808a223a6"}
+SHA1: d9f7c817a91702485f728278635cabff7922f5c8
+SIZE: 51200
+USE: abi_x86_64 amd64 dracut elibc_glibc kernel_linux
+MTIME: 1793807260
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
