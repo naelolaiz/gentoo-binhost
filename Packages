@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793803487
-PACKAGES: 1612
+TIMESTAMP: 1793803794
+PACKAGES: 1613
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15171,6 +15171,25 @@ SHA1: 88863a2653a992bcced2818dcd5f66dd9a9299c2
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux kwin
 MTIME: 1792678307
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1793803462
+CPV: gui-apps/sddm-gentoo-config-0-r2
+DEFINED_PHASES: install prepare
+EAPI: 9
+IUSE: custom-compositor kwin systemd weston
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: public-domain
+MD5: a217f76a680d966cf089c7d9eae7fc9b
+PATH: pkgs-gui-apps/sddm-gentoo-config-0-r2-1.gpkg.tar
+RDEPEND: !<gui-apps/sddm-0.21.0_p20250818 >=kde-plasma/kwin-6.7.6:6
+REPO_REVISIONS: {"gentoo": "e99406921148088a6990e6b921440a2808a223a6"}
+SHA1: 3f4b6f798e4461bf43026d6d8adbd227db328eab
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux kwin
+MTIME: 1793803462
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
