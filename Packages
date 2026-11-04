@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793804108
-PACKAGES: 1616
+TIMESTAMP: 1793805951
+PACKAGES: 1625
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -9,7 +9,7 @@ ACCEPT_RESTRICT: *
 ARCH: amd64
 CBUILD: x86_64-pc-linux-gnu
 CHOST: x86_64-pc-linux-gnu
-CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d
+CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/texmf/web2c
 ELIBC: glibc
 FEATURES: assume-digests binpkg-docompress binpkg-dostrip binpkg-logs binpkg-multi-instance binpkg-signing buildpkg buildpkg-live ccache compress-index config-protect-if-modified distlocks ebuild-locks fixlafiles ipc-sandbox merge-wait multilib-strict network-sandbox parallel-fetch pid-sandbox pkgdir-index-trusted preserve-libs protect-owned qa-unresolved-soname-deps sandbox strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr
 GENTOO_MIRRORS: http://distfiles.gentoo.org
@@ -3273,6 +3273,26 @@ MTIME: 1791865894
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793805146
+CPV: app-text/ps2pkm-1.8_p20260301
+DEFINED_PHASES: configure
+DEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.2=
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 1dd22bab7fcdcdd08413b57007a8e27d
+PATH: pkgs-app-text/ps2pkm-1.8_p20260301-1.gpkg.tar
+RDEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.2= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libkpathsea.so.6 libm.so.6
+SHA1: 39d4fc3412422d4dd1c50f7f69eb8866eb161aec
+SIZE: 133120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805149
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-text/libpaper >=dev-python/puremagic-1.26[python_targets_python3_14(-)] >=dev-python/pypdf-4.3.0[python_targets_python3_14(-)] dev-python/argparse-manpage[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791278622
@@ -3467,22 +3487,22 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791277656
+BUILD_ID: 2
+BUILD_TIME: 1793804932
 CPV: app-text/ttf2pk2-2.0_p20260301
 DEFINED_PHASES: configure
-DEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.0= media-libs/freetype:2 virtual/zlib:0/1=
+DEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.2= media-libs/freetype:2 virtual/zlib:0/1=
 EAPI: 8
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
 LICENSE: GPL-2
-MD5: 13bfa171ab38a9af636e0e92df00c9e5
-PATH: pkgs-app-text/ttf2pk2-2.0_p20260301-1.gpkg.tar
-RDEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.0= media-libs/freetype:2 virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+MD5: 199650178116a138fda3abd529353bf8
+PATH: pkgs-app-text/ttf2pk2-2.0_p20260301-2.gpkg.tar
+RDEPEND: >=dev-libs/kpathsea-6.4.0:0/6.4.2= media-libs/freetype:2 virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libfreetype.so.6 libkpathsea.so.6 libm.so.6
-SHA1: 307ddcae9cc201b60776eed487ecfe301a3a8fd1
+SHA1: 7370497d7dd6ac58975d0c30f69c15f0823eb157
 SIZE: 307200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791277659
+MTIME: 1793804945
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -10938,6 +10958,27 @@ MTIME: 1793515007
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/hatch-fancy-pypi-readme-25.1[python_targets_python3_14(-)] dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1793805628
+CPV: dev-python/python-discovery-1.9.2
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 6215fb456babb46184b4af33a4c10904
+PATH: pkgs-dev-python/python-discovery-1.9.2-1.gpkg.tar
+RDEPEND: >=dev-python/filelock-3.16.1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 65c91a15b12bcfd8b1e1b99ed0b4510f0c30a6fb
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1793805629
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791282852
@@ -12087,6 +12128,29 @@ SHA1: cab49183c7fc97389aa7b2eec1fe25d9d762aeaa
 SIZE: 17448960
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793266940
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
+BUILD_ID: 1
+BUILD_TIME: 1793805459
+CPV: dev-python/uv-0.13.7
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: app-arch/zstd:0/1=
+EAPI: 8
+IUSE: test debug
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT ) Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
+MD5: 190d0d943ab0d8379d172f93f738e537
+PATH: pkgs-dev-python/uv-0.13.7-1.gpkg.tar
+PROPERTIES: test_network
+RDEPEND: app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
+RESTRICT: test
+SHA1: 1234179cbaa471ec69e25a8f4fa50c18faee3bf7
+SIZE: 17674240
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805472
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -13853,6 +13917,26 @@ MTIME: 1793804048
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1793805678
+CPV: dev-texlive/texlive-fontsrecommended-2026_p54074
+DEFINED_PHASES: compile install postinst postrm unpack
+DEPEND: >=dev-texlive/texlive-basic-2026
+EAPI: 9
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: BSD GPL-1+ GPL-2 LPPL-1.0 LPPL-1.1 LPPL-1.2 LPPL-1.3 LPPL-1.3c OFL-1.1 TeX TeX-other-free public-domain
+MD5: 5232e96c2ba7793df22be13bfc71d05a
+PATH: pkgs-dev-texlive/texlive-fontsrecommended-2026_p54074-1.gpkg.tar
+RDEPEND: >=dev-texlive/texlive-basic-2026 >=app-text/texlive-core-2026
+SHA1: c29d7bcf194ae910fee00a2904c063ebfbd61c95
+SIZE: 100423680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805682
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-text/texlive-core-2024 app-arch/xz-utils
 BUILD_ID: 1
 BUILD_TIME: 1791366276
@@ -13876,6 +13960,66 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
 BUILD_ID: 1
+BUILD_TIME: 1793805677
+CPV: dev-texlive/texlive-langenglish-2026_p74022
+DEFINED_PHASES: compile install postinst postrm unpack
+DEPEND: >=dev-texlive/texlive-basic-2026
+EAPI: 9
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: CC-BY-3.0 CC-BY-SA-4.0 FDL-1.1+ GPL-1+ GPL-2 GPL-2+ LPPL-1.2 LPPL-1.3 LPPL-1.3c OPL TeX TeX-other-free public-domain
+MD5: ed65fc672495dc6b7d261f180df0b72e
+PATH: pkgs-dev-texlive/texlive-langenglish-2026_p74022-1.gpkg.tar
+RDEPEND: >=dev-texlive/texlive-basic-2026 >=app-text/texlive-core-2026
+SHA1: 8000f7b985aefad8327d245caf11920b478abdd8
+SIZE: 4608000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805678
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1793805680
+CPV: dev-texlive/texlive-langspanish-2026_p72203
+DEFINED_PHASES: compile install postinst postrm unpack
+DEPEND: >=dev-texlive/texlive-basic-2026
+EAPI: 9
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: CC-BY-4.0 GPL-2+ LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain
+MD5: 8882deb2364e0e6e91bcdb489a210e30
+PATH: pkgs-dev-texlive/texlive-langspanish-2026_p72203-1.gpkg.tar
+RDEPEND: >=dev-texlive/texlive-basic-2026 >=app-text/texlive-core-2026
+SHA1: 14eb2d9373ea05673c9c50ebf0cf998f76c6daa5
+SIZE: 972800
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805682
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1793805672
+CPV: dev-texlive/texlive-latex-2026_p77034
+DEFINED_PHASES: compile install postinst postrm unpack
+DEPEND: >=dev-texlive/texlive-basic-2026
+EAPI: 9
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-1+ GPL-2 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c public-domain
+MD5: 3611f6a6789142b2b97f113bb42b67a1
+PATH: pkgs-dev-texlive/texlive-latex-2026_p77034-1.gpkg.tar
+RDEPEND: >=dev-texlive/texlive-basic-2026 !<dev-texlive/texlive-latexextra-2026 !<dev-texlive/texlive-latexrecommended-2026 !<dev-texlive/texlive-luatex-2026 >=app-text/texlive-core-2026
+SHA1: 94580b4b6a1739027a97b647ddbbbefbab94d719
+SIZE: 15206400
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805675
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
 BUILD_TIME: 1793804056
 CPV: dev-texlive/texlive-metapost-2026_p73627
 DEFINED_PHASES: compile install postinst postrm unpack
@@ -13892,6 +14036,26 @@ SHA1: 59c5af18083f31517b6b3160a2348741492f50bc
 SIZE: 747520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793804057
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-text/texlive-core-2026 app-arch/xz-utils
+BUILD_ID: 1
+BUILD_TIME: 1793805670
+CPV: dev-texlive/texlive-plaingeneric-2026_p75599
+DEFINED_PHASES: compile install postinst postrm unpack
+DEPEND: >=dev-texlive/texlive-basic-2026
+EAPI: 9
+IUSE: doc source
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: CC0-1.0 FDL-1.1+ GPL-1+ GPL-2 GPL-3 GPL-3+ LPPL-1.0 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT TeX TeX-other-free public-domain
+MD5: 3422d4b1ad8cf3d3e9c46e22e1504d39
+PATH: pkgs-dev-texlive/texlive-plaingeneric-2026_p75599-1.gpkg.tar
+RDEPEND: >=dev-texlive/texlive-basic-2026 >=app-text/texlive-core-2026
+SHA1: 4ddf0a1d20b6db84740a34268518bcd11e9106f7
+SIZE: 1310720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793805671
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32514,6 +32678,30 @@ SIZE: 9963520
 SLOT: 0/0.28.0
 USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux opencl openmp vulkan
 MTIME: 1793710145
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1793805664
+CPV: sci-ml/ggml-0.28.0-r2
+DEFINED_PHASES: compile configure install prepare pretend setup test
+DEPEND: dev-libs/opencl-icd-loader media-libs/vulkan-loader dev-util/opencl-headers dev-util/vulkan-headers
+EAPI: 8
+IUSE: cpu_flags_x86_amx_bf16 cpu_flags_x86_amx_int8 cpu_flags_x86_amx_tile cpu_flags_x86_avx cpu_flags_x86_avx_vnni cpu_flags_x86_avx2 cpu_flags_x86_avx512_bf16 cpu_flags_x86_avx512bw cpu_flags_x86_avx512f cpu_flags_x86_avx512vbmi cpu_flags_x86_avx512_vnni cpu_flags_x86_bmi2 cpu_flags_x86_fma3 cpu_flags_x86_f16c cpu_flags_x86_sse4_2 cuda opencl openmp rocm test vulkan +amdgpu_targets_gfx908 +amdgpu_targets_gfx90a +amdgpu_targets_gfx942 +amdgpu_targets_gfx950 +amdgpu_targets_gfx1030 +amdgpu_targets_gfx1100 +amdgpu_targets_gfx1101 +amdgpu_targets_gfx1200 +amdgpu_targets_gfx1201 amdgpu_targets_gfx803 amdgpu_targets_gfx900 amdgpu_targets_gfx906 amdgpu_targets_gfx940 amdgpu_targets_gfx941 amdgpu_targets_gfx1010 amdgpu_targets_gfx1011 amdgpu_targets_gfx1012 amdgpu_targets_gfx1031 amdgpu_targets_gfx1102 amdgpu_targets_gfx1103 amdgpu_targets_gfx1150 amdgpu_targets_gfx1151
+KEYWORDS: ~amd64 ~arm64
+LICENSE: MIT
+MD5: 86ca71c545e934ffbb92b609f91cbded
+PATH: pkgs-sci-ml/ggml-0.28.0-r2-1.gpkg.tar
+PROVIDES: x86_64: libggml-base.so.0 libggml-cpu.so.0 libggml-opencl.so.0 libggml-vulkan.so.0 libggml.so.0
+RDEPEND: dev-libs/opencl-icd-loader media-libs/vulkan-loader >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libOpenCL.so.1 libc.so.6 libgcc_s.so.1 libgomp.so.1 libm.so.6 libstdc++.so.6 libvulkan.so.1
+RESTRICT: test
+SHA1: 1a8081d9fb5d5c4f372377134dbbcc2d308f3700
+SIZE: 9963520
+SLOT: 0/0.28.0
+USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux opencl openmp vulkan
+MTIME: 1793805666
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
