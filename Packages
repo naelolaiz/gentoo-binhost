@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793807310
-PACKAGES: 1638
+TIMESTAMP: 1793850176
+PACKAGES: 1640
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -9,7 +9,7 @@ ACCEPT_RESTRICT: *
 ARCH: amd64
 CBUILD: x86_64-pc-linux-gnu
 CHOST: x86_64-pc-linux-gnu
-CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/texmf/web2c
+CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d
 ELIBC: glibc
 FEATURES: assume-digests binpkg-docompress binpkg-dostrip binpkg-logs binpkg-multi-instance binpkg-signing buildpkg buildpkg-live ccache compress-index config-protect-if-modified distlocks ebuild-locks fixlafiles ipc-sandbox merge-wait multilib-strict network-sandbox parallel-fetch pid-sandbox pkgdir-index-trusted preserve-libs protect-owned qa-unresolved-soname-deps sandbox strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr
 GENTOO_MIRRORS: http://distfiles.gentoo.org
@@ -25931,6 +25931,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BUILD_ID: 1
+BUILD_TIME: 1793849927
+CPV: llvm-core/clang-common-23.1.5
+DEFINED_PHASES: compile install postinst postrm preinst prepare pretend unpack
+EAPI: 8
+IDEPEND: sys-devel/gcc-config sys-devel/gcc-config
+IUSE: default-compiler-rt default-libcxx default-lld bootstrap-prefix cet emacs hardened llvm-libunwind verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA
+MD5: 1455cd56be6a80fec0060d4f5f98c2d9
+PATH: pkgs-llvm-core/clang-common-23.1.5-1.gpkg.tar
+PDEPEND: sys-devel/gcc sys-devel/gcc sys-devel/binutils llvm-runtimes/clang-runtime
+SHA1: f867c6c203626829ac9c8c6b6ef70e982af4b22f
+SIZE: 40960
+USE: abi_x86_64 amd64 cet elibc_glibc kernel_linux
+MTIME: 1793849927
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
 BUILD_TIME: 1791063922
 CPV: llvm-core/clang-linker-config-23
 DEFINED_PHASES: install
@@ -26123,6 +26142,24 @@ SHA1: 8dc9e7a0336131f3bc505e2205b7df5244e11a43
 SIZE: 30720
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792554477
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1793849857
+CPV: llvm-core/llvm-common-23.1.5
+DEFINED_PHASES: compile install postinst postrm prepare unpack
+EAPI: 8
+IUSE: emacs verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA
+MD5: ca231615cfc093f327db354c8fce8cb0
+PATH: pkgs-llvm-core/llvm-common-23.1.5-1.gpkg.tar
+RDEPEND: !llvm-core/llvm:0
+SHA1: e99e1d6d2263fd7bcaab26ee4e62d0982a2a2ba2
+SIZE: 30720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793849859
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
