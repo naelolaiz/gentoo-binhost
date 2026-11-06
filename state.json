@@ -409,6 +409,10 @@
    "path": "pkgs-dev-qt/qtmultimedia-6.11.3-1.gpkg.tar"
   },
   {
+   "at": 1793946231,
+   "path": "pkgs-dev-qt/qtmultimedia-6.11.3-2.gpkg.tar"
+  },
+  {
    "at": 1793250667,
    "path": "pkgs-dev-qt/qttools-6.11.3-1.gpkg.tar"
   },
@@ -1571,6 +1575,10 @@
   {
    "at": 1793697421,
    "path": "pkgs-kde-plasma/kpipewire-6.8.2-1.gpkg.tar"
+  },
+  {
+   "at": 1793946231,
+   "path": "pkgs-kde-plasma/kpipewire-6.8.2-2.gpkg.tar"
   },
   {
    "at": 1793864716,
