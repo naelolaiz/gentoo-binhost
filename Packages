@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793942263
-PACKAGES: 1599
+TIMESTAMP: 1793942572
+PACKAGES: 1601
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -17638,6 +17638,31 @@ MTIME: 1791523314
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-util/gperf app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793942254
+CPV: kde-apps/kio-extras-26.08.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 kde-apps/libkexiv2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=dev-qt/qtbase-6.11.2:6[sql] kde-plasma/plasma-activities:6/7= kde-plasma/plasma-activities-stats:6 >=kde-frameworks/knotifications-6.27.0:6 net-libs/libproxy media-libs/openexr:0/32= dev-libs/qcoro >=net-libs/libssh-0.9.8:0/4=[sftp] x11-libs/libX11 x11-libs/libXcursor dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: activities ios +man mtp nfs +libproxy openexr samba +sftp taglib X debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: ffae4b9b615d08e5eeff1262c6af2c52
+PATH: pkgs-kde-apps/kio-extras-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: activities.so archive.so comicbookthumbnail.so cursorthumbnail.so directorythumbnail.so djvuthumbnail.so ebookthumbnail.so exrthumbnail.so filenamesearchmodule.so filter.so fish.so forgetfileitemaction.so imagethumbnail.so info.so jpegthumbnail.so kactivitymanagerd_fileitem_linking_plugin.so kcm_netpref.so kcm_proxy.so kcm_trash.so kcm_webshortcuts.so kio_filenamesearch.so kraorathumbnail.so libkioarchive6.so.6 man.so opendocumentthumbnail.so recentlyused.so sftp.so svgthumbnail.so textthumbnail.so thumbnail.so windowsexethumbnail.so windowsimagethumbnail.so wpad_detector.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 kde-apps/libkexiv2:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=dev-qt/qtbase-6.11.2:6[sql] kde-plasma/plasma-activities:6/7= kde-plasma/plasma-activities-stats:6 >=kde-frameworks/knotifications-6.27.0:6 net-libs/libproxy media-libs/openexr:0/32= dev-libs/qcoro >=net-libs/libssh-0.9.8:0/4=[sftp] x11-libs/libX11 x11-libs/libXcursor !kde-apps/kio-extras:5[-kf6compat(-)] !kde-apps/kio-extras-kf5:5 !<kde-frameworks/kio-5.116.0-r2:5 !kde-frameworks/kio-trash-desktop-file:5 >=kde-frameworks/kded-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKExiv2Qt6.so.0 libKF6Archive.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6SyntaxHighlighting.so.6 libKF6WidgetsAddons.so.6 libOpenEXR-3_3.so.32 libPlasmaActivities.so.7 libPlasmaActivitiesStats.so.1 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libXcursor.so.1 libc.so.6 libgcc_s.so.1 libproxy.so.1 libssh.so.4 libstdc++.so.6
+RESTRICT: test test
+SHA1: adeb1bb36cf5187cda734208011286077b5d48e1
+SIZE: 1996800
+SLOT: 6
+USE: X abi_x86_64 activities amd64 elibc_glibc handbook kernel_linux libproxy man openexr sftp
+MTIME: 1793942257
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791548965
@@ -32985,6 +33010,29 @@ SHA1: 3c4cefe247198a3f98451c0826c08e63066b98db
 SIZE: 593920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux seccomp udev
 MTIME: 1791195776
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-python/docutils >=dev-util/gdbus-codegen-2.80.5-r1 sys-devel/gettext virtual/pkgconfig sys-apps/bubblewrap >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793942300
+CPV: sys-apps/xdg-desktop-portal-1.22.1
+DEFINED_PHASES: compile configure install postinst setup test
+DEPEND: >=dev-libs/glib-2.76:2 dev-libs/json-glib >=media-video/pipewire-0.3:0/0.4= >=sys-fs/fuse-3.10.0:3/4=[suid] x11-libs/gdk-pixbuf sys-apps/bubblewrap dev-libs/libgudev
+EAPI: 8
+IUSE: geolocation flatpak gstreamer seccomp systemd test udev
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1
+MD5: f4ef695b2f8f27c012ea0d355032981e
+PATH: pkgs-sys-apps/xdg-desktop-portal-1.22.1-1.gpkg.tar
+RDEPEND: >=dev-libs/glib-2.76:2 dev-libs/json-glib >=media-video/pipewire-0.3:0/0.4= >=sys-fs/fuse-3.10.0:3/4=[suid] x11-libs/gdk-pixbuf sys-apps/bubblewrap dev-libs/libgudev sys-apps/dbus >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "7ce09900bbca7143904acf4c4f7cbc9efc4c6e5e"}
+REQUIRES: x86_64: libc.so.6 libfuse3.so.4 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgudev-1.0.so.0 libjson-glib-1.0.so.0 libpipewire-0.3.so.0
+RESTRICT: test
+SHA1: a7534b538a29d8beca308759e01e3e99fc6b866b
+SIZE: 634880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux seccomp udev
+MTIME: 1793942301
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
