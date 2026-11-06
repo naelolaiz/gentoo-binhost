@@ -1,4 +1,12 @@
 {
+ "continue": {
+  "idle": 0,
+  "image": "gentoo/stage3@sha256:b1c9a402613fd0fc01fa96f76bb6ffb13de0246991b86dc21e69ec58559c81c9",
+  "streak": 1,
+  "tiers": "",
+  "tree_date": "20261105",
+  "updated": 1793952837
+ },
  "gone": {
   "app-containers/podman-6.1.2": 1792736914,
   "app-crypt/gnupg-2.5.24-r1": 1792994546,
