@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793941948
-PACKAGES: 1596
+TIMESTAMP: 1793942263
+PACKAGES: 1599
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -703,6 +703,29 @@ SIZE: 706560
 SLOT: 0/13
 USE: abi_x86_64 acl amd64 bzip2 e2fsprogs elibc_glibc iconv kernel_linux lzma xattr zstd
 MTIME: 1793683176
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793941987
+CPV: app-arch/lz4-1.11.0
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: static-libs test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD-2 GPL-2
+MD5: 9ca25edfa41b1521d1ccd66bddb9821d
+PATH: pkgs-app-arch/lz4-1.11.0-1.gpkg.tar
+PROVIDES: x86_64: liblz4.so.1
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: e364765501b628ac32c767aeef1028cff5bf7363
+SIZE: 256000
+SLOT: 0/1.10.0-meson
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793941988
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3004,25 +3027,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/yacc app-alternatives/lex || ( dev-lang/python:3.15[xml(+)] dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 2
-BUILD_TIME: 1793765886
+BUILD_ID: 3
+BUILD_TIME: 1793941976
 CPV: app-text/doxygen-1.18.0-r1
 DEFINED_PHASES: compile configure install postinst prepare setup test
 DEPEND: dev-db/sqlite:3 dev-lang/perl dev-libs/libfmt:0/12.2.0= dev-libs/spdlog:0/1.17= virtual/libiconv
 EAPI: 8
-IUSE: clang debug doc dot doxysearch gui test +llvm_slot_22 llvm_slot_18 llvm_slot_19 llvm_slot_20 llvm_slot_21
+IUSE: clang debug doc dot doxysearch gui test +llvm_slot_22 llvm_slot_19 llvm_slot_20 llvm_slot_21
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: GPL-2
-MD5: fdc95f0727cca19c9d8e4e7a4103c11e
-PATH: pkgs-app-text/doxygen-1.18.0-r1-2.gpkg.tar
+MD5: 821127b5f17af12c91bbefbc8db02613
+PATH: pkgs-app-text/doxygen-1.18.0-r1-3.gpkg.tar
 RDEPEND: dev-db/sqlite:3 dev-lang/perl dev-libs/libfmt:0/12.2.0= dev-libs/spdlog:0/1.17= virtual/libiconv >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "e99406921148088a6990e6b921440a2808a223a6"}
 REQUIRES: x86_64: libc.so.6 libfmt.so.12 libgcc_s.so.1 libm.so.6 libspdlog.so.1.17 libsqlite3.so.0 libstdc++.so.6
 RESTRICT: test
-SHA1: 65b6c78bf361850081b0266a68dff552f6dcfbab
+SHA1: 3bbf39e2eda93404b96a968c65922aa8850d3267
 SIZE: 8284160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
-MTIME: 1793765887
+MTIME: 1793941977
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17094,6 +17116,31 @@ MTIME: 1791523107
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793942041
+CPV: kde-apps/kdegraphics-mobipocket-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: e977fb28d48ec37bc90188055e3056cd
+PATH: pkgs-kde-apps/kdegraphics-mobipocket-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: libQMobipocket6.so.3
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "7ce09900bbca7143904acf4c4f7cbc9efc4c6e5e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: d2d7c0224f3642b82f01ec2979cbeb0d4bad9a72
+SIZE: 61440
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793942042
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791569169
 CPV: kde-apps/kdemultimedia-meta-26.08.2
@@ -18782,6 +18829,29 @@ SIZE: 235520
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux xmp
 MTIME: 1791523089
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793942024
+CPV: kde-apps/libkexiv2-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-gfx/exiv2-0.27:0/0.28=[xmp] dev-qt/qtbase:6
+EAPI: 8
+IUSE: +xmp debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 48b41ee7a05b83ae76b7be6fdc818d02
+PATH: pkgs-kde-apps/libkexiv2-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: libKExiv2Qt6.so.0
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-gfx/exiv2-0.27:0/0.28=[xmp] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libexiv2.so.28 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+SHA1: dc222a8a66248b2f01a193c312770e5405657d66
+SIZE: 245760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux xmp
+MTIME: 1793942025
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
