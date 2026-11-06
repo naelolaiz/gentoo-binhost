@@ -305,6 +305,10 @@
    "path": "pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar"
   },
   {
+   "at": 1793943792,
+   "path": "pkgs-dev-lang/python-3.13.18_p1-1.gpkg.tar"
+  },
+  {
    "at": 1793686502,
    "path": "pkgs-dev-lang/ruby-3.3.13-1.gpkg.tar"
   },
@@ -339,6 +343,10 @@
   {
    "at": 1793686190,
    "path": "pkgs-dev-libs/libzip-1.12.1-1.gpkg.tar"
+  },
+  {
+   "at": 1793943792,
+   "path": "pkgs-dev-python/meson-python-0.22.1-1.gpkg.tar"
   },
   {
    "at": 1793512319,

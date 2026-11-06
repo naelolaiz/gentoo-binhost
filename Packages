@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793942572
-PACKAGES: 1601
+TIMESTAMP: 1793943792
+PACKAGES: 1605
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4849,27 +4849,28 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1793705872
+BUILD_ID: 5
+BUILD_TIME: 1793943683
 CPV: dev-lang/python-3.13.18_p1
 DEFINED_PHASES: compile configure install prepare pretend setup test unpack
 DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/4=
 EAPI: 8
-IUSE: bluetooth debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl test tk valgrind +llvm_slot_18 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+IUSE: bluetooth debug +ensurepip examples gdbm libedit +ncurses pgo +readline +sqlite +ssl test tk valgrind verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ~ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: PSF-2
-MD5: 1911b5d6bce8782b55c2a00a88ad3959
-PATH: pkgs-dev-lang/python-3.13.18_p1-1.gpkg.tar
+MD5: 81521dc6a93a638558c6989ca580bfe0
+PATH: pkgs-dev-lang/python-3.13.18_p1-5.gpkg.tar
 PDEPEND: dev-python/ensurepip-pip
 PROVIDES: x86_64: _asyncio.cpython-313-x86_64-linux-gnu.so _bisect.cpython-313-x86_64-linux-gnu.so _blake2.cpython-313-x86_64-linux-gnu.so _bz2.cpython-313-x86_64-linux-gnu.so _codecs_cn.cpython-313-x86_64-linux-gnu.so _codecs_hk.cpython-313-x86_64-linux-gnu.so _codecs_iso2022.cpython-313-x86_64-linux-gnu.so _codecs_jp.cpython-313-x86_64-linux-gnu.so _codecs_kr.cpython-313-x86_64-linux-gnu.so _codecs_tw.cpython-313-x86_64-linux-gnu.so _contextvars.cpython-313-x86_64-linux-gnu.so _csv.cpython-313-x86_64-linux-gnu.so _ctypes.cpython-313-x86_64-linux-gnu.so _ctypes_test.cpython-313-x86_64-linux-gnu.so _curses.cpython-313-x86_64-linux-gnu.so _curses_panel.cpython-313-x86_64-linux-gnu.so _datetime.cpython-313-x86_64-linux-gnu.so _dbm.cpython-313-x86_64-linux-gnu.so _decimal.cpython-313-x86_64-linux-gnu.so _elementtree.cpython-313-x86_64-linux-gnu.so _gdbm.cpython-313-x86_64-linux-gnu.so _hashlib.cpython-313-x86_64-linux-gnu.so _heapq.cpython-313-x86_64-linux-gnu.so _interpchannels.cpython-313-x86_64-linux-gnu.so _interpqueues.cpython-313-x86_64-linux-gnu.so _interpreters.cpython-313-x86_64-linux-gnu.so _json.cpython-313-x86_64-linux-gnu.so _lsprof.cpython-313-x86_64-linux-gnu.so _lzma.cpython-313-x86_64-linux-gnu.so _md5.cpython-313-x86_64-linux-gnu.so _multibytecodec.cpython-313-x86_64-linux-gnu.so _multiprocessing.cpython-313-x86_64-linux-gnu.so _opcode.cpython-313-x86_64-linux-gnu.so _pickle.cpython-313-x86_64-linux-gnu.so _posixshmem.cpython-313-x86_64-linux-gnu.so _posixsubprocess.cpython-313-x86_64-linux-gnu.so _queue.cpython-313-x86_64-linux-gnu.so _random.cpython-313-x86_64-linux-gnu.so _sha1.cpython-313-x86_64-linux-gnu.so _sha2.cpython-313-x86_64-linux-gnu.so _sha3.cpython-313-x86_64-linux-gnu.so _socket.cpython-313-x86_64-linux-gnu.so _sqlite3.cpython-313-x86_64-linux-gnu.so _ssl.cpython-313-x86_64-linux-gnu.so _statistics.cpython-313-x86_64-linux-gnu.so _struct.cpython-313-x86_64-linux-gnu.so _testbuffer.cpython-313-x86_64-linux-gnu.so _testcapi.cpython-313-x86_64-linux-gnu.so _testclinic.cpython-313-x86_64-linux-gnu.so _testclinic_limited.cpython-313-x86_64-linux-gnu.so _testexternalinspection.cpython-313-x86_64-linux-gnu.so _testimportmultiple.cpython-313-x86_64-linux-gnu.so _testinternalcapi.cpython-313-x86_64-linux-gnu.so _testlimitedcapi.cpython-313-x86_64-linux-gnu.so _testmultiphase.cpython-313-x86_64-linux-gnu.so _testsinglephase.cpython-313-x86_64-linux-gnu.so _uuid.cpython-313-x86_64-linux-gnu.so _xxtestfuzz.cpython-313-x86_64-linux-gnu.so _zoneinfo.cpython-313-x86_64-linux-gnu.so array.cpython-313-x86_64-linux-gnu.so binascii.cpython-313-x86_64-linux-gnu.so cmath.cpython-313-x86_64-linux-gnu.so fcntl.cpython-313-x86_64-linux-gnu.so grp.cpython-313-x86_64-linux-gnu.so libpython3.13.so.1.0 math.cpython-313-x86_64-linux-gnu.so mmap.cpython-313-x86_64-linux-gnu.so pyexpat.cpython-313-x86_64-linux-gnu.so readline.cpython-313-x86_64-linux-gnu.so resource.cpython-313-x86_64-linux-gnu.so select.cpython-313-x86_64-linux-gnu.so syslog.cpython-313-x86_64-linux-gnu.so termios.cpython-313-x86_64-linux-gnu.so unicodedata.cpython-313-x86_64-linux-gnu.so xxlimited.cpython-313-x86_64-linux-gnu.so xxlimited_35.cpython-313-x86_64-linux-gnu.so xxsubtype.cpython-313-x86_64-linux-gnu.so zlib.cpython-313-x86_64-linux-gnu.so
 RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/4= dev-lang/python-exec[python_targets_python3_13(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "7ce09900bbca7143904acf4c4f7cbc9efc4c6e5e"}
 REQUIRES: x86_64: libb2.so.1 libbz2.so.1 libc.so.6 libcrypto.so.4 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.4 libtinfow.so.6 libuuid.so.1 libz.so.1
 RESTRICT: test
-SHA1: ba3f53c0af640145544d839f2460606f9425e31d
+SHA1: ea25ba9c196b51dd23143594c7e41e4c4fa7567b
 SIZE: 11909120
 SLOT: 3.13
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_18 ncurses readline sqlite ssl
-MTIME: 1793705876
+USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux ncurses readline sqlite ssl
+MTIME: 1793943687
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -9380,24 +9381,24 @@ MTIME: 1791065303
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-python/pyproject-metadata-0.7.1[python_targets_python3_14(-)] >=dev-build/meson-0.63.0 dev-util/patchelf dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791225484
+BDEPEND: app-alternatives/ninja >=dev-python/pyproject-metadata-0.7.1[python_targets_python3_14(-)] >=dev-build/meson-0.63.0 dev-util/patchelf dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 2
+BUILD_TIME: 1793943634
 CPV: dev-python/meson-python-0.22.1
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: dev-lang/python:3.14
 EAPI: 8
 IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos
 LICENSE: MIT
-MD5: 05869634327ff15caecc0dea3e2e7cab
-PATH: pkgs-dev-python/meson-python-0.22.1-1.gpkg.tar
-RDEPEND: >=dev-python/pyproject-metadata-0.7.1[python_targets_python3_14(-)] >=dev-build/meson-0.63.0 dev-util/patchelf dev-lang/python:3.14
+MD5: 2cb343cff77302ecced13c3f838fab8b
+PATH: pkgs-dev-python/meson-python-0.22.1-2.gpkg.tar
+RDEPEND: app-alternatives/ninja >=dev-python/pyproject-metadata-0.7.1[python_targets_python3_14(-)] >=dev-build/meson-0.63.0 dev-util/patchelf dev-lang/python:3.14
 RESTRICT: test
-SHA1: f4400f036cf907c1858011f26ce491b65fd83f89
+SHA1: e9143f52de6f303af02808465ea72746711d09e1
 SIZE: 143360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791225487
+MTIME: 1793943635
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -16579,6 +16580,25 @@ MTIME: 1791524425
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6 kde-frameworks/kdoctools:6
+BUILD_ID: 1
+BUILD_TIME: 1793943551
+CPV: kde-apps/kate-common-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+EAPI: 8
+IUSE: +handbook
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 5763047de411134f4e7d2169c1c69ed2
+PATH: pkgs-kde-apps/kate-common-26.08.3-1.gpkg.tar
+RDEPEND: !<kde-apps/kate-24.07.90-r1 !<kde-apps/kate-addons-24.07.90-r1 !<kde-apps/kate-lib-24.07.90-r1 !<kde-apps/kwrite-24.07.90-r1
+SHA1: befa3ba22d31ae6c3bcb1ba2172b634af6ef3c20
+SIZE: 9185280
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1793943555
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791525114
@@ -19299,6 +19319,25 @@ SIZE: 20480
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux mobi pdf
 MTIME: 1791524517
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1793943608
+CPV: kde-apps/thumbnailers-26.08.3
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: blender gettext mobi pdf raw video
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: metapackage
+MD5: a7f937503e860a42b290abc6849deba6
+PATH: pkgs-kde-apps/thumbnailers-26.08.3-1.gpkg.tar
+RDEPEND: >=media-gfx/kio-mobi-thumbnailer-26.08.3:6 >=media-gfx/kio-ps-thumbnailer-26.08.3:6
+SHA1: 139e6d858db11ea133beb597c08fadf3819f22c4
+SIZE: 20480
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux mobi pdf
+MTIME: 1793943609
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25672,6 +25711,29 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
+BUILD_TIME: 1793943594
+CPV: media-gfx/kio-mobi-thumbnailer-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-apps/kdegraphics-mobipocket-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 241e780889a6635067d350b3de504d0c
+PATH: pkgs-media-gfx/kio-mobi-thumbnailer-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: mobithumbnail.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-apps/kdegraphics-mobipocket-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 !<kde-apps/thumbnailers-24.05.2-r1:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6KIOGui.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+SHA1: 2f9bf2ea25ab88b0c9b2c532a7c96f1c0f0ddba6
+SIZE: 51200
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793943595
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
 BUILD_TIME: 1791524500
 CPV: media-gfx/kio-ps-thumbnailer-26.08.2
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
@@ -25690,6 +25752,29 @@ SIZE: 81920
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791524502
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793943600
+CPV: media-gfx/kio-ps-thumbnailer-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: 24164b9255ff93a42d8f5ed0d357d449
+PATH: pkgs-media-gfx/kio-ps-thumbnailer-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: gsthumbnail.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 !<kde-apps/thumbnailers-24.05.2-r1:6 app-text/dvipsk app-text/ghostscript-gpl || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6KIOGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libstdc++.so.6
+SHA1: 7934cdefb36d6aa2f446adc9ca540f3247c07f26
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793943601
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
