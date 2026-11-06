@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793950164
-PACKAGES: 1616
+TIMESTAMP: 1793951978
+PACKAGES: 1617
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -17391,6 +17391,32 @@ SIZE: 28764160
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux semantic-desktop
 MTIME: 1792821622
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gettext app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793951738
+CPV: kde-apps/kdenlive-26.08.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,-gles2-only,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtnetworkauth-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=gui-libs/kddockwidgets-2.4.0:0/4= >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/purpose-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 media-video/ffmpeg:0/60.62.62=[encode(+),libass,sdl,X] >=media-libs/mlt-7.38.0:0/7=[ffmpeg,frei0r,qt6,sdl,xml] >=media-libs/opentimelineio-0.18.0:0/0.18= virtual/os-headers dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: gles2-only semantic-desktop debug designer +handbook doc test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-3
+MD5: e9d2ef9d48d73f0cc6d535033acc5da5
+PATH: pkgs-kde-apps/kdenlive-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: mltpreview.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[concurrent,dbus,-gles2-only,gui,network,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtnetworkauth-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=gui-libs/kddockwidgets-2.4.0:0/4= >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/purpose-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 media-video/ffmpeg:0/60.62.62=[encode(+),libass,sdl,X] >=media-libs/mlt-7.38.0:0/7=[ffmpeg,frei0r,qt6,sdl,xml] >=media-libs/opentimelineio-0.18.0:0/0.18= >=kde-frameworks/qqc2-desktop-style-6.27.0:6 media-video/mediainfo || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "7ce09900bbca7143904acf4c4f7cbc9efc4c6e5e"}
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Bookmarks.so.6 libKF6Codecs.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6FileMetaData.so.3 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6IconThemes.so.6 libKF6ItemViews.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6NotifyConfig.so.6 libKF6Purpose.so.6 libKF6PurposeWidgets.so.6 libKF6Solid.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6MultimediaWidgets.so.6 libQt6Network.so.6 libQt6NetworkAuth.so.6 libQt6OpenGL.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6QuickWidgets.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libkddockwidgets-qt6.so.4 libm.so.6 libmlt++-7.so.7 libmlt-7.so.7 libopentime.so.18 libopentimelineio.so.18 libstdc++.so.6 libswresample.so.6
+RESTRICT: test test
+SHA1: 9f11dd3ed50d2c25adefc8c6f2930ca5f1a996a8
+SIZE: 28784640
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux semantic-desktop
+MTIME: 1793951741
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
