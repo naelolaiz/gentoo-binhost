@@ -406,20 +406,8 @@
    "path": "pkgs-app-editors/ghostwriter-26.08.1-1.gpkg.tar"
   },
   {
-   "at": 1792681346,
-   "path": "pkgs-app-emulation/qemu-10.2.3-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1792735060,
-   "path": "pkgs-app-emulation/qemu-10.2.3-r2-7.gpkg.tar"
-  },
-  {
    "at": 1793735169,
    "path": "pkgs-app-emulation/virtualbox-7.2.22-1.gpkg.tar"
-  },
-  {
-   "at": 1792681156,
-   "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-1.gpkg.tar"
   },
   {
    "at": 1793181201,
@@ -514,10 +502,6 @@
    "path": "pkgs-dev-libs/cyrus-sasl-2.1.28-r6-1.gpkg.tar"
   },
   {
-   "at": 1792681346,
-   "path": "pkgs-dev-libs/kirigami-app-components-1.0.2-1.gpkg.tar"
-  },
-  {
    "at": 1792907262,
    "path": "pkgs-dev-libs/kweathercore-26.08.1-1.gpkg.tar"
   },
@@ -554,20 +538,12 @@
    "path": "pkgs-dev-python/pyqt6-6.11.0-r1-7.gpkg.tar"
   },
   {
-   "at": 1792681346,
-   "path": "pkgs-dev-python/sip-6.17.0-1.gpkg.tar"
-  },
-  {
    "at": 1793515068,
    "path": "pkgs-dev-python/snakeoil-0.11.7-1.gpkg.tar"
   },
   {
    "at": 1793512009,
    "path": "pkgs-dev-python/sphinxcontrib-jsmath-2.0.0-1.gpkg.tar"
-  },
-  {
-   "at": 1792736587,
-   "path": "pkgs-dev-python/tree-sitter-0.26.0_p20260816-r1-3.gpkg.tar"
   },
   {
    "at": 1792907259,
@@ -684,10 +660,6 @@
   {
    "at": 1792907262,
    "path": "pkgs-games-puzzle/skladnik-26.08.1-1.gpkg.tar"
-  },
-  {
-   "at": 1792678372,
-   "path": "pkgs-gui-apps/sddm-gentoo-config-0-r1-1.gpkg.tar"
   },
   {
    "at": 1792822958,
@@ -1934,10 +1906,6 @@
    "path": "pkgs-kde-plasma/plasma-meta-6.8.0-1.gpkg.tar"
   },
   {
-   "at": 1792678989,
-   "path": "pkgs-kde-plasma/plasma-meta-6.8.1-1.gpkg.tar"
-  },
-  {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/plasma-nm-6.8.0-1.gpkg.tar"
   },
@@ -1998,10 +1966,6 @@
    "path": "pkgs-kde-plasma/sddm-kcm-6.8.0-1.gpkg.tar"
   },
   {
-   "at": 1792678678,
-   "path": "pkgs-kde-plasma/sddm-kcm-6.8.1-1.gpkg.tar"
-  },
-  {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/spectacle-6.8.0-1.gpkg.tar"
   },
@@ -2046,10 +2010,6 @@
    "path": "pkgs-llvm-core/llvm-23.1.2-1.gpkg.tar"
   },
   {
-   "at": 1792733242,
-   "path": "pkgs-llvm-core/llvm-23.1.4-2.gpkg.tar"
-  },
-  {
    "at": 1793735172,
    "path": "pkgs-llvm-core/llvm-common-23.1.2-1.gpkg.tar"
   },
@@ -2086,10 +2046,6 @@
    "path": "pkgs-media-gfx/qrca-26.08.1-1.gpkg.tar"
   },
   {
-   "at": 1792735060,
-   "path": "pkgs-media-libs/aubio-0.4.9-r5-3.gpkg.tar"
-  },
-  {
    "at": 1792816581,
    "path": "pkgs-media-libs/libheif-1.23.6-2.gpkg.tar"
   },
@@ -2104,10 +2060,6 @@
   {
    "at": 1793710316,
    "path": "pkgs-media-libs/libplacebo-7.387.0-1.gpkg.tar"
-  },
-  {
-   "at": 1792681346,
-   "path": "pkgs-media-libs/libsdl-1.2.74-1.gpkg.tar"
   },
   {
    "at": 1793941342,
@@ -2354,20 +2306,12 @@
    "path": "pkgs-net-wireless/wpa_supplicant-2.12-1.gpkg.tar"
   },
   {
-   "at": 1792681346,
-   "path": "pkgs-sci-ml/ggml-0.25.3-1.gpkg.tar"
-  },
-  {
    "at": 1793598458,
    "path": "pkgs-sci-ml/ggml-0.26.0-1.gpkg.tar"
   },
   {
    "at": 1793735172,
    "path": "pkgs-sci-ml/ggml-0.27.0-1.gpkg.tar"
-  },
-  {
-   "at": 1792681346,
-   "path": "pkgs-sci-ml/ollama-0.35.1-2.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -2406,10 +2350,6 @@
    "path": "pkgs-sys-apps/pkgcore-0.12.48-1.gpkg.tar"
   },
   {
-   "at": 1792728706,
-   "path": "pkgs-sys-apps/systemd-utils-262-1.gpkg.tar"
-  },
-  {
    "at": 1792907262,
    "path": "pkgs-sys-block/partitionmanager-26.08.1-1.gpkg.tar"
   },
@@ -2432,10 +2372,6 @@
   {
    "at": 1792907262,
    "path": "pkgs-sys-libs/kpmcore-26.08.1-1.gpkg.tar"
-  },
-  {
-   "at": 1792681346,
-   "path": "pkgs-sys-libs/libcap-ng-0.9.5-r1-1.gpkg.tar"
   },
   {
    "at": 1793598458,
