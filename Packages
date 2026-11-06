@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793954886
-PACKAGES: 1621
+TIMESTAMP: 1793956407
+PACKAGES: 1624
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16269,6 +16269,24 @@ MTIME: 1791531783
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6
+BUILD_ID: 1
+BUILD_TIME: 1793956271
+CPV: kde-apps/dolphin-plugins-common-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 2dd30db7daf7d0e425a86bc53ea0eb9e
+PATH: pkgs-kde-apps/dolphin-plugins-common-26.08.3-1.gpkg.tar
+RDEPEND: !<app-cdr/dolphin-plugins-mountiso-24.07.90-r1 !<kde-apps/dolphin-plugins-dropbox-24.07.90-r1 !<kde-apps/dolphin-plugins-git-24.07.90-r1 !<kde-apps/dolphin-plugins-mercurial-24.07.90-r1 !<kde-apps/dolphin-plugins-subversion-24.07.90-r1
+SHA1: aec2edfa9aa1a062a11c52760d368b562c14d461
+SIZE: 348160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793956272
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791562137
@@ -18575,6 +18593,29 @@ MTIME: 1791531810
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793956302
+CPV: kde-apps/kqtquickcharts-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: e29b05da109f344eb12b25a5104e55cb
+PATH: pkgs-kde-apps/kqtquickcharts-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: libkqtquickcharts.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=dev-qt/qtdeclarative-6.11.2:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/kqtquickcharts:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+SHA1: 1673c3da6db7e8f905bd17f9728657ca8b0bdca6
+SIZE: 112640
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793956303
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: x11-misc/shared-mime-info app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791551772
@@ -19107,6 +19148,30 @@ SIZE: 92160
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791531602
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793956312
+CPV: kde-apps/libkdcraw-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-libs/libraw-0.16:0/0.22.1= dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+
+MD5: eaeb2a77cc5b00b84c2b9c8754b94553
+PATH: pkgs-kde-apps/libkdcraw-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: libKDcrawQt6.so.5
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=media-libs/libraw-0.16:0/0.22.1= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "7ce09900bbca7143904acf4c4f7cbc9efc4c6e5e"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libraw.so.25 libstdc++.so.6
+SHA1: e0efdf45f3436592680a28172a19e923d549c8f2
+SIZE: 92160
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793956313
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
