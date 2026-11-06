@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793937411
-PACKAGES: 1594
+TIMESTAMP: 1793937716
+PACKAGES: 1595
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -30778,6 +30778,28 @@ SHA1: b9c527af9214810cd19c026b2f291a546db23def
 SIZE: 2027520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux pam seccomp ssl
 MTIME: 1793683333
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-build/autoconf virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1793937470
+CPV: net-misc/openssh-10.6_p2
+DEFINED_PHASES: compile configure install postinst preinst prepare pretend test unpack
+DEPEND: acct-group/sshd acct-user/sshd >=dev-libs/openssl-1.1.1l-r1:0/4= virtual/libcrypt:0/2= >=virtual/zlib-1.2.3:0/1= sys-libs/pam virtual/os-headers >=sys-kernel/linux-headers-5.1
+EAPI: 8
+IUSE: abi_mips_n32 audit debug kerberos ldns libedit livecd pam seccomp security-key selinux +ssl static test verify-sig
+KEYWORDS: ~alpha amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: BSD GPL-2
+MD5: 5d9edc71fda91d4377e21c27f0553ad7
+PATH: pkgs-net-misc/openssh-10.6_p2-1.gpkg.tar
+RDEPEND: acct-group/sshd acct-user/sshd >=dev-libs/openssl-1.1.1l-r1:0/4= virtual/libcrypt:0/2= >=virtual/zlib-1.2.3:0/1= sys-libs/pam !net-misc/openssh-contrib >=sys-auth/pambase-20081028 sys-apps/shadow >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libcrypto.so.4 libpam.so.0 libz.so.1
+RESTRICT: test
+SHA1: a6c4c9af990bd5acd2c2c939c8581f1862e48b87
+SIZE: 2027520
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux pam seccomp ssl
+MTIME: 1793937472
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
