@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793946231
-PACKAGES: 1610
+TIMESTAMP: 1793950164
+PACKAGES: 1616
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16162,6 +16162,31 @@ MTIME: 1793169919
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793948768
+CPV: kde-apps/dolphin-26.08.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[concurrent,dbus,gui,widgets,X,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6/6.31= >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-apps/baloo-widgets-26.08.3:6 >=kde-frameworks/baloo-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: semantic-desktop telemetry debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: cf67db1fcebc49366f39e1f413806093
+PATH: pkgs-kde-apps/dolphin-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: dolphinpart.so hidefileitemaction.so kcm_dolphingeneral.so kcm_dolphinviewmodes.so libdolphinprivate.so.6 libdolphinvcs.so.6 movetonewfolderitemaction.so setfoldericonitemaction.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[concurrent,dbus,gui,widgets,X,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcodecs-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6/6.31= >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 >=kde-apps/baloo-widgets-26.08.3:6 >=kde-frameworks/baloo-6.27.0:6 >=kde-apps/kio-extras-26.08.3:6 >=kde-apps/thumbnailers-26.08.3:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Baloo.so.6 libKF6BalooWidgets.so.6 libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6Codecs.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6FileMetaData.so.3 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6MultimediaWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 21173b88f4de542fe7426c7ea6bc12e58bb69ae6
+SIZE: 6266880
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux semantic-desktop
+MTIME: 1793948771
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:* kde-frameworks/ki18n:6
 BUILD_ID: 1
 BUILD_TIME: 1791531779
@@ -16321,6 +16346,31 @@ SIZE: 7311360
 SLOT: 6
 USE: X abi_x86_64 activities amd64 annotate elibc_glibc handbook kernel_linux mpris semantic-desktop
 MTIME: 1793170588
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793949378
+CPV: kde-apps/gwenview-26.08.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,opengl,wayland,widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 media-gfx/exiv2:0/0.28= media-libs/lcms:2 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/tiff:0/6= kde-plasma/plasma-activities:6/7= >=media-libs/kcolorpicker-0.3.1 >=media-libs/kimageannotator-0.7.1 >=dev-qt/qtbase-6.11.2:6[dbus] >=kde-frameworks/baloo-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libX11 dev-libs/wayland-protocols >=dev-qt/qtbase-6.11.2:6[concurrent] >=kde-frameworks/kwindowsystem-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: activities +annotate fits +mpris raw semantic-desktop share X debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+ FDL-1.2
+MD5: f7a9fec7b3ea3cd86b40a76ba86f8c99
+PATH: pkgs-kde-apps/gwenview-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: gvpart.so libgwenviewlib.so.5 slideshowfileitemaction.so
+RDEPEND: dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,opengl,wayland,widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 media-gfx/exiv2:0/0.28= media-libs/lcms:2 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= media-libs/tiff:0/6= kde-plasma/plasma-activities:6/7= >=media-libs/kcolorpicker-0.3.1 >=media-libs/kimageannotator-0.7.1 >=dev-qt/qtbase-6.11.2:6[dbus] >=kde-frameworks/baloo-6.27.0:6 >=kde-frameworks/kfilemetadata-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libX11 >=dev-qt/qtimageformats-6.11.2:6 >=kde-apps/thumbnailers-26.08.3:6 >=kde-frameworks/kimageformats-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Baloo.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6FileMetaData.so.3 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libKF6ItemModels.so.6 libKF6ItemViews.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6MultimediaWidgets.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libX11.so.6 libc.so.6 libexiv2.so.28 libgcc_s.so.1 libjpeg.so.62 libkImageAnnotator.so.0 liblcms2.so.2 libm.so.6 libpng16.so.16 libstdc++.so.6 libtiff.so.6 libwayland-client.so.0
+RESTRICT: test test
+SHA1: 9d62a675fbbaffa215ca37ca67bdaec3d7e0751c
+SIZE: 7321600
+SLOT: 6
+USE: X abi_x86_64 activities amd64 annotate elibc_glibc handbook kernel_linux mpris semantic-desktop
+MTIME: 1793949380
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -16583,6 +16633,29 @@ SIZE: 256000
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793170831
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793946405
+CPV: kde-apps/kate-26.08.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: f11b0e6bd8901d9035f377daf429612f
+PATH: pkgs-kde-apps/kate-26.08.3-1.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl ~kde-apps/kate-addons-26.08.3:6 >=kde-apps/kate-common-26.08.3 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libc.so.6 libkateprivate.so.26.08.3 libstdc++.so.6
+SHA1: 2d7d05fcd566aece3eff4876609146787fa60b07
+SIZE: 256000
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793946406
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -18318,6 +18391,30 @@ SIZE: 3123200
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1791526883
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793947457
+CPV: kde-apps/konsole-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-libs/icu:0/78= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland,X] >=kde-frameworks/kxmlgui-6.27.0:6 x11-libs/libxkbcommon dev-qt/qtbase:6
+EAPI: 8
+IUSE: ssh X debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: a60699dd304ffde09ebd0d79b50e3eeb
+PATH: pkgs-kde-apps/konsole-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: konsole_quickcommandsplugin.so konsole_sshmanagerplugin.so konsolepart.so libkonsoleapp.so.26.08.3 libkonsoleprivate.so.26.08.3
+RDEPEND: dev-libs/icu:0/78= >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets,xml] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kglobalaccel-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/knotifyconfig-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland,X] >=kde-frameworks/kxmlgui-6.27.0:6 x11-libs/libxkbcommon || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Bookmarks.so.6 libKF6BookmarksWidgets.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6NewStuffCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Notifications.so.6 libKF6NotifyConfig.so.6 libKF6Parts.so.6 libKF6Pty.so.6 libKF6Service.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Network.so.6 libQt6PrintSupport.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libicuuc.so.78 libm.so.6 libstdc++.so.6 libxkbcommon.so.0
+RESTRICT: test
+SHA1: 63efc60f9c691178cd131808c9513d899935db8b
+SIZE: 3153920
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1793947458
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21393,6 +21490,32 @@ SIZE: 2109440
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux pulseaudio
 MTIME: 1793708898
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793949863
+CPV: kde-misc/kdeconnect-26.08.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: dev-libs/libei dev-libs/openssl:0/4= >=dev-libs/wayland-1.15.0 >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6[qml] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kpeople-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 sys-apps/dbus >=media-libs/pulseaudio-qt-1.4:0/5= x11-libs/libfakekey x11-libs/libX11 x11-libs/libXtst x11-libs/libxkbcommon dev-libs/wayland-protocols dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: bluetooth pulseaudio telephony X debug test selinux
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: GPL-2+
+MD5: 3381b888b71d5b8b92cb4fdb127e21ce
+PATH: pkgs-kde-misc/kdeconnect-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: kdeconnect.so kdeconnect_battery.so kdeconnect_clipboard.so kdeconnect_connectivity_report.so kdeconnect_contacts.so kdeconnect_digitizer.so kdeconnect_findmyphone.so kdeconnect_findthisdevice.so kdeconnect_lockdevice.so kdeconnect_mousepad.so kdeconnect_mpriscontrol.so kdeconnect_mprisremote.so kdeconnect_notifications.so kdeconnect_pausemusic.so kdeconnect_ping.so kdeconnect_presenter.so kdeconnect_remotecommands.so kdeconnect_remotecontrol.so kdeconnect_remotekeyboard.so kdeconnect_remotesystemvolume.so kdeconnect_runcommand.so kdeconnect_screensaver_inhibit.so kdeconnect_sendnotifications.so kdeconnect_sftp.so kdeconnect_share.so kdeconnect_shareinputdevices.so kdeconnect_shareinputdevicesremote.so kdeconnect_sms.so kdeconnect_systemvolume.so kdeconnect_telephony.so kdeconnect_virtualmonitor.so kdeconnectfileitemaction.so libkdeconnect_findthisdevice_qmlhelper.so libkdeconnectcore.so.26 libkdeconnectdeclarativeplugin.so
+RDEPEND: dev-libs/libei dev-libs/openssl:0/4= >=dev-libs/wayland-1.15.0 >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=dev-qt/qtmultimedia-6.11.2:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6[qml] >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kguiaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kitemmodels-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kpeople-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/qqc2-desktop-style-6.27.0:6 >=kde-frameworks/solid-6.27.0:6 sys-apps/dbus >=media-libs/pulseaudio-qt-1.4:0/5= x11-libs/libfakekey x11-libs/libX11 x11-libs/libXtst x11-libs/libxkbcommon dev-libs/kirigami-addons:6 >=dev-qt/qt5compat-6.11.2:6[qml] >=dev-qt/qtmultimedia-6.11.2:6[qml] >=dev-qt/qttools-6.11.2:6[qdbus] >=kde-frameworks/kdeclarative-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 kde-plasma/libplasma:6 net-fs/sshfs || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "7ce09900bbca7143904acf4c4f7cbc9efc4c6e5e"}
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6People.so.6 libKF6PulseAudioQt.so.5 libKF6Service.so.6 libKF6Solid.so.6 libKF6StatusNotifierItem.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libX11.so.6 libXtst.so.6 libc.so.6 libcrypto.so.4 libdbus-1.so.3 libei.so.1 libevdev.so.2 libfakekey.so.0 libstdc++.so.6 libwayland-client.so.0 libxkbcommon.so.0
+RESTRICT: test test
+SHA1: 77b0c8356ca70bb66c3f01319c62f7bf2cb64df5
+SIZE: 2119680
+SLOT: 6
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux pulseaudio
+MTIME: 1793949866
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25639,6 +25762,31 @@ SIZE: 33587200
 SLOT: 0/3
 USE: X abi_x86_64 alsa amd64 elibc_glibc heif jpeg2k jpegxl kernel_linux lua_single_target_luajit mng openexr openmp python_single_target_python3_14 udev wayland webp
 MTIME: 1791308682
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/perl-5.30.3 dev-libs/libxslt >=dev-util/gdbus-codegen-2.80.5-r1 >=sys-devel/gettext-0.21 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BUILD_ID: 1
+BUILD_TIME: 1793948326
+CPV: media-gfx/gimp-3.2.8
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
+DEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/fribidi-1.0.8:0/0= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.12= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: X aalib alsa bash-completion doc fits gnome heif javascript jpeg2k jpegxl lua mng openexr openmp postscript test udev unwind vala vector-icons wayland webp wmf xpm +lua_single_target_luajit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-3+ LGPL-3+
+MD5: 813eda437523bb19f27ce26257708f1b
+PATH: pkgs-media-gfx/gimp-3.2.8-1.gpkg.tar
+PROVIDES: x86_64: libcolor-selector-cmyk.so libcolor-selector-water.so libcolor-selector-wheel.so libcontroller-linux-input.so libcontroller-midi.so libdisplay-filter-aces-rrt.so libdisplay-filter-clip-warning.so libdisplay-filter-color-blind.so libdisplay-filter-gamma.so libdisplay-filter-high-contrast.so libgimp-3.0.so.0 libgimp-scriptfu-3.0.so.0 libgimpbase-3.0.so.0 libgimpcolor-3.0.so.0 libgimpconfig-3.0.so.0 libgimpmath-3.0.so.0 libgimpmodule-3.0.so.0 libgimpthumb-3.0.so.0 libgimpui-3.0.so.0 libgimpwidgets-3.0.so.0
+RDEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/fribidi-1.0.8:0/0= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.12= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms] x11-themes/hicolor-icon-theme >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libIex-3_3.so.32 libOpenEXR-3_3.so.32 libX11.so.6 libXcursor.so.1 libXext.so.6 libXfixes.so.3 libXmu.so.6 libappstream.so.5 libarchive.so.13 libasound.so.2 libbabl-0.1.so.0 libbz2.so.1 libc.so.6 libcairo.so.2 libfontconfig.so.1 libfreetype.so.6 libfribidi.so.0 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgegl-0.4.so.0 libgegl-npd-0.4.so libgexiv2.so.2 libgio-2.0.so.0 libgirepository-1.0.so.1 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libgtk-3.so.0 libgudev-1.0.so.0 libharfbuzz.so.0 libheif.so.1 libjpeg.so.62 libjson-glib-1.0.so.0 libjxl.so.0.12 libjxl_threads.so.0.12 liblcms2.so.2 liblzma.so.5 libm.so.6 libmng.so.2 libmypaint.so.0 libopenjp2.so.7 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libz.so.1
+RESTRICT: test
+SHA1: 17fbebe8231243ce75e9e17c893af8a508c57d35
+SIZE: 34007040
+SLOT: 0/3
+USE: X abi_x86_64 alsa amd64 elibc_glibc heif jpeg2k jpegxl kernel_linux lua_single_target_luajit mng openexr openmp python_single_target_python3_14 udev wayland webp
+MTIME: 1793948335
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
