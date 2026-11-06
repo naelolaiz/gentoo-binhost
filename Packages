@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793983910
-PACKAGES: 1789
+TIMESTAMP: 1793984047
+PACKAGES: 1772
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1088,28 +1088,6 @@ SHA1: ee6a009d732b40e9f63058ac2a2eacff085af9fa
 SIZE: 3829760
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792316984
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-go/go-md2man >=dev-lang/go-1.26.0 >=dev-lang/go-1.24.11:0/1.27.2= app-arch/unzip
-BUILD_ID: 2
-BUILD_TIME: 1791866066
-CPV: app-containers/podman-6.1.2
-DEFINED_PHASES: compile install postinst prepare setup unpack
-DEPEND: app-containers/catatonit >=app-containers/conmon-2.1.10 >=app-containers/container-libs-0.68.0[extra(-)] app-crypt/gpgme:1/45.0= dev-db/sqlite:3 dev-libs/libassuan:0/3.0= dev-libs/libgpg-error:0/0= sys-apps/shadow:0/6= sys-libs/libseccomp:0/0=
-EAPI: 8
-IUSE: apparmor btrfs cron +seccomp selinux systemd wrapper
-KEYWORDS: ~amd64 ~arm64 ~loong ~riscv
-LICENSE: Apache-2.0 BSD BSD-2 CC-BY-SA-4.0 ISC MIT MPL-2.0
-MD5: 0b966ea9ddbef7bb8bcb4ad4db578e1b
-PATH: pkgs-app-containers/podman-6.1.2-2.gpkg.tar
-RDEPEND: app-containers/catatonit >=app-containers/conmon-2.1.10 >=app-containers/container-libs-0.68.0[extra(-)] app-crypt/gpgme:1/45.0= dev-db/sqlite:3 dev-libs/libassuan:0/3.0= dev-libs/libgpg-error:0/0= sys-apps/shadow:0/6= sys-libs/libseccomp:0/0= virtual/tmpfiles >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libgpgme.so.45 libseccomp.so.2 libsqlite3.so.0 libsubid.so.6
-RESTRICT: test
-SHA1: f5430a45ef65e23b09136046f4433a774a4e1924
-SIZE: 33648640
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux seccomp
-MTIME: 1791866071
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4852,25 +4830,6 @@ SHA1: 3952ad0d9f2956d53d0af9f855c88f7cb2194ff8
 SIZE: 1351680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux ncurses
 MTIME: 1793597524
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-arch/unzip
-BUILD_ID: 1
-BUILD_TIME: 1791276644
-CPV: dev-lang/deno-bin-2.9.7
-DEFINED_PHASES: compile install
-EAPI: 9
-KEYWORDS: -* ~amd64 ~arm64
-LICENSE: MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 ISC MIT MPL-2.0 openssl Unicode-3.0 Unicode-DFS-2016 ZLIB
-MD5: b73e4dc5fc2b5866445c3b1c752192f8
-PATH: pkgs-dev-lang/deno-bin-2.9.7-1.gpkg.tar
-RDEPEND: || ( llvm-runtimes/libgcc sys-devel/gcc:* ) sys-libs/glibc >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libdl.so.2 libgcc_s.so.1 libm.so.6 libpthread.so.0 librt.so.1
-SHA1: 36251bef9a65f8346803f944dbf96d78eaf20eda
-SIZE: 39987200
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791276646
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12500,75 +12459,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
 BUILD_ID: 1
-BUILD_TIME: 1791619710
-CPV: dev-python/uv-0.12.23
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1=
-EAPI: 8
-IUSE: test debug
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
-LICENSE: || ( Apache-2.0 MIT ) 0BSD Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MIT-0 MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
-MD5: 0d1560e7602da2d9634e49d4d771dcef
-PATH: pkgs-dev-python/uv-0.12.23-1.gpkg.tar
-PROPERTIES: test_network
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
-RESTRICT: test
-SHA1: 823de47cb09cf22759854d8088d551cda62bf731
-SIZE: 21309440
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791619720
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
-BUILD_ID: 1
-BUILD_TIME: 1792316550
-CPV: dev-python/uv-0.13.1
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1=
-EAPI: 8
-IUSE: test debug
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
-LICENSE: || ( Apache-2.0 MIT ) Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MIT-0 MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
-MD5: 6f0d6a340ce678a742694599aba83517
-PATH: pkgs-dev-python/uv-0.13.1-1.gpkg.tar
-PROPERTIES: test_network
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
-RESTRICT: test
-SHA1: decfdae3cafd9948a3168fa90b4546749d87e101
-SIZE: 18094080
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792316566
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
-BUILD_ID: 1
-BUILD_TIME: 1792586685
-CPV: dev-python/uv-0.13.3
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1=
-EAPI: 8
-IUSE: test debug
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
-LICENSE: || ( Apache-2.0 MIT ) Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
-MD5: c570eba9ec2cd594521c5cd7ba786d8d
-PATH: pkgs-dev-python/uv-0.13.3-1.gpkg.tar
-PROPERTIES: test_network
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
-RESTRICT: test
-SHA1: da7f58cbc42ac51b911fab80ebedc7a8a3e2dd5d
-SIZE: 17725440
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792586696
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
-BUILD_ID: 1
 BUILD_TIME: 1792679930
 CPV: dev-python/uv-0.13.4-r1
 DEFINED_PHASES: compile configure install prepare pretend setup test unpack
@@ -12656,69 +12546,6 @@ SHA1: 1234179cbaa471ec69e25a8f4fa50c18faee3bf7
 SIZE: 17674240
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793805472
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791620109
-CPV: dev-python/uv-build-0.12.23
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
-LICENSE: || ( Apache-2.0 MIT )
-MD5: 02548d592406a03815fd243abfcc6de5
-PATH: pkgs-dev-python/uv-build-0.12.23-1.gpkg.tar
-RDEPEND: >=dev-python/uv-0.12.23 dev-lang/python:3.14
-RESTRICT: test
-SHA1: 824b70a94a7dc75c583d5cfc249aa287a773987d
-SIZE: 51200
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791620111
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1792316855
-CPV: dev-python/uv-build-0.13.1
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
-LICENSE: || ( Apache-2.0 MIT )
-MD5: 5c1c55288bfec7f9e17825a3dec62ac2
-PATH: pkgs-dev-python/uv-build-0.13.1-1.gpkg.tar
-RDEPEND: >=dev-python/uv-0.13.1 dev-lang/python:3.14
-RESTRICT: test
-SHA1: 713ec094ed152151ea80946607c21d28d1a04a4d
-SIZE: 51200
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1792316856
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1792586942
-CPV: dev-python/uv-build-0.13.3
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
-LICENSE: || ( Apache-2.0 MIT )
-MD5: 38a85986f417aafcddd46084ba3752a5
-PATH: pkgs-dev-python/uv-build-0.13.3-1.gpkg.tar
-RDEPEND: >=dev-python/uv-0.13.3 dev-lang/python:3.14
-RESTRICT: test
-SHA1: 157ab601e2c91da41a07478cf5b7a0a9c9014f25
-SIZE: 51200
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1792586943
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -23106,31 +22933,6 @@ SIZE: 266240
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791612203
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791615109
-CPV: kde-frameworks/baloo-6.31.0
-DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-db/lmdb-0.9.17 >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/kcrash-6.31*:6 =kde-frameworks/kdbusaddons-6.31*:6 =kde-frameworks/kfilemetadata-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kidletime-6.31*:6 =kde-frameworks/kio-6.31*:6 =kde-frameworks/solid-6.31*:6 dev-qt/qtbase:6
-EAPI: 8
-IUSE: debug test
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
-LICENSE: LGPL-2+
-MD5: 45f10b4077bb140c422ef2c8ccdd50a7
-PATH: pkgs-kde-frameworks/baloo-6.31.0-1.gpkg.tar
-PROVIDES: x86_64: baloosearch.so baloosearchmodule.so libKF6Baloo.so.6 libKF6BalooEngine.so.6 libbaloomonitorplugin.so libbalooplugin.so tags.so timeline.so
-RDEPEND: >=dev-db/lmdb-0.9.17 >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 =kde-frameworks/kconfig-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/kcrash-6.31*:6 =kde-frameworks/kdbusaddons-6.31*:6 =kde-frameworks/kfilemetadata-6.31*:6 =kde-frameworks/ki18n-6.31*:6 =kde-frameworks/kidletime-6.31*:6 =kde-frameworks/kio-6.31*:6 =kde-frameworks/solid-6.31*:6 !kde-frameworks/baloo:5[-kf6compat(-)] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
-REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6FileMetaData.so.3 libKF6I18n.so.6 libKF6IdleTime.so.6 libKF6KIOCore.so.6 libKF6Solid.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libc.so.6 liblmdb.so.0 libm.so.6 libstdc++.so.6
-RESTRICT: test test
-SHA1: 127f949571dfee2048cb55f095d744c3ea1c2180
-SIZE: 706560
-SLOT: 6/6.31
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791615112
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -34571,99 +34373,6 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791421526
-CPV: net-libs/nodejs-26.10.0-r3
-DEFINED_PHASES: compile configure install postinst prepare pretend setup test
-DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.8:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
-EAPI: 8
-IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
-LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
-MD5: ccd036ce06c58f371145054e8e4c8dee
-PATH: pkgs-net-libs/nodejs-26.10.0-r3-1.gpkg.tar
-RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/33= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.8:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.33 libsimdutf.so.36 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
-RESTRICT: test
-SHA1: b89959dad39bbad1a07ec50bada1f7d542ce96ad
-SIZE: 38379520
-SLOT: 0/26
-USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
-MTIME: 1791421536
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1791611939
-CPV: net-libs/nodejs-26.11.1
-DEFINED_PHASES: compile configure install postinst prepare pretend setup test
-DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
-EAPI: 8
-IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
-LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
-MD5: 51d3a1e5cc3e7f9515f83a1a88f4b869
-PATH: pkgs-net-libs/nodejs-26.11.1-2.gpkg.tar
-RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.34 libsimdutf.so.36 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
-RESTRICT: test
-SHA1: 84d1dfc17aa0c371b899f491a88158c654b17437
-SIZE: 38604800
-SLOT: 0/26
-USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
-MTIME: 1791611949
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791956983
-CPV: net-libs/nodejs-26.11.1-r1
-DEFINED_PHASES: compile configure install postinst prepare pretend setup test
-DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
-EAPI: 8
-IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
-LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
-MD5: 8f58233babd43bcd8176f85be57c5152
-PATH: pkgs-net-libs/nodejs-26.11.1-r1-1.gpkg.tar
-RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-4.6.11:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.34 libsimdutf.so.36 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
-RESTRICT: test
-SHA1: d3e7116819b736a0e5c3e4ba5d8a63d7f099efe3
-SIZE: 39536640
-SLOT: 0/26
-USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
-MTIME: 1791956994
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1792043003
-CPV: net-libs/nodejs-26.12.0
-DEFINED_PHASES: compile configure install postinst prepare pretend setup test
-DEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
-EAPI: 8
-IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
-LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
-MD5: 55cf344c5cae340fe3d92497a7477dee
-PATH: pkgs-net-libs/nodejs-26.12.0-1.gpkg.tar
-RDEPEND: >=app-arch/brotli-1.1.0:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1:0/36=[atomic-base64] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/34= >=net-dns/c-ares-1.34.8:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/3= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.3 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.34 libsimdutf.so.36 libsqlite3.so.0 libssl.so.3 libstdc++.so.6 libuv.so.1 libz.so.1
-RESTRICT: test
-SHA1: e58025b62608978e61cb3b20f83c670565b88189
-SIZE: 39567360
-SLOT: 0/26
-USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
-MTIME: 1792043014
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
 BUILD_ID: 7
 BUILD_TIME: 1793693990
 CPV: net-libs/nodejs-26.12.1
@@ -36280,51 +35989,6 @@ SHA1: 8c68936ce7a95d76f1e35f2083fd7d40149d3e43
 SIZE: 20920320
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793807021
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1792587623
-CPV: sci-ml/ollama-0.40.6-r1
-DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0=
-EAPI: 8
-KEYWORDS: ~amd64
-LICENSE: MIT
-MD5: bba0ba12bd7893afd88f7c55e6fbfa17
-PATH: pkgs-sci-ml/ollama-0.40.6-r1-1.gpkg.tar
-PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
-REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
-RESTRICT: mirror test
-SHA1: b08fe61fa4ad763ba32d53e11b37e1096c4b9f2b
-SIZE: 16640000
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792587628
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-lang/go-1.26.0 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1792680658
-CPV: sci-ml/ollama-0.40.7
-DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0=
-EAPI: 8
-KEYWORDS: ~amd64
-LICENSE: MIT
-MD5: a71057c7e186a3dad108f5da7c32a4a7
-PATH: pkgs-sci-ml/ollama-0.40.7-1.gpkg.tar
-PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.27.0:0/0.27.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
-RESTRICT: mirror test
-SHA1: aebb6292d9340e0539735c64c9f8ad24f3db3468
-SIZE: 16762880
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792680662
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -39901,50 +39565,6 @@ SHA1: 22ae154a685d62a7b0a6f99af7051e034b93f647
 SIZE: 71680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791281503
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-python/docutils dev-qt/qttools[linguist] kde-frameworks/extra-cmake-modules:0 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791228899
-CPV: x11-misc/sddm-0.21.0_p20260819
-DEFINED_PHASES: compile configure install postinst prepare setup test unpack
-DEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower
-EAPI: 8
-IUSE: +elogind systemd test
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
-LICENSE: GPL-2+ MIT CC-BY-3.0 CC-BY-SA-3.0 public-domain
-MD5: 85aaa8115492e53d79a33f6303316c5e
-PATH: pkgs-x11-misc/sddm-0.21.0_p20260819-1.gpkg.tar
-RDEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower gui-apps/sddm-gentoo-config gui-libs/display-manager-init virtual/tmpfiles >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libXau.so.6 libc.so.6 libgcc_s.so.1 libpam.so.0 libstdc++.so.6 libxcb-xkb.so.1 libxcb.so.1
-RESTRICT: test
-SHA1: a1594bf3f57286e0a5ec4fac8f70e39d96661af8
-SIZE: 3819520
-USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux
-MTIME: 1791228902
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-python/docutils dev-qt/qttools[linguist] kde-frameworks/extra-cmake-modules:0 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1792310813
-CPV: x11-misc/sddm-0.21.0_p20260819-r1
-DEFINED_PHASES: compile configure install postinst prepare setup test unpack
-DEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower
-EAPI: 8
-IUSE: +elogind systemd test
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
-LICENSE: GPL-2+ MIT CC-BY-3.0 CC-BY-SA-3.0 public-domain
-MD5: b37c76f5e65b37cbf02ec832adc2ab47
-PATH: pkgs-x11-misc/sddm-0.21.0_p20260819-r1-1.gpkg.tar
-RDEPEND: acct-group/sddm acct-user/sddm dev-qt/qtbase:6[dbus,gui,network] dev-qt/qtdeclarative:6 sys-libs/pam x11-libs/libXau x11-libs/libxcb:0/1.12= sys-auth/elogind[pam] sys-power/upower gui-apps/sddm-gentoo-config gui-libs/display-manager-init virtual/tmpfiles >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libXau.so.6 libc.so.6 libgcc_s.so.1 libpam.so.0 libstdc++.so.6 libxcb-xkb.so.1 libxcb.so.1
-RESTRICT: test
-SHA1: 7ed43ce869f8f02415bde5ae6984b06e9b5c5e08
-SIZE: 3840000
-USE: abi_x86_64 amd64 elibc_glibc elogind kernel_linux
-MTIME: 1792310815
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
