@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1793943792
-PACKAGES: 1605
+TIMESTAMP: 1793945012
+PACKAGES: 1607
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16623,6 +16623,30 @@ MTIME: 1791525116
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
+BUILD_TIME: 1793944148
+CPV: kde-apps/kate-lib-26.08.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets,xml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: telemetry debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2 LGPL-2+ MIT
+MD5: c3a9fd63a76a52f837030d251c776c97
+PATH: pkgs-kde-apps/kate-lib-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: kio_kateexec.so libkateprivate.so.26.08.3
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets,xml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktexteditor-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/syntax-highlighting-6.27.0:6 >=kde-apps/kate-common-26.08.3 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Parts.so.6 libKF6Service.so.6 libKF6SyntaxHighlighting.so.6 libKF6TextEditor.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 85ad5486d3f0bb7285bc420e9707f023dbc83f92
+SIZE: 1013760
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1793944149
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791548245
@@ -19095,6 +19119,31 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
+BUILD_TIME: 1793944677
+CPV: kde-apps/okular-26.08.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,widgets,X,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/libkexiv2-26.08.3:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 media-libs/freetype virtual/zlib:0/1= >=kde-frameworks/kwallet-6.27.0:6 app-text/djvu app-text/ebook-tools >=app-text/discount-2.2.7-r1:0/3.0.0= >=kde-apps/kdegraphics-mobipocket-26.08.3:6 >=app-text/poppler-24.10.0[nss,qt6] app-text/libspectre media-libs/tiff:0/6= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: crypt djvu epub markdown mobi +pdf +postscript share speech +tiff debug +handbook test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 336c8ba99b5244f8d8d2ed5294dcfd5f
+PATH: pkgs-kde-apps/okular-26.08.3-1.gpkg.tar
+PROVIDES: x86_64: libOkular6Core.so.4 okularGenerator_comicbook.so okularGenerator_djvu.so okularGenerator_dvi.so okularGenerator_epub.so okularGenerator_fax.so okularGenerator_fb.so okularGenerator_ghostview.so okularGenerator_kimgio.so okularGenerator_md.so okularGenerator_mobi.so okularGenerator_poppler.so okularGenerator_tiff.so okularGenerator_txt.so okularGenerator_xps.so okularpart.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,widgets,X,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-apps/libkexiv2-26.08.3:6 >=kde-frameworks/karchive-6.27.0:6 >=kde-frameworks/kbookmarks-6.27.0:6 >=kde-frameworks/kcolorscheme-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kpty-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=kde-frameworks/threadweaver-6.27.0:6 media-libs/freetype virtual/zlib:0/1= >=kde-frameworks/kwallet-6.27.0:6 app-text/djvu app-text/ebook-tools >=app-text/discount-2.2.7-r1:0/3.0.0= >=kde-apps/kdegraphics-mobipocket-26.08.3:6 >=app-text/poppler-24.10.0[nss,qt6] app-text/libspectre media-libs/tiff:0/6= >=kde-frameworks/kimageformats-6.27.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKExiv2Qt6.so.0 libKF6Archive.so.6 libKF6Bookmarks.so.6 libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Parts.so.6 libKF6TextWidgets.so.6 libKF6ThreadWeaver.so.6 libKF6Wallet.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libdjvulibre.so.21 libepub.so.0 libfreetype.so.6 libm.so.6 libmarkdown.so.3 libpoppler-qt6.so.3 libspectre.so.1 libstdc++.so.6 libtiff.so.6 libz.so.1
+RESTRICT: test
+SHA1: d335925d16face2b9086dbb6f24bfef9f47a92c1
+SIZE: 8478720
+SLOT: 6
+USE: abi_x86_64 amd64 crypt djvu elibc_glibc epub handbook kernel_linux markdown mobi pdf postscript tiff
+MTIME: 1793944681
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
+BUILD_ID: 1
 BUILD_TIME: 1791550307
 CPV: kde-apps/palapeli-26.08.2
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
@@ -20038,26 +20087,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 2
-BUILD_TIME: 1793697147
+BUILD_ID: 3
+BUILD_TIME: 1793944178
 CPV: kde-frameworks/kfilemetadata-6.31.0
 DEFINED_PHASES: compile configure info install nofetch postinst prepare setup test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/61.63.63= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= sys-apps/attr dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/60.62.62= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= sys-apps/attr dev-qt/qtbase:6
 EAPI: 8
 IUSE: epub exif ffmpeg mobi pdf taglib debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: e76b20df5e36f22a0858cb10af638c2b
-PATH: pkgs-kde-frameworks/kfilemetadata-6.31.0-2.gpkg.tar
+MD5: cc6ee0e3af74c26d11a3532d68d4c6af
+PATH: pkgs-kde-frameworks/kfilemetadata-6.31.0-3.gpkg.tar
 PROVIDES: x86_64: kfilemetadata_epubextractor.so kfilemetadata_exiv2extractor.so kfilemetadata_fb2extractor.so kfilemetadata_ffmpegextractor.so kfilemetadata_krita.so kfilemetadata_mobiextractor.so kfilemetadata_odfextractor.so kfilemetadata_office2007extractor.so kfilemetadata_officeextractor.so kfilemetadata_plaintextextractor.so kfilemetadata_pngextractor.so kfilemetadata_poextractor.so kfilemetadata_popplerextractor.so kfilemetadata_postscriptdscextractor.so kfilemetadata_taglibextractor.so kfilemetadata_taglibwriter.so kfilemetadata_xmlextractor.so libKF6FileMetaData.so.3
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/61.63.63= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libQt6Xml.so.6 libavcodec.so.63 libavformat.so.63 libavutil.so.61 libc.so.6 libepub.so.0 libexiv2.so.28 libgcc_s.so.1 libm.so.6 libpoppler-qt6.so.3 libstdc++.so.6 libtag.so.2
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/60.62.62= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libQt6Xml.so.6 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libepub.so.0 libexiv2.so.28 libgcc_s.so.1 libm.so.6 libpoppler-qt6.so.3 libstdc++.so.6 libtag.so.2
 RESTRICT: test test
-SHA1: 8e13ebd877ed7006971bc91fcda1cf3d5b0b957c
+SHA1: 0932c0b240ca879552e5e49876c5a63fa745afb7
 SIZE: 368640
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc epub exif ffmpeg kernel_linux mobi pdf taglib
-MTIME: 1793697149
+MTIME: 1793944180
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -26798,27 +26847,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 2
-BUILD_TIME: 1793596598
+BUILD_ID: 3
+BUILD_TIME: 1793944191
 CPV: media-libs/libheif-1.23.7
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend test
-DEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/61.63.63=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)]
+DEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)]
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +aom dav1d +de265 doc ffmpeg gdk-pixbuf geotiff gui +jpeg +jpeg2k +kvazaar openh264 rav1e svt-av1 test test-full +threads tools +webp x264 x265 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: amd64 arm arm64 ~loong ppc64 ~riscv x86
 LICENSE: GPL-3 MIT
-MD5: 192050c5d9cfa5402650183635304242
-PATH: pkgs-media-libs/libheif-1.23.7-2.gpkg.tar
+MD5: 26327a18582e9003bc33279d707696d6
+PATH: pkgs-media-libs/libheif-1.23.7-3.gpkg.tar
 PROVIDES: x86_64: libheif-j2kdec.so libheif-j2kenc.so libheif.so.1 libpixbufloader-heif.so
-RDEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/61.63.63=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libSDL2-2.0.so.0 libaom.so.3 libavcodec.so.63 libavutil.so.61 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libde265.so.0 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjpeg.so.62 libkvazaar.so.7 libm.so.6 libopenh264.so.8 libopenjp2.so.7 libpng16.so.16 libsharpyuv.so.0 libstdc++.so.6 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libz.so.1
+RDEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libSDL2-2.0.so.0 libaom.so.3 libavcodec.so.62 libavutil.so.60 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libde265.so.0 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjpeg.so.62 libkvazaar.so.7 libm.so.6 libopenh264.so.8 libopenjp2.so.7 libpng16.so.16 libsharpyuv.so.0 libstdc++.so.6 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libz.so.1
 RESTRICT: test
-SHA1: 63349f45b14b9f8e27261cb9e297aa480d50fe7a
+SHA1: 198c7f2f641e3cbc25ae4515ce7b0d783bc9ecbe
 SIZE: 1566720
 SLOT: 0/1.23
 USE: abi_x86_64 amd64 aom de265 elibc_glibc ffmpeg gdk-pixbuf gui jpeg jpeg2k kernel_linux kvazaar openh264 threads tools webp x264 x265
-MTIME: 1793596599
+MTIME: 1793944193
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29527,28 +29576,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-build/meson-0.59 virtual/pkgconfig >=dev-util/gdbus-codegen-2.80.5-r1 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig virtual/pkgconfig
-BUILD_ID: 3
-BUILD_TIME: 1793685865
+BUILD_ID: 4
+BUILD_TIME: 1793944225
 CPV: media-video/pipewire-1.6.11
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
-DEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/61.63.63= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes
+DEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/60.62.62= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes
 EAPI: 8
 IUSE: man bluetooth elogind dbus doc echo-cancel extra ffmpeg fftw flatpak gstreamer gsettings ieee1394 jack-client jack-sdk libcamera loudness lv2 modemmanager pipewire-alsa readline roc selinux pulseaudio sound-server sofa ssl system-service systemd test v4l X zeroconf abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: MIT LGPL-2.1+ GPL-2
-MD5: 66dd8abfae30ba08600ebad1f676b2d7
-PATH: pkgs-media-video/pipewire-1.6.11-3.gpkg.tar
+MD5: c7d118561e8f2518a651faa060ad6c8e
+PATH: pkgs-media-video/pipewire-1.6.11-4.gpkg.tar
 PDEPEND: >=media-video/wireplumber-0.5.2
 PROVIDES: x86_64: libasound_module_ctl_pipewire.so libasound_module_pcm_pipewire.so libgstpipewire.so libjack.so.0 libjacknet.so.0 libjackserver.so.0 libpipewire-0.3.so.0 libpipewire-module-access.so libpipewire-module-adapter.so libpipewire-module-avb.so libpipewire-module-client-device.so libpipewire-module-client-node.so libpipewire-module-combine-stream.so libpipewire-module-echo-cancel.so libpipewire-module-fallback-sink.so libpipewire-module-filter-chain.so libpipewire-module-jack-tunnel.so libpipewire-module-jackdbus-detect.so libpipewire-module-link-factory.so libpipewire-module-loopback.so libpipewire-module-metadata.so libpipewire-module-netjack2-driver.so libpipewire-module-netjack2-manager.so libpipewire-module-parametric-equalizer.so libpipewire-module-pipe-tunnel.so libpipewire-module-portal.so libpipewire-module-profiler.so libpipewire-module-protocol-native.so libpipewire-module-protocol-pulse.so libpipewire-module-protocol-simple.so libpipewire-module-pulse-tunnel.so libpipewire-module-raop-sink.so libpipewire-module-rt.so libpipewire-module-rtkit.so libpipewire-module-rtp-sap.so libpipewire-module-rtp-sink.so libpipewire-module-rtp-source.so libpipewire-module-session-manager.so libpipewire-module-spa-device-factory.so libpipewire-module-spa-device.so libpipewire-module-spa-node-factory.so libpipewire-module-spa-node.so libpipewire-module-vban-recv.so libpipewire-module-vban-send.so libpipewire-module-x11-bell.so libpw-v4l2.so libspa-aec-null.so libspa-alsa.so libspa-audioconvert.so libspa-audiomixer.so libspa-audiotestsrc.so libspa-avb.so libspa-bluez5.so libspa-codec-bluez5-aac.so libspa-codec-bluez5-aptx.so libspa-codec-bluez5-faststream.so libspa-codec-bluez5-g722.so libspa-codec-bluez5-hfp-cvsd.so libspa-codec-bluez5-hfp-lc3-a127.so libspa-codec-bluez5-hfp-lc3-swb.so libspa-codec-bluez5-hfp-msbc.so libspa-codec-bluez5-lc3.so libspa-codec-bluez5-ldac.so libspa-codec-bluez5-opus-g.so libspa-codec-bluez5-opus.so libspa-codec-bluez5-sbc.so libspa-control.so libspa-dbus.so libspa-ffmpeg.so libspa-filter-graph-plugin-builtin.so libspa-filter-graph-plugin-ebur128.so libspa-filter-graph-plugin-ffmpeg.so libspa-filter-graph-plugin-ladspa.so libspa-filter-graph-plugin-lv2.so libspa-filter-graph.so libspa-jack.so libspa-support.so libspa-v4l2.so libspa-videoconvert.so libspa-videotestsrc.so libspa-volume.so libspa.so
-RDEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/61.63.63= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes virtual/tmpfiles >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
-REQUIRES: x86_64: libX11.so.6 libXfixes.so.3 libasound.so.2 libavcodec.so.63 libavfilter.so.12 libavformat.so.63 libavutil.so.61 libbluetooth.so.3 libc.so.6 libcanberra.so.0 libcrypto.so.4 libdbus-1.so.3 libebur128.so.1 libelogind.so.0 libfdk-aac.so.2 libfftw3f.so.3 libfreeaptx.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0 liblc3.so.1 libldacBT_abr.so.2 libldacBT_enc.so.2 liblilv-0.so.0 libm.so.6 libncursesw.so.6 libopus.so.0 libpulse.so.0 libreadline.so.8 libsbc.so.1 libsndfile.so.1 libswscale.so.10 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0
+RDEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/60.62.62= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXfixes.so.3 libasound.so.2 libavcodec.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libbluetooth.so.3 libc.so.6 libcanberra.so.0 libcrypto.so.4 libdbus-1.so.3 libebur128.so.1 libelogind.so.0 libfdk-aac.so.2 libfftw3f.so.3 libfreeaptx.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0 liblc3.so.1 libldacBT_abr.so.2 libldacBT_enc.so.2 liblilv-0.so.0 libm.so.6 libncursesw.so.6 libopus.so.0 libpulse.so.0 libreadline.so.8 libsbc.so.1 libsndfile.so.1 libswscale.so.9 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0
 RESTRICT: test
-SHA1: 442d144371c7f4b349f589825cb8dc23a927404f
+SHA1: de8582a624a7ab9203c2b7e61946fc7076e119da
 SIZE: 5386240
 SLOT: 0/0.4
 USE: X abi_x86_64 amd64 bluetooth dbus elibc_glibc elogind extra ffmpeg fftw gsettings gstreamer jack-client kernel_linux loudness lv2 pipewire-alsa pulseaudio readline sound-server ssl v4l
-MTIME: 1793685869
+MTIME: 1793944229
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

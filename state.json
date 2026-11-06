@@ -1229,6 +1229,10 @@
    "path": "pkgs-kde-frameworks/kfilemetadata-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1793945012,
+   "path": "pkgs-kde-frameworks/kfilemetadata-6.31.0-2.gpkg.tar"
+  },
+  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kglobalaccel-6.30.0-1.gpkg.tar"
   },
@@ -1865,6 +1869,10 @@
    "path": "pkgs-media-libs/libheif-1.23.7-1.gpkg.tar"
   },
   {
+   "at": 1793945012,
+   "path": "pkgs-media-libs/libheif-1.23.7-2.gpkg.tar"
+  },
+  {
    "at": 1793710316,
    "path": "pkgs-media-libs/libplacebo-7.387.0-1.gpkg.tar"
   },
@@ -1947,6 +1955,10 @@
   {
    "at": 1793685884,
    "path": "pkgs-media-video/pipewire-1.6.11-2.gpkg.tar"
+  },
+  {
+   "at": 1793945012,
+   "path": "pkgs-media-video/pipewire-1.6.11-3.gpkg.tar"
   },
   {
    "at": 1793175888,
