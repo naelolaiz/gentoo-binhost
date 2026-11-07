@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794025004
-PACKAGES: 1774
+TIMESTAMP: 1794026220
+PACKAGES: 1776
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -18180,6 +18180,25 @@ MTIME: 1793983795
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1794025986
+CPV: kde-apps/kde-apps-meta-26.08.3-r1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: accessibility +admin +education +games +graphics +multimedia +network pim sdk +utils
+KEYWORDS: ~amd64 ~arm64
+LICENSE: metapackage
+MD5: f267cf94b3c07fb109f5b3ffbc0118a7
+PATH: pkgs-kde-apps/kde-apps-meta-26.08.3-r1-1.gpkg.tar
+RDEPEND: >=kde-apps/kdecore-meta-26.08.3:* >=kde-apps/kdeaccessibility-meta-26.08.3:* >=kde-apps/kdeadmin-meta-26.08.3:* >=kde-apps/kdeedu-meta-26.08.3:* >=kde-apps/kdegames-meta-26.08.3:* >=kde-apps/kdegraphics-meta-26.08.3:* >=kde-apps/kdemultimedia-meta-26.08.3:* >=kde-apps/kdenetwork-meta-26.08.3:* >=kde-apps/kdesdk-meta-26.08.3:* >=kde-apps/kdeutils-meta-26.08.3:*
+REPO_REVISIONS: {"gentoo": "aff7504331fc1b5d8b1b77fdb786c0b3043c993c"}
+SHA1: 9994313d24072d3eecfab9a7797e350274d9c464
+SIZE: 20480
+USE: abi_x86_64 accessibility admin amd64 education elibc_glibc games graphics kernel_linux multimedia network sdk utils
+MTIME: 1794025986
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791531896
@@ -18688,6 +18707,24 @@ SHA1: 952965f06d83547dc444eb08b6a5b19348a210fa
 SIZE: 20480
 USE: abi_x86_64 amd64 bittorrent elibc_glibc kernel_linux webengine zeroconf
 MTIME: 1793983153
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1794025984
+CPV: kde-apps/kdenetwork-meta-26.08.3-r1
+DEFINED_PHASES: -
+EAPI: 9
+IUSE: +bittorrent dropbox samba +webengine +zeroconf
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+LICENSE: metapackage
+MD5: 7aedd1ffb0578fecbba888c4a47dfb86
+PATH: pkgs-kde-apps/kdenetwork-meta-26.08.3-r1-1.gpkg.tar
+RDEPEND: >=kde-apps/kget-26.08.3:* >=net-im/tokodon-26.08.3 >=net-irc/konversation-26.08.3:* >=net-news/alligator-26.08.3 >=net-libs/libktorrent-26.08.3:* >=net-p2p/ktorrent-26.08.3:* >=kde-apps/kaccounts-integration-26.08.3:* >=kde-apps/kaccounts-providers-26.08.3:* >=kde-apps/signon-kwallet-extension-26.08.3:* >=net-im/neochat-26.08.3 >=kde-apps/krdc-26.08.3:* >=kde-apps/krfb-26.08.3:* >=kde-misc/kdeconnect-26.08.3:* >=net-misc/kio-zeroconf-26.08.3:*
+SHA1: e7add26c9ccd6405d4f598b195ad96af4bef491b
+SIZE: 20480
+USE: abi_x86_64 amd64 bittorrent elibc_glibc kernel_linux webengine zeroconf
+MTIME: 1794025985
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
