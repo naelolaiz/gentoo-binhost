@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794113176
-PACKAGES: 1818
+TIMESTAMP: 1794113491
+PACKAGES: 1822
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -328,6 +328,29 @@ SIZE: 829440
 SLOT: 2
 USE: X abi_x86_64 amd64 elibc_glibc introspection kernel_linux python_targets_python3_14
 MTIME: 1791083253
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 9
+BUILD_TIME: 1794113229
+CPV: app-accessibility/espeak-ng-1.52.0
+DEFINED_PHASES: configure install prepare test
+DEPEND: media-libs/pcaudiolib
+EAPI: 8
+IUSE: +async +klatt l10n_ru l10n_zh man mbrola +sound test
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-3+ unicode
+MD5: 0b14116c0f9dfd9c41e59671bd00f34b
+PATH: pkgs-app-accessibility/espeak-ng-1.52.0-9.gpkg.tar
+PROVIDES: x86_64: libespeak-ng.so.1
+RDEPEND: media-libs/pcaudiolib !app-accessibility/espeak media-sound/sox >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libpcaudio.so.0 libstdc++.so.6
+RESTRICT: test
+SHA1: c71f2ee506b131ac58e6ee884707728ebf48665d
+SIZE: 6727680
+USE: abi_x86_64 amd64 async elibc_glibc kernel_linux klatt sound
+MTIME: 1794113230
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30351,9 +30374,9 @@ MTIME: 1794109858
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 37
-BUILD_TIME: 1791198833
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 38
+BUILD_TIME: 1794113366
 CPV: media-libs/gd-2.3.3-r4
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: media-libs/libavif:0/16.4=[abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] media-libs/libjpeg-turbo[abi_x86_64(-)] media-libs/libheif:0/1.23=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/tiff:0/6=[abi_x86_64(-)] >=media-libs/freetype-2.5.0.1[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)]
@@ -30361,18 +30384,17 @@ EAPI: 8
 IUSE: avif cpu_flags_x86_sse fontconfig +jpeg heif +png static-libs test tiff truetype webp xpm zlib abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
 LICENSE: gd IJG HPND BSD
-MD5: ff16d00a1b50c7b523736db1ba55fa3e
-PATH: pkgs-media-libs/gd-2.3.3-r4-37.gpkg.tar
+MD5: 6634d146640354aa54cdc0eea19a7cd4
+PATH: pkgs-media-libs/gd-2.3.3-r4-38.gpkg.tar
 PROVIDES: x86_64: libgd.so.3
-RDEPEND: media-libs/libavif:0/16.4=[abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] media-libs/libjpeg-turbo[abi_x86_64(-)] media-libs/libheif:0/1.23=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/tiff:0/6=[abi_x86_64(-)] >=media-libs/freetype-2.5.0.1[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+RDEPEND: media-libs/libavif:0/16.4=[abi_x86_64(-)] >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] media-libs/libjpeg-turbo[abi_x86_64(-)] media-libs/libheif:0/1.23=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/tiff:0/6=[abi_x86_64(-)] >=media-libs/freetype-2.5.0.1[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libavif.so.16 libc.so.6 libfontconfig.so.1 libfreetype.so.6 libheif.so.1 libjpeg.so.62 libm.so.6 libpng16.so.16 libtiff.so.6 libwebp.so.7
 RESTRICT: test
-SHA1: 8e56fa07f94c454ce86d13bd3978f7da997741a4
+SHA1: 48152cff0a6bea11319ee6e63007da0e49aae026
 SIZE: 235520
 SLOT: 2/3
 USE: abi_x86_64 amd64 avif cpu_flags_x86_sse elibc_glibc fontconfig heif jpeg kernel_linux png tiff truetype webp zlib
-MTIME: 1791198835
+MTIME: 1794113367
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30930,6 +30952,30 @@ MTIME: 1791064722
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-build/gtk-doc-am app-alternatives/lex >=sys-devel/gettext-0.19.1 virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1794113417
+CPV: media-libs/libgphoto2-2.5.34-r1
+DEFINED_PHASES: compile configure install postinst postrm prepare test unpack
+DEPEND: acct-group/plugdev >=dev-libs/libxml2-2.9.1-r4:2/16=[abi_x86_64(-)] net-misc/curl[abi_x86_64(-)] dev-libs/libltdl:0[abi_x86_64(-)] >=virtual/libusb-1-r1:1[abi_x86_64(-)] >=media-libs/gd-2.0.35-r4:2/3=[abi_x86_64(-)] >=media-libs/gd-2.0.35-r4:2/3=[abi_x86_64(-)] >=media-libs/libexif-0.6.21-r1[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] >=media-libs/tiff-4.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: doc examples exif gd jpeg nls serial tiff +cameras_adc65 +cameras_agfa_cl20 +cameras_aox +cameras_ax203 +cameras_barbie +cameras_canon +cameras_casio_qv +cameras_clicksmart310 +cameras_digigr8 +cameras_digita +cameras_dimagev +cameras_dimera3500 +cameras_directory +cameras_enigma13 +cameras_fuji +cameras_gsmart300 +cameras_hp215 +cameras_iclick +cameras_jamcam +cameras_jd11 +cameras_jl2005a +cameras_jl2005c +cameras_kodak_dc120 +cameras_kodak_dc210 +cameras_kodak_dc240 +cameras_kodak_dc3200 +cameras_kodak_ez200 +cameras_konica +cameras_konica_qm150 +cameras_largan +cameras_lg_gsm +cameras_mars +cameras_mustek +cameras_panasonic_coolshot +cameras_panasonic_l859 +cameras_panasonic_dc1000 +cameras_panasonic_dc1580 +cameras_pccam300 +cameras_pccam600 +cameras_pentax +cameras_polaroid_pdc320 +cameras_polaroid_pdc640 +cameras_polaroid_pdc700 +cameras_ptp2 +cameras_ricoh +cameras_ricoh_g3 +cameras_samsung +cameras_sierra +cameras_sipix_blink2 +cameras_sipix_web2 +cameras_smal +cameras_sonix +cameras_sony_dscf1 +cameras_sony_dscf55 +cameras_soundvision +cameras_spca50x +cameras_sq905 +cameras_st2205 +cameras_stv0674 +cameras_stv0680 +cameras_sx330z +cameras_toshiba_pdrm11 +cameras_topfield +cameras_tp6801 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: GPL-2
+MD5: 31eae276651d64f723ba66857fcf5525
+PATH: pkgs-media-libs/libgphoto2-2.5.34-r1-3.gpkg.tar
+PROVIDES: x86_64: ax203.so canon.so digigr8.so dimagev.so directory.so disk.so docupen.so jl2005a.so jl2005c.so kodak_dc240.so libgphoto2.so.6 libgphoto2_port.so.12 lumix.so mars.so pentax.so ptp2.so ptpip.so quicktake1x0.so ricoh_g3.so sierra.so sonix.so sq905.so st2205.so topfield.so tp6801.so usb1.so usbdiskdirect.so usbscsi.so
+RDEPEND: acct-group/plugdev >=dev-libs/libxml2-2.9.1-r4:2/16=[abi_x86_64(-)] net-misc/curl[abi_x86_64(-)] dev-libs/libltdl:0[abi_x86_64(-)] >=virtual/libusb-1-r1:1[abi_x86_64(-)] >=media-libs/gd-2.0.35-r4:2/3=[abi_x86_64(-)] >=media-libs/gd-2.0.35-r4:2/3=[abi_x86_64(-)] >=media-libs/libexif-0.6.21-r1[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] >=media-libs/tiff-4.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "0262bbb4e23bc9ba9fc48940ff9e2df8af030ff4"}
+REQUIRES: x86_64: libc.so.6 libcurl.so.4 libexif.so.12 libgd.so.3 libjpeg.so.62 libltdl.so.7 libm.so.6 libusb-1.0.so.0 libxml2.so.16
+SHA1: 41cbb02527822abe749ed242e8d2dab6d83af264
+SIZE: 1986560
+SLOT: 0/6
+USE: abi_x86_64 amd64 cameras_adc65 cameras_agfa_cl20 cameras_aox cameras_ax203 cameras_barbie cameras_canon cameras_casio_qv cameras_clicksmart310 cameras_digigr8 cameras_digita cameras_dimagev cameras_dimera3500 cameras_directory cameras_enigma13 cameras_fuji cameras_gsmart300 cameras_hp215 cameras_iclick cameras_jamcam cameras_jd11 cameras_jl2005a cameras_jl2005c cameras_kodak_dc120 cameras_kodak_dc210 cameras_kodak_dc240 cameras_kodak_dc3200 cameras_kodak_ez200 cameras_konica cameras_konica_qm150 cameras_largan cameras_lg_gsm cameras_mars cameras_mustek cameras_panasonic_coolshot cameras_panasonic_dc1000 cameras_panasonic_dc1580 cameras_panasonic_l859 cameras_pccam300 cameras_pccam600 cameras_pentax cameras_polaroid_pdc320 cameras_polaroid_pdc640 cameras_polaroid_pdc700 cameras_ptp2 cameras_ricoh cameras_ricoh_g3 cameras_samsung cameras_sierra cameras_sipix_blink2 cameras_sipix_web2 cameras_smal cameras_sonix cameras_sony_dscf1 cameras_sony_dscf55 cameras_soundvision cameras_spca50x cameras_sq905 cameras_st2205 cameras_stv0674 cameras_stv0680 cameras_sx330z cameras_topfield cameras_toshiba_pdrm11 cameras_tp6801 elibc_glibc exif jpeg kernel_linux nls tiff
+MTIME: 1794113419
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791092250
@@ -31162,6 +31208,28 @@ SIZE: 307200
 SLOT: 0/2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux lcms
 MTIME: 1794112273
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 13
+BUILD_TIME: 1794113320
+CPV: media-libs/libmpeg2-0.5.1-r3
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: media-libs/libsdl x11-libs/libICE x11-libs/libSM x11-libs/libXt x11-libs/libXv x11-base/xorg-proto
+EAPI: 7
+IUSE: sdl X abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos
+LICENSE: GPL-2
+MD5: 64357bdd6c11a253f4d4c8be1097b259
+PATH: pkgs-media-libs/libmpeg2-0.5.1-r3-13.gpkg.tar
+PROVIDES: x86_64: libmpeg2.so.0 libmpeg2convert.so.0
+RDEPEND: media-libs/libsdl x11-libs/libICE x11-libs/libSM x11-libs/libXt x11-libs/libXv >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libSDL-1.2.so.0 libX11.so.6 libXext.so.6 libXv.so.1 libc.so.6
+SHA1: c293a2c0c9644a849be27056a91e45dc496bb2ab
+SIZE: 143360
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux sdl
+MTIME: 1794113321
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31974,6 +32042,28 @@ SHA1: 9c56d03a2f4aa464110ac9c31e9b8cbaa915423e
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc float http kernel_linux
 MTIME: 1793705582
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 19
+BUILD_TIME: 1794113160
+CPV: media-libs/pcaudiolib-1.2-r2
+DEFINED_PHASES: configure install prepare
+DEPEND: >=media-libs/alsa-lib-1.0.18 media-libs/libpulse
+EAPI: 8
+IUSE: +alsa oss pulseaudio
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-3+ ZLIB
+MD5: 5fefc335dbb945aae301926959a03c18
+PATH: pkgs-media-libs/pcaudiolib-1.2-r2-19.gpkg.tar
+PROVIDES: x86_64: libpcaudio.so.0
+RDEPEND: >=media-libs/alsa-lib-1.0.18 media-libs/libpulse >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libasound.so.2 libc.so.6 libpulse-simple.so.0 libpulse.so.0
+SHA1: e6cdefaa8f344e0fd19fe1407921617afc9662cd
+SIZE: 40960
+USE: abi_x86_64 alsa amd64 elibc_glibc kernel_linux pulseaudio
+MTIME: 1794113160
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
