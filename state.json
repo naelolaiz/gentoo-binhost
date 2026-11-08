@@ -538,6 +538,10 @@
    "path": "pkgs-dev-lang/python-3.13.18_p1-1.gpkg.tar"
   },
   {
+   "at": 1794116287,
+   "path": "pkgs-dev-lang/python-3.13.18_p1-5.gpkg.tar"
+  },
+  {
    "at": 1794110634,
    "path": "pkgs-dev-lang/python-3.14.10_p1-1.gpkg.tar"
   },
@@ -2166,6 +2170,10 @@
    "path": "pkgs-media-gfx/qrca-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1794116287,
+   "path": "pkgs-media-libs/dssi-1.1.1-r2-4.gpkg.tar"
+  },
+  {
    "at": 1794110013,
    "path": "pkgs-media-libs/freetype-2.15.0-1.gpkg.tar"
   },
@@ -2242,6 +2250,10 @@
    "path": "pkgs-media-libs/opusfile-0.12-r2-2.gpkg.tar"
   },
   {
+   "at": 1794116287,
+   "path": "pkgs-media-libs/portaudio-19.07.00-r2-15.gpkg.tar"
+  },
+  {
    "at": 1793697421,
    "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-1.gpkg.tar"
   },
@@ -2288,6 +2300,10 @@
   {
    "at": 1792991567,
    "path": "pkgs-media-sound/sonic-visualiser-5.2.1-1.gpkg.tar"
+  },
+  {
+   "at": 1794116287,
+   "path": "pkgs-media-video/mediainfo-26.05-1.gpkg.tar"
   },
   {
    "at": 1793174662,
@@ -2350,6 +2366,10 @@
    "path": "pkgs-net-analyzer/nmap-7.991-1.gpkg.tar"
   },
   {
+   "at": 1794116287,
+   "path": "pkgs-net-analyzer/nmap-7.991-2.gpkg.tar"
+  },
+  {
    "at": 1793686808,
    "path": "pkgs-net-dialup/ppp-2.5.5-1.gpkg.tar"
   },
@@ -2360,6 +2380,10 @@
   {
    "at": 1793166148,
    "path": "pkgs-net-dns/avahi-0.9_rc5-1.gpkg.tar"
+  },
+  {
+   "at": 1794116287,
+   "path": "pkgs-net-dns/avahi-0.9_rc5-2.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -2516,6 +2540,14 @@
   {
    "at": 1794112862,
    "path": "pkgs-sci-libs/libqalculate-5.12.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794116287,
+   "path": "pkgs-sci-libs/libsigrok-0.6.0_pre20241020-1.gpkg.tar"
+  },
+  {
+   "at": 1794116287,
+   "path": "pkgs-sci-libs/libsigrokdecode-0.6.0_pre20241001-1.gpkg.tar"
   },
   {
    "at": 1793598458,
