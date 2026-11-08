@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794109054
-PACKAGES: 1781
+TIMESTAMP: 1794109366
+PACKAGES: 1784
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4015,6 +4015,22 @@ SHA1: cba95d1edb89b66fd88b90e49a840d70ab12d59d
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791057569
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1794109068
+CPV: dev-build/automake-wrapper-20261107
+DEFINED_PHASES: install prepare
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2
+MD5: e6c128a60d145e876cd9c01c1449665f
+PATH: pkgs-dev-build/automake-wrapper-20261107-1.gpkg.tar
+SHA1: 5e722288923ee1b08a256f85c3744c24b0c40e6a
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794109069
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36507,6 +36523,23 @@ MTIME: 1791064860
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1794109053
+CPV: sys-apps/hwdata-0.413
+DEFINED_PHASES: configure
+EAPI: 8
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2+
+MD5: 55763cd3098abc3b462b6ed9b2e19b72
+PATH: pkgs-sys-apps/hwdata-0.413-1.gpkg.tar
+RESTRICT: test
+SHA1: 66b2b96f8d257b456b638e8f42f1c4f7d3b7fe7b
+SIZE: 2365440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794109054
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-arch/xz-utils >=sys-devel/bison-2.4 app-alternatives/lex virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791061939
@@ -38161,6 +38194,30 @@ SIZE: 1198080
 SLOT: 0/8
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux unicode
 MTIME: 1793763668
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794109271
+CPV: sys-libs/readline-8.3_p6-r2
+DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
+DEPEND: >=sys-libs/ncurses-5.9-r3:0/6=[unicode(+),abi_x86_64(-)]
+EAPI: 8
+IUSE: static-libs +unicode utils abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+
+MD5: 34589c6fd9d1ab86f071cf4dbdf68706
+PATH: pkgs-sys-libs/readline-8.3_p6-r2-1.gpkg.tar
+PROVIDES: x86_64: libhistory.so.8 libreadline.so.8
+RDEPEND: >=sys-libs/ncurses-5.9-r3:0/6=[unicode(+),abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "0262bbb4e23bc9ba9fc48940ff9e2df8af030ff4"}
+REQUIRES: x86_64: libc.so.6 libtinfow.so.6
+SHA1: f6a1fd68f59c7f3da3d922b347190612ef578440
+SIZE: 1198080
+SLOT: 0/8
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux unicode
+MTIME: 1794109272
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
