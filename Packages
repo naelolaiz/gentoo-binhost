@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794111583
-PACKAGES: 1800
+TIMESTAMP: 1794111892
+PACKAGES: 1802
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -10346,6 +10346,27 @@ SHA1: ed802f72c978f53c67f43f287204cb7c794d9b4c
 SIZE: 143360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1793418232
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1794111587
+CPV: dev-python/platformdirs-4.14.5
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: c7b74acfb0f7f1b4b02c23348f92ddba
+PATH: pkgs-dev-python/platformdirs-4.14.5-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 2708380946f0c3851f820ccf9def8b27e53a4f6d
+SIZE: 143360
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1794111588
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -40267,6 +40288,27 @@ SHA1: 35f434c619233b63966fb96c402bf54686bfc903
 SIZE: 92160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792308824
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/awk >=app-text/xmlto-0.0.28-r3[text(+)] sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 7
+BUILD_TIME: 1794111642
+CPV: x11-misc/xdg-utils-1.2.1-r11
+DEFINED_PHASES: configure install postinst prepare
+EAPI: 8
+IUSE: dbus doc gnome perl plasma X
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos
+LICENSE: MIT
+MD5: eaa50d77f3e313e1ac074f2e684c7f07
+PATH: pkgs-x11-misc/xdg-utils-1.2.1-r11-7.gpkg.tar
+PDEPEND: dev-qt/qtbase:6 kde-frameworks/kservice:6 kde-plasma/kde-cli-tools:*
+RDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info sys-apps/dbus virtual/pkgconfig x11-apps/xprop x11-apps/xset
+RESTRICT: test
+SHA1: 13620d05fac9a80a68561f347516157aad3ca0d7
+SIZE: 112640
+USE: X abi_x86_64 amd64 dbus elibc_glibc kernel_linux plasma
+MTIME: 1794111643
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
