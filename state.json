@@ -442,6 +442,10 @@
    "path": "pkgs-app-misc/jq-1.8.2-1.gpkg.tar"
   },
   {
+   "at": 1794115631,
+   "path": "pkgs-app-shells/bash-completion-2.18.0-1.gpkg.tar"
+  },
+  {
    "at": 1793176738,
    "path": "pkgs-app-text/calibre-8.9.0-25.gpkg.tar"
   },
@@ -488,6 +492,10 @@
   {
    "at": 1793706319,
    "path": "pkgs-app-text/qpdf-12.4.2-1.gpkg.tar"
+  },
+  {
+   "at": 1794115631,
+   "path": "pkgs-app-text/teckit-2.5.12-2.gpkg.tar"
   },
   {
    "at": 1794110013,
@@ -568,6 +576,10 @@
   {
    "at": 1794109695,
    "path": "pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar"
+  },
+  {
+   "at": 1794115631,
+   "path": "pkgs-dev-libs/libsodium-1.0.22-3.gpkg.tar"
   },
   {
    "at": 1794112226,
@@ -688,6 +700,10 @@
   {
    "at": 1793796564,
    "path": "pkgs-dev-qt/qtwebengine-6.11.3-1.gpkg.tar"
+  },
+  {
+   "at": 1794115631,
+   "path": "pkgs-dev-scheme/guile-3.0.11-r1-1.gpkg.tar"
   },
   {
    "at": 1793807194,
@@ -2168,6 +2184,10 @@
   {
    "at": 1794025004,
    "path": "pkgs-media-libs/libheif-1.23.7-3.gpkg.tar"
+  },
+  {
+   "at": 1794115631,
+   "path": "pkgs-media-libs/liblo-0.32-6.gpkg.tar"
   },
   {
    "at": 1794112546,

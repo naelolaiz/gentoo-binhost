@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794114404
-PACKAGES: 1822
+TIMESTAMP: 1794115631
+PACKAGES: 1824
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2036,6 +2036,26 @@ MTIME: 1793596128
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/autoconf-2.71
+BUILD_ID: 1
+BUILD_TIME: 1794114426
+CPV: app-editors/vim-core-9.2.1302
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=sys-libs/ncurses-5.2-r2:0
+EAPI: 8
+IUSE: nls acl minimal
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: aca68cb31856d28f1cb02c110cb23bb3
+PATH: pkgs-app-editors/vim-core-9.2.1302-1.gpkg.tar
+RDEPEND: dev-util/xxd
+SHA1: bb05894874666cc0e3e077ec2db7b85ccb027807
+SIZE: 10967040
+USE: abi_x86_64 acl amd64 elibc_glibc kernel_linux nls
+MTIME: 1794114429
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-arch/unzip sys-devel/bison x11-apps/bdftopcf >=x11-apps/mkfontscale-1.2.0 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 1
 BUILD_TIME: 1791358625
@@ -3121,25 +3141,24 @@ MTIME: 1791777902
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791217289
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794114510
 CPV: app-shells/bash-completion-2.18.0
 DEFINED_PHASES: install postinst prepare setup test
 EAPI: 8
 IUSE: +eselect test
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
 LICENSE: GPL-2+
-MD5: ded61cb7a01c5dec357755606723b00c
-PATH: pkgs-app-shells/bash-completion-2.18.0-1.gpkg.tar
+MD5: 6c98f38952112b4539aa6d1bbe370dcc
+PATH: pkgs-app-shells/bash-completion-2.18.0-2.gpkg.tar
 PDEPEND: >=app-shells/gentoo-bashcomp-20140911
 RDEPEND: >=app-shells/bash-4.3_p30-r1:0 sys-apps/miscfiles !<app-text/tree-2.1.1-r1 !!<=net-fs/mc-2025.04.16.18.13.26-r0
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
 RESTRICT: test
-SHA1: fd872bf2fae24476640b6e668c1d8ce6a0924e51
+SHA1: ddf90453340de08718622eb345f36c98c8886178
 SIZE: 399360
 USE: abi_x86_64 amd64 elibc_glibc eselect kernel_linux
-MTIME: 1791217291
+MTIME: 1794114512
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -3627,24 +3646,24 @@ MTIME: 1793706086
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 2
-BUILD_TIME: 1791223680
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1794114444
 CPV: app-text/teckit-2.5.12
 DEFINED_PHASES: configure install prepare test
 DEPEND: dev-libs/expat virtual/zlib:0/1=
 EAPI: 8
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
 LICENSE: || ( CPL-0.5 LGPL-2.1 )
-MD5: 11e6fcfb5954606ca458f95ad221eefe
-PATH: pkgs-app-text/teckit-2.5.12-2.gpkg.tar
+MD5: 56b583b6a9a74f5406a37e942043c39f
+PATH: pkgs-app-text/teckit-2.5.12-3.gpkg.tar
 PROVIDES: x86_64: libTECkit.so.0 libTECkit_Compiler.so.0
-RDEPEND: dev-libs/expat virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
+RDEPEND: dev-libs/expat virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libexpat.so.1 libgcc_s.so.1 libstdc++.so.6 libz.so.1
-SHA1: 32696500dfef29081fe054da6816711f8947fb99
-SIZE: 419840
+SHA1: a7dbbffa242ea19a67693fadad4409125995b6c8
+SIZE: 430080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791223683
+MTIME: 1794114445
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6885,25 +6904,25 @@ MTIME: 1792305812
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 3
-BUILD_TIME: 1791223842
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 4
+BUILD_TIME: 1794114485
 CPV: dev-libs/libsodium-1.0.22
 DEFINED_PHASES: compile configure install prepare test unpack
 EAPI: 8
 IUSE: +asm static-libs +urandom cpu_flags_x86_aes cpu_flags_x86_sse4_1 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos
 LICENSE: ISC
-MD5: 61ed5731dff126c45b8fd712d4727d03
-PATH: pkgs-dev-libs/libsodium-1.0.22-3.gpkg.tar
+MD5: c382da7696c5e5c0116ce5191e654367
+PATH: pkgs-dev-libs/libsodium-1.0.22-4.gpkg.tar
 PROVIDES: x86_64: libsodium.so.26
-RDEPEND: >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6
-SHA1: f0cf27f1e881fca7caa4e27a2b95c9454e9d8641
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 04ec8914fd3449e4bb8b009432c20ef6774829c9
 SIZE: 317440
 SLOT: 0/26
 USE: abi_x86_64 amd64 asm cpu_flags_x86_aes cpu_flags_x86_sse4_1 elibc_glibc kernel_linux urandom
-MTIME: 1791223845
+MTIME: 1794114486
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -14559,9 +14578,9 @@ MTIME: 1791093343
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig dev-build/libtool sys-devel/gettext sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791223337
+BDEPEND: virtual/pkgconfig dev-build/libtool sys-devel/gettext sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794115319
 CPV: dev-scheme/guile-3.0.11-r1
 DEFINED_PHASES: configure install postinst postrm prepare
 DEPEND: >=dev-libs/boehm-gc-7.0[threads] dev-libs/gmp:0/10.4= dev-libs/libffi:0/8= dev-libs/libatomic_ops dev-libs/libunistring:0/5= sys-libs/ncurses:0/6= sys-libs/readline:0/8= virtual/libcrypt:0/2= !dev-scheme/guile:12
@@ -14570,17 +14589,17 @@ IDEPEND: app-eselect/eselect-guile
 IUSE: debug debug-malloc +deprecated +jit +networking +nls +regex +threads
 KEYWORDS: ~alpha ~amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos
 LICENSE: LGPL-3+
-MD5: 4e7e7b4e4e409870cffdfdc2207a4363
-PATH: pkgs-dev-scheme/guile-3.0.11-r1-1.gpkg.tar
+MD5: f3b22f6508df1397d72645f06aef57ad
+PATH: pkgs-dev-scheme/guile-3.0.11-r1-2.gpkg.tar
 PROVIDES: x86_64: guile-readline.so.0 libguile-3.0.so.1
-RDEPEND: >=dev-libs/boehm-gc-7.0[threads] dev-libs/gmp:0/10.4= dev-libs/libffi:0/8= dev-libs/libatomic_ops dev-libs/libunistring:0/5= sys-libs/ncurses:0/6= sys-libs/readline:0/8= virtual/libcrypt:0/2= !dev-scheme/guile:12 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libatomic_ops.so.1 libc.so.6 libcrypt.so.2 libffi.so.8 libgc.so.1 libgmp.so.10 libm.so.6 libreadline.so.8 libunistring.so.5
+RDEPEND: >=dev-libs/boehm-gc-7.0[threads] dev-libs/gmp:0/10.4= dev-libs/libffi:0/8= dev-libs/libatomic_ops dev-libs/libunistring:0/5= sys-libs/ncurses:0/6= sys-libs/readline:0/8= virtual/libcrypt:0/2= !dev-scheme/guile:12 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libatomic_ops.so.1 libc.so.6 libcrypt.so.2 libffi.so.8 libgc.so.1 libgmp.so.10 libm.so.6 libreadline.so.8 libunistring.so.5
 RESTRICT: strip
-SHA1: d6ec49026481d938e9ce54ade0dac1353fb80572
-SIZE: 11591680
+SHA1: 25e110612914bb2a2a523cd3c063add1224deb30
+SIZE: 11601920
 SLOT: 3.0
 USE: abi_x86_64 amd64 deprecated elibc_glibc jit kernel_linux networking nls regex threads
-MTIME: 1791223341
+MTIME: 1794115321
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31098,25 +31117,25 @@ MTIME: 1791090595
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 6
-BUILD_TIME: 1791217233
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 7
+BUILD_TIME: 1794114387
 CPV: media-libs/liblo-0.32
 DEFINED_PHASES: configure install prepare
 EAPI: 8
 IUSE: doc ipv6 static-libs test
 KEYWORDS: amd64 ~arm ~arm64 ~loong ppc ppc64 x86
 LICENSE: LGPL-2.1
-MD5: 39961839937f8835bd4acc1bd8a33d0b
-PATH: pkgs-media-libs/liblo-0.32-6.gpkg.tar
+MD5: a33c504e3c312e314a96a5e80447b06f
+PATH: pkgs-media-libs/liblo-0.32-7.gpkg.tar
 PROVIDES: x86_64: liblo.so.7
-RDEPEND: >=sys-libs/glibc-2.43-r2
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libm.so.6
 RESTRICT: test
-SHA1: c06f8707e4c3c556e468be10db51bea55e1d4dd6
+SHA1: dde1269ba12336e1d2d85befc85e85fe27f6cc23
 SIZE: 122880
 USE: abi_x86_64 amd64 elibc_glibc ipv6 kernel_linux
-MTIME: 1791217235
+MTIME: 1794114389
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32246,6 +32265,27 @@ SHA1: 0019a1c587d2acdf5617a4d7076f28972f1582b8
 SIZE: 532480
 USE: abi_x86_64 amd64 cpu_flags_x86_sse elibc_glibc kernel_linux vbr
 MTIME: 1791276772
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 11
+BUILD_TIME: 1794114539
+CPV: media-libs/speexdsp-1.2.1
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_arm_neon abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos
+LICENSE: BSD
+MD5: bf97e1b74f2fbb3c6c38a8049146033f
+PATH: pkgs-media-libs/speexdsp-1.2.1-11.gpkg.tar
+PROVIDES: x86_64: libspeexdsp.so.1
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libm.so.6
+SHA1: 1644ac84863bc4543a7b366449b80c98c2e4bbb5
+SIZE: 512000
+USE: abi_x86_64 amd64 cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc kernel_linux
+MTIME: 1794114540
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
