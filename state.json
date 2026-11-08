@@ -446,6 +446,10 @@
    "path": "pkgs-app-misc/jq-1.8.2-1.gpkg.tar"
   },
   {
+   "at": 1794116601,
+   "path": "pkgs-app-misc/tmux-3.8-1.gpkg.tar"
+  },
+  {
    "at": 1794115631,
    "path": "pkgs-app-shells/bash-completion-2.18.0-1.gpkg.tar"
   },
@@ -724,6 +728,10 @@
   {
    "at": 1793684039,
    "path": "pkgs-dev-util/cargo-c-0.10.26-1.gpkg.tar"
+  },
+  {
+   "at": 1794116601,
+   "path": "pkgs-dev-util/gource-0.55-2.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -2298,6 +2306,10 @@
    "path": "pkgs-media-sound/lame-3.100-r3-15.gpkg.tar"
   },
   {
+   "at": 1794116601,
+   "path": "pkgs-media-sound/linuxsampler-2.3.1-r1-2.gpkg.tar"
+  },
+  {
    "at": 1792991567,
    "path": "pkgs-media-sound/sonic-visualiser-5.2.1-1.gpkg.tar"
   },
@@ -2652,6 +2664,10 @@
   {
    "at": 1793694989,
    "path": "pkgs-x11-base/xwayland-24.1.14-1.gpkg.tar"
+  },
+  {
+   "at": 1794116601,
+   "path": "pkgs-x11-libs/gtk_p_-2.24.33-r4-1.gpkg.tar"
   },
   {
    "at": 1793983999,
