@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794110634
-PACKAGES: 1794
+TIMESTAMP: 1794110948
+PACKAGES: 1796
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3388,9 +3388,9 @@ MTIME: 1791123672
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=sys-devel/gettext-0.18 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 11
-BUILD_TIME: 1791062108
+BDEPEND: >=sys-devel/gettext-0.18 sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 12
+BUILD_TIME: 1794110812
 CPV: app-text/hunspell-1.7.2-r1
 DEFINED_PHASES: configure install prepare
 DEPEND: virtual/libiconv sys-libs/ncurses:0/6= sys-libs/readline:0/8=
@@ -3398,17 +3398,17 @@ EAPI: 8
 IUSE: ncurses nls readline static-libs l10n_af l10n_bg l10n_ca l10n_cs l10n_cy l10n_da l10n_de l10n_de-1901 l10n_el l10n_en l10n_eo l10n_es l10n_et l10n_fo l10n_fr l10n_ga l10n_gl l10n_he l10n_hr l10n_hu l10n_ia l10n_id l10n_is l10n_it l10n_kk l10n_km l10n_ku l10n_lt l10n_lv l10n_mi l10n_mk l10n_ms l10n_nb l10n_nl l10n_nn l10n_pl l10n_pt l10n_pt-BR l10n_ro l10n_ru l10n_sk l10n_sl l10n_sq l10n_sv l10n_sw l10n_tn l10n_uk l10n_zu
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos ~x64-solaris
 LICENSE: || ( MPL-1.1 GPL-2+ LGPL-2.1+ )
-MD5: c2ac7dee666d5e8759adfb3fa1f01861
-PATH: pkgs-app-text/hunspell-1.7.2-r1-11.gpkg.tar
+MD5: 24a3dd7f33a274160216fc724935bdb0
+PATH: pkgs-app-text/hunspell-1.7.2-r1-12.gpkg.tar
 PDEPEND: app-dicts/myspell-en app-dicts/myspell-es
 PROVIDES: x86_64: libhunspell-1.7.so.0
-RDEPEND: virtual/libiconv sys-libs/ncurses:0/6= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libncursesw.so.6 libreadline.so.8 libstdc++.so.6 libtinfow.so.6
-SHA1: 1052f043ca4f23eaa32ca4be110013417f983b51
-SIZE: 737280
+RDEPEND: virtual/libiconv sys-libs/ncurses:0/6= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libncursesw.so.6 libreadline.so.8 libstdc++.so.6 libtinfow.so.6
+SHA1: 06b0776abfbb794bc6032a547fd441cf0ab9bbca
+SIZE: 808960
 SLOT: 0/1.7
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux l10n_en l10n_es ncurses nls readline
-MTIME: 1791062109
+MTIME: 1794110813
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6033,6 +6033,29 @@ MTIME: 1791225563
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-build/autoconf-archive virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 7
+BUILD_TIME: 1794110714
+CPV: dev-libs/icu-78.3
+DEFINED_PHASES: compile configure install prepare setup test unpack
+EAPI: 8
+IUSE: debug doc examples static-libs test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: BSD
+MD5: 376412392629c07739c28aa87d5d09b8
+PATH: pkgs-dev-libs/icu-78.3-7.gpkg.tar
+PROVIDES: x86_32: libicudata.so.78 libicui18n.so.78 libicuio.so.78 libicutest.so.78 libicutu.so.78 libicuuc.so.78 x86_64: libicudata.so.78 libicui18n.so.78 libicuio.so.78 libicutest.so.78 libicutu.so.78 libicuuc.so.78
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_32: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: eed53fa3b428c5ff682f654a504f889f64266504
+SIZE: 30351360
+SLOT: 0/78
+USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794110717
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 22
 BUILD_TIME: 1792727905
@@ -6269,6 +6292,29 @@ SIZE: 204800
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793960445
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gettext sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 17
+BUILD_TIME: 1794110785
+CPV: dev-libs/libbytesize-2.12
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= dev-libs/libpcre2:0/3=
+EAPI: 8
+IUSE: doc python test tools python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: ~alpha amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: LGPL-2+
+MD5: 7df80c2745a1a2dd8755b279647c3682
+PATH: pkgs-dev-libs/libbytesize-2.12-17.gpkg.tar
+PROVIDES: x86_64: libbytesize.so.1
+RDEPEND: dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= dev-libs/libpcre2:0/3= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgmp.so.10 libmpfr.so.6 libpcre2-8.so.0
+RESTRICT: test
+SHA1: e7097e7abeb90b3ca0fa7e55b3c1e229b197d98f
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1794110786
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32909,24 +32955,24 @@ MTIME: 1793963263
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 15
-BUILD_TIME: 1791062157
+BDEPEND: sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 16
+BUILD_TIME: 1794110765
 CPV: media-sound/lame-3.100-r3
 DEFINED_PHASES: compile configure install prepare test
 EAPI: 7
 IUSE: debug cpu_flags_x86_mmx +frontend mp3rtp sndfile static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-solaris
 LICENSE: LGPL-2.1
-MD5: 3d8e1df494bdda547a51dad91825bfbd
-PATH: pkgs-media-sound/lame-3.100-r3-15.gpkg.tar
+MD5: f52c672c29f1ebf63ac8b1d8de9a8d19
+PATH: pkgs-media-sound/lame-3.100-r3-16.gpkg.tar
 PROVIDES: x86_32: libmp3lame.so.0 x86_64: libmp3lame.so.0
-RDEPEND: >=sys-libs/glibc-2.43-r2
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libc.so.6 libm.so.6 x86_64: libc.so.6 libm.so.6
-SHA1: 961b63e6403b6557c149413bb5f1e13e411a7e42
-SIZE: 624640
+SHA1: 171eeec1336890b819f8e823fdc85a85cbf6390e
+SIZE: 634880
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux sndfile
-MTIME: 1791062158
+MTIME: 1794110766
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
