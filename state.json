@@ -474,6 +474,10 @@
    "path": "pkgs-app-text/qpdf-12.4.2-1.gpkg.tar"
   },
   {
+   "at": 1794110013,
+   "path": "pkgs-app-text/tesseract-5.5.4-1.gpkg.tar"
+  },
+  {
    "at": 1793805951,
    "path": "pkgs-app-text/ttf2pk2-2.0_p20260301-1.gpkg.tar"
   },
@@ -528,6 +532,10 @@
   {
    "at": 1794109695,
    "path": "pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar"
+  },
+  {
+   "at": 1794110013,
+   "path": "pkgs-dev-libs/libuv-1.53.0-1.gpkg.tar"
   },
   {
    "at": 1793598458,
@@ -2080,6 +2088,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-media-gfx/qrca-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1794110013,
+   "path": "pkgs-media-libs/freetype-2.15.0-1.gpkg.tar"
   },
   {
    "at": 1793597232,
