@@ -454,6 +454,10 @@
    "path": "pkgs-app-text/calibre-8.9.0-28.gpkg.tar"
   },
   {
+   "at": 1794112862,
+   "path": "pkgs-app-text/docbook2X-0.8.8-r5-3.gpkg.tar"
+  },
+  {
    "at": 1793766102,
    "path": "pkgs-app-text/doxygen-1.18.0-r1-1.gpkg.tar"
   },
@@ -2290,6 +2294,10 @@
    "path": "pkgs-net-dialup/ppp-2.5.5-1.gpkg.tar"
   },
   {
+   "at": 1794112862,
+   "path": "pkgs-net-dialup/ppp-2.5.5-2.gpkg.tar"
+  },
+  {
    "at": 1793166148,
    "path": "pkgs-net-dns/avahi-0.9_rc5-1.gpkg.tar"
   },
@@ -2436,6 +2444,10 @@
   {
    "at": 1793687121,
    "path": "pkgs-net-wireless/wpa_supplicant-2.12-1.gpkg.tar"
+  },
+  {
+   "at": 1794112862,
+   "path": "pkgs-sci-libs/libqalculate-5.12.0-1.gpkg.tar"
   },
   {
    "at": 1793598458,
