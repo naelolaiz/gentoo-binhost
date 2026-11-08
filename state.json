@@ -486,6 +486,10 @@
    "path": "pkgs-dev-build/dolphin-plugins-makefileactions-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1794109695,
+   "path": "pkgs-dev-build/libtool-2.6.2-1.gpkg.tar"
+  },
+  {
    "at": 1793710316,
    "path": "pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar"
   },
@@ -514,8 +518,16 @@
    "path": "pkgs-dev-libs/cyrus-sasl-2.1.28-r6-1.gpkg.tar"
   },
   {
+   "at": 1794109695,
+   "path": "pkgs-dev-libs/expat-2.10.0-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-dev-libs/kweathercore-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1794109695,
+   "path": "pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar"
   },
   {
    "at": 1793598458,
@@ -2086,6 +2098,10 @@
    "path": "pkgs-media-libs/libplacebo-7.387.0-1.gpkg.tar"
   },
   {
+   "at": 1794109695,
+   "path": "pkgs-media-libs/libvorbis-1.3.7-r2-10.gpkg.tar"
+  },
+  {
    "at": 1793941342,
    "path": "pkgs-media-libs/mesa-26.2.6-1.gpkg.tar"
   },
@@ -2220,6 +2236,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-net-irc/konversation-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1794109695,
+   "path": "pkgs-net-libs/libasyncns-0.8-r5-2.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -2408,6 +2428,10 @@
   {
    "at": 1792907262,
    "path": "pkgs-sys-libs/kpmcore-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1794109695,
+   "path": "pkgs-sys-libs/zlib-1.4-1.gpkg.tar"
   },
   {
    "at": 1793598458,
