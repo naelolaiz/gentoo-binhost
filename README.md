@@ -77,7 +77,7 @@ short, fails, or is cancelled loses only the packages it had not finished.
 - **Packages that take longer than one run** finish across runs through the
   compiler cache.
 - **A package that fails to build** is reported and does not stop the
-  others.
+  others; the run still ends red.
 - **Each run ends with an install check**: a clean container has to install
   what was just published, with signature verification on.
 

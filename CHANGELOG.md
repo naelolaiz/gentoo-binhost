@@ -8,6 +8,15 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Reporting
+
+- A run with a failed package, an unresolved root or anything else that goes
+  into the alert issue now ends red.  Before, only a broken container, a
+  failed publish or a failed install check did; a run whose packages failed
+  to build stayed green with error annotations (run 42442846574: three
+  failed packages, one unresolved root).  The "Report" job fails after
+  updating the issue, and also runs on other refs, without the issue.
+
 ### Long runs
 
 - A chain of follow-up runs keeps its tree snapshot for at most two days,
