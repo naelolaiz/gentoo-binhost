@@ -2158,6 +2158,10 @@
    "path": "pkgs-llvm-runtimes/openmp-23.1.2-1.gpkg.tar"
   },
   {
+   "at": 1794116910,
+   "path": "pkgs-media-gfx/imagemagick-7.1.2.32-2.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-media-gfx/kgraphviewer-26.08.1-1.gpkg.tar"
   },
@@ -2304,6 +2308,10 @@
   {
    "at": 1794110948,
    "path": "pkgs-media-sound/lame-3.100-r3-15.gpkg.tar"
+  },
+  {
+   "at": 1794116910,
+   "path": "pkgs-media-sound/lilypond-2.26.0-1.gpkg.tar"
   },
   {
    "at": 1794116601,
