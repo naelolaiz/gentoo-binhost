@@ -189,6 +189,13 @@ packages, a failed install check, a chain that stopped), closed by the next
 run that gets through every tier cleanly.  A clean run of a single tier
 leaves it open.
 
+The same job decides the colour of the run: whatever it would put into the
+issue fails it, so a run with a failed package or an unresolved root ends
+red, even though the build job itself succeeded and published the rest.
+The build job is not the one that fails for this, because a failed build
+step starts the salvage step, which is only meant for an aborted build.
+Runs on other refs get the same verdict but leave the issue alone.
+
 ## Decisions worth knowing
 
 **The builder consumes its own binhost.**  An earlier version did not, on

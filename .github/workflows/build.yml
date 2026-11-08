@@ -211,30 +211,32 @@ jobs:
   # One issue that is open while something needs a human and closes itself
   # when a run gets through cleanly.  A run cancelled by hand reports
   # nothing; a job that ran into its time limit still does.
+  #
+  # This job is also the run's verdict.  A failed package or an unresolved
+  # root does not fail the build job (the other packages are built and
+  # published, and failing that job would start the salvage step), so
+  # without this the run would end green with only annotations to show for
+  # it.  Whatever goes into the issue makes this job, and so the run, red.
+  # Every ref gets the verdict; only the default branch keeps the issue.
   report:
     name: Report
     needs: [build, verify, continue]
-    if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       issues: write
     steps:
-      - name: Open, update or close the alert issue
+      - name: Collect what needs attention
+        id: collect
         env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
           BUILD_RESULT: ${{ needs.build.result }}
           VERIFY_RESULT: ${{ needs.verify.result }}
           CONTINUE_RESULT: ${{ needs.continue.result }}
-          STATUS: ${{ needs.build.outputs.status }}
-          ALL_TIERS: ${{ needs.build.outputs.all_tiers }}
-          HEALTHY: ${{ needs.build.outputs.healthy }}
           PROBLEMS: ${{ needs.build.outputs.problems }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          body="$(mktemp)"
+          body="${RUNNER_TEMP}/problems.md"
           {
             [ "$BUILD_RESULT" = success ] \
               || echo "- The build job ended as \`${BUILD_RESULT}\`."
@@ -244,7 +246,27 @@ jobs:
               || echo "- The next run could not be requested (\`${CONTINUE_RESULT}\`); start it by hand."
             printf '%s\n' "$PROBLEMS"
           } | sed '/^$/d' > "$body"
+          found=false
+          [ ! -s "$body" ] || found=true
+          {
+            echo "body=${body}"
+            echo "found=${found}"
+          } >> "$GITHUB_OUTPUT"
 
+      - name: Open, update or close the alert issue
+        id: issue
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BODY: ${{ steps.collect.outputs.body }}
+          STATUS: ${{ needs.build.outputs.status }}
+          ALL_TIERS: ${{ needs.build.outputs.all_tiers }}
+          HEALTHY: ${{ needs.build.outputs.healthy }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          body="$BODY"
           existing="$(gh issue list --label binhost-alert --state open --json number --jq '.[0].number // empty')"
           if [ -s "$body" ]; then
             {
@@ -255,16 +277,33 @@ jobs:
               echo "Run: ${RUN_URL} (logs are attached to the run as an artifact)."
             } > "${body}.full"
             if [ -n "$existing" ]; then
-              gh issue edit "$existing" --body-file "${body}.full"
+              url="$(gh issue edit "$existing" --body-file "${body}.full")"
             else
               gh label create binhost-alert --color B60205 \
                 --description "The package builder needs attention" --force
-              gh issue create --title "Package builder needs attention" \
-                --label binhost-alert --body-file "${body}.full"
+              url="$(gh issue create --title "Package builder needs attention" \
+                --label binhost-alert --body-file "${body}.full")"
             fi
+            echo "$url"
+            echo "url=${url}" >> "$GITHUB_OUTPUT"
           elif [ -n "$existing" ] && [ "$STATUS" = complete ] && [ "$HEALTHY" = true ] \
                && [ "$ALL_TIERS" = true ]; then
             # Only a clean run over every tier says the problem is gone; a
             # clean run of one tier says nothing about the others.
             gh issue close "$existing" --comment "Resolved: ${RUN_URL} processed every tier without problems."
           fi
+
+      # Also when updating the issue failed: the problems are still real.
+      - name: Fail the run if something needs attention
+        if: ${{ !cancelled() && steps.collect.outputs.found == 'true' }}
+        env:
+          BODY: ${{ steps.collect.outputs.body }}
+          ISSUE_URL: ${{ steps.issue.outputs.url }}
+        run: |
+          cat "$BODY"
+          # The top-level items, without the lists of packages under them.
+          what="$(sed -n 's/^- //; T; s/:$//; p' "$BODY" | paste -sd ';' - | sed 's/;/; /g')"
+          where="the run summary and the logs artifact"
+          [ -z "$ISSUE_URL" ] || where="${ISSUE_URL}"
+          echo "::error title=Run needs attention::${what} (see ${where})"
+          exit 1

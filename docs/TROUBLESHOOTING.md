@@ -3,6 +3,9 @@
 Every run writes a summary (the run's page on GitHub) and uploads its logs
 as the artifact `build-logs-<run>`.  Problems that need a human are collected
 in one issue labelled `binhost-alert`, which closes itself after a clean run.
+A run with such a problem ends red; the "Report" job's last step names the
+problems and links the issue.  The build job can still be green: the packages
+that did build were published.
 
 Contents of the logs artifact:
 
