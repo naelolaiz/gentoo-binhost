@@ -466,6 +466,10 @@
    "path": "pkgs-app-text/doxygen-1.18.0-r1-2.gpkg.tar"
   },
   {
+   "at": 1794113176,
+   "path": "pkgs-app-text/doxygen-1.18.0-r1-3.gpkg.tar"
+  },
+  {
    "at": 1793803487,
    "path": "pkgs-app-text/dvipsk-2026.03.01_p77830-1.gpkg.tar"
   },
@@ -528,6 +532,10 @@
   {
    "at": 1794112546,
    "path": "pkgs-dev-lang/ruby-3.3.13-2.gpkg.tar"
+  },
+  {
+   "at": 1794113176,
+   "path": "pkgs-dev-lang/tk-8.6.17-3.gpkg.tar"
   },
   {
    "at": 1793687121,
@@ -2326,6 +2334,10 @@
    "path": "pkgs-net-libs/libktorrent-26.08.2-1.gpkg.tar"
   },
   {
+   "at": 1794113176,
+   "path": "pkgs-net-libs/libpcap-1.11.0-1.gpkg.tar"
+  },
+  {
    "at": 1793711550,
    "path": "pkgs-net-libs/libquotient-0.9.6.1-5.gpkg.tar"
   },
@@ -2444,6 +2456,10 @@
   {
    "at": 1793687121,
    "path": "pkgs-net-wireless/wpa_supplicant-2.12-1.gpkg.tar"
+  },
+  {
+   "at": 1794113176,
+   "path": "pkgs-sci-electronics/ngspice-46-3.gpkg.tar"
   },
   {
    "at": 1794112862,

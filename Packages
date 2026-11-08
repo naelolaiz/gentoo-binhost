@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794112862
+TIMESTAMP: 1794113176
 PACKAGES: 1818
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -3230,24 +3230,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/yacc app-alternatives/lex || ( dev-lang/python:3.15[xml(+)] dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 3
-BUILD_TIME: 1793941976
+BUILD_ID: 4
+BUILD_TIME: 1794113045
 CPV: app-text/doxygen-1.18.0-r1
 DEFINED_PHASES: compile configure install postinst prepare setup test
 DEPEND: dev-db/sqlite:3 dev-lang/perl dev-libs/libfmt:0/12.2.0= dev-libs/spdlog:0/1.17= virtual/libiconv
 EAPI: 8
-IUSE: clang debug doc dot doxysearch gui test +llvm_slot_22 llvm_slot_19 llvm_slot_20 llvm_slot_21
+IUSE: clang debug doc dot doxysearch gui test +llvm_slot_22 llvm_slot_20 llvm_slot_21
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: GPL-2
-MD5: 821127b5f17af12c91bbefbc8db02613
-PATH: pkgs-app-text/doxygen-1.18.0-r1-3.gpkg.tar
+MD5: 4649154abdedf4b60fc041bb3967e328
+PATH: pkgs-app-text/doxygen-1.18.0-r1-4.gpkg.tar
 RDEPEND: dev-db/sqlite:3 dev-lang/perl dev-libs/libfmt:0/12.2.0= dev-libs/spdlog:0/1.17= virtual/libiconv >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libfmt.so.12 libgcc_s.so.1 libm.so.6 libspdlog.so.1.17 libsqlite3.so.0 libstdc++.so.6
 RESTRICT: test
-SHA1: 3bbf39e2eda93404b96a968c65922aa8850d3267
+SHA1: cfd8f8da611c201b285543a9a75df53e2cad0098
 SIZE: 8284160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
-MTIME: 1793941977
+MTIME: 1794113045
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5544,9 +5544,9 @@ MTIME: 1794111924
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 3
-BUILD_TIME: 1791122053
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 4
+BUILD_TIME: 1794113007
 CPV: dev-lang/tk-8.6.17
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] >=x11-libs/libX11-1.6.2[abi_x86_64(-)] >=x11-libs/libXt-1.1.4[abi_x86_64(-)] >=x11-libs/libXft-2.3.1-r1[abi_x86_64(-)] ~dev-lang/tcl-8.6.17:0/8.6=[abi_x86_64(-)] x11-base/xorg-proto
@@ -5554,18 +5554,17 @@ EAPI: 8
 IUSE: debug +threads truetype aqua xscreensaver abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
 LICENSE: tcltk
-MD5: f5c20c69fbb9f549abfb6127adf93297
-PATH: pkgs-dev-lang/tk-8.6.17-3.gpkg.tar
+MD5: cb44c0849d3f2b1ac944f5ae6017b0e0
+PATH: pkgs-dev-lang/tk-8.6.17-4.gpkg.tar
 PROVIDES: x86_64: libtk8.6.so
-RDEPEND: >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] >=x11-libs/libX11-1.6.2[abi_x86_64(-)] >=x11-libs/libXt-1.1.4[abi_x86_64(-)] >=x11-libs/libXft-2.3.1-r1[abi_x86_64(-)] ~dev-lang/tcl-8.6.17:0/8.6=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+RDEPEND: >=media-libs/fontconfig-2.10.92[abi_x86_64(-)] >=x11-libs/libX11-1.6.2[abi_x86_64(-)] >=x11-libs/libXt-1.1.4[abi_x86_64(-)] >=x11-libs/libXft-2.3.1-r1[abi_x86_64(-)] ~dev-lang/tcl-8.6.17:0/8.6=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libX11.so.6 libXft.so.2 libc.so.6 libfontconfig.so.1 libm.so.6 libtcl8.6.so
 RESTRICT: test test
-SHA1: 535ab6b8b52c190eac3214df197ddf3607d61fa2
-SIZE: 2478080
+SHA1: bcdcdf954500b5b4101d1b821b2dd9c630121448
+SIZE: 2498560
 SLOT: 0/8.6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux threads truetype
-MTIME: 1791122058
+MTIME: 1794113009
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -34607,26 +34606,26 @@ MTIME: 1791058096
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: app-alternatives/yacc sys-devel/flex virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791146398
+BDEPEND: app-alternatives/yacc sys-devel/flex virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 4
+BUILD_TIME: 1794113098
 CPV: net-libs/libpcap-1.11.0
 DEFINED_PHASES: compile configure install prepare test unpack
 DEPEND: net-wireless/bluez:0/3=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] virtual/libusb:1[abi_x86_64(-)]
 EAPI: 8
 IUSE: bluetooth dbus netlink rdma remote static-libs test usb yydebug abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
 LICENSE: BSD BSD-with-attribution BSD-4
-MD5: 94bba5bb9c609f417ff8ed22046b2367
-PATH: pkgs-net-libs/libpcap-1.11.0-1.gpkg.tar
+MD5: 032446d95c3dcbaf89c937dd7f73fda8
+PATH: pkgs-net-libs/libpcap-1.11.0-4.gpkg.tar
 PROVIDES: x86_64: libpcap.so.1
-RDEPEND: net-wireless/bluez:0/3=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] virtual/libusb:1[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libdbus-1.so.3
+RDEPEND: net-wireless/bluez:0/3=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] virtual/libusb:1[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libdbus-1.so.3
 RESTRICT: test
-SHA1: 89bee8fc1de7b1183a8b56a33394a481d266c389
+SHA1: 303f3e70aa4bf99077e70c44650ee75cd2b35d76
 SIZE: 399360
 USE: abi_x86_64 amd64 bluetooth dbus elibc_glibc kernel_linux usb
-MTIME: 1791146400
+MTIME: 1794113099
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36107,9 +36106,9 @@ MTIME: 1791214647
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 3
-BUILD_TIME: 1791094326
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 4
+BUILD_TIME: 1794112971
 CPV: sci-electronics/ngspice-46
 DEFINED_PHASES: compile configure install prepare pretend setup test
 DEPEND: sys-libs/ncurses:0/6= x11-libs/libXaw x11-libs/libXt x11-libs/libX11 sci-libs/fftw:3.0/3= sys-libs/readline:0/8=
@@ -36117,17 +36116,16 @@ EAPI: 8
 IUSE: X debug deprecated doc examples fftw +klu openmp +readline +shared tcl test
 KEYWORDS: amd64 ~arm64 ~ppc ~riscv ~sparc ~x86 ~x64-macos
 LICENSE: BSD GPL-2 MPL-2.0
-MD5: d1157c4ac3f7836b5c8a497b7e205ee5
-PATH: pkgs-sci-electronics/ngspice-46-3.gpkg.tar
+MD5: 6c67a5107b6268cfa1cc27806d67759c
+PATH: pkgs-sci-electronics/ngspice-46-4.gpkg.tar
 PROVIDES: x86_64: analog.cm digital.cm ivlng.so ivlngvpi.so libngspice.so.0 spice2poly.cm table.cm tlines.cm xtradev.cm xtraevt.cm
-RDEPEND: sys-libs/ncurses:0/6= x11-libs/libXaw x11-libs/libXt x11-libs/libX11 sci-libs/fftw:3.0/3= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
+RDEPEND: sys-libs/ncurses:0/6= x11-libs/libXaw x11-libs/libXt x11-libs/libX11 sci-libs/fftw:3.0/3= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libX11.so.6 libXaw.so.7 libXft.so.2 libXt.so.6 libc.so.6 libfftw3.so.3 libfontconfig.so.1 libgcc_s.so.1 libgomp.so.1 libm.so.6 libreadline.so.8 libstdc++.so.6 libtinfo.so.6
 RESTRICT: test test
-SHA1: c32d0a14f87b63aa88afc8dcac28ab707283c1ef
-SIZE: 6440960
+SHA1: 0c4dd391bc182cc756f68bf971e693e84c3a1bb2
+SIZE: 6543360
 USE: X abi_x86_64 amd64 elibc_glibc fftw kernel_linux klu openmp readline shared
-MTIME: 1791094331
+MTIME: 1794112975
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
