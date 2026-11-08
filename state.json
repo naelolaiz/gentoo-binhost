@@ -550,6 +550,10 @@
    "path": "pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar"
   },
   {
+   "at": 1794112226,
+   "path": "pkgs-dev-libs/libtommath-1.3.0-4.gpkg.tar"
+  },
+  {
    "at": 1794110013,
    "path": "pkgs-dev-libs/libuv-1.53.0-1.gpkg.tar"
   },
@@ -564,6 +568,10 @@
   {
    "at": 1793686190,
    "path": "pkgs-dev-libs/libzip-1.12.1-1.gpkg.tar"
+  },
+  {
+   "at": 1794112226,
+   "path": "pkgs-dev-libs/nspr-4.40-1.gpkg.tar"
   },
   {
    "at": 1793943792,
@@ -2112,6 +2120,14 @@
   {
    "at": 1794110013,
    "path": "pkgs-media-libs/freetype-2.15.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794112226,
+   "path": "pkgs-media-libs/kvazaar-2.3.2-1.gpkg.tar"
+  },
+  {
+   "at": 1794112226,
+   "path": "pkgs-media-libs/libexif-0.6.26-1.gpkg.tar"
   },
   {
    "at": 1793597232,
