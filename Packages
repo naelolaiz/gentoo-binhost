@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794112226
-PACKAGES: 1812
+TIMESTAMP: 1794112546
+PACKAGES: 1816
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5408,9 +5408,9 @@ MTIME: 1791057558
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 2
-BUILD_TIME: 1793686446
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1794112411
 CPV: dev-lang/ruby-3.3.13
 DEFINED_PHASES: compile configure install postinst postrm prepare setup test
 DEPEND: sys-libs/gdbm:0/6= dev-libs/openssl:0/4= dev-libs/libyaml dev-libs/libffi:0/8= virtual/zlib:0/1= virtual/libcrypt:0/2= >=app-eselect/eselect-ruby-20231226
@@ -5418,18 +5418,18 @@ EAPI: 8
 IUSE: berkdb debug doc examples gdbm gmp jemalloc jit socks5 +ssl static-libs systemtap tk valgrind xemacs
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: || ( Ruby-BSD BSD-2 )
-MD5: 17febba31ffe7d6f1fe5d41b4cf117bb
-PATH: pkgs-dev-lang/ruby-3.3.13-2.gpkg.tar
+MD5: 75aeccb505a8baad2741c343d38c740c
+PATH: pkgs-dev-lang/ruby-3.3.13-3.gpkg.tar
 PDEPEND: >=dev-ruby/debug-1.9.2[ruby_targets_ruby33(-)] >=dev-ruby/irb-1.11.0[ruby_targets_ruby33(-)] >=dev-ruby/matrix-0.4.2[ruby_targets_ruby33(-)] >=dev-ruby/minitest-5.20.0[ruby_targets_ruby33(-)] >=dev-ruby/net-ftp-0.3.4[ruby_targets_ruby33(-)] >=dev-ruby/net-imap-0.4.21[ruby_targets_ruby33(-)] >=dev-ruby/net-pop-0.1.2[ruby_targets_ruby33(-)] >=dev-ruby/net-smtp-0.5.1[ruby_targets_ruby33(-)] >=dev-ruby/power_assert-2.0.3[ruby_targets_ruby33(-)] >=dev-ruby/prime-0.1.2[ruby_targets_ruby33(-)] >=dev-ruby/racc-1.7.3[ruby_targets_ruby33(-)] >=dev-ruby/rake-13.1.0[ruby_targets_ruby33(-)] >=dev-ruby/rbs-3.4.0[ruby_targets_ruby33(-)] >=dev-ruby/rexml-3.4.4[ruby_targets_ruby33(-)] >=dev-ruby/rss-0.3.1[ruby_targets_ruby33(-)] >=dev-ruby/test-unit-3.6.1[ruby_targets_ruby33(-)] >=dev-ruby/typeprof-0.21.9[ruby_targets_ruby33(-)] virtual/rubygems[ruby_targets_ruby33(-)] >=dev-ruby/bundler-2.5.11[ruby_targets_ruby33(-)] >=dev-ruby/did_you_mean-1.6.3[ruby_targets_ruby33(-)] >=dev-ruby/json-2.7.2[ruby_targets_ruby33(-)] >=dev-ruby/rdoc-6.6.2[ruby_targets_ruby33(-)]
 PROVIDES: x86_64: big5.so bigdecimal.so bubblebabble.so cesu_8.so chinese.so console.so continuation.so coverage.so cp949.so date_core.so digest.so ebcdic.so emacs_mule.so emoji.so emoji_iso2022_kddi.so emoji_sjis_docomo.so emoji_sjis_kddi.so emoji_sjis_softbank.so encdb.so escape.so etc.so euc_jp.so euc_kr.so euc_tw.so fcntl.so fiddle.so gb18030.so gb2312.so gbk.so generator.so iso2022.so iso_8859_1.so iso_8859_10.so iso_8859_11.so iso_8859_13.so iso_8859_14.so iso_8859_15.so iso_8859_16.so iso_8859_2.so iso_8859_3.so iso_8859_4.so iso_8859_5.so iso_8859_6.so iso_8859_7.so iso_8859_8.so iso_8859_9.so japanese.so japanese_euc.so japanese_sjis.so koi8_r.so koi8_u.so korean.so libruby33.so.3.3 md5.so monitor.so nkf.so nonblock.so objspace.so openssl.so parser.so pathname.so psych.so pty.so ripper.so rmd160.so sha1.so sha2.so shift_jis.so single_byte.so sizeof.so socket.so stringio.so strscan.so syslog.so transdb.so utf8_mac.so utf_16_32.so utf_16be.so utf_16le.so utf_32be.so utf_32le.so wait.so windows_1250.so windows_1251.so windows_1252.so windows_1253.so windows_1254.so windows_1257.so windows_31j.so zlib.so
 RDEPEND: sys-libs/gdbm:0/6= dev-libs/openssl:0/4= dev-libs/libyaml dev-libs/libffi:0/8= virtual/zlib:0/1= virtual/libcrypt:0/2= >=app-eselect/eselect-ruby-20231226 >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
+REPO_REVISIONS: {"gentoo": "0262bbb4e23bc9ba9fc48940ff9e2df8af030ff4"}
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libcrypt.so.2 libcrypto.so.4 libffi.so.8 libm.so.6 libssl.so.4 libyaml-0.so.2 libz.so.1
-SHA1: c307be40e90b4cf242579ce204bf43461490dd36
+SHA1: f7fb704242d569883931acbf5f517ad9bf99b77d
 SIZE: 6778880
 SLOT: 3.3
 USE: abi_x86_64 amd64 elibc_glibc gdbm kernel_linux ssl
-MTIME: 1793686452
+MTIME: 1794112416
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7137,6 +7137,29 @@ SIZE: 471040
 SLOT: 0/8-6
 USE: abi_x86_64 amd64 asm cpu_flags_x86_aes cpu_flags_x86_pclmul elibc_glibc gmp kernel_linux
 MTIME: 1791061880
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gettext sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 36
+BUILD_TIME: 1794112250
+CPV: dev-libs/newt-0.52.25-r2
+DEFINED_PHASES: configure install prepare
+DEPEND: >=dev-libs/popt-1.6 =sys-libs/slang-2* sys-libs/gpm
+EAPI: 8
+IUSE: gpm python nls tcl python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: LGPL-2
+MD5: 4c4eab00fcc865b266b84c042bd6e0cd
+PATH: pkgs-dev-libs/newt-0.52.25-r2-36.gpkg.tar
+PROVIDES: x86_64: libnewt.so.0.52
+RDEPEND: >=dev-libs/popt-1.6 =sys-libs/slang-2* sys-libs/gpm >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libpopt.so.0 libslang.so.2
+RESTRICT: test
+SHA1: ae43093e7499d4620fd2012e21780e71928bca74
+SIZE: 143360
+USE: abi_x86_64 amd64 elibc_glibc gpm kernel_linux nls python_targets_python3_14
+MTIME: 1794112251
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15465,24 +15488,24 @@ MTIME: 1791062203
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1793418828
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794112182
 CPV: dev-util/patchelf-0.19.3
 DEFINED_PHASES: configure prepare
 EAPI: 9
 IUSE: test
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~x86
 LICENSE: GPL-3
-MD5: f653dde7606b549144ef5ae4a7784d3e
-PATH: pkgs-dev-util/patchelf-0.19.3-1.gpkg.tar
+MD5: 8f17b00868929ba647715c1c4a030f36
+PATH: pkgs-dev-util/patchelf-0.19.3-2.gpkg.tar
 RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
 RESTRICT: test
-SHA1: 289e1c09ac2ec0ed811fd07e0124aef9cc12565c
+SHA1: 108ac554208f5069f5b938790e4d768b96d9a18d
 SIZE: 174080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793418829
+MTIME: 1794112183
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15589,6 +15612,28 @@ SHA1: cfeee2f426f1db2e965f81b668f0ee4eba8b050a
 SIZE: 225280
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1793515109
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 15
+BUILD_TIME: 1794112242
+CPV: dev-util/ragel-7.0.4-r3
+DEFINED_PHASES: configure install prepare
+DEPEND: >=dev-util/colm-0.14.7-r1
+EAPI: 8
+IUSE: doc
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 7e55cdfcce141fe5beb830b5d92959a2
+PATH: pkgs-dev-util/ragel-7.0.4-r3-15.gpkg.tar
+PROVIDES: x86_64: libragel.so.0
+RDEPEND: >=dev-util/colm-0.14.7-r1 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcolm-0.14.7.so libfsm-0.14.7.so libgcc_s.so.1 libstdc++.so.6
+SHA1: 911635386dac5334c68cd0dc2355577052c18dde
+SIZE: 1136640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794112243
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31008,6 +31053,27 @@ MTIME: 1791224870
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 14
+BUILD_TIME: 1794112166
+CPV: media-libs/libmad-0.15.1b-r10
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 7
+IUSE: debug static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos
+LICENSE: GPL-2+
+MD5: d3562f5ac5be9ca4bab06be260d2afe4
+PATH: pkgs-media-libs/libmad-0.15.1b-r10-14.gpkg.tar
+PROVIDES: x86_64: libmad.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 98899af77d3f70ddb1c67bbc4b072133b9dd98e3
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794112166
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 1
 BUILD_TIME: 1791224494
@@ -31031,9 +31097,9 @@ MTIME: 1791224497
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1792305842
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 17
+BUILD_TIME: 1794112272
 CPV: media-libs/libmng-2.0.3-r1
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=virtual/jpeg-0-r2:0[abi_x86_64(-)] >=media-libs/lcms-2.5:2[abi_x86_64(-)]
@@ -31041,16 +31107,16 @@ EAPI: 7
 IUSE: lcms abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~x64-macos ~x64-solaris
 LICENSE: libmng
-MD5: 88075fa402d7d2544f2d4a6cf498ae88
-PATH: pkgs-media-libs/libmng-2.0.3-r1-1.gpkg.tar
+MD5: 1215a24c2acfad9e2041b506130b55be
+PATH: pkgs-media-libs/libmng-2.0.3-r1-17.gpkg.tar
 PROVIDES: x86_64: libmng.so.2
 RDEPEND: >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=virtual/jpeg-0-r2:0[abi_x86_64(-)] >=media-libs/lcms-2.5:2[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libjpeg.so.62 liblcms2.so.2 libm.so.6 libz.so.1
-SHA1: 0e1c9f0ef17474223b37e57e9c3f0958efa8c194
+SHA1: ebb6c5ad97e1211c72bcb4e8775bca906bdbbed7
 SIZE: 307200
 SLOT: 0/2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux lcms
-MTIME: 1792305843
+MTIME: 1794112273
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32817,6 +32883,28 @@ SHA1: 35bff3e4d9da0243be4f1400d5f84b10f18c3d25
 SIZE: 942080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793959602
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 12
+BUILD_TIME: 1794112171
+CPV: media-sound/cdparanoia-3.10.2-r8
+DEFINED_PHASES: compile configure install postinst postrm prepare test
+EAPI: 8
+IDEPEND: app-eselect/eselect-cdparanoia
+IUSE: static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: GPL-2 LGPL-2.1
+MD5: a47c19bc7e4f35b20e1ad9296854bd1c
+PATH: pkgs-media-sound/cdparanoia-3.10.2-r8-12.gpkg.tar
+PROVIDES: x86_64: libcdda_interface.so.0 libcdda_paranoia.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libm.so.6
+SHA1: 3b30feb0af23ebaaf8fb4319be588d9569dc565c
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794112172
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
