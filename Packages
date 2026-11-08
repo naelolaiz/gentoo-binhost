@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794116910
-PACKAGES: 1830
+TIMESTAMP: 1794117246
+PACKAGES: 1837
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -972,6 +972,24 @@ MTIME: 1792315932
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 5
+BUILD_TIME: 1794116916
+CPV: app-containers/catatonit-0.2.1
+DEFINED_PHASES: install prepare
+EAPI: 8
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv
+LICENSE: GPL-2+
+MD5: 1d69cec58d631042cc28c41656a8bab0
+PATH: pkgs-app-containers/catatonit-0.2.1-5.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
+SHA1: 9058a20c954b5631ee9e55c14bf781bfe4f1a363
+SIZE: 389120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794116917
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-go/go-md2man-2.0.7
 BUILD_ID: 1
 BUILD_TIME: 1791278628
@@ -1054,9 +1072,9 @@ MTIME: 1791277825
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1793952615
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794116980
 CPV: app-containers/crun-1.30.1
 DEFINED_PHASES: configure install prepare setup test
 DEPEND: dev-libs/blake3 dev-libs/json-c:0/5.1= sys-kernel/linux-headers sys-libs/libcap sys-libs/libseccomp
@@ -1064,15 +1082,15 @@ EAPI: 8
 IUSE: +bpf +caps criu +seccomp selinux systemd static-libs
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv
 LICENSE: GPL-2+ LGPL-2.1+
-MD5: c8a18290ffa755da5d39586bd8841480
-PATH: pkgs-app-containers/crun-1.30.1-1.gpkg.tar
+MD5: 9606debadf6a42703080abd201657493
+PATH: pkgs-app-containers/crun-1.30.1-2.gpkg.tar
 PROVIDES: x86_64: libcrun.so.0
 RDEPEND: dev-libs/blake3 dev-libs/json-c:0/5.1= sys-kernel/linux-headers sys-libs/libcap sys-libs/libseccomp >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libblake3.so.0 libc.so.6 libcap.so.2 libjson-c.so.5 libm.so.6 libseccomp.so.2
-SHA1: 49065d05536152a5e35e6992169b9a3f3a35a6ed
+SHA1: 2b521a6943878562707275248fd60b10a4f4ec99
 SIZE: 419840
 USE: abi_x86_64 amd64 bpf caps elibc_glibc kernel_linux seccomp
-MTIME: 1793952616
+MTIME: 1794116982
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -1755,6 +1773,29 @@ SHA1: 3073bdea05531195cf80e15907e2b00abe3a1285
 SIZE: 2498560
 USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
 MTIME: 1793597648
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/autoconf-2.71 virtual/pkgconfig sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1794117136
+CPV: app-editors/gvim-9.2.1302
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: ~app-editors/vim-core-9.2.1302 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland x11-base/xorg-proto
+EAPI: 8
+IUSE: acl crypt cscope debug gtk4 images lua minimal motif netbeans nls +pango perl python racket ruby selinux session sound tcl wayland perl_features_debug perl_features_ithreads perl_features_quadmath lua_single_target_luajit lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: vim
+MD5: 5b63ba34c58ae5a0da86125f8741082c
+PATH: pkgs-app-editors/gvim-9.2.1302-1.gpkg.tar
+PDEPEND: app-vim/gentoo-syntax
+RDEPEND: ~app-editors/vim-core-9.2.1302 >=app-eselect/eselect-vi-1.1 >=sys-libs/ncurses-5.2-r2:0/6= sys-apps/acl x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt x11-libs/gtk+:3[X] x11-libs/libXft x11-libs/cairo >=x11-libs/pango-1.44 dev-libs/libsodium:0/26= dev-util/cscope virtual/libintl media-libs/libcanberra dev-libs/wayland >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXt.so.6 libacl.so.1 libc.so.6 libcairo.so.2 libcanberra.so.0 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libm.so.6 libpango-1.0.so.0 libpangocairo-1.0.so.0 libsodium.so.26 libtinfo.so.6 libwayland-client.so.0
+RESTRICT: test
+SHA1: d51a43d8a2dba9e0a343d6fad598cdfbe4e8a2bc
+SIZE: 2498560
+USE: abi_x86_64 acl amd64 crypt cscope elibc_glibc kernel_linux lua_single_target_lua5-1 nls pango python_single_target_python3_14 sound wayland
+MTIME: 1794117138
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -2749,22 +2790,22 @@ MTIME: 1793764500
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: app-text/asciidoc app-text/xmlto sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791282699
+BDEPEND: app-text/asciidoc app-text/xmlto sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794116987
 CPV: app-misc/evtest-1.36
 DEFINED_PHASES: prepare
 EAPI: 8
 KEYWORDS: ~alpha amd64 arm ~arm64 ~hppa ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: GPL-2
-MD5: 937423b84d5862782b63bc39936983d6
-PATH: pkgs-app-misc/evtest-1.36-1.gpkg.tar
-RDEPEND: >=sys-libs/glibc-2.43-r2
+MD5: f96691f9e73d193ffa3c8b7ffed1e7e5
+PATH: pkgs-app-misc/evtest-1.36-2.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6
-SHA1: e58711bd42d7181dc739115e530bbede50930f7e
+SHA1: 2446d11172a8a3b74a157d8182d6b27c25bae781
 SIZE: 40960
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791282700
+MTIME: 1794116988
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4932,9 +4973,9 @@ MTIME: 1791277584
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1793597521
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794116988
 CPV: dev-debug/strace-7.3
 DEFINED_PHASES: configure install prepare test unpack
 DEPEND: sys-libs/ncurses:0/6=
@@ -4942,15 +4983,15 @@ EAPI: 8
 IUSE: aio ncurses perl selinux static test unwind elfutils verify-sig
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: LGPL-2.1+
-MD5: 6bcf262f2b02db049aa40443fa66aca0
-PATH: pkgs-dev-debug/strace-7.3-1.gpkg.tar
+MD5: 0cd877e4a3a4f4907d668da22d01a38d
+PATH: pkgs-dev-debug/strace-7.3-2.gpkg.tar
 RDEPEND: sys-libs/ncurses:0/6= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libtinfo.so.6
 RESTRICT: test
-SHA1: 3952ad0d9f2956d53d0af9f855c88f7cb2194ff8
+SHA1: a99b12a731ac2cc233b4419e3decdc61110d6492
 SIZE: 1351680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux ncurses
-MTIME: 1793597524
+MTIME: 1794116991
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -6767,6 +6808,28 @@ MTIME: 1791083288
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1794117007
+CPV: dev-libs/libisoburn-1.5.8_p2
+DEFINED_PHASES: configure install prepare
+DEPEND: >=dev-libs/libburn-1.5.8 >=dev-libs/libisofs-1.5.8 sys-libs/readline:0/8= virtual/acl >=dev-libs/libisofs-1.5.8[acl] sys-apps/attr >=dev-libs/libisofs-1.5.8[xattr] virtual/zlib:0/1= >=dev-libs/libisofs-1.5.8[zlib]
+EAPI: 9
+IUSE: acl debug external-filters frontend-optional launch-frontend libedit readline static-libs xattr zlib
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: GPL-2 GPL-3
+MD5: 6b72b6348c0226ddc14fe5efa5036516
+PATH: pkgs-dev-libs/libisoburn-1.5.8_p2-3.gpkg.tar
+PROVIDES: x86_64: libisoburn.so.1
+RDEPEND: >=dev-libs/libburn-1.5.8 >=dev-libs/libisofs-1.5.8 sys-libs/readline:0/8= virtual/acl >=dev-libs/libisofs-1.5.8[acl] sys-apps/attr >=dev-libs/libisofs-1.5.8[xattr] virtual/zlib:0/1= >=dev-libs/libisofs-1.5.8[zlib] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libburn.so.4 libc.so.6 libisofs.so.6 libreadline.so.8
+SHA1: b5938873c3a26b92337300735092740614cb3935
+SIZE: 1075200
+USE: abi_x86_64 acl amd64 elibc_glibc kernel_linux readline xattr zlib
+MTIME: 1794117008
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/yacc >=app-portage/elt-patches-20250306
 BUILD_ID: 1
 BUILD_TIME: 1791060046
@@ -6830,6 +6893,47 @@ SIZE: 71680
 SLOT: 0/0.0.7
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791275920
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 11
+BUILD_TIME: 1794116906
+CPV: dev-libs/libmpack-1.0.5-r5
+DEFINED_PHASES: compile install prepare test
+EAPI: 8
+KEYWORDS: amd64 ~arm arm64 ~hppa ~ppc ~ppc64 ~riscv ~sparc x86 ~x64-macos
+LICENSE: MIT
+MD5: e34df15f613a0f87a8759a53e426335a
+PATH: pkgs-dev-libs/libmpack-1.0.5-r5-11.gpkg.tar
+PROVIDES: x86_64: libmpack.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 4c637c364c36a79c6fb4347da365f107abe6c2e9
+SIZE: 40960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794116907
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 5
+BUILD_TIME: 1794116922
+CPV: dev-libs/libmspack-1.11
+DEFINED_PHASES: configure install prepare test
+EAPI: 8
+IUSE: debug doc
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: LGPL-2.1
+MD5: 516fae9ec65c9e1d6a52b7cce55c66e2
+PATH: pkgs-dev-libs/libmspack-1.11-5.gpkg.tar
+PROVIDES: x86_64: libmspack.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: a70f1b5fe1bf2968347f87284eeabc8f4b70a21f
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794116923
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7099,6 +7203,26 @@ SIZE: 235520
 SLOT: 0/1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1794109660
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 11
+BUILD_TIME: 1794116899
+CPV: dev-libs/libvterm-0.3.3
+DEFINED_PHASES: compile install prepare test
+EAPI: 8
+KEYWORDS: amd64 ~arm arm64 ~ppc ~ppc64 ~riscv x86 ~x64-macos
+LICENSE: MIT
+MD5: a2ea835bd4b8bea6e620cf16d1e8ce5a
+PATH: pkgs-dev-libs/libvterm-0.3.3-11.gpkg.tar
+PROVIDES: x86_64: libvterm.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 59791342acf270a66ce34116cd14f0f8128b6fe7
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794116899
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8239,24 +8363,24 @@ MTIME: 1791275933
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: dev-lang/perl sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791276803
+BDEPEND: dev-lang/perl sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794116905
 CPV: dev-libs/unibilium-2.1.4
 DEFINED_PHASES: install prepare
 EAPI: 8
 KEYWORDS: ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86 ~x64-macos
 LICENSE: LGPL-3+ MIT
-MD5: 9e5384f26fc9ba72884ce529c31daf05
-PATH: pkgs-dev-libs/unibilium-2.1.4-1.gpkg.tar
+MD5: e5fb9a05c69dafff0b2c655a8e731b7b
+PATH: pkgs-dev-libs/unibilium-2.1.4-2.gpkg.tar
 PROVIDES: x86_64: libunibilium.so.4
-RDEPEND: >=sys-libs/glibc-2.43-r2
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6
-SHA1: 100e19887454ef5b154a477a7713163f12d78de5
+SHA1: 8a30d0602d9eb2dce7ced637620011a03d37695f
 SIZE: 133120
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791276805
+MTIME: 1794116906
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15094,9 +15218,9 @@ MTIME: 1794112094
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: app-alternatives/lex virtual/pkgconfig app-alternatives/yacc sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 2
-BUILD_TIME: 1791276808
+BDEPEND: app-alternatives/lex virtual/pkgconfig app-alternatives/yacc sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 3
+BUILD_TIME: 1794116895
 CPV: dev-util/cscope-15.9-r1
 DEFINED_PHASES: compile configure install postinst postrm prepare
 DEPEND: >=sys-libs/ncurses-5.2:0/6=
@@ -15104,15 +15228,14 @@ EAPI: 7
 IUSE: emacs
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
 LICENSE: BSD GPL-2+
-MD5: 715e49284e42740fe78dc864d14c81da
-PATH: pkgs-dev-util/cscope-15.9-r1-2.gpkg.tar
-RDEPEND: >=sys-libs/ncurses-5.2:0/6= >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+MD5: 8c7831d8265717aeb60747c894c95ab7
+PATH: pkgs-dev-util/cscope-15.9-r1-3.gpkg.tar
+RDEPEND: >=sys-libs/ncurses-5.2:0/6= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libncurses.so.6 libtinfo.so.6
-SHA1: 18a6e8cb61fd85b7841759bea81ad29435f46f6e
+SHA1: 9580366d048181de4dc9bedd9a2f1831178a687e
 SIZE: 235520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791276810
+MTIME: 1794116896
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -37801,9 +37924,9 @@ MTIME: 1791060064
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791277578
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794116924
 CPV: sys-apps/the_silver_searcher-2.2.0_p20201217-r4
 DEFINED_PHASES: configure install prepare test unpack
 DEPEND: dev-libs/libpcre virtual/zlib:0/1=
@@ -37811,15 +37934,15 @@ EAPI: 8
 IUSE: lzma test zlib
 KEYWORDS: amd64 ~arm ~arm64 ~hppa ~loong ~mips ppc ~ppc64 ~riscv x86 ~x64-macos
 LICENSE: Apache-2.0
-MD5: 7f340292234a94665fe36d750a8f62ef
-PATH: pkgs-sys-apps/the_silver_searcher-2.2.0_p20201217-r4-1.gpkg.tar
-RDEPEND: dev-libs/libpcre virtual/zlib:0/1= >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libpcre.so.1 libz.so.1
+MD5: 9842813b151b6239174bf61065c0c719
+PATH: pkgs-sys-apps/the_silver_searcher-2.2.0_p20201217-r4-2.gpkg.tar
+RDEPEND: dev-libs/libpcre virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libpcre.so.1 libz.so.1
 RESTRICT: test
-SHA1: cc200c4e4513f1ddbc889f7a3badbaa80d0aece9
+SHA1: b474f1dc9b808538ac1c23df8a4270f414f8962a
 SIZE: 81920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux zlib
-MTIME: 1791277579
+MTIME: 1794116925
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -38381,23 +38504,44 @@ MTIME: 1793683233
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1791277986
+BDEPEND: sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 10
+BUILD_TIME: 1794116942
+CPV: sys-fs/fuse-2.9.9-r2
+DEFINED_PHASES: configure install prepare setup
+EAPI: 7
+IUSE: examples static-libs
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: GPL-2
+MD5: 5a343d738a39a8efcfaa3c9e9c5bd140
+PATH: pkgs-sys-fs/fuse-2.9.9-r2-10.gpkg.tar
+PROVIDES: x86_64: libfuse.so.2 libulockmgr.so.1
+RDEPEND: >=sys-fs/fuse-common-3.3.0-r1 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 671521f35fbbfe92934b212efa766f6e099fb863
+SIZE: 225280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794116943
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 2
+BUILD_TIME: 1794116953
 CPV: sys-fs/fuse-overlayfs-1.17
 DEFINED_PHASES: prepare pretend setup
 DEPEND: sys-fs/fuse:3/4=
 EAPI: 8
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv
 LICENSE: GPL-3
-MD5: eab006316fb9d8a9b2518cd773bb48c0
-PATH: pkgs-sys-fs/fuse-overlayfs-1.17-1.gpkg.tar
-RDEPEND: sys-fs/fuse:3/4= >=sys-libs/glibc-2.43-r2
+MD5: 04e9b7bd3e8249c30502c437611c8d4b
+PATH: pkgs-sys-fs/fuse-overlayfs-1.17-2.gpkg.tar
+RDEPEND: sys-fs/fuse:3/4= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libfuse3.so.4
-SHA1: a737bb917c0df8cef08f40472eb7c62391184368
+SHA1: aa1beab9137dbba04af5598e24c0812e65102209
 SIZE: 92160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791277987
+MTIME: 1794116954
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

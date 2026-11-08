@@ -378,6 +378,10 @@
    "path": "pkgs-app-cdr/isoimagewriter-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1794117246,
+   "path": "pkgs-app-containers/crun-1.30.1-1.gpkg.tar"
+  },
+  {
    "at": 1793983999,
    "path": "pkgs-app-containers/podman-6.1.2-2.gpkg.tar"
   },
@@ -436,6 +440,10 @@
   {
    "at": 1794029255,
    "path": "pkgs-app-emulation/wine-vanilla-11.21-1.gpkg.tar"
+  },
+  {
+   "at": 1794117246,
+   "path": "pkgs-app-misc/evtest-1.36-1.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -534,6 +542,10 @@
    "path": "pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar"
   },
   {
+   "at": 1794117246,
+   "path": "pkgs-dev-debug/strace-7.3-1.gpkg.tar"
+  },
+  {
    "at": 1793983999,
    "path": "pkgs-dev-lang/deno-bin-2.9.7-1.gpkg.tar"
   },
@@ -620,6 +632,10 @@
   {
    "at": 1794112226,
    "path": "pkgs-dev-libs/nspr-4.40-1.gpkg.tar"
+  },
+  {
+   "at": 1794117246,
+   "path": "pkgs-dev-libs/unibilium-2.1.4-1.gpkg.tar"
   },
   {
    "at": 1793943792,
@@ -728,6 +744,10 @@
   {
    "at": 1793684039,
    "path": "pkgs-dev-util/cargo-c-0.10.26-1.gpkg.tar"
+  },
+  {
+   "at": 1794117246,
+   "path": "pkgs-dev-util/cscope-15.9-r1-2.gpkg.tar"
   },
   {
    "at": 1794116601,
@@ -2614,6 +2634,10 @@
    "path": "pkgs-sys-apps/pkgcore-0.12.48-1.gpkg.tar"
   },
   {
+   "at": 1794117246,
+   "path": "pkgs-sys-apps/the_silver_searcher-2.2.0_p20201217-r4-1.gpkg.tar"
+  },
+  {
    "at": 1792907262,
    "path": "pkgs-sys-block/partitionmanager-26.08.1-1.gpkg.tar"
   },
@@ -2624,6 +2648,10 @@
   {
    "at": 1793683417,
    "path": "pkgs-sys-fs/cryptsetup-2.8.8-1.gpkg.tar"
+  },
+  {
+   "at": 1794117246,
+   "path": "pkgs-sys-fs/fuse-overlayfs-1.17-1.gpkg.tar"
   },
   {
    "at": 1793598458,
