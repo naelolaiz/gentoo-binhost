@@ -514,6 +514,10 @@
    "path": "pkgs-dev-lang/python-3.14.10_p1-1.gpkg.tar"
   },
   {
+   "at": 1794111264,
+   "path": "pkgs-dev-lang/python-3.15.2_p1-1.gpkg.tar"
+  },
+  {
    "at": 1793686502,
    "path": "pkgs-dev-lang/ruby-3.3.13-1.gpkg.tar"
   },
@@ -528,6 +532,10 @@
   {
    "at": 1793710316,
    "path": "pkgs-dev-libs/cyrus-sasl-2.1.28-r6-1.gpkg.tar"
+  },
+  {
+   "at": 1794111264,
+   "path": "pkgs-dev-libs/elfutils-0.197-1.gpkg.tar"
   },
   {
    "at": 1794109695,
@@ -680,6 +688,10 @@
   {
    "at": 1793938023,
    "path": "pkgs-dev-util/mesa_clc-26.2.6-1.gpkg.tar"
+  },
+  {
+   "at": 1794111264,
+   "path": "pkgs-dev-util/mesa_clc-26.2.6-2.gpkg.tar"
   },
   {
    "at": 1793712173,
@@ -2488,6 +2500,10 @@
   {
    "at": 1793710627,
    "path": "pkgs-www-client/netsurf-3.11-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794111264,
+   "path": "pkgs-www-client/w3m-0.5.6-7.gpkg.tar"
   },
   {
    "at": 1793694989,
