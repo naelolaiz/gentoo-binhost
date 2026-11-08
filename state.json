@@ -354,6 +354,10 @@
    "path": "pkgs-app-admin/kio-admin-26.08.1-1.gpkg.tar"
   },
   {
+   "at": 1794115953,
+   "path": "pkgs-app-admin/metalog-20260902-1.gpkg.tar"
+  },
+  {
    "at": 1793711862,
    "path": "pkgs-app-admin/sudo-1.9.17_p2-r1-1.gpkg.tar"
   },
@@ -444,6 +448,10 @@
   {
    "at": 1794115631,
    "path": "pkgs-app-shells/bash-completion-2.18.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794115953,
+   "path": "pkgs-app-text/aspell-0.60.8.2-3.gpkg.tar"
   },
   {
    "at": 1793176738,
@@ -2190,8 +2198,20 @@
    "path": "pkgs-media-libs/liblo-0.32-6.gpkg.tar"
   },
   {
+   "at": 1794115953,
+   "path": "pkgs-media-libs/liblrdf-0.6.1-r1-6.gpkg.tar"
+  },
+  {
+   "at": 1794115953,
+   "path": "pkgs-media-libs/libmediainfo-26.05-1.gpkg.tar"
+  },
+  {
    "at": 1794112546,
    "path": "pkgs-media-libs/libmng-2.0.3-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794115953,
+   "path": "pkgs-media-libs/libopusenc-0.3-1.gpkg.tar"
   },
   {
    "at": 1793710316,
@@ -2216,6 +2236,10 @@
   {
    "at": 1793706319,
    "path": "pkgs-media-libs/opusfile-0.12-r2-1.gpkg.tar"
+  },
+  {
+   "at": 1794115953,
+   "path": "pkgs-media-libs/opusfile-0.12-r2-2.gpkg.tar"
   },
   {
    "at": 1793697421,
