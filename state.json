@@ -542,6 +542,10 @@
    "path": "pkgs-dev-build/libtool-2.6.2-1.gpkg.tar"
   },
   {
+   "at": 1794117906,
+   "path": "pkgs-dev-cpp/asio-1.38.0-1.gpkg.tar"
+  },
+  {
    "at": 1793710316,
    "path": "pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar"
   },
@@ -604,6 +608,14 @@
   {
    "at": 1792907262,
    "path": "pkgs-dev-libs/kweathercore-26.08.1-1.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-dev-libs/libcdio-2.4.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-dev-libs/libcdio-paranoia-2.0.2-9.gpkg.tar"
   },
   {
    "at": 1794109695,
@@ -764,6 +776,10 @@
   {
    "at": 1793321044,
    "path": "pkgs-dev-util/kdevelop-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-dev-util/kdevelop-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1792907262,
@@ -2186,6 +2202,10 @@
    "path": "pkgs-llvm-runtimes/openmp-23.1.2-1.gpkg.tar"
   },
   {
+   "at": 1794117906,
+   "path": "pkgs-media-gfx/flam3-3.1.1-r1-2.gpkg.tar"
+  },
+  {
    "at": 1794116910,
    "path": "pkgs-media-gfx/imagemagick-7.1.2.32-2.gpkg.tar"
   },
@@ -2218,6 +2238,10 @@
    "path": "pkgs-media-libs/dssi-1.1.1-r2-4.gpkg.tar"
   },
   {
+   "at": 1794117906,
+   "path": "pkgs-media-libs/fluidsynth-dssi-1.0.0-r2-2.gpkg.tar"
+  },
+  {
    "at": 1794110013,
    "path": "pkgs-media-libs/freetype-2.15.0-1.gpkg.tar"
   },
@@ -2232,6 +2256,10 @@
   {
    "at": 1794112226,
    "path": "pkgs-media-libs/libexif-0.6.26-1.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-media-libs/libfishsound-1.0.1-r1-1.gpkg.tar"
   },
   {
    "at": 1793597232,
@@ -2260,6 +2288,10 @@
   {
    "at": 1794112546,
    "path": "pkgs-media-libs/libmng-2.0.3-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-media-libs/liboggz-1.1.3-2.gpkg.tar"
   },
   {
    "at": 1794115953,
@@ -2296,6 +2328,14 @@
   {
    "at": 1794116287,
    "path": "pkgs-media-libs/portaudio-19.07.00-r2-15.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-media-libs/rnnoise-0.4.1_p20250222-1.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-media-libs/speex-1.2.1-r2-5.gpkg.tar"
   },
   {
    "at": 1793697421,
@@ -2704,6 +2744,10 @@
   {
    "at": 1793710627,
    "path": "pkgs-www-client/netsurf-3.11-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794117906,
+   "path": "pkgs-www-client/surfraw-2.3.0-r3-1.gpkg.tar"
   },
   {
    "at": 1794111264,
