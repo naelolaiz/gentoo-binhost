@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794203222
-PACKAGES: 1841
+TIMESTAMP: 1794203552
+PACKAGES: 1845
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -36426,6 +36426,25 @@ MTIME: 1791214537
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794203209
+CPV: sci-electronics/kicad-footprints-10.0.8
+DEFINED_PHASES: compile configure install postinst prepare test
+EAPI: 8
+IUSE: stpz
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: 569c3e4d652b2abdb82588877c8e7a6b
+PATH: pkgs-sci-electronics/kicad-footprints-10.0.8-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-8.0.0
+SHA1: 7ce1e7bd16cf4bcd78d5ddbc0dd5cffdd4d6f8d4
+SIZE: 9287680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794203215
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791214657
 CPV: sci-electronics/kicad-meta-10.0.5
@@ -36445,6 +36464,25 @@ MTIME: 1791214658
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BUILD_ID: 1
+BUILD_TIME: 1794203323
+CPV: sci-electronics/kicad-meta-10.0.8
+DEFINED_PHASES: -
+EAPI: 8
+IUSE: doc minimal
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: metapackage
+MD5: e1b30d353a9d5bf51b9d9da77d346b17
+PATH: pkgs-sci-electronics/kicad-meta-10.0.8-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-10.0.8 >=sci-electronics/kicad-symbols-10.0.8 >=sci-electronics/kicad-footprints-10.0.8 >=sci-electronics/kicad-packages3d-10.0.8 >=sci-electronics/kicad-templates-10.0.8
+REPO_REVISIONS: {"gentoo": "5c582859cd5ef4209b62802bd848d447b8b2b841"}
+SHA1: fbbc84be93fcbc226fe7f8c8be664a1b5d565376
+SIZE: 20480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794203324
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791214614
@@ -36461,6 +36499,25 @@ SHA1: 2330ecced907e3d5840a591999d545e90329ffc6
 SIZE: 531712000
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791214625
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794203288
+CPV: sci-electronics/kicad-packages3d-10.0.8
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test
+EAPI: 8
+IUSE: stpz
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: 81be133db0b572eedd24af07c15ef8cc
+PATH: pkgs-sci-electronics/kicad-packages3d-10.0.8-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-10.0.0
+SHA1: 275fd7903cbf49149bc750e4d3259ebd94b9fc0e
+SIZE: 531773440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794203300
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36516,6 +36573,24 @@ SHA1: 2a20cc0545653a5e5aef59349cf565d3148dcf89
 SIZE: 2877440
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791214647
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794203320
+CPV: sci-electronics/kicad-templates-10.0.8
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: 4ac81f2c5878da84787ad7a48774aa26
+PATH: pkgs-sci-electronics/kicad-templates-10.0.8-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-8.0.0
+SHA1: e1c8f60ecd53894f4a12c137266f10b4ece6afb9
+SIZE: 2877440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794203321
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
