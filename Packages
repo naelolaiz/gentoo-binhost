@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794196278
-PACKAGES: 1839
+TIMESTAMP: 1794203222
+PACKAGES: 1841
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -36384,6 +36384,29 @@ MTIME: 1791430870
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-lang/swig-4.0 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794203171
+CPV: sci-electronics/kicad-10.0.8
+DEFINED_PHASES: compile configure install postinst postrm prepare pretend setup test unpack
+DEPEND: app-arch/zstd:0/1= app-crypt/libsecret app-text/poppler[cairo] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-db/unixODBC dev-libs/boost:0/1.91.0=[context,nls] >=dev-libs/libgit2-1.5:0/1.9= dev-libs/libspnav >=dev-libs/protobuf-27.2:0/34.2.0=[protobuf,protoc] >=dev-libs/nng-1.10.0:0/0= media-libs/fontconfig media-libs/freeglut media-libs/freetype:2 >=media-libs/glm-0.9.9.1 media-libs/harfbuzz:0/6.0.0= media-libs/mesa[X(+)] net-misc/curl >=sci-libs/opencascade-7.5.0:0/7.8= >=x11-libs/cairo-1.8.8:0/0= >=x11-libs/pixman-0.30 >=sci-electronics/ngspice-28[shared] virtual/zlib:0/1= x11-libs/wxGTK:3.2-gtk3/3.2=[X,opengl,webkit] >=dev-libs/wayland-1.20 dev-libs/boost:0/1.91.0=[context,nls,python,python_targets_python3_14(-)] >=dev-python/wxpython-4.2.0:*[python_targets_python3_14(-)] dev-lang/python:3.14 sys-devel/gettext
+EAPI: 8
+IUSE: doc examples nls openmp test wayland python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: GPL-2+ GPL-3+ Boost-1.0 BSD BSD-2 Apache-2.0 ISC MIT ZLIB CC-BY-SA-4.0 CC0-1.0 WTFPL-2
+MD5: a58400f18e09d2ddcb5e59bf98bef8b3
+PATH: pkgs-sci-electronics/kicad-10.0.8-1.gpkg.tar
+PROVIDES: x86_64: _cvpcb.kiface _eeschema.kiface _gerbview.kiface _kipython.kiface _pcb_calculator.kiface _pcbnew.kiface _pl_editor.kiface libkiapi.so.10.0.8 libkicad_3dsg.so.2.0.0 libkicommon.so.10.0.8 libkigal.so.10.0.8 libs3d_plugin_idf.so libs3d_plugin_oce.so libs3d_plugin_vrml.so
+RDEPEND: app-arch/zstd:0/1= app-crypt/libsecret app-text/poppler[cairo] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-db/unixODBC dev-libs/boost:0/1.91.0=[context,nls] >=dev-libs/libgit2-1.5:0/1.9= dev-libs/libspnav >=dev-libs/protobuf-27.2:0/34.2.0=[protobuf,protoc] >=dev-libs/nng-1.10.0:0/0= media-libs/fontconfig media-libs/freeglut media-libs/freetype:2 >=media-libs/glm-0.9.9.1 media-libs/harfbuzz:0/6.0.0= media-libs/mesa[X(+)] net-misc/curl >=sci-libs/opencascade-7.5.0:0/7.8= >=x11-libs/cairo-1.8.8:0/0= >=x11-libs/pixman-0.30 >=sci-electronics/ngspice-28[shared] virtual/zlib:0/1= x11-libs/wxGTK:3.2-gtk3/3.2=[X,opengl,webkit] >=dev-libs/wayland-1.20 dev-libs/boost:0/1.91.0=[context,nls,python,python_targets_python3_14(-)] >=dev-python/wxpython-4.2.0:*[python_targets_python3_14(-)] dev-lang/python:3.14 sys-devel/gettext sci-electronics/electronics-menu >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libGLU.so.1 libGLX.so.0 libOpenGL.so.0 libTKBO.so.7.8 libTKBRep.so.7.8 libTKCDF.so.7.8 libTKDEGLTF.so.7.8 libTKDEIGES.so.7.8 libTKDEPLY.so.7.8 libTKDESTEP.so.7.8 libTKDESTL.so.7.8 libTKDEVRML.so.7.8 libTKG3d.so.7.8 libTKGeomBase.so.7.8 libTKLCAF.so.7.8 libTKMath.so.7.8 libTKMesh.so.7.8 libTKPrim.so.7.8 libTKRWMesh.so.7.8 libTKShHealing.so.7.8 libTKTopAlgo.so.7.8 libTKXCAF.so.7.8 libTKXSBase.so.7.8 libTKernel.so.7.8 libabsl_hash.so.2601.0.0 libabsl_log_entry.so.2601.0.0 libabsl_log_internal_message.so.2601.0.0 libabsl_time_zone.so.2601.0.0 libc.so.6 libcairo.so.2 libcurl.so.4 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libgdk-3.so.0 libgio-2.0.so.0 libgit2.so.1.9 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libharfbuzz.so.0 libm.so.6 libnng.so.1 libodbc.so.2 libpoppler-glib.so.8 libprotobuf.so.34.2.0 libpython3.14.so.1.0 libsecret-1.so.0 libspnav.so.0 libstdc++.so.6 libwayland-client.so.0 libwx_baseu-3.2.so.0 libwx_baseu_net-3.2.so.0 libwx_baseu_xml-3.2.so.0 libwx_gtk3u_aui-3.2.so.0 libwx_gtk3u_core-3.2.so.0 libwx_gtk3u_gl-3.2.so.0 libwx_gtk3u_html-3.2.so.0 libwx_gtk3u_propgrid-3.2.so.0 libwx_gtk3u_stc-3.2.so.0 libwx_gtk3u_webview-3.2.so.0 libz.so.1 libzstd.so.1
+RESTRICT: test
+SHA1: 561dd3e304fd0554bb08df4c58b7049832c60180
+SIZE: 78018560
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls openmp python_single_target_python3_14 wayland
+MTIME: 1794203178
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791214530
@@ -36456,6 +36479,25 @@ SHA1: c81de5ba648fe3dc2febc65bc6ff4c251b18ddbf
 SIZE: 5396480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791214515
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794203195
+CPV: sci-electronics/kicad-symbols-10.0.8
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+LICENSE: CC-BY-SA-4.0
+MD5: 2d625bd2d29aedcfacac6194aa80e20a
+PATH: pkgs-sci-electronics/kicad-symbols-10.0.8-1.gpkg.tar
+RDEPEND: >=sci-electronics/kicad-8.0.0
+REPO_REVISIONS: {"gentoo": "5c582859cd5ef4209b62802bd848d447b8b2b841"}
+SHA1: fb6fd3bb17a257633777a7f5d98ceff625123370
+SIZE: 5447680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794203197
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
