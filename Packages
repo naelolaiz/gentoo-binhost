@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794118271
+TIMESTAMP: 1794196278
 PACKAGES: 1839
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -9,7 +9,7 @@ ACCEPT_RESTRICT: *
 ARCH: amd64
 CBUILD: x86_64-pc-linux-gnu
 CHOST: x86_64-pc-linux-gnu
-CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/texmf/web2c
+CONFIG_PROTECT_MASK: /etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/sandbox.d
 ELIBC: glibc
 FEATURES: assume-digests binpkg-docompress binpkg-dostrip binpkg-logs binpkg-multi-instance binpkg-signing buildpkg buildpkg-live ccache compress-index config-protect-if-modified distlocks ebuild-locks fixlafiles ipc-sandbox merge-wait multilib-strict network-sandbox parallel-fetch pid-sandbox pkgdir-index-trusted preserve-libs protect-owned qa-unresolved-soname-deps sandbox strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr
 GENTOO_MIRRORS: http://distfiles.gentoo.org
@@ -5600,26 +5600,26 @@ MTIME: 1791060100
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BUILD_ID: 1
-BUILD_TIME: 1791864135
+BUILD_ID: 2
+BUILD_TIME: 1794196120
 CPV: dev-lang/rust-bin-1.99.0
 DEFINED_PHASES: compile configure install postinst postrm test unpack
 EAPI: 8
-IUSE: big-endian +clippy cpu_flags_x86_sse2 doc prefix rust-analyzer rust-src +rustfmt +llvm_slot_23 verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+IUSE: big-endian +clippy cpu_flags_x86_sse2 doc prefix rust-analyzer rust-src rustc-dev rust_sysroots_aarch64_unknown_none +rustfmt +llvm_slot_23 verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: || ( MIT Apache-2.0 ) BSD BSD-1 BSD-2 BSD-4
-MD5: 047122a84a8d9c4b2549051afef2795d
-PATH: pkgs-dev-lang/rust-bin-1.99.0-1.gpkg.tar
+MD5: 8fde967fdde015ecefb50e5b920021d3
+PATH: pkgs-dev-lang/rust-bin-1.99.0-2.gpkg.tar
 PROVIDES: x86_64: libLLVM.so.23.1-rust-1.99.0-stable librustc_driver-999a121de2f042be.so libstd-44675f186029a4cd.so
 RDEPEND: >=app-eselect/eselect-rust-20190311 dev-libs/openssl net-misc/curl sys-apps/lsb-release || ( llvm-runtimes/libgcc sys-devel/gcc:* ) !dev-lang/rust:stable !dev-lang/rust-bin:stable >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "4696089e782c20b5f0c04952f6698d6a8cc1acb4"}
+REPO_REVISIONS: {"gentoo": "5c582859cd5ef4209b62802bd848d447b8b2b841"}
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libdl.so.2 libgcc_s.so.1 libm.so.6 libpthread.so.0 librt.so.1 libz.so.1
 RESTRICT: strip
-SHA1: e474f4acccfcf8b54cac6b4b8463fa34e6dfe8c8
+SHA1: 8f5c73ee80ca73fa58a570af3f889df10d7fdbc5
 SIZE: 207380480
 SLOT: 1.99.0
 USE: abi_x86_64 amd64 clippy cpu_flags_x86_sse2 elibc_glibc kernel_linux llvm_slot_23 rustfmt
-MTIME: 1791864153
+MTIME: 1794196141
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
