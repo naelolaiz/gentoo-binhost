@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794297544
-PACKAGES: 1849
+TIMESTAMP: 1794305100
+PACKAGES: 1850
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -38963,6 +38963,31 @@ SIZE: 411402240
 SLOT: 7.3.1
 USE: abi_x86_64 amd64 debug elibc_glibc initramfs kernel_linux strip
 MTIME: 1793731228
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-util/pahole || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/cpio app-alternatives/bc app-arch/tar dev-lang/perl sys-devel/bison sys-devel/flex virtual/libelf sys-libs/binutils-libs
+BUILD_ID: 1
+BUILD_TIME: 1794304933
+CPV: sys-kernel/gentoo-kernel-7.3.3
+DEFINED_PHASES: compile config configure install postinst postrm preinst prepare pretend setup test unpack
+EAPI: 8
+IDEPEND: || ( >=sys-kernel/installkernel-14[dracut(-)] >=sys-kernel/installkernel-14[ugrd(-)] )
+IUSE: debug hardened savedconfig secureboot +initramfs test generic-uki modules-compress +strip modules-sign verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: 95cc2c8b5b4656a83d4e0c09fba59276
+PATH: pkgs-sys-kernel/gentoo-kernel-7.3.3-1.gpkg.tar
+PDEPEND: >=virtual/dist-kernel-7.3.3
+RDEPEND: sys-apps/kmod[lzma] virtual/libelf >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "a1662c61dc989f8a1ba90cd8de54b91c3f35a9de"}
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libelf.so.1 libopcodes-2.47.0.gentoo-sys-libs-binutils-libs-st-def.so libxxhash.so.0 libz.so.1
+RESTRICT: test
+SHA1: 476b2ffe5dfd5890ed7ab86416aa001b4856bb2f
+SIZE: 411514880
+SLOT: 7.3.3
+USE: abi_x86_64 amd64 debug elibc_glibc initramfs kernel_linux strip
+MTIME: 1794305004
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
