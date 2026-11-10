@@ -962,10 +962,6 @@
    "path": "pkgs-kde-frameworks/kdbusaddons-6.30.0-1.gpkg.tar"
   },
   {
-   "at": 1793078103,
-   "path": "pkgs-kde-frameworks/kdbusaddons-6.31.0-1.gpkg.tar"
-  },
-  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kdeclarative-6.30.0-1.gpkg.tar"
   },
@@ -1006,16 +1002,8 @@
    "path": "pkgs-kde-frameworks/kglobalaccel-6.30.0-1.gpkg.tar"
   },
   {
-   "at": 1793078716,
-   "path": "pkgs-kde-frameworks/kglobalaccel-6.31.0-1.gpkg.tar"
-  },
-  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kguiaddons-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793078716,
-   "path": "pkgs-kde-frameworks/kguiaddons-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1793423460,
@@ -1030,16 +1018,8 @@
    "path": "pkgs-kde-frameworks/kiconthemes-6.30.0-1.gpkg.tar"
   },
   {
-   "at": 1793078716,
-   "path": "pkgs-kde-frameworks/kiconthemes-6.31.0-1.gpkg.tar"
-  },
-  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kidletime-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793080561,
-   "path": "pkgs-kde-frameworks/kidletime-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1793423460,
@@ -1050,16 +1030,8 @@
    "path": "pkgs-kde-frameworks/kio-6.30.0-1.gpkg.tar"
   },
   {
-   "at": 1793079634,
-   "path": "pkgs-kde-frameworks/kio-6.31.0-1.gpkg.tar"
-  },
-  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kirigami-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793078716,
-   "path": "pkgs-kde-frameworks/kirigami-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1793423460,
@@ -1072,10 +1044,6 @@
   {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kjobwidgets-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793079025,
-   "path": "pkgs-kde-frameworks/kjobwidgets-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1793423460,
@@ -1170,16 +1138,8 @@
    "path": "pkgs-kde-frameworks/kwindowsystem-6.30.0-1.gpkg.tar"
   },
   {
-   "at": 1793078103,
-   "path": "pkgs-kde-frameworks/kwindowsystem-6.31.0-1.gpkg.tar"
-  },
-  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kxmlgui-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793079025,
-   "path": "pkgs-kde-frameworks/kxmlgui-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1793423460,
@@ -1266,10 +1226,6 @@
    "path": "pkgs-kde-plasma/kde-cli-tools-6.8.0-r1-1.gpkg.tar"
   },
   {
-   "at": 1793079941,
-   "path": "pkgs-kde-plasma/kde-cli-tools-6.8.1-1.gpkg.tar"
-  },
-  {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/kde-cli-tools-common-6.8.0-1.gpkg.tar"
   },
@@ -1288,10 +1244,6 @@
   {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/kdesu-gui-6.8.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793081195,
-   "path": "pkgs-kde-plasma/kdesu-gui-6.8.1-1.gpkg.tar"
   },
   {
    "at": 1793864716,
@@ -1382,10 +1334,6 @@
    "path": "pkgs-kde-plasma/layer-shell-qt-6.8.0-1.gpkg.tar"
   },
   {
-   "at": 1793080881,
-   "path": "pkgs-kde-plasma/layer-shell-qt-6.8.1-1.gpkg.tar"
-  },
-  {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/libkscreen-6.8.0-1.gpkg.tar"
   },
@@ -1400,10 +1348,6 @@
   {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/libplasma-6.8.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793080248,
-   "path": "pkgs-kde-plasma/libplasma-6.8.1-1.gpkg.tar"
   },
   {
    "at": 1793864716,
