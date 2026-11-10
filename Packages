@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794204703
-PACKAGES: 1843
+TIMESTAMP: 1794294781
+PACKAGES: 1844
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1610,6 +1610,22 @@ SHA1: bb478e72e428941beb51f89380db420aef3f5e01
 SIZE: 2580480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791058150
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1794294511
+CPV: app-doc/info-manual-31.1
+DEFINED_PHASES: install
+EAPI: 9
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: FDL-1.3+
+MD5: 47f0e2cec9a7b547a91287c8d3c99bcf
+PATH: pkgs-app-doc/info-manual-31.1-1.gpkg.tar
+SHA1: 849ecf3f2d5dd9ff1de1b157e8c1b844c68d138d
+SIZE: 40960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794294511
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
