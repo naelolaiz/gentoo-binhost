@@ -558,6 +558,26 @@
    "path": "pkgs-app-text/xdvik-22.87.06-r1-4.gpkg.tar"
   },
   {
+   "at": 1794394805,
+   "path": "pkgs-app-text/zathura-2026.07.18-1.gpkg.tar"
+  },
+  {
+   "at": 1794394805,
+   "path": "pkgs-app-text/zathura-cb-2026.07.18-1.gpkg.tar"
+  },
+  {
+   "at": 1794394805,
+   "path": "pkgs-app-text/zathura-djvu-2026.07.18-1.gpkg.tar"
+  },
+  {
+   "at": 1794394805,
+   "path": "pkgs-app-text/zathura-pdf-mupdf-2026.07.18-1.gpkg.tar"
+  },
+  {
+   "at": 1794394805,
+   "path": "pkgs-app-text/zathura-ps-2026.07.18-1.gpkg.tar"
+  },
+  {
    "at": 1794118204,
    "path": "pkgs-dev-build/kbuild-0.1.9998.3660-r1-2.gpkg.tar"
   },
@@ -1882,8 +1902,16 @@
    "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-4.gpkg.tar"
   },
   {
+   "at": 1794394805,
+   "path": "pkgs-media-plugins/gst-plugins-lv2-1.26.11-1.gpkg.tar"
+  },
+  {
    "at": 1794376777,
    "path": "pkgs-media-plugins/gst-plugins-wavpack-1.26.11-1.gpkg.tar"
+  },
+  {
+   "at": 1794394805,
+   "path": "pkgs-media-plugins/mda-lv2-1.2.10-r1-1.gpkg.tar"
   },
   {
    "at": 1794118204,
@@ -2388,6 +2416,10 @@
   {
    "at": 1794387696,
    "path": "pkgs-x11-misc/appmenu-gtk-module-25.04-1.gpkg.tar"
+  },
+  {
+   "at": 1794394805,
+   "path": "pkgs-x11-misc/makedepend-1.0.10-1.gpkg.tar"
   },
   {
    "at": 1793983999,

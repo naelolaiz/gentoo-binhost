@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794394476
-PACKAGES: 1995
+TIMESTAMP: 1794394805
+PACKAGES: 1999
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4046,9 +4046,9 @@ MTIME: 1794117370
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791278763
+BDEPEND: >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794394414
 CPV: app-text/zathura-2026.07.18
 DEFINED_PHASES: compile configure install postinst postrm preinst test
 DEPEND: dev-libs/json-glib >=dev-db/sqlite-3.35:3 >=dev-libs/girara-2026.07.07:0/5.0=[X] >=dev-libs/glib-2.84:2 sys-apps/file x11-libs/cairo >=gui-libs/gtk-4.12[wayland,X] x11-libs/pango sys-libs/libseccomp >=sys-kernel/linux-headers-5.13
@@ -4057,22 +4057,22 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: landlock seccomp synctex test wayland X
 KEYWORDS: ~amd64 ~arm ~arm64 ~riscv ~x86
 LICENSE: ZLIB
-MD5: 6a7d4807af2f43ccc8cab7d71e512e7a
-PATH: pkgs-app-text/zathura-2026.07.18-1.gpkg.tar
-RDEPEND: dev-libs/json-glib >=dev-db/sqlite-3.35:3 >=dev-libs/girara-2026.07.07:0/5.0=[X] >=dev-libs/glib-2.84:2 sys-apps/file x11-libs/cairo >=gui-libs/gtk-4.12[wayland,X] x11-libs/pango sys-libs/libseccomp >=sys-libs/glibc-2.43-r2
+MD5: fd115670215c720160d1e5fe16cb6a57
+PATH: pkgs-app-text/zathura-2026.07.18-2.gpkg.tar
+RDEPEND: dev-libs/json-glib >=dev-db/sqlite-3.35:3 >=dev-libs/girara-2026.07.07:0/5.0=[X] >=dev-libs/glib-2.84:2 sys-apps/file x11-libs/cairo >=gui-libs/gtk-4.12[wayland,X] x11-libs/pango sys-libs/libseccomp >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libcairo.so.2 libgio-2.0.so.0 libgirara.so.5 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgraphene-1.0.so.0 libgtk-4.so.1 libjson-glib-1.0.so.0 libm.so.6 libmagic.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libseccomp.so.2 libsqlite3.so.0 libxxhash.so.0
 RESTRICT: test
-SHA1: 36f8789acab234504f54546b41cfbd953d639b08
-SIZE: 501760
+SHA1: 9e2b42648f0d1c3099ff999e05b3a2ee004b452c
+SIZE: 512000
 SLOT: 0/8.9
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux seccomp wayland
-MTIME: 1791278764
+MTIME: 1794394415
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791284491
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794394493
 CPV: app-text/zathura-cb-2026.07.18
 DEFINED_PHASES: compile configure install postinst postrm preinst test
 DEPEND: app-arch/libarchive:0/13= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:3 x11-base/xorg-proto
@@ -4080,22 +4080,22 @@ EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 KEYWORDS: ~amd64 ~arm ~riscv ~x86
 LICENSE: ZLIB
-MD5: fb9e5bd66a04e4dbca0c5fef92d67c74
-PATH: pkgs-app-text/zathura-cb-2026.07.18-1.gpkg.tar
+MD5: 65c630e43ed10417232f75aa176a04c0
+PATH: pkgs-app-text/zathura-cb-2026.07.18-2.gpkg.tar
 PROVIDES: x86_64: libcb.so
-RDEPEND: app-arch/libarchive:0/13= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:3 >=sys-libs/glibc-2.43-r2
+RDEPEND: app-arch/libarchive:0/13= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo x11-libs/gdk-pixbuf:2[jpeg] x11-libs/gtk+:3 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libarchive.so.13 libc.so.6 libcairo.so.2 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libgirara.so.5 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-4.so.1
 RESTRICT: test
-SHA1: dda2f14ffd14e69a15d1a9f9a2aa367b2cf7df26
+SHA1: 07eed22c90e1e83774e7849b423b87920e8368d0
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791284492
+MTIME: 1794394494
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791278881
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794394484
 CPV: app-text/zathura-djvu-2026.07.18
 DEFINED_PHASES: compile configure install postinst postrm preinst test
 DEPEND: app-text/djvu >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo x11-base/xorg-proto virtual/pkgconfig
@@ -4103,16 +4103,16 @@ EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 KEYWORDS: ~amd64 ~arm ~riscv ~x86
 LICENSE: ZLIB
-MD5: dfeb109533bb2e01a78ac672204e37e3
-PATH: pkgs-app-text/zathura-djvu-2026.07.18-1.gpkg.tar
+MD5: 493b054779490d262622e1f984c09209
+PATH: pkgs-app-text/zathura-djvu-2026.07.18-2.gpkg.tar
 PROVIDES: x86_64: libdjvu.so
-RDEPEND: app-text/djvu >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r2
+RDEPEND: app-text/djvu >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libcairo.so.2 libdjvulibre.so.21 libgirara.so.5 libglib-2.0.so.0
 RESTRICT: test
-SHA1: 4c7ef06ecaa1ed15a8949f611d130e77085b1658
+SHA1: d52b7ac235f59398b4f3e479caa23a83a263dc46
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791278882
+MTIME: 1794394484
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -4134,9 +4134,9 @@ MTIME: 1791284622
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791278889
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794394490
 CPV: app-text/zathura-pdf-mupdf-2026.07.18
 DEFINED_PHASES: compile configure install postinst postrm preinst test
 DEPEND: >=app-text/mupdf-1.26.0:0/1.28.2= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo
@@ -4144,38 +4144,38 @@ EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 KEYWORDS: ~amd64 ~arm ~x86
 LICENSE: ZLIB
-MD5: 1df2e915dfe012e6a1b23ece869b883a
-PATH: pkgs-app-text/zathura-pdf-mupdf-2026.07.18-1.gpkg.tar
+MD5: 0ee5dc7f4add33e2ed64710788e313b5
+PATH: pkgs-app-text/zathura-pdf-mupdf-2026.07.18-2.gpkg.tar
 PROVIDES: x86_64: libpdf-mupdf.so
-RDEPEND: >=app-text/mupdf-1.26.0:0/1.28.2= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r2
+RDEPEND: >=app-text/mupdf-1.26.0:0/1.28.2= >=app-text/zathura-2026.07.18:0/8.9= dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libcairo.so.2 libgirara.so.5 libglib-2.0.so.0 libmupdf.so.1.28.2
 RESTRICT: test
-SHA1: 4d4e1aaafe4827f1da54ffdad94e2de51a4a9905
+SHA1: b622de7100f57b3c79bbf2d4582e980a4267895b
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791278890
+MTIME: 1794394491
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791284630
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794394496
 CPV: app-text/zathura-ps-2026.07.18
 DEFINED_PHASES: compile configure install postinst postrm test
 DEPEND: app-text/libspectre >=app-text/zathura-2026.07.18 dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo
 EAPI: 8
 KEYWORDS: ~amd64 ~arm ~riscv ~x86
 LICENSE: ZLIB
-MD5: 5ce1d0f06f1d154be71c6eecea9cf022
-PATH: pkgs-app-text/zathura-ps-2026.07.18-1.gpkg.tar
+MD5: a938d2a7c550fe5872b0b689cef65419
+PATH: pkgs-app-text/zathura-ps-2026.07.18-2.gpkg.tar
 PROVIDES: x86_64: libps.so
-RDEPEND: app-text/libspectre >=app-text/zathura-2026.07.18 dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r2
+RDEPEND: app-text/libspectre >=app-text/zathura-2026.07.18 dev-libs/girara:0/5.0= dev-libs/glib:2 x11-libs/cairo >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libcairo.so.2 libgirara.so.5 libspectre.so.1
 RESTRICT: test
-SHA1: 8c74e175fe13babf110cbb33ed75d23445dc3b8d
+SHA1: fa1f9d39a8be2bfff495335ea918600dc5158115
 SIZE: 40960
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791284631
+MTIME: 1794394497
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -16600,6 +16600,28 @@ SHA1: fd1ead1dbd4bdbd3064dc890444404c9bc2a0c22
 SIZE: 5273600
 USE: abi_x86_64 amd64 crypt elibc_glibc gtk kernel_linux libtraceevent libtracefs llvm_slot_22 python python_single_target_python3_14 slang
 MTIME: 1794117343
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=app-arch/tar-1.34-r2 dev-python/setuptools[python_targets_python3_14(-)] app-alternatives/yacc app-alternatives/lex sys-apps/which virtual/pkgconfig app-text/asciidoc app-text/sgml-common app-text/xmlto sys-process/time
+BUILD_ID: 1
+BUILD_TIME: 1794394473
+CPV: dev-util/perf-7.3
+DEFINED_PHASES: compile install prepare setup test unpack
+DEPEND: dev-libs/openssl:0/4= x11-libs/gtk+:2 dev-libs/libtraceevent dev-lang/python:3.14 sys-libs/slang app-arch/zstd:0/1= dev-libs/elfutils virtual/zlib:0/1= virtual/libcrypt >=sys-kernel/linux-headers-5.10
+EAPI: 8
+IUSE: abi_mips_o32 abi_mips_n32 abi_mips_n64 babeltrace capstone big-endian bpf caps crypt debug gtk java libpfm +libtraceevent lzma numa perl +python +slang systemtap tcmalloc +llvm_slot_22 llvm_slot_20 llvm_slot_21 llvm_slot_23 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14t python_single_target_python3_14
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: 13b4411e3bc1fb3af4b93982d9b71c86
+PATH: pkgs-dev-util/perf-7.3-1.gpkg.tar
+PROVIDES: x86_64: dlfilter-show-cycles.so dlfilter-test-api-v0.so dlfilter-test-api-v2.so libperf-gtk.so perf.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-libs/openssl:0/4= x11-libs/gtk+:2 dev-libs/libtraceevent dev-lang/python:3.14 sys-libs/slang app-arch/zstd:0/1= dev-libs/elfutils virtual/zlib:0/1= virtual/libcrypt >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_32: libc.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6 libdebuginfod.so.1 libdw.so.1 libelf.so.1 libgcc_s.so.1 libgdk-x11-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-x11-2.0.so.0 libm.so.6 libpython3.14.so.1.0 libslang.so.2 libstdc++.so.6 libtraceevent.so.1 libz.so.1 libzstd.so.1
+SHA1: a5a9677b3dc8e75e260a6967f86921521ffa4099
+SIZE: 5335040
+USE: abi_x86_64 amd64 crypt elibc_glibc gtk kernel_linux libtraceevent llvm_slot_22 python python_single_target_python3_14 slang
+MTIME: 1794394478
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -34728,6 +34750,49 @@ MTIME: 1794113160
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 6
+BUILD_TIME: 1794394655
+CPV: media-libs/plutosvg-0.0.6
+DEFINED_PHASES: compile configure install test
+DEPEND: >=media-libs/plutovg-1.0.0[abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)]
+EAPI: 8
+IUSE: +freetype abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 arm arm64 ~loong ~ppc ppc64 ~riscv x86
+LICENSE: MIT
+MD5: 4538d1e3781363fe840eea96073663bd
+PATH: pkgs-media-libs/plutosvg-0.0.6-6.gpkg.tar
+PROVIDES: x86_64: libplutosvg.so.0
+RDEPEND: >=media-libs/plutovg-1.0.0[abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libfreetype.so.6 libm.so.6 libplutovg.so.1
+SHA1: 40256231a6072b36cec39bddd46e1200e1b43480
+SIZE: 81920
+USE: abi_x86_64 amd64 elibc_glibc freetype kernel_linux
+MTIME: 1794394656
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 6
+BUILD_TIME: 1794394643
+CPV: media-libs/plutovg-1.0.0
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 arm arm64 ~loong ~ppc ppc64 ~riscv x86
+LICENSE: MIT
+MD5: 04eafb328f1ba719ef47c6ec0722f0ea
+PATH: pkgs-media-libs/plutovg-1.0.0-6.gpkg.tar
+PROVIDES: x86_64: libplutovg.so.1
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libm.so.6
+SHA1: 2be677628fe16cf97a158f8ca9f98367452ac530
+SIZE: 194560
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794394644
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 16
 BUILD_TIME: 1794115931
@@ -35515,9 +35580,9 @@ MTIME: 1794383813
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils
-BUILD_ID: 1
-BUILD_TIME: 1791282958
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils
+BUILD_ID: 2
+BUILD_TIME: 1794394731
 CPV: media-plugins/gst-plugins-lv2-1.26.11
 DEFINED_PHASES: compile configure install setup test
 DEPEND: >=media-libs/lv2-1.14.0-r1[abi_x86_64(-)] >=media-libs/lilv-0.24.2-r2[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)]
@@ -35525,17 +35590,18 @@ EAPI: 8
 IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: amd64 ~arm ~arm64 ~ppc ~ppc64 x86
 LICENSE: GPL-2
-MD5: f04dffe7ea312f7dc533c80d5a76e1ad
-PATH: pkgs-media-plugins/gst-plugins-lv2-1.26.11-1.gpkg.tar
+MD5: 56bc6d6e42f0db68d528c11e12262d78
+PATH: pkgs-media-plugins/gst-plugins-lv2-1.26.11-2.gpkg.tar
 PROVIDES: x86_64: libgstlv2.so
-RDEPEND: >=media-libs/lv2-1.14.0-r1[abi_x86_64(-)] >=media-libs/lilv-0.24.2-r2[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+RDEPEND: >=media-libs/lv2-1.14.0-r1[abi_x86_64(-)] >=media-libs/lilv-0.24.2-r2[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
 REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 liblilv-0.so.0
 RESTRICT: test
-SHA1: 8b7c82537457c02138fb8a592d8ba77351843257
-SIZE: 71680
+SHA1: 86992b643958b7d6e5b8c4d6ffbc74a11df0df21
+SIZE: 81920
 SLOT: 1.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791282959
+MTIME: 1794394732
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -35773,9 +35839,9 @@ MTIME: 1791284892
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791282704
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794394721
 CPV: media-plugins/mda-lv2-1.2.10-r1
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: media-libs/lv2
@@ -35783,16 +35849,16 @@ EAPI: 8
 IUSE: test
 KEYWORDS: amd64 ~arm ~arm64 ~ppc ~ppc64 x86
 LICENSE: || ( GPL-2+ MIT )
-MD5: df599a1fae8758f987cbacc51e4a5085
-PATH: pkgs-media-plugins/mda-lv2-1.2.10-r1-1.gpkg.tar
+MD5: 3095dafd47bc672e840c9ef9461838e9
+PATH: pkgs-media-plugins/mda-lv2-1.2.10-r1-2.gpkg.tar
 PROVIDES: x86_64: Ambience.so Bandisto.so BeatBox.so Combo.so DX10.so DeEss.so Degrade.so Delay.so Detune.so Dither.so DubDelay.so Dynamics.so EPiano.so Image.so JX10.so Leslie.so Limiter.so Loudness.so MultiBand.so Overdrive.so Piano.so RePsycho.so RezFilter.so RingMod.so RoundPan.so Shepard.so Splitter.so Stereo.so SubSynth.so TalkBox.so TestTone.so ThruZero.so Tracker.so Transient.so VocInput.so Vocoder.so
-RDEPEND: media-libs/lv2 >=sys-libs/glibc-2.43-r2
+RDEPEND: media-libs/lv2 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
 RESTRICT: test test
-SHA1: aaa2c0120339412e94b34f0df3066b71020c502a
-SIZE: 2170880
+SHA1: 2a445a1d81473dd1688cc61918ebea7aab9fc730
+SIZE: 2181120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791282705
+MTIME: 1794394722
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -37681,6 +37747,29 @@ SHA1: d7aea4cf394337e609b90adefb163003d5f24b3a
 SIZE: 235520
 USE: abi_x86_64 amd64 elibc_glibc gnome kernel_linux libproxy ssl
 MTIME: 1794376187
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/vala:0.56 >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 22
+BUILD_TIME: 1794394649
+CPV: net-libs/libaccounts-glib-1.27-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14 dev-db/sqlite:3 dev-libs/glib:2 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= dev-libs/libxml2:2/16= dev-python/pygobject:3[python_targets_python3_14(-)]
+EAPI: 8
+IUSE: doc test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
+KEYWORDS: amd64 ~arm arm64 ~loong ~ppc64 ~riscv x86
+LICENSE: LGPL-2.1
+MD5: a87d0716606d4d3e0f82f43480243ef8
+PATH: pkgs-net-libs/libaccounts-glib-1.27-r1-22.gpkg.tar
+PROVIDES: x86_64: libaccounts-glib.so.0
+RDEPEND: dev-lang/python:3.14 dev-db/sqlite:3 dev-libs/glib:2 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= dev-libs/libxml2:2/16= dev-python/pygobject:3[python_targets_python3_14(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libsqlite3.so.0 libxml2.so.16
+RESTRICT: test
+SHA1: ae3d2f3fcf6c92bd6b7039a595c4185ec490f516
+SIZE: 153600
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1794394649
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -44522,22 +44611,22 @@ MTIME: 1792986938
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791281502
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794394642
 CPV: x11-misc/makedepend-1.0.10
 DEFINED_PHASES: compile configure install test unpack
 EAPI: 8
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-solaris
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-solaris
 LICENSE: MIT
-MD5: ea19aa6f4d5a86e058ad9e6119530831
-PATH: pkgs-x11-misc/makedepend-1.0.10-1.gpkg.tar
-RDEPEND: >=sys-libs/glibc-2.43-r2
+MD5: bf9be84fc0c0b431eeff0eaea4571eb8
+PATH: pkgs-x11-misc/makedepend-1.0.10-2.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6
-SHA1: 22ae154a685d62a7b0a6f99af7051e034b93f647
+SHA1: 71f11792cfe051cfe238ac3a2ab968d8b9d885b2
 SIZE: 71680
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791281503
+MTIME: 1794394643
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
