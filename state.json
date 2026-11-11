@@ -1778,6 +1778,10 @@
    "path": "pkgs-media-sound/gigedit-1.2.1-1.gpkg.tar"
   },
   {
+   "at": 1794375145,
+   "path": "pkgs-media-sound/jack-example-tools-4-4.gpkg.tar"
+  },
+  {
    "at": 1793684653,
    "path": "pkgs-media-sound/jack2-1.9.22-11.gpkg.tar"
   },
@@ -1860,6 +1864,10 @@
   {
    "at": 1793175888,
    "path": "pkgs-media-video/smplayer-25.6.0_p20250903-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794375145,
+   "path": "pkgs-media-video/wireplumber-0.5.19-1.gpkg.tar"
   },
   {
    "at": 1793708162,
@@ -2212,6 +2220,10 @@
   {
    "at": 1793512319,
    "path": "pkgs-x11-themes/adwaita-icon-theme-50.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794375145,
+   "path": "pkgs-x11-themes/adwaita-icon-theme-50.0-r1-1.gpkg.tar"
   },
   {
    "at": 1794374522,
