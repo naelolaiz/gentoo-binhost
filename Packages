@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794379294
-PACKAGES: 1935
+TIMESTAMP: 1794379605
+PACKAGES: 1937
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -29971,6 +29971,30 @@ MTIME: 1793254660
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794379294
+CPV: kde-plasma/xdg-desktop-portal-kde-6.8.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/kwayland-6.8.3:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon >=dev-libs/plasma-wayland-protocols-1.23.0 >=dev-libs/wayland-protocols-1.25 >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-2+
+MD5: 2b770ce27ed6780c38e15302e7589e62
+PATH: pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.3-1.gpkg.tar
+RDEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/kwayland-6.8.3:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon kde-misc/kio-fuse:6 sys-apps/xdg-desktop-portal || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/xdg-desktop-portal-kde:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6IconThemes.so.6 libKF6ItemViews.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6WindowSystem.so.6 libKPipeWireMonitor.so.6 libKWaylandClient.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0 libxkbcommon.so.0
+RESTRICT: test
+SHA1: 53f6e1a08310d9d2bb366138a2e27c73f7adc180
+SIZE: 1003520
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794379295
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 10
 BUILD_TIME: 1793511850
@@ -42338,6 +42362,29 @@ SHA1: 45f7e62e00c77ae97c0d356d178536ea93492f42
 SIZE: 1280000
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux libei
 MTIME: 1793694632
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/lex dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 1
+BUILD_TIME: 1794379393
+CPV: x11-base/xwayland-24.1.15
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/libbsd dev-libs/openssl:0/4= >=dev-libs/wayland-1.21.0 >=dev-libs/wayland-protocols-1.34 media-fonts/font-util >=media-libs/libepoxy-1.5.4[X,egl(+)] media-libs/libglvnd[X] >=media-libs/mesa-21.1[X(+),egl(+),gbm(+)] >=x11-libs/libdrm-2.4.116 >=x11-libs/libXau-1.0.4 x11-libs/libxcvt >=x11-libs/libXdmcp-1.0.2 >=x11-libs/libXfont2-2.0.1 x11-libs/libxkbfile >=x11-libs/libxshmfence-1.1 >=x11-libs/pixman-0.27.2 >=x11-misc/xkeyboard-config-2.4.1-r3 dev-libs/libei >=x11-base/xorg-proto-2024.1 >=x11-libs/xtrans-1.3.5
+EAPI: 8
+IUSE: libei selinux systemd test unwind xcsecurity
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: cbf6902395dbe2e704210126973c91f9
+PATH: pkgs-x11-base/xwayland-24.1.15-1.gpkg.tar
+RDEPEND: dev-libs/libbsd dev-libs/openssl:0/4= >=dev-libs/wayland-1.21.0 >=dev-libs/wayland-protocols-1.34 media-fonts/font-util >=media-libs/libepoxy-1.5.4[X,egl(+)] media-libs/libglvnd[X] >=media-libs/mesa-21.1[X(+),egl(+),gbm(+)] >=x11-libs/libdrm-2.4.116 >=x11-libs/libXau-1.0.4 x11-libs/libxcvt >=x11-libs/libXdmcp-1.0.2 >=x11-libs/libXfont2-2.0.1 x11-libs/libxkbfile >=x11-libs/libxshmfence-1.1 >=x11-libs/pixman-0.27.2 >=x11-misc/xkeyboard-config-2.4.1-r3 dev-libs/libei x11-apps/xkbcomp >=sys-apps/xdg-desktop-portal-1.18.0 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
+REQUIRES: x86_64: libGL.so.1 libXau.so.6 libXdmcp.so.6 libXfont2.so.2 libbsd.so.0 libc.so.6 libcrypto.so.4 libdrm.so.2 libei.so.1 libepoxy.so.0 libgbm.so.1 libm.so.6 liboeffis.so.1 libpixman-1.so.0 libwayland-client.so.0 libxcvt.so.0 libxshmfence.so.1
+RESTRICT: test
+SHA1: 23199453bde5d0dd2e844d26cd14a4cd97a631c6
+SIZE: 1280000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux libei
+MTIME: 1794379394
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
