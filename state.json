@@ -590,6 +590,10 @@
    "path": "pkgs-dev-cpp/asio-1.38.0-1.gpkg.tar"
   },
   {
+   "at": 1794395434,
+   "path": "pkgs-dev-cpp/cairomm-1.18.1-1.gpkg.tar"
+  },
+  {
    "at": 1794387696,
    "path": "pkgs-dev-cpp/glibmm-2.66.8-r1-1.gpkg.tar"
   },
@@ -1814,6 +1818,10 @@
    "path": "pkgs-media-libs/libplacebo-7.387.0-1.gpkg.tar"
   },
   {
+   "at": 1794395434,
+   "path": "pkgs-media-libs/libplacebo-7.387.0-2.gpkg.tar"
+  },
+  {
    "at": 1794374522,
    "path": "pkgs-media-libs/libpulse-17.0-9.gpkg.tar"
   },
@@ -2060,6 +2068,10 @@
   {
    "at": 1793711550,
    "path": "pkgs-net-libs/libquotient-0.9.6.1-5.gpkg.tar"
+  },
+  {
+   "at": 1794395434,
+   "path": "pkgs-net-libs/librist-0.2.11-1.gpkg.tar"
   },
   {
    "at": 1794387696,
