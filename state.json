@@ -390,6 +390,10 @@
    "path": "pkgs-app-crypt/keysmith-26.08.2-1.gpkg.tar"
   },
   {
+   "at": 1794370176,
+   "path": "pkgs-app-crypt/p11-kit-0.26.5-1.gpkg.tar"
+  },
+  {
    "at": 1793712813,
    "path": "pkgs-app-crypt/sbsigntools-0.9.5_p1-1.gpkg.tar"
   },
@@ -614,6 +618,10 @@
    "path": "pkgs-dev-libs/libcdio-paranoia-2.0.2-9.gpkg.tar"
   },
   {
+   "at": 1794370176,
+   "path": "pkgs-dev-libs/libevdev-1.14.0-1.gpkg.tar"
+  },
+  {
    "at": 1794109695,
    "path": "pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar"
   },
@@ -812,6 +820,10 @@
   {
    "at": 1794111264,
    "path": "pkgs-dev-util/mesa_clc-26.2.6-2.gpkg.tar"
+  },
+  {
+   "at": 1794370176,
+   "path": "pkgs-dev-util/mesa_clc-26.2.6-3.gpkg.tar"
   },
   {
    "at": 1794112546,
@@ -1986,6 +1998,10 @@
    "path": "pkgs-sys-apps/coreutils-9.12-1.gpkg.tar"
   },
   {
+   "at": 1794370176,
+   "path": "pkgs-sys-apps/dbus-1.16.2-r2-1.gpkg.tar"
+  },
+  {
    "at": 1794369507,
    "path": "pkgs-sys-apps/openrc-0.64.1-1.gpkg.tar"
   },
@@ -2028,6 +2044,10 @@
   {
    "at": 1793598458,
    "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.9-1.gpkg.tar"
+  },
+  {
+   "at": 1794370176,
+   "path": "pkgs-sys-libs/libnvme-1.16.2-8.gpkg.tar"
   },
   {
    "at": 1794369507,
@@ -2108,6 +2128,10 @@
   {
    "at": 1793983999,
    "path": "pkgs-x11-misc/sddm-0.21.0_p20260819-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794370176,
+   "path": "pkgs-x11-misc/xkeyboard-config-2.49-1.gpkg.tar"
   },
   {
    "at": 1793512319,

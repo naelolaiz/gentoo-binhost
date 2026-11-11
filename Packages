@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794369844
-PACKAGES: 1858
+TIMESTAMP: 1794370176
+PACKAGES: 1862
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1470,9 +1470,9 @@ MTIME: 1791083331
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-text/docbook-xsl-stylesheets dev-libs/libxslt virtual/pkgconfig sys-devel/gettext >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1792987782
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-text/docbook-xsl-stylesheets dev-libs/libxslt virtual/pkgconfig sys-devel/gettext >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369925
 CPV: app-crypt/p11-kit-0.26.5
 DEFINED_PHASES: compile configure install prepare setup test unpack
 DEPEND: app-misc/ca-certificates >=dev-libs/libtasn1-3.4:0/6=[abi_x86_64(-)] dev-libs/libffi:0/8=[abi_x86_64(-)]
@@ -1480,17 +1480,16 @@ EAPI: 8
 IUSE: +libffi gtk-doc nls systemd test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
 LICENSE: MIT
-MD5: 41a9b0ae5fb6adf53277bb7e2815e268
-PATH: pkgs-app-crypt/p11-kit-0.26.5-1.gpkg.tar
+MD5: b5c8b7cb151fec2c5305f97918e0b7e0
+PATH: pkgs-app-crypt/p11-kit-0.26.5-2.gpkg.tar
 PROVIDES: x86_64: libp11-kit.so.0 p11-kit-client.so p11-kit-trust.so
 RDEPEND: app-misc/ca-certificates >=dev-libs/libtasn1-3.4:0/6=[abi_x86_64(-)] dev-libs/libffi:0/8=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "a95cf37ef03876fc65648e601295814f52dc191c"}
 REQUIRES: x86_64: libc.so.6 libffi.so.8 libtasn1.so.6
 RESTRICT: test
-SHA1: fe4311a6f504820463428fee46b27ce4ea4cdbb8
+SHA1: 0133a6f9ca014546ddcc5521b79e84bd2f04d74d
 SIZE: 1208320
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux libffi nls
-MTIME: 1792987783
+MTIME: 1794369926
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5221,6 +5220,28 @@ MTIME: 1794109645
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/meson-1.3.0 >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369784
+CPV: dev-lang/orc-0.4.42
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: static-libs test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv x86 ~x64-macos ~x64-solaris
+LICENSE: BSD BSD-2
+MD5: 152f5ef7aacca15397623b2f4eb726d7
+PATH: pkgs-dev-lang/orc-0.4.42-2.gpkg.tar
+PROVIDES: x86_64: liborc-0.4.so.0 liborc-test-0.4.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libm.so.6
+RESTRICT: test
+SHA1: c9ac5cb2e4f2a141e684977b2b80f331b3130fee
+SIZE: 460800
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794369785
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
 BUILD_ID: 1
 BUILD_TIME: 1791225425
@@ -6682,25 +6703,25 @@ MTIME: 1791063115
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1792728565
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369931
 CPV: dev-libs/libevdev-1.14.0
 DEFINED_PHASES: compile configure install setup test
 EAPI: 8
 IUSE: doc test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: MIT
-MD5: ddeeb33f5874f7ba67294387df2ac426
-PATH: pkgs-dev-libs/libevdev-1.14.0-1.gpkg.tar
+MD5: feca1df966737a7c5ac8cedf067d8db6
+PATH: pkgs-dev-libs/libevdev-1.14.0-2.gpkg.tar
 PROVIDES: x86_64: libevdev.so.2
 RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libm.so.6
 RESTRICT: test
-SHA1: bcf998f23d466f89d66624ea7b211319c3155be4
+SHA1: c8b821503f30daa116498a4799631a2a49302361
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792728566
+MTIME: 1794369932
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15959,9 +15980,9 @@ MTIME: 1792728885
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 3
-BUILD_TIME: 1794111105
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 4
+BUILD_TIME: 1794370060
 CPV: dev-util/mesa_clc-26.2.6
 DEFINED_PHASES: compile configure install setup test
 DEPEND: dev-util/spirv-tools dev-util/spirv-llvm-translator:22 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= =llvm-runtimes/libclc-22* dev-libs/expat >=virtual/zlib-1.2.8:0/1= x11-libs/libdrm
@@ -15969,14 +15990,15 @@ EAPI: 8
 IUSE: video_cards_asahi video_cards_panfrost debug +llvm_slot_22 llvm_slot_20 llvm_slot_21
 KEYWORDS: ~amd64 ~arm ~arm64 ~riscv ~x86
 LICENSE: MIT
-MD5: 7b24adeeda180050f6e0acd228c94878
-PATH: pkgs-dev-util/mesa_clc-26.2.6-3.gpkg.tar
+MD5: 9ce8ddbbc4070aa8bea6972f3806a282
+PATH: pkgs-dev-util/mesa_clc-26.2.6-4.gpkg.tar
 RDEPEND: dev-util/spirv-tools dev-util/spirv-llvm-translator:22 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= =llvm-runtimes/libclc-22* >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
 REQUIRES: x86_64: libLLVM.so.22.1 libLLVMSPIRVLib.so.22.1 libSPIRV-Tools-link.so libSPIRV-Tools-opt.so libSPIRV-Tools.so libc.so.6 libclang-cpp.so.22.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6
-SHA1: 58dc00df56e3f1fbdb5f2b7fda09cfc2fa0d303a
+SHA1: fcf8b41de668d7ac83704987fb3b12079959e8b3
 SIZE: 1443840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
-MTIME: 1794111106
+MTIME: 1794370062
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32250,6 +32272,50 @@ MTIME: 1791276087
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 8
+BUILD_TIME: 1794369974
+CPV: media-libs/lilv-0.24.26-r1
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=dev-libs/serd-0.30.10[abi_x86_64(-)] >=dev-libs/sord-0.16.16[abi_x86_64(-)] >=dev-libs/zix-0.6.0[abi_x86_64(-)] media-libs/libsndfile >=media-libs/lv2-1.18.2[abi_x86_64(-)] >=media-libs/sratom-0.6.10[abi_x86_64(-)]
+EAPI: 8
+IUSE: doc python test tools abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: ISC
+MD5: f010dd1701594e83f2271403c8ec7298
+PATH: pkgs-media-libs/lilv-0.24.26-r1-8.gpkg.tar
+PROVIDES: x86_64: liblilv-0.so.0
+RDEPEND: >=dev-libs/serd-0.30.10[abi_x86_64(-)] >=dev-libs/sord-0.16.16[abi_x86_64(-)] >=dev-libs/zix-0.6.0[abi_x86_64(-)] media-libs/libsndfile >=media-libs/lv2-1.18.2[abi_x86_64(-)] >=media-libs/sratom-0.6.10[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libserd-0.so.0 libsord-0.so.0 libsratom-0.so.0 libzix-0.so.0
+RESTRICT: test
+SHA1: 38df9242766ccf70278e3b466718158689ad4c0c
+SIZE: 112640
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1794369975
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 5
+BUILD_TIME: 1794369963
+CPV: media-libs/lv2-1.18.10-r2
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: dev-lang/python:3.14[threads(+)]
+EAPI: 8
+IUSE: doc plugins test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: MIT
+MD5: f12ae0ea74dc610ed63a0a64a693aa1c
+PATH: pkgs-media-libs/lv2-1.18.10-r2-5.gpkg.tar
+RDEPEND: dev-lang/python:3.14[threads(+)] dev-python/lxml[python_targets_python3_14(-)] dev-python/pygments[python_targets_python3_14(-)] dev-python/rdflib[python_targets_python3_14(-)]
+RESTRICT: test
+SHA1: 3af7f2e4b7b5b542695c3132d49eaf93bd64a9ae
+SIZE: 174080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1794369964
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.7.0 app-alternatives/yacc sys-devel/flex virtual/pkgconfig || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) ~dev-util/mesa_clc-26.2.5 llvm-runtimes/libclc[spirv(-)] dev-util/glslang dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1792814770
@@ -32708,6 +32774,29 @@ SHA1: 1644ac84863bc4543a7b366449b80c98c2e4bbb5
 SIZE: 512000
 USE: abi_x86_64 amd64 cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc kernel_linux
 MTIME: 1794114540
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 5
+BUILD_TIME: 1794369968
+CPV: media-libs/sratom-0.6.18-r1
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=dev-libs/serd-0.30.10 >=dev-libs/sord-0.16.16 >=media-libs/lv2-1.18.4 || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] )
+EAPI: 8
+IUSE: doc test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: ISC
+MD5: f648c09d834f773a38dac03ec7b99c5f
+PATH: pkgs-media-libs/sratom-0.6.18-r1-5.gpkg.tar
+PROVIDES: x86_64: libsratom-0.so.0
+RDEPEND: >=dev-libs/serd-0.30.10 >=dev-libs/sord-0.16.16 >=media-libs/lv2-1.18.4 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libserd-0.so.0 libsord-0.so.0
+RESTRICT: test
+SHA1: f178a59c2998baee02ac5bcd3cac43963c5f8fc3
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794369969
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -37618,9 +37707,9 @@ MTIME: 1791064775
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-text/xmlto app-text/docbook-xml-dtd:4.4 acct-user/messagebus dev-build/autoconf-archive virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791113411
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-text/xmlto app-text/docbook-xml-dtd:4.4 acct-user/messagebus dev-build/autoconf-archive virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794369858
 CPV: sys-apps/dbus-1.16.2-r2
 DEFINED_PHASES: compile configure install postinst setup test
 DEPEND: >=dev-libs/expat-2.1.0 sys-auth/elogind x11-libs/libX11 x11-libs/libXt x11-base/xorg-proto
@@ -37628,16 +37717,16 @@ EAPI: 8
 IUSE: apparmor audit debug doc elogind selinux static-libs systemd test valgrind X abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
 LICENSE: || ( AFL-2.1 GPL-2+ ) Apache-2.0 BSD GPL-2+ LGPL-2.1+ MIT tcltk
-MD5: c95efb8dfd504a3097c1e7dfd037f293
-PATH: pkgs-sys-apps/dbus-1.16.2-r2-1.gpkg.tar
+MD5: 3596c3ece7f74e93c413deab94d61c91
+PATH: pkgs-sys-apps/dbus-1.16.2-r2-2.gpkg.tar
 PROVIDES: x86_32: libdbus-1.so.3 x86_64: libdbus-1.so.3
-RDEPEND: >=dev-libs/expat-2.1.0 sys-auth/elogind x11-libs/libX11 x11-libs/libXt acct-user/messagebus >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-libs/expat-2.1.0 sys-auth/elogind x11-libs/libX11 x11-libs/libXt acct-user/messagebus >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libc.so.6 x86_64: libX11.so.6 libc.so.6 libelogind.so.0 libexpat.so.1
 RESTRICT: test
-SHA1: bba2ff7d779d1965efc17b6b6726634a38efa29e
-SIZE: 808960
+SHA1: 96f36048dd8067867a98f0a5d86a999067306fc2
+SIZE: 829440
 USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc elogind kernel_linux
-MTIME: 1791113412
+MTIME: 1794369859
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -39505,9 +39594,9 @@ MTIME: 1791431066
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 8
-BUILD_TIME: 1793684002
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 9
+BUILD_TIME: 1794369870
 CPV: sys-libs/libnvme-1.16.2
 DEFINED_PHASES: compile configure install prepare test
 DEPEND: dev-libs/json-c:0/5.1= sys-apps/dbus:0/0= >=dev-libs/openssl-1.1:0/4=
@@ -39515,18 +39604,17 @@ EAPI: 8
 IUSE: dbus examples io-uring +json keyutils python ssl test test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 debug
 KEYWORDS: ~alpha amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86
 LICENSE: LGPL-2.1+
-MD5: 335682230e8981f6e2c3e9bc5f434d8a
-PATH: pkgs-sys-libs/libnvme-1.16.2-8.gpkg.tar
+MD5: f8b1c2614bd345a6f60eb560e989f2d9
+PATH: pkgs-sys-libs/libnvme-1.16.2-9.gpkg.tar
 PROVIDES: x86_64: libnvme-mi.so.1 libnvme.so.1
 RDEPEND: dev-libs/json-c:0/5.1= sys-apps/dbus:0/0= >=dev-libs/openssl-1.1:0/4= >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
 REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libdbus-1.so.3 libjson-c.so.5
 RESTRICT: test test
-SHA1: 189dda7aa5c777f3943edf072ea293a1e87181e4
-SIZE: 327680
+SHA1: e84f989b1b27264099201179a5618a53d2b8a4d6
+SIZE: 337920
 SLOT: 0/1
 USE: abi_x86_64 amd64 dbus elibc_glibc json kernel_linux python_targets_python3_14 ssl
-MTIME: 1793684003
+MTIME: 1794369871
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -41508,23 +41596,22 @@ MTIME: 1794111643
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: dev-lang/perl dev-libs/libxslt sys-devel/gettext || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1792728576
+BDEPEND: dev-lang/perl dev-libs/libxslt sys-devel/gettext || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369938
 CPV: x11-misc/xkeyboard-config-2.49
 DEFINED_PHASES: compile configure install preinst prepare setup test
 EAPI: 8
 IUSE: test
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: MIT
-MD5: dee07769cf9f54b1e021fa5c8614f49e
-PATH: pkgs-x11-misc/xkeyboard-config-2.49-1.gpkg.tar
-REPO_REVISIONS: {"gentoo": "ec70e4457d4726a276980642220e77a6aa7c88f2"}
+MD5: d70d51f91cb627440667a8ce78d06157
+PATH: pkgs-x11-misc/xkeyboard-config-2.49-2.gpkg.tar
 RESTRICT: test
-SHA1: a856a8010f52b43191acb5cb267f0f30aea51a9e
+SHA1: 642cbc2fd0950c81b1b8f07f266bdd98bf5a24d2
 SIZE: 1300480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792728578
+MTIME: 1794369939
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
