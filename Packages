@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794396590
-PACKAGES: 2007
+TIMESTAMP: 1794396665
+PACKAGES: 1995
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5445,82 +5445,6 @@ MTIME: 1794369785
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1791225425
-CPV: dev-lang/python-3.13.16
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl test tk valgrind +llvm_slot_18 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: 64f40223cbf0f67b916d5aca24c1bf4b
-PATH: pkgs-dev-lang/python-3.13.16-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _asyncio.cpython-313-x86_64-linux-gnu.so _bisect.cpython-313-x86_64-linux-gnu.so _blake2.cpython-313-x86_64-linux-gnu.so _bz2.cpython-313-x86_64-linux-gnu.so _codecs_cn.cpython-313-x86_64-linux-gnu.so _codecs_hk.cpython-313-x86_64-linux-gnu.so _codecs_iso2022.cpython-313-x86_64-linux-gnu.so _codecs_jp.cpython-313-x86_64-linux-gnu.so _codecs_kr.cpython-313-x86_64-linux-gnu.so _codecs_tw.cpython-313-x86_64-linux-gnu.so _contextvars.cpython-313-x86_64-linux-gnu.so _csv.cpython-313-x86_64-linux-gnu.so _ctypes.cpython-313-x86_64-linux-gnu.so _ctypes_test.cpython-313-x86_64-linux-gnu.so _curses.cpython-313-x86_64-linux-gnu.so _curses_panel.cpython-313-x86_64-linux-gnu.so _datetime.cpython-313-x86_64-linux-gnu.so _dbm.cpython-313-x86_64-linux-gnu.so _decimal.cpython-313-x86_64-linux-gnu.so _elementtree.cpython-313-x86_64-linux-gnu.so _gdbm.cpython-313-x86_64-linux-gnu.so _hashlib.cpython-313-x86_64-linux-gnu.so _heapq.cpython-313-x86_64-linux-gnu.so _interpchannels.cpython-313-x86_64-linux-gnu.so _interpqueues.cpython-313-x86_64-linux-gnu.so _interpreters.cpython-313-x86_64-linux-gnu.so _json.cpython-313-x86_64-linux-gnu.so _lsprof.cpython-313-x86_64-linux-gnu.so _lzma.cpython-313-x86_64-linux-gnu.so _md5.cpython-313-x86_64-linux-gnu.so _multibytecodec.cpython-313-x86_64-linux-gnu.so _multiprocessing.cpython-313-x86_64-linux-gnu.so _opcode.cpython-313-x86_64-linux-gnu.so _pickle.cpython-313-x86_64-linux-gnu.so _posixshmem.cpython-313-x86_64-linux-gnu.so _posixsubprocess.cpython-313-x86_64-linux-gnu.so _queue.cpython-313-x86_64-linux-gnu.so _random.cpython-313-x86_64-linux-gnu.so _sha1.cpython-313-x86_64-linux-gnu.so _sha2.cpython-313-x86_64-linux-gnu.so _sha3.cpython-313-x86_64-linux-gnu.so _socket.cpython-313-x86_64-linux-gnu.so _sqlite3.cpython-313-x86_64-linux-gnu.so _ssl.cpython-313-x86_64-linux-gnu.so _statistics.cpython-313-x86_64-linux-gnu.so _struct.cpython-313-x86_64-linux-gnu.so _testbuffer.cpython-313-x86_64-linux-gnu.so _testcapi.cpython-313-x86_64-linux-gnu.so _testclinic.cpython-313-x86_64-linux-gnu.so _testclinic_limited.cpython-313-x86_64-linux-gnu.so _testexternalinspection.cpython-313-x86_64-linux-gnu.so _testimportmultiple.cpython-313-x86_64-linux-gnu.so _testinternalcapi.cpython-313-x86_64-linux-gnu.so _testlimitedcapi.cpython-313-x86_64-linux-gnu.so _testmultiphase.cpython-313-x86_64-linux-gnu.so _testsinglephase.cpython-313-x86_64-linux-gnu.so _uuid.cpython-313-x86_64-linux-gnu.so _xxtestfuzz.cpython-313-x86_64-linux-gnu.so _zoneinfo.cpython-313-x86_64-linux-gnu.so array.cpython-313-x86_64-linux-gnu.so binascii.cpython-313-x86_64-linux-gnu.so cmath.cpython-313-x86_64-linux-gnu.so fcntl.cpython-313-x86_64-linux-gnu.so grp.cpython-313-x86_64-linux-gnu.so libpython3.13.so.1.0 math.cpython-313-x86_64-linux-gnu.so mmap.cpython-313-x86_64-linux-gnu.so pyexpat.cpython-313-x86_64-linux-gnu.so readline.cpython-313-x86_64-linux-gnu.so resource.cpython-313-x86_64-linux-gnu.so select.cpython-313-x86_64-linux-gnu.so syslog.cpython-313-x86_64-linux-gnu.so termios.cpython-313-x86_64-linux-gnu.so unicodedata.cpython-313-x86_64-linux-gnu.so xxlimited.cpython-313-x86_64-linux-gnu.so xxlimited_35.cpython-313-x86_64-linux-gnu.so xxsubtype.cpython-313-x86_64-linux-gnu.so zlib.cpython-313-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_13(-)] >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libb2.so.1 libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1
-RESTRICT: test
-SHA1: 93aed7c404aff8e51e04f34c0c939bcb6232f6f3
-SIZE: 11724800
-SLOT: 3.13
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_18 ncurses readline sqlite ssl
-MTIME: 1791225433
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1792677969
-CPV: dev-lang/python-3.13.17
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl test tk valgrind +llvm_slot_18 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: 778941774b7f1ed08df918cadd51de82
-PATH: pkgs-dev-lang/python-3.13.17-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _asyncio.cpython-313-x86_64-linux-gnu.so _bisect.cpython-313-x86_64-linux-gnu.so _blake2.cpython-313-x86_64-linux-gnu.so _bz2.cpython-313-x86_64-linux-gnu.so _codecs_cn.cpython-313-x86_64-linux-gnu.so _codecs_hk.cpython-313-x86_64-linux-gnu.so _codecs_iso2022.cpython-313-x86_64-linux-gnu.so _codecs_jp.cpython-313-x86_64-linux-gnu.so _codecs_kr.cpython-313-x86_64-linux-gnu.so _codecs_tw.cpython-313-x86_64-linux-gnu.so _contextvars.cpython-313-x86_64-linux-gnu.so _csv.cpython-313-x86_64-linux-gnu.so _ctypes.cpython-313-x86_64-linux-gnu.so _ctypes_test.cpython-313-x86_64-linux-gnu.so _curses.cpython-313-x86_64-linux-gnu.so _curses_panel.cpython-313-x86_64-linux-gnu.so _datetime.cpython-313-x86_64-linux-gnu.so _dbm.cpython-313-x86_64-linux-gnu.so _decimal.cpython-313-x86_64-linux-gnu.so _elementtree.cpython-313-x86_64-linux-gnu.so _gdbm.cpython-313-x86_64-linux-gnu.so _hashlib.cpython-313-x86_64-linux-gnu.so _heapq.cpython-313-x86_64-linux-gnu.so _interpchannels.cpython-313-x86_64-linux-gnu.so _interpqueues.cpython-313-x86_64-linux-gnu.so _interpreters.cpython-313-x86_64-linux-gnu.so _json.cpython-313-x86_64-linux-gnu.so _lsprof.cpython-313-x86_64-linux-gnu.so _lzma.cpython-313-x86_64-linux-gnu.so _md5.cpython-313-x86_64-linux-gnu.so _multibytecodec.cpython-313-x86_64-linux-gnu.so _multiprocessing.cpython-313-x86_64-linux-gnu.so _opcode.cpython-313-x86_64-linux-gnu.so _pickle.cpython-313-x86_64-linux-gnu.so _posixshmem.cpython-313-x86_64-linux-gnu.so _posixsubprocess.cpython-313-x86_64-linux-gnu.so _queue.cpython-313-x86_64-linux-gnu.so _random.cpython-313-x86_64-linux-gnu.so _sha1.cpython-313-x86_64-linux-gnu.so _sha2.cpython-313-x86_64-linux-gnu.so _sha3.cpython-313-x86_64-linux-gnu.so _socket.cpython-313-x86_64-linux-gnu.so _sqlite3.cpython-313-x86_64-linux-gnu.so _ssl.cpython-313-x86_64-linux-gnu.so _statistics.cpython-313-x86_64-linux-gnu.so _struct.cpython-313-x86_64-linux-gnu.so _testbuffer.cpython-313-x86_64-linux-gnu.so _testcapi.cpython-313-x86_64-linux-gnu.so _testclinic.cpython-313-x86_64-linux-gnu.so _testclinic_limited.cpython-313-x86_64-linux-gnu.so _testexternalinspection.cpython-313-x86_64-linux-gnu.so _testimportmultiple.cpython-313-x86_64-linux-gnu.so _testinternalcapi.cpython-313-x86_64-linux-gnu.so _testlimitedcapi.cpython-313-x86_64-linux-gnu.so _testmultiphase.cpython-313-x86_64-linux-gnu.so _testsinglephase.cpython-313-x86_64-linux-gnu.so _uuid.cpython-313-x86_64-linux-gnu.so _xxtestfuzz.cpython-313-x86_64-linux-gnu.so _zoneinfo.cpython-313-x86_64-linux-gnu.so array.cpython-313-x86_64-linux-gnu.so binascii.cpython-313-x86_64-linux-gnu.so cmath.cpython-313-x86_64-linux-gnu.so fcntl.cpython-313-x86_64-linux-gnu.so grp.cpython-313-x86_64-linux-gnu.so libpython3.13.so.1.0 math.cpython-313-x86_64-linux-gnu.so mmap.cpython-313-x86_64-linux-gnu.so pyexpat.cpython-313-x86_64-linux-gnu.so readline.cpython-313-x86_64-linux-gnu.so resource.cpython-313-x86_64-linux-gnu.so select.cpython-313-x86_64-linux-gnu.so syslog.cpython-313-x86_64-linux-gnu.so termios.cpython-313-x86_64-linux-gnu.so unicodedata.cpython-313-x86_64-linux-gnu.so xxlimited.cpython-313-x86_64-linux-gnu.so xxlimited_35.cpython-313-x86_64-linux-gnu.so xxsubtype.cpython-313-x86_64-linux-gnu.so zlib.cpython-313-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_13(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libb2.so.1 libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1
-RESTRICT: test
-SHA1: 649e39172b1bf8365511526d5069afd836a946a5
-SIZE: 11898880
-SLOT: 3.13
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_18 ncurses readline sqlite ssl
-MTIME: 1792677973
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1792906644
-CPV: dev-lang/python-3.13.17_p1
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl test tk valgrind +llvm_slot_18 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: 772dbc2925fea040aec85057dc83b43a
-PATH: pkgs-dev-lang/python-3.13.17_p1-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _asyncio.cpython-313-x86_64-linux-gnu.so _bisect.cpython-313-x86_64-linux-gnu.so _blake2.cpython-313-x86_64-linux-gnu.so _bz2.cpython-313-x86_64-linux-gnu.so _codecs_cn.cpython-313-x86_64-linux-gnu.so _codecs_hk.cpython-313-x86_64-linux-gnu.so _codecs_iso2022.cpython-313-x86_64-linux-gnu.so _codecs_jp.cpython-313-x86_64-linux-gnu.so _codecs_kr.cpython-313-x86_64-linux-gnu.so _codecs_tw.cpython-313-x86_64-linux-gnu.so _contextvars.cpython-313-x86_64-linux-gnu.so _csv.cpython-313-x86_64-linux-gnu.so _ctypes.cpython-313-x86_64-linux-gnu.so _ctypes_test.cpython-313-x86_64-linux-gnu.so _curses.cpython-313-x86_64-linux-gnu.so _curses_panel.cpython-313-x86_64-linux-gnu.so _datetime.cpython-313-x86_64-linux-gnu.so _dbm.cpython-313-x86_64-linux-gnu.so _decimal.cpython-313-x86_64-linux-gnu.so _elementtree.cpython-313-x86_64-linux-gnu.so _gdbm.cpython-313-x86_64-linux-gnu.so _hashlib.cpython-313-x86_64-linux-gnu.so _heapq.cpython-313-x86_64-linux-gnu.so _interpchannels.cpython-313-x86_64-linux-gnu.so _interpqueues.cpython-313-x86_64-linux-gnu.so _interpreters.cpython-313-x86_64-linux-gnu.so _json.cpython-313-x86_64-linux-gnu.so _lsprof.cpython-313-x86_64-linux-gnu.so _lzma.cpython-313-x86_64-linux-gnu.so _md5.cpython-313-x86_64-linux-gnu.so _multibytecodec.cpython-313-x86_64-linux-gnu.so _multiprocessing.cpython-313-x86_64-linux-gnu.so _opcode.cpython-313-x86_64-linux-gnu.so _pickle.cpython-313-x86_64-linux-gnu.so _posixshmem.cpython-313-x86_64-linux-gnu.so _posixsubprocess.cpython-313-x86_64-linux-gnu.so _queue.cpython-313-x86_64-linux-gnu.so _random.cpython-313-x86_64-linux-gnu.so _sha1.cpython-313-x86_64-linux-gnu.so _sha2.cpython-313-x86_64-linux-gnu.so _sha3.cpython-313-x86_64-linux-gnu.so _socket.cpython-313-x86_64-linux-gnu.so _sqlite3.cpython-313-x86_64-linux-gnu.so _ssl.cpython-313-x86_64-linux-gnu.so _statistics.cpython-313-x86_64-linux-gnu.so _struct.cpython-313-x86_64-linux-gnu.so _testbuffer.cpython-313-x86_64-linux-gnu.so _testcapi.cpython-313-x86_64-linux-gnu.so _testclinic.cpython-313-x86_64-linux-gnu.so _testclinic_limited.cpython-313-x86_64-linux-gnu.so _testexternalinspection.cpython-313-x86_64-linux-gnu.so _testimportmultiple.cpython-313-x86_64-linux-gnu.so _testinternalcapi.cpython-313-x86_64-linux-gnu.so _testlimitedcapi.cpython-313-x86_64-linux-gnu.so _testmultiphase.cpython-313-x86_64-linux-gnu.so _testsinglephase.cpython-313-x86_64-linux-gnu.so _uuid.cpython-313-x86_64-linux-gnu.so _xxtestfuzz.cpython-313-x86_64-linux-gnu.so _zoneinfo.cpython-313-x86_64-linux-gnu.so array.cpython-313-x86_64-linux-gnu.so binascii.cpython-313-x86_64-linux-gnu.so cmath.cpython-313-x86_64-linux-gnu.so fcntl.cpython-313-x86_64-linux-gnu.so grp.cpython-313-x86_64-linux-gnu.so libpython3.13.so.1.0 math.cpython-313-x86_64-linux-gnu.so mmap.cpython-313-x86_64-linux-gnu.so pyexpat.cpython-313-x86_64-linux-gnu.so readline.cpython-313-x86_64-linux-gnu.so resource.cpython-313-x86_64-linux-gnu.so select.cpython-313-x86_64-linux-gnu.so syslog.cpython-313-x86_64-linux-gnu.so termios.cpython-313-x86_64-linux-gnu.so unicodedata.cpython-313-x86_64-linux-gnu.so xxlimited.cpython-313-x86_64-linux-gnu.so xxlimited_35.cpython-313-x86_64-linux-gnu.so xxsubtype.cpython-313-x86_64-linux-gnu.so zlib.cpython-313-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-crypt/libb2 app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_13(-)] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "2ddd40f4d512bfe87ec500e83e150eca4d5766c4"}
-REQUIRES: x86_64: libb2.so.1 libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1
-RESTRICT: test
-SHA1: 70817153fbc8d521eeac74256c4f02db2c908fbd
-SIZE: 11898880
-SLOT: 3.13
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_18 ncurses readline sqlite ssl
-MTIME: 1792906647
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
 BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
 BUILD_ID: 9
 BUILD_TIME: 1794115839
@@ -5595,133 +5519,6 @@ SIZE: 12759040
 SLOT: 3.14
 USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux ncurses readline sqlite ssl
 MTIME: 1794110468
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1791062452
-CPV: dev-lang/python-3.14.8
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth build debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl tail-call-interp test tk valgrind +llvm_slot_19 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: e7a9d6f55d11c723065ecf8e46a49f79
-PATH: pkgs-dev-lang/python-3.14.8-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _asyncio.cpython-314-x86_64-linux-gnu.so _bisect.cpython-314-x86_64-linux-gnu.so _blake2.cpython-314-x86_64-linux-gnu.so _bz2.cpython-314-x86_64-linux-gnu.so _codecs_cn.cpython-314-x86_64-linux-gnu.so _codecs_hk.cpython-314-x86_64-linux-gnu.so _codecs_iso2022.cpython-314-x86_64-linux-gnu.so _codecs_jp.cpython-314-x86_64-linux-gnu.so _codecs_kr.cpython-314-x86_64-linux-gnu.so _codecs_tw.cpython-314-x86_64-linux-gnu.so _csv.cpython-314-x86_64-linux-gnu.so _ctypes.cpython-314-x86_64-linux-gnu.so _ctypes_test.cpython-314-x86_64-linux-gnu.so _curses.cpython-314-x86_64-linux-gnu.so _curses_panel.cpython-314-x86_64-linux-gnu.so _dbm.cpython-314-x86_64-linux-gnu.so _decimal.cpython-314-x86_64-linux-gnu.so _elementtree.cpython-314-x86_64-linux-gnu.so _gdbm.cpython-314-x86_64-linux-gnu.so _hashlib.cpython-314-x86_64-linux-gnu.so _heapq.cpython-314-x86_64-linux-gnu.so _hmac.cpython-314-x86_64-linux-gnu.so _interpchannels.cpython-314-x86_64-linux-gnu.so _interpqueues.cpython-314-x86_64-linux-gnu.so _interpreters.cpython-314-x86_64-linux-gnu.so _json.cpython-314-x86_64-linux-gnu.so _lsprof.cpython-314-x86_64-linux-gnu.so _lzma.cpython-314-x86_64-linux-gnu.so _md5.cpython-314-x86_64-linux-gnu.so _multibytecodec.cpython-314-x86_64-linux-gnu.so _multiprocessing.cpython-314-x86_64-linux-gnu.so _pickle.cpython-314-x86_64-linux-gnu.so _posixshmem.cpython-314-x86_64-linux-gnu.so _posixsubprocess.cpython-314-x86_64-linux-gnu.so _queue.cpython-314-x86_64-linux-gnu.so _random.cpython-314-x86_64-linux-gnu.so _remote_debugging.cpython-314-x86_64-linux-gnu.so _sha1.cpython-314-x86_64-linux-gnu.so _sha2.cpython-314-x86_64-linux-gnu.so _sha3.cpython-314-x86_64-linux-gnu.so _socket.cpython-314-x86_64-linux-gnu.so _sqlite3.cpython-314-x86_64-linux-gnu.so _ssl.cpython-314-x86_64-linux-gnu.so _statistics.cpython-314-x86_64-linux-gnu.so _struct.cpython-314-x86_64-linux-gnu.so _testbuffer.cpython-314-x86_64-linux-gnu.so _testcapi.cpython-314-x86_64-linux-gnu.so _testclinic.cpython-314-x86_64-linux-gnu.so _testclinic_limited.cpython-314-x86_64-linux-gnu.so _testimportmultiple.cpython-314-x86_64-linux-gnu.so _testinternalcapi.cpython-314-x86_64-linux-gnu.so _testlimitedcapi.cpython-314-x86_64-linux-gnu.so _testmultiphase.cpython-314-x86_64-linux-gnu.so _testsinglephase.cpython-314-x86_64-linux-gnu.so _uuid.cpython-314-x86_64-linux-gnu.so _xxtestfuzz.cpython-314-x86_64-linux-gnu.so _zoneinfo.cpython-314-x86_64-linux-gnu.so _zstd.cpython-314-x86_64-linux-gnu.so array.cpython-314-x86_64-linux-gnu.so binascii.cpython-314-x86_64-linux-gnu.so cmath.cpython-314-x86_64-linux-gnu.so fcntl.cpython-314-x86_64-linux-gnu.so grp.cpython-314-x86_64-linux-gnu.so libpython3.14.so.1.0 math.cpython-314-x86_64-linux-gnu.so mmap.cpython-314-x86_64-linux-gnu.so pyexpat.cpython-314-x86_64-linux-gnu.so readline.cpython-314-x86_64-linux-gnu.so resource.cpython-314-x86_64-linux-gnu.so select.cpython-314-x86_64-linux-gnu.so syslog.cpython-314-x86_64-linux-gnu.so termios.cpython-314-x86_64-linux-gnu.so unicodedata.cpython-314-x86_64-linux-gnu.so xxlimited.cpython-314-x86_64-linux-gnu.so xxlimited_35.cpython-314-x86_64-linux-gnu.so xxsubtype.cpython-314-x86_64-linux-gnu.so zlib.cpython-314-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_14(-)] >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1 libzstd.so.1
-RESTRICT: test
-SHA1: 859d7236f156a66d09c0ac0b7e9d6313ebf14ba6
-SIZE: 12472320
-SLOT: 3.14
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_19 ncurses readline sqlite ssl
-MTIME: 1791062456
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1792641755
-CPV: dev-lang/python-3.14.9
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth build debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl tail-call-interp test tk valgrind +llvm_slot_19 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: 459ff5c3060e49ecd101b81232822bac
-PATH: pkgs-dev-lang/python-3.14.9-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _asyncio.cpython-314-x86_64-linux-gnu.so _bisect.cpython-314-x86_64-linux-gnu.so _blake2.cpython-314-x86_64-linux-gnu.so _bz2.cpython-314-x86_64-linux-gnu.so _codecs_cn.cpython-314-x86_64-linux-gnu.so _codecs_hk.cpython-314-x86_64-linux-gnu.so _codecs_iso2022.cpython-314-x86_64-linux-gnu.so _codecs_jp.cpython-314-x86_64-linux-gnu.so _codecs_kr.cpython-314-x86_64-linux-gnu.so _codecs_tw.cpython-314-x86_64-linux-gnu.so _csv.cpython-314-x86_64-linux-gnu.so _ctypes.cpython-314-x86_64-linux-gnu.so _ctypes_test.cpython-314-x86_64-linux-gnu.so _curses.cpython-314-x86_64-linux-gnu.so _curses_panel.cpython-314-x86_64-linux-gnu.so _dbm.cpython-314-x86_64-linux-gnu.so _decimal.cpython-314-x86_64-linux-gnu.so _elementtree.cpython-314-x86_64-linux-gnu.so _gdbm.cpython-314-x86_64-linux-gnu.so _hashlib.cpython-314-x86_64-linux-gnu.so _heapq.cpython-314-x86_64-linux-gnu.so _hmac.cpython-314-x86_64-linux-gnu.so _interpchannels.cpython-314-x86_64-linux-gnu.so _interpqueues.cpython-314-x86_64-linux-gnu.so _interpreters.cpython-314-x86_64-linux-gnu.so _json.cpython-314-x86_64-linux-gnu.so _lsprof.cpython-314-x86_64-linux-gnu.so _lzma.cpython-314-x86_64-linux-gnu.so _md5.cpython-314-x86_64-linux-gnu.so _multibytecodec.cpython-314-x86_64-linux-gnu.so _multiprocessing.cpython-314-x86_64-linux-gnu.so _pickle.cpython-314-x86_64-linux-gnu.so _posixshmem.cpython-314-x86_64-linux-gnu.so _posixsubprocess.cpython-314-x86_64-linux-gnu.so _queue.cpython-314-x86_64-linux-gnu.so _random.cpython-314-x86_64-linux-gnu.so _remote_debugging.cpython-314-x86_64-linux-gnu.so _sha1.cpython-314-x86_64-linux-gnu.so _sha2.cpython-314-x86_64-linux-gnu.so _sha3.cpython-314-x86_64-linux-gnu.so _socket.cpython-314-x86_64-linux-gnu.so _sqlite3.cpython-314-x86_64-linux-gnu.so _ssl.cpython-314-x86_64-linux-gnu.so _statistics.cpython-314-x86_64-linux-gnu.so _struct.cpython-314-x86_64-linux-gnu.so _testbuffer.cpython-314-x86_64-linux-gnu.so _testcapi.cpython-314-x86_64-linux-gnu.so _testclinic.cpython-314-x86_64-linux-gnu.so _testclinic_limited.cpython-314-x86_64-linux-gnu.so _testimportmultiple.cpython-314-x86_64-linux-gnu.so _testinternalcapi.cpython-314-x86_64-linux-gnu.so _testlimitedcapi.cpython-314-x86_64-linux-gnu.so _testmultiphase.cpython-314-x86_64-linux-gnu.so _testsinglephase.cpython-314-x86_64-linux-gnu.so _uuid.cpython-314-x86_64-linux-gnu.so _xxtestfuzz.cpython-314-x86_64-linux-gnu.so _zoneinfo.cpython-314-x86_64-linux-gnu.so _zstd.cpython-314-x86_64-linux-gnu.so array.cpython-314-x86_64-linux-gnu.so binascii.cpython-314-x86_64-linux-gnu.so cmath.cpython-314-x86_64-linux-gnu.so fcntl.cpython-314-x86_64-linux-gnu.so grp.cpython-314-x86_64-linux-gnu.so libpython3.14.so.1.0 math.cpython-314-x86_64-linux-gnu.so mmap.cpython-314-x86_64-linux-gnu.so pyexpat.cpython-314-x86_64-linux-gnu.so readline.cpython-314-x86_64-linux-gnu.so resource.cpython-314-x86_64-linux-gnu.so select.cpython-314-x86_64-linux-gnu.so syslog.cpython-314-x86_64-linux-gnu.so termios.cpython-314-x86_64-linux-gnu.so unicodedata.cpython-314-x86_64-linux-gnu.so xxlimited.cpython-314-x86_64-linux-gnu.so xxlimited_35.cpython-314-x86_64-linux-gnu.so xxsubtype.cpython-314-x86_64-linux-gnu.so zlib.cpython-314-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_14(-)] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "371519bd206e55f49a87c581e4d5035e20562f5c"}
-REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1 libzstd.so.1
-RESTRICT: test
-SHA1: bf403d4703c5505dd1abbf03045dc231290f097e
-SIZE: 12707840
-SLOT: 3.14
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_19 ncurses readline sqlite ssl
-MTIME: 1792641759
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1792900932
-CPV: dev-lang/python-3.14.9_p1
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth build debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl tail-call-interp test tk valgrind +llvm_slot_19 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: 81a73d2d9d3183e7a6a9fd58ca7a42b8
-PATH: pkgs-dev-lang/python-3.14.9_p1-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _asyncio.cpython-314-x86_64-linux-gnu.so _bisect.cpython-314-x86_64-linux-gnu.so _blake2.cpython-314-x86_64-linux-gnu.so _bz2.cpython-314-x86_64-linux-gnu.so _codecs_cn.cpython-314-x86_64-linux-gnu.so _codecs_hk.cpython-314-x86_64-linux-gnu.so _codecs_iso2022.cpython-314-x86_64-linux-gnu.so _codecs_jp.cpython-314-x86_64-linux-gnu.so _codecs_kr.cpython-314-x86_64-linux-gnu.so _codecs_tw.cpython-314-x86_64-linux-gnu.so _csv.cpython-314-x86_64-linux-gnu.so _ctypes.cpython-314-x86_64-linux-gnu.so _ctypes_test.cpython-314-x86_64-linux-gnu.so _curses.cpython-314-x86_64-linux-gnu.so _curses_panel.cpython-314-x86_64-linux-gnu.so _dbm.cpython-314-x86_64-linux-gnu.so _decimal.cpython-314-x86_64-linux-gnu.so _elementtree.cpython-314-x86_64-linux-gnu.so _gdbm.cpython-314-x86_64-linux-gnu.so _hashlib.cpython-314-x86_64-linux-gnu.so _heapq.cpython-314-x86_64-linux-gnu.so _hmac.cpython-314-x86_64-linux-gnu.so _interpchannels.cpython-314-x86_64-linux-gnu.so _interpqueues.cpython-314-x86_64-linux-gnu.so _interpreters.cpython-314-x86_64-linux-gnu.so _json.cpython-314-x86_64-linux-gnu.so _lsprof.cpython-314-x86_64-linux-gnu.so _lzma.cpython-314-x86_64-linux-gnu.so _md5.cpython-314-x86_64-linux-gnu.so _multibytecodec.cpython-314-x86_64-linux-gnu.so _multiprocessing.cpython-314-x86_64-linux-gnu.so _pickle.cpython-314-x86_64-linux-gnu.so _posixshmem.cpython-314-x86_64-linux-gnu.so _posixsubprocess.cpython-314-x86_64-linux-gnu.so _queue.cpython-314-x86_64-linux-gnu.so _random.cpython-314-x86_64-linux-gnu.so _remote_debugging.cpython-314-x86_64-linux-gnu.so _sha1.cpython-314-x86_64-linux-gnu.so _sha2.cpython-314-x86_64-linux-gnu.so _sha3.cpython-314-x86_64-linux-gnu.so _socket.cpython-314-x86_64-linux-gnu.so _sqlite3.cpython-314-x86_64-linux-gnu.so _ssl.cpython-314-x86_64-linux-gnu.so _statistics.cpython-314-x86_64-linux-gnu.so _struct.cpython-314-x86_64-linux-gnu.so _testbuffer.cpython-314-x86_64-linux-gnu.so _testcapi.cpython-314-x86_64-linux-gnu.so _testclinic.cpython-314-x86_64-linux-gnu.so _testclinic_limited.cpython-314-x86_64-linux-gnu.so _testimportmultiple.cpython-314-x86_64-linux-gnu.so _testinternalcapi.cpython-314-x86_64-linux-gnu.so _testlimitedcapi.cpython-314-x86_64-linux-gnu.so _testmultiphase.cpython-314-x86_64-linux-gnu.so _testsinglephase.cpython-314-x86_64-linux-gnu.so _uuid.cpython-314-x86_64-linux-gnu.so _xxtestfuzz.cpython-314-x86_64-linux-gnu.so _zoneinfo.cpython-314-x86_64-linux-gnu.so _zstd.cpython-314-x86_64-linux-gnu.so array.cpython-314-x86_64-linux-gnu.so binascii.cpython-314-x86_64-linux-gnu.so cmath.cpython-314-x86_64-linux-gnu.so fcntl.cpython-314-x86_64-linux-gnu.so grp.cpython-314-x86_64-linux-gnu.so libpython3.14.so.1.0 math.cpython-314-x86_64-linux-gnu.so mmap.cpython-314-x86_64-linux-gnu.so pyexpat.cpython-314-x86_64-linux-gnu.so readline.cpython-314-x86_64-linux-gnu.so resource.cpython-314-x86_64-linux-gnu.so select.cpython-314-x86_64-linux-gnu.so syslog.cpython-314-x86_64-linux-gnu.so termios.cpython-314-x86_64-linux-gnu.so unicodedata.cpython-314-x86_64-linux-gnu.so xxlimited.cpython-314-x86_64-linux-gnu.so xxlimited_35.cpython-314-x86_64-linux-gnu.so xxsubtype.cpython-314-x86_64-linux-gnu.so zlib.cpython-314-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_14(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1 libzstd.so.1
-RESTRICT: test
-SHA1: bc545740af17990da256e220392e7f48a6a34c95
-SIZE: 12707840
-SLOT: 3.14
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_19 ncurses readline sqlite ssl
-MTIME: 1792900936
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1791605978
-CPV: dev-lang/python-3.15.0
-DEFINED_PHASES: compile configure install postinst prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth build debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl tail-call-interp test tk valgrind +llvm_slot_21 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: e3f39c24a88bb776a86c5ff572bc5b37
-PATH: pkgs-dev-lang/python-3.15.0-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _bisect.cpython-315-x86_64-linux-gnu.so _blake2.cpython-315-x86_64-linux-gnu.so _bz2.cpython-315-x86_64-linux-gnu.so _codecs_cn.cpython-315-x86_64-linux-gnu.so _codecs_hk.cpython-315-x86_64-linux-gnu.so _codecs_iso2022.cpython-315-x86_64-linux-gnu.so _codecs_jp.cpython-315-x86_64-linux-gnu.so _codecs_kr.cpython-315-x86_64-linux-gnu.so _codecs_tw.cpython-315-x86_64-linux-gnu.so _csv.cpython-315-x86_64-linux-gnu.so _ctypes.cpython-315-x86_64-linux-gnu.so _ctypes_test.cpython-315-x86_64-linux-gnu.so _curses.cpython-315-x86_64-linux-gnu.so _curses_panel.cpython-315-x86_64-linux-gnu.so _dbm.cpython-315-x86_64-linux-gnu.so _decimal.cpython-315-x86_64-linux-gnu.so _elementtree.cpython-315-x86_64-linux-gnu.so _gdbm.cpython-315-x86_64-linux-gnu.so _hashlib.cpython-315-x86_64-linux-gnu.so _heapq.cpython-315-x86_64-linux-gnu.so _hmac.cpython-315-x86_64-linux-gnu.so _interpchannels.cpython-315-x86_64-linux-gnu.so _interpqueues.cpython-315-x86_64-linux-gnu.so _interpreters.cpython-315-x86_64-linux-gnu.so _json.cpython-315-x86_64-linux-gnu.so _lsprof.cpython-315-x86_64-linux-gnu.so _lzma.cpython-315-x86_64-linux-gnu.so _math_integer.cpython-315-x86_64-linux-gnu.so _md5.cpython-315-x86_64-linux-gnu.so _multibytecodec.cpython-315-x86_64-linux-gnu.so _multiprocessing.cpython-315-x86_64-linux-gnu.so _pickle.cpython-315-x86_64-linux-gnu.so _posixshmem.cpython-315-x86_64-linux-gnu.so _posixsubprocess.cpython-315-x86_64-linux-gnu.so _queue.cpython-315-x86_64-linux-gnu.so _random.cpython-315-x86_64-linux-gnu.so _remote_debugging.cpython-315-x86_64-linux-gnu.so _sha1.cpython-315-x86_64-linux-gnu.so _sha2.cpython-315-x86_64-linux-gnu.so _sha3.cpython-315-x86_64-linux-gnu.so _socket.cpython-315-x86_64-linux-gnu.so _sqlite3.cpython-315-x86_64-linux-gnu.so _ssl.cpython-315-x86_64-linux-gnu.so _statistics.cpython-315-x86_64-linux-gnu.so _struct.cpython-315-x86_64-linux-gnu.so _testbuffer.cpython-315-x86_64-linux-gnu.so _testcapi.cpython-315-x86_64-linux-gnu.so _testclinic.cpython-315-x86_64-linux-gnu.so _testclinic_limited.cpython-315-x86_64-linux-gnu.so _testimportmultiple.cpython-315-x86_64-linux-gnu.so _testinternalcapi.cpython-315-x86_64-linux-gnu.so _testlimitedcapi.cpython-315-x86_64-linux-gnu.so _testmultiphase.cpython-315-x86_64-linux-gnu.so _testsinglephase.cpython-315-x86_64-linux-gnu.so _uuid.cpython-315-x86_64-linux-gnu.so _xxtestfuzz.cpython-315-x86_64-linux-gnu.so _zoneinfo.cpython-315-x86_64-linux-gnu.so _zstd.cpython-315-x86_64-linux-gnu.so array.cpython-315-x86_64-linux-gnu.so binascii.cpython-315-x86_64-linux-gnu.so cmath.cpython-315-x86_64-linux-gnu.so fcntl.cpython-315-x86_64-linux-gnu.so grp.cpython-315-x86_64-linux-gnu.so libpython3.15.so.1.0 math.cpython-315-x86_64-linux-gnu.so mmap.cpython-315-x86_64-linux-gnu.so pyexpat.cpython-315-x86_64-linux-gnu.so readline.cpython-315-x86_64-linux-gnu.so resource.cpython-315-x86_64-linux-gnu.so select.cpython-315-x86_64-linux-gnu.so syslog.cpython-315-x86_64-linux-gnu.so termios.cpython-315-x86_64-linux-gnu.so unicodedata.cpython-315-x86_64-linux-gnu.so xxlimited.cpython-315-x86_64-linux-gnu.so xxlimited_35.cpython-315-x86_64-linux-gnu.so xxlimited_3_13.cpython-315-x86_64-linux-gnu.so xxsubtype.cpython-315-x86_64-linux-gnu.so zlib.cpython-315-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_15(-)] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "c3d3839a3b2faf87db12c326df7b500765831082"}
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1 libzstd.so.1
-RESTRICT: test
-SHA1: 3ea2f3580d98a0c7e078699e9f643e8e7042dbd9
-SIZE: 13578240
-SLOT: 3.15
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_21 ncurses readline sqlite ssl
-MTIME: 1791605982
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-build/autoconf-archive app-alternatives/awk virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.19:1.19 >=dev-build/automake-1.18.1:1.18 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 )
-BUILD_ID: 1
-BUILD_TIME: 1792642630
-CPV: dev-lang/python-3.15.1
-DEFINED_PHASES: compile configure install postinst prepare pretend setup test unpack
-DEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3=
-EAPI: 8
-IUSE: bluetooth build debug +ensurepip examples gdbm jit libedit +ncurses pgo +readline +sqlite +ssl tail-call-interp test tk valgrind +llvm_slot_21 verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: PSF-2
-MD5: 41d28d0311ebdbd116b0f85c04a6fc7d
-PATH: pkgs-dev-lang/python-3.15.1-1.gpkg.tar
-PDEPEND: dev-python/ensurepip-pip
-PROVIDES: x86_64: _bisect.cpython-315-x86_64-linux-gnu.so _blake2.cpython-315-x86_64-linux-gnu.so _bz2.cpython-315-x86_64-linux-gnu.so _codecs_cn.cpython-315-x86_64-linux-gnu.so _codecs_hk.cpython-315-x86_64-linux-gnu.so _codecs_iso2022.cpython-315-x86_64-linux-gnu.so _codecs_jp.cpython-315-x86_64-linux-gnu.so _codecs_kr.cpython-315-x86_64-linux-gnu.so _codecs_tw.cpython-315-x86_64-linux-gnu.so _csv.cpython-315-x86_64-linux-gnu.so _ctypes.cpython-315-x86_64-linux-gnu.so _ctypes_test.cpython-315-x86_64-linux-gnu.so _curses.cpython-315-x86_64-linux-gnu.so _curses_panel.cpython-315-x86_64-linux-gnu.so _dbm.cpython-315-x86_64-linux-gnu.so _decimal.cpython-315-x86_64-linux-gnu.so _elementtree.cpython-315-x86_64-linux-gnu.so _gdbm.cpython-315-x86_64-linux-gnu.so _hashlib.cpython-315-x86_64-linux-gnu.so _heapq.cpython-315-x86_64-linux-gnu.so _hmac.cpython-315-x86_64-linux-gnu.so _interpchannels.cpython-315-x86_64-linux-gnu.so _interpqueues.cpython-315-x86_64-linux-gnu.so _interpreters.cpython-315-x86_64-linux-gnu.so _json.cpython-315-x86_64-linux-gnu.so _lsprof.cpython-315-x86_64-linux-gnu.so _lzma.cpython-315-x86_64-linux-gnu.so _math_integer.cpython-315-x86_64-linux-gnu.so _md5.cpython-315-x86_64-linux-gnu.so _multibytecodec.cpython-315-x86_64-linux-gnu.so _multiprocessing.cpython-315-x86_64-linux-gnu.so _pickle.cpython-315-x86_64-linux-gnu.so _posixshmem.cpython-315-x86_64-linux-gnu.so _posixsubprocess.cpython-315-x86_64-linux-gnu.so _queue.cpython-315-x86_64-linux-gnu.so _random.cpython-315-x86_64-linux-gnu.so _remote_debugging.cpython-315-x86_64-linux-gnu.so _sha1.cpython-315-x86_64-linux-gnu.so _sha2.cpython-315-x86_64-linux-gnu.so _sha3.cpython-315-x86_64-linux-gnu.so _socket.cpython-315-x86_64-linux-gnu.so _sqlite3.cpython-315-x86_64-linux-gnu.so _ssl.cpython-315-x86_64-linux-gnu.so _statistics.cpython-315-x86_64-linux-gnu.so _struct.cpython-315-x86_64-linux-gnu.so _testbuffer.cpython-315-x86_64-linux-gnu.so _testcapi.cpython-315-x86_64-linux-gnu.so _testclinic.cpython-315-x86_64-linux-gnu.so _testclinic_limited.cpython-315-x86_64-linux-gnu.so _testimportmultiple.cpython-315-x86_64-linux-gnu.so _testinternalcapi.cpython-315-x86_64-linux-gnu.so _testlimitedcapi.cpython-315-x86_64-linux-gnu.so _testmultiphase.cpython-315-x86_64-linux-gnu.so _testsinglephase.cpython-315-x86_64-linux-gnu.so _uuid.cpython-315-x86_64-linux-gnu.so _xxtestfuzz.cpython-315-x86_64-linux-gnu.so _zoneinfo.cpython-315-x86_64-linux-gnu.so _zstd.cpython-315-x86_64-linux-gnu.so array.cpython-315-x86_64-linux-gnu.so binascii.cpython-315-x86_64-linux-gnu.so cmath.cpython-315-x86_64-linux-gnu.so fcntl.cpython-315-x86_64-linux-gnu.so grp.cpython-315-x86_64-linux-gnu.so libpython3.15.so.1.0 math.cpython-315-x86_64-linux-gnu.so mmap.cpython-315-x86_64-linux-gnu.so pyexpat.cpython-315-x86_64-linux-gnu.so readline.cpython-315-x86_64-linux-gnu.so resource.cpython-315-x86_64-linux-gnu.so select.cpython-315-x86_64-linux-gnu.so syslog.cpython-315-x86_64-linux-gnu.so termios.cpython-315-x86_64-linux-gnu.so unicodedata.cpython-315-x86_64-linux-gnu.so xxlimited.cpython-315-x86_64-linux-gnu.so xxlimited_35.cpython-315-x86_64-linux-gnu.so xxlimited_3_13.cpython-315-x86_64-linux-gnu.so xxsubtype.cpython-315-x86_64-linux-gnu.so zlib.cpython-315-x86_64-linux-gnu.so
-RDEPEND: app-arch/bzip2:0/1= app-arch/xz-utils:0/0= app-misc/mime-types >=dev-libs/expat-2.1:0/0= dev-libs/libffi:0/8= dev-libs/mpdecimal:4/4= dev-python/gentoo-common sys-apps/util-linux >=virtual/zlib-1.1.3:0/1= virtual/libintl app-arch/zstd:0/1= sys-libs/gdbm:0/6=[berkdb] >=sys-libs/ncurses-5.2:0/6= >=sys-libs/readline-4.1:0/8= >=dev-db/sqlite-3.3.8:3/3= >=dev-libs/openssl-1.1.1:0/3= dev-lang/python-exec[python_targets_python3_15(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.3 libexpat.so.1 libffi.so.8 libgdbm.so.6 libgdbm_compat.so.4 liblzma.so.5 libm.so.6 libmpdec.so.4 libncursesw.so.6 libpanelw.so.6 libreadline.so.8 libsqlite3.so.0 libssl.so.3 libtinfow.so.6 libuuid.so.1 libz.so.1 libzstd.so.1
-RESTRICT: test
-SHA1: 1a3cefcc3bc09e7633ce56ddd0bcad0c9042548b
-SIZE: 13772800
-SLOT: 3.15
-USE: abi_x86_64 amd64 elibc_glibc ensurepip gdbm kernel_linux llvm_slot_21 ncurses readline sqlite ssl
-MTIME: 1792642635
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30809,30 +30606,6 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
-BUILD_ID: 2
-BUILD_TIME: 1791265469
-CPV: kde-plasma/spectacle-6.7.5
-DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.26.0:6 >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kcrash-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/kguiaddons-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kio-6.26.0:6 >=kde-frameworks/kirigami-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kservice-6.26.0:6 >=kde-frameworks/kstatusnotifieritem-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6[X] >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-frameworks/prison-6.26.0:6 >=kde-plasma/kpipewire-6.7.5:6 >=kde-plasma/layer-shell-qt-6.7.5:6 >=media-libs/kquickimageeditor-0.6.0:6 media-libs/opencv:0/4.14.0= x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-libs/plasma-wayland-protocols-1.19.0 dev-qt/qtbase:6
-EAPI: 8
-IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
-IUSE: share debug +handbook test
-KEYWORDS: amd64 arm64 ~ppc64 ~riscv ~x86
-LICENSE: LGPL-2+ FDL-1.3
-MD5: 3d27651c54ed05303311f048900b25c4
-PATH: pkgs-kde-plasma/spectacle-6.7.5-2.gpkg.tar
-RDEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.2=[concurrent,dbus,gui,wayland,widgets,X] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.26.0:6 >=kde-frameworks/kconfigwidgets-6.26.0:6 >=kde-frameworks/kcoreaddons-6.26.0:6 >=kde-frameworks/kcrash-6.26.0:6 >=kde-frameworks/kdbusaddons-6.26.0:6 >=kde-frameworks/kglobalaccel-6.26.0:6 >=kde-frameworks/kguiaddons-6.26.0:6 >=kde-frameworks/ki18n-6.26.0:6 >=kde-frameworks/kio-6.26.0:6 >=kde-frameworks/kirigami-6.26.0:6 >=kde-frameworks/knotifications-6.26.0:6 >=kde-frameworks/kservice-6.26.0:6 >=kde-frameworks/kstatusnotifieritem-6.26.0:6 >=kde-frameworks/kwidgetsaddons-6.26.0:6 >=kde-frameworks/kwindowsystem-6.26.0:6[X] >=kde-frameworks/kxmlgui-6.26.0:6 >=kde-frameworks/prison-6.26.0:6 >=kde-plasma/kpipewire-6.7.5:6 >=kde-plasma/layer-shell-qt-6.7.5:6 >=media-libs/kquickimageeditor-0.6.0:6 media-libs/opencv:0/4.14.0= x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-qt/qtimageformats-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kimageformats-6.26.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/spectacle:5 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6PrisonScanner.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libKPipeWireRecord.so.6 libKQuickImageEditor.so.1 libKirigamiPlatform.so.6 libLayerShellQtInterface.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libopencv_core.so.414 libopencv_imgproc.so.414 libstdc++.so.6 libtesseract.so.5 libwayland-client.so.0 libxcb-cursor.so.0 libxcb-image.so.0 libxcb-randr.so.0 libxcb-util.so.1 libxcb-xfixes.so.0 libxcb.so.1
-RESTRICT: test
-SHA1: f30fd5a13baca59b2932156e38ad408628d373d1
-SIZE: 2488320
-SLOT: 6
-USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
-MTIME: 1791265471
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.26.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.26.0:*
 BUILD_ID: 1
 BUILD_TIME: 1791618769
 CPV: kde-plasma/spectacle-6.7.5-r1
@@ -38562,56 +38335,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) || ( ( dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] ) ( dev-lang/ruby:3.2 virtual/rubygems[ruby_targets_ruby32(-)] ) ( dev-lang/ruby:3.4 virtual/rubygems[ruby_targets_ruby34(-)] ) ( dev-lang/ruby:4.0 virtual/rubygems[ruby_targets_ruby40(-)] ) ) app-accessibility/at-spi2-core dev-lang/perl >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils dev-util/gperf dev-util/unifdef sys-devel/bison sys-devel/gettext virtual/pkgconfig dev-util/wayland-scanner >=app-portage/elt-patches-20250306 app-arch/xz-utils app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
-BUILD_TIME: 1791145021
-CPV: net-libs/webkit-gtk-2.54.1-r400
-DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
-DEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/gtk+:3[introspection,wayland,X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols
-EAPI: 8
-IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
-IUSE: aqua avif cpu_flags_x86_sse cpu_flags_x86_sse2 custom-cflags examples gamepad keyring +gstreamer +introspection pdf jpegxl lcms seccomp spell systemd wayland X
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
-LICENSE: LGPL-2+ BSD
-MD5: 92e35afe9340538946c8e1e39d8ee0c5
-PATH: pkgs-net-libs/webkit-gtk-2.54.1-r400-1.gpkg.tar
-PROVIDES: x86_64: libjavascriptcoregtk-4.1.so.0 libwebkit2gtk-4.1.so.0 libwebkit2gtkinjectedbundle.so
-RDEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/gtk+:3[introspection,wayland,X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libX11.so.6 libatk-1.0.so.0 libatomic.so.1 libavif.so.16 libc.so.6 libcairo.so.2 libdrm.so.2 libenchant-2.so.2 libepoxy.so.0 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgcrypt.so.20 libgdk-3.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstapp-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstfft-1.0.so.0 libgstgl-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libgtk-3.so.0 libharfbuzz-icu.so.0 libharfbuzz.so.0 libhyphen.so.0 libicui18n.so.78 libicuuc.so.78 libjpeg.so.62 libjxl.so.0.12 liblcms2.so.2 libm.so.6 libpango-1.0.so.0 libpng16.so.16 libseccomp.so.2 libsecret-1.so.0 libsoup-3.0.so.0 libsqlite3.so.0 libstdc++.so.6 libtasn1.so.6 libwayland-client.so.0 libwayland-server.so.0 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libwoff2dec.so.1.0.2 libxml2.so.16 libxslt.so.1 libz.so.1
-RESTRICT: test
-SHA1: 079dde708359ef9eb79a6637062c2edda060673c
-SIZE: 51476480
-SLOT: 4.1/0
-USE: X abi_x86_64 amd64 avif cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc gstreamer introspection jpegxl kernel_linux keyring lcms pdf seccomp spell wayland
-MTIME: 1791145029
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) || ( ( dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] ) ( dev-lang/ruby:3.2 virtual/rubygems[ruby_targets_ruby32(-)] ) ( dev-lang/ruby:3.4 virtual/rubygems[ruby_targets_ruby34(-)] ) ( dev-lang/ruby:4.0 virtual/rubygems[ruby_targets_ruby40(-)] ) ) app-accessibility/at-spi2-core dev-lang/perl >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils dev-util/gperf dev-util/unifdef sys-devel/bison sys-devel/gettext virtual/pkgconfig dev-util/wayland-scanner >=app-portage/elt-patches-20250306 app-arch/xz-utils app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1791180805
-CPV: net-libs/webkit-gtk-2.54.1-r600
-DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
-DEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt >=gui-libs/gtk-4.14.0:4[introspection,wayland,X] media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols
-EAPI: 8
-IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
-IUSE: aqua avif cpu_flags_x86_sse cpu_flags_x86_sse2 custom-cflags examples gamepad keyring +gstreamer +introspection pdf jpegxl lcms seccomp spell systemd wayland X
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
-LICENSE: LGPL-2+ BSD
-MD5: 61e87597a0e47390e419b5f61e9408dc
-PATH: pkgs-net-libs/webkit-gtk-2.54.1-r600-1.gpkg.tar
-PROVIDES: x86_64: libjavascriptcoregtk-6.0.so.1 libwebkitgtk-6.0.so.4 libwebkitgtkinjectedbundle.so
-RDEPEND: app-accessibility/at-spi2-core:2 dev-db/sqlite:3 dev-libs/expat dev-libs/glib:2 dev-libs/hyphen dev-libs/icu:0/78= dev-libs/libgcrypt:0/20= dev-libs/libtasn1:0/6= dev-libs/libxml2:2/16= dev-libs/libxslt >=gui-libs/gtk-4.14.0:4[introspection,wayland,X] media-libs/fontconfig:1.0 media-libs/freetype:2 media-libs/harfbuzz:0/6.0.0=[icu(+)] media-libs/libjpeg-turbo:0/0.2= media-libs/libepoxy[egl(+)] media-libs/libglvnd media-libs/libpng:0/16= media-libs/libwebp:0/7= media-libs/mesa[opengl] media-libs/svt-av1 media-libs/woff2 net-libs/libsoup:3.0[introspection] virtual/zlib:0/1= x11-libs/cairo[X] x11-libs/libdrm media-libs/libavif:0/16.4= media-libs/gstreamer:1.0 media-libs/gst-plugins-base:1.0[egl,opengl,X] media-plugins/gst-plugins-opus:1.0 media-libs/gst-plugins-bad:1.0 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= media-libs/libjxl:0/0.12= app-crypt/libsecret media-libs/lcms:2 sys-apps/bubblewrap sys-libs/libseccomp sys-apps/xdg-dbus-proxy app-text/enchant:2 x11-libs/libX11 dev-libs/wayland dev-libs/wayland-protocols >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libX11.so.6 libatomic.so.1 libavif.so.16 libc.so.6 libcairo.so.2 libdrm.so.2 libenchant-2.so.2 libepoxy.so.0 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgcrypt.so.20 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstapp-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstfft-1.0.so.0 libgstgl-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libgtk-4.so.1 libharfbuzz-icu.so.0 libharfbuzz.so.0 libhyphen.so.0 libicui18n.so.78 libicuuc.so.78 libjpeg.so.62 libjxl.so.0.12 liblcms2.so.2 libm.so.6 libpango-1.0.so.0 libpng16.so.16 libseccomp.so.2 libsecret-1.so.0 libsoup-3.0.so.0 libsqlite3.so.0 libstdc++.so.6 libtasn1.so.6 libwayland-client.so.0 libwayland-server.so.0 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libwoff2dec.so.1.0.2 libxml2.so.16 libxslt.so.1 libz.so.1
-RESTRICT: test
-SHA1: e9cf80178693026add106a1f720552cf2600db49
-SIZE: 54671360
-SLOT: 6/0
-USE: X abi_x86_64 amd64 avif cpu_flags_x86_sse cpu_flags_x86_sse2 elibc_glibc gstreamer introspection jpegxl kernel_linux keyring lcms pdf seccomp spell wayland
-MTIME: 1791180816
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14[xml(+)] dev-lang/python:3.13[xml(+)] dev-lang/python:3.12[xml(+)] ) || ( ( dev-lang/ruby:3.3 virtual/rubygems[ruby_targets_ruby33(-)] ) ( dev-lang/ruby:3.2 virtual/rubygems[ruby_targets_ruby32(-)] ) ( dev-lang/ruby:3.4 virtual/rubygems[ruby_targets_ruby34(-)] ) ( dev-lang/ruby:4.0 virtual/rubygems[ruby_targets_ruby40(-)] ) ) app-accessibility/at-spi2-core dev-lang/perl >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils dev-util/gperf dev-util/unifdef sys-devel/bison sys-devel/gettext virtual/pkgconfig dev-util/wayland-scanner >=app-portage/elt-patches-20250306 app-arch/xz-utils app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
 BUILD_TIME: 1793095411
 CPV: net-libs/webkit-gtk-2.54.2-r400
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
@@ -39131,27 +38854,6 @@ SHA1: e106c1ccaf8750f34dff6fbe0635923e6416e01d
 SIZE: 931840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls pcre psl ssl zlib
 MTIME: 1793682912
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791282937
-CPV: net-misc/yt-dlp-2026.08.19
-DEFINED_PHASES: compile configure install postinst prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: +deno test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
-KEYWORDS: amd64 arm arm64 ~hppa ppc ppc64 ~riscv x86 ~arm64-macos ~x64-macos
-LICENSE: Unlicense
-MD5: 12ca7beb0ebc3726e7ec400a3fa1d1b9
-PATH: pkgs-net-misc/yt-dlp-2026.08.19-1.gpkg.tar
-RDEPEND: dev-python/pycryptodome[python_targets_python3_14(-)] =dev-python/yt-dlp-ejs-0.8*[python_targets_python3_14(-)] >=dev-lang/deno-bin-2.6.6 dev-lang/python:3.14
-RESTRICT: test
-SHA1: 04f06d7756d5470691f5b0232c410afbfe1d362c
-SIZE: 7680000
-USE: abi_x86_64 amd64 deno elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791282940
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
