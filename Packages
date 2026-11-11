@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794395434
-PACKAGES: 2003
+TIMESTAMP: 1794396352
+PACKAGES: 2004
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4827,9 +4827,9 @@ MTIME: 1794388013
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791283780
+BDEPEND: virtual/pkgconfig || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794395994
 CPV: dev-cpp/gtkmm-4.22.0
 DEFINED_PHASES: compile configure install setup test
 DEPEND: >=dev-cpp/glibmm-2.75.0:2.68 >=gui-libs/gtk-4.22.0:4[vulkan] >=dev-cpp/cairomm-1.15.4:1.16 >=dev-cpp/pangomm-2.50.0:2.48 >=x11-libs/gdk-pixbuf-2.35.5:2 >=media-libs/libepoxy-1.2 media-libs/vulkan-loader
@@ -4837,17 +4837,17 @@ EAPI: 8
 IUSE: gtk-doc test vulkan test
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: LGPL-2.1+
-MD5: dbaac93d3e29dceaf677a545a7f1aaf9
-PATH: pkgs-dev-cpp/gtkmm-4.22.0-1.gpkg.tar
+MD5: cfe6b7997281a47a35b3eee02fa9bec7
+PATH: pkgs-dev-cpp/gtkmm-4.22.0-2.gpkg.tar
 PROVIDES: x86_64: libgtkmm-4.0.so.0
-RDEPEND: >=dev-cpp/glibmm-2.75.0:2.68 >=gui-libs/gtk-4.22.0:4[vulkan] >=dev-cpp/cairomm-1.15.4:1.16 >=dev-cpp/pangomm-2.50.0:2.48 >=x11-libs/gdk-pixbuf-2.35.5:2 >=media-libs/libepoxy-1.2 media-libs/vulkan-loader >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-cpp/glibmm-2.75.0:2.68 >=gui-libs/gtk-4.22.0:4[vulkan] >=dev-cpp/cairomm-1.15.4:1.16 >=dev-cpp/pangomm-2.50.0:2.48 >=x11-libs/gdk-pixbuf-2.35.5:2 >=media-libs/libepoxy-1.2 media-libs/vulkan-loader >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libcairo-gobject.so.2 libcairomm-1.16.so.1 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libgiomm-2.68.so.1 libglib-2.0.so.0 libglibmm-2.68.so.1 libgobject-2.0.so.0 libgraphene-1.0.so.0 libgtk-4.so.1 libpangomm-2.48.so.1 libsigc-3.0.so.0 libstdc++.so.6
 RESTRICT: test test
-SHA1: c54b245b55f1c4b05a7401a0624927c1b9afe90d
-SIZE: 2222080
+SHA1: 853c287fc87415c03bd50068cd98a78cc9832590
+SIZE: 2252800
 SLOT: 4.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux vulkan
-MTIME: 1791283782
+MTIME: 1794395996
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36052,9 +36052,9 @@ MTIME: 1791228475
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791284884
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794395242
 CPV: media-sound/a2jmidid-12
 DEFINED_PHASES: compile configure install setup test
 DEPEND: media-libs/alsa-lib virtual/jack sys-apps/dbus dev-lang/python:3.13[threads(+)]
@@ -36062,14 +36062,14 @@ EAPI: 8
 IUSE: dbus python_single_target_python3_12 python_single_target_python3_13
 KEYWORDS: amd64 ~arm arm64 x86
 LICENSE: GPL-2
-MD5: e5479bf626fc51cf3b0b102d501273b0
-PATH: pkgs-media-sound/a2jmidid-12-1.gpkg.tar
-RDEPEND: media-libs/alsa-lib virtual/jack sys-apps/dbus dev-lang/python:3.13[threads(+)] >=sys-libs/glibc-2.43-r2
+MD5: 77fd86a9da11098d438d031bf2336f7e
+PATH: pkgs-media-sound/a2jmidid-12-2.gpkg.tar
+RDEPEND: media-libs/alsa-lib virtual/jack sys-apps/dbus dev-lang/python:3.13[threads(+)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libasound.so.2 libc.so.6 libdbus-1.so.3 libjack.so.0
-SHA1: a2a5b2ddb11ff7b3c38849bc2ae8a4d536778c50
+SHA1: b2bde29fa947099c53338164356948c2bc025b48
 SIZE: 81920
 USE: abi_x86_64 amd64 dbus elibc_glibc kernel_linux python_single_target_python3_13
-MTIME: 1791284885
+MTIME: 1794395243
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36765,6 +36765,28 @@ MTIME: 1793258641
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig sys-devel/gettext >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794396333
+CPV: media-sound/pavucontrol-6.1-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-cpp/gtkmm:4.0 dev-libs/json-glib dev-libs/libsigc++:3 >=media-libs/libpulse-15.0[glib] virtual/freedesktop-icon-theme media-libs/libcanberra
+EAPI: 8
+IUSE: sound
+KEYWORDS: amd64 arm ~arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 536097e8ecb50d4b51acfb4e5a4e06f6
+PATH: pkgs-media-sound/pavucontrol-6.1-r1-2.gpkg.tar
+RDEPEND: dev-cpp/gtkmm:4.0 dev-libs/json-glib dev-libs/libsigc++:3 >=media-libs/libpulse-15.0[glib] virtual/freedesktop-icon-theme media-libs/libcanberra >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
+REQUIRES: x86_64: libc.so.6 libcanberra.so.0 libgcc_s.so.1 libgio-2.0.so.0 libgiomm-2.68.so.1 libglib-2.0.so.0 libglibmm-2.68.so.1 libgobject-2.0.so.0 libgtk-4.so.1 libgtkmm-4.0.so.0 libjson-glib-1.0.so.0 libpulse-mainloop-glib.so.0 libpulse.so.0 libsigc-3.0.so.0 libstdc++.so.6
+SHA1: d21777b2a980781f74f4091f338650d7567deb31
+SIZE: 296960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux sound
+MTIME: 1794396334
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-qt/qttools:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791229104
@@ -36878,9 +36900,9 @@ MTIME: 1791244151
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 2
-BUILD_TIME: 1792991251
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 3
+BUILD_TIME: 1794396307
 CPV: media-sound/sonic-visualiser-5.2.1
 DEFINED_PHASES: compile configure install postinst postrm preinst test
 DEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.5.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse
@@ -36889,15 +36911,15 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: id3tag jack mad ogg opus osc +portaudio pulseaudio test
 KEYWORDS: amd64 x86
 LICENSE: GPL-2
-MD5: b48715a4f56884a1fae8d237b0ee333e
-PATH: pkgs-media-sound/sonic-visualiser-5.2.1-2.gpkg.tar
+MD5: df049436509bb79452845d40a89ce536
+PATH: pkgs-media-sound/sonic-visualiser-5.2.1-3.gpkg.tar
 RDEPEND: app-arch/bzip2 dev-libs/capnproto:0/1.5.0= dev-libs/serd dev-libs/sord dev-qt/qtbase:6[gui,network,ssl,widgets,xml] dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/dssi media-libs/ladspa-sdk media-libs/liblrdf media-libs/libsamplerate media-libs/libsndfile media-libs/rubberband media-libs/speex media-libs/vamp-plugin-sdk sci-libs/fftw:3.0/3= sys-libs/libunwind:0/8= virtual/jack media-libs/libmad media-libs/libfishsound media-libs/liboggz media-libs/liblo media-libs/portaudio media-libs/libpulse >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libasound.so.2 libbz2.so.1 libc.so.6 libcapnp.so.1.5.0 libfftw3.so.3 libfishsound.so.1 libgcc_s.so.1 libkj.so.1.5.0 liblo.so.7 liblrdf.so.2 libm.so.6 libmad.so.0 liboggz.so.2 libpulse.so.0 librubberband.so.3 libsamplerate.so.0 libserd-0.so.0 libsndfile.so.1 libsord-0.so.0 libstdc++.so.6 libvamp-hostsdk.so.3
 RESTRICT: test
-SHA1: e254a6f144eb4a9e8593e6bd1086d3525a185c8d
+SHA1: 9363ae85081d338ec3deb92bac3a74c26b9c3977
 SIZE: 5140480
 USE: abi_x86_64 amd64 elibc_glibc jack kernel_linux mad ogg osc portaudio pulseaudio
-MTIME: 1792991252
+MTIME: 1794396308
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -37150,9 +37172,9 @@ MTIME: 1793711245
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: dev-lang/python:3.14 >=dev-build/meson-1.3.0 virtual/pkgconfig dev-python/docutils >=dev-util/wayland-scanner-1.23 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 2
-BUILD_TIME: 1794027405
+BDEPEND: dev-lang/python:3.14 >=dev-build/meson-1.3.0 virtual/pkgconfig dev-python/docutils >=dev-util/wayland-scanner-1.23 >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 3
+BUILD_TIME: 1794396018
 CPV: media-video/mpv-0.42.0
 DEFINED_PHASES: compile configure install postinst postrm preinst setup test
 DEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.387.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/61.63.63=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= net-misc/curl media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav >=media-libs/libdvdread-7.1.1:0/8= media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] >=dev-libs/wayland-1.23 x11-libs/libxkbcommon virtual/zlib:0/1= x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers >=dev-libs/wayland-protocols-1.41
@@ -37161,17 +37183,17 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +X +alsa aqua archive bluray cdda +cli coreaudio +curl debug +drm dvb dvd +egl gamepad +iconv jack javascript jpeg lcms libcaca +libmpv +lua nvenc openal pipewire pulseaudio rubberband sdl selinux sixel sndio soc subrandr test tools +uchardet vaapi vdpau +vulkan wayland xv zimg zlib lua_single_target_luajit lua_single_target_lua5-1 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2.1+ GPL-2+ BSD ISC MIT
-MD5: 739393427175e7035701b213e2734ffc
-PATH: pkgs-media-video/mpv-0.42.0-2.gpkg.tar
+MD5: 1a93cb21abbe173943766e458a660565
+PATH: pkgs-media-video/mpv-0.42.0-3.gpkg.tar
 PROVIDES: x86_64: libmpv.so.2
 RDEPEND: media-libs/libass:0/9=[fontconfig] >=media-libs/libplacebo-7.387.0:0/387=[vulkan] >=media-video/ffmpeg-6.1:0/61.63.63=[encode(+),threads(+)] x11-libs/libX11 x11-libs/libXScrnSaver x11-libs/libXext x11-libs/libXfixes x11-libs/libXpresent x11-libs/libXrandr x11-libs/libXv media-libs/alsa-lib media-libs/libbluray:0/3= dev-libs/libcdio-paranoia:0/2= dev-libs/libcdio:0/21= net-misc/curl media-libs/libdisplay-info:0/4= x11-libs/libdrm media-libs/mesa[gbm(+)] media-libs/libdvdnav >=media-libs/libdvdread-7.1.1:0/8= media-libs/libglvnd media-libs/libplacebo[opengl] media-libs/libsdl2[joystick] virtual/libiconv app-i18n/uchardet virtual/jack media-libs/libjpeg-turbo:0/0.2= media-libs/lcms:2 dev-lang/luajit:2/2.1.1787165859= media-libs/openal media-video/pipewire:0/0.4= media-libs/libpulse media-libs/rubberband:0/3= media-libs/vulkan-loader[X,wayland] >=dev-libs/wayland-1.23 x11-libs/libxkbcommon virtual/zlib:0/1= dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libEGL.so.1 libSDL2-2.0.so.0 libX11.so.6 libXext.so.6 libXfixes.so.3 libXpresent.so.1 libXrandr.so.2 libXss.so.1 libXv.so.1 libasound.so.2 libass.so.9 libavcodec.so.63 libavdevice.so.63 libavfilter.so.12 libavformat.so.63 libavutil.so.61 libbluray.so.3 libc.so.6 libcdio.so.21 libcdio_cdda.so.2 libcdio_paranoia.so.2 libcurl.so.4 libdisplay-info.so.4 libdrm.so.2 libdvdnav.so.4 libdvdread.so.8 libgbm.so.1 libjack.so.0 libjpeg.so.62 liblcms2.so.2 libluajit-5.1.so.2 libm.so.6 libopenal.so.1 libpipewire-0.3.so.0 libplacebo.so.387 libpulse.so.0 librubberband.so.3 libswresample.so.7 libswscale.so.10 libuchardet.so.0 libvulkan.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libz.so.1
 RESTRICT: test
-SHA1: 4a1fb90740bba8875c5d31eb1a09a848cc02421c
+SHA1: a3835f3585bf2c088c007710902394e09629fc11
 SIZE: 3379200
 SLOT: 0/2
 USE: X abi_x86_64 alsa amd64 bluray cdda cli curl drm dvb dvd egl elibc_glibc gamepad iconv jack jpeg kernel_linux lcms libmpv lua lua_single_target_luajit openal pipewire pulseaudio python_single_target_python3_14 rubberband tools uchardet vulkan wayland xv zlib
-MTIME: 1794027406
+MTIME: 1794396019
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

@@ -598,6 +598,10 @@
    "path": "pkgs-dev-cpp/glibmm-2.66.8-r1-1.gpkg.tar"
   },
   {
+   "at": 1794396352,
+   "path": "pkgs-dev-cpp/gtkmm-4.22.0-1.gpkg.tar"
+  },
+  {
    "at": 1794387696,
    "path": "pkgs-dev-cpp/pangomm-2.46.5-1.gpkg.tar"
   },
@@ -1922,6 +1926,10 @@
    "path": "pkgs-media-plugins/mda-lv2-1.2.10-r1-1.gpkg.tar"
   },
   {
+   "at": 1794396352,
+   "path": "pkgs-media-sound/a2jmidid-12-1.gpkg.tar"
+  },
+  {
    "at": 1794118204,
    "path": "pkgs-media-sound/alsaplayer-0.99.82-r1-1.gpkg.tar"
   },
@@ -1954,6 +1962,10 @@
    "path": "pkgs-media-sound/linuxsampler-2.3.1-r1-2.gpkg.tar"
   },
   {
+   "at": 1794396352,
+   "path": "pkgs-media-sound/sonic-visualiser-5.2.1-2.gpkg.tar"
+  },
+  {
    "at": 1794118204,
    "path": "pkgs-media-sound/timidity_p__p_-2.15.0-r6-1.gpkg.tar"
   },
@@ -1972,6 +1984,10 @@
   {
    "at": 1794029255,
    "path": "pkgs-media-video/mpv-0.42.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794396352,
+   "path": "pkgs-media-video/mpv-0.42.0-2.gpkg.tar"
   },
   {
    "at": 1793174662,
