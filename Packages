@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794392918
-PACKAGES: 1988
+TIMESTAMP: 1794393247
+PACKAGES: 1991
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3272,24 +3272,24 @@ MTIME: 1791102456
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: dev-lang/python:3.14[xml(+),threads(+)] >=dev-build/meson-1.2.1-r1 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791696468
+BDEPEND: dev-lang/python:3.14[xml(+),threads(+)] >=dev-build/meson-1.2.1-r1 >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 4
+BUILD_TIME: 1794393113
 CPV: app-portage/gentoolkit-0.8.2
 DEFINED_PHASES: compile configure install postinst prepare test
 DEPEND: >=sys-apps/portage-3.0.57[python_targets_python3_14(-)]
 EAPI: 8
 IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: GPL-2
-MD5: 526eac74339322d240c1285f031b8ebd
-PATH: pkgs-app-portage/gentoolkit-0.8.2-1.gpkg.tar
+MD5: f12c396013f3a1d2e504f1a98829b590
+PATH: pkgs-app-portage/gentoolkit-0.8.2-4.gpkg.tar
 RDEPEND: >=sys-apps/portage-3.0.57[python_targets_python3_14(-)] dev-lang/python:3.14[xml(+),threads(+)] app-alternatives/awk sys-apps/gentoo-functions virtual/tmpfiles
 RESTRICT: test
-SHA1: 066d5d97845ec332088b86b7fcc8643cedc73ef6
+SHA1: 7af2259f5c1aac37959b93f94384f927467cc9df
 SIZE: 3543040
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791696470
+MTIME: 1794393114
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -5970,6 +5970,26 @@ SIZE: 79482880
 SLOT: 0.15
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791276215
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1794392954
+CPV: dev-lang/zig-bin-0.17.1
+DEFINED_PHASES: install postinst postrm unpack
+EAPI: 9
+IDEPEND: app-eselect/eselect-zig
+IUSE: verify-sig
+KEYWORDS: -* ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~s390 ~x86
+LICENSE: MIT Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT ) || ( Apache-2.0-with-LLVM-exceptions Apache-2.0 MIT BSD-2 ) public-domain BSD-2 ZPL ISC HPND BSD inner-net LGPL-2.1+
+MD5: e27d709b394f533615aae21ddec1ef9d
+PATH: pkgs-dev-lang/zig-bin-0.17.1-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
+SHA1: 4ab64a4568528013ff3a5361dd403ab227b39d46
+SIZE: 85381120
+SLOT: 0.17
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794392963
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17369,26 +17389,26 @@ MTIME: 1794374229
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-libs/wayland-protocols-1.16 >=dev-util/wayland-scanner-1.10.0 >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791278876
+BDEPEND: >=dev-libs/wayland-protocols-1.16 >=dev-util/wayland-scanner-1.10.0 >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794393006
 CPV: gui-libs/gtk4-layer-shell-1.3.0
 DEFINED_PHASES: compile configure install prepare setup test
 DEPEND: >=dev-libs/wayland-1.10.0 >=gui-libs/gtk-4.10.5:4[wayland] dev-libs/glib:2
 EAPI: 8
 IUSE: doc examples introspection +smoke-tests test vala
-KEYWORDS: ~amd64 ~arm64
+KEYWORDS: amd64 arm64
 LICENSE: MIT
-MD5: 3141021878f64c2f1968eee479a03389
-PATH: pkgs-gui-libs/gtk4-layer-shell-1.3.0-1.gpkg.tar
+MD5: 62e13016928db84f973387f062647f7d
+PATH: pkgs-gui-libs/gtk4-layer-shell-1.3.0-2.gpkg.tar
 PROVIDES: x86_64: libgtk4-layer-shell.so.0 liblayer-shell-preload.so
-RDEPEND: >=dev-libs/wayland-1.10.0 >=gui-libs/gtk-4.10.5:4[wayland] dev-libs/glib:2 >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-libs/wayland-1.10.0 >=gui-libs/gtk-4.10.5:4[wayland] dev-libs/glib:2 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-4.so.1 libwayland-client.so.0
 RESTRICT: test
-SHA1: 3f65e308a953df60dfe81cb840dd9f1f36f2e86b
+SHA1: 81bb71f80f00b7e5fac586d660994f8628d8c799
 SIZE: 81920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux smoke-tests
-MTIME: 1791278877
+MTIME: 1794393007
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17416,9 +17436,9 @@ MTIME: 1793165624
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/vala:0.56 dev-util/glib-utils sys-devel/gettext virtual/pkgconfig dev-lang/sassc app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791279124
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/vala:0.56 dev-util/glib-utils sys-devel/gettext virtual/pkgconfig dev-lang/sassc app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794393116
 CPV: gui-libs/libadwaita-1.9.4
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
 DEPEND: >=dev-libs/glib-2.84.0:2 >=gui-libs/gtk-4.21.1:4[introspection] dev-libs/appstream:0/5= dev-libs/fribidi >=dev-libs/gobject-introspection-1.83.2:0/0=
@@ -17427,17 +17447,17 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: examples gtk-doc +introspection test +vala test
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2.1+
-MD5: ed2dc3d1010baa24f09fcf5f009edcea
-PATH: pkgs-gui-libs/libadwaita-1.9.4-1.gpkg.tar
+MD5: a295de5f381a92d0fd2bb178643f5110
+PATH: pkgs-gui-libs/libadwaita-1.9.4-2.gpkg.tar
 PROVIDES: x86_64: libadwaita-1.so.0
-RDEPEND: >=dev-libs/glib-2.84.0:2 >=gui-libs/gtk-4.21.1:4[introspection] dev-libs/appstream:0/5= dev-libs/fribidi >=dev-libs/gobject-introspection-1.83.2:0/0= >=sys-libs/glibc-2.43-r2
+RDEPEND: >=dev-libs/glib-2.84.0:2 >=gui-libs/gtk-4.21.1:4[introspection] dev-libs/appstream:0/5= dev-libs/fribidi >=dev-libs/gobject-introspection-1.83.2:0/0= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libappstream.so.5 libc.so.6 libfribidi.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgraphene-1.0.so.0 libgtk-4.so.1 libm.so.6 libpango-1.0.so.0
 RESTRICT: test
-SHA1: bc185a5de7276c85187a1436a0583899fdf72e73
-SIZE: 1095680
+SHA1: 7b23e84d08ed62d42156b408de70fe079248f2d3
+SIZE: 1116160
 SLOT: 1
 USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux vala
-MTIME: 1791279126
+MTIME: 1794393117
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -41115,9 +41135,9 @@ MTIME: 1791226380
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791282675
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794392967
 CPV: sys-apps/usbutils-019
 DEFINED_PHASES: compile configure install postinst prepare setup test
 DEPEND: virtual/libusb:1/1= virtual/libudev:0/1=
@@ -41125,14 +41145,14 @@ EAPI: 8
 IUSE: python usbreset python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: GPL-2+
-MD5: 555d97acb1d6723037854e4b3dfe04ea
-PATH: pkgs-sys-apps/usbutils-019-1.gpkg.tar
-RDEPEND: virtual/libusb:1/1= virtual/libudev:0/1= >=sys-libs/glibc-2.43-r2
+MD5: 902070f8221987f72b42204630b3dba6
+PATH: pkgs-sys-apps/usbutils-019-2.gpkg.tar
+RDEPEND: virtual/libusb:1/1= virtual/libudev:0/1= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libudev.so.1 libusb-1.0.so.0
-SHA1: e0d1249f786c4fba4224c21c11ed9d3c79e49ec8
-SIZE: 133120
+SHA1: f209b58e1e44fcc73323e6d7b1dff52fde88f6ef
+SIZE: 143360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
-MTIME: 1791282677
+MTIME: 1794392968
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -42642,9 +42662,9 @@ MTIME: 1794109612
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: dev-util/glib-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791282972
+BDEPEND: dev-util/glib-utils >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794393123
 CPV: sys-power/power-profiles-daemon-0.30-r1
 DEFINED_PHASES: compile configure install postinst setup test
 DEPEND: dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] dev-libs/glib:2 >=dev-libs/libgudev-234 >=sys-auth/polkit-0.99 sys-power/upower
@@ -42652,15 +42672,16 @@ EAPI: 8
 IUSE: bash-completion gtk-doc man selinux test zsh-completion python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: GPL-3+
-MD5: 819dbeaf740e184ab7c368bd6e5cd5f4
-PATH: pkgs-sys-power/power-profiles-daemon-0.30-r1-1.gpkg.tar
-RDEPEND: dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] dev-libs/glib:2 >=dev-libs/libgudev-234 >=sys-auth/polkit-0.99 sys-power/upower >=sys-libs/glibc-2.43-r2
+MD5: 3376f2ee15204bd4d10b0c384ac4a38a
+PATH: pkgs-sys-power/power-profiles-daemon-0.30-r1-2.gpkg.tar
+RDEPEND: dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] dev-libs/glib:2 >=dev-libs/libgudev-234 >=sys-auth/polkit-0.99 sys-power/upower >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
 REQUIRES: x86_64: libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgudev-1.0.so.0 libpolkit-gobject-1.so.0
 RESTRICT: test
-SHA1: d3ed4eb75ad6a352302878cf4d193a2b6d1879cc
+SHA1: 27efab90f9feadf0b934bf6899df2a6b78f87e1d
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
-MTIME: 1791282973
+MTIME: 1794393124
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -43369,23 +43390,23 @@ MTIME: 1794376118
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791282681
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794392968
 CPV: x11-apps/xev-1.2.7
 DEFINED_PHASES: compile configure install test unpack
 DEPEND: x11-libs/libX11 x11-libs/libXrandr x11-base/xorg-proto
 EAPI: 8
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: MIT
-MD5: 66cb2a52c6bdb04ea914f057642433a8
-PATH: pkgs-x11-apps/xev-1.2.7-1.gpkg.tar
-RDEPEND: x11-libs/libX11 x11-libs/libXrandr >=sys-libs/glibc-2.43-r2
+MD5: 7146f8e481baabae157504069e9cf835
+PATH: pkgs-x11-apps/xev-1.2.7-2.gpkg.tar
+RDEPEND: x11-libs/libX11 x11-libs/libXrandr >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libX11.so.6 libXrandr.so.2 libc.so.6
-SHA1: cd2d76cc9a97f801658491ad47c9fb507581a13d
+SHA1: 8273d9b07270a7b24fa772ee9dc97eef5f5c9f63
 SIZE: 61440
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791282682
+MTIME: 1794392969
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -43406,6 +43427,26 @@ SHA1: 6b45eb4657fc5530cd74797f0468e5c4d049ed77
 SIZE: 174080
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1794376112
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794392970
+CPV: x11-apps/xkill-1.0.7
+DEFINED_PHASES: compile configure install test unpack
+DEPEND: x11-libs/libX11 x11-libs/libXmu x11-base/xorg-proto
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: MIT
+MD5: b514dab7c68203bf3c5127cb2b6cc8fd
+PATH: pkgs-x11-apps/xkill-1.0.7-2.gpkg.tar
+RDEPEND: x11-libs/libX11 x11-libs/libXmu >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXmuu.so.1 libc.so.6
+SHA1: 9c271c96109c9c9cf3d58d7916ab8b1a61162a72
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794392971
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -44623,6 +44664,26 @@ SHA1: b7dfec5c312c8c1f6b86837ad3cbbc360457d6cc
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791276283
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-libs/ncurses || ( >=dev-lang/zig-bin-0.17.1 >=dev-lang/zig-0.17.1 ) || ( dev-lang/zig:0.17 dev-lang/zig-bin:0.17 ) virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794393108
+CPV: x11-terms/ghostty-terminfo-1.4.0
+DEFINED_PHASES: compile configure install prepare setup test unpack
+EAPI: 8
+IUSE: symlink
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: a7dee941c116498f110fa393cef2ec63
+PATH: pkgs-x11-terms/ghostty-terminfo-1.4.0-1.gpkg.tar
+RDEPEND: sys-libs/ncurses[-minimal]
+RESTRICT: test
+SHA1: fdeeb8bafa9ad59593ebde32f577a5c031f4d368
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794393109
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
