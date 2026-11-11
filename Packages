@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794375473
-PACKAGES: 1880
+TIMESTAMP: 1794375786
+PACKAGES: 1882
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6794,6 +6794,29 @@ MTIME: 1793765397
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794375542
+CPV: dev-libs/libfmt-12.2.1
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: MIT
+MD5: cd2eb9e8840612629d497953797d090c
+PATH: pkgs-dev-libs/libfmt-12.2.1-1.gpkg.tar
+PROVIDES: x86_64: libfmt.so.12
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 49f0cb02f3c62e8cfe3b6913f74802dbb8a217d4
+SIZE: 276480
+SLOT: 0/12.2.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794375543
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 4
 BUILD_TIME: 1794109527
@@ -8345,27 +8368,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 4
-BUILD_TIME: 1793765411
+BUILD_ID: 5
+BUILD_TIME: 1794375627
 CPV: dev-libs/spdlog-1.17.0
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: >=dev-libs/libfmt-11.0.2:0/12.2.0=[abi_x86_64(-)]
+DEPEND: >=dev-libs/libfmt-11.0.2:0/12.2.1=[abi_x86_64(-)]
 EAPI: 8
 IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos
 LICENSE: MIT
-MD5: 7176242219ac291371977452d90ff307
-PATH: pkgs-dev-libs/spdlog-1.17.0-4.gpkg.tar
+MD5: 846b679b4ff3f6794fee03891efe96cf
+PATH: pkgs-dev-libs/spdlog-1.17.0-5.gpkg.tar
 PROVIDES: x86_64: libspdlog.so.1.17
-RDEPEND: >=dev-libs/libfmt-11.0.2:0/12.2.0=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "e99406921148088a6990e6b921440a2808a223a6"}
+RDEPEND: >=dev-libs/libfmt-11.0.2:0/12.2.1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
 REQUIRES: x86_64: libc.so.6 libfmt.so.12 libgcc_s.so.1 libstdc++.so.6
 RESTRICT: test
-SHA1: 19eb42c27ed6d0a8f3f2227cdf0729271354f98b
+SHA1: 9fca536e26b8b23c97e217811403289e809a7dd5
 SIZE: 256000
 SLOT: 0/1.17
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793765413
+MTIME: 1794375628
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33192,6 +33215,30 @@ SIZE: 768000
 SLOT: 0/2
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791092430
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794375615
+CPV: media-libs/taglib-2.3.2-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: virtual/zlib:0/1=[abi_x86_64(-)] dev-libs/utfcpp
+EAPI: 8
+IUSE: doc examples test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv ~sparc ~x86
+LICENSE: LGPL-2.1 MPL-1.1
+MD5: ff8a0d556298719f1bd47643477420b6
+PATH: pkgs-media-libs/taglib-2.3.2-r1-1.gpkg.tar
+PROVIDES: x86_64: libtag.so.2 libtag_c.so.2
+RDEPEND: virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: e988d8f22d003852badfce5ababa886d85a173a1
+SIZE: 798720
+SLOT: 0/2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794375616
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
