@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794376442
-PACKAGES: 1898
+TIMESTAMP: 1794376777
+PACKAGES: 1912
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -31318,6 +31318,30 @@ MTIME: 1791092206
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-util/glib-utils dev-util/wayland-scanner >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils >=sys-devel/gettext-0.17
+BUILD_ID: 4
+BUILD_TIME: 1794376514
+CPV: media-libs/gst-plugins-bad-1.26.11
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: !media-plugins/gst-plugins-va !media-plugins/gst-transcoder >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-),introspection] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-),introspection] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=app-arch/bzip2-1.0.6-r4[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] >=dev-libs/wayland-1.4.0[abi_x86_64(-)] >=x11-libs/libdrm-2.4.98[abi_x86_64(-)] >=dev-libs/wayland-protocols-1.26 >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: X bzip2 +introspection +orc udev vaapi vnc vulkan wayland abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test nls test verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: LGPL-2
+MD5: 0df9ca34379dcc648edf6269be25157a
+PATH: pkgs-media-libs/gst-plugins-bad-1.26.11-4.gpkg.tar
+PROVIDES: x86_64: libgstaccurip.so libgstadaptivedemux-1.0.so.0 libgstadpcmdec.so libgstadpcmenc.so libgstaiff.so libgstanalytics-1.0.so.0 libgstasfmux.so libgstaudiobuffersplit.so libgstaudiofxbad.so libgstaudiolatency.so libgstaudiomixmatrix.so libgstaudiovisualizers.so libgstautoconvert.so libgstbadaudio-1.0.so.0 libgstbasecamerabinsrc-1.0.so.0 libgstbayer.so libgstbz2.so libgstcamerabin.so libgstcodecalpha.so libgstcodecparsers-1.0.so.0 libgstcodecs-1.0.so.0 libgstcodectimestamper.so libgstcoloreffects.so libgstcuda-1.0.so.0 libgstdebugutilsbad.so libgstdvbsubenc.so libgstdvbsuboverlay.so libgstdvdspu.so libgstdxva-1.0.so.0 libgstfaceoverlay.so libgstfestival.so libgstfieldanalysis.so libgstfreeverb.so libgstfrei0r.so libgstgaudieffects.so libgstgdp.so libgstgeometrictransform.so libgstid3tag.so libgstinsertbin-1.0.so.0 libgstinsertbin.so libgstinter.so libgstinterlace.so libgstipcpipeline.so libgstisoff-1.0.so.0 libgstivfparse.so libgstivtc.so libgstjp2kdecimator.so libgstjpegformat.so libgstlegacyrawparse.so libgstmidi.so libgstmpegpsdemux.so libgstmpegpsmux.so libgstmpegts-1.0.so.0 libgstmpegtsdemux.so libgstmpegtsmux.so libgstmse-1.0.so.0 libgstmse.so libgstmxf.so libgstnetsim.so libgstpcapparse.so libgstphotography-1.0.so.0 libgstplay-1.0.so.0 libgstplayer-1.0.so.0 libgstpnm.so libgstproxy.so libgstremovesilence.so libgstrist.so libgstrtmp2.so libgstrtpmanagerbad.so libgstrtponvif.so libgstsctp-1.0.so.0 libgstsdpelem.so libgstsegmentclip.so libgstshm.so libgstsiren.so libgstsmooth.so libgstspeed.so libgstsubenc.so libgstswitchbin.so libgsttensordecoders.so libgsttimecode.so libgsttranscoder-1.0.so.0 libgstunixfd.so libgsturidownloader-1.0.so.0 libgstvideofiltersbad.so libgstvideoframe_audiolevel.so libgstvideoparsersbad.so libgstvideosignal.so libgstvmnc.so libgstvulkan-1.0.so.0 libgstvulkan.so libgstwayland-1.0.so.0 libgstwaylandsink.so libgstwebrtc-1.0.so.0 libgsty4mdec.so
+RDEPEND: !media-plugins/gst-plugins-va !media-plugins/gst-transcoder >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-),introspection] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-),introspection] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=app-arch/bzip2-1.0.6-r4[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] x11-libs/libxcb:0/1.12=[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] >=dev-libs/wayland-1.4.0[abi_x86_64(-)] >=x11-libs/libdrm-2.4.98[abi_x86_64(-)] >=dev-libs/wayland-protocols-1.26 >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libbz2.so.1 libc.so.6 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstapp-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstfft-1.0.so.0 libgstnet-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgstrtp-1.0.so.0 libgstsdp-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libm.so.6 liborc-0.4.so.0 libstdc++.so.6 libvulkan.so.1 libwayland-client.so.0 libxcb.so.1 libxkbcommon-x11.so.0 libxkbcommon.so.0
+RESTRICT: test test
+SHA1: bccf173c0c3c8276aeefb71ace4af1d82865791d
+SIZE: 3553280
+SLOT: 1.0
+USE: X abi_x86_64 amd64 bzip2 elibc_glibc introspection kernel_linux nls orc udev vulkan wayland
+MTIME: 1794376516
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils >=sys-devel/gettext-0.17
 BUILD_ID: 5
 BUILD_TIME: 1794371641
@@ -31339,6 +31363,54 @@ SIZE: 3655680
 SLOT: 1.0
 USE: X abi_x86_64 alsa amd64 egl elibc_glibc gles2 introspection kernel_linux nls ogg opengl orc pango theora vorbis wayland
 MTIME: 1794371643
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig >=sys-devel/gettext-0.17
+BUILD_ID: 2
+BUILD_TIME: 1794376376
+CPV: media-libs/gst-plugins-good-1.26.11
+DEFINED_PHASES: compile configure install setup test unpack
+DEPEND: !<media-libs/gst-plugins-ugly-1.22.3 >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=app-arch/bzip2-1.0.6-r4[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: +orc abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test nls test verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: LGPL-2.1+
+MD5: 97effb03430c9a18869ebf22bb908a1c
+PATH: pkgs-media-libs/gst-plugins-good-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstalaw.so libgstalpha.so libgstalphacolor.so libgstapetag.so libgstaudiofx.so libgstaudioparsers.so libgstauparse.so libgstautodetect.so libgstavi.so libgstcutter.so libgstdebug.so libgstdeinterlace.so libgstdtmf.so libgsteffectv.so libgstequalizer.so libgstflv.so libgstflxdec.so libgstgoom.so libgstgoom2k1.so libgsticydemux.so libgstid3demux.so libgstimagefreeze.so libgstinterleave.so libgstisomp4.so libgstlevel.so libgstmatroska.so libgstmonoscope.so libgstmulaw.so libgstmultifile.so libgstmultipart.so libgstnavigationtest.so libgstreplaygain.so libgstrtp.so libgstrtpmanager.so libgstrtsp.so libgstshapewipe.so libgstsmpte.so libgstspectrum.so libgstudp.so libgstvideobox.so libgstvideocrop.so libgstvideofilter.so libgstvideomixer.so libgstwavenc.so libgstwavparse.so libgstxingmux.so libgsty4menc.so
+RDEPEND: !<media-libs/gst-plugins-ugly-1.22.3 >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=app-arch/bzip2-1.0.6-r4[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libbz2.so.1 libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstfft-1.0.so.0 libgstnet-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgstriff-1.0.so.0 libgstrtp-1.0.so.0 libgstrtsp-1.0.so.0 libgstsdp-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libm.so.6 liborc-0.4.so.0 libz.so.1
+RESTRICT: test test
+SHA1: 6c3ea4a60dc55cdd009153a4800ca4238d99e1d5
+SIZE: 2365440
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls orc
+MTIME: 1794376378
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig >=sys-devel/gettext-0.17
+BUILD_ID: 2
+BUILD_TIME: 1794376386
+CPV: media-libs/gst-plugins-ugly-1.26.11
+DEFINED_PHASES: compile configure install setup test unpack
+DEPEND: >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test nls test verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: LGPL-2+
+MD5: f1e851e1dc3eb7729cbac80a285469c1
+PATH: pkgs-media-libs/gst-plugins-ugly-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstasf.so libgstdvdlpcmdec.so libgstdvdsub.so libgstrealmedia.so
+RDEPEND: >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgstriff-1.0.so.0 libgstrtp-1.0.so.0 libgstrtsp-1.0.so.0 libgstsdp-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0
+RESTRICT: test test
+SHA1: e4468f481e62761166303ebf7e9aeba4de2e8e04
+SIZE: 245760
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
+MTIME: 1794376387
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33581,6 +33653,150 @@ MTIME: 1791282710
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794376551
+CPV: media-plugins/gst-plugins-a52dec-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-libs/a52dec-0.7.4-r6[abi_x86_64(-)] >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: +orc abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: ca29614299a68232b2ce15f75f3512d6
+PATH: pkgs-media-plugins/gst-plugins-a52dec-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgsta52dec.so
+RDEPEND: >=media-libs/a52dec-0.7.4-r6[abi_x86_64(-)] >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: liba52.so.0 libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 liborc-0.4.so.0
+RESTRICT: test
+SHA1: feb4d6d0c881a9777c8dad620097cd6307284ea0
+SIZE: 61440
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux orc
+MTIME: 1794376552
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils
+BUILD_ID: 2
+BUILD_TIME: 1794376544
+CPV: media-plugins/gst-plugins-cdparanoia-1.26.11
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=media-sound/cdparanoia-3.10.2-r6[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 5b111995b353298f1def733f4af2cdb5
+PATH: pkgs-media-plugins/gst-plugins-cdparanoia-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstcdparanoia.so
+RDEPEND: >=media-sound/cdparanoia-3.10.2-r6[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcdda_interface.so.0 libcdda_paranoia.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstreamer-1.0.so.0
+RESTRICT: test
+SHA1: 8a5f458ef1502c01e05cc82d9699dc5a8b6e5409
+SIZE: 61440
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376544
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils
+BUILD_ID: 2
+BUILD_TIME: 1794376573
+CPV: media-plugins/gst-plugins-dts-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-libs/libdca-0.0.5-r3[abi_x86_64(-)] >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: +orc abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv x86
+LICENSE: GPL-2
+MD5: 81dfd8540ebc0742186a5e706e5bed1c
+PATH: pkgs-media-plugins/gst-plugins-dts-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstdtsdec.so
+RDEPEND: >=media-libs/libdca-0.0.5-r3[abi_x86_64(-)] >=dev-lang/orc-0.4.41[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libdca.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 liborc-0.4.so.0
+RESTRICT: test
+SHA1: a3526a9889219f99f1c8c9e587bfb85c0040790d
+SIZE: 61440
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux orc
+MTIME: 1794376574
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794376581
+CPV: media-plugins/gst-plugins-dvdread-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-libs/libdvdread-4.2.0-r1:0/8=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm ~arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 78706cf918518bff9fc49002a15bee12
+PATH: pkgs-media-plugins/gst-plugins-dvdread-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstdvdread.so
+RDEPEND: >=media-libs/libdvdread-4.2.0-r1:0/8=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libdvdread.so.8 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0
+RESTRICT: test
+SHA1: 2f9fe5f8400be375c62c5aefe1d437e4d7ef0a0a
+SIZE: 71680
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376582
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils
+BUILD_ID: 2
+BUILD_TIME: 1794376562
+CPV: media-plugins/gst-plugins-faad-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-libs/faad2-2.7-r3[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 ~arm ~arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 90d5eb3d6ae685dce7e6f24cf47b8d35
+PATH: pkgs-media-plugins/gst-plugins-faad-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstfaad.so
+RDEPEND: >=media-libs/faad2-2.7-r3[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libfaad.so.2 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0
+RESTRICT: test
+SHA1: aedffe4c6a945ad3b426cae533f289cf30aba40b
+SIZE: 61440
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376563
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794376602
+CPV: media-plugins/gst-plugins-flac-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-libs/flac-1.2.1-r5:0/11-14=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: e7e72b92acb3711dc502ffaea48acbeb
+PATH: pkgs-media-plugins/gst-plugins-flac-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstflac.so
+RDEPEND: >=media-libs/flac-1.2.1-r5:0/11-14=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libFLAC.so.14 libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0
+RESTRICT: test
+SHA1: 2d466b845749c06bdce010874db7c2e7eb263a74
+SIZE: 81920
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376603
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1791147206
@@ -33673,9 +33889,81 @@ MTIME: 1791214654
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791123103
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794376610
+CPV: media-plugins/gst-plugins-mpg123-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-sound/mpg123-base-1.23[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 240e5b3a08e17471eb6b75331ab21ffb
+PATH: pkgs-media-plugins/gst-plugins-mpg123-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstmpg123.so
+RDEPEND: >=media-sound/mpg123-base-1.23[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstreamer-1.0.so.0 libmpg123.so.0
+RESTRICT: test
+SHA1: ac663e4b27ca1024f48bbd77d0a3eaeb8fc15cc4
+SIZE: 61440
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376611
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils
+BUILD_ID: 2
+BUILD_TIME: 1794376534
+CPV: media-plugins/gst-plugins-opus-1.26.11
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=media-libs/opus-1.1:0/0=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: e87f6ead7a5ae1cc4c51e84c39be0709
+PATH: pkgs-media-plugins/gst-plugins-opus-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstopus.so libgstopusparse.so
+RDEPEND: >=media-libs/opus-1.1:0/0=[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-),ogg] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libm.so.6 libopus.so.0
+RESTRICT: test
+SHA1: df2e4230ead4a108111c19179a24a193d6569f88
+SIZE: 81920
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376535
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig dev-util/glib-utils
+BUILD_ID: 2
+BUILD_TIME: 1794376594
+CPV: media-plugins/gst-plugins-resindvd-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-libs/libdvdnav-4.2.0-r1:0/0=[abi_x86_64(-)] >=media-libs/libdvdread-4.2.0-r1:0/8=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm ~arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 6161fd1b50c9e5340221ebe2865520f2
+PATH: pkgs-media-plugins/gst-plugins-resindvd-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstresindvd.so
+RDEPEND: >=media-libs/libdvdnav-4.2.0-r1:0/0=[abi_x86_64(-)] >=media-libs/libdvdread-4.2.0-r1:0/8=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-bad-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libdvdnav.so.4 libdvdread.so.8 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstbase-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0
+RESTRICT: test
+SHA1: 1e6d284c509bcff5bf3017c14baad4b7910f1de7
+SIZE: 133120
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376595
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794376618
 CPV: media-plugins/gst-plugins-wavpack-1.26.11
 DEFINED_PHASES: compile configure install setup test
 DEPEND: >=media-sound/wavpack-4.60.1-r1[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)]
@@ -33683,17 +33971,41 @@ EAPI: 8
 IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 ~arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
 LICENSE: GPL-2
-MD5: b2eedb1cb1959bcc96df4370da494bb0
-PATH: pkgs-media-plugins/gst-plugins-wavpack-1.26.11-1.gpkg.tar
+MD5: 522070550fc4c2994abd675b5259f6c4
+PATH: pkgs-media-plugins/gst-plugins-wavpack-1.26.11-2.gpkg.tar
 PROVIDES: x86_64: libgstwavpack.so
-RDEPEND: >=media-sound/wavpack-4.60.1-r1[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+RDEPEND: >=media-sound/wavpack-4.60.1-r1[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstreamer-1.0.so.0 libwavpack.so.1
 RESTRICT: test
-SHA1: bd2bd2a63de630b6b8f43e8b20ad0238eba0d4eb
+SHA1: 91fc56f7110e098cf69cfd1b0c0bfc2aacdd55c5
 SIZE: 71680
 SLOT: 1.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791123105
+MTIME: 1794376619
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794376626
+CPV: media-plugins/gst-plugins-x264-1.26.11
+DEFINED_PHASES: compile configure install setup test
+DEPEND: >=media-libs/x264-0.0.20130506:0/164=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: 2ac0d40cbe4349579e7dcbb094cc30cd
+PATH: pkgs-media-plugins/gst-plugins-x264-1.26.11-2.gpkg.tar
+PROVIDES: x86_64: libgstx264.so
+RDEPEND: >=media-libs/x264-0.0.20130506:0/164=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-ugly-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstbase-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0 libx264.so.164
+RESTRICT: test
+SHA1: 1397c7450cf1e4cf77e749d8ec8f51920bbfe538
+SIZE: 81920
+SLOT: 1.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376626
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -38197,6 +38509,31 @@ SHA1: 85ec3201b4c30d7523d9bf5646687bcbdf5896d3
 SIZE: 20480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791228509
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-libs/libxslt >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils sys-devel/gettext virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 5
+BUILD_TIME: 1794376636
+CPV: sys-apps/accountsservice-26.27.3
+DEFINED_PHASES: compile configure install prepare setup test
+DEPEND: >=dev-libs/glib-2.70:2 sys-auth/polkit >=dev-libs/json-c-0.15 virtual/libcrypt:0/2= >=sys-auth/elogind-229.4 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= sys-apps/dbus
+EAPI: 8
+IUSE: doc elogind gtk-doc +introspection selinux systemd test vala xcrypt
+KEYWORDS: ~alpha amd64 arm arm64 ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-3+
+MD5: 00239ee848e1c0a8b110355581b6eeb0
+PATH: pkgs-sys-apps/accountsservice-26.27.3-5.gpkg.tar
+PROVIDES: x86_64: libaccountsservice.so.1
+RDEPEND: >=dev-libs/glib-2.70:2 sys-auth/polkit >=dev-libs/json-c-0.15 virtual/libcrypt:0/2= >=sys-auth/elogind-229.4 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libelogind.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjson-c.so.5 libpolkit-gobject-1.so.0
+RESTRICT: test
+SHA1: 78d2a4cadc7430110d24aa83c82fca2f411e8a03
+SIZE: 225280
+SLOT: 0/1
+USE: abi_x86_64 amd64 elibc_glibc elogind introspection kernel_linux
+MTIME: 1794376637
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
