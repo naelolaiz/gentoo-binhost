@@ -1686,6 +1686,10 @@
    "path": "pkgs-media-libs/gd-2.3.3-r4-37.gpkg.tar"
   },
   {
+   "at": 1794389246,
+   "path": "pkgs-media-libs/gegl-0.4.72-1.gpkg.tar"
+  },
+  {
    "at": 1794387696,
    "path": "pkgs-media-libs/gexiv2-0.14.7-r2-1.gpkg.tar"
   },
@@ -2202,6 +2206,10 @@
    "path": "pkgs-sys-apps/xdg-desktop-portal-1.22.1-r1-1.gpkg.tar"
   },
   {
+   "at": 1794389246,
+   "path": "pkgs-sys-apps/xdg-desktop-portal-gtk-1.15.3-1.gpkg.tar"
+  },
+  {
    "at": 1794369507,
    "path": "pkgs-sys-auth/elogind-257.16-1.gpkg.tar"
   },
@@ -2356,6 +2364,10 @@
   {
    "at": 1794388623,
    "path": "pkgs-x11-misc/xdg-user-dirs-0.20-1.gpkg.tar"
+  },
+  {
+   "at": 1794389246,
+   "path": "pkgs-x11-misc/xdg-user-dirs-gtk-0.16-1.gpkg.tar"
   },
   {
    "at": 1794370176,

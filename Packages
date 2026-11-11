@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794388623
-PACKAGES: 1964
+TIMESTAMP: 1794389246
+PACKAGES: 1968
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -27844,6 +27844,30 @@ MTIME: 1793314585
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794388514
+CPV: kde-plasma/ksshaskpass-6.8.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwallet-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 05a5b540a1ceea7f34d1f6f0d141b589
+PATH: pkgs-kde-plasma/ksshaskpass-6.8.3-1.gpkg.tar
+RDEPEND: >=dev-libs/qtkeychain-0.16.0:0/1= >=dev-qt/qtbase-6.11.2:6[widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwallet-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/ksshaskpass:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libqt6keychain.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: e39d68f7335389f9bad4f22cf060835c08c6c8ab
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794388515
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
 BUILD_ID: 1
 BUILD_TIME: 1792580422
@@ -28332,6 +28356,29 @@ SIZE: 51200
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793313646
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794388506
+CPV: kde-plasma/kwrited-6.8.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpty-6.30.0:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: 92fbdc3454833f7d4c29fd1519d21d83
+PATH: pkgs-kde-plasma/kwrited-6.8.3-1.gpkg.tar
+PROVIDES: x86_64: kwrited.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui] >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpty-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kwrited:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6Notifications.so.6 libKF6Pty.so.6 libQt6Core.so.6 libc.so.6 libstdc++.so.6
+SHA1: 954d86e593bbff1eb437f094c795c1724f996718
+SIZE: 61440
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794388506
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29845,6 +29892,30 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
 BUILD_ID: 1
+BUILD_TIME: 1794388752
+CPV: kde-plasma/plasma5support-6.8.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,sql,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kholidays-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kidletime-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kunitconversion-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/plasma-activities-6.8.3:6/7= dev-qt/qtbase:6
+EAPI: 8
+IUSE: activities geolocation ksysguard debug doc test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2+ LGPL-2+
+MD5: 153c940c9463c3b704a4ef242e398bd3
+PATH: pkgs-kde-plasma/plasma5support-6.8.3-1.gpkg.tar
+PROVIDES: x86_64: libPlasma5Support.so.6 libplasma5supportplugin.so libweather_ion.so.7 plasma_engine_activities.so plasma_engine_apps.so plasma_engine_bbcukmet.so plasma_engine_dwd.so plasma_engine_envcan.so plasma_engine_executable.so plasma_engine_favicons.so plasma_engine_filebrowser.so plasma_engine_hotplug.so plasma_engine_keystate.so plasma_engine_mouse.so plasma_engine_noaa.so plasma_engine_packagekit.so plasma_engine_places.so plasma_engine_powermanagement.so plasma_engine_soliddevice.so plasma_engine_time.so plasma_engine_weather.so plasma_engine_wettercom.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,sql,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kholidays-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kidletime-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kunitconversion-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 >=kde-plasma/plasma-activities-6.8.3:6/7= !kde-plasma/plasma-workspace:5 !<kde-plasma/plasma-workspace-6.5.90:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/plasma5support:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6Holidays.so.6 libKF6I18n.so.6 libKF6IdleTime.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6Solid.so.6 libKF6UnitConversion.so.6 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Sql.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: 65648a9f05893fce9fd028d322cbd5d9f01492b8
+SIZE: 1597440
+SLOT: 6
+USE: abi_x86_64 activities amd64 elibc_glibc kernel_linux
+MTIME: 1794388754
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
 BUILD_TIME: 1792562384
 CPV: kde-plasma/polkit-kde-agent-6.8.1
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
@@ -30273,6 +30344,30 @@ SIZE: 481280
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1793314176
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794388617
+CPV: kde-plasma/systemsettings-6.8.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/krunner-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-plasma/plasma-activities-6.8.3:6/7= dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug +handbook
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: eed2243fdb620707ef44679b4e95acea
+PATH: pkgs-kde-plasma/systemsettings-6.8.3-1.gpkg.tar
+PROVIDES: x86_64: krunner_systemsettings.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6[widgets] >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kcompletion-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/kitemmodels-6.30.0:6 >=kde-frameworks/kitemviews-6.30.0:6 >=kde-frameworks/kjobwidgets-6.30.0:6 >=kde-frameworks/krunner-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-plasma/plasma-activities-6.8.3:6/7= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/systemsettings:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6AuthCore.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6ItemModels.so.6 libKF6ItemViews.so.6 libKF6JobWidgets.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6Runner.so.6 libKF6Service.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+SHA1: 5446c41356846dcc8a7fd8d3cf95e5658a34cb5a
+SIZE: 481280
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux
+MTIME: 1794388618
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32212,27 +32307,27 @@ MTIME: 1794113367
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791263267
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 3
+BUILD_TIME: 1794389098
 CPV: media-libs/gegl-0.4.72
 DEFINED_PHASES: compile configure install postinst prepare pretend setup test
-DEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/60.62.62= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7=
+DEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/61.63.63= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7=
 EAPI: 8
 IUSE: cairo debug ffmpeg gtk-doc +introspection jpeg2k lcms openexr openmp pdf raw sdl sdl2 sdl3 svg test tiff umfpack vala v4l webp
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv x86
 LICENSE: || ( GPL-3+ LGPL-3 )
-MD5: 581042066f72c44efb6aa6dbb87a503b
-PATH: pkgs-media-libs/gegl-0.4.72-1.gpkg.tar
+MD5: 1affb94c7356be7ab116e3f6b2f654f3
+PATH: pkgs-media-libs/gegl-0.4.72-3.gpkg.tar
 PROVIDES: x86_64: exr-load.so exr-save.so ff-load.so ff-save.so gegl-common-cxx-x86_64-v2.so gegl-common-cxx-x86_64-v3.so gegl-common-cxx.so gegl-common-gpl3-x86_64-v2.so gegl-common-gpl3-x86_64-v3.so gegl-common-gpl3.so gegl-common-x86_64-v2.so gegl-common-x86_64-v3.so gegl-common.so gegl-core.so gegl-generated-x86_64-v2.so gegl-generated-x86_64-v3.so gegl-generated.so gegl-transformops-x86_64-v2.so gegl-transformops-x86_64-v3.so gif-load.so jp2-load.so jpg-load.so jpg-save.so lcms-from-profile.so libgegl-0.4.so.0 libgegl-npd-0.4.so libgegl-sc-0.4.so npd.so npy-save.so path.so pdf-load.so pixbuf-load.so pixbuf-save.so png-load.so png-save.so ppm-load.so ppm-save.so rgbe-load.so rgbe-save.so sdl-display.so sdl2-display.so seamless-clone-compose.so seamless-clone.so svg-load.so text.so tiff-load.so tiff-save.so transformops.so v4l.so vector-fill.so vector-stroke.so webp-load.so webp-save.so
-RDEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/60.62.62= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7= >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libOpenEXR-3_3.so.32 libSDL-1.2.so.0 libSDL2-2.0.so.0 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libbabl-0.1.so.0 libc.so.6 libcairo.so.2 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libjasper.so.7 libjpeg.so.62 libjson-glib-1.0.so.0 liblcms2.so.2 libm.so.6 libnsgif.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libswscale.so.9 libtiff.so.6 libwebp.so.7
+RDEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/61.63.63= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libOpenEXR-3_3.so.32 libSDL-1.2.so.0 libSDL2-2.0.so.0 libavcodec.so.63 libavformat.so.63 libavutil.so.61 libbabl-0.1.so.0 libc.so.6 libcairo.so.2 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libjasper.so.7 libjpeg.so.62 libjson-glib-1.0.so.0 liblcms2.so.2 libm.so.6 libnsgif.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libswscale.so.10 libtiff.so.6 libwebp.so.7
 RESTRICT: test
-SHA1: 60565f8459bbb7f3e1b0ebe851b1df01b8c35261
-SIZE: 3973120
+SHA1: 7e3b1e3ce3e5a063399f99d6bc9b05c3ae3d322b
+SIZE: 4014080
 SLOT: 0.4
 USE: abi_x86_64 amd64 cairo elibc_glibc ffmpeg introspection jpeg2k kernel_linux lcms openexr openmp pdf sdl sdl2 svg tiff v4l webp
-MTIME: 1791263271
+MTIME: 1794389099
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -40715,9 +40810,9 @@ MTIME: 1794378913
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-util/gdbus-codegen-2.80.5-r1 sys-devel/gettext virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1792307492
+BDEPEND: >=dev-util/gdbus-codegen-2.80.5-r1 sys-devel/gettext virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 8
+BUILD_TIME: 1794388675
 CPV: sys-apps/xdg-desktop-portal-gtk-1.15.3
 DEFINED_PHASES: compile configure install test
 DEPEND: dev-libs/glib:2 gnome-base/gsettings-desktop-schemas media-libs/fontconfig sys-apps/dbus >=sys-apps/xdg-desktop-portal-1.14.0 x11-libs/cairo[X] x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3[wayland,X]
@@ -40725,14 +40820,14 @@ EAPI: 8
 IUSE: wayland X
 KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ~ppc64 ~riscv x86
 LICENSE: LGPL-2.1
-MD5: 084b8bee9ab96eb37c8ffea90d46ab0c
-PATH: pkgs-sys-apps/xdg-desktop-portal-gtk-1.15.3-1.gpkg.tar
+MD5: 7f423ddfc594ec9c082906301c0125d4
+PATH: pkgs-sys-apps/xdg-desktop-portal-gtk-1.15.3-8.gpkg.tar
 RDEPEND: dev-libs/glib:2 gnome-base/gsettings-desktop-schemas media-libs/fontconfig sys-apps/dbus >=sys-apps/xdg-desktop-portal-1.14.0 x11-libs/cairo[X] x11-libs/gdk-pixbuf:2 x11-libs/gtk+:3[wayland,X] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libfontconfig.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0
-SHA1: 8f06b5dcb99dba5b2ab3561e178ecbd42a2092f4
+SHA1: b4cb8da1ac1e97944681ef9a6481dc8a586da1c2
 SIZE: 194560
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
-MTIME: 1792307493
+MTIME: 1794388676
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -43922,23 +44017,23 @@ MTIME: 1794388220
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: sys-devel/gettext virtual/pkgconfig app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1792308822
+BDEPEND: sys-devel/gettext virtual/pkgconfig app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794388758
 CPV: x11-misc/xdg-user-dirs-gtk-0.16
 DEFINED_PHASES: compile configure install postinst prepare test
 DEPEND: dev-libs/glib:2 >=x11-libs/gtk+-3.5.1:3 >=x11-misc/xdg-user-dirs-0.14
 EAPI: 8
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
 LICENSE: GPL-2+
-MD5: 6a6039db4f4e339888e4276bef27f566
-PATH: pkgs-x11-misc/xdg-user-dirs-gtk-0.16-1.gpkg.tar
+MD5: 6395bfa0d81c0468185d5b057c769e21
+PATH: pkgs-x11-misc/xdg-user-dirs-gtk-0.16-2.gpkg.tar
 RDEPEND: dev-libs/glib:2 >=x11-libs/gtk+-3.5.1:3 >=x11-misc/xdg-user-dirs-0.14 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0
-SHA1: 35f434c619233b63966fb96c402bf54686bfc903
+SHA1: c827151189feccf0483d0e107cbc1591fc804042
 SIZE: 92160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792308824
+MTIME: 1794388759
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
