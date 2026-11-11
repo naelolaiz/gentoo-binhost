@@ -658,6 +658,14 @@
    "path": "pkgs-dev-libs/unibilium-2.1.4-1.gpkg.tar"
   },
   {
+   "at": 1794369507,
+   "path": "pkgs-dev-libs/wayland-1.26.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794369507,
+   "path": "pkgs-dev-libs/wayland-protocols-1.50-1.gpkg.tar"
+  },
+  {
    "at": 1794204649,
    "path": "pkgs-dev-python/ensurepip-pip-26.2.1-1.gpkg.tar"
   },
@@ -1554,6 +1562,10 @@
    "path": "pkgs-media-libs/fluidsynth-dssi-1.0.0-r2-2.gpkg.tar"
   },
   {
+   "at": 1794369507,
+   "path": "pkgs-media-libs/fontconfig-2.18.3-2.gpkg.tar"
+  },
+  {
    "at": 1794110013,
    "path": "pkgs-media-libs/freetype-2.15.0-1.gpkg.tar"
   },
@@ -1954,12 +1966,24 @@
    "path": "pkgs-sys-apps/coreutils-9.12-1.gpkg.tar"
   },
   {
+   "at": 1794369507,
+   "path": "pkgs-sys-apps/openrc-0.64.1-1.gpkg.tar"
+  },
+  {
    "at": 1793515401,
    "path": "pkgs-sys-apps/pkgcore-0.12.48-1.gpkg.tar"
   },
   {
+   "at": 1794369507,
+   "path": "pkgs-sys-apps/systemd-utils-262-2.gpkg.tar"
+  },
+  {
    "at": 1794117246,
    "path": "pkgs-sys-apps/the_silver_searcher-2.2.0_p20201217-r4-1.gpkg.tar"
+  },
+  {
+   "at": 1794369507,
+   "path": "pkgs-sys-auth/elogind-257.16-1.gpkg.tar"
   },
   {
    "at": 1793735172,
@@ -1984,6 +2008,10 @@
   {
    "at": 1793598458,
    "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.9-1.gpkg.tar"
+  },
+  {
+   "at": 1794369507,
+   "path": "pkgs-sys-libs/pam-1.7.3-1.gpkg.tar"
   },
   {
    "at": 1794109695,
@@ -2018,12 +2046,20 @@
    "path": "pkgs-www-client/w3m-0.5.6-7.gpkg.tar"
   },
   {
+   "at": 1794369507,
+   "path": "pkgs-x11-base/xorg-proto-2026.1-1.gpkg.tar"
+  },
+  {
    "at": 1793694989,
    "path": "pkgs-x11-base/xwayland-24.1.14-1.gpkg.tar"
   },
   {
    "at": 1794116601,
    "path": "pkgs-x11-libs/gtk_p_-2.24.33-r4-1.gpkg.tar"
+  },
+  {
+   "at": 1794369507,
+   "path": "pkgs-x11-libs/libXfixes-6.0.2-7.gpkg.tar"
   },
   {
    "at": 1793983999,
