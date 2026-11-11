@@ -610,6 +610,10 @@
    "path": "pkgs-dev-libs/glib-2.88.4-1.gpkg.tar"
   },
   {
+   "at": 1794371119,
+   "path": "pkgs-dev-libs/gobject-introspection-1.86.0-r1-1.gpkg.tar"
+  },
+  {
    "at": 1794118207,
    "path": "pkgs-dev-libs/json-c-0.19-r2-1.gpkg.tar"
   },
@@ -680,6 +684,10 @@
   {
    "at": 1794369844,
    "path": "pkgs-dev-libs/zix-0.7.0_pre20250801-1.gpkg.tar"
+  },
+  {
+   "at": 1794371119,
+   "path": "pkgs-dev-python/dbus-python-1.5.1-1.gpkg.tar"
   },
   {
    "at": 1794204649,
@@ -1594,6 +1602,10 @@
    "path": "pkgs-media-libs/gd-2.3.3-r4-37.gpkg.tar"
   },
   {
+   "at": 1794371119,
+   "path": "pkgs-media-libs/harfbuzz-12.3.2-5.gpkg.tar"
+  },
+  {
    "at": 1794112226,
    "path": "pkgs-media-libs/kvazaar-2.3.2-1.gpkg.tar"
   },
@@ -2140,6 +2152,10 @@
   {
    "at": 1793983999,
    "path": "pkgs-x11-misc/sddm-0.21.0_p20260819-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794371119,
+   "path": "pkgs-x11-misc/shared-mime-info-2.5.1-1.gpkg.tar"
   },
   {
    "at": 1794370176,
