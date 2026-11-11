@@ -638,6 +638,10 @@
    "path": "pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar"
   },
   {
+   "at": 1794371765,
+   "path": "pkgs-dev-libs/libinput-1.32.0-1.gpkg.tar"
+  },
+  {
    "at": 1794115631,
    "path": "pkgs-dev-libs/libsodium-1.0.22-3.gpkg.tar"
   },
@@ -652,6 +656,10 @@
   {
    "at": 1794110013,
    "path": "pkgs-dev-libs/libuv-1.53.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794371765,
+   "path": "pkgs-dev-libs/libwacom-2.19.0-1.gpkg.tar"
   },
   {
    "at": 1794368871,
@@ -880,6 +888,10 @@
   {
    "at": 1794371449,
    "path": "pkgs-gnome-base/gnome-keyring-50.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794371765,
+   "path": "pkgs-gnome-base/librsvg-2.62.4-1.gpkg.tar"
   },
   {
    "at": 1793512931,
