@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794378034
-PACKAGES: 1923
+TIMESTAMP: 1794378347
+PACKAGES: 1925
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -26280,6 +26280,31 @@ MTIME: 1793253078
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=kde-frameworks/kcmutils-6.30.0:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794377988
+CPV: kde-plasma/breeze-6.8.3
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/frameworkintegration-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] >=kde-plasma/kdecoration-6.8.3:6 dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-2
+MD5: dda34bb9586972f1c708be84c872a0df
+PATH: pkgs-kde-plasma/breeze-6.8.3-1.gpkg.tar
+PDEPEND: >=kde-frameworks/breeze-icons-6.30.0:*
+PROVIDES: x86_64: breeze6.so breezestyleconfig.so kcm_breezedecoration.so org.kde.breeze.so
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/frameworkintegration-6.30.0:6 >=kde-frameworks/kcmutils-6.30.0:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] >=kde-plasma/kdecoration-6.8.3:6 !<kde-plasma/breeze-6.5.0:5 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6Style.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Quick.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libc.so.6 libkdecorations3.so.6 libm.so.6 libstdc++.so.6
+SHA1: 4957d83693ef175f831f4c4b80ce65307a61f1e7
+SIZE: 41635840
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794377994
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1791216603
 CPV: kde-plasma/breeze-grub-6.7.5
@@ -27890,6 +27915,32 @@ SIZE: 921600
 SLOT: 6/11
 USE: abi_x86_64 amd64 elibc_glibc filecaps kernel_linux
 MTIME: 1793253277
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794378154
+CPV: kde-plasma/libksysguard-6.8.3
+DEFINED_PHASES: compile configure info install nofetch postinst prepare test unpack
+DEPEND: dev-libs/libnl:3 >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6[qml] >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 net-libs/libpcap sys-apps/lm-sensors:0/5.0.0= virtual/libudev:0/1= virtual/zlib:0/1= x11-libs/libdrm dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: sys-libs/libcap
+IUSE: debug test +filecaps
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-2+
+MD5: c8acd7642374b812275c79ccf73c6fbc
+PATH: pkgs-kde-plasma/libksysguard-6.8.3-1.gpkg.tar
+PROVIDES: x86_64: ksysguard_plugin_gpu.so ksysguard_plugin_network.so ksysguard_sensorface.so libFormatterplugin.so libKSysGuardFormatter.so.2 libKSysGuardSensorFaces.so.2 libKSysGuardSensors.so.2 libKSysGuardSystemStats.so.2 libSensorFacesPrivate.so libSensorFacesplugin.so libSensorsplugin.so libprocesscore.so.11 libprocesscoreplugin.so
+RDEPEND: dev-libs/libnl:3 >=dev-qt/qtbase-6.11.2:6[dbus,gui,network,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kauth-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6[qml] >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/knewstuff-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/solid-6.30.0:6 net-libs/libpcap sys-apps/lm-sensors:0/5.0.0= virtual/libudev:0/1= virtual/zlib:0/1= x11-libs/libdrm >=dev-qt/qt5compat-6.11.2:6[qml] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/libksysguard:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
+REQUIRES: x86_64: libKF6AuthCore.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigQml.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Package.so.6 libKF6Service.so.6 libKF6Solid.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libdrm.so.2 libgcc_s.so.1 libm.so.6 libnl-3.so.200 libpcap.so.1 libsensors.so.5 libstdc++.so.6 libudev.so.1
+RESTRICT: test
+SHA1: 3e940507477e2fac61b40da617069a8e0f0e5b81
+SIZE: 921600
+SLOT: 6/11
+USE: abi_x86_64 amd64 elibc_glibc filecaps kernel_linux
+MTIME: 1794378155
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
