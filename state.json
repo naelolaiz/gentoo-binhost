@@ -354,6 +354,10 @@
  "schema": 1,
  "superseded": [
   {
+   "at": 1794371449,
+   "path": "pkgs-app-accessibility/at-spi2-core-2.60.7-1.gpkg.tar"
+  },
+  {
    "at": 1794115953,
    "path": "pkgs-app-admin/metalog-20260902-1.gpkg.tar"
   },
@@ -714,6 +718,10 @@
    "path": "pkgs-dev-python/pycryptodome-3.24.0-1.gpkg.tar"
   },
   {
+   "at": 1794371449,
+   "path": "pkgs-dev-python/pygobject-3.58.1-1.gpkg.tar"
+  },
+  {
    "at": 1793174662,
    "path": "pkgs-dev-python/pyqt6-6.11.0-r1-7.gpkg.tar"
   },
@@ -868,6 +876,10 @@
   {
    "at": 1794118207,
    "path": "pkgs-dev-vcs/git-lfs-3.8.0-3.gpkg.tar"
+  },
+  {
+   "at": 1794371449,
+   "path": "pkgs-gnome-base/gnome-keyring-50.0-1.gpkg.tar"
   },
   {
    "at": 1793512931,
@@ -2078,6 +2090,10 @@
    "path": "pkgs-sys-libs/zlib-1.4-1.gpkg.tar"
   },
   {
+   "at": 1794371449,
+   "path": "pkgs-sys-power/switcheroo-control-3.0-14.gpkg.tar"
+  },
+  {
    "at": 1793598458,
    "path": "pkgs-virtual/dist-kernel-7.2.10-1.gpkg.tar"
   },
@@ -2118,6 +2134,10 @@
    "path": "pkgs-x11-libs/cairo-1.18.6-1.gpkg.tar"
   },
   {
+   "at": 1794371449,
+   "path": "pkgs-x11-libs/gdk-pixbuf-2.44.8-1.gpkg.tar"
+  },
+  {
    "at": 1794116601,
    "path": "pkgs-x11-libs/gtk_p_-2.24.33-r4-1.gpkg.tar"
   },
@@ -2140,6 +2160,10 @@
   {
    "at": 1794369844,
    "path": "pkgs-x11-libs/libpciaccess-0.19-2.gpkg.tar"
+  },
+  {
+   "at": 1794371449,
+   "path": "pkgs-x11-libs/pango-1.58.2-1.gpkg.tar"
   },
   {
    "at": 1794369844,
