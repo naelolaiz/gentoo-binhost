@@ -1642,8 +1642,16 @@
    "path": "pkgs-media-libs/kvazaar-2.3.2-1.gpkg.tar"
   },
   {
+   "at": 1794375473,
+   "path": "pkgs-media-libs/libbluray-1.4.1-1.gpkg.tar"
+  },
+  {
    "at": 1794369844,
    "path": "pkgs-media-libs/libdisplay-info-0.4.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794375473,
+   "path": "pkgs-media-libs/libdvdread-7.1.1-1.gpkg.tar"
   },
   {
    "at": 1794112226,
@@ -1754,6 +1762,10 @@
    "path": "pkgs-media-libs/rnnoise-0.4.1_p20250222-1.gpkg.tar"
   },
   {
+   "at": 1794375473,
+   "path": "pkgs-media-libs/rubberband-4.0.0-r1-4.gpkg.tar"
+  },
+  {
    "at": 1794117906,
    "path": "pkgs-media-libs/speex-1.2.1-r2-5.gpkg.tar"
   },
@@ -1860,6 +1872,10 @@
   {
    "at": 1794023754,
    "path": "pkgs-media-video/pipewire-1.6.11-6.gpkg.tar"
+  },
+  {
+   "at": 1794375473,
+   "path": "pkgs-media-video/pipewire-1.6.11-7.gpkg.tar"
   },
   {
    "at": 1793175888,
@@ -2084,6 +2100,10 @@
   {
    "at": 1794369507,
    "path": "pkgs-sys-auth/elogind-257.16-1.gpkg.tar"
+  },
+  {
+   "at": 1794375473,
+   "path": "pkgs-sys-auth/rtkit-0.14-1.gpkg.tar"
   },
   {
    "at": 1793735172,
