@@ -606,6 +606,10 @@
    "path": "pkgs-dev-libs/expat-2.10.0-1.gpkg.tar"
   },
   {
+   "at": 1794370800,
+   "path": "pkgs-dev-libs/glib-2.88.4-1.gpkg.tar"
+  },
+  {
    "at": 1794118207,
    "path": "pkgs-dev-libs/json-c-0.19-r2-1.gpkg.tar"
   },
@@ -2096,6 +2100,10 @@
   {
    "at": 1793694989,
    "path": "pkgs-x11-base/xwayland-24.1.14-1.gpkg.tar"
+  },
+  {
+   "at": 1794370800,
+   "path": "pkgs-x11-libs/cairo-1.18.6-1.gpkg.tar"
   },
   {
    "at": 1794116601,
