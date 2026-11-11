@@ -502,6 +502,10 @@
    "path": "pkgs-app-text/doxygen-1.18.0-r1-3.gpkg.tar"
   },
   {
+   "at": 1794376442,
+   "path": "pkgs-app-text/doxygen-1.18.0-r1-4.gpkg.tar"
+  },
+  {
    "at": 1793803487,
    "path": "pkgs-app-text/dvipsk-2026.03.01_p77830-1.gpkg.tar"
   },
@@ -632,6 +636,10 @@
   {
    "at": 1794117906,
    "path": "pkgs-dev-libs/libcdio-paranoia-2.0.2-9.gpkg.tar"
+  },
+  {
+   "at": 1794376442,
+   "path": "pkgs-dev-libs/libei-1.6.0-r1-1.gpkg.tar"
   },
   {
    "at": 1794370176,
@@ -896,6 +904,10 @@
   {
    "at": 1794371449,
    "path": "pkgs-gnome-base/gnome-keyring-50.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794376442,
+   "path": "pkgs-gnome-base/gsettings-desktop-schemas-50.1-1.gpkg.tar"
   },
   {
    "at": 1794371765,
@@ -1714,6 +1726,10 @@
    "path": "pkgs-media-libs/libpulse-17.0-9.gpkg.tar"
   },
   {
+   "at": 1794376442,
+   "path": "pkgs-media-libs/libva-2.24.1-r1-1.gpkg.tar"
+  },
+  {
    "at": 1794109695,
    "path": "pkgs-media-libs/libvorbis-1.3.7-r2-10.gpkg.tar"
   },
@@ -2078,6 +2094,10 @@
    "path": "pkgs-sci-ml/ollama-0.40.7-1.gpkg.tar"
   },
   {
+   "at": 1794376442,
+   "path": "pkgs-sys-apps/bubblewrap-0.13.0-1.gpkg.tar"
+  },
+  {
    "at": 1793682792,
    "path": "pkgs-sys-apps/coreutils-9.12-1.gpkg.tar"
   },
@@ -2100,6 +2120,10 @@
   {
    "at": 1794117246,
    "path": "pkgs-sys-apps/the_silver_searcher-2.2.0_p20201217-r4-1.gpkg.tar"
+  },
+  {
+   "at": 1794376442,
+   "path": "pkgs-sys-apps/xdg-dbus-proxy-0.1.9-1.gpkg.tar"
   },
   {
    "at": 1794369507,
