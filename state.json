@@ -510,6 +510,10 @@
    "path": "pkgs-app-text/dvipsk-2026.03.01_p77830-1.gpkg.tar"
   },
   {
+   "at": 1794377096,
+   "path": "pkgs-app-text/gspell-1.14.5-1.gpkg.tar"
+  },
+  {
    "at": 1794110948,
    "path": "pkgs-app-text/hunspell-1.7.2-r1-11.gpkg.tar"
   },
@@ -1790,6 +1794,10 @@
    "path": "pkgs-media-libs/speex-1.2.1-r2-5.gpkg.tar"
   },
   {
+   "at": 1794377096,
+   "path": "pkgs-media-plugins/gst-plugins-jack-1.26.11-1.gpkg.tar"
+  },
+  {
    "at": 1793697421,
    "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-1.gpkg.tar"
   },
@@ -2024,6 +2032,10 @@
   {
    "at": 1793513848,
    "path": "pkgs-net-misc/networkmanager-1.58.1-r3-1.gpkg.tar"
+  },
+  {
+   "at": 1794377096,
+   "path": "pkgs-net-misc/networkmanager-1.58.1-r3-2.gpkg.tar"
   },
   {
    "at": 1793683417,

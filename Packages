@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794376777
-PACKAGES: 1912
+TIMESTAMP: 1794377096
+PACKAGES: 1914
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3548,9 +3548,9 @@ MTIME: 1792306701
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: dev-libs/libxml2:2 dev-util/glib-utils >=sys-devel/gettext-0.19.6 virtual/pkgconfig dev-lang/vala:0.56 >=app-portage/elt-patches-20250306 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791123670
+BDEPEND: dev-libs/libxml2:2 dev-util/glib-utils >=sys-devel/gettext-0.19.6 virtual/pkgconfig dev-lang/vala:0.56 >=app-portage/elt-patches-20250306 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794376789
 CPV: app-text/gspell-1.14.5
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare test
 DEPEND: >=app-text/enchant-2.2:2 >=dev-libs/glib-2.44:2 >=x11-libs/gtk+-3.20:3[introspection] dev-libs/icu:0/78= >=dev-libs/gobject-introspection-1.82.0-r2:0/0=
@@ -3559,18 +3559,17 @@ IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: gtk-doc +introspection test +vala test
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: LGPL-2.1+
-MD5: 909ba1bd2b5530f9b1f66cad3b9b9466
-PATH: pkgs-app-text/gspell-1.14.5-1.gpkg.tar
+MD5: e5e6926d33f406f9f9793e24bc3df5f4
+PATH: pkgs-app-text/gspell-1.14.5-2.gpkg.tar
 PROVIDES: x86_64: libgspell-1.so.3
-RDEPEND: >=app-text/enchant-2.2:2 >=dev-libs/glib-2.44:2 >=x11-libs/gtk+-3.20:3[introspection] dev-libs/icu:0/78= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+RDEPEND: >=app-text/enchant-2.2:2 >=dev-libs/glib-2.44:2 >=x11-libs/gtk+-3.20:3[introspection] dev-libs/icu:0/78= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libenchant-2.so.2 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libicuuc.so.78 libpango-1.0.so.0
 RESTRICT: test test
-SHA1: 980c748c39bb0ec4821fcdcaadb6999dfbb27939
+SHA1: ed1877d09077552253717bebf863d1a77294fc9e
 SIZE: 174080
 SLOT: 0/3
 USE: abi_x86_64 amd64 elibc_glibc introspection kernel_linux vala
-MTIME: 1791123672
+MTIME: 1794376790
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27702,6 +27701,29 @@ MTIME: 1793251944
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794376830
+CPV: kde-plasma/layer-shell-qt-6.8.3
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,wayland] >=dev-qt/qtdeclarative-6.11.2:6 x11-libs/libxkbcommon dev-libs/wayland-protocols dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: LGPL-3+
+MD5: e8b1f6f4e334f2f0c8aab63416a231b6
+PATH: pkgs-kde-plasma/layer-shell-qt-6.8.3-1.gpkg.tar
+PROVIDES: x86_64: libLayerShellQtInterface.so.6 libLayerShellQtQml.so liblayer-shell.so
+RDEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,wayland] >=dev-qt/qtdeclarative-6.11.2:6 x11-libs/libxkbcommon || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/layer-shell-qt:5 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libc.so.6 libstdc++.so.6 libwayland-client.so.0
+SHA1: 0e41a1f19d18e1b00610a3fcdf791d9404f61574
+SIZE: 81920
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794376830
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
 BUILD_ID: 2
 BUILD_TIME: 1793106344
@@ -33797,9 +33819,9 @@ MTIME: 1794376603
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1791147206
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794376772
 CPV: media-plugins/gst-plugins-jack-1.26.11
 DEFINED_PHASES: compile configure install setup test
 DEPEND: >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)]
@@ -33807,18 +33829,17 @@ EAPI: 8
 IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: amd64 arm arm64 ~loong ppc ppc64 ~riscv ~sparc x86
 LICENSE: GPL-2
-MD5: 222a9bf151ca60b478a2d625f6f6d195
-PATH: pkgs-media-plugins/gst-plugins-jack-1.26.11-1.gpkg.tar
+MD5: 1ac9c179c17a5ef4817473d05c1e2d3b
+PATH: pkgs-media-plugins/gst-plugins-jack-1.26.11-2.gpkg.tar
 PROVIDES: x86_64: libgstjack.so
-RDEPEND: || ( media-sound/jack2[abi_x86_64(-)] media-video/pipewire[jack-sdk(-),abi_x86_64(-)] ) >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "e768bac7322706bf5412ec4ff3fb9dae257b8f3e"}
+RDEPEND: || ( media-sound/jack2[abi_x86_64(-)] media-video/pipewire[jack-sdk(-),abi_x86_64(-)] ) >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-good-1.26.11:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstreamer-1.0.so.0
 RESTRICT: test
-SHA1: b16e50248fb1cb5c395a0ea0ced24ff2576eab3f
+SHA1: 8300559509144f7072a331542a5e64c925862777
 SIZE: 71680
 SLOT: 1.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791147207
+MTIME: 1794376773
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36974,9 +36995,34 @@ MTIME: 1794376104
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: app-text/docbook-xsl-stylesheets >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils >=sys-devel/gettext-0.17 virtual/pkgconfig || ( ( dev-lang/python:3.15 dev-python/pygobject:3[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/pygobject:3[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/pygobject:3[python_targets_python3_12(-)] ) ) dev-lang/perl dev-libs/libxslt >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1793513822
+BDEPEND: dev-libs/libxslt >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 14
+BUILD_TIME: 1794376762
+CPV: net-misc/modemmanager-1.24.2
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: >=dev-libs/glib-2.56.0:2 sys-apps/dbus >=dev-libs/libgudev-232:0/0= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=net-libs/libmbim-1.32.0 >=sys-auth/polkit-0.106[introspection] >=net-libs/libqmi-1.36.0:0/5.11=[qrtr] >=net-libs/libqrtr-glib-1.0.0:0/0= sys-auth/elogind
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: elogind gtk-doc +introspection +mbim policykit +qmi +qrtr selinux systemd test +udev vala
+KEYWORDS: ~alpha amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2+
+MD5: cb99acca28efa96e40d83851eba0c73f
+PATH: pkgs-net-misc/modemmanager-1.24.2-14.gpkg.tar
+PROVIDES: x86_64: libmm-glib.so.0 libmm-plugin-altair-lte.so libmm-plugin-anydata.so libmm-plugin-broadmobi.so libmm-plugin-cellient.so libmm-plugin-cinterion.so libmm-plugin-dell.so libmm-plugin-dlink.so libmm-plugin-ericsson-mbm.so libmm-plugin-fibocom.so libmm-plugin-foxconn.so libmm-plugin-generic.so libmm-plugin-gosuncn.so libmm-plugin-haier.so libmm-plugin-huawei.so libmm-plugin-intel.so libmm-plugin-iridium.so libmm-plugin-linktop.so libmm-plugin-longcheer.so libmm-plugin-motorola.so libmm-plugin-mtk-legacy.so libmm-plugin-mtk.so libmm-plugin-netprisma.so libmm-plugin-nokia-icera.so libmm-plugin-nokia.so libmm-plugin-novatel-lte.so libmm-plugin-novatel.so libmm-plugin-option-hso.so libmm-plugin-option.so libmm-plugin-pantech.so libmm-plugin-qcom-soc.so libmm-plugin-quectel.so libmm-plugin-rolling.so libmm-plugin-samsung.so libmm-plugin-sierra-legacy.so libmm-plugin-sierra.so libmm-plugin-simtech.so libmm-plugin-telit.so libmm-plugin-thuraya.so libmm-plugin-tplink.so libmm-plugin-ublox.so libmm-plugin-via.so libmm-plugin-wavecom.so libmm-plugin-x22x.so libmm-plugin-zte.so libmm-shared-fibocom.so libmm-shared-foxconn.so libmm-shared-icera.so libmm-shared-mtk.so libmm-shared-novatel.so libmm-shared-option.so libmm-shared-quectel.so libmm-shared-sierra.so libmm-shared-telit.so libmm-shared-xmm.so
+RDEPEND: >=dev-libs/glib-2.56.0:2 sys-apps/dbus >=dev-libs/libgudev-232:0/0= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=net-libs/libmbim-1.32.0 >=sys-auth/polkit-0.106[introspection] >=net-libs/libqmi-1.36.0:0/5.11=[qrtr] >=net-libs/libqrtr-glib-1.0.0:0/0= sys-auth/elogind >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgudev-1.0.so.0 libmbim-glib.so.4 libpolkit-gobject-1.so.0 libqmi-glib.so.5 libqrtr-glib.so.0
+RESTRICT: test
+SHA1: b7e3202fde3e8d23077a9eb004974948fe2648f2
+SIZE: 2283520
+SLOT: 0/1
+USE: abi_x86_64 amd64 elibc_glibc elogind introspection kernel_linux mbim policykit qmi qrtr udev
+MTIME: 1794376763
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/docbook-xsl-stylesheets >=dev-util/gdbus-codegen-2.80.5-r1 dev-util/glib-utils >=sys-devel/gettext-0.17 virtual/pkgconfig || ( ( dev-lang/python:3.15 dev-python/pygobject:3[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/pygobject:3[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/pygobject:3[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/pygobject:3[python_targets_python3_12(-)] ) ) dev-lang/perl dev-libs/libxslt >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1794377028
 CPV: net-misc/networkmanager-1.58.1-r3
 DEFINED_PHASES: compile configure install postinst postrm prepare setup test
 DEPEND: sys-apps/util-linux[abi_x86_64(-)] >=virtual/libudev-175:0/1=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] net-libs/libndp >=dev-libs/glib-2.42:2[abi_x86_64(-)] >=net-wireless/bluez-5:0/3= net-misc/curl >=sys-auth/elogind-219 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= net-misc/mobile-broadband-provider-info >=net-misc/modemmanager-0.7.991:0/1= dev-libs/nspr[abi_x86_64(-)] >=dev-libs/nss-3.11[abi_x86_64(-)] >=sys-auth/polkit-0.106 >=net-dialup/ppp-2.4.5:0/2.5.5=[ipv6(+)] >=dev-libs/jansson-2.7:0/4= >=dev-libs/newt-0.52.15 sys-libs/slang sys-libs/readline:0/8= >=sys-kernel/linux-headers-3.18 net-libs/libndp[abi_x86_64(-)]
@@ -36984,17 +37030,16 @@ EAPI: 8
 IUSE: audit bluetooth clat +concheck connection-sharing debug dhcpcd elogind gnutls gtk-doc +introspection iptables iwd libedit +modemmanager nbft +nss nftables ofono ovs policykit +ppp psl resolvconf selinux syslog systemd teamd test +tools vala +wext +wifi abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: GPL-2+ LGPL-2.1+
-MD5: a4736ee139cd78962fdb9f1078754943
-PATH: pkgs-net-misc/networkmanager-1.58.1-r3-2.gpkg.tar
+MD5: d2fca364aeece012ce999b9e03d8d54d
+PATH: pkgs-net-misc/networkmanager-1.58.1-r3-3.gpkg.tar
 PROVIDES: x86_64: libnm-device-plugin-adsl.so libnm-device-plugin-bluetooth.so libnm-device-plugin-wifi.so libnm-device-plugin-wwan.so libnm-ppp-plugin.so libnm-wwan.so libnm.so.0 nm-pppd-plugin.so
 RDEPEND: sys-apps/util-linux[abi_x86_64(-)] >=virtual/libudev-175:0/1=[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] net-libs/libndp >=dev-libs/glib-2.42:2[abi_x86_64(-)] >=net-wireless/bluez-5:0/3= net-misc/curl >=sys-auth/elogind-219 >=dev-libs/gobject-introspection-1.82.0-r2:0/0= net-misc/mobile-broadband-provider-info >=net-misc/modemmanager-0.7.991:0/1= dev-libs/nspr[abi_x86_64(-)] >=dev-libs/nss-3.11[abi_x86_64(-)] >=sys-auth/polkit-0.106 >=net-dialup/ppp-2.4.5:0/2.5.5=[ipv6(+)] >=dev-libs/jansson-2.7:0/4= >=dev-libs/newt-0.52.15 sys-libs/slang sys-libs/readline:0/8= acct-group/plugdev || ( net-misc/iputils[arping(+)] net-analyzer/arping ) >=net-wireless/wpa_supplicant-0.7.3-r3[dbus] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
 REQUIRES: x86_64: libbluetooth.so.3 libc.so.6 libcurl.so.4 libelogind.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libjansson.so.4 libmm-glib.so.0 libndp.so.0 libnewt.so.0.52 libnspr4.so libnss3.so libreadline.so.8 libslang.so.2 libsmime3.so libudev.so.1
 RESTRICT: test test
-SHA1: e54ad986dcd1a93444747725b391cc48258b3fd7
+SHA1: 79954f55a8dc291fe7cdf4f56f5d404e1437816c
 SIZE: 7864320
 USE: abi_x86_64 amd64 bluetooth concheck elibc_glibc elogind introspection kernel_linux modemmanager nss policykit ppp tools wext wifi
-MTIME: 1793513824
+MTIME: 1794377030
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
