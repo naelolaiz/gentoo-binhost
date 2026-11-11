@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794386705
-PACKAGES: 1941
+TIMESTAMP: 1794387024
+PACKAGES: 1945
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -4734,6 +4734,23 @@ MTIME: 1791283782
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794386740
+CPV: dev-cpp/mm-common-1.0.8
+DEFINED_PHASES: compile configure install prepare setup test
+EAPI: 8
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-2
+MD5: cbeeebbb683530c4d1712c891e5c279d
+PATH: pkgs-dev-cpp/mm-common-1.0.8-2.gpkg.tar
+SHA1: ae836dea716efa0bba4afc0b3e261ff07f596c1d
+SIZE: 450560
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794386741
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 BUILD_ID: 1
 BUILD_TIME: 1791234639
@@ -6348,26 +6365,26 @@ MTIME: 1794371030
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791225560
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794386746
 CPV: dev-libs/gumbo-0.14.1
 DEFINED_PHASES: compile configure install prepare setup test
 EAPI: 8
 IUSE: doc test test python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
 LICENSE: Apache-2.0
-MD5: 3c6961d320ebe91e8ea876bf1b76d3cc
-PATH: pkgs-dev-libs/gumbo-0.14.1-1.gpkg.tar
+MD5: 627dbc1a3b8469410f075dfca50d858f
+PATH: pkgs-dev-libs/gumbo-0.14.1-2.gpkg.tar
 PROVIDES: x86_64: libgumbo.so.4
-RDEPEND: >=sys-libs/glibc-2.43-r2
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6
 RESTRICT: test test
-SHA1: 70b9c6f2248a3512f506a0b76b077fd1f91dfeab
+SHA1: eb47a22b6b1b72385dbb171c8fb08a1b9c164bc9
 SIZE: 153600
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
-MTIME: 1791225563
+MTIME: 1794386746
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -7243,6 +7260,52 @@ SIZE: 1085440
 SLOT: 0/1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1792305812
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/m4 app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 6
+BUILD_TIME: 1794386739
+CPV: dev-libs/libsigc++-2.12.1
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: gtk-doc test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: LGPL-2.1+
+MD5: 90a70b5e55cf0c656e303ad4ee2ff6b2
+PATH: pkgs-dev-libs/libsigc_p__p_-2.12.1-6.gpkg.tar
+PROVIDES: x86_64: libsigc-2.0.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 60caea00232e122eb7f006013b752b2594da175e
+SIZE: 133120
+SLOT: 2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794386740
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/xz-utils >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794386744
+CPV: dev-libs/libsigc++-3.8.0
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: gtk-doc test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
+LICENSE: LGPL-2.1+
+MD5: 4ebb957ce4965a156a13edb03eff6008
+PATH: pkgs-dev-libs/libsigc_p__p_-3.8.0-2.gpkg.tar
+PROVIDES: x86_64: libsigc-3.0.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 813ea6d9633ef37a9c51d843b0080d2c0f3661eb
+SIZE: 102400
+SLOT: 3
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794386745
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -38599,6 +38662,28 @@ MTIME: 1791284875
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794386720
+CPV: sci-libs/blas-lapack-aux-wrapper-6-r1
+DEFINED_PHASES: compile configure install setup test
+DEPEND: !sci-libs/lapack[-flexiblas(-)] >=sci-libs/flexiblas-3.4.82-r4:0/0= sci-libs/lapack:0/0=[flexiblas(-),lapacke]
+EAPI: 8
+IUSE: index64 test
+KEYWORDS: amd64 arm arm64 ppc ppc64 ~riscv x86
+LICENSE: GPL-2+
+MD5: 7270829f6ca350f52f75a76eb5198f3f
+PATH: pkgs-sci-libs/blas-lapack-aux-wrapper-6-r1-2.gpkg.tar
+PROVIDES: x86_64: libblas.so.3 libcblas.so.3 liblapack.so.3 liblapacke.so.3
+RDEPEND: !sci-libs/lapack[-flexiblas(-)] >=sci-libs/flexiblas-3.4.82-r4:0/0= >=sys-libs/glibc-2.43-r4
+RESTRICT: test
+SHA1: 3ddde4a50a0d367230ff536f993f3a5c026e601d
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794386720
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791092748
@@ -42254,23 +42339,23 @@ MTIME: 1794111071
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1792305884
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794386747
 CPV: x11-apps/setxkbmap-1.3.5
 DEFINED_PHASES: compile configure install test unpack
 DEPEND: x11-libs/libxkbfile x11-libs/libX11 x11-libs/libXrandr x11-base/xorg-proto
 EAPI: 8
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: MIT
-MD5: 56e0921c744f4efa52ca384925f0e11a
-PATH: pkgs-x11-apps/setxkbmap-1.3.5-1.gpkg.tar
+MD5: f1263d93e8a3740b8c7bbf4200cbeca8
+PATH: pkgs-x11-apps/setxkbmap-1.3.5-2.gpkg.tar
 RDEPEND: x11-libs/libxkbfile x11-libs/libX11 x11-libs/libXrandr x11-misc/xkeyboard-config >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libX11.so.6 libXrandr.so.2 libc.so.6 libxkbfile.so.1
-SHA1: ed15718254765d4f29d10b762c89a15ebed19150
+SHA1: b854f7373b88e43f9732dc35538bcade3099602c
 SIZE: 61440
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792305885
+MTIME: 1794386748
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
