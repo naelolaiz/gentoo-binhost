@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794369507
-PACKAGES: 1853
+TIMESTAMP: 1794369844
+PACKAGES: 1858
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8046,6 +8046,28 @@ MTIME: 1791277772
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 3
+BUILD_TIME: 1794369499
+CPV: dev-libs/serd-0.32.4
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: doc test +tools abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: ISC
+MD5: b1a47f73fae653cc8a59dd63050570a8
+PATH: pkgs-dev-libs/serd-0.32.4-3.gpkg.tar
+PROVIDES: x86_64: libserd-0.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libm.so.6
+RESTRICT: test
+SHA1: 2118c879be900a1ba21011f254d2b32b83113ebf
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux tools
+MTIME: 1794369500
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: sys-apps/file sys-apps/grep virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791092288
@@ -8229,6 +8251,29 @@ SIZE: 942080
 SLOT: 0/36
 USE: abi_x86_64 all-impls amd64 elibc_glibc kernel_linux
 MTIME: 1793686186
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 3
+BUILD_TIME: 1794369571
+CPV: dev-libs/sord-0.16.18
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-libs/serd-0.30.10[abi_x86_64(-)] >=dev-libs/zix-0.4.0[abi_x86_64(-)]
+EAPI: 8
+IUSE: doc test tools abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: ISC
+MD5: 59dc6234bbf248b77e20aa68d03b43ac
+PATH: pkgs-dev-libs/sord-0.16.18-3.gpkg.tar
+PROVIDES: x86_64: libsord-0.so.0
+RDEPEND: >=dev-libs/serd-0.30.10[abi_x86_64(-)] >=dev-libs/zix-0.4.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libserd-0.so.0 libzix-0.so.0
+RESTRICT: test
+SHA1: 9dc9749629f56d40134a6caf1cf2ad9e39271feb
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794369572
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -8568,25 +8613,25 @@ MTIME: 1794368651
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791063123
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369566
 CPV: dev-libs/zix-0.7.0_pre20250801
 DEFINED_PHASES: compile configure install prepare test
 EAPI: 8
 IUSE: doc test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: ISC
-MD5: c8a78cd6e979fbc8a1ec61bb1d8e42d2
-PATH: pkgs-dev-libs/zix-0.7.0_pre20250801-1.gpkg.tar
+MD5: 406ed50a070cf5660b80f106d1aaaaaa
+PATH: pkgs-dev-libs/zix-0.7.0_pre20250801-2.gpkg.tar
 PROVIDES: x86_64: libzix-0.so.0
-RDEPEND: >=sys-libs/glibc-2.43-r2
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6
 RESTRICT: test
-SHA1: 154adb385859c0d72d16a786d583331bc0664ffc
+SHA1: 502103d7298dc38fbaf586a5d132f751011f4a02
 SIZE: 92160
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791063124
+MTIME: 1794369567
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30633,6 +30678,29 @@ MTIME: 1791226259
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-lang/nasm-2.15.05 >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369738
+CPV: media-libs/dav1d-1.5.4
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: +8bit +10bit +asm test xxhash abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~sparc x86 ~arm64-macos ~x64-macos
+LICENSE: BSD-2
+MD5: 51193d4b0e782a1ba4d8f749ad7d5721
+PATH: pkgs-media-libs/dav1d-1.5.4-2.gpkg.tar
+PROVIDES: x86_64: libdav1d.so.7
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libm.so.6
+RESTRICT: test
+SHA1: 30dad4c8ca98576a8288ac5705783cc0b8d99dac
+SIZE: 839680
+SLOT: 0/7
+USE: 10bit 8bit abi_x86_64 amd64 asm elibc_glibc kernel_linux
+MTIME: 1794369739
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
 BUILD_ID: 5
 BUILD_TIME: 1794115919
@@ -31240,25 +31308,25 @@ MTIME: 1791198648
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) sys-apps/hwdata virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791063501
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) sys-apps/hwdata virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369750
 CPV: media-libs/libdisplay-info-0.4.0
 DEFINED_PHASES: compile configure install setup test unpack
 EAPI: 8
 IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig
 KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: MIT
-MD5: 0741609f72e9a0a1ad819f03e13392ef
-PATH: pkgs-media-libs/libdisplay-info-0.4.0-1.gpkg.tar
+MD5: 46f0300bbf8a1c5ea00e2684a86d4d2d
+PATH: pkgs-media-libs/libdisplay-info-0.4.0-2.gpkg.tar
 PROVIDES: x86_32: libdisplay-info.so.4 x86_64: libdisplay-info.so.4
-RDEPEND: >=sys-libs/glibc-2.43-r2
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libc.so.6 libm.so.6 x86_64: libc.so.6 libm.so.6
-SHA1: 827c3d248cace0acafebfc5a70b5bc1c1f03e945
+SHA1: 4d19f7f8aafa858d23aef76ff387866514aab82b
 SIZE: 256000
 SLOT: 0/4
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791063502
+MTIME: 1794369751
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31349,9 +31417,9 @@ MTIME: 1794117818
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 12
-BUILD_TIME: 1791064721
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 13
+BUILD_TIME: 1794369478
 CPV: media-libs/libglvnd-1.7.0
 DEFINED_PHASES: compile configure install prepare setup test
 DEPEND: !media-libs/mesa[-libglvnd(+)] x11-libs/libX11[abi_x86_32(-),abi_x86_64(-)] x11-libs/libXext[abi_x86_32(-),abi_x86_64(-)] x11-base/xorg-proto
@@ -31359,16 +31427,16 @@ EAPI: 8
 IUSE: test X abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: MIT
-MD5: fb5e398f6ad66ac330142e715f3a3045
-PATH: pkgs-media-libs/libglvnd-1.7.0-12.gpkg.tar
+MD5: 3da1aa6e64f23f068751e737c63f95ce
+PATH: pkgs-media-libs/libglvnd-1.7.0-13.gpkg.tar
 PROVIDES: x86_32: libEGL.so.1 libGL.so.1 libGLESv1_CM.so.1 libGLESv2.so.2 libGLX.so.0 libGLdispatch.so.0 libOpenGL.so.0 x86_64: libEGL.so.1 libGL.so.1 libGLESv1_CM.so.1 libGLESv2.so.2 libGLX.so.0 libGLdispatch.so.0 libOpenGL.so.0
-RDEPEND: !media-libs/mesa[-libglvnd(+)] x11-libs/libX11[abi_x86_32(-),abi_x86_64(-)] x11-libs/libXext[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+RDEPEND: !media-libs/mesa[-libglvnd(+)] x11-libs/libX11[abi_x86_32(-),abi_x86_64(-)] x11-libs/libXext[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libX11.so.6 libc.so.6 x86_64: libX11.so.6 libc.so.6
 RESTRICT: test
-SHA1: 0955dbefcf6f045187773cd6d708b8e583a58789
-SIZE: 716800
+SHA1: 544237fd5cabe6dafe536476c83069ebc16fac6c
+SIZE: 727040
 USE: X abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791064722
+MTIME: 1794369479
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32351,25 +32419,25 @@ MTIME: 1791089757
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791063048
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369558
 CPV: media-libs/opus-1.6.1
 DEFINED_PHASES: compile configure install setup test
 EAPI: 8
 IUSE: custom-modes debug deep-plc dred doc hardened osce static-libs test cpu_flags_x86_sse cpu_flags_arm_neon abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: BSD
-MD5: a1784f484be530daa6c2678f277afaaa
-PATH: pkgs-media-libs/opus-1.6.1-1.gpkg.tar
+MD5: b1925264cbe95934c5a434feb6f7f012
+PATH: pkgs-media-libs/opus-1.6.1-2.gpkg.tar
 PROVIDES: x86_32: libopus.so.0 x86_64: libopus.so.0
-RDEPEND: >=sys-libs/glibc-2.43-r2
+RDEPEND: >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libc.so.6 libm.so.6 x86_64: libc.so.6 libm.so.6
 RESTRICT: test
-SHA1: 07e7d311b6e0e2364f709c37c11c39aec36034ec
-SIZE: 583680
+SHA1: ed726e4a417621176b9102a07939645d21640c37
+SIZE: 593920
 USE: abi_x86_32 abi_x86_64 amd64 cpu_flags_x86_sse elibc_glibc kernel_linux
-MTIME: 1791063049
+MTIME: 1794369559
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33805,6 +33873,28 @@ MTIME: 1794110766
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369766
+CPV: media-sound/liblc3-1.1.3
+DEFINED_PHASES: compile configure install prepare setup test
+EAPI: 8
+IUSE: test tools abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: amd64 arm arm64 ~loong ~mips ppc ppc64 ~riscv ~sparc x86
+LICENSE: Apache-2.0
+MD5: 4f043f5f0bdba677f317d78036ad4696
+PATH: pkgs-media-sound/liblc3-1.1.3-2.gpkg.tar
+PROVIDES: x86_64: liblc3.so.1
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 8a4fef5090b9b81f902421d68fecb4b331889027
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794369767
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-text/t1utils dev-texlive/texlive-metapost dev-lang/perl dev-libs/kpathsea >=media-gfx/fontforge-20200314[png,python] >=sys-apps/texinfo-6.8 >=sys-devel/bison-2.4.1 sys-devel/flex sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
 BUILD_ID: 2
 BUILD_TIME: 1794116835
@@ -35110,9 +35200,9 @@ MTIME: 1794113099
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) sys-devel/gettext virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791063017
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) sys-devel/gettext virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794369507
 CPV: net-libs/libpsl-0.23.3
 DEFINED_PHASES: compile configure install pretend setup test
 DEPEND: dev-libs/libunistring:0/5=[abi_x86_64(-)] net-dns/libidn2:0/2=[abi_x86_64(-)]
@@ -35120,16 +35210,16 @@ EAPI: 8
 IUSE: icu +idn test static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: MIT
-MD5: 0a46c00d912867b52df5a4d949775cae
-PATH: pkgs-net-libs/libpsl-0.23.3-1.gpkg.tar
+MD5: db4b158e2b5d3271921ae45710ed877a
+PATH: pkgs-net-libs/libpsl-0.23.3-2.gpkg.tar
 PROVIDES: x86_64: libpsl.so.5
-RDEPEND: dev-libs/libunistring:0/5=[abi_x86_64(-)] net-dns/libidn2:0/2=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+RDEPEND: dev-libs/libunistring:0/5=[abi_x86_64(-)] net-dns/libidn2:0/2=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libidn2.so.0 libunistring.so.5
 RESTRICT: test
-SHA1: e5ccb1bcbe4f5be8a45ff117bfda8d9cb6d84a17
+SHA1: d01958205ba38be050fd1a8e9291c9ca60638f74
 SIZE: 133120
 USE: abi_x86_64 amd64 elibc_glibc icu idn kernel_linux
-MTIME: 1791063018
+MTIME: 1794369507
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -40910,9 +41000,9 @@ MTIME: 1792728469
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1791064748
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1794369489
 CPV: x11-libs/libXrandr-1.5.5
 DEFINED_PHASES: compile configure install test unpack
 DEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXrender-0.9.8[abi_x86_32(-),abi_x86_64(-)] x11-base/xorg-proto
@@ -40920,15 +41010,15 @@ EAPI: 8
 IUSE: doc abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos ~x64-solaris
 LICENSE: MIT
-MD5: 47f75ec619bc570572e09ecf3415913d
-PATH: pkgs-x11-libs/libXrandr-1.5.5-2.gpkg.tar
+MD5: eb08d2801addb7551bb0acefc81c8f12
+PATH: pkgs-x11-libs/libXrandr-1.5.5-3.gpkg.tar
 PROVIDES: x86_32: libXrandr.so.2 x86_64: libXrandr.so.2
-RDEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXrender-0.9.8[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+RDEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXrender-0.9.8[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libX11.so.6 libXext.so.6 libXrender.so.1 libc.so.6 x86_64: libX11.so.6 libXext.so.6 libXrender.so.1 libc.so.6
-SHA1: 15a294d71e862b82f1cff261de92d3e27533a349
-SIZE: 102400
+SHA1: 3e2ce7f84f2fb6e676923bf04b1d4703446ac0d7
+SIZE: 112640
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791064749
+MTIME: 1794369489
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -40976,6 +41066,28 @@ MTIME: 1792727527
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 6
+BUILD_TIME: 1794369755
+CPV: x11-libs/libXres-1.2.3
+DEFINED_PHASES: compile configure install test unpack
+DEPEND: x11-libs/libX11 x11-libs/libXext x11-base/xorg-proto
+EAPI: 8
+IUSE: doc
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-solaris
+LICENSE: MIT
+MD5: 8059837c9e43b12ff944d6b3e878d7ba
+PATH: pkgs-x11-libs/libXres-1.2.3-6.gpkg.tar
+PROVIDES: x86_64: libXRes.so.1
+RDEPEND: x11-libs/libX11 x11-libs/libXext >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libX11.so.6 libXext.so.6 libc.so.6
+SHA1: 48da3e43c5cf70b8ed403405aecceb66e8e6f57d
+SIZE: 61440
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794369756
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=app-portage/elt-patches-20250306 virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1792727580
@@ -40999,9 +41111,9 @@ MTIME: 1792727581
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1791064803
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1794369515
 CPV: x11-libs/libXxf86vm-1.1.7
 DEFINED_PHASES: compile configure install test unpack
 DEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] x11-base/xorg-proto
@@ -41009,21 +41121,21 @@ EAPI: 8
 IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 doc
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-solaris
 LICENSE: MIT
-MD5: 62724eff5b4d64c45bcf0433434a02f7
-PATH: pkgs-x11-libs/libXxf86vm-1.1.7-2.gpkg.tar
+MD5: 50dc7acfe631b623c85c29d224c03e37
+PATH: pkgs-x11-libs/libXxf86vm-1.1.7-3.gpkg.tar
 PROVIDES: x86_32: libXxf86vm.so.1 x86_64: libXxf86vm.so.1
-RDEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
+RDEPEND: >=x11-libs/libX11-1.6.2[abi_x86_32(-),abi_x86_64(-)] >=x11-libs/libXext-1.3.2[abi_x86_32(-),abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libX11.so.6 libXext.so.6 libc.so.6 x86_64: libX11.so.6 libXext.so.6 libc.so.6
-SHA1: e8b837bdd28bf131edaa7c5247cc9bd03b2c2161
+SHA1: 53c3b08d50077c11327d535a53a481ef4896de1d
 SIZE: 71680
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791064804
+MTIME: 1794369516
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 3
-BUILD_TIME: 1791063466
+BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 4
+BUILD_TIME: 1794369644
 CPV: x11-libs/libdrm-2.4.134
 DEFINED_PHASES: compile configure install prepare setup test
 DEPEND: >=x11-libs/libpciaccess-0.13.1-r1:0/0=[abi_x86_32(-),abi_x86_64(-)]
@@ -41031,16 +41143,16 @@ EAPI: 8
 IUSE: video_cards_amdgpu video_cards_exynos video_cards_freedreno video_cards_intel video_cards_nouveau video_cards_omap video_cards_radeon video_cards_tegra video_cards_vc4 video_cards_vivante video_cards_vmware doc test tools udev valgrind abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
 LICENSE: MIT
-MD5: 2848cc4548872ff94dce5854f2dd3216
-PATH: pkgs-x11-libs/libdrm-2.4.134-3.gpkg.tar
+MD5: d323bd1d57cfd82d45ff4a73006f1c7f
+PATH: pkgs-x11-libs/libdrm-2.4.134-4.gpkg.tar
 PROVIDES: x86_32: libdrm.so.2 libdrm_amdgpu.so.1 libdrm_intel.so.1 libdrm_nouveau.so.2 libdrm_radeon.so.1 x86_64: libdrm.so.2 libdrm_amdgpu.so.1 libdrm_intel.so.1 libdrm_nouveau.so.2 libdrm_radeon.so.1
-RDEPEND: >=x11-libs/libpciaccess-0.13.1-r1:0/0=[abi_x86_32(-),abi_x86_64(-)] virtual/udev >=sys-libs/glibc-2.43-r2
+RDEPEND: >=x11-libs/libpciaccess-0.13.1-r1:0/0=[abi_x86_32(-),abi_x86_64(-)] virtual/udev >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libc.so.6 libpciaccess.so.0 x86_64: libc.so.6 libpciaccess.so.0
 RESTRICT: test
-SHA1: b0442c974deb975ec9ec29be65827099dfe06a40
-SIZE: 552960
+SHA1: e4ed8c50fe97d731ce32ab95c76c102c82ecc7de
+SIZE: 563200
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux udev video_cards_amdgpu video_cards_intel video_cards_nouveau video_cards_radeon
-MTIME: 1791063467
+MTIME: 1794369645
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -41070,9 +41182,9 @@ MTIME: 1793594355
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1791063451
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1794369624
 CPV: x11-libs/libpciaccess-0.19
 DEFINED_PHASES: compile configure install test unpack
 DEPEND: >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)]
@@ -41080,15 +41192,15 @@ EAPI: 8
 IUSE: zlib static-libs abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-solaris
 LICENSE: MIT
-MD5: 3e803513fb45a2ddaeb1968adb2ff662
-PATH: pkgs-x11-libs/libpciaccess-0.19-2.gpkg.tar
+MD5: d2570a19671083bd71afa863ed2060e2
+PATH: pkgs-x11-libs/libpciaccess-0.19-3.gpkg.tar
 PROVIDES: x86_32: libpciaccess.so.0 x86_64: libpciaccess.so.0
-RDEPEND: >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] sys-apps/hwdata >=sys-libs/glibc-2.43-r2
+RDEPEND: >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_32(-),abi_x86_64(-)] sys-apps/hwdata >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_32: libc.so.6 libz.so.1 x86_64: libc.so.6 libz.so.1
-SHA1: 7473805d4f2bcfb76affb91222a6fe0d9721ec4a
+SHA1: 9fe44e42e588ff50eee5efd0614dc1a161a17e16
 SIZE: 92160
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux zlib
-MTIME: 1791063451
+MTIME: 1794369625
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -41162,25 +41274,25 @@ MTIME: 1791083118
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 7
-BUILD_TIME: 1791063440
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 8
+BUILD_TIME: 1794369615
 CPV: x11-libs/pixman-0.46.4
 DEFINED_PHASES: compile configure install pretend setup test
 EAPI: 8
 IUSE: cpu_flags_ppc_altivec cpu_flags_arm_neon loongson2f cpu_flags_x86_mmxext cpu_flags_x86_sse2 cpu_flags_x86_ssse3 static-libs test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: MIT
-MD5: a77487f4b05880cd9101db39d503887b
-PATH: pkgs-x11-libs/pixman-0.46.4-7.gpkg.tar
+MD5: 7ce892393ef387625b82d0cdfa96470a
+PATH: pkgs-x11-libs/pixman-0.46.4-8.gpkg.tar
 PROVIDES: x86_32: libpixman-1.so.0 x86_64: libpixman-1.so.0
-RDEPEND: >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_32: ld-linux.so.2 libc.so.6 libm.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6 libm.so.6
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_32: libc.so.6 libm.so.6 x86_64: libc.so.6 libm.so.6
 RESTRICT: test
-SHA1: 6d38136d4346204ca0e87c22d7b9f31d57c2ccd6
-SIZE: 696320
+SHA1: ac870a1768ba64ca35144cb4c14bf48d4a18f141
+SIZE: 716800
 USE: abi_x86_32 abi_x86_64 amd64 cpu_flags_x86_mmxext cpu_flags_x86_sse2 cpu_flags_x86_ssse3 elibc_glibc kernel_linux
-MTIME: 1791063441
+MTIME: 1794369615
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
