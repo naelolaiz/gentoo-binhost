@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794393247
-PACKAGES: 1991
+TIMESTAMP: 1794393859
+PACKAGES: 1992
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15827,23 +15827,23 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/go dev-lang/perl dev-libs/protobuf[protoc(+)] app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 2
-BUILD_TIME: 1793806726
+BUILD_ID: 3
+BUILD_TIME: 1794393557
 CPV: dev-util/android-tools-36.0.1
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: app-arch/brotli:0/1= app-arch/lz4:0/1.10.0-meson= app-arch/zstd:0/1= dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/libpcre2:0/3= dev-libs/protobuf:0/34.2.0= virtual/zlib:0/1= >=dev-libs/libusb-1.0.28 >=dev-libs/libfmt-11:0/12.2.0=
+DEPEND: app-arch/brotli:0/1= app-arch/lz4:0/1.10.0-meson= app-arch/zstd:0/1= dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/libpcre2:0/3= dev-libs/protobuf:0/34.2.0= virtual/zlib:0/1= >=dev-libs/libusb-1.0.28 >=dev-libs/libfmt-11:0/12.2.1=
 EAPI: 8
 IUSE: python udev python_targets_python3_12 python_targets_python3_13 python_targets_python3_14
 KEYWORDS: ~amd64 ~arm ~arm64 ~x86
 LICENSE: Apache-2.0 BSD-2
-MD5: 2a646af6b6da739dcfbd022d68830757
-PATH: pkgs-dev-util/android-tools-36.0.1-2.gpkg.tar
-RDEPEND: app-arch/brotli:0/1= app-arch/lz4:0/1.10.0-meson= app-arch/zstd:0/1= dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/libpcre2:0/3= dev-libs/protobuf:0/34.2.0= virtual/zlib:0/1= >=dev-libs/libusb-1.0.28 >=dev-libs/libfmt-11:0/12.2.0= dev-util/android-udev-rules >=sys-libs/glibc-2.43-r4
+MD5: e8d49fc93914918b6cca8f7632721407
+PATH: pkgs-dev-util/android-tools-36.0.1-3.gpkg.tar
+RDEPEND: app-arch/brotli:0/1= app-arch/lz4:0/1.10.0-meson= app-arch/zstd:0/1= dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/libpcre2:0/3= dev-libs/protobuf:0/34.2.0= virtual/zlib:0/1= >=dev-libs/libusb-1.0.28 >=dev-libs/libfmt-11:0/12.2.1= dev-util/android-udev-rules >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libabsl_log_internal_check_op.so.2601.0.0 libabsl_log_internal_message.so.2601.0.0 libabsl_status.so.2601.0.0 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libfmt.so.12 libgcc_s.so.1 liblz4.so.1 libpcre2-8.so.0 libprotobuf.so.34.2.0 libstdc++.so.6 libusb-1.0.so.0 libz.so.1 libzstd.so.1
-SHA1: bea4e34bfa030858c715115a2c4f8bda9b493943
+SHA1: 9f8c0072ea24877ff2cf5426a081738e8715159b
 SIZE: 5089280
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 udev
-MTIME: 1793806729
+MTIME: 1794393560
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -44644,6 +44644,30 @@ SHA1: 0518eacbdbd28a4b981447e2aa9f6edb80ae7860
 SIZE: 17664000
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux nls wayland
 MTIME: 1791696898
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( >=dev-lang/zig-bin-0.17.1:0.17 >=dev-lang/zig-0.17.1:0.17 ) sys-devel/gettext || ( dev-lang/zig:0.17[llvm(+)] dev-lang/zig-bin:0.17 ) virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794393622
+CPV: x11-terms/ghostty-1.4.0
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND: >=dev-libs/oniguruma-6.9.9:0/5= >=dev-util/glslang-1.3.296.0:0/16.6= gui-libs/gtk:4/4=[X] gui-libs/libadwaita:1/1= media-libs/fontconfig:1.0/1.0= media-libs/freetype:2/2=[bzip2,harfbuzz,png] media-libs/harfbuzz:0/6.0.0=[truetype,introspection] dev-cpp/highway:0/0= >=dev-cpp/simdutf-9.0.0:0/37= x11-libs/libX11 dev-libs/wayland gui-libs/gtk4-layer-shell:0/0= virtual/libintl
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: X wayland man nls
+KEYWORDS: ~amd64
+LICENSE: Apache-2.0 BSD BSD-2 BSD-4 Boost-1.0 MIT MPL-2.0 Unicode-3.0
+MD5: 26331462d354c4acb55fdaf654567d03
+PATH: pkgs-x11-terms/ghostty-1.4.0-1.gpkg.tar
+PROVIDES: x86_64: libghostty-vt.so.0
+RDEPEND: >=dev-libs/oniguruma-6.9.9:0/5= >=dev-util/glslang-1.3.296.0:0/16.6= gui-libs/gtk:4/4=[X] gui-libs/libadwaita:1/1= media-libs/fontconfig:1.0/1.0= media-libs/freetype:2/2=[bzip2,harfbuzz,png] media-libs/harfbuzz:0/6.0.0=[truetype,introspection] dev-cpp/highway:0/0= >=dev-cpp/simdutf-9.0.0:0/37= x11-libs/libX11 dev-libs/wayland gui-libs/gtk4-layer-shell:0/0= virtual/libintl ~x11-terms/ghostty-terminfo-1.4.0 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libEGL.so.1 libX11.so.6 libadwaita-1.so.0 libc.so.6 libfontconfig.so.1 libfreetype.so.6 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-4.so.1 libgtk4-layer-shell.so.0 libharfbuzz.so.0 libhwy.so.1 libm.so.6 libonig.so.5 libsimdutf.so.37 libwayland-client.so.0
+SHA1: 03c7185896619e4a1a10c4d0bbc19321b246a791
+SIZE: 21125120
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux nls wayland
+MTIME: 1794393624
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
