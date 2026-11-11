@@ -566,6 +566,14 @@
    "path": "pkgs-dev-cpp/asio-1.38.0-1.gpkg.tar"
   },
   {
+   "at": 1794387696,
+   "path": "pkgs-dev-cpp/glibmm-2.66.8-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794387696,
+   "path": "pkgs-dev-cpp/pangomm-2.46.5-1.gpkg.tar"
+  },
+  {
    "at": 1793710316,
    "path": "pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar"
   },
@@ -694,6 +702,10 @@
    "path": "pkgs-dev-libs/libxml2-2.15.4-1.gpkg.tar"
   },
   {
+   "at": 1794387696,
+   "path": "pkgs-dev-libs/libxmlb-0.3.29-1.gpkg.tar"
+  },
+  {
    "at": 1793598458,
    "path": "pkgs-dev-libs/libzip-1.12-1.gpkg.tar"
   },
@@ -748,6 +760,10 @@
   {
    "at": 1793512319,
    "path": "pkgs-dev-python/myst-parser-5.1.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794387696,
+   "path": "pkgs-dev-python/numpy-2.5.4-1.gpkg.tar"
   },
   {
    "at": 1793181205,
@@ -1646,6 +1662,10 @@
    "path": "pkgs-media-gfx/sam2p-0.49.4_p20190718-r1-4.gpkg.tar"
   },
   {
+   "at": 1794387696,
+   "path": "pkgs-media-libs/babl-0.1.128-1.gpkg.tar"
+  },
+  {
    "at": 1794116287,
    "path": "pkgs-media-libs/dssi-1.1.1-r2-4.gpkg.tar"
   },
@@ -1664,6 +1684,10 @@
   {
    "at": 1794113491,
    "path": "pkgs-media-libs/gd-2.3.3-r4-37.gpkg.tar"
+  },
+  {
+   "at": 1794387696,
+   "path": "pkgs-media-libs/gexiv2-0.14.7-r2-1.gpkg.tar"
   },
   {
    "at": 1794371119,
@@ -1978,6 +2002,10 @@
    "path": "pkgs-net-libs/libquotient-0.9.6.1-5.gpkg.tar"
   },
   {
+   "at": 1794387696,
+   "path": "pkgs-net-libs/libslirp-4.9.3-1.gpkg.tar"
+  },
+  {
    "at": 1793686502,
    "path": "pkgs-net-libs/libssh-0.12.2-1.gpkg.tar"
   },
@@ -2074,6 +2102,10 @@
    "path": "pkgs-net-misc/yt-dlp-2026.10.26-1.gpkg.tar"
   },
   {
+   "at": 1794387696,
+   "path": "pkgs-net-print/cups-pk-helper-0.2.7-r1-1.gpkg.tar"
+  },
+  {
    "at": 1793687121,
    "path": "pkgs-net-wireless/wpa_supplicant-2.12-1.gpkg.tar"
   },
@@ -2136,6 +2168,10 @@
   {
    "at": 1794370176,
    "path": "pkgs-sys-apps/dbus-1.16.2-r2-1.gpkg.tar"
+  },
+  {
+   "at": 1794387696,
+   "path": "pkgs-sys-apps/fwupd-efi-1.9-1.gpkg.tar"
   },
   {
    "at": 1794369507,
@@ -2208,6 +2244,10 @@
   {
    "at": 1794371449,
    "path": "pkgs-sys-power/switcheroo-control-3.0-14.gpkg.tar"
+  },
+  {
+   "at": 1794387696,
+   "path": "pkgs-sys-power/upower-1.91.3-1.gpkg.tar"
   },
   {
    "at": 1793598458,
@@ -2292,6 +2332,10 @@
   {
    "at": 1794369844,
    "path": "pkgs-x11-libs/pixman-0.46.4-7.gpkg.tar"
+  },
+  {
+   "at": 1794387696,
+   "path": "pkgs-x11-misc/appmenu-gtk-module-25.04-1.gpkg.tar"
   },
   {
    "at": 1793983999,
