@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794455762
-PACKAGES: 1999
+TIMESTAMP: 1794460898
+PACKAGES: 2001
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -13018,6 +13018,29 @@ SIZE: 1597440
 SLOT: 5
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1793251858
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/setuptools-scm-8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1794460607
+CPV: dev-python/sip-6.17.3
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: doc test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: BSD-2 BSD
+MD5: 472753c417568177e88d412a2cc5fefe
+PATH: pkgs-dev-python/sip-6.17.3-1.gpkg.tar
+RDEPEND: dev-python/packaging[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)] dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "063ec1d564e9aae4f5fd56eb41e2118fa492fb7d"}
+RESTRICT: test
+SHA1: a6071f9eeb488c663814b43edf736e98269b0a5d
+SIZE: 1597440
+SLOT: 5
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1794460608
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -38370,6 +38393,29 @@ SIZE: 39567360
 SLOT: 0/26
 USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
 MTIME: 1793694000
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794460591
+CPV: net-libs/nodejs-26.13.1-r1
+DEFINED_PHASES: compile configure install postinst prepare pretend setup test
+DEPEND: >=app-arch/brotli-1.2.1:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1-r1:0/37=[atomic-base64(+)] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/36= >=net-dns/c-ares-1.34.9:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/4= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
+EAPI: 8
+IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
+LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
+MD5: bec7fcd2270de8f5b412308cf7f31513
+PATH: pkgs-net-libs/nodejs-26.13.1-r1-1.gpkg.tar
+RDEPEND: >=app-arch/brotli-1.2.1:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1-r1:0/37=[atomic-base64(+)] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/36= >=net-dns/c-ares-1.34.9:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/4= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.4 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.36 libsimdutf.so.37 libsqlite3.so.0 libssl.so.4 libstdc++.so.6 libuv.so.1 libz.so.1
+RESTRICT: test
+SHA1: b5c7bb52da0af29ca16e64673d2921d03cac8c9d
+SIZE: 39557120
+SLOT: 0/26
+USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
+MTIME: 1794460601
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
