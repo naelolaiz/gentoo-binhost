@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794464567
+TIMESTAMP: 1794464821
 PACKAGES: 2008
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -32150,27 +32150,27 @@ MTIME: 1794390377
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
-BUILD_ID: 1
-BUILD_TIME: 1791310620
+BDEPEND: virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 2
+BUILD_TIME: 1794464690
 CPV: media-gfx/gnofract4d-4.4
 DEFINED_PHASES: compile configure install postinst postrm preinst setup test
 DEPEND: dev-lang/python:3.14 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16=
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
-IUSE: python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 test
+IUSE: python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15 test
 KEYWORDS: amd64 x86
 LICENSE: BSD
-MD5: b2d239303d7896a6a0750445e851c97b
-PATH: pkgs-media-gfx/gnofract4d-4.4-1.gpkg.tar
+MD5: c4f4b58d53f5c0aff2967526a36f3bd5
+PATH: pkgs-media-gfx/gnofract4d-4.4-2.gpkg.tar
 PROVIDES: x86_64: fract4dc.cpython-314-x86_64-linux-gnu.so
-RDEPEND: dev-lang/python:3.14 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= dev-python/pygobject:3[python_targets_python3_14(-)] gui-libs/gtk:4[introspection] >=sys-libs/glibc-2.43-r2
+RDEPEND: dev-lang/python:3.14 media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= dev-python/pygobject:3[python_targets_python3_14(-)] gui-libs/gtk:4[introspection] >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libjpeg.so.62 libm.so.6 libpng16.so.16 libstdc++.so.6
 RESTRICT: test
-SHA1: b066ab59be751f92f7cc44b0d19f348c65b27e8f
+SHA1: 48fa4cbea498064555ed9188d7991b5c69e0bb93
 SIZE: 1105920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
-MTIME: 1791310621
+MTIME: 1794464691
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -40448,25 +40448,26 @@ MTIME: 1794026900
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-lang/go-1.26.10 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1794395177
+BDEPEND: >=dev-lang/go-1.26.10 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.4= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 2
+BUILD_TIME: 1794464748
 CPV: sci-ml/ollama-0.40.16
 DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
 DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/0.29.0=
 EAPI: 8
 KEYWORDS: ~amd64
 LICENSE: MIT
-MD5: cf8c5519cfabf8530d6acbc5cb173945
-PATH: pkgs-sci-ml/ollama-0.40.16-1.gpkg.tar
+MD5: 5dda0ab66fb8747d251171e397cd5b14
+PATH: pkgs-sci-ml/ollama-0.40.16-2.gpkg.tar
 PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
 RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/0.29.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "063ec1d564e9aae4f5fd56eb41e2118fa492fb7d"}
 REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
 RESTRICT: mirror test
-SHA1: 915d329d08f708e34eb3f46c383c6ccbbb7d86fe
-SIZE: 21248000
+SHA1: 03a2340d1847b8d3fca322b8da5d99a82ee90555
+SIZE: 21258240
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1794395181
+MTIME: 1794464753
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

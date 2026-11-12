@@ -1641,6 +1641,10 @@
    "path": "pkgs-media-gfx/gimp-3.2.8-1.gpkg.tar"
   },
   {
+   "at": 1794464821,
+   "path": "pkgs-media-gfx/gnofract4d-4.4-1.gpkg.tar"
+  },
+  {
    "at": 1794116910,
    "path": "pkgs-media-gfx/imagemagick-7.1.2.32-2.gpkg.tar"
   },
@@ -2155,6 +2159,10 @@
   {
    "at": 1793735172,
    "path": "pkgs-sci-ml/ggml-0.27.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794464821,
+   "path": "pkgs-sci-ml/ollama-0.40.16-1.gpkg.tar"
   },
   {
    "at": 1793598458,
