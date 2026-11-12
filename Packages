@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794461521
-PACKAGES: 2004
+TIMESTAMP: 1794463938
+PACKAGES: 2005
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -36064,6 +36064,32 @@ SHA1: cb15d6eab69a229c05644a1aefcf4b9e7b9acfc8
 SIZE: 48588800
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
 MTIME: 1792994411
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15[threads(+)] dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) dev-util/itstool sys-devel/gettext virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794463894
+CPV: media-sound/ardour-9.10.0
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: app-arch/libarchive:0/13= dev-cpp/cairomm:0[X] dev-cpp/glibmm:2 dev-cpp/pangomm:1.4 dev-libs/glib:2 dev-libs/libsigc++:2 dev-libs/libxml2:2/16= media-libs/alsa-lib media-libs/aubio:0/5= media-libs/flac media-libs/fontconfig media-libs/freetype:2 media-libs/liblo media-libs/liblrdf media-libs/libpng:0/16= media-libs/libsamplerate media-libs/libsndfile media-libs/lilv media-libs/lv2 media-libs/raptor:2 media-libs/rubberband:0/3= media-libs/taglib:0/2= media-libs/vamp-plugin-sdk net-libs/libwebsockets:0/22= net-misc/curl sys-apps/dbus sys-libs/readline:0/8= sci-libs/fftw:3.0/3=[threads] virtual/libusb:1 x11-libs/cairo[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXinerama x11-libs/libXrandr x11-libs/pango x11-themes/hicolor-icon-theme virtual/jack media-libs/libpulse dev-libs/boost dev-libs/sord media-libs/sratom x11-libs/libXi
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: doc jack phonehome pulseaudio test cpu_flags_x86_avx cpu_flags_x86_avx512f cpu_flags_x86_fma3 cpu_flags_x86_sse
+KEYWORDS: ~amd64 ~loong ~x86
+LICENSE: GPL-2
+MD5: 1b52481f7a4e8ec020b30235c0c01106
+PATH: pkgs-media-sound/ardour-9.10.0-1.gpkg.tar
+PROVIDES: x86_64: a-comp.so a-delay.so a-eq.so a-exp.so a-fluidsynth.so a-reverb.so libaaf.so.0 libalsa_audiobackend.so libardour.so.3 libardour_cc121.so libardour_console1.so libardour_contourdesign.so libardour_faderport.so libardour_faderport16.so libardour_faderport2.so libardour_faderport8.so libardour_generic_midi.so libardour_launch_control_xl.so libardour_launchkey_4.so libardour_launchpad_mini.so libardour_launchpad_pro.so libardour_launchpad_x.so libardour_mcp.so libardour_mcp_http.so libardour_midisurface.so libardour_osc.so libardour_push2.so libardour_ssl_uf8.so libardour_us2400.so libardour_websockets.so libardouralsautil.so.0 libardourcp.so libardourvampplugins.so libardourvamppyin.so.0 libaudiographer.so.0 libcanvas.so.0 libclearlooks.so libdummy_audiobackend.so libevoral.so.0 libgtkmm2ext.so.0 libjack_audiobackend.so libmidipp.so.4 libpan1in2out.so libpan2in2out.so libpanbalance.so libpanvbap.so libpbd.so.4 libptformat.so.0 libpulseaudio_backend.so libsuil.so.0 libsuil_x11_in_gtk2.so libtemporal.so.0 libwaveview.so.0 libwidgets.so.0 libydk-pixbuf.so.2 libydk.so.2 libydkmm.so.2 libytk.so.2 libytkmm.so.2 libztk.so.2 libztkmm.so.2 reasonablesynth.so
+RDEPEND: app-arch/libarchive:0/13= dev-cpp/cairomm:0[X] dev-cpp/glibmm:2 dev-cpp/pangomm:1.4 dev-libs/glib:2 dev-libs/libsigc++:2 dev-libs/libxml2:2/16= media-libs/alsa-lib media-libs/aubio:0/5= media-libs/flac media-libs/fontconfig media-libs/freetype:2 media-libs/liblo media-libs/liblrdf media-libs/libpng:0/16= media-libs/libsamplerate media-libs/libsndfile media-libs/lilv media-libs/lv2 media-libs/raptor:2 media-libs/rubberband:0/3= media-libs/taglib:0/2= media-libs/vamp-plugin-sdk net-libs/libwebsockets:0/22= net-misc/curl sys-apps/dbus sys-libs/readline:0/8= sci-libs/fftw:3.0/3=[threads] virtual/libusb:1 x11-libs/cairo[X] x11-libs/libX11 x11-libs/libXext x11-libs/libXinerama x11-libs/libXrandr x11-libs/pango x11-themes/hicolor-icon-theme virtual/jack media-libs/libpulse >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "063ec1d564e9aae4f5fd56eb41e2118fa492fb7d"}
+REQUIRES: x86_64: libX11.so.6 libXext.so.6 libXinerama.so.1 libXrandr.so.2 libarchive.so.13 libasound.so.2 libaubio.so.5 libc.so.6 libcairo.so.2 libcairomm-1.0.so.1 libcurl.so.4 libdbus-1.so.3 libfftw3f.so.3 libfftw3f_threads.so.3 libfontconfig.so.1 libgcc_s.so.1 libgio-2.0.so.0 libgiomm-2.4.so.1 libglib-2.0.so.0 libglibmm-2.4.so.1 libgmodule-2.0.so.0 libgobject-2.0.so.0 libjack.so.0 libjpeg.so.62 liblilv-0.so.0 liblo.so.7 liblrdf.so.2 libm.so.6 libmvec.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpangomm-1.4.so.1 libpng16.so.16 libpulse.so.0 libreadline.so.8 librubberband.so.3 libsamplerate.so.0 libserd-0.so.0 libsigc-2.0.so.0 libsndfile.so.1 libstdc++.so.6 libtag.so.2 libusb-1.0.so.0 libvamp-hostsdk.so.3 libvamp-sdk.so.2 libwebsockets.so.23 libxml2.so.16
+RESTRICT: test
+SHA1: b72b15e66bf49ba34c49e96152d6652204be430e
+SIZE: 30167040
+SLOT: 9
+USE: abi_x86_64 amd64 cpu_flags_x86_avx cpu_flags_x86_fma3 cpu_flags_x86_sse elibc_glibc jack kernel_linux pulseaudio
+MTIME: 1794463897
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
