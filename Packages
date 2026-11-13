@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794573942
-PACKAGES: 1935
+TIMESTAMP: 1794574424
+PACKAGES: 1936
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -34260,6 +34260,29 @@ SHA1: 7d8ca9f34a4e67467988957fc6196f1187b9f47f
 SIZE: 122880
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791284892
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-apps/ed virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794574245
+CPV: media-plugins/hexter-1.1.1-r1
+DEFINED_PHASES: configure install prepare
+DEPEND: media-libs/alsa-lib media-libs/dssi media-libs/liblo media-libs/ladspa-sdk
+EAPI: 8
+IUSE: readline
+KEYWORDS: ~amd64 ~x86
+LICENSE: GPL-2
+MD5: 8333a868d2d15bbf1ee57cbbdbfdca19
+PATH: pkgs-media-plugins/hexter-1.1.1-r1-1.gpkg.tar
+PROVIDES: x86_64: hexter.so
+RDEPEND: media-libs/alsa-lib media-libs/dssi media-libs/liblo >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "55ee54c9258da1fe15275e23176b05b41b3a4528"}
+REQUIRES: x86_64: libc.so.6 liblo.so.7 libm.so.6
+SHA1: 62ae97e7cfcddec0e4a50437357321b191772d70
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794574246
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
