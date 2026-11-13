@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794512241
-PACKAGES: 1929
+TIMESTAMP: 1794541467
+PACKAGES: 1930
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8015,6 +8015,30 @@ SHA1: 5df6f60a65f8db187284bed1c5bfd91d3deb1060
 SIZE: 81920
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791089607
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794541289
+CPV: dev-libs/opencl-icd-loader-2026.05.29-r1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-util/opencl-headers-2026.05.29
+EAPI: 8
+IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0
+MD5: 6dfc1100fc4e1db1aadb6d6f12ae2076
+PATH: pkgs-dev-libs/opencl-icd-loader-2026.05.29-r1-1.gpkg.tar
+PROVIDES: x86_64: libOpenCL.so.1
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "55ee54c9258da1fe15275e23176b05b41b3a4528"}
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: 5fee0917538103af3c11245b39da23a398c6726f
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794541290
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
