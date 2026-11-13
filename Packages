@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794571809
+TIMESTAMP: 1794573021
 PACKAGES: 1933
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -33290,25 +33290,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 5
-BUILD_TIME: 1791229201
+BUILD_ID: 6
+BUILD_TIME: 1794572743
 CPV: media-libs/sdl2-image-2.8.8
 DEFINED_PHASES: compile configure install prepare setup test
-DEPEND: >=media-libs/libsdl2-2.30.0[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=media-libs/libavif-1.0.0:0/16.4=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] >=media-libs/tiff-3.9.7-r1:0/6=[abi_x86_64(-)] >=media-libs/libwebp-0.3.0:0/7=[abi_x86_64(-)]
+DEPEND: >=media-libs/libsdl2-2.30.0[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=media-libs/libavif-1.0.0:0/16.4=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/libjxl:0/0.13=[abi_x86_64(-)] >=media-libs/tiff-3.9.7-r1:0/6=[abi_x86_64(-)] >=media-libs/libwebp-0.3.0:0/7=[abi_x86_64(-)]
 EAPI: 8
 IUSE: avif gif jpeg jpegxl png samples static-libs test tiff webp abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
 LICENSE: ZLIB
-MD5: 322b457c700e87247a834446b1487903
-PATH: pkgs-media-libs/sdl2-image-2.8.8-5.gpkg.tar
+MD5: a4de4957ddf0c87a4be5cf6ee1a050da
+PATH: pkgs-media-libs/sdl2-image-2.8.8-6.gpkg.tar
 PROVIDES: x86_64: libSDL2_image-2.0.so.0
-RDEPEND: >=media-libs/libsdl2-2.30.0[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=media-libs/libavif-1.0.0:0/16.4=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/libjxl:0/0.12=[abi_x86_64(-)] >=media-libs/tiff-3.9.7-r1:0/6=[abi_x86_64(-)] >=media-libs/libwebp-0.3.0:0/7=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libSDL2-2.0.so.0 libavif.so.16 libc.so.6 libjpeg.so.62 libjxl.so.0.12 libpng16.so.16 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2
+RDEPEND: >=media-libs/libsdl2-2.30.0[abi_x86_64(-)] >=virtual/zlib-1.2.8-r1:0/1=[abi_x86_64(-)] >=media-libs/libavif-1.0.0:0/16.4=[abi_x86_64(-)] >=media-libs/libpng-1.6.10:0/16=[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/libjxl:0/0.13=[abi_x86_64(-)] >=media-libs/tiff-3.9.7-r1:0/6=[abi_x86_64(-)] >=media-libs/libwebp-0.3.0:0/7=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libSDL2-2.0.so.0 libavif.so.16 libc.so.6 libjpeg.so.62 libjxl.so.0.13 libpng16.so.16 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2
 RESTRICT: test
-SHA1: 34364837a1147eb32376e7d156bfcf3f1c7b57df
-SIZE: 122880
+SHA1: f888c8543c2176004cd73a075085b37123ae0ab0
+SIZE: 133120
 USE: abi_x86_64 amd64 avif elibc_glibc gif jpeg jpegxl kernel_linux png tiff webp
-MTIME: 1791229203
+MTIME: 1794572744
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -35898,25 +35898,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-text/xmltoman dev-util/glib-utils sys-devel/gettext virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
-BUILD_ID: 3
-BUILD_TIME: 1794115908
+BUILD_ID: 4
+BUILD_TIME: 1794572767
 CPV: net-dns/avahi-0.9_rc5
 DEFINED_PHASES: compile configure install postinst prepare setup test
-DEPEND: dev-libs/expat:0/0= dev-libs/glib:2/2=[abi_x86_64(-)] dev-libs/libdaemon:0/5= dev-libs/libevent:0/2.1-7=[abi_x86_64(-)] sys-apps/dbus:0/0=[abi_x86_64(-)] sys-libs/gdbm:0/6=[abi_x86_64(-)] x11-libs/gtk+:3[abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= sys-libs/libcap:0/0= dev-qt/qtbase:6/6.11.3=
+DEPEND: dev-libs/expat:0/0= dev-libs/glib:2/2=[abi_x86_64(-)] dev-libs/libdaemon:0/5= dev-libs/libevent:0/2.1-7=[abi_x86_64(-)] sys-apps/dbus:0/0=[abi_x86_64(-)] sys-libs/gdbm:0/6=[abi_x86_64(-)] x11-libs/gtk+:3[abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= sys-libs/libcap:0/0= dev-qt/qtbase:6
 EAPI: 8
 IUSE: autoipd bookmarks +dbus doc gdbm gtk howl-compat +introspection mdnsresponder-compat nls python qt6 selinux systemd test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
 KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
 LICENSE: LGPL-2.1
-MD5: 3e4705748992cca0e80780ac210e1eb3
-PATH: pkgs-net-dns/avahi-0.9_rc5-3.gpkg.tar
+MD5: 2bdae6c78901225ed9a1d05457327901
+PATH: pkgs-net-dns/avahi-0.9_rc5-4.gpkg.tar
 PROVIDES: x86_64: libavahi-client.so.3 libavahi-common.so.3 libavahi-core.so.7 libavahi-glib.so.1 libavahi-gobject.so.0 libavahi-libevent.so.1 libavahi-qt6.so.1 libavahi-ui-gtk3.so.0 libdns_sd.so.1
-RDEPEND: dev-libs/expat:0/0= dev-libs/glib:2/2=[abi_x86_64(-)] dev-libs/libdaemon:0/5= dev-libs/libevent:0/2.1-7=[abi_x86_64(-)] sys-apps/dbus:0/0=[abi_x86_64(-)] sys-libs/gdbm:0/6=[abi_x86_64(-)] x11-libs/gtk+:3[abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= sys-libs/libcap:0/0= dev-qt/qtbase:6/6.11.3= acct-user/avahi acct-group/avahi acct-group/netdev >=sys-libs/glibc-2.43-r4
+RDEPEND: dev-libs/expat:0/0= dev-libs/glib:2/2=[abi_x86_64(-)] dev-libs/libdaemon:0/5= dev-libs/libevent:0/2.1-7=[abi_x86_64(-)] sys-apps/dbus:0/0=[abi_x86_64(-)] sys-libs/gdbm:0/6=[abi_x86_64(-)] x11-libs/gtk+:3[abi_x86_64(-)] >=dev-libs/gobject-introspection-1.82.0-r2:0/0= sys-libs/libcap:0/0= dev-qt/qtbase:6 acct-user/avahi acct-group/avahi acct-group/netdev >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libc.so.6 libcap.so.2 libdaemon.so.0 libdbus-1.so.3 libevent-2.1.so.7 libexpat.so.1 libgcc_s.so.1 libgdbm.so.6 libgdk-3.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libstdc++.so.6
 RESTRICT: test
-SHA1: 6f7aec17814829b6879613db7896f0572fe361db
+SHA1: 60558be1a2ee2b3e9a28791a8ed890ca1a6fc181
 SIZE: 604160
 USE: abi_x86_64 amd64 dbus elibc_glibc gdbm gtk introspection kernel_linux mdnsresponder-compat nls python_single_target_python3_14 qt6
-MTIME: 1794115910
+MTIME: 1794572768
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
