@@ -32,10 +32,6 @@
   "dev-libs/expat-2.8.5": 1793735172,
   "dev-libs/kweathercore-26.08.2": 1793983999,
   "dev-libs/libfmt-12.2.0": 1794396593,
-  "dev-libs/nss-3.130": 1793336013,
-  "dev-libs/nss-3.131": 1793336013,
-  "dev-libs/nss-3.131.1": 1793336013,
-  "dev-libs/simdjson-5.0.7-r1": 1793336013,
   "dev-python/filelock-4.0.12": 1794396593,
   "dev-python/filelock-4.0.9": 1794396593,
   "dev-python/platformdirs-4.12.2": 1794118207,
@@ -210,8 +206,6 @@
   "kde-apps/thumbnailers-26.08.2": 1793983999,
   "kde-apps/umbrello-26.08.2": 1793983999,
   "kde-apps/yakuake-26.08.2": 1793983999,
-  "kde-frameworks/baloo-6.31.0-r1": 1793336013,
-  "kde-frameworks/ktexteditor-6.31.0": 1793336013,
   "kde-misc/kclock-26.08.2": 1793983999,
   "kde-misc/kdeconnect-26.08.2": 1793735172,
   "kde-misc/kdeconnect-26.08.2-r1": 1793983999,
@@ -800,8 +794,24 @@
    "path": "pkgs-dev-libs/nspr-4.40-1.gpkg.tar"
   },
   {
+   "at": 1794574427,
+   "path": "pkgs-dev-libs/nss-3.130-1.gpkg.tar"
+  },
+  {
+   "at": 1794574427,
+   "path": "pkgs-dev-libs/nss-3.131-1.gpkg.tar"
+  },
+  {
+   "at": 1794574427,
+   "path": "pkgs-dev-libs/nss-3.131.1-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-dev-libs/simdjson-4.6.11-1.gpkg.tar"
+  },
+  {
+   "at": 1794574427,
+   "path": "pkgs-dev-libs/simdjson-5.0.7-r1-1.gpkg.tar"
   },
   {
    "at": 1794375786,
@@ -1064,6 +1074,10 @@
    "path": "pkgs-kde-frameworks/baloo-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1794574427,
+   "path": "pkgs-kde-frameworks/baloo-6.31.0-r1-1.gpkg.tar"
+  },
+  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/bluez-qt-6.30.0-1.gpkg.tar"
   },
@@ -1290,6 +1304,10 @@
   {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/ktexteditor-6.30.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794574427,
+   "path": "pkgs-kde-frameworks/ktexteditor-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1793423460,
