@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794542382
-PACKAGES: 1931
+TIMESTAMP: 1794543291
+PACKAGES: 1932
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -6063,6 +6063,31 @@ SIZE: 19783680
 SLOT: 0/1.91.0
 USE: abi_x86_64 amd64 bzip2 context elibc_glibc icu kernel_linux nls python python_targets_python3_14 stacktrace zlib
 MTIME: 1793686892
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/b2-5.1.0
+BUILD_ID: 1
+BUILD_TIME: 1794542991
+CPV: dev-libs/boost-1.91.0-r4
+DEFINED_PHASES: compile configure install postinst preinst prepare setup test
+DEPEND: dev-libs/openssl:0/4= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)]
+EAPI: 8
+IUSE: bzip2 +context debug doc icu lzma +nls mpi numpy python +stacktrace test test-full tools zlib zstd python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: Boost-1.0
+MD5: 9577f3a8fa1ff7e1a7fc0feace096002
+PATH: pkgs-dev-libs/boost-1.91.0-r4-1.gpkg.tar
+PROVIDES: x86_64: libboost_atomic.so.1.91.0 libboost_charconv.so.1.91.0 libboost_chrono.so.1.91.0 libboost_cobalt.so.1.91.0 libboost_cobalt_io.so.1.91.0 libboost_cobalt_io_ssl.so.1.91.0 libboost_container.so.1.91.0 libboost_context.so.1.91.0 libboost_contract.so.1.91.0 libboost_coroutine.so.1.91.0 libboost_date_time.so.1.91.0 libboost_fiber.so.1.91.0 libboost_filesystem.so.1.91.0 libboost_graph.so.1.91.0 libboost_iostreams.so.1.91.0 libboost_json.so.1.91.0 libboost_locale.so.1.91.0 libboost_log.so.1.91.0 libboost_log_setup.so.1.91.0 libboost_math_c99.so.1.91.0 libboost_math_c99f.so.1.91.0 libboost_math_c99l.so.1.91.0 libboost_math_tr1.so.1.91.0 libboost_math_tr1f.so.1.91.0 libboost_math_tr1l.so.1.91.0 libboost_nowide.so.1.91.0 libboost_prg_exec_monitor.so.1.91.0 libboost_process.so.1.91.0 libboost_program_options.so.1.91.0 libboost_python314.so.1.91.0 libboost_random.so.1.91.0 libboost_regex.so.1.91.0 libboost_serialization.so.1.91.0 libboost_stacktrace_addr2line.so.1.91.0 libboost_stacktrace_basic.so.1.91.0 libboost_stacktrace_noop.so.1.91.0 libboost_thread.so.1.91.0 libboost_timer.so.1.91.0 libboost_type_erasure.so.1.91.0 libboost_unit_test_framework.so.1.91.0 libboost_url.so.1.91.0 libboost_wave.so.1.91.0 libboost_wserialization.so.1.91.0
+RDEPEND: dev-libs/openssl:0/4= app-arch/bzip2:0/1=[abi_x86_64(-)] dev-libs/icu:0/78=[abi_x86_64(-)] dev-lang/python:3.14 virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "55ee54c9258da1fe15275e23176b05b41b3a4528"}
+REQUIRES: x86_64: libbz2.so.1 libc.so.6 libcrypto.so.4 libgcc_s.so.1 libicudata.so.78 libicui18n.so.78 libicuuc.so.78 libm.so.6 libssl.so.4 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: e53b800c2d944a72f7ec3684b71cbac389d4cc14
+SIZE: 19783680
+SLOT: 0/1.91.0
+USE: abi_x86_64 amd64 bzip2 context elibc_glibc icu kernel_linux nls python python_targets_python3_14 stacktrace zlib
+MTIME: 1794542999
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
