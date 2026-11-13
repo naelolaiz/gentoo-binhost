@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794569350
+TIMESTAMP: 1794569662
 PACKAGES: 1932
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -25034,26 +25034,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 4
-BUILD_TIME: 1794024552
+BUILD_ID: 5
+BUILD_TIME: 1794569353
 CPV: kde-frameworks/kfilemetadata-6.31.0
 DEFINED_PHASES: compile configure info install nofetch postinst prepare setup test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/61.63.63= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= sys-apps/attr dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/60.62.62= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= sys-apps/attr dev-qt/qtbase:6
 EAPI: 8
 IUSE: epub exif ffmpeg mobi pdf taglib debug test
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: ef7cba461e8a4a4acb1029fabd79ab48
-PATH: pkgs-kde-frameworks/kfilemetadata-6.31.0-4.gpkg.tar
+MD5: 9548ebfe940e2d5ade8dc353ee854310
+PATH: pkgs-kde-frameworks/kfilemetadata-6.31.0-5.gpkg.tar
 PROVIDES: x86_64: kfilemetadata_epubextractor.so kfilemetadata_exiv2extractor.so kfilemetadata_fb2extractor.so kfilemetadata_ffmpegextractor.so kfilemetadata_krita.so kfilemetadata_mobiextractor.so kfilemetadata_odfextractor.so kfilemetadata_office2007extractor.so kfilemetadata_officeextractor.so kfilemetadata_plaintextextractor.so kfilemetadata_pngextractor.so kfilemetadata_poextractor.so kfilemetadata_popplerextractor.so kfilemetadata_postscriptdscextractor.so kfilemetadata_taglibextractor.so kfilemetadata_taglibwriter.so kfilemetadata_xmlextractor.so libKF6FileMetaData.so.3
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/61.63.63= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libQt6Xml.so.6 libavcodec.so.63 libavformat.so.63 libavutil.so.61 libc.so.6 libepub.so.0 libexiv2.so.28 libgcc_s.so.1 libm.so.6 libpoppler-qt6.so.3 libstdc++.so.6 libtag.so.2
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.31*:6 =kde-frameworks/kcodecs-6.31*:6 =kde-frameworks/kcoreaddons-6.31*:6 =kde-frameworks/ki18n-6.31*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/60.62.62= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libQt6Xml.so.6 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libc.so.6 libepub.so.0 libexiv2.so.28 libgcc_s.so.1 libm.so.6 libpoppler-qt6.so.3 libstdc++.so.6 libtag.so.2
 RESTRICT: test test
-SHA1: ba8a65afc5865e51d80749c31eb803f696f8dfed
+SHA1: c610cda1e162cb5e979ecdac452774c0c975e0d5
 SIZE: 368640
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc epub exif ffmpeg kernel_linux mobi pdf taglib
-MTIME: 1794024553
+MTIME: 1794569354
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -32046,27 +32046,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 4
-BUILD_TIME: 1794024704
+BUILD_ID: 5
+BUILD_TIME: 1794569536
 CPV: media-libs/libheif-1.23.7
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend test
-DEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/61.63.63=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)]
+DEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)]
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +aom dav1d +de265 doc ffmpeg gdk-pixbuf geotiff gui +jpeg +jpeg2k +kvazaar openh264 rav1e svt-av1 test test-full +threads tools +webp x264 x265 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: amd64 arm arm64 ~loong ppc64 ~riscv x86
 LICENSE: GPL-3 MIT
-MD5: 7b01c7529a11b94a736e37f73a8332fe
-PATH: pkgs-media-libs/libheif-1.23.7-4.gpkg.tar
+MD5: 539f1607d8feb96cdd1f0d99e6369547
+PATH: pkgs-media-libs/libheif-1.23.7-5.gpkg.tar
 PROVIDES: x86_64: libheif-j2kdec.so libheif-j2kenc.so libheif.so.1 libpixbufloader-heif.so
-RDEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/61.63.63=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libSDL2-2.0.so.0 libaom.so.3 libavcodec.so.63 libavutil.so.61 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libde265.so.0 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjpeg.so.62 libkvazaar.so.7 libm.so.6 libopenh264.so.8 libopenjp2.so.7 libpng16.so.16 libsharpyuv.so.0 libstdc++.so.6 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libz.so.1
+RDEPEND: >=media-libs/libaom-2.0.0:0/3=[abi_x86_64(-)] media-libs/libde265[abi_x86_64(-)] >=media-video/ffmpeg-7.1:0/60.62.62=[abi_x86_64(-)] x11-libs/gdk-pixbuf:2[abi_x86_64(-)] media-libs/libjpeg-turbo:0/0.2=[abi_x86_64(-)] media-libs/openjpeg:2/7=[abi_x86_64(-)] media-libs/kvazaar:0/6=[abi_x86_64(-)] media-libs/openh264:0/8-2.7.0=[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] media-libs/libsdl2[abi_x86_64(-)] media-libs/libwebp:0/7= media-libs/x264:0/164=[abi_x86_64(-)] media-libs/x265:0/217=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libSDL2-2.0.so.0 libaom.so.3 libavcodec.so.62 libavutil.so.60 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libde265.so.0 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjpeg.so.62 libkvazaar.so.7 libm.so.6 libopenh264.so.8 libopenjp2.so.7 libpng16.so.16 libsharpyuv.so.0 libstdc++.so.6 libwebp.so.7 libwebpmux.so.3 libx264.so.164 libx265.so.217 libz.so.1
 RESTRICT: test
-SHA1: 91d73f12b3904a55523e1e49325ac8b09fa3a44c
+SHA1: 6ca02e3f42f818e68de8ef00f4a30cd6cf2100a6
 SIZE: 1566720
 SLOT: 0/1.23
 USE: abi_x86_64 amd64 aom de265 elibc_glibc ffmpeg gdk-pixbuf gui jpeg jpeg2k kernel_linux kvazaar openh264 threads tools webp x264 x265
-MTIME: 1794024705
+MTIME: 1794569537
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33935,27 +33935,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig >=sys-devel/gettext-0.17
-BUILD_ID: 5
-BUILD_TIME: 1794383813
+BUILD_ID: 6
+BUILD_TIME: 1794569364
 CPV: media-plugins/gst-plugins-libav-1.26.11
 DEFINED_PHASES: compile configure install setup test
-DEPEND: >=dev-libs/glib-2.40.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=media-video/ffmpeg-4.4:0/61.63.63=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)]
+DEPEND: >=dev-libs/glib-2.40.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=media-video/ffmpeg-4.4:0/60.62.62=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)]
 EAPI: 8
 IUSE: abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 test nls test
 KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv x86
 LICENSE: LGPL-2+
-MD5: 8434d724395768cdad52e5ec88cb7cd3
-PATH: pkgs-media-plugins/gst-plugins-libav-1.26.11-5.gpkg.tar
+MD5: d594fa641faadc45fa5929eb2aaa2598
+PATH: pkgs-media-plugins/gst-plugins-libav-1.26.11-6.gpkg.tar
 PROVIDES: x86_64: libgstlibav.so
-RDEPEND: >=dev-libs/glib-2.40.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=media-video/ffmpeg-4.4:0/61.63.63=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
-REQUIRES: x86_64: libavcodec.so.63 libavfilter.so.12 libavformat.so.63 libavutil.so.61 libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0
+RDEPEND: >=dev-libs/glib-2.40.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26.11:1.0[abi_x86_64(-)] >=media-libs/gst-plugins-base-1.26.11:1.0[abi_x86_64(-)] >=media-video/ffmpeg-4.4:0/60.62.62=[abi_x86_64(-)] >=dev-libs/glib-2.64.0:2[abi_x86_64(-)] >=media-libs/gstreamer-1.26:1.0[abi_x86_64(-)] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libavcodec.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libc.so.6 libglib-2.0.so.0 libgobject-2.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstpbutils-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0
 RESTRICT: test test
-SHA1: bd5e62a22e7a88d6c6541ea6ff34f1c098a171fd
+SHA1: 88a3b7a39948a8b50dc889486087733b5cfb18ce
 SIZE: 225280
 SLOT: 1.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux nls
-MTIME: 1794383813
+MTIME: 1794569365
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
