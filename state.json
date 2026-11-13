@@ -1208,6 +1208,10 @@
    "path": "pkgs-kde-frameworks/kimageformats-6.30.0-1.gpkg.tar"
   },
   {
+   "at": 1794571809,
+   "path": "pkgs-kde-frameworks/kimageformats-6.31.0-1.gpkg.tar"
+  },
+  {
    "at": 1793423460,
    "path": "pkgs-kde-frameworks/kio-6.30.0-1.gpkg.tar"
   },
@@ -1940,12 +1944,20 @@
    "path": "pkgs-media-gfx/gimp-3.2.8-1.gpkg.tar"
   },
   {
+   "at": 1794571809,
+   "path": "pkgs-media-gfx/gimp-3.2.8-2.gpkg.tar"
+  },
+  {
    "at": 1794464821,
    "path": "pkgs-media-gfx/gnofract4d-4.4-1.gpkg.tar"
   },
   {
    "at": 1794116910,
    "path": "pkgs-media-gfx/imagemagick-7.1.2.32-2.gpkg.tar"
+  },
+  {
+   "at": 1794571809,
+   "path": "pkgs-media-gfx/imagemagick-7.1.2.35-1.gpkg.tar"
   },
   {
    "at": 1793597852,

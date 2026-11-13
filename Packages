@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794571496
+TIMESTAMP: 1794571809
 PACKAGES: 1933
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -25228,26 +25228,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
-BUILD_ID: 1
-BUILD_TIME: 1791617864
+BUILD_ID: 2
+BUILD_TIME: 1794571662
 CPV: kde-frameworks/kimageformats-6.31.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/karchive-6.31*:6 >=media-libs/libavif-1:0/16.4=[aom] >=media-libs/libheif-1.19.7:0/1.23=[de265,x265] media-libs/openjpeg:2/7= >=media-libs/libjxl-0.9.4:0/0.12= >=media-libs/openexr-3:0/32= media-libs/libraw:0/0.22.1= dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/karchive-6.31*:6 >=media-libs/libavif-1:0/16.4=[aom] >=media-libs/libheif-1.19.7:0/1.23=[de265,x265] media-libs/openjpeg:2/7= >=media-libs/libjxl-0.9.4:0/0.13= >=media-libs/openexr-3:0/32= media-libs/libraw:0/0.22.1= dev-qt/qtbase:6
 EAPI: 8
 IUSE: avif eps heif jpeg2k jpegxl openexr raw debug test
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: b7fae6acb4b8f2379760168eaaef2ece
-PATH: pkgs-kde-frameworks/kimageformats-6.31.0-1.gpkg.tar
+MD5: 8d4bb66a38206f3c3f4fe48213ac4909
+PATH: pkgs-kde-frameworks/kimageformats-6.31.0-2.gpkg.tar
 PROVIDES: x86_64: kimg_ani.so kimg_avif.so kimg_dds.so kimg_exr.so kimg_ff.so kimg_hdr.so kimg_heif.so kimg_iff.so kimg_jp2.so kimg_jxl.so kimg_kra.so kimg_pcx.so kimg_pfm.so kimg_pic.so kimg_psd.so kimg_pxr.so kimg_qoi.so kimg_ras.so kimg_raw.so kimg_rgb.so kimg_sct.so kimg_tga.so kimg_tim.so kimg_xcf.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/karchive-6.31*:6 >=media-libs/libavif-1:0/16.4=[aom] >=media-libs/libheif-1.19.7:0/1.23=[de265,x265] media-libs/openjpeg:2/7= >=media-libs/libjxl-0.9.4:0/0.12= >=media-libs/openexr-3:0/32= media-libs/libraw:0/0.22.1= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r2
-REQUIRES: x86_64: libIex-3_3.so.32 libKF6Archive.so.6 libOpenEXR-3_3.so.32 libQt6Core.so.6 libQt6Gui.so.6 libavif.so.16 libc.so.6 libgcc_s.so.1 libheif.so.1 libjxl.so.0.12 libjxl_cms.so.0.12 libjxl_threads.so.0.12 libm.so.6 libopenjp2.so.7 libraw.so.25 libstdc++.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] =kde-frameworks/karchive-6.31*:6 >=media-libs/libavif-1:0/16.4=[aom] >=media-libs/libheif-1.19.7:0/1.23=[de265,x265] media-libs/openjpeg:2/7= >=media-libs/libjxl-0.9.4:0/0.13= >=media-libs/openexr-3:0/32= media-libs/libraw:0/0.22.1= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libIex-3_3.so.32 libKF6Archive.so.6 libOpenEXR-3_3.so.32 libQt6Core.so.6 libQt6Gui.so.6 libavif.so.16 libc.so.6 libgcc_s.so.1 libheif.so.1 libjxl.so.0.13 libjxl_cms.so.0.13 libjxl_threads.so.0.13 libm.so.6 libopenjp2.so.7 libraw.so.25 libstdc++.so.6
 RESTRICT: test
-SHA1: 7d83b6917156705dab5e3934949dd6587f7611fb
-SIZE: 808960
+SHA1: fd55eb9fe925733ca70f6237e49a432937dfe2af
+SIZE: 829440
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 avif elibc_glibc heif jpeg2k jpegxl kernel_linux openexr raw
-MTIME: 1791617866
+MTIME: 1794571663
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30424,27 +30424,28 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-lang/perl-5.30.3 dev-libs/libxslt >=dev-util/gdbus-codegen-2.80.5-r1 >=sys-devel/gettext-0.21 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
-BUILD_ID: 2
-BUILD_TIME: 1794390371
+BUILD_ID: 3
+BUILD_TIME: 1794571697
 CPV: media-gfx/gimp-3.2.8
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test
-DEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/fribidi-1.0.8:0/0= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.12= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms]
+DEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/fribidi-1.0.8:0/0= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.13= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms]
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: X aalib alsa bash-completion doc fits gnome heif javascript jpeg2k jpegxl lua mng openexr openmp postscript test udev unwind vala vector-icons wayland webp wmf xpm +lua_single_target_luajit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
 LICENSE: GPL-3+ LGPL-3+
-MD5: bf30b7b4586204573ea1121dc58d8631
-PATH: pkgs-media-gfx/gimp-3.2.8-2.gpkg.tar
+MD5: 392ed734fdbad00468b07d661deb68f4
+PATH: pkgs-media-gfx/gimp-3.2.8-3.gpkg.tar
 PROVIDES: x86_64: libcolor-selector-cmyk.so libcolor-selector-water.so libcolor-selector-wheel.so libcontroller-linux-input.so libcontroller-midi.so libdisplay-filter-aces-rrt.so libdisplay-filter-clip-warning.so libdisplay-filter-color-blind.so libdisplay-filter-gamma.so libdisplay-filter-high-contrast.so libgimp-3.0.so.0 libgimp-scriptfu-3.0.so.0 libgimpbase-3.0.so.0 libgimpcolor-3.0.so.0 libgimpconfig-3.0.so.0 libgimpmath-3.0.so.0 libgimpmodule-3.0.so.0 libgimpthumb-3.0.so.0 libgimpui-3.0.so.0 libgimpwidgets-3.0.so.0
-RDEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/fribidi-1.0.8:0/0= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.12= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms] x11-themes/hicolor-icon-theme >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libIex-3_3.so.32 libOpenEXR-3_3.so.32 libX11.so.6 libXcursor.so.1 libXext.so.6 libXfixes.so.3 libXmu.so.6 libappstream.so.5 libarchive.so.13 libasound.so.2 libbabl-0.1.so.0 libbz2.so.1 libc.so.6 libcairo.so.2 libfontconfig.so.1 libfreetype.so.6 libfribidi.so.0 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgegl-0.4.so.0 libgegl-npd-0.4.so libgexiv2.so.2 libgio-2.0.so.0 libgirepository-1.0.so.1 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libgtk-3.so.0 libgudev-1.0.so.0 libharfbuzz.so.0 libheif.so.1 libjpeg.so.62 libjson-glib-1.0.so.0 libjxl.so.0.12 libjxl_threads.so.0.12 liblcms2.so.2 liblzma.so.5 libm.so.6 libmng.so.2 libmypaint.so.0 libopenjp2.so.7 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libz.so.1
+RDEPEND: dev-lang/python:3.14 dev-python/pycairo[python_targets_python3_14(-)] >=dev-python/pygobject-3.0:3[python_targets_python3_14(-)] >=app-accessibility/at-spi2-core-2.4.0 app-arch/bzip2 app-arch/libarchive:0/13= >=app-arch/xz-utils-5.0.0 app-text/iso-codes >=app-text/poppler-0.69.0[cairo] >=app-text/poppler-data-0.4.9 >=dev-libs/appstream-0.16.1:0/5= >=dev-libs/fribidi-1.0.8:0/0= >=dev-libs/glib-2.70.0:2[introspection] >=dev-libs/gobject-introspection-1.82.0-r2 >=dev-libs/json-glib-1.2.6 >=gnome-base/librsvg-2.40.6:2 >=media-gfx/exiv2-0.27.4 media-gfx/mypaint-brushes:2.0/2.0= >=media-libs/fontconfig-2.12.4 >=media-libs/freetype-2.1.7 <media-libs/gexiv2-0.15.0[introspection] >=media-libs/gexiv2-0.14.0:0/0=[introspection] >=media-libs/harfbuzz-2.8.2:0/6.0.0= >=media-libs/lcms-2.8:2 media-libs/libjpeg-turbo:0/0.2= >=media-libs/libmypaint-1.5.0:0/0.0.0= >=media-libs/libpng-1.6.25:0/16= >=media-libs/tiff-4.0.0:0/6= net-libs/glib-networking[ssl] virtual/zlib:0/1= >=x11-libs/cairo-1.14.0[introspection(+),X] >=x11-libs/gdk-pixbuf-2.32.0:2[introspection] >=x11-libs/gtk+-3.24.0:3[introspection,wayland,X] >=x11-libs/pango-1.50.0[introspection,X] >=media-libs/alsa-lib-1.0.0 >=media-libs/libheif-1.15.1:0/1.23= >=media-libs/openjpeg-2.1.0:2/7= >=media-libs/libjxl-0.7.0:0/0.13= media-libs/libmng:0/2= >=media-libs/openexr-1.6.1:0/32= >=dev-libs/libgudev-167:0/0= >=media-libs/libwebp-0.6.0:0/7= x11-libs/libX11 x11-libs/libXcursor x11-libs/libXext x11-libs/libXfixes >=x11-libs/libXmu-1.1.4 >=media-libs/babl-0.1.118[introspection,lcms] >=media-libs/gegl-0.4.66:0.4[cairo,introspection,lcms] x11-themes/hicolor-icon-theme >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "55ee54c9258da1fe15275e23176b05b41b3a4528"}
+REQUIRES: x86_64: libIex-3_3.so.32 libOpenEXR-3_3.so.32 libX11.so.6 libXcursor.so.1 libXext.so.6 libXfixes.so.3 libXmu.so.6 libappstream.so.5 libarchive.so.13 libasound.so.2 libbabl-0.1.so.0 libbz2.so.1 libc.so.6 libcairo.so.2 libfontconfig.so.1 libfreetype.so.6 libfribidi.so.0 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgegl-0.4.so.0 libgegl-npd-0.4.so libgexiv2.so.2 libgio-2.0.so.0 libgirepository-1.0.so.1 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libgtk-3.so.0 libgudev-1.0.so.0 libharfbuzz.so.0 libheif.so.1 libjpeg.so.62 libjson-glib-1.0.so.0 libjxl.so.0.13 libjxl_threads.so.0.13 liblcms2.so.2 liblzma.so.5 libm.so.6 libmng.so.2 libmypaint.so.0 libopenjp2.so.7 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpangoft2-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libz.so.1
 RESTRICT: test
-SHA1: 6c6abf8b99a76372d5cbf82832b370f056742827
+SHA1: cd2d5b50dde13be0c515a03935943c85e95f7d16
 SIZE: 34017280
 SLOT: 0/3
 USE: X abi_x86_64 alsa amd64 elibc_glibc heif jpeg2k jpegxl kernel_linux lua_single_target_luajit mng openexr openmp python_single_target_python3_14 udev wayland webp
-MTIME: 1794390377
+MTIME: 1794571705
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -30568,26 +30569,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
-BUILD_ID: 1
-BUILD_TIME: 1794390041
+BUILD_ID: 2
+BUILD_TIME: 1794571526
 CPV: media-gfx/imagemagick-7.1.2.35
 DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: !media-gfx/graphicsmagick[imagemagick] dev-libs/libltdl app-arch/bzip2 app-text/djvu sci-libs/fftw:3.0 media-libs/fontconfig media-gfx/graphviz media-libs/libheif:0/1.23=[x265] media-libs/libjpeg-turbo:0/0.2= >=media-libs/openjpeg-2.1.0:2 >=media-libs/libjxl-0.6:0/0.12= media-libs/lcms:2/2= virtual/opencl media-libs/openexr:0/32= x11-libs/pango media-libs/libpng:0/16= media-libs/libraw:0/0.22.1= gnome-base/librsvg media-gfx/potrace media-libs/tiff:0/6= media-fonts/urw-fonts >=media-libs/freetype-2 media-libs/libwebp:0/7= media-libs/libwmf x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt dev-libs/libxml2:2/16= app-arch/xz-utils dev-libs/libzip:0/5= virtual/zlib:0/1= x11-base/xorg-proto
+DEPEND: !media-gfx/graphicsmagick[imagemagick] dev-libs/libltdl app-arch/bzip2 app-text/djvu sci-libs/fftw:3.0 media-libs/fontconfig media-gfx/graphviz media-libs/libheif:0/1.23=[x265] media-libs/libjpeg-turbo:0/0.2= >=media-libs/openjpeg-2.1.0:2 >=media-libs/libjxl-0.6:0/0.13= media-libs/lcms:2/2= virtual/opencl media-libs/openexr:0/32= x11-libs/pango media-libs/libpng:0/16= media-libs/libraw:0/0.22.1= gnome-base/librsvg media-gfx/potrace media-libs/tiff:0/6= media-fonts/urw-fonts >=media-libs/freetype-2 media-libs/libwebp:0/7= media-libs/libwmf x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt dev-libs/libxml2:2/16= app-arch/xz-utils dev-libs/libzip:0/5= virtual/zlib:0/1= x11-base/xorg-proto
 EAPI: 8
 IUSE: bzip2 corefonts +cxx djvu fftw fontconfig fpx graphviz hardened hdri heif jbig jpeg jpeg2k jpegxl lcms lqr lzma opencl openexr openmp pango perl perl_features_debug perl_features_ithreads perl_features_quadmath +png postscript q32 q8 raw static-libs svg test tiff truetype webp wmf X xml zip zlib verify-sig
-KEYWORDS: ~alpha ~amd64 ~arm arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~arm64-macos ~x64-macos ~x64-solaris
 LICENSE: imagemagick
-MD5: 21b164063830a4a3f7d4599e5ea0e53a
-PATH: pkgs-media-gfx/imagemagick-7.1.2.35-1.gpkg.tar
+MD5: 7634867b84d9aeb2b81883b2da84466a
+PATH: pkgs-media-gfx/imagemagick-7.1.2.35-2.gpkg.tar
 PROVIDES: x86_64: aai.so analyze.so art.so ase.so ashlar.so avs.so bayer.so bgr.so bmp.so braille.so c2pa.so cals.so caption.so cin.so cip.so clip.so cmyk.so cube.so cut.so dcm.so dds.so debug.so dib.so djvu.so dng.so dot.so dpx.so ept.so exr.so farbfeld.so fax.so fits.so fl32.so ftxt.so gif.so gradient.so gray.so hald.so hdr.so heic.so histogram.so hrz.so html.so icon.so info.so inline.so ipl.so jnx.so jp2.so jpeg.so json.so jxl.so kernel.so label.so libMagick++-7.Q16.so.5 libMagickCore-7.Q16.so.10 libMagickWand-7.Q16.so.10 mac.so magick.so map.so mask.so mat.so matte.so meta.so miff.so mono.so mpc.so mpr.so msl.so mtv.so mvg.so null.so ora.so otb.so palm.so pango.so pattern.so pcd.so pcl.so pcx.so pdb.so pdf.so pes.so pgx.so pict.so pix.so plasma.so png.so pnm.so ps.so ps2.so ps3.so psd.so pwp.so qoi.so raw.so rgb.so rgf.so rla.so rle.so scr.so sct.so sf3.so sfw.so sgi.so sixel.so stegano.so strimg.so sun.so svg.so tga.so thumbnail.so tiff.so tile.so tim.so tim2.so ttf.so txt.so uil.so url.so uyvy.so vicar.so vid.so video.so viff.so vips.so wbinfo.so wbmp.so webp.so wmf.so wpg.so x.so xbm.so xc.so xcf.so xpm.so xps.so xwd.so yaml.so ycbcr.so yuv.so
-RDEPEND: !media-gfx/graphicsmagick[imagemagick] dev-libs/libltdl app-arch/bzip2 app-text/djvu sci-libs/fftw:3.0 media-libs/fontconfig media-gfx/graphviz media-libs/libheif:0/1.23=[x265] media-libs/libjpeg-turbo:0/0.2= >=media-libs/openjpeg-2.1.0:2 >=media-libs/libjxl-0.6:0/0.12= media-libs/lcms:2/2= virtual/opencl media-libs/openexr:0/32= x11-libs/pango media-libs/libpng:0/16= media-libs/libraw:0/0.22.1= gnome-base/librsvg media-gfx/potrace media-libs/tiff:0/6= media-fonts/urw-fonts >=media-libs/freetype-2 media-libs/libwebp:0/7= media-libs/libwmf x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt dev-libs/libxml2:2/16= app-arch/xz-utils dev-libs/libzip:0/5= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libOpenEXR-3_3.so.32 libOpenEXRCore-3_3.so.32 libX11.so.6 libXext.so.6 libbz2.so.1 libc.so.6 libcairo.so.2 libcgraph.so.10 libdjvulibre.so.21 libfftw3.so.3 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libglib-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libgvc.so.7 libheif.so.1 libjpeg.so.62 libjxl.so.0.12 libjxl_threads.so.0.12 liblcms2.so.2 libltdl.so.7 liblzma.so.5 libm.so.6 libopenjp2.so.7 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpng16.so.16 libraw_r.so.25 librsvg-2.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libwmflite-0.2.so.7 libxml2.so.16 libz.so.1 libzip.so.5
+RDEPEND: !media-gfx/graphicsmagick[imagemagick] dev-libs/libltdl app-arch/bzip2 app-text/djvu sci-libs/fftw:3.0 media-libs/fontconfig media-gfx/graphviz media-libs/libheif:0/1.23=[x265] media-libs/libjpeg-turbo:0/0.2= >=media-libs/openjpeg-2.1.0:2 >=media-libs/libjxl-0.6:0/0.13= media-libs/lcms:2/2= virtual/opencl media-libs/openexr:0/32= x11-libs/pango media-libs/libpng:0/16= media-libs/libraw:0/0.22.1= gnome-base/librsvg media-gfx/potrace media-libs/tiff:0/6= media-fonts/urw-fonts >=media-libs/freetype-2 media-libs/libwebp:0/7= media-libs/libwmf x11-libs/libICE x11-libs/libSM x11-libs/libXext x11-libs/libXt dev-libs/libxml2:2/16= app-arch/xz-utils dev-libs/libzip:0/5= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libOpenEXR-3_3.so.32 libOpenEXRCore-3_3.so.32 libX11.so.6 libXext.so.6 libbz2.so.1 libc.so.6 libcairo.so.2 libcgraph.so.10 libdjvulibre.so.21 libfftw3.so.3 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libglib-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libgvc.so.7 libheif.so.1 libjpeg.so.62 libjxl.so.0.13 libjxl_threads.so.0.13 liblcms2.so.2 libltdl.so.7 liblzma.so.5 libm.so.6 libopenjp2.so.7 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpng16.so.16 libraw_r.so.25 librsvg-2.so.2 libstdc++.so.6 libtiff.so.6 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libwmflite-0.2.so.7 libxml2.so.16 libz.so.1 libzip.so.5
 RESTRICT: test
-SHA1: 7b6044d6128f6f03e3498eb22e9de1aa34c9cafe
+SHA1: b97f4db70bb42c8d16c355e307f7733b63fb0d0c
 SIZE: 10014720
 SLOT: 0/7.1.2-18
 USE: X abi_x86_64 amd64 bzip2 cxx djvu elibc_glibc fftw fontconfig graphviz heif jpeg jpeg2k jpegxl kernel_linux lcms lzma opencl openexr openmp pango png raw svg tiff truetype webp wmf xml zip zlib
-MTIME: 1794390044
+MTIME: 1794571530
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
