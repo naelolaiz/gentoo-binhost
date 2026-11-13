@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794569973
-PACKAGES: 1932
+TIMESTAMP: 1794571188
+PACKAGES: 1933
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8293,6 +8293,30 @@ SIZE: 122880
 SLOT: 0/1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791228952
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794570229
+CPV: dev-libs/qtkeychain-0.18.0
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-qt/qtbase-6.11.2:6[dbus]
+EAPI: 8
+IUSE: keyring test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: BSD-2
+MD5: 0aaad03293b45519e814ec0bd6b59460
+PATH: pkgs-dev-libs/qtkeychain-0.18.0-1.gpkg.tar
+PROVIDES: x86_64: libqt6keychain.so.1
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[dbus] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test test
+SHA1: 31a7443f03eb9b96c8ba6777b537bda86b54e856
+SIZE: 133120
+SLOT: 0/1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794570231
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
