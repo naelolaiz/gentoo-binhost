@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794629651
-PACKAGES: 1965
+TIMESTAMP: 1794629958
+PACKAGES: 1966
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -26446,6 +26446,31 @@ SIZE: 645120
 SLOT: 6/6.31
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux keyring legacy-kwallet man
 MTIME: 1791609822
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=kde-frameworks/kdoctools-6.32:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794629646
+CPV: kde-frameworks/kwallet-runtime-6.32.0
+DEFINED_PHASES: compile configure info install nofetch postinst prepare test unpack
+DEPEND: dev-libs/libgcrypt:0/20= >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/kcrash-6.32*:6 =kde-frameworks/kdbusaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/knotifications-6.32*:6 =kde-frameworks/kservice-6.32*:6 =kde-frameworks/kwallet-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 =kde-frameworks/kwindowsystem-6.32*:6[X] >=app-crypt/qca-2.3.9:2[qt6(+)] app-crypt/libsecret dev-qt/qtbase:6
+EAPI: 8
+IUSE: gpg +man +keyring +legacy-kwallet X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 4ba90522741649855fe32807d06158b4
+PATH: pkgs-kde-frameworks/kwallet-runtime-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6WalletBackend.so.6
+RDEPEND: dev-libs/libgcrypt:0/20= >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/kcrash-6.32*:6 =kde-frameworks/kdbusaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/knotifications-6.32*:6 =kde-frameworks/kservice-6.32*:6 =kde-frameworks/kwallet-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 =kde-frameworks/kwindowsystem-6.32*:6[X] >=app-crypt/qca-2.3.9:2[qt6(+)] app-crypt/libsecret !<kde-frameworks/kwallet-5.116.0-r2:5[-kf6compat(-)] !<kde-frameworks/kwallet-6.14.0:6 =kde-frameworks/ksecretd-services-6.32* >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "ec7c35b7d797580f63fab2ece9635628b9b2c24d"}
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6Notifications.so.6 libKF6Wallet.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libgcrypt.so.20 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libqca-qt6.so.2 libsecret-1.so.0 libstdc++.so.6
+RESTRICT: test
+SHA1: 95862c45879203ec8b6a4fb9ac1420efd308e080
+SIZE: 593920
+SLOT: 6/6.32
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux keyring legacy-kwallet man
+MTIME: 1794629646
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
