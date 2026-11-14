@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794631514
-PACKAGES: 1984
+TIMESTAMP: 1794631826
+PACKAGES: 1988
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -25483,6 +25483,30 @@ MTIME: 1794617780
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794631673
+CPV: kde-frameworks/kfilemetadata-6.32.0
+DEFINED_PHASES: compile configure info install nofetch postinst prepare setup test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.32*:6 =kde-frameworks/kcodecs-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/61.63.63= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= sys-apps/attr dev-qt/qtbase:6
+EAPI: 8
+IUSE: epub exif ffmpeg mobi pdf taglib debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 2e8a2ca7eb900644b3434a7b9ac72a26
+PATH: pkgs-kde-frameworks/kfilemetadata-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: kfilemetadata_epubextractor.so kfilemetadata_exiv2extractor.so kfilemetadata_fb2extractor.so kfilemetadata_ffmpegextractor.so kfilemetadata_krita.so kfilemetadata_mobiextractor.so kfilemetadata_odfextractor.so kfilemetadata_office2007extractor.so kfilemetadata_officeextractor.so kfilemetadata_plaintextextractor.so kfilemetadata_pngextractor.so kfilemetadata_poextractor.so kfilemetadata_popplerextractor.so kfilemetadata_postscriptdscextractor.so kfilemetadata_taglibextractor.so kfilemetadata_taglibwriter.so kfilemetadata_xmlextractor.so libKF6FileMetaData.so.3
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,xml] =kde-frameworks/karchive-6.32*:6 =kde-frameworks/kcodecs-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 app-text/ebook-tools media-gfx/exiv2:0/0.28= media-video/ffmpeg:0/61.63.63= kde-apps/kdegraphics-mobipocket:6 app-text/poppler[qt6(-)] media-libs/taglib:0/2= >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6Archive.so.6 libKF6Codecs.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libQMobipocket6.so.3 libQt6Core.so.6 libQt6Gui.so.6 libQt6Xml.so.6 libavcodec.so.63 libavformat.so.63 libavutil.so.61 libc.so.6 libepub.so.0 libexiv2.so.28 libgcc_s.so.1 libm.so.6 libpoppler-qt6.so.3 libstdc++.so.6 libtag.so.2
+RESTRICT: test test
+SHA1: 1654a4cfc3947c07ae47e93d4155662738698902
+SIZE: 368640
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc epub exif ffmpeg kernel_linux mobi pdf taglib
+MTIME: 1794631674
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 2
 BUILD_TIME: 1793078673
@@ -27123,6 +27147,30 @@ MTIME: 1791614045
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794631620
+CPV: kde-frameworks/prison-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtmultimedia-6.10.1:6 media-gfx/qrencode:0/4= media-libs/libdmtx >=media-libs/zxing-cpp-1.4.0:0/4= >=dev-qt/qtdeclarative-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: qml debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: GPL-2
+MD5: f9f2a8e67da09437fbf5f9ee9628561a
+PATH: pkgs-kde-frameworks/prison-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Prison.so.6 libKF6PrisonScanner.so.6 libprisonquickplugin.so libprisonscannerquickplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtmultimedia-6.10.1:6 media-gfx/qrencode:0/4= media-libs/libdmtx >=media-libs/zxing-cpp-1.4.0:0/4= >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libZXing.so.4 libc.so.6 libdmtx.so.0 libgcc_s.so.1 libqrencode.so.4 libstdc++.so.6
+RESTRICT: test
+SHA1: 8b6ecd97d8bc80169d47d2c612eb64fd16e8f7e6
+SIZE: 143360
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1794631621
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1791617907
@@ -27170,6 +27218,30 @@ SIZE: 798720
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793106442
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794631515
+CPV: kde-frameworks/qqc2-desktop-style-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.11.3= =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/sonnet-6.32*:6[qml] dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2+ LGPL-3+ )
+MD5: b7fc17153f586d63009fa4f02741f0d9
+PATH: pkgs-kde-frameworks/qqc2-desktop-style-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: liborg_kde_desktop.so liborg_kde_desktop_private.so libqqc2desktopstyleplugin.so org.kde.desktop.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.11.3= =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/sonnet-6.32*:6[qml] >=dev-qt/qt5compat-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6IconThemes.so.6 libKirigamiPlatform.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: b186bdc9a31e1ff5ceda9acd90a08843a40bf1f2
+SIZE: 798720
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794631515
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27314,6 +27386,30 @@ SIZE: 1914880
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791613927
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794631568
+CPV: kde-frameworks/syntax-highlighting-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,network] >=dev-qt/qtdeclarative-6.10.1:6 dev-libs/xerces-c dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: MIT
+MD5: 1a34df792de5cf848941d84c09aac5e9
+PATH: pkgs-kde-frameworks/syntax-highlighting-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6SyntaxHighlighting.so.6 libkquicksyntaxhighlightingplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,network] >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: c72e0e587c0a4c3c86c3d0aa4ac2472274642b95
+SIZE: 1925120
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794631569
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
