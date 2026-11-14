@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794635826
-PACKAGES: 2008
+TIMESTAMP: 1794636135
+PACKAGES: 2011
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -26650,6 +26650,30 @@ MTIME: 1791619080
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794635759
+CPV: kde-frameworks/kplotting-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,widgets] dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug designer test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 86e67d3158fbca99a1c22bcd7992a6d1
+PATH: pkgs-kde-frameworks/kplotting-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Plotting.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,widgets] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: cecc18ccb31b879b4f34bde51c1e4ace1f05fc47
+SIZE: 92160
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794635760
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1791613096
@@ -27055,6 +27079,30 @@ SIZE: 460800
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791619786
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794635917
+CPV: kde-frameworks/ktexttemplate-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-qt/qtdeclarative:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: 1328b7890e398ae1a8e279ac4b6cf71f
+PATH: pkgs-kde-frameworks/ktexttemplate-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: ktexttemplate_defaultfilters.so ktexttemplate_defaulttags.so ktexttemplate_i18ntags.so ktexttemplate_loadertags.so ktexttemplate_scriptabletags.so libKF6TextTemplate.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-qt/qtdeclarative:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Qml.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: 3bb5694c7e1903a2a9060e7c28dcf88c2329f073
+SIZE: 471040
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794635918
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27804,6 +27852,31 @@ SIZE: 317440
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791620036
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794635932
+CPV: kde-frameworks/syndication-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[xml] =kde-frameworks/kcodecs-6.32*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 47e9bc604e80d284c4c9877b1e34f932
+PATH: pkgs-kde-frameworks/syndication-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Syndication.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[xml] =kde-frameworks/kcodecs-6.32*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "ec7c35b7d797580f63fab2ece9635628b9b2c24d"}
+REQUIRES: x86_64: libKF6Codecs.so.6 libQt6Core.so.6 libQt6Xml.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: db068e76ea1e05f4a4ecff02dfb5d2208fb687e3
+SIZE: 337920
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794635933
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
