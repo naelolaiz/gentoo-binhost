@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794630887
-PACKAGES: 1974
+TIMESTAMP: 1794631197
+PACKAGES: 1977
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -25290,6 +25290,30 @@ MTIME: 1791613139
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794631143
+CPV: kde-frameworks/kdesu-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kpty-6.32*:6 x11-libs/libX11 x11-base/xorg-proto dev-qt/qtbase:6
+EAPI: 8
+IUSE: X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2
+MD5: 20c7a97b96585265ec0811ef1b59de80
+PATH: pkgs-kde-frameworks/kdesu-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Su.so.6
+RDEPEND: =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kpty-6.32*:6 x11-libs/libX11 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Pty.so.6 libQt6Core.so.6 libX11.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: ef22356a4b3fe00e9ad91e4b17ce5b7a0ee656a7
+SIZE: 122880
+SLOT: 6/6.32
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794631144
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1791617520
@@ -26184,6 +26208,30 @@ MTIME: 1791613098
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794631123
+CPV: kde-frameworks/kpty-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 sys-libs/libutempter dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: e5781560804caa7b0a3189a29ed19660
+PATH: pkgs-kde-frameworks/kpty-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Pty.so.6
+RDEPEND: =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 sys-libs/libutempter >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6I18n.so.6 libQt6Core.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 0bb9600210f5cdd9b749453274787ae45c6573c6
+SIZE: 92160
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794631124
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1791612373
@@ -26834,6 +26882,30 @@ SIZE: 665600
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791613071
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794631112
+CPV: kde-frameworks/networkmanager-qt-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.10.1:6[dbus,network] >=dev-qt/qtdeclarative-6.10.1:6 >=net-misc/networkmanager-1.4.0-r1[-teamd] dev-qt/qtbase:6
+EAPI: 8
+IUSE: teamd debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2
+MD5: 4d519203f6409d31f7800944100148d7
+PATH: pkgs-kde-frameworks/networkmanager-qt-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6NetworkManagerQt.so.6 libnetworkmanagerqtqml.so
+RDEPEND: dev-libs/glib:2 >=dev-qt/qtbase-6.10.1:6[dbus,network] >=dev-qt/qtdeclarative-6.10.1:6 >=net-misc/networkmanager-1.4.0-r1[-teamd] || ( >=net-misc/networkmanager-1.4.0-r1[elogind] >=net-misc/networkmanager-1.4.0-r1[systemd] ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Network.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 8679f9837cd844dcdb81dae0232a7a5fbc234b75
+SIZE: 686080
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794631113
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
