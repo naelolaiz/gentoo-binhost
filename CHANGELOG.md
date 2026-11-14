@@ -8,6 +8,16 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Stale binary packages
+
+- The builder rebuilds a package from source when one of its recorded
+  dependencies pins a provider subslot that no longer exists
+  (`dev-libs/openssl:0/3=` while `0/4` is installed).  Portage does not catch
+  it while the package comes from a binary, because its
+  `--binpkg-changed-deps` check strips the subslot.  The index kept offering
+  the old build, and a machine that installed it next to the new provider
+  could not resolve the two.  See `scripts/stale_subslots.py`.
+
 ### Long runs
 
 - A chain of follow-up runs keeps its tree snapshot for at most two days,
