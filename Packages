@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794630265
-PACKAGES: 1967
+TIMESTAMP: 1794630575
+PACKAGES: 1970
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -24740,6 +24740,30 @@ MTIME: 1791610806
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794630233
+CPV: kde-frameworks/kcmutils-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6[widgets] =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kconfigwidgets-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/kguiaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kio-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/kitemviews-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 =kde-frameworks/kxmlgui-6.32*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2
+MD5: 88ae041b97c3b4643094680ddd984471
+PATH: pkgs-kde-frameworks/kcmutils-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6KCMUtils.so.6 libKF6KCMUtilsCore.so.6 libKF6KCMUtilsQuick.so.6 libkcmutilsprivateqmlplugin.so libkcmutilsqmlplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6[widgets] =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kconfigwidgets-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/kguiaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kio-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/kitemviews-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 =kde-frameworks/kxmlgui-6.32*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6ItemViews.so.6 libKF6KIOGui.so.6 libKF6Service.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: fcb53675c6a66faa642cde48552672796eebec21
+SIZE: 399360
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794630234
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1791608656
@@ -25989,6 +26013,30 @@ SIZE: 235520
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791610868
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794630279
+CPV: kde-frameworks/kparts-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui,widgets,xml] =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kio-6.32*:6 =kde-frameworks/kjobwidgets-6.32*:6 =kde-frameworks/kservice-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 =kde-frameworks/kxmlgui-6.32*:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: ef58383362a1bb80c8af69c8db10bf63
+PATH: pkgs-kde-frameworks/kparts-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Parts.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui,widgets,xml] =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kcoreaddons-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kio-6.32*:6 =kde-frameworks/kjobwidgets-6.32*:6 =kde-frameworks/kservice-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 =kde-frameworks/kxmlgui-6.32*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 817d3bf2c719b69abe56011c3a3147e6ec329e98
+SIZE: 235520
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794630280
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -38013,6 +38061,25 @@ SHA1: 4d4c7d574f1c60ae12cb085454e8b37a0b36f972
 SIZE: 122880
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1794376104
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-libs/libxslt >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 1
+BUILD_TIME: 1794630513
+CPV: net-misc/mobile-broadband-provider-info-20261111
+DEFINED_PHASES: compile configure install test
+EAPI: 8
+IUSE: test
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: CC-PD
+MD5: cf830cd3616a630eca1e60afafe8263f
+PATH: pkgs-net-misc/mobile-broadband-provider-info-20261111-1.gpkg.tar
+RESTRICT: test
+SHA1: 65e7c569ff414c200cabcdeb3f2ab9f016f44d75
+SIZE: 122880
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794630514
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
