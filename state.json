@@ -428,10 +428,6 @@
    "path": "pkgs-app-emulation/virtualbox-7.2.22-1.gpkg.tar"
   },
   {
-   "at": 1793423457,
-   "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-3.gpkg.tar"
-  },
-  {
    "at": 1793515401,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-4.gpkg.tar"
   },
@@ -1056,14 +1052,6 @@
    "path": "pkgs-kde-apps/dolphin-26.08.3-1.gpkg.tar"
   },
   {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/attica-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/baloo-6.30.0-1.gpkg.tar"
-  },
-  {
    "at": 1793983999,
    "path": "pkgs-kde-frameworks/baloo-6.31.0-1.gpkg.tar"
   },
@@ -1072,104 +1060,8 @@
    "path": "pkgs-kde-frameworks/baloo-6.31.0-r1-1.gpkg.tar"
   },
   {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/bluez-qt-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/breeze-icons-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/extra-cmake-modules-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/frameworkintegration-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/karchive-6.30.0-1.gpkg.tar"
-  },
-  {
    "at": 1793685576,
    "path": "pkgs-kde-frameworks/karchive-6.31.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kauth-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kbookmarks-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcalendarcore-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcmutils-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcodecs-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcolorscheme-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcompletion-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kconfig-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kconfigwidgets-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcontacts-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcoreaddons-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kcrash-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kdbusaddons-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kdeclarative-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kded-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kdesu-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kdnssd-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kdoctools-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kfilemetadata-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1793697421,
@@ -1192,196 +1084,12 @@
    "path": "pkgs-kde-frameworks/kfilemetadata-6.31.0-5.gpkg.tar"
   },
   {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kglobalaccel-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kguiaddons-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kholidays-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/ki18n-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kiconthemes-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kidletime-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kimageformats-6.30.0-1.gpkg.tar"
-  },
-  {
    "at": 1794571809,
    "path": "pkgs-kde-frameworks/kimageformats-6.31.0-1.gpkg.tar"
   },
   {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kio-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kirigami-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kitemmodels-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kitemviews-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kjobwidgets-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/knewstuff-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/knotifications-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/knotifyconfig-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kpackage-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kparts-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kpeople-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kplotting-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kpty-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kquickcharts-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/krunner-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/ksecretd-services-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kservice-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kstatusnotifieritem-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/ksvg-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/ktexteditor-6.30.0-1.gpkg.tar"
-  },
-  {
    "at": 1794574427,
    "path": "pkgs-kde-frameworks/ktexteditor-6.31.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/ktexttemplate-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/ktextwidgets-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kunitconversion-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kwallet-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kwallet-runtime-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kwidgetsaddons-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kwindowsystem-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/kxmlgui-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/modemmanager-qt-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/networkmanager-qt-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/oxygen-icons-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/prison-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/purpose-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/qqc2-desktop-style-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/solid-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/sonnet-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/syndication-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/syntax-highlighting-6.30.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793423460,
-   "path": "pkgs-kde-frameworks/threadweaver-6.30.0-1.gpkg.tar"
   },
   {
    "at": 1793864716,
@@ -2426,10 +2134,6 @@
   {
    "at": 1793983999,
    "path": "pkgs-net-libs/nodejs-26.12.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793419278,
-   "path": "pkgs-net-libs/nodejs-26.12.1-5.gpkg.tar"
   },
   {
    "at": 1793694070,
