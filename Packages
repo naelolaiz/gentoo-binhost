@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794627758
-PACKAGES: 1932
+TIMESTAMP: 1794628073
+PACKAGES: 1937
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -24479,6 +24479,31 @@ MTIME: 1791606660
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 dev-python/lxml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 dev-python/lxml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/lxml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/lxml[python_targets_python3_12(-)] ) ) >=dev-qt/qtbase-6.9.0:6 >=kde-frameworks/extra-cmake-modules-6.32:* app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794627853
+CPV: kde-frameworks/breeze-icons-6.32.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare setup test unpack
+DEPEND: >=dev-qt/qtbase-6.9.0:6[gui]
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-3
+MD5: 59bed40c92d45d3d663fdc0fa21038b6
+PATH: pkgs-kde-frameworks/breeze-icons-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6BreezeIcons.so.6
+RDEPEND: >=dev-qt/qtbase-6.9.0:6[gui] !kde-frameworks/breeze-icons:5 !kde-frameworks/breeze-icons-rcc:5 !kde-frameworks/breeze-icons-rcc:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libc.so.6
+RESTRICT: test
+SHA1: f634b5c187dcd6de6bce8704c6545d867463e3bc
+SIZE: 14428160
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794627858
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1791605310
@@ -25076,6 +25101,31 @@ MTIME: 1793078575
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.10.1:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794627979
+CPV: kde-frameworks/kguiaddons-6.32.0
+DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 >=dev-libs/plasma-wayland-protocols-1.15.0 >=dev-libs/wayland-protocols-1.39 x11-base/xorg-proto x11-libs/libxcb dev-qt/qtbase:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: dbus wayland X debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: fcbe4752d7f55e7ba9e170535486edfe
+PATH: pkgs-kde-frameworks/kguiaddons-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6GuiAddons.so.6 libkguiaddonsqml.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 !<kde-frameworks/kguiaddons-5.116.0-r2:5[-kf6compat(-)] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libX11.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
+RESTRICT: test
+SHA1: 0783df48e935d4850971577fc13fd3ff08ccae20
+SIZE: 245760
+SLOT: 6/6.32
+USE: X abi_x86_64 amd64 dbus elibc_glibc kernel_linux wayland
+MTIME: 1794627979
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] >=sys-devel/bison-3.3.2 sys-devel/flex app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1791613649
@@ -25122,6 +25172,30 @@ SIZE: 4556800
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1791606563
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794627905
+CPV: kde-frameworks/ki18n-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+DEPEND: dev-lang/python:3.14 >=dev-qt/qtbase-6.10.1:6[widgets] >=dev-qt/qtdeclarative-6.10.1:6 sys-devel/gettext virtual/libintl dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: ec488b79d52d9512de395a1029d2c4dd
+PATH: pkgs-kde-frameworks/ki18n-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: ktranscript.so libKF6I18n.so.6 libKF6I18nLocaleData.so.6 libKF6I18nQml.so.6 libKF6I18nQmlplugin.so libki18nlocaledataqmlplugin.so
+RDEPEND: dev-lang/python:3.14 >=dev-qt/qtbase-6.10.1:6[widgets] >=dev-qt/qtdeclarative-6.10.1:6 sys-devel/gettext virtual/libintl app-text/iso-codes >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: d2babc50ae57d3ecbbc9f76dd93081543700a2ef
+SIZE: 4556800
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1794627906
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25577,6 +25651,27 @@ SIZE: 40960
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791606819
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-build/cmake-3.31.9-r1 dev-qt/qtbase:6 >=kde-frameworks/extra-cmake-modules-6.22.0:*
+BUILD_ID: 1
+BUILD_TIME: 1794627987
+CPV: kde-frameworks/ksecretd-services-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare setup test unpack
+EAPI: 8
+IUSE: systemd
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 4ec5d440b82b6bc78784b33c76306f33
+PATH: pkgs-kde-frameworks/ksecretd-services-6.32.0-1.gpkg.tar
+RDEPEND: !<kde-frameworks/kwallet-runtime-6.18.0-r1:6
+REPO_REVISIONS: {"gentoo": "ec7c35b7d797580f63fab2ece9635628b9b2c24d"}
+SHA1: c40bf69512913237964069fa24efe412e5b63482
+SIZE: 40960
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794627987
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -37725,6 +37820,30 @@ SIZE: 2201600
 SLOT: 0/3
 USE: abi_x86_64 amd64 cups elibc_glibc kernel_linux mesh obex python_single_target_python3_14 readline udev
 MTIME: 1794111424
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794627807
+CPV: net-wireless/bluez-5.88
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test
+DEPEND: >=dev-libs/glib-2.36:2[abi_x86_64(-)] >=sys-apps/dbus-1.6:0/0=[abi_x86_64(-)] net-print/cups:0/0= >=dev-libs/ell-0.39 >=dev-libs/json-c-0.13:0/5.1= sys-libs/readline:0/8= dev-libs/libical:0/3= sys-libs/readline:0/8= >=virtual/udev-196
+EAPI: 8
+IUSE: btpclient cups doc debug deprecated extra-tools experimental man +mesh midi +obex +readline selinux systemd test test-programs +udev python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-2+ LGPL-2.1+
+MD5: ec3d35e90a9c5a868605bff182e08e17
+PATH: pkgs-net-wireless/bluez-5.88-1.gpkg.tar
+PROVIDES: x86_64: libbluetooth.so.3
+RDEPEND: >=dev-libs/glib-2.36:2[abi_x86_64(-)] >=sys-apps/dbus-1.6:0/0=[abi_x86_64(-)] net-print/cups:0/0= >=dev-libs/ell-0.39 >=dev-libs/json-c-0.13:0/5.1= sys-libs/readline:0/8= dev-libs/libical:0/3= sys-libs/readline:0/8= >=virtual/udev-196 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libdbus-1.so.3 libell.so.0 libglib-2.0.so.0 libicalvcal.so.3 libjson-c.so.5 libreadline.so.8 libudev.so.1
+RESTRICT: test
+SHA1: f95bf206eeea34f72f48465bb7e76144c5bf0757
+SIZE: 2242560
+SLOT: 0/3
+USE: abi_x86_64 amd64 cups elibc_glibc kernel_linux mesh obex python_single_target_python3_14 readline udev
+MTIME: 1794627808
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
