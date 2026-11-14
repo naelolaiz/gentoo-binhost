@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794635215
-PACKAGES: 2006
+TIMESTAMP: 1794635826
+PACKAGES: 2008
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -13956,6 +13956,28 @@ MTIME: 1793805472
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
+BUILD_ID: 1
+BUILD_TIME: 1794635557
+CPV: dev-python/uv-0.13.8
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: app-arch/zstd:0/1=
+EAPI: 8
+IUSE: test debug
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT ) Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
+MD5: 62158f51e27ada10cd5d642138d2c9a9
+PATH: pkgs-dev-python/uv-0.13.8-1.gpkg.tar
+RDEPEND: app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
+RESTRICT: test
+SHA1: 44ac3fce5a7e98b8784b76fa494c7b249e7f7961
+SIZE: 17920000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794635559
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1792680011
@@ -14037,6 +14059,27 @@ SHA1: b6e8e6bf2923320adb36d3e27101b831e6929e5c
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1793805872
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1794635562
+CPV: dev-python/uv-build-0.13.8
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT )
+MD5: 2ed7a14405552a8c7ac71b2ef2c8e2cc
+PATH: pkgs-dev-python/uv-build-0.13.8-1.gpkg.tar
+RDEPEND: >=dev-python/uv-0.13.8 dev-lang/python:3.14
+RESTRICT: test
+SHA1: 4757111333a9c09fa0d1c071d7822b368e0e49ea
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1794635563
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
