@@ -723,6 +723,57 @@ collect_failures() {
   done
 }
 
+# ── Consumers left behind by a subslot change ───────────────────────────
+
+# A binary package records the subslot of every provider it was built
+# against (``dev-libs/openssl:0/3=``).  When a provider moves to a new
+# subslot, a consumer that keeps being reinstalled from an older binary keeps
+# the old pin, and the index goes on offering a consumer that cannot be
+# installed next to the new provider: one version of a package cannot provide
+# both subslots.  Portage does not see it while the consumer comes from a
+# binary (--binpkg-changed-deps compares dependencies with the subslot
+# stripped, see scripts/stale_subslots.py), so rebuild those consumers from
+# source here.  A fresh BUILD_TIME then replaces their entry in the index.
+rebuild_stale_consumers() {
+  [[ "$PLAN_ONLY" == true ]] && return 0
+  local -a consumers=() targets=()
+  mapfile -t consumers < <(python3 "${SCRIPT_DIR}/stale_subslots.py" 2>/dev/null || true)
+  (( ${#consumers[@]} > 0 )) || return 0
+  local cp failed skip
+  for cp in "${consumers[@]}"; do
+    skip=false
+    for failed in "${FAILED_CPS[@]}"; do
+      [[ "$cp" == "$failed" ]] && skip=true
+    done
+    [[ "$skip" == true ]] || targets+=("$cp")
+  done
+  (( ${#targets[@]} > 0 )) || return 0
+  if deadline_near; then
+    log "── ${#targets[@]} consumer(s) still pin an old subslot; not enough time to rebuild them ──"
+    printf '  %s\n' "${targets[@]}"
+    return 0
+  fi
+  log "── ${#targets[@]} consumer(s) built against a provider's old subslot; rebuilding ──"
+  printf '  %s\n' "${targets[@]}"
+  local rc=0 seen_before=$FAILURES_SEEN
+  run_emerge_with_deadline --oneshot --usepkg=n --backtrack=20 --verbose-conflicts \
+    "${EXCLUDE_OPTS[@]}" "${targets[@]}" || rc=$?
+  collect_failures
+  write_merged
+  if (( rc == 42 )); then
+    log "The deadline interrupted the rebuild; the next run picks up what is left"
+    return 0
+  fi
+  if (( rc != 0 && FAILURES_SEEN == seen_before )); then
+    UNRESOLVED_COUNT=$(( UNRESOLVED_COUNT + 1 ))
+    printf '%s\t%s\n' "${targets[*]}" \
+      "rebuilding packages that pin an old subslot exited ${rc} without a package build failure" \
+      >> "$OUT/unresolved.tsv"
+    echo "::error title=emerge stopped (stale subslots)::emerge exited ${rc} without a package build failure"
+  fi
+  return 0
+}
+
 # run_planned <mode> <roots...>: carry out the plan that was just resolved.
 #   atoms  pass only the versions that need compiling, so nothing that is
 #          already available as a binary gets installed unless one of them
@@ -979,6 +1030,14 @@ for file in "${tier_files[@]}"; do
     break
   fi
 done
+
+# The tiers install binaries from the index, so a consumer that the index
+# still carries from before a provider's last subslot change stays pinned to
+# the old subslot.  Rebuild those (from source) once the tier set is final,
+# so the last publish replaces their entries and machines stop seeing a
+# consumer that cannot be installed next to the provider it depends on.  If
+# the deadline leaves no time, the next run does it.
+rebuild_stale_consumers
 
 log "Finished with status ${STATUS}: ${FAILED_COUNT} failed, ${UNRESOLVED_COUNT} unresolved"
 [[ "$STATUS" == deadline ]] && exit 42
