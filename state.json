@@ -306,7 +306,6 @@
   "sci-ml/ggml-0.28.0": 1793735172,
   "sci-ml/ggml-0.28.0-r1": 1793807316,
   "sci-ml/ggml-0.28.0-r2": 1794029258,
-  "sci-ml/ollama-0.40.10": 1793423460,
   "sci-ml/ollama-0.40.10-r1": 1793598458,
   "sci-ml/ollama-0.40.13": 1793807316,
   "sci-ml/ollama-0.40.14": 1794029258,
@@ -337,7 +336,10 @@
   "virtual/dist-kernel-7.2.14": 1793735172,
   "virtual/dist-kernel-7.3.1": 1794204649,
   "virtual/dist-kernel-7.3.3": 1794464824,
-  "www-client/falkon-26.08.2": 1793983999
+  "www-client/falkon-26.08.2": 1793983999,
+  "x11-base/xorg-server-21.1.25": 1794637860,
+  "x11-base/xwayland-24.1.14": 1794637860,
+  "x11-terms/ghostty-1.4.0": 1794637860
  },
  "schema": 1,
  "superseded": [
@@ -2540,6 +2542,10 @@
   {
    "at": 1794512167,
    "path": "pkgs-sci-ml/ggml-0.27.0-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794637860,
+   "path": "pkgs-sci-ml/ollama-0.40.10-1.gpkg.tar"
   },
   {
    "at": 1794464821,
