@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794630575
-PACKAGES: 1970
+TIMESTAMP: 1794630887
+PACKAGES: 1974
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -24405,6 +24405,30 @@ MTIME: 1791612203
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794630617
+CPV: kde-frameworks/attica-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[network] dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: aa95c3b480b2c33f93f6f5cb77dc52c2
+PATH: pkgs-kde-frameworks/attica-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6Attica.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[network] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Network.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 61d0dafd91957044f0efb58bf0abfe2a6fa82a21
+SIZE: 276480
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794630617
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1792816611
@@ -25606,6 +25630,29 @@ MTIME: 1793080379
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.10.1:6[wayland] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794630542
+CPV: kde-frameworks/kidletime-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=dev-libs/plasma-wayland-protocols-1.11.1 >=dev-libs/wayland-protocols-1.27:0 dev-qt/qtbase:6
+EAPI: 8
+IUSE: wayland X xscreensaver debug
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 9aaa48abc3c8e1c42ea4072dfdb90a07
+PATH: pkgs-kde-frameworks/kidletime-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: KF6IdleTimeWaylandPlugin.so KF6IdleTimeXcbPlugin0.so libKF6IdleTime.so.6
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] x11-libs/libX11 x11-libs/libxcb x11-libs/libXext >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6WaylandClient.so.6 libX11-xcb.so.1 libX11.so.6 libXext.so.6 libc.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-sync.so.1 libxcb.so.1
+SHA1: 782b04ef9e74156e6c10d149a577011973586fe0
+SIZE: 102400
+SLOT: 6/6.32
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
+MTIME: 1794630543
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 2
 BUILD_TIME: 1794571662
@@ -25751,6 +25798,30 @@ SIZE: 225280
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791612268
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794630652
+CPV: kde-frameworks/kitemmodels-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtdeclarative-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: 293de015aac541efe6838e866f43c2dc
+PATH: pkgs-kde-frameworks/kitemmodels-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libKF6ItemModels.so.6 libitemmodelsplugin.so
+RDEPEND: >=dev-qt/qtdeclarative-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 341956c12dfd608737ac0e71f787d5ab02d5ceec
+SIZE: 235520
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794630653
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -26135,6 +26206,31 @@ SIZE: 266240
 SLOT: 6/6.31
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791612374
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
+BUILD_ID: 1
+BUILD_TIME: 1794630710
+CPV: kde-frameworks/kquickcharts-6.32.0
+DEFINED_PHASES: compile configure info install nofetch prepare test unpack
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 dev-qt/qtbase:6
+EAPI: 8
+IUSE: debug examples test
+KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2+
+MD5: a1464daf96d356d31b4bde30671b53f4
+PATH: pkgs-kde-frameworks/kquickcharts-6.32.0-1.gpkg.tar
+PROVIDES: x86_64: libQuickCharts.so.1 libQuickChartsControls.so.1 libQuickChartsControlsplugin.so libQuickChartsplugin.so
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtshadertools-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "ec7c35b7d797580f63fab2ece9635628b9b2c24d"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: dd40bbb9332e46c06b4c1a00db5c943163fc754e
+SIZE: 266240
+SLOT: 6/6.32
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1794630710
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
