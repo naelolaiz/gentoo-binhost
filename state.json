@@ -1088,6 +1088,10 @@
    "path": "pkgs-kde-frameworks/kfilemetadata-6.32.0-1.gpkg.tar"
   },
   {
+   "at": 1794717557,
+   "path": "pkgs-kde-frameworks/kfilemetadata-6.32.0-2.gpkg.tar"
+  },
+  {
    "at": 1794571809,
    "path": "pkgs-kde-frameworks/kimageformats-6.31.0-1.gpkg.tar"
   },
@@ -1262,6 +1266,10 @@
   {
    "at": 1794716645,
    "path": "pkgs-kde-plasma/kpipewire-6.8.3-3.gpkg.tar"
+  },
+  {
+   "at": 1794717557,
+   "path": "pkgs-kde-plasma/kpipewire-6.8.3-4.gpkg.tar"
   },
   {
    "at": 1793864716,
@@ -1796,6 +1804,10 @@
    "path": "pkgs-media-libs/libheif-1.23.7-6.gpkg.tar"
   },
   {
+   "at": 1794717557,
+   "path": "pkgs-media-libs/libheif-1.23.7-7.gpkg.tar"
+  },
+  {
    "at": 1794115631,
    "path": "pkgs-media-libs/liblo-0.32-6.gpkg.tar"
   },
@@ -2272,6 +2284,10 @@
    "path": "pkgs-sci-ml/ollama-0.40.16-1.gpkg.tar"
   },
   {
+   "at": 1794717557,
+   "path": "pkgs-sci-ml/ollama-0.40.16-2.gpkg.tar"
+  },
+  {
    "at": 1793598458,
    "path": "pkgs-sci-ml/ollama-0.40.3-2.gpkg.tar"
   },
@@ -2410,6 +2426,10 @@
   {
    "at": 1793598458,
    "path": "pkgs-virtual/dist-kernel-7.2.9-1.gpkg.tar"
+  },
+  {
+   "at": 1794717557,
+   "path": "pkgs-virtual/dist-kernel-7.3.4-1.gpkg.tar"
   },
   {
    "at": 1794461521,
