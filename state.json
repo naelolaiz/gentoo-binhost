@@ -1917,6 +1917,10 @@
    "path": "pkgs-media-libs/mesa-26.2.6-3.gpkg.tar"
   },
   {
+   "at": 1794808235,
+   "path": "pkgs-media-libs/mlt-7.42.0-1.gpkg.tar"
+  },
+  {
    "at": 1793595982,
    "path": "pkgs-media-libs/opencv-4.14.0-1.gpkg.tar"
   },
@@ -2095,6 +2099,10 @@
   {
    "at": 1794801530,
    "path": "pkgs-media-video/pipewire-1.6.11-11.gpkg.tar"
+  },
+  {
+   "at": 1794808235,
+   "path": "pkgs-media-video/pipewire-1.6.11-12.gpkg.tar"
   },
   {
    "at": 1793685884,

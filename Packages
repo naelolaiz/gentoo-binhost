@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794807625
+TIMESTAMP: 1794808235
 PACKAGES: 2034
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -35018,26 +35018,25 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
-BUILD_TIME: 1793514590
+BUILD_TIME: 1794808030
 CPV: media-libs/mlt-7.42.0
 DEFINED_PHASES: compile configure install prepare pretend setup test
 DEPEND: >=media-libs/libebur128-1.2.2:0/1= sci-libs/fftw:3.0/3= media-video/ffmpeg:0/60.62.62= media-plugins/frei0r-plugins media-libs/fontconfig media-libs/libexif x11-libs/gdk-pixbuf:2 x11-libs/pango virtual/jack dev-libs/glib:2 >=dev-libs/libxml2-2.5:2/16= media-libs/ladspa-sdk >=media-libs/libsamplerate-0.1.2 media-libs/lilv:0/0= media-libs/libglvnd media-video/movit dev-qt/qtbase:6[gui,network,opengl,widgets,xml] dev-qt/qtsvg:6 media-libs/libexif x11-libs/libX11 media-libs/rubberband:0/3= media-libs/libsdl2[X,opengl,video] media-libs/sdl2-image media-libs/libvorbis >=dev-libs/libxml2-2.5:2/16=
 EAPI: 8
 IUSE: debug ffmpeg frei0r +gpl gtk jack ladspa libplacebo libsamplerate lv2 opencv openfx opengl python qt6 rtaudio rnnoise rubberband sdl sox test vdpau vidstab vorbis xine xml python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2.1 GPL-2 GPL-3
-MD5: 36125621677b79f2583b63ef42c4563e
-PATH: pkgs-media-libs/mlt-7.42.0-1.gpkg.tar
+MD5: 510a44a887ec198688e156f545b38ca7
+PATH: pkgs-media-libs/mlt-7.42.0-1.1794808030.gpkg.tar
 PROVIDES: x86_64: libmlt++-7.so.7 libmlt-7.so.7 libmltavformat.so libmltcore.so libmltdecklink.so libmltfrei0r.so libmltgdk.so libmltglaxnimate-qt6.so libmltjackrack.so libmltkdenlive.so libmltladspa.so libmltmovit.so libmltnormalize.so libmltoldfilm.so libmltplus.so libmltplusgpl.so libmltqt6.so libmltresample.so libmltrubberband.so libmltsdl2.so libmltvorbis.so libmltxml.so
 RDEPEND: >=media-libs/libebur128-1.2.2:0/1= sci-libs/fftw:3.0/3= media-video/ffmpeg:0/60.62.62= media-plugins/frei0r-plugins media-libs/fontconfig media-libs/libexif x11-libs/gdk-pixbuf:2 x11-libs/pango virtual/jack dev-libs/glib:2 >=dev-libs/libxml2-2.5:2/16= media-libs/ladspa-sdk >=media-libs/libsamplerate-0.1.2 media-libs/lilv:0/0= media-libs/libglvnd media-video/movit dev-qt/qtbase:6[gui,network,opengl,widgets,xml] dev-qt/qtsvg:6 media-libs/libexif x11-libs/libX11 media-libs/rubberband:0/3= media-libs/libsdl2[X,opengl,video] media-libs/sdl2-image media-libs/libvorbis >=dev-libs/libxml2-2.5:2/16= >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
 REQUIRES: x86_64: libGLX.so.0 libOpenGL.so.0 libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libSDL2-2.0.so.0 libX11.so.6 libavcodec.so.62 libavdevice.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libc.so.6 libebur128.so.1 libepoxy.so.0 libexif.so.12 libfftw3.so.3 libfontconfig.so.1 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libjack.so.0 liblilv-0.so.0 libm.so.6 libmovit.so.8 libpango-1.0.so.0 libpangoft2-1.0.so.0 librubberband.so.3 libsamplerate.so.0 libstdc++.so.6 libswresample.so.6 libswscale.so.9 libvorbisfile.so.3 libxml2.so.16 libz.so.1
 RESTRICT: test
-SHA1: 729350bf67e9c8f41f06d38ed24aac9c2145d4b4
+SHA1: 8b3226315eb15c138f95ed7793ca614aa2310313
 SIZE: 2816000
 SLOT: 0/7
 USE: abi_x86_64 amd64 elibc_glibc ffmpeg frei0r gpl gtk jack kernel_linux ladspa libsamplerate lv2 opengl python_single_target_python3_14 qt6 rubberband sdl vorbis xml
-MTIME: 1793514592
+MTIME: 1794808032
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -37846,28 +37845,28 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-build/meson-0.59 virtual/pkgconfig >=dev-util/gdbus-codegen-2.80.5-r1 >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig virtual/pkgconfig
-BUILD_ID: 12
-BUILD_TIME: 1794801413
+BUILD_ID: 13
+BUILD_TIME: 1794808055
 CPV: media-video/pipewire-1.6.11
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
-DEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/61.63.63= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes
+DEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/60.62.62= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes
 EAPI: 8
 IUSE: man bluetooth elogind dbus doc echo-cancel extra ffmpeg fftw flatpak gstreamer gsettings ieee1394 jack-client jack-sdk libcamera loudness lv2 modemmanager pipewire-alsa readline roc selinux pulseaudio sound-server sofa ssl system-service systemd test v4l X zeroconf abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86
 LICENSE: MIT LGPL-2.1+ GPL-2
-MD5: d24ad148e7929ea19f30b7503bc59f90
-PATH: pkgs-media-video/pipewire-1.6.11-12.gpkg.tar
+MD5: bcc80e1dd2937b8b4f39a2e79e4821bb
+PATH: pkgs-media-video/pipewire-1.6.11-13.gpkg.tar
 PDEPEND: >=media-video/wireplumber-0.5.2
 PROVIDES: x86_64: libasound_module_ctl_pipewire.so libasound_module_pcm_pipewire.so libgstpipewire.so libjack.so.0 libjacknet.so.0 libjackserver.so.0 libpipewire-0.3.so.0 libpipewire-module-access.so libpipewire-module-adapter.so libpipewire-module-avb.so libpipewire-module-client-device.so libpipewire-module-client-node.so libpipewire-module-combine-stream.so libpipewire-module-echo-cancel.so libpipewire-module-fallback-sink.so libpipewire-module-filter-chain.so libpipewire-module-jack-tunnel.so libpipewire-module-jackdbus-detect.so libpipewire-module-link-factory.so libpipewire-module-loopback.so libpipewire-module-metadata.so libpipewire-module-netjack2-driver.so libpipewire-module-netjack2-manager.so libpipewire-module-parametric-equalizer.so libpipewire-module-pipe-tunnel.so libpipewire-module-portal.so libpipewire-module-profiler.so libpipewire-module-protocol-native.so libpipewire-module-protocol-pulse.so libpipewire-module-protocol-simple.so libpipewire-module-pulse-tunnel.so libpipewire-module-raop-sink.so libpipewire-module-rt.so libpipewire-module-rtkit.so libpipewire-module-rtp-sap.so libpipewire-module-rtp-sink.so libpipewire-module-rtp-source.so libpipewire-module-session-manager.so libpipewire-module-spa-device-factory.so libpipewire-module-spa-device.so libpipewire-module-spa-node-factory.so libpipewire-module-spa-node.so libpipewire-module-vban-recv.so libpipewire-module-vban-send.so libpipewire-module-x11-bell.so libpw-v4l2.so libspa-aec-null.so libspa-alsa.so libspa-audioconvert.so libspa-audiomixer.so libspa-audiotestsrc.so libspa-avb.so libspa-bluez5.so libspa-codec-bluez5-aac.so libspa-codec-bluez5-aptx.so libspa-codec-bluez5-faststream.so libspa-codec-bluez5-g722.so libspa-codec-bluez5-hfp-cvsd.so libspa-codec-bluez5-hfp-lc3-a127.so libspa-codec-bluez5-hfp-lc3-swb.so libspa-codec-bluez5-hfp-msbc.so libspa-codec-bluez5-lc3.so libspa-codec-bluez5-ldac.so libspa-codec-bluez5-opus-g.so libspa-codec-bluez5-opus.so libspa-codec-bluez5-sbc.so libspa-control.so libspa-dbus.so libspa-ffmpeg.so libspa-filter-graph-plugin-builtin.so libspa-filter-graph-plugin-ebur128.so libspa-filter-graph-plugin-ffmpeg.so libspa-filter-graph-plugin-ladspa.so libspa-filter-graph-plugin-lv2.so libspa-filter-graph.so libspa-jack.so libspa-support.so libspa-v4l2.so libspa-videoconvert.so libspa-videotestsrc.so libspa-volume.so libspa.so
-RDEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/61.63.63= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+RDEPEND: acct-group/audio acct-group/pipewire media-libs/alsa-lib[abi_x86_64(-)] sys-libs/ncurses:0/6=[unicode(+)] virtual/libintl[abi_x86_64(-)] virtual/libudev[abi_x86_64(-)] dev-libs/glib media-libs/fdk-aac media-sound/liblc3 media-libs/libldac media-libs/libfreeaptx media-libs/opus media-libs/sbc >=net-wireless/bluez-4.101:0/3= virtual/libusb:1 sys-auth/elogind sys-apps/dbus[abi_x86_64(-)] >=media-libs/libsndfile-1.0.20 media-video/ffmpeg:0/60.62.62= sci-libs/fftw:3.0/3=[abi_x86_64(-)] >=dev-libs/glib-2.32.0:2 >=media-libs/gstreamer-1.22.0:1.0 >=media-libs/gst-plugins-base-1.22.0:1.0 >=dev-libs/glib-2.26.0:2 >=media-sound/jack2-1.9.10:2[dbus] media-libs/libebur128:0/1=[abi_x86_64(-)] media-libs/lilv >=media-libs/alsa-lib-1.2.10[abi_x86_64(-)] media-libs/libpulse !media-sound/pulseaudio-daemon sys-libs/readline:0/8= dev-libs/openssl:0/4= media-libs/libv4l media-libs/libcanberra x11-libs/libX11 x11-libs/libXfixes virtual/tmpfiles >=sys-libs/glibc-2.43-r4
 REPO_REVISIONS: {"gentoo": "b95d0fd5376a62948d3fd7013b89d7fc8232828d"}
-REQUIRES: x86_64: libX11.so.6 libXfixes.so.3 libasound.so.2 libavcodec.so.63 libavfilter.so.12 libavformat.so.63 libavutil.so.61 libbluetooth.so.3 libc.so.6 libcanberra.so.0 libcrypto.so.4 libdbus-1.so.3 libebur128.so.1 libelogind.so.0 libfdk-aac.so.2 libfftw3f.so.3 libfreeaptx.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0 liblc3.so.1 libldacBT_abr.so.2 libldacBT_enc.so.2 liblilv-0.so.0 libm.so.6 libncursesw.so.6 libopus.so.0 libpulse.so.0 libreadline.so.8 libsbc.so.1 libsndfile.so.1 libswscale.so.10 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0
+REQUIRES: x86_64: libX11.so.6 libXfixes.so.3 libasound.so.2 libavcodec.so.62 libavfilter.so.11 libavformat.so.62 libavutil.so.60 libbluetooth.so.3 libc.so.6 libcanberra.so.0 libcrypto.so.4 libdbus-1.so.3 libebur128.so.1 libelogind.so.0 libfdk-aac.so.2 libfftw3f.so.3 libfreeaptx.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgstallocators-1.0.so.0 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 libgstvideo-1.0.so.0 liblc3.so.1 libldacBT_abr.so.2 libldacBT_enc.so.2 liblilv-0.so.0 libm.so.6 libncursesw.so.6 libopus.so.0 libpulse.so.0 libreadline.so.8 libsbc.so.1 libsndfile.so.1 libswscale.so.9 libtinfow.so.6 libudev.so.1 libusb-1.0.so.0
 RESTRICT: test
-SHA1: d907f4a0de1e0334f29dec7cfd528c639fbec0e8
+SHA1: 1e7b2de63c123d2afe9f4196135616db5c82a5d7
 SIZE: 5386240
 SLOT: 0/0.4
 USE: X abi_x86_64 amd64 bluetooth dbus elibc_glibc elogind extra ffmpeg fftw gsettings gstreamer jack-client kernel_linux loudness lv2 pipewire-alsa pulseaudio readline sound-server ssl v4l
-MTIME: 1794801415
+MTIME: 1794808058
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
