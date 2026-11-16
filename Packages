@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1794806111
+TIMESTAMP: 1794807625
 PACKAGES: 2034
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -33347,8 +33347,8 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl >=sys-devel/gettext-0.19.8 virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
-BUILD_ID: 5
-BUILD_TIME: 1794802823
+BUILD_ID: 6
+BUILD_TIME: 1794807524
 CPV: media-libs/gegl-0.4.72
 DEFINED_PHASES: compile configure install postinst prepare pretend setup test
 DEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/60.62.62= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7=
@@ -33356,18 +33356,18 @@ EAPI: 8
 IUSE: cairo debug ffmpeg gtk-doc +introspection jpeg2k lcms openexr openmp pdf raw sdl sdl2 sdl3 svg test tiff umfpack vala v4l webp
 KEYWORDS: amd64 ~arm arm64 ~loong ~ppc ppc64 ~riscv x86
 LICENSE: || ( GPL-3+ LGPL-3 )
-MD5: 7e8b5f7c24462cda5086e0c788dbe79b
-PATH: pkgs-media-libs/gegl-0.4.72-5.gpkg.tar
+MD5: 9f942fec069ef191b6be0c2c7fe06b6e
+PATH: pkgs-media-libs/gegl-0.4.72-6.gpkg.tar
 PROVIDES: x86_64: exr-load.so exr-save.so ff-load.so ff-save.so gegl-common-cxx-x86_64-v2.so gegl-common-cxx-x86_64-v3.so gegl-common-cxx.so gegl-common-gpl3-x86_64-v2.so gegl-common-gpl3-x86_64-v3.so gegl-common-gpl3.so gegl-common-x86_64-v2.so gegl-common-x86_64-v3.so gegl-common.so gegl-core.so gegl-generated-x86_64-v2.so gegl-generated-x86_64-v3.so gegl-generated.so gegl-transformops-x86_64-v2.so gegl-transformops-x86_64-v3.so gif-load.so jp2-load.so jpg-load.so jpg-save.so lcms-from-profile.so libgegl-0.4.so.0 libgegl-npd-0.4.so libgegl-sc-0.4.so npd.so npy-save.so path.so pdf-load.so pixbuf-load.so pixbuf-save.so png-load.so png-save.so ppm-load.so ppm-save.so rgbe-load.so rgbe-save.so sdl-display.so sdl2-display.so seamless-clone-compose.so seamless-clone.so svg-load.so text.so tiff-load.so tiff-save.so transformops.so v4l.so vector-fill.so vector-stroke.so webp-load.so webp-save.so
 RDEPEND: >=dev-libs/glib-2.44.0:2 >=dev-libs/json-glib-1.0.0 >=dev-util/opencl-headers-2023.02.06 >=media-libs/babl-0.1.116[introspection,lcms] >=media-libs/libjpeg-turbo-1.0.0:0/0.2= >=media-libs/libnsgif-1.0.0:0/1.0.0= >=media-libs/libpng-1.6.0:0/16= >=virtual/zlib-1.2.0:0/1= >=x11-libs/gdk-pixbuf-2.32:2 >=x11-libs/pango-1.38.0 >=x11-libs/cairo-1.12.2 media-video/ffmpeg:0/60.62.62= >=dev-libs/gobject-introspection-1.82.0-r2:0/0= >=media-libs/jasper-1.900.1:0/7= >=media-libs/lcms-2.8:2 >=media-libs/openexr-1.6.1:0/32= >=app-text/poppler-0.71.0[cairo] >=media-libs/libsdl-1.2.0 >=media-libs/libsdl2-2.0.5 >=gnome-base/librsvg-2.40.6:2 >=media-libs/tiff-4:0/6= >=media-libs/libv4l-1.0.1 >=media-libs/libwebp-0.5.0:0/7= >=sys-libs/glibc-2.43-r4
 REPO_REVISIONS: {"gentoo": "b95d0fd5376a62948d3fd7013b89d7fc8232828d"}
 REQUIRES: x86_64: libOpenEXR-3_3.so.32 libSDL-1.2.so.0 libSDL2-2.0.so.0 libavcodec.so.62 libavformat.so.62 libavutil.so.60 libbabl-0.1.so.0 libc.so.6 libcairo.so.2 libgcc_s.so.1 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgobject-2.0.so.0 libgomp.so.1 libjasper.so.7 libjpeg.so.62 libjson-glib-1.0.so.0 liblcms2.so.2 libm.so.6 libnsgif.so.1 libpango-1.0.so.0 libpangocairo-1.0.so.0 libpng16.so.16 libpoppler-glib.so.8 librsvg-2.so.2 libstdc++.so.6 libswscale.so.9 libtiff.so.6 libwebp.so.7
 RESTRICT: test
-SHA1: 8c3b2b564f5cb25b9afa9c5bd9f9b560b3213ac7
+SHA1: bcb630b7fc915395fbba9a85fe2289728fd1e14c
 SIZE: 4014080
 SLOT: 0.4
 USE: abi_x86_64 amd64 cairo elibc_glibc ffmpeg introspection jpeg2k kernel_linux lcms openexr openmp pdf sdl sdl2 svg tiff v4l webp
-MTIME: 1794802825
+MTIME: 1794807525
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -35065,8 +35065,8 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-util/patchelf virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 2
-BUILD_TIME: 1793595888
+BUILD_ID: 1
+BUILD_TIME: 1794807497
 CPV: media-libs/opencv-4.14.0
 DEFINED_PHASES: compile configure install preinst prepare pretend setup test unpack
 DEPEND: dev-libs/protobuf:0/34.2.0=[protoc(+),protobuf(+),abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] media-libs/libavif:0/16.4=[abi_x86_64(-)] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/flatbuffers:0/25.12.19= <media-video/ffmpeg-9:0/60.62.62=[abi_x86_64(-)] media-libs/libgphoto2:0/6=[abi_x86_64(-)] >=media-libs/libjpeg-turbo-3.1.0:0/0.2=[abi_x86_64(-)] >=media-libs/openjpeg-2.5.3:2/7=[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] dev-util/opencl-headers dev-libs/imath:3/29= media-libs/openexr:0/32= virtual/opengl[abi_x86_64(-)] virtual/glu[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] dev-qt/qt5compat:6 dev-qt/qtbase:6[gui,widgets,concurrent,opengl] media-libs/tiff:0/6=[abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] >=media-libs/libv4l-0.8.3[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] >=dev-libs/wayland-protocols-1.13 >=dev-cpp/eigen-3.3.8-r1:3
@@ -35074,18 +35074,17 @@ EAPI: 8
 IUSE: debug doc +eigen gflags glog java non-free opencvapps python test testprograms contrib contribcvv contribdnn contribfreetype contribhdf contribovis contribsfm contribxfeatures2d examples features2d wechat-qrcode cuda cudnn opencl video_cards_intel +ffmpeg gphoto2 gstreamer ieee1394 openni openni2 xine vaapi v4l avif gdal gif jasper jpeg jpeg2k openexr png quirc spng tesseract tiff webp gtk3 qt6 opengl truetype vtk vulkan wayland openmp tbb atlas lapack mkl cpu_flags_arm_neon cpu_flags_arm_vfpv3 cpu_flags_arm_asimddp cpu_flags_ppc_vsx cpu_flags_ppc_vsx3 cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_ssse3 cpu_flags_x86_sse4_1 cpu_flags_x86_popcnt cpu_flags_x86_sse4_2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_avx512_bitalg cpu_flags_x86_avx512_vbmi2 cpu_flags_x86_avx512_vnni cpu_flags_x86_avx512_vpopcntdq cpu_flags_x86_avx512bw cpu_flags_x86_avx512cd cpu_flags_x86_avx512dq cpu_flags_x86_avx512f cpu_flags_x86_avx512ifma cpu_flags_x86_avx512vbmi cpu_flags_x86_avx512vl cpu_flags_x86_avx512er cpu_flags_x86_avx512pf cpu_flags_x86_avx512_4fmaps cpu_flags_x86_avx512_4vnniw java abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 test
 KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: Apache-2.0
-MD5: e12ebd9da430cdffe10f234d512f5a7d
-PATH: pkgs-media-libs/opencv-4.14.0-2.gpkg.tar
+MD5: 6122b3a8a9b1b698019e233da18077e0
+PATH: pkgs-media-libs/opencv-4.14.0-1.1794807497.gpkg.tar
 PROVIDES: x86_64: libopencv_alphamat.so.414 libopencv_aruco.so.414 libopencv_bgsegm.so.414 libopencv_bioinspired.so.414 libopencv_calib3d.so.414 libopencv_ccalib.so.414 libopencv_core.so.414 libopencv_datasets.so.414 libopencv_dnn.so.414 libopencv_dnn_objdetect.so.414 libopencv_dnn_superres.so.414 libopencv_dpm.so.414 libopencv_face.so.414 libopencv_features2d.so.414 libopencv_flann.so.414 libopencv_fuzzy.so.414 libopencv_gapi.so.414 libopencv_hfs.so.414 libopencv_highgui.so.414 libopencv_img_hash.so.414 libopencv_imgcodecs.so.414 libopencv_imgproc.so.414 libopencv_intensity_transform.so.414 libopencv_line_descriptor.so.414 libopencv_mcc.so.414 libopencv_ml.so.414 libopencv_objdetect.so.414 libopencv_optflow.so.414 libopencv_phase_unwrapping.so.414 libopencv_photo.so.414 libopencv_plot.so.414 libopencv_quality.so.414 libopencv_rapid.so.414 libopencv_reg.so.414 libopencv_rgbd.so.414 libopencv_saliency.so.414 libopencv_shape.so.414 libopencv_signal.so.414 libopencv_stereo.so.414 libopencv_stitching.so.414 libopencv_structured_light.so.414 libopencv_superres.so.414 libopencv_surface_matching.so.414 libopencv_text.so.414 libopencv_tracking.so.414 libopencv_video.so.414 libopencv_videoio.so.414 libopencv_videoio_ffmpeg.414.amd64.so libopencv_videostab.so.414 libopencv_ximgproc.so.414 libopencv_xobjdetect.so.414 libopencv_xphoto.so.414
 RDEPEND: dev-libs/protobuf:0/34.2.0=[protoc(+),protobuf(+),abi_x86_64(-)] virtual/zlib:0/1=[abi_x86_64(-)] media-libs/libavif:0/16.4=[abi_x86_64(-)] dev-cpp/abseil-cpp:0/2601.1.0-cpp20= dev-libs/flatbuffers:0/25.12.19= <media-video/ffmpeg-9:0/60.62.62=[abi_x86_64(-)] media-libs/libgphoto2:0/6=[abi_x86_64(-)] >=media-libs/libjpeg-turbo-3.1.0:0/0.2=[abi_x86_64(-)] >=media-libs/openjpeg-2.5.3:2/7=[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] dev-util/opencl-headers dev-libs/imath:3/29= media-libs/openexr:0/32= virtual/opengl[abi_x86_64(-)] virtual/glu[abi_x86_64(-)] media-libs/libpng:0/16=[abi_x86_64(-)] dev-qt/qt5compat:6 dev-qt/qtbase:6[gui,widgets,concurrent,opengl] media-libs/tiff:0/6=[abi_x86_64(-)] media-libs/freetype:2[abi_x86_64(-)] >=media-libs/libv4l-0.8.3[abi_x86_64(-)] media-libs/libwebp:0/7=[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] >=dev-libs/wayland-protocols-1.13 >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "5b83b28984b9349d88d415b1318677d18bc8e695"}
 REQUIRES: x86_64: libGLX.so.0 libOpenEXR-3_3.so.32 libOpenGL.so.0 libabsl_cord.so.2601.0.0 libabsl_flags_internal.so.2601.0.0 libabsl_hash.so.2601.0.0 libabsl_log_internal_message.so.2601.0.0 libavcodec.so.62 libavdevice.so.62 libavformat.so.62 libavif.so.16 libavutil.so.60 libc.so.6 libfreetype.so.6 libgcc_s.so.1 libgomp.so.1 libgphoto2.so.6 libgphoto2_port.so.12 libjpeg.so.62 libm.so.6 libopenjp2.so.7 libpng16.so.16 libprotobuf.so.34.2.0 libstdc++.so.6 libswscale.so.9 libtiff.so.6 libwayland-client.so.0 libwayland-cursor.so.0 libwebp.so.7 libwebpdemux.so.2 libwebpmux.so.3 libxkbcommon.so.0 libz.so.1
 RESTRICT: test test
-SHA1: 3c7996519cb521f56ec4a0b3ac9ea97ff08e7c8d
+SHA1: befbd298ab915f2b8bb4cfc2d944f37b1f1e5141
 SIZE: 18759680
 SLOT: 0/4.14.0
 USE: abi_x86_64 amd64 avif contrib contribdnn cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_popcnt cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 cpu_flags_x86_ssse3 eigen elibc_glibc features2d ffmpeg gif gphoto2 jpeg jpeg2k kernel_linux opencl openexr opengl openmp png python_targets_python3_14 qt6 tiff truetype v4l vulkan wayland webp
-MTIME: 1793595892
+MTIME: 1794807501
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
