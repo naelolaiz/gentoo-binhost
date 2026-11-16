@@ -452,10 +452,6 @@
    "path": "pkgs-app-emulation/virtualbox-7.2.22-1.gpkg.tar"
   },
   {
-   "at": 1793515401,
-   "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-4.gpkg.tar"
-  },
-  {
    "at": 1794029255,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-5.gpkg.tar"
   },
@@ -800,14 +796,6 @@
    "path": "pkgs-dev-libs/libxmlb-0.3.29-1.gpkg.tar"
   },
   {
-   "at": 1793598458,
-   "path": "pkgs-dev-libs/libzip-1.12-1.gpkg.tar"
-  },
-  {
-   "at": 1793598458,
-   "path": "pkgs-dev-libs/libzip-1.12-r1-1.gpkg.tar"
-  },
-  {
    "at": 1793686190,
    "path": "pkgs-dev-libs/libzip-1.12.1-1.gpkg.tar"
   },
@@ -872,10 +860,6 @@
    "path": "pkgs-dev-python/meson-python-0.22.1-1.gpkg.tar"
   },
   {
-   "at": 1793512319,
-   "path": "pkgs-dev-python/myst-parser-5.1.0-1.gpkg.tar"
-  },
-  {
    "at": 1794387696,
    "path": "pkgs-dev-python/numpy-2.5.4-1.gpkg.tar"
   },
@@ -894,14 +878,6 @@
   {
    "at": 1794512167,
    "path": "pkgs-dev-python/sip-6.17.0-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1793515068,
-   "path": "pkgs-dev-python/snakeoil-0.11.7-1.gpkg.tar"
-  },
-  {
-   "at": 1793512009,
-   "path": "pkgs-dev-python/sphinxcontrib-jsmath-2.0.0-1.gpkg.tar"
   },
   {
    "at": 1793983999,
@@ -1036,14 +1012,6 @@
    "path": "pkgs-dev-util/perf-7.2-3.gpkg.tar"
   },
   {
-   "at": 1793515401,
-   "path": "pkgs-dev-util/pkgcheck-0.10.49-1.gpkg.tar"
-  },
-  {
-   "at": 1793515401,
-   "path": "pkgs-dev-util/pkgdev-0.2.19-1.gpkg.tar"
-  },
-  {
    "at": 1794808402,
    "path": "pkgs-dev-util/spirv-llvm-translator-22.1.7-1.gpkg.tar"
   },
@@ -1078,10 +1046,6 @@
   {
    "at": 1794371765,
    "path": "pkgs-gnome-base/librsvg-2.62.4-1.gpkg.tar"
-  },
-  {
-   "at": 1793512931,
-   "path": "pkgs-gui-libs/gtk-4.22.5-r1-1.gpkg.tar"
   },
   {
    "at": 1794374522,
@@ -1700,10 +1664,6 @@
    "path": "pkgs-llvm-core/clang-23.1.3-r1-1.gpkg.tar"
   },
   {
-   "at": 1793512931,
-   "path": "pkgs-llvm-core/clang-23.1.4-r1-1.gpkg.tar"
-  },
-  {
    "at": 1793735172,
    "path": "pkgs-llvm-core/clang-common-23.1.2-1.gpkg.tar"
   },
@@ -1780,10 +1740,6 @@
    "path": "pkgs-media-gfx/imagemagick-7.1.2.35-1.gpkg.tar"
   },
   {
-   "at": 1793597852,
-   "path": "pkgs-media-gfx/kgraphviewer-26.08.2-1.gpkg.tar"
-  },
-  {
    "at": 1794117575,
    "path": "pkgs-media-gfx/sam2p-0.49.4_p20190718-r1-4.gpkg.tar"
   },
@@ -1858,10 +1814,6 @@
   {
    "at": 1794369844,
    "path": "pkgs-media-libs/libglvnd-1.7.0-12.gpkg.tar"
-  },
-  {
-   "at": 1793597232,
-   "path": "pkgs-media-libs/libheif-1.23.7-1.gpkg.tar"
   },
   {
    "at": 1793945012,
@@ -1966,10 +1918,6 @@
   {
    "at": 1794808235,
    "path": "pkgs-media-libs/mlt-7.42.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793595982,
-   "path": "pkgs-media-libs/opencv-4.14.0-1.gpkg.tar"
   },
   {
    "at": 1794807625,
@@ -2134,10 +2082,6 @@
   {
    "at": 1794029255,
    "path": "pkgs-media-video/obs-studio-33.0.1-3.gpkg.tar"
-  },
-  {
-   "at": 1793592917,
-   "path": "pkgs-media-video/pipewire-1.6.11-1.gpkg.tar"
   },
   {
    "at": 1794716645,
@@ -2312,10 +2256,6 @@
    "path": "pkgs-net-misc/freerdp-3.32.2-2.gpkg.tar"
   },
   {
-   "at": 1793513848,
-   "path": "pkgs-net-misc/networkmanager-1.58.1-r3-1.gpkg.tar"
-  },
-  {
    "at": 1794377096,
    "path": "pkgs-net-misc/networkmanager-1.58.1-r3-2.gpkg.tar"
   },
@@ -2372,10 +2312,6 @@
    "path": "pkgs-sci-libs/libsigrokdecode-0.6.0_pre20241001-1.gpkg.tar"
   },
   {
-   "at": 1793598458,
-   "path": "pkgs-sci-ml/ggml-0.26.0-1.gpkg.tar"
-  },
-  {
    "at": 1793735172,
    "path": "pkgs-sci-ml/ggml-0.27.0-1.gpkg.tar"
   },
@@ -2398,10 +2334,6 @@
   {
    "at": 1794717557,
    "path": "pkgs-sci-ml/ollama-0.40.16-2.gpkg.tar"
-  },
-  {
-   "at": 1793598458,
-   "path": "pkgs-sci-ml/ollama-0.40.3-2.gpkg.tar"
   },
   {
    "at": 1793735172,
@@ -2446,10 +2378,6 @@
   {
    "at": 1794369507,
    "path": "pkgs-sys-apps/openrc-0.64.1-1.gpkg.tar"
-  },
-  {
-   "at": 1793515401,
-   "path": "pkgs-sys-apps/pkgcore-0.12.48-1.gpkg.tar"
   },
   {
    "at": 1794808402,
@@ -2504,14 +2432,6 @@
    "path": "pkgs-sys-kernel/dracut-112-2.gpkg.tar"
   },
   {
-   "at": 1793598458,
-   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.10-1.gpkg.tar"
-  },
-  {
-   "at": 1793598458,
-   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.9-1.gpkg.tar"
-  },
-  {
    "at": 1794370176,
    "path": "pkgs-sys-libs/libnvme-1.16.2-8.gpkg.tar"
   },
@@ -2534,14 +2454,6 @@
   {
    "at": 1794387696,
    "path": "pkgs-sys-power/upower-1.91.3-1.gpkg.tar"
-  },
-  {
-   "at": 1793598458,
-   "path": "pkgs-virtual/dist-kernel-7.2.10-1.gpkg.tar"
-  },
-  {
-   "at": 1793598458,
-   "path": "pkgs-virtual/dist-kernel-7.2.9-1.gpkg.tar"
   },
   {
    "at": 1794717557,
@@ -2666,10 +2578,6 @@
   {
    "at": 1794370176,
    "path": "pkgs-x11-misc/xkeyboard-config-2.49-1.gpkg.tar"
-  },
-  {
-   "at": 1793512319,
-   "path": "pkgs-x11-themes/adwaita-icon-theme-50.0-1.gpkg.tar"
   },
   {
    "at": 1794375145,
