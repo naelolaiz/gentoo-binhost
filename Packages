@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794808463
-PACKAGES: 2021
+TIMESTAMP: 1794889094
+PACKAGES: 2023
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -41187,6 +41187,28 @@ MTIME: 1791061912
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=sys-apps/texinfo-7.1 >=sys-devel/bison-3.5.4 sys-devel/gettext
+BUILD_ID: 1
+BUILD_TIME: 1794888847
+CPV: sys-apps/gawk-5.4.2
+DEFINED_PHASES: configure install prepare test unpack
+DEPEND: dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= sys-libs/readline:0/8=
+EAPI: 8
+IUSE: +mpfr pma nls readline verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3+
+MD5: ae0b996b061706f46928032ad0052634
+PATH: pkgs-sys-apps/gawk-5.4.2-1.gpkg.tar
+PROVIDES: x86_64: filefuncs.so fnmatch.so fork.so inplace.so intdiv.so ordchr.so readdir.so readfile.so revoutput.so revtwoway.so rwarray.so time.so
+RDEPEND: dev-libs/gmp:0/10.4= dev-libs/mpfr:0/6= sys-libs/readline:0/8= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgmp.so.10 libm.so.6 libmpfr.so.6 libreadline.so.8
+SHA1: 907b764c741d8943b9903b4cb221f8b7cfa9ee8a
+SIZE: 1710080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux mpfr nls readline
+MTIME: 1794888849
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-lang/perl-5.8 >=sys-apps/texinfo-5.0 sys-devel/m4
 BUILD_ID: 1
 BUILD_TIME: 1791064858
@@ -41333,6 +41355,30 @@ SHA1: 4d766630d485d8254ac916a76c82f1ff7669af2a
 SIZE: 235520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux pcre
 MTIME: 1791061976
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-arch/xz-utils virtual/pkgconfig >=app-text/po4a-0.45 sys-devel/gettext virtual/libiconv virtual/libintl virtual/pkgconfig >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1794888946
+CPV: sys-apps/man-db-2.13.3
+DEFINED_PHASES: configure install postinst preinst prepare unpack
+DEPEND: >=dev-libs/libpipeline-1.5.0 >=sys-apps/groff-1.20.0 sys-libs/gdbm:0/6= sys-libs/libseccomp virtual/zlib:0/1=
+EAPI: 8
+IUSE: +manpager nls +seccomp selinux static-libs zlib verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-3
+MD5: 10dc71f59e4cded1cbcbdf78c51964b0
+PATH: pkgs-sys-apps/man-db-2.13.3-1.gpkg.tar
+PDEPEND: app-text/manpager
+PROVIDES: x86_64: libman-2.13.3.so libmandb-2.13.3.so
+RDEPEND: >=dev-libs/libpipeline-1.5.0 >=sys-apps/groff-1.20.0 sys-libs/gdbm:0/6= sys-libs/libseccomp virtual/zlib:0/1= acct-group/man acct-user/man virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "db644d89d6a112832ed67c207221f914bfad8227"}
+REQUIRES: x86_64: libc.so.6 libgdbm.so.6 libpipeline.so.1 libseccomp.so.2 libz.so.1
+SHA1: d1e54869369499c623bcbe630e2398b22c8a759e
+SIZE: 1413120
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux manpager nls seccomp zlib
+MTIME: 1794888949
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
