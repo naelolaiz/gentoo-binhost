@@ -916,6 +916,10 @@
    "path": "pkgs-dev-qt/qtdeclarative-6.11.3-1.gpkg.tar"
   },
   {
+   "at": 1794896385,
+   "path": "pkgs-dev-qt/qtmultimedia-6.11.3-1.1794808255.gpkg.tar"
+  },
+  {
    "at": 1793694682,
    "path": "pkgs-dev-qt/qtmultimedia-6.11.3-1.gpkg.tar"
   },
@@ -1120,6 +1124,10 @@
    "path": "pkgs-kde-frameworks/kfilemetadata-6.32.0-4.gpkg.tar"
   },
   {
+   "at": 1794896385,
+   "path": "pkgs-kde-frameworks/kfilemetadata-6.32.0-5.gpkg.tar"
+  },
+  {
    "at": 1794571809,
    "path": "pkgs-kde-frameworks/kimageformats-6.31.0-1.gpkg.tar"
   },
@@ -1306,6 +1314,10 @@
   {
    "at": 1794808400,
    "path": "pkgs-kde-plasma/kpipewire-6.8.3-6.gpkg.tar"
+  },
+  {
+   "at": 1794896385,
+   "path": "pkgs-kde-plasma/kpipewire-6.8.3-7.gpkg.tar"
   },
   {
    "at": 1793864716,
@@ -1814,6 +1826,10 @@
   {
    "at": 1794369844,
    "path": "pkgs-media-libs/libglvnd-1.7.0-12.gpkg.tar"
+  },
+  {
+   "at": 1794896385,
+   "path": "pkgs-media-libs/libheif-1.23.7-10.gpkg.tar"
   },
   {
    "at": 1793945012,
