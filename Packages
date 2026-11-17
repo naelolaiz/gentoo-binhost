@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1794893339
-PACKAGES: 2028
+TIMESTAMP: 1794895758
+PACKAGES: 2030
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -37109,6 +37109,30 @@ MTIME: 1793258641
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-qt/qttools:6[linguist] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1794895675
+CPV: media-sound/musescore-4.7.7
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend setup test unpack
+DEPEND: dev-libs/pugixml dev-qt/qtbase:6[concurrent,dbus,gui,network,opengl,ssl,widgets,xml,X] dev-qt/qt5compat:6[qml] dev-qt/qtdeclarative:6 dev-qt/qtnetworkauth:6 dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/flac:0/11-14= media-libs/freetype media-libs/harfbuzz:0/6.0.0= media-libs/libopusenc media-libs/libsndfile[-minimal] media-libs/opus media-sound/lame virtual/zlib:0/1= media-video/pipewire:0/0.4= dev-libs/utfcpp
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: jack pipewire test video websockets
+KEYWORDS: ~amd64 ~arm64 ~x86
+LICENSE: GPL-2
+MD5: dd8f1dc8652da67d8bf826cda924fe94
+PATH: pkgs-media-sound/musescore-4.7.7-1.gpkg.tar
+RDEPEND: dev-libs/pugixml dev-qt/qtbase:6[concurrent,dbus,gui,network,opengl,ssl,widgets,xml,X] dev-qt/qt5compat:6[qml] dev-qt/qtdeclarative:6 dev-qt/qtnetworkauth:6 dev-qt/qtsvg:6 media-libs/alsa-lib media-libs/flac:0/11-14= media-libs/freetype media-libs/harfbuzz:0/6.0.0= media-libs/libopusenc media-libs/libsndfile[-minimal] media-libs/opus media-sound/lame virtual/zlib:0/1= media-video/pipewire:0/0.4= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "db644d89d6a112832ed67c207221f914bfad8227"}
+REQUIRES: x86_64: libFLAC++.so.11 libFLAC.so.14 libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6NetworkAuth.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libasound.so.2 libc.so.6 libfreetype.so.6 libgcc_s.so.1 libharfbuzz.so.0 libm.so.6 libmp3lame.so.0 libopusenc.so.0 libpipewire-0.3.so.0 libpugixml.so.1 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: 97753f80377dffb41692f649bafa40f296315c7d
+SIZE: 90142720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux pipewire
+MTIME: 1794895683
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig sys-devel/gettext >=dev-build/meson-1.2.3 app-alternatives/ninja
 BUILD_ID: 2
 BUILD_TIME: 1794396333
@@ -41190,6 +41214,30 @@ SHA1: 6d2eea0b4b20532434bf6122d3d67bf331594134
 SIZE: 389120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux netlink
 MTIME: 1793596037
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/vala:0.56 dev-python/jinja2[python_targets_python3_14(-)] >=dev-build/meson-1.3.2 sys-apps/hwdata virtual/pkgconfig >=app-shells/bash-completion-2.0 >=dev-libs/gobject-introspection-1.82.0-r2 dev-python/pycairo[python_targets_python3_14(-)] dev-python/pygobject:3[cairo,python_targets_python3_14(-)] x11-libs/pango[introspection] sec-keys/openpgp-keys-hughsie >=dev-build/meson-1.2.3 app-alternatives/ninja || ( app-alternatives/gpg app-crypt/gnupg[-alternatives(-)] ) >=app-portage/gemato-20.15 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1794893715
+CPV: sys-apps/fwupd-2.1.10
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND: dev-lang/python:3.14 >=app-arch/gcab-1.0 app-arch/xz-utils dev-db/sqlite:3 >=dev-libs/glib-2.72:2 >=dev-libs/libxmlb-0.3.19:0/2=[introspection] >=dev-libs/libusb-1.0.27 dev-python/pygobject:3[python_targets_python3_14(-)] net-libs/libmnl:0/0.2.0= >=net-misc/curl-7.62.0 sys-apps/util-linux virtual/zlib:0/1= >=x11-libs/libdrm-2.4.113[video_cards_amdgpu] >=sys-auth/elogind-211 >=net-libs/gnutls-3.6.0:0/30.30= >=sys-auth/polkit-0.114 sys-libs/readline:0/8= sys-apps/fwupd-efi sys-boot/efibootmgr sys-fs/udisks sys-libs/efivar x11-libs/pango[introspection] virtual/os-headers
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: amdgpu bash-completion bluetooth elogind +gnutls gtk-doc introspection minimal modemmanager policykit selinux seccomp systemd test tpm readline uefi valgrind python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 verify-sig test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: LGPL-2.1+
+MD5: 9e97340dd358f52ab3fb758520e7f8fc
+PATH: pkgs-sys-apps/fwupd-2.1.10-1.gpkg.tar
+PROVIDES: x86_64: libfwupd.so.3 libfwupdengine.so libfwupdplugin.so libfwupdutil.so
+RDEPEND: dev-lang/python:3.14 >=app-arch/gcab-1.0 app-arch/xz-utils dev-db/sqlite:3 >=dev-libs/glib-2.72:2 >=dev-libs/libxmlb-0.3.19:0/2=[introspection] >=dev-libs/libusb-1.0.27 dev-python/pygobject:3[python_targets_python3_14(-)] net-libs/libmnl:0/0.2.0= >=net-misc/curl-7.62.0 sys-apps/util-linux virtual/zlib:0/1= >=x11-libs/libdrm-2.4.113[video_cards_amdgpu] >=sys-auth/elogind-211 >=net-libs/gnutls-3.6.0:0/30.30= >=sys-auth/polkit-0.114 sys-libs/readline:0/8= sys-apps/fwupd-efi sys-boot/efibootmgr sys-fs/udisks sys-libs/efivar sys-apps/dbus >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libblkid.so.1 libc.so.6 libcurl.so.4 libdrm.so.2 libdrm_amdgpu.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgmodule-2.0.so.0 libgnutls.so.30 libgobject-2.0.so.0 liblzma.so.5 libmnl.so.0 libpolkit-gobject-1.so.0 libreadline.so.8 libsqlite3.so.0 libusb-1.0.so.0 libxmlb.so.2 libz.so.1
+RESTRICT: test test
+SHA1: 156fea1b7118c47782a814af60477a07c21dd789
+SIZE: 9277440
+USE: abi_x86_64 amd64 amdgpu bash-completion bluetooth elibc_glibc elogind gnutls introspection kernel_linux policykit python_single_target_python3_14 readline uefi verify-sig
+MTIME: 1794893718
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
