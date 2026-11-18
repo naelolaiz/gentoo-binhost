@@ -7,13 +7,10 @@
   "app-crypt/keepsecret-26.08.2": 1793983999,
   "app-crypt/keysmith-26.08.2": 1793983999,
   "app-editors/ghostwriter-26.08.2": 1793983999,
-  "app-emulation/qemu-11.1.2-r1": 1793735172,
   "app-emulation/virtualbox-7.2.18": 1794307357,
   "app-emulation/virtualbox-7.2.22": 1794307357,
-  "app-emulation/wine-proton-11.0.2": 1793735172,
   "app-misc/francis-26.08.2": 1793983999,
   "dev-build/dolphin-plugins-makefileactions-26.08.2": 1793983999,
-  "dev-libs/expat-2.8.5": 1793735172,
   "dev-libs/kirigami-addons-1.15.0": 1794717560,
   "dev-libs/kirigami-addons-1.16.0": 1794717560,
   "dev-libs/kweathercore-26.08.2": 1793983999,
@@ -28,6 +25,7 @@
   "dev-python/sip-6.17.1": 1794464824,
   "dev-python/soupsieve-2.10": 1794808402,
   "dev-python/soupsieve-3.0.1": 1794808402,
+  "dev-python/tree-sitter-0.26.1": 1794975808,
   "dev-qt/qtbase-6.11.3": 1794396593,
   "dev-qt/qtgraphs-6.11.2": 1794464824,
   "dev-qt/qthttpserver-6.11.2": 1794464824,
@@ -195,10 +193,8 @@
   "kde-apps/umbrello-26.08.2": 1793983999,
   "kde-apps/yakuake-26.08.2": 1793983999,
   "kde-misc/kclock-26.08.2": 1793983999,
-  "kde-misc/kdeconnect-26.08.2": 1793735172,
   "kde-misc/kdeconnect-26.08.2-r1": 1793983999,
   "kde-misc/kio-gdrive-26.08.2": 1793983999,
-  "kde-misc/kweather-26.08.2": 1793735172,
   "kde-misc/kweather-26.08.2-r1": 1793983999,
   "kde-misc/markdownpart-26.08.2": 1793983999,
   "kde-plasma/aurorae-6.8.2": 1794464824,
@@ -229,8 +225,6 @@
   "kde-plasma/kwallet-pam-6.8.2": 1794464824,
   "kde-plasma/kwayland-6.8.2": 1794464824,
   "kde-plasma/kwin-6.7.5-r1": 1794204649,
-  "kde-plasma/kwin-6.8.2": 1793735172,
-  "kde-plasma/kwin-6.8.2-r1": 1793735172,
   "kde-plasma/kwin-6.8.2-r2": 1794464824,
   "kde-plasma/kwrited-6.8.2": 1794464824,
   "kde-plasma/layer-shell-qt-6.8.2": 1794464824,
@@ -257,7 +251,6 @@
   "kde-plasma/plasma-systemmonitor-6.8.2": 1794464824,
   "kde-plasma/plasma-vault-6.8.2": 1794464824,
   "kde-plasma/plasma-welcome-6.8.2": 1794464824,
-  "kde-plasma/plasma-workspace-6.8.2": 1793735172,
   "kde-plasma/plasma-workspace-6.8.2-r1": 1794464824,
   "kde-plasma/plasma-workspace-wallpapers-6.8.2": 1794464824,
   "kde-plasma/plasma5support-6.8.2": 1794464824,
@@ -301,10 +294,8 @@
   "net-libs/nodejs-26.12.1": 1794808402,
   "net-misc/kio-zeroconf-26.08.2": 1793983999,
   "net-misc/rsync-3.5.1": 1794717560,
-  "net-misc/yt-dlp-2026.10.21": 1793735172,
   "net-news/alligator-26.08.2": 1793983999,
   "net-p2p/ktorrent-26.08.2": 1793983999,
-  "sci-ml/ggml-0.28.0": 1793735172,
   "sci-ml/ggml-0.28.0-r1": 1793807316,
   "sci-ml/ggml-0.28.0-r2": 1794029258,
   "sci-ml/ggml-0.29.0": 1794717560,
@@ -317,24 +308,14 @@
   "sys-apps/pkgcore-0.12.47": 1793807316,
   "sys-apps/xdg-desktop-portal-1.22.1": 1794029258,
   "sys-block/partitionmanager-26.08.2": 1793983999,
-  "sys-kernel/gentoo-kernel-7.2.11": 1793735172,
   "sys-kernel/gentoo-kernel-7.3.1": 1794204649,
   "sys-kernel/gentoo-kernel-7.3.3": 1794464824,
-  "sys-kernel/gentoo-kernel-bin-7.2.11": 1793735172,
-  "sys-kernel/gentoo-kernel-bin-7.2.12": 1793735172,
-  "sys-kernel/gentoo-kernel-bin-7.2.13": 1793735172,
-  "sys-kernel/gentoo-kernel-bin-7.2.14": 1793735172,
   "sys-kernel/gentoo-kernel-bin-7.3.1": 1794204649,
   "sys-kernel/gentoo-kernel-bin-7.3.3": 1794464824,
-  "sys-kernel/gentoo-sources-7.3.0": 1793735172,
   "sys-kernel/gentoo-sources-7.3.1": 1794118207,
   "sys-kernel/gentoo-sources-7.3.3": 1794396593,
   "sys-kernel/installkernel-70": 1793807316,
   "sys-libs/kpmcore-26.08.2": 1793983999,
-  "virtual/dist-kernel-7.2.11": 1793735172,
-  "virtual/dist-kernel-7.2.12": 1793735172,
-  "virtual/dist-kernel-7.2.13": 1793735172,
-  "virtual/dist-kernel-7.2.14": 1793735172,
   "virtual/dist-kernel-7.3.1": 1794204649,
   "virtual/dist-kernel-7.3.3": 1794464824,
   "www-client/falkon-26.08.2": 1793983999,
@@ -446,6 +427,10 @@
    "path": "pkgs-app-emulation/qemu-11.1.2-1.gpkg.tar"
   },
   {
+   "at": 1794975808,
+   "path": "pkgs-app-emulation/qemu-11.1.2-r1-1.gpkg.tar"
+  },
+  {
    "at": 1793735169,
    "path": "pkgs-app-emulation/virtualbox-7.2.22-1.gpkg.tar"
   },
@@ -460,6 +445,10 @@
   {
    "at": 1794975805,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-7.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-app-emulation/wine-proton-11.0.2-1.gpkg.tar"
   },
   {
    "at": 1793705094,
@@ -720,6 +709,10 @@
   {
    "at": 1794109695,
    "path": "pkgs-dev-libs/expat-2.10.0-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-dev-libs/expat-2.8.5-2.gpkg.tar"
   },
   {
    "at": 1794394476,
@@ -1114,6 +1107,14 @@
    "path": "pkgs-kde-frameworks/ktexteditor-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1794975808,
+   "path": "pkgs-kde-misc/kdeconnect-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-kde-misc/kweather-26.08.2-2.gpkg.tar"
+  },
+  {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/aurorae-6.8.0-1.gpkg.tar"
   },
@@ -1362,6 +1363,14 @@
    "path": "pkgs-kde-plasma/kwin-6.8.1-2.gpkg.tar"
   },
   {
+   "at": 1794975808,
+   "path": "pkgs-kde-plasma/kwin-6.8.2-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-kde-plasma/kwin-6.8.2-r1-1.gpkg.tar"
+  },
+  {
    "at": 1794633049,
    "path": "pkgs-kde-plasma/kwin-6.8.3-1.gpkg.tar"
   },
@@ -1548,6 +1557,10 @@
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-workspace-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-kde-plasma/plasma-workspace-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1793864716,
@@ -2250,6 +2263,10 @@
    "path": "pkgs-net-misc/yt-dlp-2026.08.19-1.gpkg.tar"
   },
   {
+   "at": 1794975808,
+   "path": "pkgs-net-misc/yt-dlp-2026.10.21-1.gpkg.tar"
+  },
+  {
    "at": 1793712173,
    "path": "pkgs-net-misc/yt-dlp-2026.10.26-1.gpkg.tar"
   },
@@ -2288,6 +2305,10 @@
   {
    "at": 1794512167,
    "path": "pkgs-sci-ml/ggml-0.27.0-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-sci-ml/ggml-0.28.0-1.gpkg.tar"
   },
   {
    "at": 1794637860,
@@ -2394,6 +2415,30 @@
    "path": "pkgs-sys-kernel/dracut-112-2.gpkg.tar"
   },
   {
+   "at": 1794975808,
+   "path": "pkgs-sys-kernel/gentoo-kernel-7.2.11-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.11-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.12-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.13-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.14-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-sys-kernel/gentoo-sources-7.3.0-1.gpkg.tar"
+  },
+  {
    "at": 1794370176,
    "path": "pkgs-sys-libs/libnvme-1.16.2-8.gpkg.tar"
   },
@@ -2416,6 +2461,22 @@
   {
    "at": 1794387696,
    "path": "pkgs-sys-power/upower-1.91.3-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-virtual/dist-kernel-7.2.11-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-virtual/dist-kernel-7.2.12-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-virtual/dist-kernel-7.2.13-1.gpkg.tar"
+  },
+  {
+   "at": 1794975808,
+   "path": "pkgs-virtual/dist-kernel-7.2.14-1.gpkg.tar"
   },
   {
    "at": 1794717557,
