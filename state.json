@@ -335,14 +335,6 @@
    "path": "pkgs-app-admin/metalog-20260902-1.gpkg.tar"
   },
   {
-   "at": 1793711862,
-   "path": "pkgs-app-admin/sudo-1.9.17_p2-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1793711550,
-   "path": "pkgs-app-antivirus/clamav-1.5.4-2.gpkg.tar"
-  },
-  {
    "at": 1794117246,
    "path": "pkgs-app-containers/crun-1.30.1-1.gpkg.tar"
   },
@@ -367,24 +359,12 @@
    "path": "pkgs-app-crypt/gnupg-2.5.24-r1-1.gpkg.tar"
   },
   {
-   "at": 1793706631,
-   "path": "pkgs-app-crypt/gocryptfs-2.6.1-r1-1.gpkg.tar"
-  },
-  {
    "at": 1794461521,
    "path": "pkgs-app-crypt/gocryptfs-2.6.1-r1-14.gpkg.tar"
   },
   {
-   "at": 1793711550,
-   "path": "pkgs-app-crypt/keysmith-26.08.2-1.gpkg.tar"
-  },
-  {
    "at": 1794370176,
    "path": "pkgs-app-crypt/p11-kit-0.26.5-1.gpkg.tar"
-  },
-  {
-   "at": 1793712813,
-   "path": "pkgs-app-crypt/sbsigntools-0.9.5_p1-1.gpkg.tar"
   },
   {
    "at": 1794118204,
@@ -431,10 +411,6 @@
    "path": "pkgs-app-emulation/qemu-11.1.2-r1-1.gpkg.tar"
   },
   {
-   "at": 1793735169,
-   "path": "pkgs-app-emulation/virtualbox-7.2.22-1.gpkg.tar"
-  },
-  {
    "at": 1794029255,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-5.gpkg.tar"
   },
@@ -449,10 +425,6 @@
   {
    "at": 1794975808,
    "path": "pkgs-app-emulation/wine-proton-11.0.2-1.gpkg.tar"
-  },
-  {
-   "at": 1793705094,
-   "path": "pkgs-app-emulation/wine-proton-11.0.2e-1.gpkg.tar"
   },
   {
    "at": 1794114404,
@@ -491,10 +463,6 @@
    "path": "pkgs-app-text/aspell-0.60.8.2-3.gpkg.tar"
   },
   {
-   "at": 1793712490,
-   "path": "pkgs-app-text/calibre-8.9.0-26.gpkg.tar"
-  },
-  {
    "at": 1793966566,
    "path": "pkgs-app-text/calibre-8.9.0-27.gpkg.tar"
   },
@@ -505,10 +473,6 @@
   {
    "at": 1794112862,
    "path": "pkgs-app-text/docbook2X-0.8.8-r5-3.gpkg.tar"
-  },
-  {
-   "at": 1793766102,
-   "path": "pkgs-app-text/doxygen-1.18.0-r1-1.gpkg.tar"
   },
   {
    "at": 1793942263,
@@ -533,14 +497,6 @@
   {
    "at": 1794110948,
    "path": "pkgs-app-text/hunspell-1.7.2-r1-11.gpkg.tar"
-  },
-  {
-   "at": 1793706631,
-   "path": "pkgs-app-text/mupdf-1.28.2-1.gpkg.tar"
-  },
-  {
-   "at": 1793706319,
-   "path": "pkgs-app-text/qpdf-12.4.2-1.gpkg.tar"
   },
   {
    "at": 1794115631,
@@ -615,10 +571,6 @@
    "path": "pkgs-dev-cpp/simdutf-9.2.1-2.gpkg.tar"
   },
   {
-   "at": 1793710316,
-   "path": "pkgs-dev-db/mysql-connector-c-26.10.0-1.gpkg.tar"
-  },
-  {
    "at": 1794117246,
    "path": "pkgs-dev-debug/strace-7.3-1.gpkg.tar"
   },
@@ -689,18 +641,6 @@
   {
    "at": 1794808402,
    "path": "pkgs-dev-libs/boost-1.91.0-r2-1.gpkg.tar"
-  },
-  {
-   "at": 1793687121,
-   "path": "pkgs-dev-libs/boost-1.91.0-r3-1.gpkg.tar"
-  },
-  {
-   "at": 1793709692,
-   "path": "pkgs-dev-libs/capnproto-1.5.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793710316,
-   "path": "pkgs-dev-libs/cyrus-sasl-2.1.28-r6-1.gpkg.tar"
   },
   {
    "at": 1794111264,
@@ -891,16 +831,8 @@
    "path": "pkgs-dev-python/uv-build-0.13.3-1.gpkg.tar"
   },
   {
-   "at": 1793694682,
-   "path": "pkgs-dev-qt/qt-creator-20.0.2-3.gpkg.tar"
-  },
-  {
    "at": 1794896385,
    "path": "pkgs-dev-qt/qtmultimedia-6.11.3-1.1794808255.gpkg.tar"
-  },
-  {
-   "at": 1793694682,
-   "path": "pkgs-dev-qt/qtmultimedia-6.11.3-1.gpkg.tar"
   },
   {
    "at": 1793946231,
@@ -979,10 +911,6 @@
    "path": "pkgs-dev-util/patchelf-0.19.3-1.gpkg.tar"
   },
   {
-   "at": 1793712173,
-   "path": "pkgs-dev-util/perf-7.2-1.gpkg.tar"
-  },
-  {
    "at": 1793960436,
    "path": "pkgs-dev-util/perf-7.2-2.gpkg.tar"
   },
@@ -1001,10 +929,6 @@
   {
    "at": 1794808402,
    "path": "pkgs-dev-util/spirv-llvm-translator-23.1.2-1.gpkg.tar"
-  },
-  {
-   "at": 1793687428,
-   "path": "pkgs-dev-vcs/git-2.56.0-r1-1.gpkg.tar"
   },
   {
    "at": 1794118207,
@@ -1057,10 +981,6 @@
   {
    "at": 1794574427,
    "path": "pkgs-kde-frameworks/baloo-6.31.0-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1793697421,
-   "path": "pkgs-kde-frameworks/kfilemetadata-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1793945012,
@@ -1257,10 +1177,6 @@
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kpipewire-6.8.1-1.gpkg.tar"
-  },
-  {
-   "at": 1793697421,
-   "path": "pkgs-kde-plasma/kpipewire-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1793946231,
@@ -1515,10 +1431,6 @@
    "path": "pkgs-kde-plasma/plasma-nm-6.8.1-1.gpkg.tar"
   },
   {
-   "at": 1793709079,
-   "path": "pkgs-kde-plasma/plasma-nm-6.8.2-1.gpkg.tar"
-  },
-  {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/plasma-pa-6.8.0-1.gpkg.tar"
   },
@@ -1655,20 +1567,8 @@
    "path": "pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.1-2.gpkg.tar"
   },
   {
-   "at": 1793735172,
-   "path": "pkgs-llvm-core/clang-23.1.2-1.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-llvm-core/clang-23.1.3-1.gpkg.tar"
-  },
-  {
    "at": 1794512167,
    "path": "pkgs-llvm-core/clang-23.1.3-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-llvm-core/clang-common-23.1.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1679,40 +1579,20 @@
    "path": "pkgs-llvm-core/lld-23.1.3-1.gpkg.tar"
   },
   {
-   "at": 1793735172,
-   "path": "pkgs-llvm-core/llvm-23.1.2-1.gpkg.tar"
-  },
-  {
    "at": 1794512167,
    "path": "pkgs-llvm-core/llvm-23.1.3-1.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-llvm-core/llvm-common-23.1.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-llvm-core/llvm-common-23.1.3-1.gpkg.tar"
   },
   {
-   "at": 1793735172,
-   "path": "pkgs-llvm-runtimes/compiler-rt-23.1.2-1.gpkg.tar"
-  },
-  {
    "at": 1794512167,
    "path": "pkgs-llvm-runtimes/compiler-rt-23.1.3-1.gpkg.tar"
   },
   {
-   "at": 1793735172,
-   "path": "pkgs-llvm-runtimes/compiler-rt-sanitizers-23.1.2-1.gpkg.tar"
-  },
-  {
    "at": 1794512167,
    "path": "pkgs-llvm-runtimes/compiler-rt-sanitizers-23.1.3-1.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-llvm-runtimes/openmp-23.1.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1879,10 +1759,6 @@
    "path": "pkgs-media-libs/libopusenc-0.3-1.gpkg.tar"
   },
   {
-   "at": 1793710316,
-   "path": "pkgs-media-libs/libplacebo-7.387.0-1.gpkg.tar"
-  },
-  {
    "at": 1794395434,
    "path": "pkgs-media-libs/libplacebo-7.387.0-2.gpkg.tar"
   },
@@ -1935,10 +1811,6 @@
    "path": "pkgs-media-libs/opus-1.6.1-1.gpkg.tar"
   },
   {
-   "at": 1793706319,
-   "path": "pkgs-media-libs/opusfile-0.12-r2-1.gpkg.tar"
-  },
-  {
    "at": 1794115953,
    "path": "pkgs-media-libs/opusfile-0.12-r2-2.gpkg.tar"
   },
@@ -1965,10 +1837,6 @@
   {
    "at": 1794377096,
    "path": "pkgs-media-plugins/gst-plugins-jack-1.26.11-1.gpkg.tar"
-  },
-  {
-   "at": 1793697421,
-   "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-1.gpkg.tar"
   },
   {
    "at": 1793966566,
@@ -2023,10 +1891,6 @@
    "path": "pkgs-media-sound/jack-example-tools-4-4.gpkg.tar"
   },
   {
-   "at": 1793765182,
-   "path": "pkgs-media-sound/jack2-1.9.22-12.gpkg.tar"
-  },
-  {
    "at": 1794110948,
    "path": "pkgs-media-sound/lame-3.100-r3-15.gpkg.tar"
   },
@@ -2065,10 +1929,6 @@
   {
    "at": 1794116287,
    "path": "pkgs-media-video/mediainfo-26.05-1.gpkg.tar"
-  },
-  {
-   "at": 1793711550,
-   "path": "pkgs-media-video/mpv-0.41.0-r2-27.gpkg.tar"
   },
   {
    "at": 1794029255,
@@ -2139,10 +1999,6 @@
    "path": "pkgs-media-video/wireplumber-0.5.19-1.gpkg.tar"
   },
   {
-   "at": 1793708162,
-   "path": "pkgs-net-analyzer/nmap-7.991-1.gpkg.tar"
-  },
-  {
    "at": 1794116287,
    "path": "pkgs-net-analyzer/nmap-7.991-2.gpkg.tar"
   },
@@ -2163,10 +2019,6 @@
    "path": "pkgs-net-libs/libasyncns-0.8-r5-2.gpkg.tar"
   },
   {
-   "at": 1793711550,
-   "path": "pkgs-net-libs/libktorrent-26.08.2-1.gpkg.tar"
-  },
-  {
    "at": 1794113176,
    "path": "pkgs-net-libs/libpcap-1.11.0-1.gpkg.tar"
   },
@@ -2175,24 +2027,12 @@
    "path": "pkgs-net-libs/libpsl-0.23.3-1.gpkg.tar"
   },
   {
-   "at": 1793711550,
-   "path": "pkgs-net-libs/libquotient-0.9.6.1-5.gpkg.tar"
-  },
-  {
    "at": 1794395434,
    "path": "pkgs-net-libs/librist-0.2.11-1.gpkg.tar"
   },
   {
    "at": 1794387696,
    "path": "pkgs-net-libs/libslirp-4.9.3-1.gpkg.tar"
-  },
-  {
-   "at": 1793706319,
-   "path": "pkgs-net-libs/libwebsockets-5.1.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-net-libs/nodejs-26.10.0-r2-1.gpkg.tar"
   },
   {
    "at": 1793983999,
@@ -2209,14 +2049,6 @@
   {
    "at": 1793983999,
    "path": "pkgs-net-libs/nodejs-26.12.0-1.gpkg.tar"
-  },
-  {
-   "at": 1793694070,
-   "path": "pkgs-net-libs/nodejs-26.12.1-6.gpkg.tar"
-  },
-  {
-   "at": 1793709692,
-   "path": "pkgs-net-libs/srt-1.5.4-r1-1.gpkg.tar"
   },
   {
    "at": 1794396593,
@@ -2239,10 +2071,6 @@
    "path": "pkgs-net-misc/curl-8.23.0-r1-2.gpkg.tar"
   },
   {
-   "at": 1793711862,
-   "path": "pkgs-net-misc/freerdp-3.32.2-1.gpkg.tar"
-  },
-  {
    "at": 1793966566,
    "path": "pkgs-net-misc/freerdp-3.32.2-2.gpkg.tar"
   },
@@ -2255,10 +2083,6 @@
    "path": "pkgs-net-misc/openssh-10.6_p2-1.gpkg.tar"
   },
   {
-   "at": 1793706319,
-   "path": "pkgs-net-misc/socat-1.8.1.3-1.gpkg.tar"
-  },
-  {
    "at": 1794396593,
    "path": "pkgs-net-misc/yt-dlp-2026.08.19-1.gpkg.tar"
   },
@@ -2267,16 +2091,8 @@
    "path": "pkgs-net-misc/yt-dlp-2026.10.21-1.gpkg.tar"
   },
   {
-   "at": 1793712173,
-   "path": "pkgs-net-misc/yt-dlp-2026.10.26-1.gpkg.tar"
-  },
-  {
    "at": 1794387696,
    "path": "pkgs-net-print/cups-pk-helper-0.2.7-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1793687121,
-   "path": "pkgs-net-wireless/wpa_supplicant-2.12-1.gpkg.tar"
   },
   {
    "at": 1794113176,
@@ -2297,10 +2113,6 @@
   {
    "at": 1794116287,
    "path": "pkgs-sci-libs/libsigrokdecode-0.6.0_pre20241001-1.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-sci-ml/ggml-0.27.0-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -2325,10 +2137,6 @@
   {
    "at": 1794717557,
    "path": "pkgs-sci-ml/ollama-0.40.16-2.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-sci-ml/ollama-0.40.5-1.gpkg.tar"
   },
   {
    "at": 1793864716,
@@ -2401,10 +2209,6 @@
   {
    "at": 1794375473,
    "path": "pkgs-sys-auth/rtkit-0.14-1.gpkg.tar"
-  },
-  {
-   "at": 1793735172,
-   "path": "pkgs-sys-fs/btrfs-progs-7.1-2.gpkg.tar"
   },
   {
    "at": 1794117246,
@@ -2487,14 +2291,6 @@
    "path": "pkgs-www-apps/gitea-28.3.0-1.gpkg.tar"
   },
   {
-   "at": 1793711862,
-   "path": "pkgs-www-client/falkon-26.08.2-2.gpkg.tar"
-  },
-  {
-   "at": 1793710627,
-   "path": "pkgs-www-client/netsurf-3.11-r1-1.gpkg.tar"
-  },
-  {
    "at": 1794117906,
    "path": "pkgs-www-client/surfraw-2.3.0-r3-1.gpkg.tar"
   },
@@ -2513,10 +2309,6 @@
   {
    "at": 1794369507,
    "path": "pkgs-x11-base/xorg-proto-2026.1-1.gpkg.tar"
-  },
-  {
-   "at": 1793694989,
-   "path": "pkgs-x11-base/xwayland-24.1.14-1.gpkg.tar"
   },
   {
    "at": 1794370800,
