@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795101454
-PACKAGES: 2039
+TIMESTAMP: 1795101523
+PACKAGES: 2027
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -12480,26 +12480,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-python/setuptools-scm[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
-BUILD_TIME: 1792317243
-CPV: dev-python/pyqt-builder-1.20.1
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
-LICENSE: BSD-2
-MD5: 84932e154b19206839dcad36a0adad88
-PATH: pkgs-dev-python/pyqt-builder-1.20.1-1.gpkg.tar
-RDEPEND: dev-python/packaging[python_targets_python3_14(-)] >=dev-python/sip-6.7[python_targets_python3_14(-)] dev-lang/python:3.14
-SHA1: 5be7acf47e1c5151a4780c316f324c8c52351ff9
-SIZE: 143360
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1792317244
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-python/setuptools-scm[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
-BUILD_ID: 1
 BUILD_TIME: 1793266965
 CPV: dev-python/pyqt-builder-1.20.3
 DEFINED_PHASES: compile configure install prepare test
@@ -17128,48 +17108,6 @@ MTIME: 1795100986
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.42[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791282924
-CPV: dev-util/pkgcheck-0.10.47
-DEFINED_PHASES: compile configure install postinst postrm prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: emacs test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
-LICENSE: BSD MIT
-MD5: 1561285f16fec87a210d8e0dcaa4156d
-PATH: pkgs-dev-util/pkgcheck-0.10.47-1.gpkg.tar
-RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.42[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] dev-lang/python:3.14
-RESTRICT: test
-SHA1: b7e8b1c031b71ef559242be1dfa0e76444a7712e
-SIZE: 757760
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791282926
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.42[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791531760
-CPV: dev-util/pkgcheck-0.10.48
-DEFINED_PHASES: compile configure install postinst postrm prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: emacs test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
-LICENSE: BSD MIT
-MD5: 4cc93f4ed9ef7f6a0784952dd1c367b8
-PATH: pkgs-dev-util/pkgcheck-0.10.48-1.gpkg.tar
-RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.42[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] dev-lang/python:3.14
-RESTRICT: test
-SHA1: 076bb87de7bda2afd0fdc3e60b111c1d43134460
-SIZE: 757760
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791531762
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
 BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=sys-apps/pkgcore-0.12.48[python_targets_python3_14(-)] app-arch/zstd >=dev-libs/tree-sitter-bash-0.25.1[python,python_targets_python3_14(-)] dev-python/charset-normalizer[python_targets_python3_14(-)] dev-python/lxml[python_targets_python3_14(-)] >=dev-python/pathspec-1.0.0[python_targets_python3_14(-)] >=dev-python/tree-sitter-0.26.0[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
 BUILD_ID: 2
 BUILD_TIME: 1793515095
@@ -17863,25 +17801,6 @@ SHA1: 85b6ae3d15299e42db6e3e405860d69466896568
 SIZE: 3368960
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1794395220
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BUILD_ID: 2
-BUILD_TIME: 1792678306
-CPV: gui-apps/sddm-gentoo-config-0-r1
-DEFINED_PHASES: install prepare
-EAPI: 9
-IUSE: custom-compositor kwin systemd weston
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
-LICENSE: public-domain
-MD5: a75266ccb4adef8346176f3d54bd286d
-PATH: pkgs-gui-apps/sddm-gentoo-config-0-r1-2.gpkg.tar
-RDEPEND: !<gui-apps/sddm-0.21.0_p20250818 kde-plasma/kwin:6
-REPO_REVISIONS: {"gentoo": "371519bd206e55f49a87c581e4d5035e20562f5c"}
-SHA1: 88863a2653a992bcced2818dcd5f66dd9a9299c2
-SIZE: 20480
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux kwin
-MTIME: 1792678307
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -31574,31 +31493,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
 BUILD_ID: 1
-BUILD_TIME: 1793252729
-CPV: kde-plasma/union-6.8.2
-DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-libs/cxx-rust-cssparser-1.1.0 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtshadertools-6.11.2:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 dev-qt/qtbase:6
-EAPI: 8
-IUSE: doc tools +widgets debug examples test
-KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
-LICENSE: || ( LGPL-2.1 LGPL-3 ) GPL-3 BSD-2
-MD5: 51abd2763c484da4d6830afbab4fb9f5
-PATH: pkgs-kde-plasma/union-6.8.2-1.gpkg.tar
-PROVIDES: x86_64: UnionWidgetsStyle.so libUnion.so.6 libUnionQuickImpl.so.6 libUnionQuickImplplugin.so libUnionQuickStyle.so.6 libUnionQuickStyleplugin.so org.kde.union.so union-colorprovider-kcolorscheme.so union-input-css.so union-platform-plasma.so
-RDEPEND: >=dev-libs/cxx-rust-cssparser-1.1.0 >=dev-qt/qtbase-6.11.2:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtshadertools-6.11.2:6 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/union:5 >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "173f14c35a62688c25ff4770aae355e1b29fd630"}
-REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6GuiAddons.so.6 libKF6IconThemes.so.6 libKirigamiPlatform.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6Widgets.so.6 libc.so.6 libcxx-rust-cssparser.so.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6
-RESTRICT: test
-SHA1: c79c84d8b5d11c4e8583d0553fc639a988b68be1
-SIZE: 1269760
-SLOT: 6
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux widgets
-MTIME: 1793252730
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
 BUILD_TIME: 1793766383
 CPV: kde-plasma/union-6.8.2-r1
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
@@ -34763,30 +34657,6 @@ SHA1: b5c6efc86b5a1da35084ca7d1616c688fcdf1aa1
 SIZE: 1402880
 USE: X abi_x86_64 alsa amd64 cpu_flags_x86_mmx cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 dbus elibc_glibc gles2 haptic jack joystick kernel_linux libsamplerate opengl pipewire pulseaudio sound udev video vulkan wayland
 MTIME: 1791090722
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 3
-BUILD_TIME: 1791090957
-CPV: media-libs/libsdl3-3.4.16
-DEFINED_PHASES: compile configure install postinst prepare test
-DEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXScrnSaver[abi_x86_64(-)] x11-libs/libXcursor[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXfixes[abi_x86_64(-)] x11-libs/libXi[abi_x86_64(-)] x11-libs/libXrandr[abi_x86_64(-)] x11-libs/libXtst[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-video/pipewire:0/0.4=[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] virtual/libudev:0/1=[abi_x86_64(-)] virtual/libusb:1[abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] gui-libs/libdecor[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] x11-base/xorg-proto dev-util/vulkan-headers
-EAPI: 8
-IUSE: X alsa aqua bidi dbus doc ibus io-uring jack kms opengl oss pipewire pulseaudio sndio test udev usb vulkan wayland cpu_flags_ppc_altivec cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_avx512f cpu_flags_x86_mmx cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
-KEYWORDS: amd64 arm arm64 ~hppa ~loong ppc ppc64 ~riscv ~sparc x86
-LICENSE: ZLIB
-MD5: bc0a8ada916d2382e750a2dfe13116ee
-PATH: pkgs-media-libs/libsdl3-3.4.16-3.gpkg.tar
-PROVIDES: x86_64: libSDL3.so.0
-RDEPEND: virtual/libiconv[abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXScrnSaver[abi_x86_64(-)] x11-libs/libXcursor[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] x11-libs/libXfixes[abi_x86_64(-)] x11-libs/libXi[abi_x86_64(-)] x11-libs/libXrandr[abi_x86_64(-)] x11-libs/libXtst[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] virtual/jack[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-video/pipewire:0/0.4=[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] virtual/libudev:0/1=[abi_x86_64(-)] virtual/libusb:1[abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] gui-libs/libdecor[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] media-libs/vulkan-loader[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
-REQUIRES: x86_64: libX11.so.6 libXcursor.so.1 libXext.so.6 libXfixes.so.3 libXi.so.6 libXrandr.so.2 libXss.so.1 libXtst.so.6 libasound.so.2 libc.so.6 libdecor-0.so.0 libjack.so.0 libm.so.6 libpipewire-0.3.so.0 libpulse.so.0 libusb-1.0.so.0 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxkbcommon.so.0
-RESTRICT: test
-SHA1: f62d4787db3a4e4b852a687c508cdfc0fa5b0af9
-SIZE: 2119680
-USE: X abi_x86_64 alsa amd64 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_mmx cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 dbus elibc_glibc jack kernel_linux opengl pipewire pulseaudio udev usb vulkan wayland
-MTIME: 1791090959
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -41048,30 +40918,6 @@ MTIME: 1791226222
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-libs/opencl-icd-loader media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1793710143
-CPV: sci-ml/ggml-0.28.0-r1
-DEFINED_PHASES: compile configure install prepare pretend setup test
-DEPEND: media-libs/vulkan-loader dev-util/opencl-headers dev-util/vulkan-headers
-EAPI: 8
-IUSE: cpu_flags_x86_amx_bf16 cpu_flags_x86_amx_int8 cpu_flags_x86_amx_tile cpu_flags_x86_avx cpu_flags_x86_avx_vnni cpu_flags_x86_avx2 cpu_flags_x86_avx512_bf16 cpu_flags_x86_avx512bw cpu_flags_x86_avx512f cpu_flags_x86_avx512vbmi cpu_flags_x86_avx512_vnni cpu_flags_x86_bmi2 cpu_flags_x86_fma3 cpu_flags_x86_f16c cpu_flags_x86_sse4_2 cuda opencl openmp rocm test vulkan +amdgpu_targets_gfx908 +amdgpu_targets_gfx90a +amdgpu_targets_gfx942 +amdgpu_targets_gfx950 +amdgpu_targets_gfx1030 +amdgpu_targets_gfx1100 +amdgpu_targets_gfx1101 +amdgpu_targets_gfx1200 +amdgpu_targets_gfx1201 amdgpu_targets_gfx803 amdgpu_targets_gfx900 amdgpu_targets_gfx906 amdgpu_targets_gfx940 amdgpu_targets_gfx941 amdgpu_targets_gfx1010 amdgpu_targets_gfx1011 amdgpu_targets_gfx1012 amdgpu_targets_gfx1031 amdgpu_targets_gfx1102 amdgpu_targets_gfx1103 amdgpu_targets_gfx1150 amdgpu_targets_gfx1151
-KEYWORDS: ~amd64 ~arm64
-LICENSE: MIT
-MD5: 992238b09a7f2f5b9252829049947f07
-PATH: pkgs-sci-ml/ggml-0.28.0-r1-1.gpkg.tar
-PROVIDES: x86_64: libggml-base.so.0 libggml-cpu.so.0 libggml-opencl.so.0 libggml-vulkan.so.0 libggml.so.0
-RDEPEND: media-libs/vulkan-loader >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libOpenCL.so.1 libc.so.6 libgcc_s.so.1 libgomp.so.1 libm.so.6 libstdc++.so.6 libvulkan.so.1
-RESTRICT: test
-SHA1: 5865f3b56533f5ec08ce0237e822a52a3c1c0071
-SIZE: 9963520
-SLOT: 0/0.28.0
-USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux opencl openmp vulkan
-MTIME: 1793710145
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
 BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) media-libs/shaderc app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1793805664
@@ -41167,29 +41013,6 @@ SIZE: 9226240
 SLOT: 0/1.0.0
 USE: abi_x86_64 amd64 amdgpu_targets_gfx1030 amdgpu_targets_gfx1100 amdgpu_targets_gfx1101 amdgpu_targets_gfx1200 amdgpu_targets_gfx1201 amdgpu_targets_gfx908 amdgpu_targets_gfx90a amdgpu_targets_gfx942 amdgpu_targets_gfx950 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3 cpu_flags_x86_sse4_2 elibc_glibc kernel_linux opencl openmp vulkan
 MTIME: 1794716974
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-lang/go-1.26.10 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1793598353
-CPV: sci-ml/ollama-0.40.13
-DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.28.0:0/0.28.0=
-EAPI: 8
-KEYWORDS: ~amd64
-LICENSE: MIT
-MD5: 89a532b0de934b965dd446a0b2ec4b11
-PATH: pkgs-sci-ml/ollama-0.40.13-1.gpkg.tar
-PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.28.0:0/0.28.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "5b83b28984b9349d88d415b1318677d18bc8e695"}
-REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
-RESTRICT: mirror test
-SHA1: cc001528e68ec83a9b712d512eb898582ee5cf69
-SIZE: 20910080
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793598358
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -41987,69 +41810,6 @@ SHA1: 5b700995a18b8455f7390700e4834bc24b07b209
 SIZE: 389120
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux netifrc pam sysvinit unicode
 MTIME: 1794369366
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791278436
-CPV: sys-apps/pkgcore-0.12.45
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
-LICENSE: BSD MIT
-MD5: a7f349577e7a0f69371b5f1b4f04c22e
-PATH: pkgs-sys-apps/pkgcore-0.12.45-1.gpkg.tar
-RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] dev-lang/python:3.14
-RESTRICT: test
-SHA1: 347351894235485451deeaf89ba5a7a49129a521
-SIZE: 1546240
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791278438
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791531725
-CPV: sys-apps/pkgcore-0.12.46
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
-LICENSE: BSD MIT
-MD5: 85832e3ed1f6f11ac3fe47d126b311e7
-PATH: pkgs-sys-apps/pkgcore-0.12.46-1.gpkg.tar
-RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] dev-lang/python:3.14
-RESTRICT: test
-SHA1: e64b9b645d5a6e1a93d0aafbcb9f5c10bbdf9b63
-SIZE: 1556480
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791531728
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] >=dev-python/flit-core-3.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1792316867
-CPV: sys-apps/pkgcore-0.12.47
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
-KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86 ~x64-macos
-LICENSE: BSD MIT
-MD5: 230342cf37a90dd3d63daeea51294595
-PATH: pkgs-sys-apps/pkgcore-0.12.47-1.gpkg.tar
-RDEPEND: >=dev-python/snakeoil-0.11.6[python_targets_python3_14(-)] >=app-shells/bash-5.3[readline] dev-python/lxml[python_targets_python3_14(-)] dev-python/py-landlock[python_targets_python3_14(-)] dev-lang/python:3.14
-RESTRICT: test
-SHA1: 8babdd164eb0d4e83bee94058ad1fcea68bc5120
-SIZE: 1566720
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1792316869
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -43253,24 +43013,6 @@ SIZE: 242995200
 SLOT: 7.3.3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1794297162
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BUILD_ID: 1
-BUILD_TIME: 1791371138
-CPV: sys-kernel/installkernel-70
-DEFINED_PHASES: install postinst setup
-EAPI: 8
-IUSE: dracut efistub grub refind systemd systemd-boot ugrd uki ukify
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: GPL-2+
-MD5: dea8bb7433f9065245ca65a682a11c0a
-PATH: pkgs-sys-kernel/installkernel-70-1.gpkg.tar
-RDEPEND: !<=sys-kernel/installkernel-systemd-3 >=sys-kernel/dracut-110 !=sys-apps/systemd-255.2-r1 !=sys-apps/systemd-255.2-r0 !~sys-apps/systemd-255.1 !~sys-apps/systemd-255.0 !=sys-apps/systemd-254.8-r0 !=sys-apps/systemd-254.7-r0 !~sys-apps/systemd-254.6 !<=sys-apps/systemd-254.5-r1
-SHA1: 4a33471aa8711a0349091a37d66e9f5775cfbc3c
-SIZE: 51200
-USE: abi_x86_64 amd64 dracut elibc_glibc kernel_linux
-MTIME: 1791371139
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

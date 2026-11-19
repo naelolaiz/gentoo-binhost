@@ -18,6 +18,8 @@
   "app-emulation/virtualbox-7.2.18": 1794307357,
   "app-emulation/virtualbox-7.2.22": 1794307357,
   "app-misc/francis-26.08.2": 1793983999,
+  "app-misc/spacenavd-1.4": 1795101457,
+  "app-text/qpdf-12.4.2": 1795101457,
   "dev-build/dolphin-plugins-makefileactions-26.08.2": 1793983999,
   "dev-libs/kirigami-addons-1.15.0": 1794717560,
   "dev-libs/kirigami-addons-1.16.0": 1794717560,
@@ -29,7 +31,6 @@
   "dev-python/pycryptodome-3.24.1": 1794896635,
   "dev-python/pycryptodome-4.0.0": 1794896635,
   "dev-python/pypdf-6.19.0": 1794717560,
-  "dev-python/pyqt-builder-1.20.1": 1793807316,
   "dev-python/sip-6.17.1": 1794464824,
   "dev-python/soupsieve-2.10": 1794808402,
   "dev-python/soupsieve-3.0.1": 1794808402,
@@ -46,10 +47,9 @@
   "dev-util/kdevelop-26.08.2": 1793983999,
   "dev-util/kdevelop-python-26.08.2": 1793983999,
   "dev-util/massif-visualizer-26.08.2": 1793983999,
-  "dev-util/pkgcheck-0.10.47": 1793807316,
-  "dev-util/pkgcheck-0.10.48": 1793807316,
+  "dev-util/perf-7.2": 1795101457,
+  "dev-util/perf-7.3": 1795101457,
   "games-puzzle/skladnik-26.08.2": 1793983999,
-  "gui-apps/sddm-gentoo-config-0-r1": 1793807316,
   "kde-apps/analitza-26.08.2": 1793983999,
   "kde-apps/ark-26.08.2": 1793983999,
   "kde-apps/artikulate-26.08.2": 1793983999,
@@ -200,6 +200,7 @@
   "kde-apps/thumbnailers-26.08.2": 1793983999,
   "kde-apps/umbrello-26.08.2": 1793983999,
   "kde-apps/yakuake-26.08.2": 1793983999,
+  "kde-frameworks/oxygen-icons-6.32.0": 1795101457,
   "kde-misc/kclock-26.08.2": 1793983999,
   "kde-misc/kdeconnect-26.08.2-r1": 1793983999,
   "kde-misc/kio-gdrive-26.08.2": 1793983999,
@@ -270,7 +271,6 @@
   "kde-plasma/spectacle-6.7.5-r1": 1794204649,
   "kde-plasma/spectacle-6.8.2": 1794464824,
   "kde-plasma/systemsettings-6.8.2": 1794464824,
-  "kde-plasma/union-6.8.2": 1793807316,
   "kde-plasma/union-6.8.2-r1": 1794464824,
   "kde-plasma/wacomtablet-6.7.5": 1794204649,
   "kde-plasma/xdg-desktop-portal-kde-6.8.2": 1794464824,
@@ -286,7 +286,6 @@
   "media-gfx/kio-mobi-thumbnailer-26.08.2": 1793983999,
   "media-gfx/kio-ps-thumbnailer-26.08.2": 1793983999,
   "media-gfx/qrca-26.08.2": 1793983999,
-  "media-libs/libsdl3-3.4.16": 1793864716,
   "media-libs/taglib-2.3.2": 1794396593,
   "media-sound/audex-26.08.2": 1793983999,
   "media-sound/elisa-26.08.2": 1793983999,
@@ -304,16 +303,11 @@
   "net-misc/rsync-3.5.1": 1794717560,
   "net-news/alligator-26.08.2": 1793983999,
   "net-p2p/ktorrent-26.08.2": 1793983999,
-  "sci-ml/ggml-0.28.0-r1": 1793807316,
   "sci-ml/ggml-0.28.0-r2": 1794029258,
   "sci-ml/ggml-0.29.0": 1794717560,
   "sci-ml/ggml-0.29.0-r1": 1794717560,
-  "sci-ml/ollama-0.40.13": 1793807316,
   "sci-ml/ollama-0.40.14": 1794029258,
   "sci-ml/ollama-0.40.15": 1794396593,
-  "sys-apps/pkgcore-0.12.45": 1793807316,
-  "sys-apps/pkgcore-0.12.46": 1793807316,
-  "sys-apps/pkgcore-0.12.47": 1793807316,
   "sys-apps/xdg-desktop-portal-1.22.1": 1794029258,
   "sys-block/partitionmanager-26.08.2": 1793983999,
   "sys-kernel/gentoo-kernel-7.3.1": 1794204649,
@@ -322,7 +316,6 @@
   "sys-kernel/gentoo-kernel-bin-7.3.3": 1794464824,
   "sys-kernel/gentoo-sources-7.3.1": 1794118207,
   "sys-kernel/gentoo-sources-7.3.3": 1794396593,
-  "sys-kernel/installkernel-70": 1793807316,
   "sys-libs/kpmcore-26.08.2": 1793983999,
   "virtual/dist-kernel-7.3.1": 1794204649,
   "virtual/dist-kernel-7.3.3": 1794464824,
@@ -807,6 +800,10 @@
    "path": "pkgs-dev-python/pyqt-builder-1.20.0-1.gpkg.tar"
   },
   {
+   "at": 1795101457,
+   "path": "pkgs-dev-python/pyqt-builder-1.20.1-1.gpkg.tar"
+  },
+  {
    "at": 1794394476,
    "path": "pkgs-dev-python/scipy-1.18.1-1.gpkg.tar"
   },
@@ -927,6 +924,14 @@
    "path": "pkgs-dev-util/perf-7.2-3.gpkg.tar"
   },
   {
+   "at": 1795101457,
+   "path": "pkgs-dev-util/pkgcheck-0.10.47-1.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-dev-util/pkgcheck-0.10.48-1.gpkg.tar"
+  },
+  {
    "at": 1794808402,
    "path": "pkgs-dev-util/spirv-llvm-translator-22.1.7-1.gpkg.tar"
   },
@@ -957,6 +962,10 @@
   {
    "at": 1794371765,
    "path": "pkgs-gnome-base/librsvg-2.62.4-1.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-gui-apps/sddm-gentoo-config-0-r1-2.gpkg.tar"
   },
   {
    "at": 1794374522,
@@ -1571,6 +1580,10 @@
    "path": "pkgs-kde-plasma/union-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795101457,
+   "path": "pkgs-kde-plasma/union-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1793864716,
    "path": "pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.0-1.gpkg.tar"
   },
@@ -1785,6 +1798,10 @@
   {
    "at": 1794374522,
    "path": "pkgs-media-libs/libpulse-17.0-9.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-media-libs/libsdl3-3.4.16-3.gpkg.tar"
   },
   {
    "at": 1794376442,
@@ -2143,12 +2160,20 @@
    "path": "pkgs-sci-ml/ggml-0.28.0-1.gpkg.tar"
   },
   {
+   "at": 1795101457,
+   "path": "pkgs-sci-ml/ggml-0.28.0-r1-1.gpkg.tar"
+  },
+  {
    "at": 1794637860,
    "path": "pkgs-sci-ml/ollama-0.40.10-1.gpkg.tar"
   },
   {
    "at": 1794808402,
    "path": "pkgs-sci-ml/ollama-0.40.10-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-sci-ml/ollama-0.40.13-1.gpkg.tar"
   },
   {
    "at": 1794464821,
@@ -2193,6 +2218,18 @@
   {
    "at": 1794369507,
    "path": "pkgs-sys-apps/openrc-0.64.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-sys-apps/pkgcore-0.12.45-1.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-sys-apps/pkgcore-0.12.46-1.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-sys-apps/pkgcore-0.12.47-1.gpkg.tar"
   },
   {
    "at": 1794808402,
@@ -2261,6 +2298,10 @@
   {
    "at": 1794975808,
    "path": "pkgs-sys-kernel/gentoo-sources-7.3.0-1.gpkg.tar"
+  },
+  {
+   "at": 1795101457,
+   "path": "pkgs-sys-kernel/installkernel-70-1.gpkg.tar"
   },
   {
    "at": 1794370176,
