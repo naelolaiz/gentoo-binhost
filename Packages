@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795097488
-PACKAGES: 2028
+TIMESTAMP: 1795097805
+PACKAGES: 2032
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -9272,6 +9272,28 @@ MTIME: 1794573015
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/uv-build[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795097497
+CPV: dev-python/cachecontrol-0.15.0
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: Apache-2.0
+MD5: a6de62f231199656075832e872eecd43
+PATH: pkgs-dev-python/cachecontrol-0.15.0-1.gpkg.tar
+RDEPEND: <dev-python/msgpack-2[python_targets_python3_14(-)] >=dev-python/msgpack-0.5.2[python_targets_python3_14(-)] >=dev-python/requests-2.16.0[python_targets_python3_14(-)] dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "8767e70feadfc7a3eeaf40f35864547e312430a5"}
+RESTRICT: test
+SHA1: 5ea9610bf668753521d244711958657fa24f7af2
+SIZE: 92160
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795097497
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/setuptools-61[python_targets_python3_14(-)] dev-python/setuptools-rust[python_targets_python3_14(-)] >=dev-python/setuptools-scm-6.4[python_targets_python3_14(-)] || ( >=dev-lang/rust-bin-1.90.0:* >=dev-lang/rust-1.90.0:* ) dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 2
 BUILD_TIME: 1792307870
@@ -14305,6 +14327,27 @@ SHA1: 4757111333a9c09fa0d1c071d7822b368e0e49ea
 SIZE: 51200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1794635563
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795097376
+CPV: dev-python/uv-build-0.13.9
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT )
+MD5: 3e842c2f7d8a9181060d0e62d5830d65
+PATH: pkgs-dev-python/uv-build-0.13.9-1.gpkg.tar
+RDEPEND: >=dev-python/uv-0.13.9 dev-lang/python:3.14
+RESTRICT: test
+SHA1: 828a6835907f82054f91813854edee5803dcb4a1
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795097377
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -27803,6 +27846,27 @@ MTIME: 1794633382
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-qt/qtbase-6.9.0:6 >=kde-frameworks/extra-cmake-modules-6.32:0 app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1795097446
+CPV: kde-frameworks/oxygen-icons-6.32.0-r1
+DEFINED_PHASES: compile configure info install nofetch postinst postrm prepare test unpack
+EAPI: 8
+IUSE: test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: LGPL-3
+MD5: 150fe2958b69b7549d4937ec9b513771
+PATH: pkgs-kde-frameworks/oxygen-icons-6.32.0-r1-1.gpkg.tar
+RDEPEND: !kde-frameworks/oxygen-icons:5
+RESTRICT: test
+SHA1: 34164dbf8bc24914dfb91b0fe3cffcf47d00385d
+SIZE: 37160960
+SLOT: 6
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795097457
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.31:*
 BUILD_ID: 1
 BUILD_TIME: 1791614044
@@ -39286,6 +39350,29 @@ SHA1: ed194fab8bd1bc1279fb049473e387c0af9c0ebb
 SIZE: 2744320
 USE: abi_x86_64 amd64 clients elibc_glibc gdbm guile_single_target_3-0 kernel_linux nls pam python_single_target_python3_14 ssl threads
 MTIME: 1792308029
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795097471
+CPV: net-mail/mailutils-3.21-r1
+DEFINED_PHASES: configure install prepare setup
+DEPEND: !mail-filter/libsieve !mail-client/mailx sys-libs/ncurses:0/6= sys-libs/readline:0/8= dev-libs/libltdl:0 virtual/libcrypt:0/2= virtual/mta sys-libs/gdbm:0/6= sys-devel/gettext sys-libs/pam:0/0= net-libs/gnutls:0/30.30=
+EAPI: 8
+IUSE: berkdb bidi +clients emacs gdbm sasl guile kerberos kyotocabinet ldap mysql nls pam postgres python servers split-usr ssl static-libs test +threads tcpd tokyocabinet guile_single_target_2-2 guile_single_target_3-0 python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14 python_single_target_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
+LICENSE: GPL-3+ LGPL-3+
+MD5: 0878676b7a73b2058fcced694cb67052
+PATH: pkgs-net-mail/mailutils-3.21-r1-1.gpkg.tar
+PROVIDES: x86_64: editheader.so libmailutils.so.9 libmu_auth.so.9 libmu_dbm.so.9 libmu_dotmail.so.9 libmu_imap.so.9 libmu_maildir.so.9 libmu_mailer.so.9 libmu_mbox.so.9 libmu_mh.so.9 libmu_pop.so.9 libmu_sieve.so.9 libmuaux.so.9 list.so moderator.so numaddr.so pipe.so spamd.so timestamp.so uidnew.so vacation.so
+RDEPEND: !mail-filter/libsieve !mail-client/mailx sys-libs/ncurses:0/6= sys-libs/readline:0/8= dev-libs/libltdl:0 virtual/libcrypt:0/2= virtual/mta sys-libs/gdbm:0/6= sys-devel/gettext sys-libs/pam:0/0= net-libs/gnutls:0/30.30= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypt.so.2 libgdbm.so.6 libgnutls.so.30 libltdl.so.7 libpam.so.0 libreadline.so.8 libtinfo.so.6
+RESTRICT: test
+SHA1: 2239bbc0b4db80118f9c6958cee8d6c5684cbc39
+SIZE: 2744320
+USE: abi_x86_64 amd64 clients elibc_glibc gdbm guile_single_target_3-0 kernel_linux nls pam python_single_target_python3_14 ssl threads
+MTIME: 1795097472
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
