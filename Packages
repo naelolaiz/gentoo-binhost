@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795100236
-PACKAGES: 2032
+TIMESTAMP: 1795100845
+PACKAGES: 2033
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -554,6 +554,30 @@ SIZE: 30986240
 SLOT: 0/sts
 USE: abi_x86_64 amd64 clamapp elibc_glibc kernel_linux system-mspack
 MTIME: 1793710884
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.90.0:* >=dev-lang/rust-1.90.0:* ) app-alternatives/ninja >=dev-build/cmake-3.28.5 virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795100567
+CPV: app-antivirus/clamav-1.5.4-r1
+DEFINED_PHASES: compile configure install postinst prepare setup test unpack
+DEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/4= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack
+EAPI: 8
+IUSE: doc clamonacc +clamapp experimental libclamav-only milter rar selinux +system-mspack systemd test debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~sparc ~x86
+LICENSE: Apache-2.0 BSD BSD-2 GPL-2 ISC MIT UoI-NCSA ZLIB public-domain MPL-2.0 Unicode-3.0
+MD5: 293969ff2f3f1c10349f7af746bd73da
+PATH: pkgs-app-antivirus/clamav-1.5.4-r1-1.gpkg.tar
+PROVIDES: x86_64: libclamav.so.12 libfreshclam.so.4
+RDEPEND: acct-group/clamav acct-user/clamav app-arch/bzip2 dev-libs/check:0/0= dev-libs/json-c:0/5.1= dev-libs/libltdl dev-libs/libpcre2:0/3= dev-libs/libxml2:2/16= dev-libs/openssl:0/4= >=virtual/zlib-1.2.2:0/1= virtual/libiconv net-misc/curl sys-libs/ncurses:0/6= net-misc/curl dev-libs/libmspack virtual/tmpfiles >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libbz2.so.1 libc.so.6 libcrypto.so.4 libcurl.so.4 libgcc_s.so.1 libjson-c.so.5 libm.so.6 libmspack.so.0 libncurses.so.6 libpcre2-8.so.0 libssl.so.4 libtinfo.so.6 libxml2.so.16 libz.so.1
+RESTRICT: test
+SHA1: 01fecafcd90edd4a5988e039d9840520632c1729
+SIZE: 30986240
+SLOT: 0/sts
+USE: abi_x86_64 amd64 clamapp elibc_glibc kernel_linux system-mspack
+MTIME: 1795100570
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
