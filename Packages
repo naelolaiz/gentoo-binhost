@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1795101164
+TIMESTAMP: 1795101454
 PACKAGES: 2039
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -24661,26 +24661,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.11.2:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1793959980
+BUILD_ID: 2
+BUILD_TIME: 1795101355
 CPV: kde-apps/step-26.08.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-cpp/eigen-3.2:3/3.4= >=dev-qt/qtbase-6.11.2:6[gui,opengl,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kplotting-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 sci-libs/cln sci-libs/gsl:0/27= >=sci-libs/libqalculate-0.9.5:0/23.3= dev-qt/qtbase:6
+DEPEND: >=dev-cpp/eigen-3.2:3/3.4= >=dev-qt/qtbase-6.11.2:6[gui,opengl,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kplotting-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 sci-libs/cln sci-libs/gsl:0/28= >=sci-libs/libqalculate-0.9.5:0/23.3= dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +gsl +qalculate debug +handbook test
-KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~riscv ~x86
 LICENSE: GPL-2
-MD5: cd592ce77c5f78fd7918abb10b1e90c0
-PATH: pkgs-kde-apps/step-26.08.3-1.gpkg.tar
-RDEPEND: >=dev-cpp/eigen-3.2:3/3.4= >=dev-qt/qtbase-6.11.2:6[gui,opengl,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kplotting-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 sci-libs/cln sci-libs/gsl:0/27= >=sci-libs/libqalculate-0.9.5:0/23.3= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/step:5 >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Plotting.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGLWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libgcc_s.so.1 libgsl.so.27 libm.so.6 libqalculate.so.23 libstdc++.so.6
+MD5: f0330f0d940eeec2277b75c59ac727ed
+PATH: pkgs-kde-apps/step-26.08.3-2.gpkg.tar
+RDEPEND: >=dev-cpp/eigen-3.2:3/3.4= >=dev-qt/qtbase-6.11.2:6[gui,opengl,widgets,xml] >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kiconthemes-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/knewstuff-6.27.0:6 >=kde-frameworks/kparts-6.27.0:6 >=kde-frameworks/kplotting-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 sci-libs/cln sci-libs/gsl:0/28= >=sci-libs/libqalculate-0.9.5:0/23.3= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/step:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "8767e70feadfc7a3eeaf40f35864547e312430a5"}
+REQUIRES: x86_64: libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6NewStuffWidgets.so.6 libKF6Plotting.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6OpenGLWidgets.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libgcc_s.so.1 libgsl.so.28 libm.so.6 libqalculate.so.23 libstdc++.so.6
 RESTRICT: test
-SHA1: 83b92b54657323b3a9594a89a98bb3241105f5c0
-SIZE: 1945600
+SHA1: 9c661357c12bdda65359373c24f8e2307b19b6df
+SIZE: 1935360
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc gsl handbook kernel_linux qalculate
-MTIME: 1793959982
+MTIME: 1795101356
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
