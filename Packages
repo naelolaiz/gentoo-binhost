@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795092200
-PACKAGES: 2025
+TIMESTAMP: 1795097488
+PACKAGES: 2028
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3900,6 +3900,30 @@ SIZE: 3788800
 SLOT: 0/12.1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793706086
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 2
+BUILD_TIME: 1795097194
+CPV: app-text/qpdf-12.4.2-r1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: media-libs/libjpeg-turbo:0/0.2= virtual/zlib:0/1= dev-libs/openssl:0/4=
+EAPI: 8
+IUSE: doc examples gnutls test zopfli verify-sig
+KEYWORDS: ~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc x86
+LICENSE: || ( Apache-2.0 Artistic-2 )
+MD5: 8062e5841ba576889ad6cbb99586c67e
+PATH: pkgs-app-text/qpdf-12.4.2-r1-2.gpkg.tar
+PROVIDES: x86_64: libqpdf.so.30
+RDEPEND: media-libs/libjpeg-turbo:0/0.2= virtual/zlib:0/1= dev-libs/openssl:0/4= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libcrypto.so.4 libgcc_s.so.1 libjpeg.so.62 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: 4ef6b96b09a776208aabf0a868b2675f15efbe90
+SIZE: 3788800
+SLOT: 0/12.2
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795097195
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -14154,6 +14178,28 @@ SHA1: 44ac3fce5a7e98b8784b76fa494c7b249e7f7961
 SIZE: 17920000
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1794635559
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.98.1:* >=dev-lang/rust-1.98.1:* )
+BUILD_ID: 1
+BUILD_TIME: 1795097187
+CPV: dev-python/uv-0.13.9
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: app-arch/zstd:0/1=
+EAPI: 8
+IUSE: test debug
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT ) Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
+MD5: 6d6914e20da98100f6ccc536c63654b6
+PATH: pkgs-dev-python/uv-0.13.9-1.gpkg.tar
+RDEPEND: app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
+RESTRICT: test
+SHA1: 6a3bc3d9e273fc4e8e77d07022989860081c07e2
+SIZE: 17960960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795097189
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -40491,6 +40537,28 @@ SIZE: 583680
 SLOT: 0/4.5
 USE: abi_x86_64 amd64 elibc_glibc hdf5 kernel_linux
 MTIME: 1791092750
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1795097339
+CPV: sci-libs/gsl-2.8
+DEFINED_PHASES: configure install prepare test
+EAPI: 9
+IUSE: cblas-external +deprecated static-libs
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: GPL-3+
+MD5: 2ea48c0c016d6e9863023dd66ff05d6e
+PATH: pkgs-sci-libs/gsl-2.8-1.gpkg.tar
+PROVIDES: x86_64: libgsl.so.28 libgslcblas.so.0
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libm.so.6
+SHA1: 9f901b9a0068a2af03c26be25649652a8285b746
+SIZE: 2027520
+SLOT: 0/28
+USE: abi_x86_64 amd64 deprecated elibc_glibc kernel_linux
+MTIME: 1795097340
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
