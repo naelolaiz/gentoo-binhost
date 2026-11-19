@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795084650
-PACKAGES: 2020
+TIMESTAMP: 1795091586
+PACKAGES: 2023
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -31551,6 +31551,31 @@ MTIME: 1793861818
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 virtual/pkgconfig dev-python/myst-parser[python_targets_python3_14(-)] dev-python/sphinx[python_targets_python3_14(-)] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1795091308
+CPV: llvm-core/clang-23.1.6-r1
+DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
+DEPEND: ~llvm-core/llvm-23.1.6:23/23.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] ~llvm-core/llvm-23.1.6[llvm_targets_AArch64] ~llvm-core/llvm-23.1.6[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.6[llvm_targets_ARM] ~llvm-core/llvm-23.1.6[llvm_targets_AVR] ~llvm-core/llvm-23.1.6[llvm_targets_BPF] ~llvm-core/llvm-23.1.6[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.6[llvm_targets_Lanai] ~llvm-core/llvm-23.1.6[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.6[llvm_targets_Mips] ~llvm-core/llvm-23.1.6[llvm_targets_MSP430] ~llvm-core/llvm-23.1.6[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.6[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.6[llvm_targets_RISCV] ~llvm-core/llvm-23.1.6[llvm_targets_Sparc] ~llvm-core/llvm-23.1.6[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.6[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.6[llvm_targets_VE] ~llvm-core/llvm-23.1.6[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.6[llvm_targets_X86] ~llvm-core/llvm-23.1.6[llvm_targets_XCore]
+EAPI: 8
+IUSE: debug doc +extra ieee-long-double +pie +static-analyzer test xml test doc llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA MIT
+MD5: 40f8c10229d5be6f6d2a571f861becd6
+PATH: pkgs-llvm-core/clang-23.1.6-r1-1.gpkg.tar
+PDEPEND: llvm-runtimes/clang-runtime:23 llvm-core/clang-toolchain-symlinks:23
+PROVIDES: x86_64: libclang-cpp.so.23.1 libclang.so.23.1
+RDEPEND: dev-lang/python:3.14 ~llvm-core/llvm-23.1.6:23/23.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] >=llvm-core/clang-common-23.1.6 ~llvm-core/llvm-23.1.6[llvm_targets_AArch64] ~llvm-core/llvm-23.1.6[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.6[llvm_targets_ARM] ~llvm-core/llvm-23.1.6[llvm_targets_AVR] ~llvm-core/llvm-23.1.6[llvm_targets_BPF] ~llvm-core/llvm-23.1.6[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.6[llvm_targets_Lanai] ~llvm-core/llvm-23.1.6[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.6[llvm_targets_Mips] ~llvm-core/llvm-23.1.6[llvm_targets_MSP430] ~llvm-core/llvm-23.1.6[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.6[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.6[llvm_targets_RISCV] ~llvm-core/llvm-23.1.6[llvm_targets_Sparc] ~llvm-core/llvm-23.1.6[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.6[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.6[llvm_targets_VE] ~llvm-core/llvm-23.1.6[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.6[llvm_targets_X86] ~llvm-core/llvm-23.1.6[llvm_targets_XCore] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libLLVM.so.23.1 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test test
+SHA1: 34c918da9be07c1c8253abf3232d9c94e69a55c4
+SIZE: 65710080
+SLOT: 23/23.1
+USE: abi_x86_64 amd64 elibc_glibc extra kernel_linux llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore pie python_single_target_python3_14 static-analyzer xml
+MTIME: 1795091319
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BUILD_ID: 1
 BUILD_TIME: 1792554535
 CPV: llvm-core/clang-common-23.1.4
@@ -32004,6 +32029,28 @@ MTIME: 1793861908
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: llvm-core/clang:23 llvm-core/clang-linker-config:23 || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1795091369
+CPV: llvm-runtimes/compiler-rt-23.1.6
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: llvm-core/llvm:23
+EAPI: 8
+IUSE: +abi_x86_32 abi_x86_64 +atomic-builtins +clang debug test test verify-sig
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )
+MD5: 6ccd43c7c5a70f929fd5def78723c781
+PATH: pkgs-llvm-runtimes/compiler-rt-23.1.6-1.gpkg.tar
+RDEPEND: >=sys-libs/glibc-2.43-r4
+RESTRICT: test test
+SHA1: 4500c5b0299c5b965bcf1887f8327c05bee9ca1d
+SIZE: 133120
+SLOT: 23
+USE: abi_x86_32 abi_x86_64 amd64 atomic-builtins clang elibc_glibc kernel_linux
+MTIME: 1795091370
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: llvm-core/clang:23 llvm-core/clang-linker-config:23 llvm-runtimes/clang-rtlib-config:23 llvm-runtimes/clang-stdlib-config:23 llvm-runtimes/compiler-rt:23 net-libs/libtirpc || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1792568615
@@ -32097,6 +32144,30 @@ SIZE: 931840
 SLOT: 0/23.1
 USE: abi_x86_32 abi_x86_64 amd64 clang elibc_glibc kernel_linux python_single_target_python3_14
 MTIME: 1793861881
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/perl llvm-core/clang app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1795091401
+CPV: llvm-runtimes/openmp-23.1.6
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+EAPI: 8
+IUSE: +clang debug fortran gdb-plugin hwloc offload ompt test cuda level-zero rocm abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~x86 ~x64-macos
+LICENSE: Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )
+MD5: a659dd87891cbb660c3346849176812c
+PATH: pkgs-llvm-runtimes/openmp-23.1.6-1.gpkg.tar
+PROVIDES: x86_32: libomp.so x86_64: libomp.so
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "8767e70feadfc7a3eeaf40f35864547e312430a5"}
+REQUIRES: x86_32: ld-linux.so.2 libc.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6
+RESTRICT: test
+SHA1: c26e4c056a76964ed705f360de78d2c67d33fbbc
+SIZE: 931840
+SLOT: 0/23.1
+USE: abi_x86_32 abi_x86_64 amd64 clang elibc_glibc kernel_linux python_single_target_python3_14
+MTIME: 1795091405
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
