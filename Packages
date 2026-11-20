@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795151646
-PACKAGES: 2035
+TIMESTAMP: 1795151964
+PACKAGES: 2041
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1251,6 +1251,28 @@ SHA1: 2b521a6943878562707275248fd60b10a4f4ec99
 SIZE: 419840
 USE: abi_x86_64 amd64 bpf caps elibc_glibc kernel_linux seccomp
 MTIME: 1794116982
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) virtual/pkgconfig sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3
+BUILD_ID: 1
+BUILD_TIME: 1795151653
+CPV: app-containers/crun-1.31
+DEFINED_PHASES: configure install prepare setup test
+DEPEND: dev-libs/blake3 dev-libs/json-c:0/5.1= sys-kernel/linux-headers sys-libs/libcap sys-libs/libseccomp
+EAPI: 8
+IUSE: +bpf +caps criu +seccomp selinux systemd static-libs
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv
+LICENSE: GPL-2+ LGPL-2.1+
+MD5: 6d31205028f9b319017fa2eb5352b26a
+PATH: pkgs-app-containers/crun-1.31-1.gpkg.tar
+PROVIDES: x86_64: libcrun.so.1
+RDEPEND: dev-libs/blake3 dev-libs/json-c:0/5.1= sys-kernel/linux-headers sys-libs/libcap sys-libs/libseccomp >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libblake3.so.0 libc.so.6 libcap.so.2 libjson-c.so.5 libm.so.6 libseccomp.so.2
+SHA1: 55346ac72d3f954187e3a4cc5385f1f99e002ca9
+SIZE: 450560
+USE: abi_x86_64 amd64 bpf caps elibc_glibc kernel_linux seccomp
+MTIME: 1795151655
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -12553,6 +12575,27 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
 BUILD_ID: 1
+BUILD_TIME: 1795151807
+CPV: dev-python/pypdf-7.1.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 verify-provenance
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: BSD
+MD5: 9129999ff09fac74e01298dd5c741db9
+PATH: pkgs-dev-python/pypdf-7.1.1-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: b173825ef8f7108564d1eb048ad96c563a857831
+SIZE: 1320960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795151808
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
 BUILD_TIME: 1791277833
 CPV: dev-python/pyphen-0.18.1
 DEFINED_PHASES: compile configure install prepare test unpack
@@ -13016,6 +13059,27 @@ MTIME: 1794117244
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/hatch-fancy-pypi-readme-25.1[python_targets_python3_14(-)] dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795151814
+CPV: dev-python/python-discovery-1.9.6
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: e44e4e76a487c12d7e60c5aed371600b
+PATH: pkgs-dev-python/python-discovery-1.9.6-1.gpkg.tar
+RDEPEND: >=dev-python/filelock-3.16.1[python_targets_python3_14(-)] dev-lang/python:3.14
+RESTRICT: test
+SHA1: 8ae442c2739c8c8dc587a0decf2cf95a63aaddee
+SIZE: 184320
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795151815
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791282852
@@ -13161,6 +13225,28 @@ SHA1: 01f0e5476f91e961e306158facd49afe7df85f65
 SIZE: 563200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1795100660
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795151822
+CPV: dev-python/regex-2026.11.19
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: doc python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0
+MD5: 77da608731333cfabc3bf276576a4ebb
+PATH: pkgs-dev-python/regex-2026.11.19-1.gpkg.tar
+PROVIDES: x86_64: _regex.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: dd5d93fb7ceafc55eb87d3f94001143afb0d8d33
+SIZE: 563200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795151823
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -13746,6 +13832,27 @@ SHA1: 79a5eae2290cfa6cde34aeaff4cc96ef0e5a4dcf
 SIZE: 215040
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1794805101
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795151808
+CPV: dev-python/soupsieve-4.1.2
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 3653630e06a197c016aaa14305c3539b
+PATH: pkgs-dev-python/soupsieve-4.1.2-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 1a88873ddb83da7de9cf55b0d8872132e3028ade
+SIZE: 215040
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795151809
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -14786,6 +14893,28 @@ SHA1: eb626abab80ada9006326015d985526916f72dc0
 SIZE: 358400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1794117284
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-python/hatch-fancy-pypi-readme-25.1[python_targets_python3_14(-)] dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795151833
+CPV: dev-python/virtualenv-21.15.9
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: MIT
+MD5: 77205bfbba6d8a8ad567c71879f4c2b0
+PATH: pkgs-dev-python/virtualenv-21.15.9-1.gpkg.tar
+RDEPEND: >=dev-python/distlib-0.3.7[python_targets_python3_14(-)] >=dev-python/filelock-3.24.2[python_targets_python3_14(-)] >=dev-python/packaging-23.1[python_targets_python3_14(-)] >=dev-python/platformdirs-3.9.1[python_targets_python3_14(-)] >=dev-python/python-discovery-1.6[python_targets_python3_14(-)] dev-python/ensurepip-pip >=dev-python/ensurepip-setuptools-70.1 dev-python/ensurepip-wheel dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "60b041b4ca9a52aa37fc29a60d4a48c87f3f8af9"}
+RESTRICT: test
+SHA1: fb6d05a2f8842978c80abe18a65d44df9c5194da
+SIZE: 430080
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795151834
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
