@@ -8,22 +8,15 @@
   "updated": 1795248869
  },
  "gone": {
-  "app-accessibility/kontrast-26.08.2": 1793983999,
-  "app-admin/kio-admin-26.08.2": 1793983999,
-  "app-cdr/dolphin-plugins-mountiso-26.08.2": 1793983999,
-  "app-cdr/isoimagewriter-26.08.2": 1793983999,
-  "app-crypt/keepsecret-26.08.2": 1793983999,
-  "app-crypt/keysmith-26.08.2": 1793983999,
-  "app-editors/ghostwriter-26.08.2": 1793983999,
+  "app-arch/7zip-26.03": 1795262431,
+  "app-arch/7zip-26.04": 1795262431,
+  "app-arch/7zip-26.05": 1795262431,
   "app-emulation/virtualbox-7.2.18": 1794307357,
   "app-emulation/virtualbox-7.2.22": 1794307357,
-  "app-misc/francis-26.08.2": 1793983999,
   "app-misc/spacenavd-1.4": 1795101457,
   "app-text/qpdf-12.4.2": 1795101457,
-  "dev-build/dolphin-plugins-makefileactions-26.08.2": 1793983999,
   "dev-libs/kirigami-addons-1.15.0": 1794717560,
   "dev-libs/kirigami-addons-1.16.0": 1794717560,
-  "dev-libs/kweathercore-26.08.2": 1793983999,
   "dev-libs/libfmt-12.2.0": 1794396593,
   "dev-python/filelock-4.0.12": 1794396593,
   "dev-python/filelock-4.0.9": 1794396593,
@@ -58,169 +51,10 @@
   "dev-qt/qttasktree-6.11.2": 1794464824,
   "dev-qt/qttools-6.11.2": 1794464824,
   "dev-qt/qtwayland-6.11.2": 1794464824,
-  "dev-util/github-cli-2.101.0": 1793983999,
-  "dev-util/kdevelop-26.08.2": 1793983999,
-  "dev-util/kdevelop-python-26.08.2": 1793983999,
-  "dev-util/massif-visualizer-26.08.2": 1793983999,
   "dev-util/perf-7.2": 1795101457,
   "dev-util/perf-7.3": 1795101457,
-  "games-puzzle/skladnik-26.08.2": 1793983999,
-  "kde-apps/analitza-26.08.2": 1793983999,
-  "kde-apps/ark-26.08.2": 1793983999,
-  "kde-apps/artikulate-26.08.2": 1793983999,
-  "kde-apps/audiocd-kio-26.08.2": 1793983999,
-  "kde-apps/baloo-widgets-26.08.2": 1793983999,
-  "kde-apps/blinken-26.08.2": 1793983999,
-  "kde-apps/bomber-26.08.2": 1793983999,
-  "kde-apps/bovo-26.08.2": 1793983999,
-  "kde-apps/cantor-26.08.2": 1793983999,
-  "kde-apps/dolphin-26.08.2": 1793983999,
-  "kde-apps/dolphin-plugins-common-26.08.2": 1793983999,
-  "kde-apps/dolphin-plugins-git-26.08.2": 1793983999,
-  "kde-apps/dragon-26.08.2": 1793983999,
-  "kde-apps/ffmpegthumbs-26.08.2": 1793983999,
-  "kde-apps/filelight-26.08.2": 1793983999,
-  "kde-apps/granatier-26.08.2": 1793983999,
-  "kde-apps/gwenview-26.08.2": 1793983999,
-  "kde-apps/juk-26.08.2": 1793983999,
-  "kde-apps/k3b-26.08.2": 1793983999,
-  "kde-apps/kaccounts-integration-26.08.2": 1793983999,
-  "kde-apps/kaccounts-providers-26.08.2": 1793983999,
-  "kde-apps/kalgebra-26.08.2": 1793983999,
-  "kde-apps/kalzium-26.08.2": 1793983999,
-  "kde-apps/kamera-26.08.2": 1793983999,
-  "kde-apps/kanagram-26.08.2": 1793983999,
-  "kde-apps/kapman-26.08.2": 1793983999,
-  "kde-apps/kapptemplate-26.08.2": 1793983999,
-  "kde-apps/kate-26.08.2": 1793983999,
-  "kde-apps/kate-addons-26.08.2": 1793983999,
-  "kde-apps/kate-common-26.08.2": 1793983999,
-  "kde-apps/kate-lib-26.08.2": 1793983999,
-  "kde-apps/katomic-26.08.2": 1793983999,
-  "kde-apps/kbackup-26.08.2": 1793983999,
-  "kde-apps/kblackbox-26.08.2": 1793983999,
-  "kde-apps/kblocks-26.08.2": 1793983999,
-  "kde-apps/kbounce-26.08.2": 1793983999,
-  "kde-apps/kbreakout-26.08.2": 1793983999,
-  "kde-apps/kbruch-26.08.2": 1793983999,
-  "kde-apps/kcachegrind-26.08.2": 1793983999,
-  "kde-apps/kcalc-26.08.2": 1793983999,
-  "kde-apps/kcharselect-26.08.2": 1793983999,
-  "kde-apps/kcolorchooser-26.08.2": 1793983999,
-  "kde-apps/kcron-26.08.2": 1793983999,
-  "kde-apps/kde-apps-meta-26.08.2": 1793983999,
   "kde-apps/kde-apps-meta-26.08.3": 1794307357,
-  "kde-apps/kde-dev-scripts-26.08.2": 1793983999,
-  "kde-apps/kde-dev-utils-26.08.2": 1793983999,
-  "kde-apps/kdeaccessibility-meta-26.08.2": 1793983999,
-  "kde-apps/kdeadmin-meta-26.08.2": 1793983999,
-  "kde-apps/kdebugsettings-26.08.2": 1793983999,
-  "kde-apps/kdecore-meta-26.08.2": 1793983999,
-  "kde-apps/kdeedu-data-26.08.2": 1793983999,
-  "kde-apps/kdeedu-meta-26.08.2": 1793983999,
-  "kde-apps/kdegames-meta-26.08.2": 1793983999,
-  "kde-apps/kdegraphics-meta-26.08.2": 1793983999,
-  "kde-apps/kdegraphics-mobipocket-26.08.2": 1793983999,
-  "kde-apps/kdemultimedia-meta-26.08.2": 1793983999,
-  "kde-apps/kdenetwork-meta-26.08.2": 1793983999,
-  "kde-apps/kdenetwork-meta-26.08.3": 1794029258,
-  "kde-apps/kdenlive-26.08.2": 1793983999,
-  "kde-apps/kdesdk-meta-26.08.2": 1793983999,
-  "kde-apps/kdesdk-thumbnailers-26.08.2": 1793983999,
-  "kde-apps/kdeutils-meta-26.08.2": 1793983999,
-  "kde-apps/kdf-26.08.2": 1793983999,
-  "kde-apps/kdialog-26.08.2": 1793983999,
-  "kde-apps/kdiamond-26.08.2": 1793983999,
-  "kde-apps/keditbookmarks-26.08.2": 1793983999,
-  "kde-apps/kfind-26.08.2": 1793983999,
-  "kde-apps/kfourinline-26.08.2": 1793983999,
-  "kde-apps/kgeography-26.08.2": 1793983999,
-  "kde-apps/kget-26.08.2": 1793983999,
-  "kde-apps/kgoldrunner-26.08.2": 1793983999,
-  "kde-apps/khangman-26.08.2": 1793983999,
-  "kde-apps/khelpcenter-26.08.2": 1793983999,
-  "kde-apps/kig-26.08.2": 1793983999,
-  "kde-apps/kigo-26.08.2": 1793983999,
-  "kde-apps/killbots-26.08.2": 1793983999,
-  "kde-apps/kimagemapeditor-26.08.2": 1793983999,
-  "kde-apps/kio-extras-26.08.2": 1793983999,
-  "kde-apps/kiriki-26.08.2": 1793983999,
-  "kde-apps/kiten-26.08.2": 1793983999,
-  "kde-apps/kjumpingcube-26.08.2": 1793983999,
-  "kde-apps/klettres-26.08.2": 1793983999,
-  "kde-apps/klickety-26.08.2": 1793983999,
-  "kde-apps/klines-26.08.2": 1793983999,
-  "kde-apps/kmag-26.08.2": 1793983999,
-  "kde-apps/kmahjongg-26.08.2": 1793983999,
-  "kde-apps/kmines-26.08.2": 1793983999,
-  "kde-apps/kmix-26.08.2": 1793983999,
-  "kde-apps/kmousetool-26.08.2": 1793983999,
-  "kde-apps/kmouth-26.08.2": 1793983999,
-  "kde-apps/kmplot-26.08.2": 1793983999,
-  "kde-apps/knavalbattle-26.08.2": 1793983999,
-  "kde-apps/knetwalk-26.08.2": 1793983999,
-  "kde-apps/knights-26.08.2": 1793983999,
-  "kde-apps/kolf-26.08.2": 1793983999,
-  "kde-apps/kollision-26.08.2": 1793983999,
-  "kde-apps/kolourpaint-26.08.2": 1793983999,
-  "kde-apps/kompare-26.08.2": 1793983999,
-  "kde-apps/konqueror-26.08.2": 1793983999,
-  "kde-apps/konquest-26.08.2": 1793983999,
-  "kde-apps/konsole-26.08.2": 1793983999,
-  "kde-apps/kpat-26.08.2": 1793983999,
-  "kde-apps/kqtquickcharts-26.08.2": 1793983999,
-  "kde-apps/krdc-26.08.2": 1793983999,
-  "kde-apps/kreversi-26.08.2": 1793983999,
-  "kde-apps/krfb-26.08.2": 1793983999,
-  "kde-apps/kruler-26.08.2": 1793983999,
-  "kde-apps/kshisen-26.08.2": 1793983999,
-  "kde-apps/ksirk-26.08.2": 1793983999,
-  "kde-apps/ksnakeduel-26.08.2": 1793983999,
-  "kde-apps/kspaceduel-26.08.2": 1793983999,
-  "kde-apps/ksquares-26.08.2": 1793983999,
-  "kde-apps/ksudoku-26.08.2": 1793983999,
-  "kde-apps/ksystemlog-26.08.2": 1793983999,
-  "kde-apps/kteatime-26.08.2": 1793983999,
-  "kde-apps/ktimer-26.08.2": 1793983999,
-  "kde-apps/ktouch-26.08.2": 1793983999,
-  "kde-apps/ktuberling-26.08.2": 1793983999,
-  "kde-apps/kturtle-26.08.2": 1793983999,
-  "kde-apps/kubrick-26.08.2": 1793983999,
-  "kde-apps/kwalletmanager-26.08.2": 1793983999,
-  "kde-apps/kwave-26.08.2": 1793983999,
-  "kde-apps/kwordquiz-26.08.2": 1793983999,
-  "kde-apps/kwrite-26.08.2": 1793983999,
-  "kde-apps/libkcddb-26.08.2": 1793983999,
-  "kde-apps/libkdcraw-26.08.2": 1793983999,
-  "kde-apps/libkdegames-26.08.2": 1793983999,
-  "kde-apps/libkeduvocdocument-26.08.2": 1793983999,
-  "kde-apps/libkexiv2-26.08.2": 1793983999,
-  "kde-apps/libkgapi-26.08.2": 1793983999,
-  "kde-apps/libkmahjongg-26.08.2": 1793983999,
-  "kde-apps/libkomparediff2-26.08.2": 1793983999,
-  "kde-apps/lokalize-26.08.2": 1793983999,
-  "kde-apps/lskat-26.08.2": 1793983999,
-  "kde-apps/marble-26.08.2": 1793983999,
-  "kde-apps/minuet-26.08.2": 1793983999,
-  "kde-apps/okular-26.08.2": 1793983999,
-  "kde-apps/palapeli-26.08.2": 1793983999,
-  "kde-apps/parley-26.08.2": 1793983999,
-  "kde-apps/picmi-26.08.2": 1793983999,
-  "kde-apps/poxml-26.08.2": 1793983999,
-  "kde-apps/rocs-26.08.2": 1793983999,
-  "kde-apps/signon-kwallet-extension-26.08.2": 1793983999,
-  "kde-apps/step-26.08.2": 1793983999,
-  "kde-apps/svgpart-26.08.2": 1793983999,
-  "kde-apps/sweeper-26.08.2": 1793983999,
-  "kde-apps/thumbnailers-26.08.2": 1793983999,
-  "kde-apps/umbrello-26.08.2": 1793983999,
-  "kde-apps/yakuake-26.08.2": 1793983999,
   "kde-frameworks/oxygen-icons-6.32.0": 1795101457,
-  "kde-misc/kclock-26.08.2": 1793983999,
-  "kde-misc/kdeconnect-26.08.2-r1": 1793983999,
-  "kde-misc/kio-gdrive-26.08.2": 1793983999,
-  "kde-misc/kweather-26.08.2-r1": 1793983999,
-  "kde-misc/markdownpart-26.08.2": 1793983999,
   "kde-plasma/aurorae-6.8.2": 1794464824,
   "kde-plasma/bluedevil-6.8.2": 1794464824,
   "kde-plasma/breeze-6.8.2": 1794464824,
@@ -298,44 +132,27 @@
   "llvm-runtimes/compiler-rt-sanitizers-23.1.4": 1794396593,
   "llvm-runtimes/openmp-23.1.4": 1794396593,
   "media-gfx/imagemagick-7.1.2.32": 1795152222,
-  "media-gfx/kgraphviewer-26.08.2": 1793983999,
-  "media-gfx/kio-mobi-thumbnailer-26.08.2": 1793983999,
-  "media-gfx/kio-ps-thumbnailer-26.08.2": 1793983999,
-  "media-gfx/qrca-26.08.2": 1793983999,
   "media-libs/taglib-2.3.2": 1794396593,
-  "media-sound/audex-26.08.2": 1793983999,
-  "media-sound/elisa-26.08.2": 1793983999,
-  "media-sound/kasts-26.08.2": 1793983999,
-  "media-sound/krecorder-26.08.2": 1793983999,
   "media-video/ffmpeg-8.1.3": 1794717560,
   "media-video/ffmpeg-9.0.2": 1794717560,
   "media-video/ffmpeg-compat-6.1.6": 1794717560,
-  "net-im/neochat-26.08.2": 1793983999,
-  "net-im/tokodon-26.08.2": 1793983999,
-  "net-irc/konversation-26.08.2": 1793983999,
-  "net-libs/libktorrent-26.08.2": 1793983999,
   "net-libs/nodejs-26.12.1": 1794808402,
-  "net-misc/kio-zeroconf-26.08.2": 1793983999,
   "net-misc/rsync-3.5.1": 1794717560,
-  "net-news/alligator-26.08.2": 1793983999,
-  "net-p2p/ktorrent-26.08.2": 1793983999,
-  "sci-ml/ggml-0.28.0-r2": 1794029258,
   "sci-ml/ggml-0.29.0": 1794717560,
   "sci-ml/ggml-0.29.0-r1": 1794717560,
-  "sci-ml/ollama-0.40.14": 1794029258,
   "sci-ml/ollama-0.40.15": 1794396593,
-  "sys-apps/xdg-desktop-portal-1.22.1": 1794029258,
-  "sys-block/partitionmanager-26.08.2": 1793983999,
   "sys-kernel/gentoo-kernel-7.3.1": 1794204649,
   "sys-kernel/gentoo-kernel-7.3.3": 1794464824,
   "sys-kernel/gentoo-kernel-bin-7.3.1": 1794204649,
   "sys-kernel/gentoo-kernel-bin-7.3.3": 1794464824,
+  "sys-kernel/gentoo-kernel-bin-7.3.4": 1795262431,
+  "sys-kernel/gentoo-kernel-bin-7.3.5": 1795262431,
   "sys-kernel/gentoo-sources-7.3.1": 1794118207,
   "sys-kernel/gentoo-sources-7.3.3": 1794396593,
-  "sys-libs/kpmcore-26.08.2": 1793983999,
   "virtual/dist-kernel-7.3.1": 1794204649,
   "virtual/dist-kernel-7.3.3": 1794464824,
-  "www-client/falkon-26.08.2": 1793983999,
+  "virtual/dist-kernel-7.3.4": 1795262431,
+  "virtual/dist-kernel-7.3.5": 1795262431,
   "x11-base/xorg-server-21.1.25": 1794637860,
   "x11-base/xwayland-24.1.14": 1794637860,
   "x11-terms/ghostty-1.4.0": 1794637860,
@@ -348,8 +165,24 @@
    "path": "pkgs-app-accessibility/at-spi2-core-2.60.7-1.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-app-accessibility/kontrast-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-app-admin/kio-admin-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1794115953,
    "path": "pkgs-app-admin/metalog-20260902-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-app-cdr/dolphin-plugins-mountiso-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-app-cdr/isoimagewriter-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794117246,
@@ -380,12 +213,24 @@
    "path": "pkgs-app-crypt/gocryptfs-2.6.1-r1-14.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-app-crypt/keepsecret-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-app-crypt/keysmith-26.08.2-2.gpkg.tar"
+  },
+  {
    "at": 1794370176,
    "path": "pkgs-app-crypt/p11-kit-0.26.5-1.gpkg.tar"
   },
   {
    "at": 1794118204,
    "path": "pkgs-app-crypt/sbsigntools-0.9.5_p1-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-app-editors/ghostwriter-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794808402,
@@ -462,6 +307,10 @@
   {
    "at": 1794117246,
    "path": "pkgs-app-misc/evtest-1.36-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-app-misc/francis-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794109054,
@@ -542,6 +391,10 @@
   {
    "at": 1794394805,
    "path": "pkgs-app-text/zathura-ps-2026.07.18-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-dev-build/dolphin-plugins-makefileactions-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794118204,
@@ -678,6 +531,10 @@
   {
    "at": 1794118207,
    "path": "pkgs-dev-libs/json-c-0.19-r2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-dev-libs/kweathercore-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794117906,
@@ -872,6 +729,10 @@
    "path": "pkgs-dev-util/cscope-15.9-r1-2.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-dev-util/github-cli-2.101.0-1.gpkg.tar"
+  },
+  {
    "at": 1794464567,
    "path": "pkgs-dev-util/github-cli-2.103.3-1.gpkg.tar"
   },
@@ -880,12 +741,24 @@
    "path": "pkgs-dev-util/gource-0.55-2.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-dev-util/kdevelop-26.08.2-3.gpkg.tar"
+  },
+  {
    "at": 1794117906,
    "path": "pkgs-dev-util/kdevelop-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1794204463,
    "path": "pkgs-dev-util/kdevelop-26.08.3-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-dev-util/kdevelop-python-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-dev-util/massif-visualizer-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -944,6 +817,10 @@
    "path": "pkgs-dev-vcs/git-lfs-3.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-games-puzzle/skladnik-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1794371449,
    "path": "pkgs-gnome-base/gnome-keyring-50.0-1.gpkg.tar"
   },
@@ -972,8 +849,244 @@
    "path": "pkgs-gui-libs/libadwaita-1.9.4-1.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/analitza-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ark-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/artikulate-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/audiocd-kio-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/baloo-widgets-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/blinken-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/bomber-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/bovo-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/cantor-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/dolphin-26.08.2-3.gpkg.tar"
+  },
+  {
    "at": 1794634900,
    "path": "pkgs-kde-apps/dolphin-26.08.3-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/dolphin-plugins-common-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/dolphin-plugins-git-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/dragon-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ffmpegthumbs-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/filelight-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/granatier-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/gwenview-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/juk-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/k3b-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kaccounts-integration-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kaccounts-providers-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kalgebra-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kalzium-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kamera-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kanagram-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kapman-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kapptemplate-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kate-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kate-addons-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kate-common-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kate-lib-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/katomic-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kbackup-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kblackbox-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kblocks-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kbounce-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kbreakout-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kbruch-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kcachegrind-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kcalc-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kcharselect-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kcolorchooser-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kcron-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kde-apps-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kde-dev-scripts-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kde-dev-utils-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdeaccessibility-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdeadmin-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdebugsettings-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdecore-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdeedu-data-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdeedu-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdegames-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdegraphics-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdegraphics-mobipocket-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdemultimedia-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdenetwork-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdenetwork-meta-26.08.3-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdenlive-26.08.2-2.gpkg.tar"
   },
   {
    "at": 1794804571,
@@ -984,8 +1097,368 @@
    "path": "pkgs-kde-apps/kdenlive-26.08.3-3.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdesdk-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdesdk-thumbnailers-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdeutils-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdf-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdialog-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kdiamond-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/keditbookmarks-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kfind-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kfourinline-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kgeography-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kget-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kgoldrunner-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/khangman-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/khelpcenter-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kig-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kigo-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/killbots-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kimagemapeditor-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kio-extras-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kiriki-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kiten-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kjumpingcube-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/klettres-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/klickety-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/klines-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kmag-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kmahjongg-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kmines-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kmix-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kmousetool-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kmouth-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kmplot-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/knavalbattle-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/knetwalk-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/knights-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kolf-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kollision-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kolourpaint-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kompare-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/konqueror-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/konquest-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/konsole-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kpat-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kqtquickcharts-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/krdc-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kreversi-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/krfb-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kruler-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kshisen-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ksirk-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ksnakeduel-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kspaceduel-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ksquares-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ksudoku-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ksystemlog-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kteatime-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ktimer-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ktouch-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/ktuberling-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kturtle-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kubrick-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kwalletmanager-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kwave-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kwordquiz-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/kwrite-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkcddb-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkdcraw-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkdegames-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkeduvocdocument-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkexiv2-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkgapi-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkmahjongg-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/libkomparediff2-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/lokalize-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/lskat-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/marble-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/minuet-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/okular-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/palapeli-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/parley-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/picmi-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/poxml-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/rocs-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/signon-kwallet-extension-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/step-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1795101454,
    "path": "pkgs-kde-apps/step-26.08.3-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/svgpart-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/sweeper-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/thumbnailers-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/umbrello-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-apps/yakuake-26.08.2-2.gpkg.tar"
   },
   {
    "at": 1793983999,
@@ -1040,12 +1513,32 @@
    "path": "pkgs-kde-frameworks/ktexteditor-6.31.0-1.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-kde-misc/kclock-26.08.2-3.gpkg.tar"
+  },
+  {
    "at": 1794975808,
    "path": "pkgs-kde-misc/kdeconnect-26.08.2-2.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-kde-misc/kdeconnect-26.08.2-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-misc/kio-gdrive-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1794975808,
    "path": "pkgs-kde-misc/kweather-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-misc/kweather-26.08.2-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-kde-misc/markdownpart-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1408,8 +1901,24 @@
    "path": "pkgs-media-gfx/inkscape-1.4.4-r1-2.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-media-gfx/kgraphviewer-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-media-gfx/kio-mobi-thumbnailer-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-media-gfx/kio-ps-thumbnailer-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1795098722,
    "path": "pkgs-media-gfx/mandelbulber-2.33-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-media-gfx/qrca-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794117575,
@@ -1672,12 +2181,28 @@
    "path": "pkgs-media-sound/ardour-9.10.0-1.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-media-sound/audex-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-media-sound/elisa-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1794118204,
    "path": "pkgs-media-sound/gigedit-1.2.1-1.gpkg.tar"
   },
   {
    "at": 1794375145,
    "path": "pkgs-media-sound/jack-example-tools-4-4.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-media-sound/kasts-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-media-sound/krecorder-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794110948,
@@ -1800,8 +2325,24 @@
    "path": "pkgs-net-dns/avahi-0.9_rc5-3.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-net-im/neochat-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-net-im/tokodon-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-net-irc/konversation-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1794109695,
    "path": "pkgs-net-libs/libasyncns-0.8-r5-2.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-net-libs/libktorrent-26.08.2-2.gpkg.tar"
   },
   {
    "at": 1794113176,
@@ -1860,6 +2401,10 @@
    "path": "pkgs-net-misc/freerdp-3.32.2-2.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-net-misc/kio-zeroconf-26.08.2-1.gpkg.tar"
+  },
+  {
    "at": 1794377096,
    "path": "pkgs-net-misc/networkmanager-1.58.1-r3-2.gpkg.tar"
   },
@@ -1874,6 +2419,14 @@
   {
    "at": 1794975808,
    "path": "pkgs-net-misc/yt-dlp-2026.10.21-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-net-news/alligator-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-net-p2p/ktorrent-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794387696,
@@ -1912,6 +2465,10 @@
    "path": "pkgs-sci-ml/ggml-0.28.0-r1-1.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-sci-ml/ggml-0.28.0-r2-1.gpkg.tar"
+  },
+  {
    "at": 1794637860,
    "path": "pkgs-sci-ml/ollama-0.40.10-1.gpkg.tar"
   },
@@ -1922,6 +2479,10 @@
   {
    "at": 1795101457,
    "path": "pkgs-sci-ml/ollama-0.40.13-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-sci-ml/ollama-0.40.14-1.gpkg.tar"
   },
   {
    "at": 1794464821,
@@ -1996,6 +2557,10 @@
    "path": "pkgs-sys-apps/xdg-dbus-proxy-0.1.9-1.gpkg.tar"
   },
   {
+   "at": 1795262431,
+   "path": "pkgs-sys-apps/xdg-desktop-portal-1.22.1-1.gpkg.tar"
+  },
+  {
    "at": 1794378985,
    "path": "pkgs-sys-apps/xdg-desktop-portal-1.22.1-r1-1.gpkg.tar"
   },
@@ -2010,6 +2575,10 @@
   {
    "at": 1794375473,
    "path": "pkgs-sys-auth/rtkit-0.14-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-sys-block/partitionmanager-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794117246,
@@ -2046,6 +2615,10 @@
   {
    "at": 1795101457,
    "path": "pkgs-sys-kernel/installkernel-70-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-sys-libs/kpmcore-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794370176,
@@ -2094,6 +2667,10 @@
   {
    "at": 1794461521,
    "path": "pkgs-www-apps/gitea-28.3.0-1.gpkg.tar"
+  },
+  {
+   "at": 1795262431,
+   "path": "pkgs-www-client/falkon-26.08.2-3.gpkg.tar"
   },
   {
    "at": 1794117906,
