@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795232912
-PACKAGES: 2042
+TIMESTAMP: 1795233224
+PACKAGES: 2045
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1496,6 +1496,30 @@ SIZE: 563200
 SLOT: 1/45.0
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791060027
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1795232943
+CPV: app-crypt/gpgme-2.3.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: || ( app-alternatives/gpg[reference] app-alternatives/gpg[freepg(-)] ) >=dev-libs/libassuan-2.5.3:0/3.0= >=dev-libs/libgpg-error-1.46-r1:0/0=
+EAPI: 8
+IUSE: common-lisp static-libs test verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: GPL-2 LGPL-2.1
+MD5: 0fc973a53e9271bd94c99bc7f19e4561
+PATH: pkgs-app-crypt/gpgme-2.3.1-1.gpkg.tar
+PROVIDES: x86_64: libgpgme.so.45
+RDEPEND: || ( app-alternatives/gpg[reference] app-alternatives/gpg[freepg(-)] ) >=dev-libs/libassuan-2.5.3:0/3.0= >=dev-libs/libgpg-error-1.46-r1:0/0= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libassuan.so.9 libc.so.6 libgpg-error.so.0 libm.so.6
+RESTRICT: test
+SHA1: fda36e49cc320ba911bb6421e874c3ba011d634b
+SIZE: 583680
+SLOT: 1/45.0
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795232943
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -17221,6 +17245,28 @@ SHA1: 4962617c34c80ab3aa157e965eda826edb340f7e
 SIZE: 1443840
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
 MTIME: 1794889201
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) || ( ( dev-lang/python:3.15 >=dev-python/mako-0.8.0[python_targets_python3_15(-)] dev-python/packaging[python_targets_python3_15(-)] dev-python/pyyaml[python_targets_python3_15(-)] ) ( dev-lang/python:3.14 >=dev-python/mako-0.8.0[python_targets_python3_14(-)] dev-python/packaging[python_targets_python3_14(-)] dev-python/pyyaml[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 >=dev-python/mako-0.8.0[python_targets_python3_13(-)] dev-python/packaging[python_targets_python3_13(-)] dev-python/pyyaml[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 >=dev-python/mako-0.8.0[python_targets_python3_12(-)] dev-python/packaging[python_targets_python3_12(-)] dev-python/pyyaml[python_targets_python3_12(-)] ) ) virtual/pkgconfig >=dev-build/meson-1.2.3 app-alternatives/ninja
+BUILD_ID: 1
+BUILD_TIME: 1795233091
+CPV: dev-util/mesa_clc-26.3.1
+DEFINED_PHASES: compile configure install setup test
+DEPEND: dev-util/spirv-tools dev-util/spirv-llvm-translator:22 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= =llvm-runtimes/libclc-22* dev-libs/expat >=virtual/zlib-1.2.8:0/1= x11-libs/libdrm
+EAPI: 8
+IUSE: video_cards_asahi video_cards_panfrost debug +llvm_slot_22 llvm_slot_20 llvm_slot_21
+KEYWORDS: ~amd64 ~arm ~arm64 ~riscv ~x86
+LICENSE: MIT
+MD5: 0ce69759298ae4817ea9a40f62957fe6
+PATH: pkgs-dev-util/mesa_clc-26.3.1-1.gpkg.tar
+RDEPEND: dev-util/spirv-tools dev-util/spirv-llvm-translator:22 llvm-core/clang:22/22.1= llvm-core/llvm:22/22.1= =llvm-runtimes/libclc-22* >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "6db4567669b0413b1fc0242c38a70033e602efa3"}
+REQUIRES: x86_64: libLLVM.so.22.1 libLLVMSPIRVLib.so.22.1 libSPIRV-Tools-link.so libSPIRV-Tools-opt.so libSPIRV-Tools.so libc.so.6 libclang-cpp.so.22.1 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+SHA1: e73355551bb81a6063ba52e5335a141964c1f436
+SIZE: 1443840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_slot_22
+MTIME: 1795233094
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -45253,6 +45299,27 @@ SHA1: e4ed8c50fe97d731ce32ab95c76c102c82ecc7de
 SIZE: 563200
 USE: abi_x86_32 abi_x86_64 amd64 elibc_glibc kernel_linux udev video_cards_amdgpu video_cards_intel video_cards_nouveau video_cards_radeon
 MTIME: 1794369645
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-build/meson-1.2.3 app-alternatives/ninja virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795232900
+CPV: x11-libs/libfontenc-1.1.10
+DEFINED_PHASES: compile configure install test unpack
+DEPEND: virtual/zlib:0/1= x11-base/xorg-proto
+EAPI: 8
+KEYWORDS: ~alpha amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 639ff2de6ed9915deadf5eeabe7d991d
+PATH: pkgs-x11-libs/libfontenc-1.1.10-1.gpkg.tar
+PROVIDES: x86_64: libfontenc.so.1
+RDEPEND: virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libz.so.1
+SHA1: b56b5f9bc0d02832957cbca1d9932180cee243b3
+SIZE: 71680
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795232900
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
