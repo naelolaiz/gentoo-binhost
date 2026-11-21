@@ -1,12 +1,4 @@
 {
- "continue": {
-  "idle": 0,
-  "image": "gentoo/stage3@sha256:8dee3b0b727b80e40b263665d0503da42e140199a774bb44206f08a7e473f6bb",
-  "streak": 1,
-  "tiers": "",
-  "tree_date": "20261120",
-  "updated": 1795248869
- },
  "gone": {
   "app-arch/7zip-26.03": 1795262431,
   "app-arch/7zip-26.04": 1795262431,
