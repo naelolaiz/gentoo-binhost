@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795151964
-PACKAGES: 2041
+TIMESTAMP: 1795232912
+PACKAGES: 2042
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7321,6 +7321,28 @@ SHA1: ef3d789c2ff5f7bd48ec1372703248734e19baeb
 SIZE: 215040
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791060047
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/yacc >=app-portage/elt-patches-20250306
+BUILD_ID: 1
+BUILD_TIME: 1795232796
+CPV: dev-libs/libksba-1.9.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: >=dev-libs/libgpg-error-1.33
+EAPI: 8
+IUSE: static-libs verify-sig
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: LGPL-3+ GPL-2+ GPL-3
+MD5: f278906746eb49ed83e0b0a96ba5ac00
+PATH: pkgs-dev-libs/libksba-1.9.1-1.gpkg.tar
+PROVIDES: x86_64: libksba.so.8
+RDEPEND: >=dev-libs/libgpg-error-1.33 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgpg-error.so.0
+SHA1: b2fdd90bde17df9807133d96f0d279a018c46e3c
+SIZE: 245760
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795232797
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
