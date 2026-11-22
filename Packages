@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795262487
-PACKAGES: 1864
+TIMESTAMP: 1795319613
+PACKAGES: 1867
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -5681,6 +5681,28 @@ SIZE: 6778880
 SLOT: 3.3
 USE: abi_x86_64 amd64 elibc_glibc gdbm kernel_linux ssl
 MTIME: 1795147742
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1795319211
+CPV: dev-lang/rust-bin-1.100.0
+DEFINED_PHASES: compile configure install postinst postrm test unpack
+EAPI: 8
+IUSE: big-endian +clippy cpu_flags_x86_sse2 doc prefix rust-analyzer rust-src rustc-dev rust_sysroots_aarch64_unknown_none +rustfmt +llvm_slot_23 verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: || ( MIT Apache-2.0 ) BSD BSD-1 BSD-2 BSD-4
+MD5: 0fb4e97f62d1d9dbffc0b32022a52ce3
+PATH: pkgs-dev-lang/rust-bin-1.100.0-1.gpkg.tar
+PROVIDES: x86_64: libLLVM.so.23.1-rust-1.100.0-stable librustc_driver-62d0ff9ea62999cc.so libstd-7d3c8b3343c9c95a.so
+RDEPEND: >=app-eselect/eselect-rust-20190311 dev-libs/openssl net-misc/curl sys-apps/lsb-release || ( llvm-runtimes/libgcc sys-devel/gcc:* ) !dev-lang/rust:stable !dev-lang/rust-bin:stable >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libdl.so.2 libgcc_s.so.1 libm.so.6 libpthread.so.0 librt.so.1 libz.so.1
+RESTRICT: strip
+SHA1: 528f62da62d82ed44d29547565fadc5632254c68
+SIZE: 209223680
+SLOT: 1.100.0
+USE: abi_x86_64 amd64 clippy cpu_flags_x86_sse2 elibc_glibc kernel_linux llvm_slot_23 rustfmt
+MTIME: 1795319233
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -11546,6 +11568,27 @@ MTIME: 1795146814
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795319398
+CPV: dev-python/platformdirs-4.14.8
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 6005bae52bedf483e41d17d7b29aa4e0
+PATH: pkgs-dev-python/platformdirs-4.14.8-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+RESTRICT: test
+SHA1: 369accb116e0bc3c88f4a92c3351a5d21bb98ae1
+SIZE: 163840
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795319399
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-python/setuptools-scm[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 3
 BUILD_TIME: 1791065119
@@ -13045,6 +13088,30 @@ SHA1: 3f7d110eb741acfac06103e39f6515092d024c40
 SIZE: 143360
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1791226147
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-python/cython[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795319458
+CPV: dev-python/pyyaml-6.0.4
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-libs/libyaml:0/0= dev-lang/python:3.14
+EAPI: 8
+IUSE: examples test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 66a175c087b282e9f109296f7330651f
+PATH: pkgs-dev-python/pyyaml-6.0.4-1.gpkg.tar
+PROVIDES: x86_64: _yaml.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-libs/libyaml:0/0= dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "fd1ee866d2b9e6a54305741dd1457c79ac3f2ebe"}
+REQUIRES: x86_64: libc.so.6 libyaml-0.so.2
+RESTRICT: test
+SHA1: e3f12088c308361aee0e06a0fe047d2cefb2b839
+SIZE: 286720
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795319459
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
