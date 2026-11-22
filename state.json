@@ -302,10 +302,6 @@
    "path": "pkgs-app-misc/francis-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794109054,
-   "path": "pkgs-app-misc/jq-1.8.2-1.gpkg.tar"
-  },
-  {
    "at": 1794116601,
    "path": "pkgs-app-misc/tmux-3.8-1.gpkg.tar"
   },
@@ -322,14 +318,6 @@
    "path": "pkgs-app-text/aspell-0.60.8.2-3.gpkg.tar"
   },
   {
-   "at": 1794112862,
-   "path": "pkgs-app-text/docbook2X-0.8.8-r5-3.gpkg.tar"
-  },
-  {
-   "at": 1794113176,
-   "path": "pkgs-app-text/doxygen-1.18.0-r1-3.gpkg.tar"
-  },
-  {
    "at": 1794376442,
    "path": "pkgs-app-text/doxygen-1.18.0-r1-4.gpkg.tar"
   },
@@ -338,16 +326,8 @@
    "path": "pkgs-app-text/gspell-1.14.5-1.gpkg.tar"
   },
   {
-   "at": 1794110948,
-   "path": "pkgs-app-text/hunspell-1.7.2-r1-11.gpkg.tar"
-  },
-  {
    "at": 1794115631,
    "path": "pkgs-app-text/teckit-2.5.12-2.gpkg.tar"
-  },
-  {
-   "at": 1794110013,
-   "path": "pkgs-app-text/tesseract-5.5.4-1.gpkg.tar"
   },
   {
    "at": 1794117575,
@@ -380,10 +360,6 @@
   {
    "at": 1794118204,
    "path": "pkgs-dev-build/kbuild-0.1.9998.3660-r1-2.gpkg.tar"
-  },
-  {
-   "at": 1794109695,
-   "path": "pkgs-dev-build/libtool-2.6.2-1.gpkg.tar"
   },
   {
    "at": 1794117906,
@@ -430,10 +406,6 @@
    "path": "pkgs-dev-lang/python-3.13.18_p1-5.gpkg.tar"
   },
   {
-   "at": 1794110634,
-   "path": "pkgs-dev-lang/python-3.14.10_p1-1.gpkg.tar"
-  },
-  {
    "at": 1794396593,
    "path": "pkgs-dev-lang/python-3.14.8-1.gpkg.tar"
   },
@@ -454,32 +426,12 @@
    "path": "pkgs-dev-lang/python-3.15.1-1.gpkg.tar"
   },
   {
-   "at": 1794111264,
-   "path": "pkgs-dev-lang/python-3.15.2_p1-1.gpkg.tar"
-  },
-  {
-   "at": 1794112546,
-   "path": "pkgs-dev-lang/ruby-3.3.13-2.gpkg.tar"
-  },
-  {
    "at": 1794196278,
    "path": "pkgs-dev-lang/rust-bin-1.99.0-1.gpkg.tar"
   },
   {
-   "at": 1794113176,
-   "path": "pkgs-dev-lang/tk-8.6.17-3.gpkg.tar"
-  },
-  {
    "at": 1794808402,
    "path": "pkgs-dev-libs/boost-1.91.0-r2-1.gpkg.tar"
-  },
-  {
-   "at": 1794111264,
-   "path": "pkgs-dev-libs/elfutils-0.197-1.gpkg.tar"
-  },
-  {
-   "at": 1794109695,
-   "path": "pkgs-dev-libs/expat-2.10.0-1.gpkg.tar"
   },
   {
    "at": 1794975808,
@@ -526,10 +478,6 @@
    "path": "pkgs-dev-libs/libevdev-1.14.0-1.gpkg.tar"
   },
   {
-   "at": 1794109695,
-   "path": "pkgs-dev-libs/libgcrypt-1.12.4-3.gpkg.tar"
-  },
-  {
    "at": 1794371765,
    "path": "pkgs-dev-libs/libinput-1.32.0-1.gpkg.tar"
   },
@@ -538,16 +486,8 @@
    "path": "pkgs-dev-libs/libsodium-1.0.22-3.gpkg.tar"
   },
   {
-   "at": 1794112226,
-   "path": "pkgs-dev-libs/libtommath-1.3.0-4.gpkg.tar"
-  },
-  {
    "at": 1794118204,
    "path": "pkgs-dev-libs/libtpms-0.10.2-5.gpkg.tar"
-  },
-  {
-   "at": 1794110013,
-   "path": "pkgs-dev-libs/libuv-1.53.0-1.gpkg.tar"
   },
   {
    "at": 1794371765,
@@ -560,10 +500,6 @@
   {
    "at": 1794387696,
    "path": "pkgs-dev-libs/libxmlb-0.3.29-1.gpkg.tar"
-  },
-  {
-   "at": 1794112226,
-   "path": "pkgs-dev-libs/nspr-4.40-1.gpkg.tar"
   },
   {
    "at": 1794574427,
@@ -706,16 +642,8 @@
    "path": "pkgs-dev-util/mesa_clc-26.2.4-1.gpkg.tar"
   },
   {
-   "at": 1794111264,
-   "path": "pkgs-dev-util/mesa_clc-26.2.6-2.gpkg.tar"
-  },
-  {
    "at": 1794370176,
    "path": "pkgs-dev-util/mesa_clc-26.2.6-3.gpkg.tar"
-  },
-  {
-   "at": 1794112546,
-   "path": "pkgs-dev-util/patchelf-0.19.3-1.gpkg.tar"
   },
   {
    "at": 1794117575,
@@ -1862,14 +1790,6 @@
    "path": "pkgs-media-libs/fontconfig-2.18.3-2.gpkg.tar"
   },
   {
-   "at": 1794110013,
-   "path": "pkgs-media-libs/freetype-2.15.0-1.gpkg.tar"
-  },
-  {
-   "at": 1794113491,
-   "path": "pkgs-media-libs/gd-2.3.3-r4-37.gpkg.tar"
-  },
-  {
    "at": 1794389246,
    "path": "pkgs-media-libs/gegl-0.4.72-1.gpkg.tar"
   },
@@ -1890,10 +1810,6 @@
    "path": "pkgs-media-libs/harfbuzz-12.3.2-5.gpkg.tar"
   },
   {
-   "at": 1794112226,
-   "path": "pkgs-media-libs/kvazaar-2.3.2-1.gpkg.tar"
-  },
-  {
    "at": 1794375473,
    "path": "pkgs-media-libs/libbluray-1.4.1-1.gpkg.tar"
   },
@@ -1904,10 +1820,6 @@
   {
    "at": 1794375473,
    "path": "pkgs-media-libs/libdvdread-7.1.1-1.gpkg.tar"
-  },
-  {
-   "at": 1794112226,
-   "path": "pkgs-media-libs/libexif-0.6.26-1.gpkg.tar"
   },
   {
    "at": 1794117906,
@@ -1958,10 +1870,6 @@
    "path": "pkgs-media-libs/libmediainfo-26.05-1.gpkg.tar"
   },
   {
-   "at": 1794112546,
-   "path": "pkgs-media-libs/libmng-2.0.3-r1-1.gpkg.tar"
-  },
-  {
    "at": 1794117906,
    "path": "pkgs-media-libs/liboggz-1.1.3-2.gpkg.tar"
   },
@@ -1986,10 +1894,6 @@
    "path": "pkgs-media-libs/libva-2.24.1-r1-1.gpkg.tar"
   },
   {
-   "at": 1794109695,
-   "path": "pkgs-media-libs/libvorbis-1.3.7-r2-10.gpkg.tar"
-  },
-  {
    "at": 1794118207,
    "path": "pkgs-media-libs/mesa-26.2.3-1.gpkg.tar"
   },
@@ -2000,10 +1904,6 @@
   {
    "at": 1794118207,
    "path": "pkgs-media-libs/mesa-26.2.5-1.gpkg.tar"
-  },
-  {
-   "at": 1794111583,
-   "path": "pkgs-media-libs/mesa-26.2.6-2.gpkg.tar"
   },
   {
    "at": 1794370489,
@@ -2110,10 +2010,6 @@
    "path": "pkgs-media-sound/krecorder-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794110948,
-   "path": "pkgs-media-sound/lame-3.100-r3-15.gpkg.tar"
-  },
-  {
    "at": 1794116910,
    "path": "pkgs-media-sound/lilypond-2.26.0-1.gpkg.tar"
   },
@@ -2190,10 +2086,6 @@
    "path": "pkgs-net-analyzer/nmap-7.991-2.gpkg.tar"
   },
   {
-   "at": 1794112862,
-   "path": "pkgs-net-dialup/ppp-2.5.5-2.gpkg.tar"
-  },
-  {
    "at": 1794116287,
    "path": "pkgs-net-dns/avahi-0.9_rc5-2.gpkg.tar"
   },
@@ -2214,16 +2106,8 @@
    "path": "pkgs-net-irc/konversation-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794109695,
-   "path": "pkgs-net-libs/libasyncns-0.8-r5-2.gpkg.tar"
-  },
-  {
    "at": 1795262431,
    "path": "pkgs-net-libs/libktorrent-26.08.2-2.gpkg.tar"
-  },
-  {
-   "at": 1794113176,
-   "path": "pkgs-net-libs/libpcap-1.11.0-1.gpkg.tar"
   },
   {
    "at": 1794369844,
@@ -2254,20 +2138,12 @@
    "path": "pkgs-net-libs/webkit-gtk-2.54.2-r600-1.gpkg.tar"
   },
   {
-   "at": 1794110324,
-   "path": "pkgs-net-misc/curl-8.23.0-r1-2.gpkg.tar"
-  },
-  {
    "at": 1795262431,
    "path": "pkgs-net-misc/kio-zeroconf-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1794377096,
    "path": "pkgs-net-misc/networkmanager-1.58.1-r3-2.gpkg.tar"
-  },
-  {
-   "at": 1794110324,
-   "path": "pkgs-net-misc/openssh-10.6_p2-1.gpkg.tar"
   },
   {
    "at": 1794396593,
@@ -2290,16 +2166,8 @@
    "path": "pkgs-net-print/cups-pk-helper-0.2.7-r1-1.gpkg.tar"
   },
   {
-   "at": 1794113176,
-   "path": "pkgs-sci-electronics/ngspice-46-3.gpkg.tar"
-  },
-  {
    "at": 1794118204,
    "path": "pkgs-sci-electronics/nvc-1.23.1-1.gpkg.tar"
-  },
-  {
-   "at": 1794112862,
-   "path": "pkgs-sci-libs/libqalculate-5.12.0-1.gpkg.tar"
   },
   {
    "at": 1794116287,
@@ -2478,10 +2346,6 @@
    "path": "pkgs-sys-libs/pam-1.7.3-1.gpkg.tar"
   },
   {
-   "at": 1794109695,
-   "path": "pkgs-sys-libs/zlib-1.4-1.gpkg.tar"
-  },
-  {
    "at": 1794393247,
    "path": "pkgs-sys-power/power-profiles-daemon-0.30-r1-1.gpkg.tar"
   },
@@ -2524,10 +2388,6 @@
   {
    "at": 1794117906,
    "path": "pkgs-www-client/surfraw-2.3.0-r3-1.gpkg.tar"
-  },
-  {
-   "at": 1794111264,
-   "path": "pkgs-www-client/w3m-0.5.6-7.gpkg.tar"
   },
   {
    "at": 1794387024,
