@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795320235
-PACKAGES: 1867
+TIMESTAMP: 1795320541
+PACKAGES: 1868
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -3150,6 +3150,28 @@ SHA1: 5181e971a9d3b6eca273837ddfc81507be9554eb
 SIZE: 81920
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1795091842
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795320461
+CPV: app-misc/spacenavd-1.4-r2
+DEFINED_PHASES: compile configure install postinst postrm setup
+DEPEND: x11-apps/xdpyinfo x11-base/xorg-proto x11-libs/libX11 x11-libs/libXi x11-libs/libXtst
+EAPI: 8
+IUSE: X
+KEYWORDS: ~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86
+LICENSE: GPL-3
+MD5: ed7664e7623825df39cbd1d45c0cd2fb
+PATH: pkgs-app-misc/spacenavd-1.4-r2-1.gpkg.tar
+RDEPEND: x11-apps/xdpyinfo x11-base/xorg-proto x11-libs/libX11 x11-libs/libXi x11-libs/libXtst >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "fd1ee866d2b9e6a54305741dd1457c79ac3f2ebe"}
+REQUIRES: x86_64: libX11.so.6 libXext.so.6 libXi.so.6 libXtst.so.6 libc.so.6
+SHA1: c5980eb3e0009136b811842511ac8ff0ace76bad
+SIZE: 81920
+USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795320462
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
