@@ -14,7 +14,6 @@
   "dev-python/filelock-4.0.9": 1794396593,
   "dev-python/filelock-4.1.0": 1795152222,
   "dev-python/filelock-4.1.1": 1795152222,
-  "dev-python/platformdirs-4.12.2": 1794118207,
   "dev-python/platformdirs-4.12.3": 1795152222,
   "dev-python/platformdirs-4.12.4": 1795152222,
   "dev-python/platformdirs-4.13.0": 1795152222,
@@ -31,10 +30,15 @@
   "dev-python/soupsieve-2.10": 1794808402,
   "dev-python/soupsieve-3.0.1": 1794808402,
   "dev-python/tree-sitter-0.26.1": 1794975808,
+  "dev-python/virtualenv-21.14.10": 1795414038,
+  "dev-python/virtualenv-21.14.11": 1795414038,
+  "dev-python/virtualenv-21.14.12": 1795414038,
   "dev-python/virtualenv-21.14.5": 1795152222,
   "dev-python/virtualenv-21.14.6": 1795152222,
   "dev-python/virtualenv-21.14.7": 1795152222,
   "dev-python/virtualenv-21.14.8": 1795152222,
+  "dev-python/wcwidth-0.9.1": 1795414038,
+  "dev-python/wcwidth-0.9.2": 1795414038,
   "dev-qt/qtbase-6.11.3": 1794396593,
   "dev-qt/qtgraphs-6.11.2": 1794464824,
   "dev-qt/qthttpserver-6.11.2": 1794464824,
@@ -148,7 +152,6 @@
   "sys-kernel/gentoo-kernel-bin-7.3.3": 1794464824,
   "sys-kernel/gentoo-kernel-bin-7.3.4": 1795262431,
   "sys-kernel/gentoo-kernel-bin-7.3.5": 1795262431,
-  "sys-kernel/gentoo-sources-7.3.1": 1794118207,
   "sys-kernel/gentoo-sources-7.3.3": 1794396593,
   "virtual/dist-kernel-7.3.1": 1794204649,
   "virtual/dist-kernel-7.3.3": 1794464824,
@@ -560,6 +563,10 @@
   {
    "at": 1794387696,
    "path": "pkgs-dev-python/numpy-2.5.4-1.gpkg.tar"
+  },
+  {
+   "at": 1795414038,
+   "path": "pkgs-dev-python/platformdirs-4.12.2-1.gpkg.tar"
   },
   {
    "at": 1794371449,
@@ -2340,6 +2347,10 @@
   {
    "at": 1794975808,
    "path": "pkgs-sys-kernel/gentoo-sources-7.3.0-1.gpkg.tar"
+  },
+  {
+   "at": 1795414038,
+   "path": "pkgs-sys-kernel/gentoo-sources-7.3.1-1.gpkg.tar"
   },
   {
    "at": 1795101457,
