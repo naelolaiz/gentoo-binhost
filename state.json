@@ -1301,6 +1301,10 @@
    "path": "pkgs-kde-frameworks/kjobwidgets-6.32.0-1.gpkg.tar"
   },
   {
+   "at": 1795503094,
+   "path": "pkgs-kde-frameworks/kstatusnotifieritem-6.32.0-1.gpkg.tar"
+  },
+  {
    "at": 1794574427,
    "path": "pkgs-kde-frameworks/ktexteditor-6.31.0-1.gpkg.tar"
   },
@@ -1477,6 +1481,10 @@
    "path": "pkgs-kde-plasma/kwayland-6.8.1-2.gpkg.tar"
   },
   {
+   "at": 1795503094,
+   "path": "pkgs-kde-plasma/kwayland-6.8.3-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kwin-6.8.1-2.gpkg.tar"
   },
@@ -1511,6 +1519,10 @@
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/libkscreen-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795503094,
+   "path": "pkgs-kde-plasma/libkscreen-6.8.3-1.gpkg.tar"
   },
   {
    "at": 1794512167,
