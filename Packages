@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1795503094
+TIMESTAMP: 1795503400
 PACKAGES: 1900
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -25383,26 +25383,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
-BUILD_ID: 1
-BUILD_TIME: 1794631515
+BUILD_ID: 2
+BUILD_TIME: 1795503302
 CPV: kde-frameworks/qqc2-desktop-style-6.32.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.11.3= =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/sonnet-6.32*:6[qml] dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.12.1= =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/sonnet-6.32*:6[qml] dev-qt/qtbase:6
 EAPI: 8
 IUSE: debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: || ( GPL-2+ LGPL-3+ )
-MD5: b7fc17153f586d63009fa4f02741f0d9
-PATH: pkgs-kde-frameworks/qqc2-desktop-style-6.32.0-1.gpkg.tar
+MD5: 06199c4bd880f6498fc4bd379db3dd33
+PATH: pkgs-kde-frameworks/qqc2-desktop-style-6.32.0-2.gpkg.tar
 PROVIDES: x86_64: liborg_kde_desktop.so liborg_kde_desktop_private.so libqqc2desktopstyleplugin.so org.kde.desktop.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.11.3= =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/sonnet-6.32*:6[qml] >=dev-qt/qt5compat-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6/6.12.1= =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/kiconthemes-6.32*:6 =kde-frameworks/kirigami-6.32*:6 =kde-frameworks/sonnet-6.32*:6[qml] >=dev-qt/qt5compat-6.10.1:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
 REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6IconThemes.so.6 libKirigamiPlatform.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
 RESTRICT: test
-SHA1: b186bdc9a31e1ff5ceda9acd90a08843a40bf1f2
-SIZE: 798720
+SHA1: 1ae91a55a775887d1548e3ef18a414f43ac1b318
+SIZE: 1146880
 SLOT: 6/6.32
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1794631515
+MTIME: 1795503304
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
