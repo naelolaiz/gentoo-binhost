@@ -441,6 +441,10 @@
    "path": "pkgs-dev-libs/nss-3.131.1-1.gpkg.tar"
   },
   {
+   "at": 1795501869,
+   "path": "pkgs-dev-libs/qcoro-0.13.0-5.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-dev-libs/simdjson-4.6.11-1.gpkg.tar"
   },
@@ -1495,6 +1499,10 @@
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/layer-shell-qt-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795501869,
+   "path": "pkgs-kde-plasma/layer-shell-qt-6.8.3-1.gpkg.tar"
   },
   {
    "at": 1794512167,
