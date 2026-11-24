@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795501869
-PACKAGES: 1898
+TIMESTAMP: 1795502480
+PACKAGES: 1899
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16082,6 +16082,30 @@ MTIME: 1793080707
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: ~dev-qt/qtshadertools-6.12.1:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795502203
+CPV: dev-qt/qtquick3d-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[concurrent,gui,opengl,vulkan,widgets] ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtquicktimeline-6.12.1:6 ~dev-qt/qtshadertools-6.12.1:6 media-libs/assimp:0/6= virtual/zlib:0/1= dev-util/vulkan-headers
+EAPI: 8
+IUSE: opengl vulkan custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: fb47365edf13fe9a3fa38443b003c985
+PATH: pkgs-dev-qt/qtquick3d-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6Quick3D.so.6 libQt6Quick3DAssetImport.so.6 libQt6Quick3DAssetUtils.so.6 libQt6Quick3DEffects.so.6 libQt6Quick3DGlslParser.so.6 libQt6Quick3DHelpers.so.6 libQt6Quick3DHelpersImpl.so.6 libQt6Quick3DIblBaker.so.6 libQt6Quick3DParticleEffects.so.6 libQt6Quick3DParticles.so.6 libQt6Quick3DRuntimeRender.so.6 libQt6Quick3DUtils.so.6 libassimp.so libqmldbg_quick3dprofiler.so libqquick3dplugin.so libqtquick3dassetutilsplugin.so libqtquick3deffectplugin.so libqtquick3dhelpersimplplugin.so libqtquick3dhelpersplugin.so libqtquick3dparticleeffectsplugin.so libqtquick3dparticles3dplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[concurrent,gui,opengl,vulkan,widgets] ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtquicktimeline-6.12.1:6 ~dev-qt/qtshadertools-6.12.1:6 media-libs/assimp:0/6= virtual/zlib:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Concurrent.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6QmlModels.so.6 libQt6Quick.so.6 libQt6QuickTimeline.so.6 libQt6ShaderTools.so.6 libQt6Widgets.so.6 libassimp.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libz.so.1
+RESTRICT: test
+SHA1: 6de3e98372787188b92cd736dda2edd7e9302ae5
+SIZE: 9646080
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux opengl vulkan
+MTIME: 1795502207
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1793080408
@@ -26339,24 +26363,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1794377123
+BUILD_ID: 2
+BUILD_TIME: 1795502232
 CPV: kde-plasma/kdesu-gui-6.8.3
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] dev-qt/qtbase:6
 EAPI: 8
 IUSE: X debug
 KEYWORDS: ~amd64 ~arm64
 LICENSE: GPL-2
-MD5: bf1cfee551b97a34551d6ea348ace0e6
-PATH: pkgs-kde-plasma/kdesu-gui-6.8.3-1.gpkg.tar
-RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] !<kde-plasma/kde-cli-tools-6.1.4-r2:*[kdesu(+)] >=kde-plasma/kde-cli-tools-common-6.8.3 sys-apps/dbus[X] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kdesu-gui:5 >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "316b0e558b5a96842ab292d3b12d96797ebe70b8"}
+MD5: 6cc49f0af34eab77647a8941de275eb6
+PATH: pkgs-kde-plasma/kdesu-gui-6.8.3-2.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[gui,widgets] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kdesu-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] !<kde-plasma/kde-cli-tools-6.1.4-r2:*[kdesu(+)] >=kde-plasma/kde-cli-tools-common-6.8.3 sys-apps/dbus[X] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/kdesu-gui:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6Su.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
-SHA1: 3c043e34f7bfd9d7008537eb8c0dd6e9f6fbbe5f
+SHA1: 86dd1abb7522c6b51d90e28a84a9a53a80a249d2
 SIZE: 61440
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1794377124
+MTIME: 1795502233
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
