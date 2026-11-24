@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795495465
-PACKAGES: 1886
+TIMESTAMP: 1795497581
+PACKAGES: 1888
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15547,6 +15547,31 @@ MTIME: 1793077416
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795497361
+CPV: dev-qt/qt5compat-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[gui,icu,network,xml] dev-libs/icu:0/78= ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtshadertools-6.12.1:6
+EAPI: 8
+IUSE: +gui icu qml custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 5657fdc77b566ff5c101d33253386514
+PATH: pkgs-dev-qt/qt5compat-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6Core5Compat.so.6 libqtgraphicaleffectsplugin.so libqtgraphicaleffectsprivateplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[gui,icu,network,xml] dev-libs/icu:0/78= ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtshadertools-6.12.1:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6ShaderTools.so.6 libc.so.6 libgcc_s.so.1 libicuuc.so.78 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 9e27546e30ca233a6ba8dc2ab5acb78974d8aead
+SIZE: 716800
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc gui icu kernel_linux qml
+MTIME: 1795497362
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-arch/libarchive[zstd] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 2
 BUILD_TIME: 1793684752
@@ -15693,6 +15718,30 @@ SIZE: 22681600
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc jit kernel_linux network opengl sql ssl svg vulkan wayland widgets
 MTIME: 1793685172
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) ~dev-qt/qtshadertools-6.12.1:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795497286
+CPV: dev-qt/qtdeclarative-6.12.1
+DEFINED_PHASES: compile configure install prepare setup test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[-accessibility,gui,network,opengl,sql,ssl,vulkan,wayland,widgets] ~dev-qt/qtsvg-6.12.1:6 dev-util/vulkan-headers
+EAPI: 8
+IUSE: accessibility +jit +network opengl qmlls +sql +ssl svg vulkan wayland +widgets custom-cflags
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: ce375a05ac853eababd3a1ef94f2c98b
+PATH: pkgs-dev-qt/qtdeclarative-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6LabsAnimation.so.6 libQt6LabsFolderListModel.so.6 libQt6LabsPlatform.so.6 libQt6LabsQmlModels.so.6 libQt6LabsSettings.so.6 libQt6LabsSharedImage.so.6 libQt6LabsStyleKit.so.6 libQt6LabsStyleKitImpl.so.6 libQt6LabsSynchronizer.so.6 libQt6LabsWavefrontMesh.so.6 libQt6Qml.so.6 libQt6QmlCompiler.so.6 libQt6QmlCore.so.6 libQt6QmlDesignSupport.so.6 libQt6QmlLocalStorage.so.6 libQt6QmlMeta.so.6 libQt6QmlModels.so.6 libQt6QmlNetwork.so.6 libQt6QmlWorkerScript.so.6 libQt6QmlXmlListModel.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6QuickControls2Basic.so.6 libQt6QuickControls2BasicStyleImpl.so.6 libQt6QuickControls2FluentWinUI3.so.6 libQt6QuickControls2FluentWinUI3StyleImpl.so.6 libQt6QuickControls2Fusion.so.6 libQt6QuickControls2FusionStyleImpl.so.6 libQt6QuickControls2Imagine.so.6 libQt6QuickControls2ImagineStyleImpl.so.6 libQt6QuickControls2Impl.so.6 libQt6QuickControls2Material.so.6 libQt6QuickControls2MaterialStyleImpl.so.6 libQt6QuickControls2Native.so.6 libQt6QuickControls2Universal.so.6 libQt6QuickControls2UniversalStyleImpl.so.6 libQt6QuickDialogs2.so.6 libQt6QuickDialogs2QuickImpl.so.6 libQt6QuickDialogs2Utils.so.6 libQt6QuickEffects.so.6 libQt6QuickLayouts.so.6 libQt6QuickParticles.so.6 libQt6QuickShapes.so.6 libQt6QuickShapesDesignHelpers.so.6 libQt6QuickTemplates2.so.6 libQt6QuickTest.so.6 libQt6QuickVectorImage.so.6 libQt6QuickVectorImageGenerator.so.6 libQt6QuickVectorImageHelpers.so.6 libQt6QuickWidgets.so.6 libeffectsplugin.so liblabsanimationplugin.so liblabsmodelsplugin.so liblabsplatformplugin.so liblabsstylekitimplplugin.so liblabsstylekitplugin.so liblabssynchronizerplugin.so libmodelsplugin.so libparticlesplugin.so libqdslintplugin.so libqmldbg_debugger.so libqmldbg_inspector.so libqmldbg_local.so libqmldbg_messages.so libqmldbg_native.so libqmldbg_nativedebugger.so libqmldbg_preview.so libqmldbg_profiler.so libqmldbg_quickeventreplay.so libqmldbg_quickprofiler.so libqmldbg_server.so libqmldbg_tcp.so libqmldesignsupportplugin.so libqmlfolderlistmodelplugin.so libqmllocalstorageplugin.so libqmlnetworkplugin.so libqmlplugin.so libqmlsettingsplugin.so libqmlshapesplugin.so libqmlwavefrontmeshplugin.so libqmlxmllistmodelplugin.so libqquicklayoutsplugin.so libqquickvectorimagehelpersplugin.so libqquickvectorimageplugin.so libqtqmlcoreplugin.so libqtquick2plugin.so libqtquickcontrols2basicstyleimplplugin.so libqtquickcontrols2basicstyleplugin.so libqtquickcontrols2fluentwinui3styleimplplugin.so libqtquickcontrols2fluentwinui3styleplugin.so libqtquickcontrols2fusionstyleimplplugin.so libqtquickcontrols2fusionstyleplugin.so libqtquickcontrols2imaginestyleimplplugin.so libqtquickcontrols2imaginestyleplugin.so libqtquickcontrols2implplugin.so libqtquickcontrols2materialstyleimplplugin.so libqtquickcontrols2materialstyleplugin.so libqtquickcontrols2nativestyleplugin.so libqtquickcontrols2plugin.so libqtquickcontrols2universalstyleimplplugin.so libqtquickcontrols2universalstyleplugin.so libqtquickdialogs2quickimplplugin.so libqtquickdialogsplugin.so libqtquickshapesdesignhelpersplugin.so libqtquicktemplates2plugin.so libquickcontrolstestutilsprivateplugin.so libquicklintplugin.so libquicktestplugin.so libquicktoolingplugin.so libquickwindowplugin.so libsharedimageplugin.so libworkerscriptplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[-accessibility,gui,network,opengl,sql,ssl,vulkan,wayland,widgets] ~dev-qt/qtsvg-6.12.1:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6Test.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 848971239c18dceb4127985af0eb2d68d699c7b1
+SIZE: 26572800
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc jit kernel_linux network opengl sql ssl svg vulkan wayland widgets
+MTIME: 1795497304
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
