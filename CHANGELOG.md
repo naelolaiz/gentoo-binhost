@@ -8,6 +8,20 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Tree changes
+
+- `sci-libs/vtk` builds again.  libfmt 12.2 made `<fmt/core.h>` stop including
+  `<fmt/format.h>`, and vtk-9.6.2's bundled IOSS calls `fmt::format` after
+  including only core.h (Gentoo bug 985716).  The builder compiles vtk with
+  `-DFMT_DEPRECATED_HEAVY_CORE`, fmt's opt-in to the old header; machines
+  need no change.  The weekly workaround check reports when a newer vtk is
+  in the tree.
+- `x11-misc/sddm` moved to `gui-apps/sddm`; the tier follows.
+- `x11-themes/gentoo-artwork` is masked for removal on 2026-12-14 (Gentoo bug
+  986570) and is no longer built.  Its line in
+  `package.use/00-profile-defaults` is gone; machines can drop it and the
+  package.
+
 ### Stale binary packages
 
 - The builder rebuilds a package from source when one of its recorded

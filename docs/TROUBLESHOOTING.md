@@ -24,7 +24,10 @@ log under the package's name.  Other packages were still built and published.
   again), or add a workaround to the profile.  A workaround in
   `package.mask` or `package.use` needs the same change on the machines and
   an entry in `config/workarounds.json`, so the weekly check reports when it
-  is no longer needed.
+  is no longer needed.  A compiler setting that only changes how the builder
+  compiles one package goes into `write_build_workarounds` in
+  `scripts/container-build.sh` instead; machines need no change for it, but
+  it still gets an entry in `config/workarounds.json`.
 - Marked "out of memory or disk": the package is fine, the runner was not.
   If it happens for a package in a tier without `#@ jobs=1`, move the package
   to the heavy tier.

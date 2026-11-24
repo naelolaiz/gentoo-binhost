@@ -240,6 +240,22 @@ CCACHE_DIR="${CCACHE_DIR}"
 # config files would pile up as ._cfg* and silently stay unapplied.
 CONFIG_PROTECT="-*"
 EOF
+  write_build_workarounds
+}
+
+# Compiler settings for single packages that do not build as the tree has
+# them.  They change how a package is compiled, not what a machine needs to
+# accept its binary, so they stay out of the profile.  Each one has an entry
+# in config/workarounds.json that reports when it can go.
+write_build_workarounds() {
+  mkdir -p /etc/portage/env /etc/portage/package.env
+  # libfmt 12.2 made <fmt/core.h> stop including <fmt/format.h>; VTK's
+  # bundled IOSS includes only core.h and calls fmt::format (Gentoo bug
+  # 985716).  The define is fmt's own opt-in to the old header.
+  echo 'CXXFLAGS="${CXXFLAGS} -DFMT_DEPRECATED_HEAVY_CORE"' \
+    > /etc/portage/env/binhost-fmt-heavy-core.conf
+  echo 'sci-libs/vtk binhost-fmt-heavy-core.conf' \
+    > /etc/portage/package.env/zz-builder-workarounds
 }
 
 # The builder keeps the toolchain of its stage3 (stable keywords).  Machines
