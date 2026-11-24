@@ -1265,6 +1265,10 @@
    "path": "pkgs-kde-frameworks/kfilemetadata-6.32.0-5.gpkg.tar"
   },
   {
+   "at": 1795499421,
+   "path": "pkgs-kde-frameworks/kglobalaccel-6.32.0-1.gpkg.tar"
+  },
+  {
    "at": 1795499111,
    "path": "pkgs-kde-frameworks/kguiaddons-6.32.0-1.gpkg.tar"
   },
@@ -1281,12 +1285,20 @@
    "path": "pkgs-kde-frameworks/kirigami-6.32.0-1.gpkg.tar"
   },
   {
+   "at": 1795499421,
+   "path": "pkgs-kde-frameworks/kjobwidgets-6.32.0-1.gpkg.tar"
+  },
+  {
    "at": 1794574427,
    "path": "pkgs-kde-frameworks/ktexteditor-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1795499111,
    "path": "pkgs-kde-frameworks/kwindowsystem-6.32.0-1.gpkg.tar"
+  },
+  {
+   "at": 1795499421,
+   "path": "pkgs-kde-frameworks/kxmlgui-6.32.0-1.gpkg.tar"
   },
   {
    "at": 1795262431,
