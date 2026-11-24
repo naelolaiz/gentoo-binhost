@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1795498801
+TIMESTAMP: 1795499111
 PACKAGES: 1890
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -23264,27 +23264,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.10.1:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
-BUILD_ID: 1
-BUILD_TIME: 1794627979
+BUILD_ID: 2
+BUILD_TIME: 1795498819
 CPV: kde-frameworks/kguiaddons-6.32.0
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 >=dev-libs/plasma-wayland-protocols-1.15.0 >=dev-libs/wayland-protocols-1.39 x11-base/xorg-proto x11-libs/libxcb dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.12.1=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.12.1=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 >=dev-libs/plasma-wayland-protocols-1.15.0 >=dev-libs/wayland-protocols-1.39 x11-base/xorg-proto x11-libs/libxcb dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: dbus wayland X debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: fcbe4752d7f55e7ba9e170535486edfe
-PATH: pkgs-kde-frameworks/kguiaddons-6.32.0-1.gpkg.tar
+MD5: ee8ff4c53af23904d063b520d63a5ba4
+PATH: pkgs-kde-frameworks/kguiaddons-6.32.0-2.gpkg.tar
 PROVIDES: x86_64: libKF6GuiAddons.so.6 libkguiaddonsqml.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 !<kde-frameworks/kguiaddons-5.116.0-r2:5[-kf6compat(-)] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.12.1=[dbus] dev-libs/wayland >=dev-qt/qtbase-6.10.1:6/6.12.1=[wayland] >=dev-qt/qtbase-6.10.1:6[X] x11-libs/libX11 !<kde-frameworks/kguiaddons-5.116.0-r2:5[-kf6compat(-)] >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libX11.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
 RESTRICT: test
-SHA1: 0783df48e935d4850971577fc13fd3ff08ccae20
-SIZE: 245760
+SHA1: 6c35cfada6db255a2a4022371d37f98ce0f09319
+SIZE: 256000
 SLOT: 6/6.32
 USE: X abi_x86_64 amd64 dbus elibc_glibc kernel_linux wayland
-MTIME: 1794627979
+MTIME: 1795498820
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -23411,26 +23411,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
-BUILD_ID: 1
-BUILD_TIME: 1794628917
+BUILD_ID: 2
+BUILD_TIME: 1795499055
 CPV: kde-frameworks/kiconthemes-6.32.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.32*:6 =kde-frameworks/karchive-6.32*:6 =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6/6.12.1=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.32*:6 =kde-frameworks/karchive-6.32*:6 =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 dev-qt/qtbase:6
 EAPI: 8
 IUSE: debug designer test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 7b16106df771607f495345ae8d47afdd
-PATH: pkgs-kde-frameworks/kiconthemes-6.32.0-1.gpkg.tar
+MD5: f077394b28b2872bc2c9ec86595dd98e
+PATH: pkgs-kde-frameworks/kiconthemes-6.32.0-2.gpkg.tar
 PROVIDES: x86_64: KIconEnginePlugin.so libKF6IconThemes.so.6 libKF6IconWidgets.so.6 libiconthemesplugin.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.11.3=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.32*:6 =kde-frameworks/karchive-6.32*:6 =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-qt/qtbase-6.10.1:6/6.12.1=[dbus,gui,widgets] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtsvg-6.10.1:6 =kde-frameworks/breeze-icons-6.32*:6 =kde-frameworks/karchive-6.32*:6 =kde-frameworks/kcolorscheme-6.32*:6 =kde-frameworks/kconfig-6.32*:6 =kde-frameworks/ki18n-6.32*:6 =kde-frameworks/kwidgetsaddons-6.32*:6 >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6Archive.so.6 libKF6BreezeIcons.so.6 libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6I18n.so.6 libKF6WidgetsAddons.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
 RESTRICT: test test
-SHA1: 7fa6f5edc69c69f0b19ff7060af6a52fc26424d1
+SHA1: 795d3cc8c574c7026c2dbfe386a43c43652c5e58
 SIZE: 245760
 SLOT: 6/6.32
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1794628918
+MTIME: 1795499056
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -24810,26 +24810,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qttools-6.10.1:6[linguist] >=dev-qt/qtbase-6.10.1:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.32:*
-BUILD_ID: 1
-BUILD_TIME: 1794628763
+BUILD_ID: 2
+BUILD_TIME: 1795498988
 CPV: kde-frameworks/kwindowsystem-6.32.0
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.3=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms dev-libs/plasma-wayland-protocols >=dev-libs/wayland-protocols-1.46 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.12.1=[wayland] >=dev-qt/qtbase-6.10.1:6/6.12.1=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms dev-libs/plasma-wayland-protocols >=dev-libs/wayland-protocols-1.46 dev-qt/qtbase:6
 EAPI: 8
 IUSE: wayland X debug test
 KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: || ( LGPL-2.1 LGPL-3 ) MIT
-MD5: c8c0e26e3e5198cffb34cf374fdd8715
-PATH: pkgs-kde-frameworks/kwindowsystem-6.32.0-1.gpkg.tar
+MD5: dede2e9cc3a510edb7826ee2018fb9bd
+PATH: pkgs-kde-frameworks/kwindowsystem-6.32.0-2.gpkg.tar
 PROVIDES: x86_64: KF6WindowSystemKWaylandPlugin.so KF6WindowSystemX11Plugin.so libKF6WindowSystem.so.6 libKWindowSystem.so
-RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.11.3=[wayland] >=dev-qt/qtbase-6.10.1:6/6.11.3=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-qt/qtbase-6.10.1:6[gui] >=dev-qt/qtdeclarative-6.10.1:6 >=dev-qt/qtbase-6.10.1:6/6.12.1=[wayland] >=dev-qt/qtbase-6.10.1:6/6.12.1=[gui,X] x11-base/xorg-proto x11-libs/libX11 x11-libs/libXfixes x11-libs/libxcb x11-libs/xcb-util-keysyms >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6WaylandClient.so.6 libX11.so.6 libXfixes.so.3 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0 libxcb-keysyms.so.1 libxcb-res.so.0 libxcb.so.1
 RESTRICT: test test
-SHA1: aca5a32a16f1c7096bf73b43e921dd5c63a2866c
+SHA1: 8a4e70b0e8ce0d51c713535f59ad3eb0c6737be0
 SIZE: 358400
 SLOT: 6/6.32
 USE: X abi_x86_64 amd64 elibc_glibc kernel_linux wayland
-MTIME: 1794628764
+MTIME: 1795498989
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
