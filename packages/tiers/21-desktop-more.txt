@@ -104,8 +104,7 @@ dev-texlive/texlive-xetex
 kde-apps/kde-apps-meta
 kde-apps/konqueror
 kde-plasma/bluedevil
-x11-misc/sddm
-x11-themes/gentoo-artwork
+gui-apps/sddm
 
 # Audio
 media-libs/fluidsynth-dssi

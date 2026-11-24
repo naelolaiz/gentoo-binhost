@@ -74,5 +74,25 @@
       "pattern": "faac|media-libs/faac",
       "present_means_needed": true
     }
+  },
+  {
+    "key": "vtk-fmt-heavy-core",
+    "title": "Remove the vtk libfmt-12.2 build flag — a newer vtk may build without it",
+    "body_lines": [
+      "`scripts/container-build.sh` (`write_build_workarounds`) builds `sci-libs/vtk` with",
+      "`-DFMT_DEPRECATED_HEAVY_CORE`, because libfmt 12.2 made `<fmt/core.h>` stop including",
+      "`<fmt/format.h>` and vtk-9.6.2's bundled IOSS calls `fmt::format` after including only",
+      "core.h (Gentoo bug 985716).",
+      "",
+      "A vtk **newer than 9.6.2 is now in the tree**; the bug reports 9.7.1 builds.",
+      "",
+      "Please verify that the new version builds without the flag, then remove the flag and",
+      "this entry.  Machines need no change: the flag only affects how the builder compiles."
+    ],
+    "check": {
+      "type": "version-gt",
+      "package": "sci-libs/vtk",
+      "pinned": "9.6.2"
+    }
   }
 ]

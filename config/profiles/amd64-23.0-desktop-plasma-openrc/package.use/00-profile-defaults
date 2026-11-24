@@ -97,7 +97,6 @@ net-libs/webkit-gtk keyring
 x11-libs/libdrm video_cards_radeon video_cards_intel video_cards_nouveau
 x11-libs/wxGTK gstreamer keyring webkit
 x11-base/xorg-drivers input_device_wacom input_device_evdev input_device_joystick
-x11-themes/gentoo-artwork grub offensive kde
 
 # ── Applications ────────────────────────────────────────────────────────
 app-text/calibre unrar
