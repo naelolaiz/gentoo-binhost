@@ -179,7 +179,18 @@ log "Image: ${IMAGE_REF}"
 
 # The builder reads the index at the exact commit it starts from, so it
 # never sees a half-propagated copy.
-head_sha="$(git ls-remote "https://github.com/${REPO}.git" "refs/heads/${INDEX_BRANCH}" | cut -f1)"
+# A runner's network can drop out for a few minutes; one failed lookup must
+# not end the run.
+head_sha=""
+for attempt in 1 2 3 4; do
+  if refs="$(git ls-remote "https://github.com/${REPO}.git" "refs/heads/${INDEX_BRANCH}" 2>"${WORK}/ls-remote.err")"; then
+    head_sha="$(cut -f1 <<< "$refs")"
+    break
+  fi
+  (( attempt < 4 )) || die "git ls-remote failed 4 times: $(tail -n 1 "${WORK}/ls-remote.err")"
+  echo "::warning::git ls-remote failed ($(tail -n 1 "${WORK}/ls-remote.err")); trying again in $(( attempt * 20 ))s"
+  sleep $(( attempt * 20 ))
+done
 [[ -n "$head_sha" ]] || die "Branch ${INDEX_BRANCH} does not exist after init"
 echo "$head_sha" > "${OUT}/head"
 binhost_uri="https://raw.githubusercontent.com/${REPO}/${head_sha}"

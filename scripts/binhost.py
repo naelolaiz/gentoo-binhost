@@ -29,6 +29,7 @@ import hashlib
 import http.client
 import json
 import os
+import re
 import shlex
 import shutil
 import subprocess
@@ -72,6 +73,18 @@ The package files themselves are assets of this repository's releases.
 def log(message):
     # stderr: stdout is reserved for the JSON that state-get/status print.
     print(f"[binhost] {message}", file=sys.stderr, flush=True)
+
+
+# How git reports a network that failed on the way, as opposed to an answer
+# from the server (a bad token, a missing repository), which a second try
+# would not change.
+TRANSIENT_GIT = re.compile(
+    r"could not resolve host|failed to connect|couldn't connect|connection timed out"
+    r"|connection reset|connection refused|operation timed out|early eof|rpc failed"
+    r"|remote end hung up|returned error: (?:5\d\d|429)|empty reply from server"
+    r"|gnutls_handshake|ssl_connect|ssl_read|http/2 stream",
+    re.IGNORECASE)
+GIT_ATTEMPTS = 4
 
 
 class PublishError(Exception):
@@ -205,7 +218,10 @@ class GitHubStore:
         self.requests = 0
 
     # ---- git -------------------------------------------------------------
-    def _git(self, args, cwd=None, check=True):
+    def _git(self, args, cwd=None, check=True, network=False, before_retry=None):
+        """Run git.  A command that talks to the remote (network=True) is
+        tried again when git says the network failed on the way; the REST
+        calls do the same in _request."""
         cmd = ["git"]
         if self.token and self.git_url.startswith("https://"):
             basic = base64.b64encode(f"x-access-token:{self.token}".encode()).decode()
@@ -213,18 +229,35 @@ class GitHubStore:
         cmd += ["-c", f"user.name={BOT_NAME}", "-c", f"user.email={BOT_EMAIL}"]
         cmd += args
         env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
-        result = subprocess.run(cmd, cwd=cwd, env=env, text=True, capture_output=True)
+        attempts = GIT_ATTEMPTS if network else 1
+        for attempt in range(1, attempts + 1):
+            result = subprocess.run(cmd, cwd=cwd, env=env, text=True, capture_output=True)
+            if (result.returncode == 0 or attempt == attempts
+                    or not TRANSIENT_GIT.search(result.stderr)
+                    or (self.deadline is not None and time.time() >= self.deadline)):
+                break
+            wait = min(15 * 2 ** (attempt - 1), 60) if self.pause else 0
+            reason = (result.stderr.strip().splitlines() or ["no message"])[-1]
+            log(f"git {args[0]} failed ({reason}); "
+                f"trying again in {wait}s ({attempt}/{attempts - 1})")
+            if before_retry is not None:
+                before_retry()
+            time.sleep(wait)
         if check and result.returncode != 0:
-            raise PublishError(f"git {args[0]} failed: {result.stderr.strip()}")
+            tries = f" after {attempt} attempts" if attempt > 1 else ""
+            raise PublishError(f"git {args[0]} failed{tries}: {result.stderr.strip()}")
         return result
 
     def load(self):
-        heads = self._git(["ls-remote", "--heads", self.git_url, self.branch]).stdout
+        heads = self._git(["ls-remote", "--heads", self.git_url, self.branch],
+                          network=True).stdout
         if not heads.strip():
             return Snapshot(None, new_state(), None)
         clone = tempfile.mkdtemp(prefix="index-", dir=self.workdir)
+        # git clone refuses a directory a failed attempt left files in.
         self._git(["clone", "--quiet", "--depth", "1", "--single-branch",
-                   "--branch", self.branch, self.git_url, clone])
+                   "--branch", self.branch, self.git_url, clone], network=True,
+                  before_retry=lambda: shutil.rmtree(clone, ignore_errors=True))
         head = self._git(["rev-parse", "HEAD"], cwd=clone).stdout.strip()
 
         def read(name):
@@ -256,8 +289,10 @@ class GitHubStore:
         if self._git(["diff", "--cached", "--quiet"], cwd=clone, check=False).returncode == 0:
             return token["head"] if token else None
         self._git(["commit", "--quiet", "-m", message], cwd=clone)
+        # A retried push whose first attempt did get through finds the
+        # branch already at this commit and succeeds.
         push = self._git(["push", "--quiet", "origin", f"HEAD:refs/heads/{self.branch}"],
-                         cwd=clone, check=False)
+                         cwd=clone, check=False, network=True)
         if push.returncode != 0:
             stderr = push.stderr.lower()
             # Someone else pushed first.  "[remote rejected]" (a protected
