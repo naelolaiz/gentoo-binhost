@@ -8,6 +8,15 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## Unreleased
 
+### Network outages
+
+- The publisher tries `git ls-remote`, `git clone` and `git push` up to four
+  times, 15 to 60 seconds apart, when git reports that the network failed;
+  `host-build.sh` does the same for its own `ls-remote`.  One failed
+  connection to github.com used to end the run before anything was built
+  (run 45355158666).  A refusal from the server, such as a missing
+  repository or a bad token, still fails at once.
+
 ### Stale binary packages
 
 - The builder rebuilds a package from source when one of its recorded

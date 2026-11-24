@@ -1,4 +1,6 @@
+import contextlib
 import http.server
+import io
 import json
 import os
 import shutil
@@ -482,7 +484,7 @@ class FakeGitHub(http.server.BaseHTTPRequestHandler):
 
 
 @unittest.skipUnless(shutil.which("git"), "git is required for the GitHub backend tests")
-class GitHubBackend(Base):
+class GitHubBase(Base):
     def setUp(self):
         super().setUp()
         self.hub = {"releases": {}, "next": 100, "calls": [], "uploads": 0,
@@ -521,6 +523,8 @@ class GitHubBackend(Base):
                               "binhost"], check=True, capture_output=True, text=True).stdout
         return out.strip().splitlines()
 
+
+class GitHubBackend(GitHubBase):
     def test_publish_creates_releases_assets_and_branch(self):
         make_pkgdir(self.pkgdir)
         self.assertEqual(self.publish("--final"), 0)
@@ -643,6 +647,129 @@ class GitHubBackend(Base):
         self.assertEqual(json.loads(self.branch_file("state.json"))["note"],
                          "written by someone else")
         self.assertEqual(len(self.index().packages), 2)
+
+
+# What git printed when a runner lost its network (run 45355158666).
+NETWORK_DOWN = ("fatal: unable to access 'https://github.com/naelolaiz/gentoo-binhost.git/': "
+                "Failed to connect to github.com port 443 after 134400 ms: "
+                "Couldn't connect to server")
+NOT_FOUND = "fatal: repository 'https://github.com/o/r.git/' not found"
+
+# Stands in for git on PATH: the first FLAKY_TIMES calls of the subcommand
+# FLAKY_CMD fail with FLAKY_MSG, then the real git takes over.  FLAKY_MODE
+# "before" fails without doing anything, "after" lets the real git do the
+# work and still reports a failure (a push whose answer was lost), and
+# "litter" leaves a file in the clone target first.
+FLAKY_GIT = """#!/bin/bash
+for arg in "$@"; do
+  if [[ "$arg" == "$FLAKY_CMD" ]]; then
+    n=$(( $(cat "$FLAKY_COUNT" 2>/dev/null || echo 0) + 1 ))
+    echo "$n" > "$FLAKY_COUNT"
+    if (( n <= FLAKY_TIMES )); then
+      case "$FLAKY_MODE" in
+        after) "$REAL_GIT" "$@" >/dev/null 2>&1 ;;
+        litter) mkdir -p "${@: -1}" && touch "${@: -1}/partial" ;;
+      esac
+      echo "$FLAKY_MSG" >&2
+      exit 128
+    fi
+    break
+  fi
+done
+exec "$REAL_GIT" "$@"
+"""
+
+
+class FlakyNetwork(GitHubBase):
+    def setUp(self):
+        super().setUp()
+        bindir = os.path.join(self.tmp, "bin")
+        os.makedirs(bindir)
+        with open(os.path.join(bindir, "git"), "w", encoding="utf-8") as handle:
+            handle.write(FLAKY_GIT)
+        os.chmod(os.path.join(bindir, "git"), 0o755)
+        self.count = os.path.join(self.tmp, "flaky-count")
+        env = {"PATH": f"{bindir}{os.pathsep}{os.environ['PATH']}",
+               "REAL_GIT": shutil.which("git"), "FLAKY_COUNT": self.count,
+               "FLAKY_CMD": "", "FLAKY_TIMES": "0", "FLAKY_MODE": "before",
+               "FLAKY_MSG": NETWORK_DOWN}
+        patcher = unittest.mock.patch.dict(os.environ, env)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def flaky(self, cmd, times, msg=NETWORK_DOWN, mode="before"):
+        with contextlib.suppress(FileNotFoundError):
+            os.remove(self.count)
+        os.environ.update(FLAKY_CMD=cmd, FLAKY_TIMES=str(times), FLAKY_MSG=msg,
+                          FLAKY_MODE=mode)
+
+    def calls(self):
+        with open(self.count, encoding="utf-8") as handle:
+            return int(handle.read())
+
+    def store(self):
+        return binhost.GitHubStore("o/r", "binhost", None, self.tmp, git_url=self.remote,
+                                   api=f"http://127.0.0.1:{self.server.server_address[1]}",
+                                   pause=0)
+
+    def test_init_survives_a_network_outage(self):
+        # The failure of run 45355158666: the first ls-remote of init.
+        self.flaky("ls-remote", 2)
+        with self.capture_stderr() as err:
+            self.assertEqual(self.run_cli("init"), 0)
+        self.assertEqual(self.calls(), 3)
+        self.assertIn("git ls-remote failed (" + NETWORK_DOWN + "); trying again", err.text())
+        self.assertIn("(2/3)", err.text())
+        self.assertTrue(self.branch_file("state.json"))
+
+    def test_outage_longer_than_the_retries_is_reported(self):
+        self.flaky("ls-remote", 99)
+        with self.capture_stderr() as err:
+            self.assertNotEqual(self.run_cli("init"), 0)
+        self.assertEqual(self.calls(), binhost.GIT_ATTEMPTS)
+        self.assertIn(f"git ls-remote failed after {binhost.GIT_ATTEMPTS} attempts: "
+                      + NETWORK_DOWN, err.text())
+
+    def test_server_refusal_is_not_retried(self):
+        self.flaky("ls-remote", 99, msg=NOT_FOUND)
+        with self.capture_stderr() as err:
+            self.assertNotEqual(self.run_cli("init"), 0)
+        self.assertEqual(self.calls(), 1)
+        self.assertIn("git ls-remote failed: " + NOT_FOUND, err.text())
+
+    def test_clone_retries_after_a_failure_that_left_files(self):
+        make_pkgdir(self.pkgdir)
+        self.assertEqual(self.publish(), 0)
+        self.flaky("clone", 1, msg="error: RPC failed; curl 56 Recv failure: "
+                                   "Connection reset by peer", mode="litter")
+        snapshot = self.store().load()
+        self.assertEqual(self.calls(), 2)
+        self.assertEqual(len(pkgindex.parse(snapshot.text).packages), 3)
+        self.assertFalse(os.path.exists(os.path.join(snapshot.token["dir"], "partial")))
+
+    def test_push_whose_answer_was_lost_is_not_published_twice(self):
+        make_pkgdir(self.pkgdir)
+        self.assertEqual(self.publish(), 0)
+        before = len(self.commits())
+        self.flaky("push", 1, msg="fatal: the remote end hung up unexpectedly", mode="after")
+        self.assertEqual(self.run_cli("state-set", "note", '"after a lost answer"'), 0)
+        self.assertEqual(self.calls(), 2)
+        self.assertEqual(len(self.commits()), before + 1)
+        self.assertEqual(json.loads(self.branch_file("state.json"))["note"],
+                         "after a lost answer")
+
+    @contextlib.contextmanager
+    def capture_stderr(self):
+        class Captured:
+            def __init__(self):
+                self.buffer = io.StringIO()
+
+            def text(self):
+                return self.buffer.getvalue()
+
+        captured = Captured()
+        with contextlib.redirect_stderr(captured.buffer):
+            yield captured
 
 
 if __name__ == "__main__":
