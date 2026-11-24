@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795543592
-PACKAGES: 1900
+TIMESTAMP: 1795543905
+PACKAGES: 1902
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15986,6 +15986,30 @@ MTIME: 1793119735
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795543615
+CPV: dev-qt/qtlocation-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[network] ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtpositioning-6.12.1:6[qml]
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 89cdf73f43192179548bdf728410f7a4
+PATH: pkgs-dev-qt/qtlocation-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6Location.so.6 libdeclarative_locationplugin.so libqtgeoservices_itemsoverlay.so libqtgeoservices_osm.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[network] ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtpositioning-6.12.1:6[qml] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Positioning.so.6 libQt6PositioningQuick.so.6 libQt6Qml.so.6 libQt6QmlModels.so.6 libQt6Quick.so.6 libQt6QuickShapes.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 969c2c1dc056732117f840b1ac5b6a2b244b8467
+SIZE: 952320
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795543615
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: ~dev-qt/qtshadertools-6.11.3:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 6
 BUILD_TIME: 1794896112
@@ -16055,6 +16079,30 @@ SIZE: 532480
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc geoclue kernel_linux qml
 MTIME: 1793119652
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795543557
+CPV: dev-qt/qtpositioning-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6 ~dev-qt/qtbase-6.12.1:6[dbus] ~dev-qt/qtdeclarative-6.12.1:6
+EAPI: 8
+IUSE: geoclue nmea +qml custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: c530e14e1e1792f334b21773386e3f9b
+PATH: pkgs-dev-qt/qtpositioning-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6Positioning.so.6 libQt6PositioningQuick.so.6 libpositioningquickplugin.so libqtposition_geoclue2.so libqtposition_positionpoll.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6 ~dev-qt/qtbase-6.12.1:6[dbus] ~dev-qt/qtdeclarative-6.12.1:6 app-misc/geoclue:2.0 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6DBus.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 537b5d67ebf91e135d2efa8800c00eeaa2fe2fb6
+SIZE: 532480
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc geoclue kernel_linux qml
+MTIME: 1795543557
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -28856,26 +28904,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1794379294
+BUILD_ID: 2
+BUILD_TIME: 1795543817
 CPV: kde-plasma/xdg-desktop-portal-kde-6.8.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/kwayland-6.8.3:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon >=dev-libs/plasma-wayland-protocols-1.23.0 >=dev-libs/wayland-protocols-1.25 >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
+DEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.12.1=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/kwayland-6.8.3:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon >=dev-libs/plasma-wayland-protocols-1.23.0 >=dev-libs/wayland-protocols-1.25 >=dev-qt/qtbase-6.11.2:6[concurrent] dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: debug test
 KEYWORDS: ~amd64 ~arm64
 LICENSE: LGPL-2+
-MD5: 2b770ce27ed6780c38e15302e7589e62
-PATH: pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.3-1.gpkg.tar
-RDEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.11.3=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/kwayland-6.8.3:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon kde-misc/kio-fuse:6 sys-apps/xdg-desktop-portal || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/xdg-desktop-portal-kde:5 >=sys-libs/glibc-2.43-r4
+MD5: 51276c32d24a3435a4b895c30921898f
+PATH: pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.3-2.gpkg.tar
+RDEPEND: >=dev-libs/wayland-1.15 >=dev-qt/qtbase-6.11.2:6/6.12.1=[cups,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 || ( >=dev-qt/qtbase-6.11.2:6[libinput] >=dev-qt/qtbase-6.11.2:6[X] ) >=kde-frameworks/kcoreaddons-6.30.0:6[dbus] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/kwayland-6.8.3:6 media-video/pipewire:0/0.4= x11-libs/libxkbcommon kde-misc/kio-fuse:6 sys-apps/xdg-desktop-portal || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/xdg-desktop-portal-kde:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6GlobalAccel.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6IconThemes.so.6 libKF6ItemViews.so.6 libKF6KIOCore.so.6 libKF6KIOFileWidgets.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6WindowSystem.so.6 libKPipeWireMonitor.so.6 libKWaylandClient.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0 libxkbcommon.so.0
 RESTRICT: test
-SHA1: 53f6e1a08310d9d2bb366138a2e27c73f7adc180
-SIZE: 1003520
+SHA1: 5180753671491e5bdb1f278b6af979ac0b96f2f8
+SIZE: 1044480
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1794379295
+MTIME: 1795543818
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
