@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795543905
-PACKAGES: 1902
+TIMESTAMP: 1795544214
+PACKAGES: 1904
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -16034,6 +16034,30 @@ MTIME: 1794896114
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: ~dev-qt/qtshadertools-6.12.1:6 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795543933
+CPV: dev-qt/qtmultimedia-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.12.1:6[X,concurrent,-eglfs] media-video/ffmpeg:0/61.63.63= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.12.1:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtquick3d-6.12.1:6 x11-base/xorg-proto sys-kernel/linux-headers dev-util/vulkan-headers
+EAPI: 8
+IUSE: +X alsa +dbus eglfs +ffmpeg gstreamer opengl pipewire pulseaudio qml +v4l vaapi vulkan wayland custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: df8c66a8d30d9938b15e93bd6d0d0598
+PATH: pkgs-dev-qt/qtmultimedia-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6Multimedia.so.6 libQt6MultimediaQuick.so.6 libQt6MultimediaWidgets.so.6 libQt6Quick3DSpatialAudio.so.6 libQt6SpatialAudio.so.6 libffmpegmediaplugin.so libquick3dspatialaudioplugin.so libquickmultimediaplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[concurrent,gui,network,opengl,vulkan,widgets] ~dev-qt/qtbase-6.12.1:6[X,concurrent,-eglfs] media-video/ffmpeg:0/61.63.63= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr media-libs/libglvnd ~dev-qt/qtbase-6.12.1:6[dbus] media-video/pipewire:0/0.4= media-libs/libpulse ~dev-qt/qtdeclarative-6.12.1:6 ~dev-qt/qtquick3d-6.12.1:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libEGL.so.1 libOpenGL.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Quick3D.so.6 libQt6Widgets.so.6 libX11.so.6 libXext.so.6 libXrandr.so.2 libavcodec.so.63 libavformat.so.63 libavutil.so.61 libc.so.6 libm.so.6 libpipewire-0.3.so.0 libpulse.so.0 libstdc++.so.6 libswresample.so.7 libswscale.so.10
+RESTRICT: test
+SHA1: f0c5131d02c4992e60862f92432785d1a851bba7
+SIZE: 2897920
+SLOT: 6/6.12.1
+USE: X abi_x86_64 alsa amd64 dbus elibc_glibc ffmpeg kernel_linux opengl pipewire pulseaudio qml v4l vulkan wayland
+MTIME: 1795543934
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
 BUILD_ID: 1
 BUILD_TIME: 1793164968
@@ -16373,6 +16397,31 @@ SIZE: 163840
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml speechd
 MTIME: 1793120310
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795543960
+CPV: dev-qt/qtspeech-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6 ~dev-qt/qtmultimedia-6.12.1:6 ~dev-qt/qtdeclarative-6.12.1:6 app-accessibility/speech-dispatcher
+EAPI: 8
+IUSE: flite qml +speechd custom-cflags
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 9fdfd958518011f6da0707cae6f8c61c
+PATH: pkgs-dev-qt/qtspeech-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6TextToSpeech.so.6 libqtexttospeech_mock.so libqtexttospeech_speechd.so libtexttospeechqmlplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6 ~dev-qt/qtmultimedia-6.12.1:6 ~dev-qt/qtdeclarative-6.12.1:6 app-accessibility/speech-dispatcher >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libc.so.6 libspeechd.so.2 libstdc++.so.6
+RESTRICT: test
+SHA1: 30320a36bf69eec3a3d330141f2429198ab1ec94
+SIZE: 163840
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml speechd
+MTIME: 1795543961
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
