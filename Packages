@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1795500332
+TIMESTAMP: 1795500940
 PACKAGES: 1890
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -27120,26 +27120,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] >=dev-util/wayland-scanner-1.19.0 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1794374836
+BUILD_ID: 2
+BUILD_TIME: 1795500783
 CPV: kde-plasma/libplasma-6.8.3
 DEFINED_PHASES: compile configure info install nofetch prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,opengl,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=dev-libs/wayland-1.15.0 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 =kde-plasma/plasma-activities-6.8.3*:6/7= >=dev-libs/plasma-wayland-protocols-1.23.0 >=dev-libs/wayland-protocols-1.46 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[dbus,gui,opengl,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=dev-libs/wayland-1.15.0 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 =kde-plasma/plasma-activities-6.8.3*:6/7= >=dev-libs/plasma-wayland-protocols-1.23.0 >=dev-libs/wayland-protocols-1.46 dev-qt/qtbase:6
 EAPI: 8
 IUSE: activities debug test
 KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
 LICENSE: LGPL-2+
-MD5: 9528b0407e6205ef14cf2420c3f57951
-PATH: pkgs-kde-plasma/libplasma-6.8.3-1.gpkg.tar
+MD5: 1556c847564b5707cc6a027f0862032b
+PATH: pkgs-kde-plasma/libplasma-6.8.3-2.gpkg.tar
 PROVIDES: x86_64: KirigamiPlasmaStyle.so libPlasma.so.8 libPlasmaQuick.so.8 libcorebindingsplugin.so liborg_kde_plasmacomponents3.so libplasmaconfigplugin.so libplasmaextracomponentsplugin.so libplasmoidplugin.so plasma_applet.so plasma_containmentactions.so plasma_generic.so plasma_shell.so plasma_theme.so plasma_wallpaper.so
-RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,opengl,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=dev-libs/wayland-1.15.0 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 =kde-plasma/plasma-activities-6.8.3*:6/7= !kde-plasma/libplasma:5[-kf6compat(-)] >=dev-qt/qt5compat-6.11.2:6[qml] >=kde-frameworks/kconfig-6.30.0:6[qml] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[dbus,gui,opengl,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=dev-libs/wayland-1.15.0 >=kde-frameworks/kcolorscheme-6.30.0:6 >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kiconthemes-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kpackage-6.30.0:6 >=kde-frameworks/ksvg-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6 =kde-plasma/plasma-activities-6.8.3*:6/7= !kde-plasma/libplasma:5[-kf6compat(-)] >=dev-qt/qt5compat-6.11.2:6[qml] >=kde-frameworks/kconfig-6.30.0:6[qml] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
 REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigQml.so.6 libKF6CoreAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6IconThemes.so.6 libKF6KIOCore.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6Package.so.6 libKF6Svg.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKirigamiPlatform.so.6 libPlasmaActivities.so.7 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
 RESTRICT: test test
-SHA1: 9e6c1f46732932a696d10204fa5e9b35d23d154d
-SIZE: 3000320
+SHA1: a4cdd839bd6645302432acaa70aae7991ce352f1
+SIZE: 3358720
 SLOT: 6/8
 USE: abi_x86_64 activities amd64 elibc_glibc kernel_linux
-MTIME: 1794374837
+MTIME: 1795500785
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
