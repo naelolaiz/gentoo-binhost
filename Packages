@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795606856
-PACKAGES: 1898
+TIMESTAMP: 1795620176
+PACKAGES: 1899
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1269,6 +1269,25 @@ SHA1: 981cc756928067bcfd4eb238d64288e3da015efd
 SIZE: 256000
 USE: abi_x86_64 amd64 elibc_glibc gui kernel_linux
 MTIME: 1791286981
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BUILD_ID: 1
+BUILD_TIME: 1795620132
+CPV: app-containers/distrobox-1.8.2.6
+DEFINED_PHASES: install postinst postrm
+EAPI: 8
+IUSE: gui
+KEYWORDS: ~amd64 ~arm ~arm64 ~riscv ~x86
+LICENSE: GPL-3
+MD5: 398cae984fab14c69268054f1be36b1b
+PATH: pkgs-app-containers/distrobox-1.8.2.6-1.gpkg.tar
+RDEPEND: || ( app-containers/docker app-containers/podman )
+REPO_REVISIONS: {"gentoo": "48005c2480e15993b3e41c70ffe884a21c480a77"}
+SHA1: 3e8cad424450d0584261b85f29123b9f3a7ec89e
+SIZE: 256000
+USE: abi_x86_64 amd64 elibc_glibc gui kernel_linux
+MTIME: 1795620133
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
