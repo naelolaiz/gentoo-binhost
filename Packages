@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1795579214
+TIMESTAMP: 1795579526
 PACKAGES: 1910
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -19619,25 +19619,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1793946405
+BUILD_ID: 2
+BUILD_TIME: 1795579183
 CPV: kde-apps/kate-26.08.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: debug
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: GPL-2
-MD5: f11b0e6bd8901d9035f377daf429612f
-PATH: pkgs-kde-apps/kate-26.08.3-1.gpkg.tar
-RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl ~kde-apps/kate-addons-26.08.3:6 >=kde-apps/kate-common-26.08.3 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+MD5: 97593ef40ebad8cb05259a50320b8813
+PATH: pkgs-kde-apps/kate-26.08.3-2.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[dbus,gui,network,widgets,X] ~kde-apps/kate-lib-26.08.3:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] virtual/libintl ~kde-apps/kate-addons-26.08.3:6 >=kde-apps/kate-common-26.08.3 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6CoreAddons.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6WindowSystem.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libc.so.6 libkateprivate.so.26.08.3 libstdc++.so.6
-SHA1: 2d7d05fcd566aece3eff4876609146787fa60b07
+SHA1: c5808addea1b44c6d801004127c423b690f9c5ad
 SIZE: 256000
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793946406
+MTIME: 1795579184
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -28908,26 +28908,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.30.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.30.0:*
-BUILD_ID: 1
-BUILD_TIME: 1794391826
+BUILD_ID: 2
+BUILD_TIME: 1795579262
 CPV: kde-plasma/spectacle-6.8.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.3=[concurrent,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/prison-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/layer-shell-qt-6.8.3:6 >=media-libs/kquickimageeditor-0.7.0.1:6 >=dev-qt/qtbase-6.11.2:6[X] x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-libs/plasma-wayland-protocols-1.23.0 dev-qt/qtbase:6
+DEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.12.1=[concurrent,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/prison-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/layer-shell-qt-6.8.3:6 >=media-libs/kquickimageeditor-0.7.0.1:6 >=dev-qt/qtbase-6.11.2:6[X] x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-libs/plasma-wayland-protocols-1.23.0 dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: share X debug +handbook test
 KEYWORDS: ~amd64 ~arm64
 LICENSE: LGPL-2+ FDL-1.3
-MD5: 27442e8ed7a06e2408f93e501a35be22
-PATH: pkgs-kde-plasma/spectacle-6.8.3-1.gpkg.tar
-RDEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.3=[concurrent,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/prison-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/layer-shell-qt-6.8.3:6 >=media-libs/kquickimageeditor-0.7.0.1:6 >=dev-qt/qtbase-6.11.2:6[X] x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-qt/qtimageformats-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kimageformats-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/spectacle:5 >=sys-libs/glibc-2.43-r4
+MD5: 28056abe75f4495121f761cc968c74d7
+PATH: pkgs-kde-plasma/spectacle-6.8.3-2.gpkg.tar
+RDEPEND: app-text/tesseract:0/5= dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.12.1=[concurrent,dbus,gui,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.30.0:6 >=kde-frameworks/kconfigwidgets-6.30.0:6 >=kde-frameworks/kcoreaddons-6.30.0:6 >=kde-frameworks/kcrash-6.30.0:6 >=kde-frameworks/kdbusaddons-6.30.0:6 >=kde-frameworks/kglobalaccel-6.30.0:6 >=kde-frameworks/kguiaddons-6.30.0:6 >=kde-frameworks/ki18n-6.30.0:6 >=kde-frameworks/kio-6.30.0:6 >=kde-frameworks/kirigami-6.30.0:6 >=kde-frameworks/knotifications-6.30.0:6 >=kde-frameworks/kservice-6.30.0:6 >=kde-frameworks/kstatusnotifieritem-6.30.0:6 >=kde-frameworks/kwidgetsaddons-6.30.0:6 >=kde-frameworks/kwindowsystem-6.30.0:6[X] >=kde-frameworks/kxmlgui-6.30.0:6 >=kde-frameworks/prison-6.30.0:6 >=kde-plasma/kpipewire-6.8.3:6 >=kde-plasma/layer-shell-qt-6.8.3:6 >=media-libs/kquickimageeditor-0.7.0.1:6 >=dev-qt/qtbase-6.11.2:6[X] x11-libs/libxcb x11-libs/libXrandr x11-libs/xcb-util x11-libs/xcb-util-cursor x11-libs/xcb-util-image >=dev-qt/qtimageformats-6.11.2:6 >=dev-qt/qtsvg-6.11.2:6 >=kde-frameworks/kimageformats-6.30.0:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-plasma/spectacle:5 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6GlobalAccel.so.6 libKF6GuiAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6JobWidgets.so.6 libKF6KIOCore.so.6 libKF6KIOGui.so.6 libKF6KIOWidgets.so.6 libKF6Notifications.so.6 libKF6PrisonScanner.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libKPipeWireRecord.so.6 libKQuickImageEditor.so.1 libKirigamiPlatform.so.6 libLayerShellQtInterface.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libtesseract.so.5 libwayland-client.so.0 libxcb-cursor.so.0 libxcb-image.so.0 libxcb-randr.so.0 libxcb-util.so.1 libxcb-xfixes.so.0 libxcb.so.1
 RESTRICT: test
-SHA1: 82d9f20bbb9487a9e8732f7dab860cfedf1cc0d6
-SIZE: 2529280
+SHA1: 5b2408c0f39f8048219e9d9f3234a3e4319ab586
+SIZE: 2631680
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
-MTIME: 1794391827
+MTIME: 1795579263
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
