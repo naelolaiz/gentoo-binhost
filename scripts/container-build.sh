@@ -128,6 +128,7 @@ write_merged() {
   for file in /var/db/pkg/*/*/BUILD_TIME; do
     [[ -f "$file" ]] || continue
     dir="${file%/BUILD_TIME}"
+    [[ "$dir" != */-MERGING-* ]] || continue
     echo "${dir#/var/db/pkg/} $(tr -d '[:space:]' < "$file")" >> "$tmp"
   done
   mv "$tmp" "${OUT}/merged.txt"
@@ -240,13 +241,19 @@ CCACHE_DIR="${CCACHE_DIR}"
 # config files would pile up as ._cfg* and silently stay unapplied.
 CONFIG_PROTECT="-*"
 EOF
+  # Machines use podman rather than docker.  Masking app-containers/docker
+  # in the builder ensures || ( app-containers/docker app-containers/podman )
+  # dependencies (such as distrobox) always pick podman even if resolved on
+  # their own, without changing the published binary.
+  mkdir -p /etc/portage/package.mask
+  echo 'app-containers/docker' > /etc/portage/package.mask/zz-builder-preferences
   write_build_workarounds
 }
 
-# Compiler settings for single packages that do not build as the tree has
-# them.  They change how a package is compiled, not what a machine needs to
-# accept its binary, so they stay out of the profile.  Each one has an entry
-# in config/workarounds.json that reports when it can go.
+# Compiler settings and user patches for single packages that do not build as
+# the tree has them.  They change how a package is compiled, not what a
+# machine needs to accept its binary, so they stay out of the profile.  Each
+# one has an entry in config/workarounds.json that reports when it can go.
 write_build_workarounds() {
   mkdir -p /etc/portage/env /etc/portage/package.env
   # libfmt 12.2 made <fmt/core.h> stop including <fmt/format.h>; VTK's
@@ -256,6 +263,116 @@ write_build_workarounds() {
     > /etc/portage/env/binhost-fmt-heavy-core.conf
   echo 'sci-libs/vtk binhost-fmt-heavy-core.conf' \
     > /etc/portage/package.env/zz-builder-workarounds
+
+  # Qt 6.12's uic rejects empty <connection> blocks in .ui files (Gentoo bug
+  # 983380, upstream smplayer-dev/smplayer#1420, fixed in commit 9844cdde).
+  # Scoped to the exact ebuild revision so a fixed -r2 or newer snapshot is
+  # left untouched.
+  mkdir -p /etc/portage/patches/media-video/smplayer-25.6.0_p20250903-r1
+  cat > /etc/portage/patches/media-video/smplayer-25.6.0_p20250903-r1/qt612-empty-connections.patch <<'EOF'
+diff --git a/src/eqslider.ui b/src/eqslider.ui
+index a3bee67d4..bec0316c8 100644
+--- a/src/eqslider.ui
++++ b/src/eqslider.ui
+@@ -102,18 +102,4 @@
+   <include location="local" >verticaltext.h</include>
+  </includes>
+  <resources/>
+- <connections>
+-  <connection>
+-   <hints>
+-    <hint type="sourcelabel" >
+-     <x>64</x>
+-     <y>156</y>
+-    </hint>
+-    <hint type="destinationlabel" >
+-     <x>36</x>
+-     <y>305</y>
+-    </hint>
+-   </hints>
+-  </connection>
+- </connections>
+ </ui>
+diff --git a/src/prefadvanced.ui b/src/prefadvanced.ui
+index e303ff395..ee05361d1 100644
+--- a/src/prefadvanced.ui
++++ b/src/prefadvanced.ui
+@@ -875,17 +875,5 @@
+     </hint>
+    </hints>
+   </connection>
+-  <connection>
+-   <hints>
+-    <hint type="sourcelabel">
+-     <x>305</x>
+-     <y>372</y>
+-    </hint>
+-    <hint type="destinationlabel">
+-     <x>491</x>
+-     <y>372</y>
+-    </hint>
+-   </hints>
+-  </connection>
+  </connections>
+ </ui>
+diff --git a/src/prefinterface.ui b/src/prefinterface.ui
+index dae9be812..223ddf74c 100644
+--- a/src/prefinterface.ui
++++ b/src/prefinterface.ui
+@@ -1204,30 +1204,6 @@
+  </tabstops>
+  <resources/>
+  <connections>
+-  <connection>
+-   <hints>
+-    <hint type="sourcelabel">
+-     <x>282</x>
+-     <y>137</y>
+-    </hint>
+-    <hint type="destinationlabel">
+-     <x>484</x>
+-     <y>137</y>
+-    </hint>
+-   </hints>
+-  </connection>
+-  <connection>
+-   <hints>
+-    <hint type="sourcelabel">
+-     <x>332</x>
+-     <y>172</y>
+-    </hint>
+-    <hint type="destinationlabel">
+-     <x>480</x>
+-     <y>150</y>
+-    </hint>
+-   </hints>
+-  </connection>
+   <connection>
+    <sender>auto_scale_check</sender>
+    <signal>toggled(bool)</signal>
+diff --git a/src/prefsubtitles.ui b/src/prefsubtitles.ui
+index 986a5f457..0ba86d110 100644
+--- a/src/prefsubtitles.ui
++++ b/src/prefsubtitles.ui
+@@ -925,17 +925,5 @@
+     </hint>
+    </hints>
+   </connection>
+-  <connection>
+-   <hints>
+-    <hint type="sourcelabel">
+-     <x>275</x>
+-     <y>318</y>
+-    </hint>
+-    <hint type="destinationlabel">
+-     <x>299</x>
+-     <y>318</y>
+-    </hint>
+-   </hints>
+-  </connection>
+  </connections>
+ </ui>
+EOF
 }
 
 # The builder keeps the toolchain of its stage3 (stable keywords).  Machines
@@ -814,6 +931,70 @@ run_planned() {
     return 0
   fi
 
+  local -a extra_excludes=()
+  if [[ "$mode" == atoms ]]; then
+    # Dropping the tier's other roots from the command line can flip an
+    # || ( A B ) dependency: plan() satisfied it with a binary B pulled in by
+    # another root (e.g. distrobox's docker || podman next to podman-compose),
+    # while emerging PLAN_ATOMS alone falls back to compiling A.  Check what
+    # PLAN_ATOMS alone would compile; if anything unplanned appears, exclude it
+    # so Portage keeps the binary alternative, or fall back to the full roots.
+    local check_log="${OUT}/plans/${TIER}-${PLAN_SEQ}-atoms.log"
+    local -A planned_set=() seen_cp=()
+    local atom cp check_rc=0 still_unplanned=false
+    for atom in "${PLAN_ATOMS[@]}"; do
+      planned_set["$atom"]=1
+    done
+    local -a actual_atoms=() unplanned=()
+    timeout --signal=TERM --kill-after=30 "$PLAN_TIMEOUT" \
+      emerge --pretend "${RESOLVE_OPTS[@]}" "${EXCLUDE_OPTS[@]}" "${targets[@]}" \
+      > "$check_log" 2>&1 &
+    wait "$!" || check_rc=$?
+    if (( check_rc != 0 )) || grep -qE '^\[blocks B|changes are necessary to proceed' "$check_log"; then
+      log "${TIER}: planned atoms do not resolve on their own; building with the tier's roots"
+      targets=("$@")
+    else
+      mapfile -t actual_atoms < <(sed -nE 's/^\[ebuild[^]]*\] +([^ :]+).*/=\1/p' "$check_log")
+      for atom in "${actual_atoms[@]}"; do
+        [[ -n "${planned_set[$atom]:-}" ]] || unplanned+=("$atom")
+      done
+      if (( ${#unplanned[@]} == 0 )); then
+        rm -f "$check_log"
+      else
+        for atom in "${unplanned[@]}"; do
+          cp="$(qatom -F '%{CATEGORY}/%{PN}' "$atom")"
+          if [[ -z "${seen_cp[$cp]:-}" ]]; then
+            seen_cp["$cp"]=1
+            extra_excludes+=("--exclude=${cp}")
+          fi
+        done
+        check_rc=0
+        timeout --signal=TERM --kill-after=30 "$PLAN_TIMEOUT" \
+          emerge --pretend "${RESOLVE_OPTS[@]}" "${EXCLUDE_OPTS[@]}" "${extra_excludes[@]}" \
+          "${targets[@]}" > "$check_log" 2>&1 &
+        wait "$!" || check_rc=$?
+        actual_atoms=()
+        if (( check_rc == 0 )) && ! grep -qE '^\[blocks B|changes are necessary to proceed' "$check_log"; then
+          mapfile -t actual_atoms < <(sed -nE 's/^\[ebuild[^]]*\] +([^ :]+).*/=\1/p' "$check_log")
+        fi
+        for atom in "${actual_atoms[@]}"; do
+          if [[ -z "${planned_set[$atom]:-}" ]]; then
+            still_unplanned=true
+            break
+          fi
+        done
+        if (( check_rc != 0 )) || grep -qE '^\[blocks B|changes are necessary to proceed' "$check_log" \
+           || [[ "$still_unplanned" == true ]]; then
+          log "${TIER}: planned atoms pulled unplanned build(s) (${unplanned[*]}); building with the tier's roots"
+          extra_excludes=()
+          targets=("$@")
+        else
+          log "${TIER}: excluding unplanned build(s) (${unplanned[*]}) so Portage keeps the planned binary alternative"
+        fi
+      fi
+    fi
+  fi
+
   # A package that builds alone has the machine to itself.  The load limit
   # from make.conf then only keeps make from using every CPU: with it, a
   # four-CPU runner averaged a load under three through hours of compiling.
@@ -823,7 +1004,7 @@ run_planned() {
 
   local rc=0 seen_before=$FAILURES_SEEN
   run_emerge_with_deadline --keep-going --jobs="$TIER_JOBS" "${RESOLVE_OPTS[@]}" \
-    "${EXCLUDE_OPTS[@]}" "${targets[@]}" || rc=$?
+    "${EXCLUDE_OPTS[@]}" "${extra_excludes[@]}" "${targets[@]}" || rc=$?
   collect_failures
   write_merged
   (( rc == 42 )) && return 42

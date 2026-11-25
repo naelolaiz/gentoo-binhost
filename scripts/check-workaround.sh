@@ -6,6 +6,7 @@
 #   check-workaround.sh dep-grep          <category/package> <pattern> <present_means_needed>
 #   check-workaround.sh required-use-grep <category/package> <pattern>
 #   check-workaround.sh version-gt        <category/package> <pinned-version>
+#   check-workaround.sh ebuild-gt         <category/package> <pinned-version-with-rev>
 #
 # Writes one of  needed | removable | unknown  to stdout.
 # Diagnostic messages go to stderr so they appear in the workflow log
@@ -13,7 +14,7 @@
 
 set -euo pipefail
 
-PKG_TREE="/var/db/repos/gentoo"
+PKG_TREE="${PKG_TREE:-/var/db/repos/gentoo}"
 
 _ensure_pkg() {
   local pkg="$1" pkg_dir="${PKG_TREE}/$1"
@@ -107,6 +108,44 @@ check_version_gt() {
   fi
 }
 
+check_ebuild_gt() {
+  local pkg="$1" pinned="$2"
+  local pn="${pkg#*/}"
+  _ensure_pkg "$pkg" || return 0
+  local pkg_dir="${PKG_TREE}/${pkg}"
+  # Compare full Gentoo version+revision (including _pN and -rN) using
+  # Portage's own vercmp, ignoring live (9999) ebuilds.  Unlike version-gt,
+  # a revision bump (-r2) or newer snapshot (_p...) counts as newer.
+  python3 - "$pkg" "$pkg_dir" "$pn" "$pinned" <<'PY'
+import functools, glob, os, re, sys
+from portage.versions import vercmp
+
+pkg, pkg_dir, pn, pinned = sys.argv[1:5]
+prefix = pn + "-"
+versions = []
+for path in glob.glob(os.path.join(pkg_dir, f"{pn}-*.ebuild")):
+    ver = os.path.basename(path)[len(prefix):-len(".ebuild")]
+    if re.search(r"(?:^|\.)9999(?:\.|$|-)", ver):
+        continue
+    if vercmp(ver, pinned) is None:
+        continue
+    versions.append(ver)
+
+if not versions:
+    print(f"  {pkg}: no non-live ebuilds found", file=sys.stderr)
+    print("unknown")
+    sys.exit(0)
+
+best = max(versions, key=functools.cmp_to_key(lambda a, b: vercmp(a, b) or 0))
+if vercmp(best, pinned) > 0:
+    print(f"  {pkg}: best available {best} > pinned {pinned}", file=sys.stderr)
+    print("removable")
+else:
+    print(f"  {pkg}: best available {best} <= pinned {pinned}", file=sys.stderr)
+    print("needed")
+PY
+}
+
 TYPE="${1:-}"
 shift
 case "$TYPE" in
@@ -114,5 +153,6 @@ case "$TYPE" in
   dep-grep)           check_dep_grep "$@" ;;
   required-use-grep)  check_required_use_grep "$@" ;;
   version-gt)         check_version_gt "$@" ;;
+  ebuild-gt)          check_ebuild_gt "$@" ;;
   *) echo "Unknown check type: '${TYPE}'" >&2; exit 1 ;;
 esac

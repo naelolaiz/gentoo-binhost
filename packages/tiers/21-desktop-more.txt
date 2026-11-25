@@ -15,6 +15,7 @@ app-arch/7zip
 app-arch/unrar
 app-arch/zstd
 app-containers/distrobox
+app-containers/podman
 app-containers/podman-compose
 app-crypt/age
 app-eselect/eselect-repository

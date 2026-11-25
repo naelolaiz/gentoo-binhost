@@ -48,7 +48,7 @@ jobs:
                   args = [pkg, chk['pattern'], str(chk.get('present_means_needed', True)).lower()]
               elif kind == 'required-use-grep':
                   args = [pkg, chk['pattern']]
-              elif kind == 'version-gt':
+              elif kind in ('version-gt', 'ebuild-gt'):
                   args = [pkg, chk['pinned']]
               else:
                   print(f'::error::Unknown check type {kind!r} for {key}', flush=True)
