@@ -11,10 +11,10 @@
   "app-arch/7zip-26.03": 1795262431,
   "app-arch/7zip-26.04": 1795262431,
   "app-arch/7zip-26.05": 1795262431,
-  "app-emulation/virtualbox-7.2.18": 1794307357,
-  "app-emulation/virtualbox-7.2.22": 1794307357,
   "app-misc/spacenavd-1.4": 1795101457,
+  "app-text/aspell-0.60.8.2": 1795584430,
   "app-text/qpdf-12.4.2": 1795101457,
+  "dev-libs/expat-2.9.0": 1795584430,
   "dev-libs/kirigami-addons-1.15.0": 1794717560,
   "dev-libs/kirigami-addons-1.16.0": 1794717560,
   "dev-libs/libfmt-12.2.0": 1794396593,
@@ -57,12 +57,10 @@
   "dev-qt/qtwayland-6.11.2": 1794464824,
   "dev-util/perf-7.2": 1795101457,
   "dev-util/perf-7.3": 1795101457,
-  "kde-apps/kde-apps-meta-26.08.3": 1794307357,
   "kde-frameworks/oxygen-icons-6.32.0": 1795101457,
   "kde-plasma/aurorae-6.8.2": 1794464824,
   "kde-plasma/bluedevil-6.8.2": 1794464824,
   "kde-plasma/breeze-6.8.2": 1794464824,
-  "kde-plasma/breeze-grub-6.7.5": 1794204649,
   "kde-plasma/breeze-grub-6.8.2": 1794464824,
   "kde-plasma/breeze-gtk-6.8.2": 1794464824,
   "kde-plasma/kactivitymanagerd-6.8.2": 1794464824,
@@ -80,13 +78,11 @@
   "kde-plasma/kpipewire-6.8.2": 1794464824,
   "kde-plasma/kscreen-6.8.2": 1794464824,
   "kde-plasma/kscreenlocker-6.8.2": 1794464824,
-  "kde-plasma/ksshaskpass-6.7.5-r1": 1794204649,
   "kde-plasma/ksshaskpass-6.8.2": 1794464824,
   "kde-plasma/ksystemstats-6.8.2": 1794464824,
   "kde-plasma/kup-6.8.2": 1794464824,
   "kde-plasma/kwallet-pam-6.8.2": 1794464824,
   "kde-plasma/kwayland-6.8.2": 1794464824,
-  "kde-plasma/kwin-6.7.5-r1": 1794204649,
   "kde-plasma/kwin-6.8.2-r2": 1794464824,
   "kde-plasma/kwrited-6.8.2": 1794464824,
   "kde-plasma/layer-shell-qt-6.8.2": 1794464824,
@@ -95,18 +91,14 @@
   "kde-plasma/libplasma-6.8.2": 1794464824,
   "kde-plasma/milou-6.8.2": 1794464824,
   "kde-plasma/ocean-sound-theme-6.8.2": 1794464824,
-  "kde-plasma/oxygen-6.7.5": 1794204649,
   "kde-plasma/oxygen-6.8.2": 1794464824,
-  "kde-plasma/oxygen-sounds-6.7.5": 1794204649,
   "kde-plasma/oxygen-sounds-6.8.2": 1794464824,
   "kde-plasma/plasma-activities-6.8.2": 1794464824,
   "kde-plasma/plasma-activities-stats-6.8.2": 1794464824,
   "kde-plasma/plasma-browser-integration-6.8.2": 1794464824,
-  "kde-plasma/plasma-desktop-6.7.5": 1794204649,
   "kde-plasma/plasma-desktop-6.8.2": 1794464824,
   "kde-plasma/plasma-disks-6.8.2": 1794464824,
   "kde-plasma/plasma-integration-6.8.2": 1794464824,
-  "kde-plasma/plasma-meta-6.7.5": 1794204649,
   "kde-plasma/plasma-meta-6.8.2": 1794464824,
   "kde-plasma/plasma-nm-6.8.2": 1794464824,
   "kde-plasma/plasma-pa-6.8.2": 1794464824,
@@ -121,11 +113,10 @@
   "kde-plasma/print-manager-6.8.2": 1794464824,
   "kde-plasma/qqc2-breeze-style-6.8.2": 1794464824,
   "kde-plasma/sddm-kcm-6.8.2": 1794464824,
-  "kde-plasma/spectacle-6.7.5-r1": 1794204649,
   "kde-plasma/spectacle-6.8.2": 1794464824,
   "kde-plasma/systemsettings-6.8.2": 1794464824,
   "kde-plasma/union-6.8.2-r1": 1794464824,
-  "kde-plasma/wacomtablet-6.7.5": 1794204649,
+  "kde-plasma/union-6.8.3": 1795584430,
   "kde-plasma/xdg-desktop-portal-kde-6.8.2": 1794464824,
   "llvm-core/clang-23.1.4-r1": 1794396593,
   "llvm-core/clang-23.1.5-r1": 1795323481,
@@ -154,14 +145,11 @@
   "sci-ml/ggml-0.29.0-r1": 1794717560,
   "sci-ml/ollama-0.40.15": 1794396593,
   "sci-ml/ollama-0.40.16": 1795323481,
-  "sys-kernel/gentoo-kernel-7.3.1": 1794204649,
   "sys-kernel/gentoo-kernel-7.3.3": 1794464824,
-  "sys-kernel/gentoo-kernel-bin-7.3.1": 1794204649,
   "sys-kernel/gentoo-kernel-bin-7.3.3": 1794464824,
   "sys-kernel/gentoo-kernel-bin-7.3.4": 1795262431,
   "sys-kernel/gentoo-kernel-bin-7.3.5": 1795262431,
   "sys-kernel/gentoo-sources-7.3.3": 1794396593,
-  "virtual/dist-kernel-7.3.1": 1794204649,
   "virtual/dist-kernel-7.3.3": 1794464824,
   "virtual/dist-kernel-7.3.4": 1795262431,
   "virtual/dist-kernel-7.3.5": 1795262431,
@@ -267,6 +255,14 @@
   {
    "at": 1794975808,
    "path": "pkgs-app-emulation/qemu-11.1.2-r1-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-app-emulation/virtualbox-7.2.18-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-app-emulation/virtualbox-7.2.22-2.gpkg.tar"
   },
   {
    "at": 1794396590,
@@ -831,6 +827,10 @@
   {
    "at": 1795262431,
    "path": "pkgs-kde-apps/kde-apps-meta-26.08.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-kde-apps/kde-apps-meta-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -1425,6 +1425,10 @@
    "path": "pkgs-kde-plasma/breeze-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/breeze-grub-6.7.5-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/breeze-grub-6.8.1-1.gpkg.tar"
   },
@@ -1533,6 +1537,10 @@
    "path": "pkgs-kde-plasma/kscreenlocker-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/ksshaskpass-6.7.5-r1-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/ksshaskpass-6.8.1-1.gpkg.tar"
   },
@@ -1555,6 +1563,10 @@
   {
    "at": 1795503094,
    "path": "pkgs-kde-plasma/kwayland-6.8.3-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/kwin-6.7.5-r1-9.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1617,12 +1629,20 @@
    "path": "pkgs-kde-plasma/ocean-sound-theme-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/oxygen-6.7.5-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/oxygen-6.8.1-2.gpkg.tar"
   },
   {
    "at": 1795575019,
    "path": "pkgs-kde-plasma/oxygen-6.8.3-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/oxygen-sounds-6.7.5-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1639,6 +1659,10 @@
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-browser-integration-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/plasma-desktop-6.7.5-2.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1659,6 +1683,10 @@
   {
    "at": 1795543592,
    "path": "pkgs-kde-plasma/plasma-integration-6.8.3-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/plasma-meta-6.7.5-3.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1729,6 +1757,10 @@
    "path": "pkgs-kde-plasma/spectacle-6.7.5-2.gpkg.tar"
   },
   {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/spectacle-6.7.5-r1-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/spectacle-6.8.1-2.gpkg.tar"
   },
@@ -1747,6 +1779,10 @@
   {
    "at": 1795101457,
    "path": "pkgs-kde-plasma/union-6.8.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-kde-plasma/wacomtablet-6.7.5-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -2269,6 +2305,10 @@
    "path": "pkgs-sys-kernel/gentoo-kernel-7.2.11-1.gpkg.tar"
   },
   {
+   "at": 1795584430,
+   "path": "pkgs-sys-kernel/gentoo-kernel-7.3.1-1.gpkg.tar"
+  },
+  {
    "at": 1794975808,
    "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.11-1.gpkg.tar"
   },
@@ -2283,6 +2323,10 @@
   {
    "at": 1794975808,
    "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.14-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.3.1-1.gpkg.tar"
   },
   {
    "at": 1794975808,
@@ -2335,6 +2379,10 @@
   {
    "at": 1794975808,
    "path": "pkgs-virtual/dist-kernel-7.2.14-1.gpkg.tar"
+  },
+  {
+   "at": 1795584430,
+   "path": "pkgs-virtual/dist-kernel-7.3.1-1.gpkg.tar"
   },
   {
    "at": 1794717557,
