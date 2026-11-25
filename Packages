@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795606741
-PACKAGES: 1913
+TIMESTAMP: 1795606856
+PACKAGES: 1898
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -7176,29 +7176,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
-BUILD_TIME: 1793765396
-CPV: dev-libs/libfmt-12.2.0
-DEFINED_PHASES: compile configure install prepare test
-EAPI: 8
-IUSE: test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos
-LICENSE: MIT
-MD5: e59c315bb6969e44ee7c9efb23fdf3cb
-PATH: pkgs-dev-libs/libfmt-12.2.0-1.gpkg.tar
-PROVIDES: x86_64: libfmt.so.12
-RDEPEND: >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
-RESTRICT: test
-SHA1: 5a5ba0888de1531afc19ba97727967ce0c092e12
-SIZE: 276480
-SLOT: 0/12.2.0
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793765397
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
 BUILD_TIME: 1794375542
 CPV: dev-libs/libfmt-12.2.1
 DEFINED_PHASES: compile configure install prepare test
@@ -10230,49 +10207,6 @@ SHA1: 1684b230d0f641475f0d8d770aeb9cd78def5be2
 SIZE: 112640
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1793684072
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791431386
-CPV: dev-python/filelock-4.0.12
-DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
-LICENSE: MIT
-MD5: cd214c478667614ca58bd780488c0d55
-PATH: pkgs-dev-python/filelock-4.0.12-1.gpkg.tar
-RDEPEND: dev-lang/python:3.14
-REPO_REVISIONS: {"gentoo": "5f66f2b1330e479cf3ba09a7c3e8ec680f48b6dd"}
-RESTRICT: test
-SHA1: a764e1349215483f566633f7d6503189fa94af88
-SIZE: 337920
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791431387
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-python/hatch-vcs[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
-BUILD_ID: 1
-BUILD_TIME: 1791226367
-CPV: dev-python/filelock-4.0.9
-DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: dev-lang/python:3.14
-EAPI: 8
-IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 verify-provenance
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~x64-macos
-LICENSE: MIT
-MD5: ff6a85562293158f40a14df577435760
-PATH: pkgs-dev-python/filelock-4.0.9-1.gpkg.tar
-RDEPEND: dev-lang/python:3.14
-RESTRICT: test
-SHA1: ff8844caefc3fc67a530eacd1fcd18fcb449728f
-SIZE: 337920
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
-MTIME: 1791226369
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -15746,32 +15680,6 @@ SIZE: 716800
 SLOT: 6/6.12.1
 USE: abi_x86_64 amd64 elibc_glibc gui icu kernel_linux qml
 MTIME: 1795497362
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: app-arch/libarchive[zstd] app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
-BUILD_ID: 2
-BUILD_TIME: 1793684752
-CPV: dev-qt/qtbase-6.11.3
-DEFINED_PHASES: compile configure install prepare test unpack
-DEPEND: virtual/zlib:0/1= dev-libs/openssl:0/4= virtual/libudev:0/1= app-arch/zstd:0/1= app-crypt/libb2 dev-libs/double-conversion:0/3= dev-libs/glib:2 dev-libs/libpcre2:0/3=[pcre16,unicode(+)] dev-libs/icu:0/78= sys-apps/dbus dev-libs/md4c media-libs/fontconfig >=media-libs/freetype-2.13.1:2 media-libs/harfbuzz:0/6.0.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= x11-libs/libdrm x11-libs/libxkbcommon[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/xcb-util-cursor x11-libs/xcb-util-image x11-libs/xcb-util-keysyms x11-libs/xcb-util-renderutil x11-libs/xcb-util-wm dev-libs/libinput:0/10= media-libs/libglvnd[X] dev-libs/wayland net-print/cups x11-libs/gdk-pixbuf:2 >=x11-libs/gtk+-3.24.41-r1:3[X,wayland] x11-libs/pango net-libs/libproxy dev-db/sqlite:3 x11-base/xorg-proto dev-util/vulkan-headers dev-util/wayland-scanner
-EAPI: 8
-IUSE: +X accessibility eglfs evdev gles2-only +libinput opengl renderdoc tslib vulkan wayland +widgets +ssl +udev zstd brotli gssapi libproxy sctp +concurrent +dbus +gui +network +sql +xml icu io-uring journald syslog mysql oci8 odbc postgres +sqlite cups gtk nls custom-cflags test
-KEYWORDS: ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86
-LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
-MD5: 43221e38d854e1892ac4584f75904401
-PATH: pkgs-dev-qt/qtbase-6.11.3-2.gpkg.tar
-PDEPEND: ~dev-qt/qttranslations-6.11.3:6
-PROVIDES: x86_64: libQt6Concurrent.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Sql.so.6 libQt6Test.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libQt6WlShellIntegration.so.6 libQt6XcbQpa.so.6 libQt6Xml.so.6 libbradient.so libcomposeplatforminputcontextplugin.so libcupsprintersupport.so libdmabuf-server.so libdrm-egl-server.so libfullscreen-shell-v1.so libibusplatforminputcontextplugin.so libqcertonlybackend.so libqconnman.so libqgif.so libqglib.so libqgtk3.so libqico.so libqjpeg.so libqlibinputplugin.so libqlinuxfb.so libqminimal.so libqnetworkmanager.so libqoffscreen.so libqopensslbackend.so libqsqlite.so libqt-plugin-wayland-egl.so libqtuiotouchplugin.so libqvkkhrdisplay.so libqvnc.so libqwayland.so libqxcb-egl-integration.so libqxcb-glx-integration.so libqxcb.so libqxdgdesktopportal.so libshm-emulation-server.so libvulkan-server.so libwl-shell-plugin.so libxdg-shell.so
-RDEPEND: virtual/zlib:0/1= dev-libs/openssl:0/4= virtual/libudev:0/1= app-arch/zstd:0/1= app-crypt/libb2 dev-libs/double-conversion:0/3= dev-libs/glib:2 dev-libs/libpcre2:0/3=[pcre16,unicode(+)] dev-libs/icu:0/78= sys-apps/dbus dev-libs/md4c media-libs/fontconfig >=media-libs/freetype-2.13.1:2 media-libs/harfbuzz:0/6.0.0= media-libs/libjpeg-turbo:0/0.2= media-libs/libpng:0/16= x11-libs/libdrm x11-libs/libxkbcommon[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/xcb-util-cursor x11-libs/xcb-util-image x11-libs/xcb-util-keysyms x11-libs/xcb-util-renderutil x11-libs/xcb-util-wm dev-libs/libinput:0/10= media-libs/libglvnd[X] dev-libs/wayland net-print/cups x11-libs/gdk-pixbuf:2 >=x11-libs/gtk+-3.24.41-r1:3[X,wayland] x11-libs/pango net-libs/libproxy dev-db/sqlite:3 !<dev-qt/qt3d-6.11.3:6 !<dev-qt/qt5compat-6.11.3:6 !<dev-qt/qtcharts-6.11.3:6 !<dev-qt/qtconnectivity-6.11.3:6 !<dev-qt/qtdeclarative-6.11.3:6 !<dev-qt/qtgraphs-6.11.3:6 !<dev-qt/qthttpserver-6.11.3:6 !<dev-qt/qtimageformats-6.11.3:6 !<dev-qt/qtlanguageserver-6.11.3:6 !<dev-qt/qtlocation-6.11.3:6 !<dev-qt/qtmultimedia-6.11.3:6 !<dev-qt/qtnetworkauth-6.11.3:6 !<dev-qt/qtpositioning-6.11.3:6 !<dev-qt/qtquick3d-6.11.3:6 !<dev-qt/qtquicktimeline-6.11.3:6 !<dev-qt/qtremoteobjects-6.11.3:6 !<dev-qt/qtscxml-6.11.3:6 !<dev-qt/qtsensors-6.11.3:6 !<dev-qt/qtserialbus-6.11.3:6 !<dev-qt/qtserialport-6.11.3:6 !<dev-qt/qtshadertools-6.11.3:6 !<dev-qt/qtspeech-6.11.3:6 !<dev-qt/qtsvg-6.11.3:6 !<dev-qt/qttools-6.11.3:6 !<dev-qt/qtvirtualkeyboard-6.11.3:6 !<dev-qt/qtwayland-6.11.3:6 !<dev-qt/qtwebchannel-6.11.3:6 !<dev-qt/qtwebengine-6.11.3:6 !<dev-qt/qtwebsockets-6.11.3:6 !<dev-qt/qtwebview-6.11.3:6 >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "6fc72ef788a30ef96193629c2e94d2be552dad1e"}
-REQUIRES: x86_64: libEGL.so.1 libGLX.so.0 libICE.so.6 libOpenGL.so.0 libSM.so.6 libX11-xcb.so.1 libX11.so.6 libb2.so.1 libc.so.6 libcrypto.so.4 libcups.so.2 libdbus-1.so.3 libdouble-conversion.so.3 libdrm.so.2 libfontconfig.so.1 libfreetype.so.6 libgcc_s.so.1 libgdk-3.so.0 libgdk_pixbuf-2.0.so.0 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libgtk-3.so.0 libharfbuzz.so.0 libicui18n.so.78 libicuuc.so.78 libinput.so.10 libjpeg.so.62 libm.so.6 libmd4c.so.0 libpango-1.0.so.0 libpcre2-16.so.0 libpng16.so.16 libproxy.so.1 libsqlite3.so.0 libssl.so.4 libstdc++.so.6 libudev.so.1 libwayland-client.so.0 libwayland-cursor.so.0 libwayland-egl.so.1 libxcb-cursor.so.0 libxcb-glx.so.0 libxcb-icccm.so.4 libxcb-image.so.0 libxcb-keysyms.so.1 libxcb-randr.so.0 libxcb-render-util.so.0 libxcb-render.so.0 libxcb-shape.so.0 libxcb-shm.so.0 libxcb-sync.so.1 libxcb-xfixes.so.0 libxcb-xinput.so.0 libxcb-xkb.so.1 libxcb.so.1 libxkbcommon-x11.so.0 libxkbcommon.so.0 libz.so.1 libzstd.so.1
-RESTRICT: test
-SHA1: ac7809909e295170790b691aaef2e53be00346a1
-SIZE: 19558400
-SLOT: 6/6.11.3
-USE: X abi_x86_64 amd64 concurrent cups dbus elibc_glibc gtk gui icu kernel_linux libinput libproxy network nls opengl sql sqlite ssl udev vulkan wayland widgets xml zstd
-MTIME: 1793684763
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29177,32 +29085,6 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-lang/python:3.14 virtual/pkgconfig dev-python/myst-parser[python_targets_python3_14(-)] dev-python/sphinx[python_targets_python3_14(-)] app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 2
-BUILD_TIME: 1793512882
-CPV: llvm-core/clang-23.1.4-r1
-DEFINED_PHASES: compile configure install postinst postrm prepare setup test unpack
-DEPEND: ~llvm-core/llvm-23.1.4:23/23.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] ~llvm-core/llvm-23.1.4[llvm_targets_AArch64] ~llvm-core/llvm-23.1.4[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.4[llvm_targets_ARM] ~llvm-core/llvm-23.1.4[llvm_targets_AVR] ~llvm-core/llvm-23.1.4[llvm_targets_BPF] ~llvm-core/llvm-23.1.4[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.4[llvm_targets_Lanai] ~llvm-core/llvm-23.1.4[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.4[llvm_targets_Mips] ~llvm-core/llvm-23.1.4[llvm_targets_MSP430] ~llvm-core/llvm-23.1.4[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.4[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.4[llvm_targets_RISCV] ~llvm-core/llvm-23.1.4[llvm_targets_Sparc] ~llvm-core/llvm-23.1.4[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.4[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.4[llvm_targets_VE] ~llvm-core/llvm-23.1.4[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.4[llvm_targets_X86] ~llvm-core/llvm-23.1.4[llvm_targets_XCore]
-EAPI: 8
-IUSE: debug doc +extra ieee-long-double +pie +static-analyzer test xml test doc llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 python_single_target_python3_13 python_single_target_python3_14
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA MIT
-MD5: d37bf502f34cdbe8e8812118ffa58389
-PATH: pkgs-llvm-core/clang-23.1.4-r1-2.gpkg.tar
-PDEPEND: llvm-runtimes/clang-runtime:23 llvm-core/clang-toolchain-symlinks:23
-PROVIDES: x86_64: libclang-cpp.so.23.1 libclang.so.23.1
-RDEPEND: dev-lang/python:3.14 ~llvm-core/llvm-23.1.4:23/23.1=[-debug,abi_x86_64(-)] dev-lang/perl:* dev-libs/libxml2:2/16=[abi_x86_64(-)] >=llvm-core/clang-common-23.1.4 ~llvm-core/llvm-23.1.4[llvm_targets_AArch64] ~llvm-core/llvm-23.1.4[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.4[llvm_targets_ARM] ~llvm-core/llvm-23.1.4[llvm_targets_AVR] ~llvm-core/llvm-23.1.4[llvm_targets_BPF] ~llvm-core/llvm-23.1.4[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.4[llvm_targets_Lanai] ~llvm-core/llvm-23.1.4[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.4[llvm_targets_Mips] ~llvm-core/llvm-23.1.4[llvm_targets_MSP430] ~llvm-core/llvm-23.1.4[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.4[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.4[llvm_targets_RISCV] ~llvm-core/llvm-23.1.4[llvm_targets_Sparc] ~llvm-core/llvm-23.1.4[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.4[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.4[llvm_targets_VE] ~llvm-core/llvm-23.1.4[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.4[llvm_targets_X86] ~llvm-core/llvm-23.1.4[llvm_targets_XCore] >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "221fba0f7f864ac7f109089124565ea0d5b603d5"}
-REQUIRES: x86_64: libLLVM.so.23.1 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
-RESTRICT: test test
-SHA1: fcf9cd0538f1155190925541d42e59faca8e2122
-SIZE: 65720320
-SLOT: 23/23.1
-USE: abi_x86_64 amd64 elibc_glibc extra kernel_linux llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore pie python_single_target_python3_14 static-analyzer xml
-MTIME: 1793512894
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-lang/python:3.14 virtual/pkgconfig dev-python/myst-parser[python_targets_python3_14(-)] dev-python/sphinx[python_targets_python3_14(-)] app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1793861808
 CPV: llvm-core/clang-23.1.5-r1
@@ -29250,25 +29132,6 @@ SIZE: 65710080
 SLOT: 23/23.1
 USE: abi_x86_64 amd64 elibc_glibc extra kernel_linux llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore pie python_single_target_python3_14 static-analyzer xml
 MTIME: 1795319991
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BUILD_ID: 1
-BUILD_TIME: 1792554535
-CPV: llvm-core/clang-common-23.1.4
-DEFINED_PHASES: compile install postinst postrm preinst prepare pretend unpack
-EAPI: 8
-IDEPEND: sys-devel/gcc-config sys-devel/gcc-config
-IUSE: default-compiler-rt default-libcxx default-lld bootstrap-prefix cet emacs hardened llvm-libunwind verify-sig
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA
-MD5: 18f53c13641e67a4fb41093bae4d2705
-PATH: pkgs-llvm-core/clang-common-23.1.4-1.gpkg.tar
-PDEPEND: sys-devel/gcc sys-devel/gcc sys-devel/binutils llvm-runtimes/clang-runtime
-SHA1: 70909ca391108115ee9486bfd5dd955ce5814317
-SIZE: 40960
-USE: abi_x86_64 amd64 cet elibc_glibc kernel_linux
-MTIME: 1792554536
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29351,31 +29214,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: llvm-core/llvm:23 app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
-BUILD_TIME: 1792586836
-CPV: llvm-core/lld-23.1.4
-DEFINED_PHASES: compile configure install prepare setup test unpack
-DEPEND: ~llvm-core/llvm-23.1.4[-debug,zstd] virtual/zlib:0/1= app-arch/zstd:0/1= ~llvm-core/llvm-23.1.4[llvm_targets_AArch64] ~llvm-core/llvm-23.1.4[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.4[llvm_targets_ARM] ~llvm-core/llvm-23.1.4[llvm_targets_AVR] ~llvm-core/llvm-23.1.4[llvm_targets_BPF] ~llvm-core/llvm-23.1.4[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.4[llvm_targets_Lanai] ~llvm-core/llvm-23.1.4[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.4[llvm_targets_Mips] ~llvm-core/llvm-23.1.4[llvm_targets_MSP430] ~llvm-core/llvm-23.1.4[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.4[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.4[llvm_targets_RISCV] ~llvm-core/llvm-23.1.4[llvm_targets_Sparc] ~llvm-core/llvm-23.1.4[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.4[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.4[llvm_targets_VE] ~llvm-core/llvm-23.1.4[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.4[llvm_targets_X86] ~llvm-core/llvm-23.1.4[llvm_targets_XCore]
-EAPI: 8
-IUSE: debug test zstd test llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA
-MD5: e76f62a5738b01062c37f13173ac74dd
-PATH: pkgs-llvm-core/lld-23.1.4-1.gpkg.tar
-PDEPEND: >=llvm-core/lld-toolchain-symlinks-16-r2:23
-PROVIDES: x86_64: liblldCOFF.so.23.1 liblldCommon.so.23.1 liblldELF.so.23.1 liblldMachO.so.23.1 liblldMinGW.so.23.1 liblldWasm.so.23.1
-RDEPEND: ~llvm-core/llvm-23.1.4[-debug,zstd] virtual/zlib:0/1= app-arch/zstd:0/1= !llvm-core/lld:0 ~llvm-core/llvm-23.1.4[llvm_targets_AArch64] ~llvm-core/llvm-23.1.4[llvm_targets_AMDGPU] ~llvm-core/llvm-23.1.4[llvm_targets_ARM] ~llvm-core/llvm-23.1.4[llvm_targets_AVR] ~llvm-core/llvm-23.1.4[llvm_targets_BPF] ~llvm-core/llvm-23.1.4[llvm_targets_Hexagon] ~llvm-core/llvm-23.1.4[llvm_targets_Lanai] ~llvm-core/llvm-23.1.4[llvm_targets_LoongArch] ~llvm-core/llvm-23.1.4[llvm_targets_Mips] ~llvm-core/llvm-23.1.4[llvm_targets_MSP430] ~llvm-core/llvm-23.1.4[llvm_targets_NVPTX] ~llvm-core/llvm-23.1.4[llvm_targets_PowerPC] ~llvm-core/llvm-23.1.4[llvm_targets_RISCV] ~llvm-core/llvm-23.1.4[llvm_targets_Sparc] ~llvm-core/llvm-23.1.4[llvm_targets_SPIRV] ~llvm-core/llvm-23.1.4[llvm_targets_SystemZ] ~llvm-core/llvm-23.1.4[llvm_targets_VE] ~llvm-core/llvm-23.1.4[llvm_targets_WebAssembly] ~llvm-core/llvm-23.1.4[llvm_targets_X86] ~llvm-core/llvm-23.1.4[llvm_targets_XCore] >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libLLVM.so.23.1 libc.so.6 libgcc_s.so.1 libstdc++.so.6 libz.so.1 libzstd.so.1
-RESTRICT: test test
-SHA1: 2e8538211dc2c5cad0bfef52dc1cca7cf8f3721f
-SIZE: 2908160
-SLOT: 23/23.1
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore zstd
-MTIME: 1792586838
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: llvm-core/llvm:23 app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
 BUILD_TIME: 1793863833
 CPV: llvm-core/lld-23.1.5
 DEFINED_PHASES: compile configure install prepare setup test unpack
@@ -29444,32 +29282,6 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl sys-devel/gnuconfig virtual/pkgconfig || ( ( dev-lang/python:3.14 dev-python/myst-parser[python_targets_python3_14(-)] dev-python/sphinx[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/myst-parser[python_targets_python3_13(-)] dev-python/sphinx[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/myst-parser[python_targets_python3_12(-)] dev-python/sphinx[python_targets_python3_12(-)] ) ) app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 3
-BUILD_TIME: 1792733085
-CPV: llvm-core/llvm-23.1.4
-DEFINED_PHASES: compile configure install postinst prepare setup test unpack
-DEPEND: virtual/zlib:0/1=[abi_x86_64(-)] >=dev-libs/libffi-3.0.13-r1:0/8=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] app-arch/zstd:0/1=[abi_x86_64(-)] sys-libs/binutils-libs
-EAPI: 8
-IUSE: +binutils-plugin debug debuginfod doc exegesis libedit +libffi test xml z3 zstd doc llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_Mips llvm_targets_MSP430 llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_Sparc llvm_targets_SPIRV llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore llvm_targets_ARC llvm_targets_CSKY llvm_targets_DirectX llvm_targets_M68k llvm_targets_Xtensa verify-sig abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA BSD public-domain rc
-MD5: 70712dd297cdae53e91b392f2ed80c9b
-PATH: pkgs-llvm-core/llvm-23.1.4-3.gpkg.tar
-PDEPEND: llvm-core/llvm-common llvm-core/llvm-toolchain-symlinks:23 >=llvm-core/llvmgold-23
-PROVIDES: x86_64: LLVMgold.so libLLVM.so.23.1 libLTO.so.23.1 libRemarks.so.23.1
-RDEPEND: virtual/zlib:0/1=[abi_x86_64(-)] >=dev-libs/libffi-3.0.13-r1:0/8=[abi_x86_64(-)] dev-libs/libxml2:2/16=[abi_x86_64(-)] app-arch/zstd:0/1=[abi_x86_64(-)] !llvm-core/llvm:0 >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "ec70e4457d4726a276980642220e77a6aa7c88f2"}
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libffi.so.8 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libxml2.so.16 libz.so.1 libzstd.so.1
-RESTRICT: test
-SHA1: dddd4afa432748aea18f515147db9fa7338b5a87
-SIZE: 105543680
-SLOT: 23/23.1
-USE: abi_x86_64 amd64 binutils-plugin elibc_glibc kernel_linux libffi llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore xml zstd
-MTIME: 1792733105
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) dev-lang/perl sys-devel/gnuconfig virtual/pkgconfig || ( ( dev-lang/python:3.14 dev-python/myst-parser[python_targets_python3_14(-)] dev-python/sphinx[python_targets_python3_14(-)] ) ( dev-lang/python:3.13 dev-python/myst-parser[python_targets_python3_13(-)] dev-python/sphinx[python_targets_python3_13(-)] ) ( dev-lang/python:3.12 dev-python/myst-parser[python_targets_python3_12(-)] dev-python/sphinx[python_targets_python3_12(-)] ) ) app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
 BUILD_TIME: 1793856378
 CPV: llvm-core/llvm-23.1.5
@@ -29518,24 +29330,6 @@ SIZE: 105553920
 SLOT: 23/23.1
 USE: abi_x86_64 amd64 binutils-plugin elibc_glibc kernel_linux libffi llvm_targets_AArch64 llvm_targets_AMDGPU llvm_targets_ARM llvm_targets_AVR llvm_targets_BPF llvm_targets_Hexagon llvm_targets_Lanai llvm_targets_LoongArch llvm_targets_MSP430 llvm_targets_Mips llvm_targets_NVPTX llvm_targets_PowerPC llvm_targets_RISCV llvm_targets_SPIRV llvm_targets_Sparc llvm_targets_SystemZ llvm_targets_VE llvm_targets_WebAssembly llvm_targets_X86 llvm_targets_XCore xml zstd
 MTIME: 1795319900
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BUILD_ID: 1
-BUILD_TIME: 1792554476
-CPV: llvm-core/llvm-common-23.1.4
-DEFINED_PHASES: compile install postinst postrm prepare unpack
-EAPI: 8
-IUSE: emacs verify-sig
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc ~ppc64 ~riscv ~sparc ~x86 ~arm64-macos ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions UoI-NCSA
-MD5: 9d3f6e5586db757dd2b451db59af80a7
-PATH: pkgs-llvm-core/llvm-common-23.1.4-1.gpkg.tar
-RDEPEND: !llvm-core/llvm:0
-SHA1: 8dc9e7a0336131f3bc505e2205b7df5244e11a43
-SIZE: 30720
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1792554477
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29689,28 +29483,6 @@ CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: llvm-core/clang:23 llvm-core/clang-linker-config:23 || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
 BUILD_ID: 1
-BUILD_TIME: 1792568459
-CPV: llvm-runtimes/compiler-rt-23.1.4
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: llvm-core/llvm:23
-EAPI: 8
-IUSE: +abi_x86_32 abi_x86_64 +atomic-builtins +clang debug test test verify-sig
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~x86 ~arm64-macos ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )
-MD5: 978685b48429fc46e53f73901256338b
-PATH: pkgs-llvm-runtimes/compiler-rt-23.1.4-1.gpkg.tar
-RDEPEND: >=sys-libs/glibc-2.43-r4
-RESTRICT: test test
-SHA1: 9177a8db0e80691bc64cb0df8181ec908b5d002f
-SIZE: 133120
-SLOT: 23
-USE: abi_x86_32 abi_x86_64 amd64 atomic-builtins clang elibc_glibc kernel_linux
-MTIME: 1792568460
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: llvm-core/clang:23 llvm-core/clang-linker-config:23 || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
 BUILD_TIME: 1793861907
 CPV: llvm-runtimes/compiler-rt-23.1.5
 DEFINED_PHASES: compile configure install prepare pretend setup test unpack
@@ -29750,31 +29522,6 @@ SIZE: 133120
 SLOT: 23
 USE: abi_x86_32 abi_x86_64 amd64 atomic-builtins clang elibc_glibc kernel_linux
 MTIME: 1795091370
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: llvm-core/clang:23 llvm-core/clang-linker-config:23 llvm-runtimes/clang-rtlib-config:23 llvm-runtimes/clang-stdlib-config:23 llvm-runtimes/compiler-rt:23 net-libs/libtirpc || ( dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1792568615
-CPV: llvm-runtimes/compiler-rt-sanitizers-23.1.4
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-DEPEND: llvm-core/llvm:23 virtual/libcrypt[abi_x86_32(-),abi_x86_64(-)]
-EAPI: 8
-IUSE: +abi_x86_32 abi_x86_64 +clang debug test +ctx-profile +libfuzzer +memprof +orc +profile +xray +asan +dfsan +lsan +msan +hwasan +tsan +ubsan +safestack +cfi +scudo +shadowcallstack +gwp-asan +nsan +rtsan test verify-sig
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~x86 ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )
-MD5: 498f9786f4171c5fccf694f2b75ddfa0
-PATH: pkgs-llvm-runtimes/compiler-rt-sanitizers-23.1.4-1.gpkg.tar
-PROVIDES: x86_32: libclang_rt.asan-i386.so libclang_rt.scudo_standalone-i386.so libclang_rt.ubsan_minimal-i386.so libclang_rt.ubsan_standalone-i386.so x86_64: libclang_rt.asan-x86_64.so libclang_rt.dyndd-x86_64.so libclang_rt.hwasan-x86_64.so libclang_rt.hwasan_aliases-x86_64.so libclang_rt.memprof-x86_64.so libclang_rt.nsan-x86_64.so libclang_rt.scudo_standalone-x86_64.so libclang_rt.tsan-x86_64.so libclang_rt.ubsan_minimal-x86_64.so libclang_rt.ubsan_standalone-x86_64.so
-RDEPEND: >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "b6955993e9625392e546c694bd33ec9de8cb0386"}
-REQUIRES: x86_32: ld-linux.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6
-RESTRICT: test test
-SHA1: 32282e1c766792641c68219dda0fc268f6f2ea32
-SIZE: 8540160
-SLOT: 23
-USE: abi_x86_32 abi_x86_64 amd64 asan cfi clang ctx-profile dfsan elibc_glibc gwp-asan hwasan kernel_linux libfuzzer lsan memprof msan nsan orc profile rtsan safestack scudo tsan ubsan xray
-MTIME: 1792568621
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -29824,29 +29571,6 @@ SIZE: 8540160
 SLOT: 23
 USE: abi_x86_32 abi_x86_64 amd64 asan cfi clang ctx-profile dfsan elibc_glibc gwp-asan hwasan kernel_linux libfuzzer lsan memprof msan nsan orc profile rtsan safestack scudo tsan ubsan xray
 MTIME: 1795091610
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: dev-lang/perl llvm-core/clang app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1792568426
-CPV: llvm-runtimes/openmp-23.1.4
-DEFINED_PHASES: compile configure install prepare pretend setup test unpack
-EAPI: 8
-IUSE: +clang debug fortran gdb-plugin hwloc offload ompt test cuda level-zero rocm abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64 verify-sig python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~mips ~ppc64 ~riscv ~x86 ~x64-macos
-LICENSE: Apache-2.0-with-LLVM-exceptions || ( UoI-NCSA MIT )
-MD5: 30e91c94867ec83af4c0fedb9ae1b0f0
-PATH: pkgs-llvm-runtimes/openmp-23.1.4-1.gpkg.tar
-PROVIDES: x86_32: libomp.so x86_64: libomp.so
-RDEPEND: >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_32: ld-linux.so.2 libc.so.6 x86_64: ld-linux-x86-64.so.2 libc.so.6
-RESTRICT: test
-SHA1: 324a782fe20451165918ab713bfd7b9a97b05daf
-SIZE: 931840
-SLOT: 0/23.1
-USE: abi_x86_32 abi_x86_64 amd64 clang elibc_glibc kernel_linux python_single_target_python3_14
-MTIME: 1792568432
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -33090,31 +32814,6 @@ SIZE: 2232320
 SLOT: 0/4
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1791089588
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BDEPEND: virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1791092429
-CPV: media-libs/taglib-2.3.2
-DEFINED_PHASES: compile configure install prepare test
-DEPEND: virtual/zlib:0/1=[abi_x86_64(-)] dev-libs/utfcpp
-EAPI: 8
-IUSE: doc examples test abi_x86_32 abi_x86_64 abi_x86_x32 abi_mips_n32 abi_mips_n64 abi_mips_o32 abi_s390_32 abi_s390_64
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~sparc ~x86
-LICENSE: LGPL-2.1 MPL-1.1
-MD5: 3c8c21c473bc066d37e594ea587afad8
-PATH: pkgs-media-libs/taglib-2.3.2-1.gpkg.tar
-PROVIDES: x86_64: libtag.so.2 libtag_c.so.2
-RDEPEND: virtual/zlib:0/1=[abi_x86_64(-)] >=sys-libs/glibc-2.43-r2
-REPO_REVISIONS: {"gentoo": "8874537b1cb935240a75d1d9e10a47605cec7da4"}
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libstdc++.so.6 libz.so.1
-RESTRICT: test
-SHA1: 708056bb4033548ca4214e707eacd04c0e9c2578
-SIZE: 768000
-SLOT: 0/2
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1791092430
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -38400,28 +38099,6 @@ MTIME: 1794716974
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
-BDEPEND: >=dev-lang/go-1.26.10 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.3= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1794026895
-CPV: sci-ml/ollama-0.40.15
-DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/0.29.0=
-EAPI: 8
-KEYWORDS: ~amd64
-LICENSE: MIT
-MD5: 69ef656d4738aac89062f18aa34ee3f9
-PATH: pkgs-sci-ml/ollama-0.40.15-1.gpkg.tar
-PROVIDES: x86_64: libllama-common.so.0 libllama-quantize-impl.so libllama-server-impl.so libllama.so.0 libmtmd.so.0
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/0.29.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.0 libggml.so.0 libm.so.6 libstdc++.so.6
-RESTRICT: mirror test
-SHA1: 9b95454dd2eca3726d296742cf23cb9eb6a08f41
-SIZE: 21217280
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1794026900
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
 BDEPEND: >=dev-lang/go-1.26.10 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.4= app-arch/unzip virtual/pkgconfig
 BUILD_ID: 3
 BUILD_TIME: 1794717344
@@ -40381,27 +40058,6 @@ SIZE: 200253440
 SLOT: 7.3.6
 USE: abi_x86_64 amd64 elibc_glibc initramfs kernel_linux
 MTIME: 1795584337
-REPO: gentoo
-CHOST: x86_64-pc-linux-gnu
-
-BUILD_ID: 1
-BUILD_TIME: 1794297120
-CPV: sys-kernel/gentoo-sources-7.3.3
-DEFINED_PHASES: compile install postinst postrm preinst prepare pretend setup test unpack
-EAPI: 8
-IUSE: experimental symlink build vanilla
-KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
-LICENSE: GPL-2
-MD5: 2218d81306377aa4df22917a2deb76d0
-PATH: pkgs-sys-kernel/gentoo-sources-7.3.3-1.gpkg.tar
-RDEPEND: app-alternatives/cpio dev-lang/perl app-alternatives/bc dev-build/make sys-devel/bison sys-devel/flex >=sys-libs/ncurses-5.2 virtual/libelf virtual/pkgconfig
-REPO_REVISIONS: {"gentoo": "a1662c61dc989f8a1ba90cd8de54b91c3f35a9de"}
-RESTRICT: binchecks strip
-SHA1: 2f763aa2d90f44acc9a5edef2d9d82bf690ad96f
-SIZE: 242995200
-SLOT: 7.3.3
-USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1794297162
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
