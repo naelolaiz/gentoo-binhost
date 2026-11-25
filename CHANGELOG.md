@@ -10,6 +10,20 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ### Tree changes
 
+- `media-video/smplayer` builds against Qt 6.12 again.  Qt 6.12's `uic`
+  rejects empty `<connection>` blocks in four `.ui` files (Gentoo bug 983380,
+  upstream `smplayer-dev/smplayer#1420`).  The builder applies the upstream
+  patch to `smplayer-25.6.0_p20250903-r1` via `/etc/portage/patches/`;
+  machines need no change.  The weekly workaround check reports when a newer
+  ebuild revision or version is in the tree.
+- `app-containers/podman` is now preferred over `app-containers/docker` in
+  the builder (`app-containers/podman` is listed in `21-desktop-more` and
+  `app-containers/docker` is masked in the builder so `|| ( docker podman )`
+  dependencies like `app-containers/distrobox` always resolve to `podman`
+  even when resolved alone; machines need no change).  `run_planned` in
+  `scripts/container-build.sh` also checks that building `PLAN_ATOMS` on its
+  own does not flip any `|| ( A B )` dependency onto an unplanned source
+  build.
 - `sci-libs/vtk` builds again.  libfmt 12.2 made `<fmt/core.h>` stop including
   `<fmt/format.h>`, and vtk-9.6.2's bundled IOSS calls `fmt::format` after
   including only core.h (Gentoo bug 985716).  The builder compiles vtk with
