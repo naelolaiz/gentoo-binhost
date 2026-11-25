@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795587551
-PACKAGES: 1905
+TIMESTAMP: 1795588164
+PACKAGES: 1906
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -8847,6 +8847,29 @@ SIZE: 942080
 SLOT: 0/36
 USE: abi_x86_64 all-impls amd64 elibc_glibc kernel_linux
 MTIME: 1793686186
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-apps/file sys-apps/grep virtual/pkgconfig app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1795587833
+CPV: dev-libs/simdjson-5.3.0
+DEFINED_PHASES: compile configure install prepare test
+EAPI: 8
+IUSE: +all-impls nan test tools trailing-commas
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86
+LICENSE: Apache-2.0 Boost-1.0 BSD MIT
+MD5: b4634e09fac608b04f8cdc2577143fa1
+PATH: pkgs-dev-libs/simdjson-5.3.0-1.gpkg.tar
+PROVIDES: x86_64: libsimdjson.so.38
+RDEPEND: >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libstdc++.so.6
+RESTRICT: test
+SHA1: eec3aebd844f6f834b52cbcf8c5ad29de4e1feea
+SIZE: 1024000
+SLOT: 0/38
+USE: abi_x86_64 all-impls amd64 elibc_glibc kernel_linux
+MTIME: 1795587835
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36499,25 +36522,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: || ( dev-lang/python:3.14[threads(+)] dev-lang/python:3.13[threads(+)] dev-lang/python:3.12[threads(+)] ) app-alternatives/ninja sys-apps/coreutils virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1794460591
+BUILD_ID: 2
+BUILD_TIME: 1795588098
 CPV: net-libs/nodejs-26.13.1-r1
 DEFINED_PHASES: compile configure install postinst prepare pretend setup test
-DEPEND: >=app-arch/brotli-1.2.1:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1-r1:0/37=[atomic-base64(+)] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/36= >=net-dns/c-ares-1.34.9:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/4= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
+DEPEND: >=app-arch/brotli-1.2.1:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1-r1:0/37=[atomic-base64(+)] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/38= >=net-dns/c-ares-1.34.9:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/4= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub )
 EAPI: 8
 IUSE: cpu_flags_x86_sse2 debug doc +icu +inspector lto +npm pax-kernel +snapshot +ssl system-icu +system-ssl test temporal
-KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc64 ~riscv ~x86 ~x64-macos
+KEYWORDS: amd64 arm arm64 ~loong ppc64 ~riscv x86 ~x64-macos
 LICENSE: Apache-1.1 Apache-2.0 BlueOak-1.0.0 BSD BSD-2 MIT Artistic-2
-MD5: bec7fcd2270de8f5b412308cf7f31513
-PATH: pkgs-net-libs/nodejs-26.13.1-r1-1.gpkg.tar
-RDEPEND: >=app-arch/brotli-1.2.1:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1-r1:0/37=[atomic-base64(+)] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/36= >=net-dns/c-ares-1.34.9:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/4= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r4
-REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.4 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.36 libsimdutf.so.37 libsqlite3.so.0 libssl.so.4 libstdc++.so.6 libuv.so.1 libz.so.1
+MD5: 30c35e886a832641ba6628cafca400b4
+PATH: pkgs-net-libs/nodejs-26.13.1-r1-2.gpkg.tar
+RDEPEND: >=app-arch/brotli-1.2.1:0/1= dev-db/sqlite:3 >=dev-cpp/ada-4.0.0:0/4= >=dev-cpp/simdutf-9.2.1-r1:0/37=[atomic-base64(+)] >=dev-libs/libuv-1.52.1:0/1= >=dev-libs/simdjson-5.0.3:0/38= >=net-dns/c-ares-1.34.9:0/2= >=net-libs/nghttp2-1.70.0:0/1.14= >=net-libs/nghttp3-1.18.0:0/0= virtual/zlib:0/1= >=net-libs/ngtcp2-1.25.0:0/0= >=dev-libs/openssl-3.5.9:0/4= || ( sys-devel/gcc:* llvm-runtimes/libatomic-stub ) >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "48005c2480e15993b3e41c70ffe884a21c480a77"}
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libada.so.4 libbrotlidec.so.1 libbrotlienc.so.1 libc.so.6 libcares.so.2 libcrypto.so.4 libgcc_s.so.1 libm.so.6 libnghttp2.so.14 libsimdjson.so.38 libsimdutf.so.37 libsqlite3.so.0 libssl.so.4 libstdc++.so.6 libuv.so.1 libz.so.1
 RESTRICT: test
-SHA1: b5c7bb52da0af29ca16e64673d2921d03cac8c9d
-SIZE: 39557120
+SHA1: 5ade69b895df08b6c991757e8f7e8396029a8aae
+SIZE: 39567360
 SLOT: 0/26
 USE: abi_x86_64 amd64 cpu_flags_x86_sse2 elibc_glibc icu inspector kernel_linux npm snapshot ssl system-ssl
-MTIME: 1794460601
+MTIME: 1795588108
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
