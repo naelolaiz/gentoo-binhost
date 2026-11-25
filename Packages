@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795580754
-PACKAGES: 1913
+TIMESTAMP: 1795582893
+PACKAGES: 1915
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -12896,6 +12896,28 @@ MTIME: 1793174455
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/pyqt-builder-1.20[python_targets_python3_14(-)] >=dev-python/sip-6.17[python_targets_python3_14(-)] >=dev-qt/qtbase-6.12:6 virtual/pkgconfig dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/sip[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795582196
+CPV: dev-python/pyqt6-6.12.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-qt/qtbase-6.12:6/6.12.1=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.12:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtdeclarative-6.12:6[widgets] >=dev-qt/qtdeclarative-6.12:6[opengl] >=dev-qt/qtsvg-6.12:6 >=dev-qt/qtwebchannel-6.12:6 dev-util/vulkan-headers dev-lang/python:3.14
+EAPI: 8
+IUSE: +X bluetooth +dbus debug designer examples gles2-only +gui help multimedia +network nfc opengl positioning +printsupport qml quick quick3d remoteobjects scxml serialport sensors spatialaudio speech +sql +ssl svg testlib webchannel websockets vulkan wayland +widgets +xml python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: GPL-3
+MD5: d8c3fcdf6c9610883f4e9e44f298399f
+PATH: pkgs-dev-python/pyqt6-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: QtBluetooth.abi3.so QtCore.abi3.so QtDBus.abi3.so QtGui.abi3.so QtNetwork.abi3.so QtOpenGL.abi3.so QtOpenGLWidgets.abi3.so QtPrintSupport.abi3.so QtQml.abi3.so QtQuick.abi3.so QtQuickWidgets.abi3.so QtSql.abi3.so QtSvg.abi3.so QtSvgWidgets.abi3.so QtWebChannel.abi3.so QtWidgets.abi3.so QtXml.abi3.so pyqt6.abi3.so
+RDEPEND: >=dev-qt/qtbase-6.12:6/6.12.1=[X,dbus,-gles2-only,gui,network,opengl,sql,ssl,vulkan,wayland,widgets,xml] >=dev-qt/qtconnectivity-6.12:6[bluetooth] dev-python/dbus-python[python_targets_python3_14(-)] sys-apps/dbus >=dev-qt/qtdeclarative-6.12:6[widgets] >=dev-qt/qtdeclarative-6.12:6[opengl] >=dev-qt/qtsvg-6.12:6 >=dev-qt/qtwebchannel-6.12:6 >=dev-python/pyqt6-sip-13.8[python_targets_python3_14(-)] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Bluetooth.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6OpenGL.so.6 libQt6OpenGLWidgets.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6WebChannel.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libc.so.6 libdbus-1.so.3 libm.so.6 libstdc++.so.6
+SHA1: c1d2fdaadef88d6e397b7eab6f96ef488146b7c7
+SIZE: 4669440
+USE: X abi_x86_64 amd64 bluetooth dbus elibc_glibc gui kernel_linux network opengl printsupport python_targets_python3_14 qml quick sql ssl svg vulkan wayland webchannel widgets xml
+MTIME: 1795582197
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791437295
@@ -16388,6 +16410,30 @@ SIZE: 696320
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
 MTIME: 1793171474
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795580758
+CPV: dev-qt/qtscxml-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[gui] ~dev-qt/qtdeclarative-6.12.1:6
+EAPI: 8
+IUSE: qml custom-cflags test
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 5076e2ba452a7a39608f878bfb08037b
+PATH: pkgs-dev-qt/qtscxml-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6Scxml.so.6 libQt6ScxmlQml.so.6 libQt6StateMachine.so.6 libQt6StateMachineQml.so.6 libdeclarative_scxmlplugin.so libqscxmlecmascriptdatamodel.so libqtqmlstatemachineplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[gui] ~dev-qt/qtdeclarative-6.12.1:6 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: b0d127350264352d61463ada76e569aa30820b12
+SIZE: 706560
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux qml
+MTIME: 1795580758
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21442,49 +21488,49 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1793961428
+BUILD_ID: 2
+BUILD_TIME: 1795582354
 CPV: kde-apps/krfb-26.08.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,network,wayland,widgets,X] >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwallet-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=net-libs/libvncserver-0.9.14 x11-libs/libX11 x11-libs/libxcb x11-libs/libXtst x11-libs/xcb-util-image dev-libs/wayland kde-plasma/kpipewire:6 kde-plasma/kwayland:6 >=media-video/pipewire-0.3 >=dev-libs/plasma-wayland-protocols-1.5.0 dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[dbus,network,wayland,widgets,X] >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwallet-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=net-libs/libvncserver-0.9.14 x11-libs/libX11 x11-libs/libxcb x11-libs/libXtst x11-libs/xcb-util-image dev-libs/wayland kde-plasma/kpipewire:6 kde-plasma/kwayland:6 >=media-video/pipewire-0.3 >=dev-libs/plasma-wayland-protocols-1.5.0 dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: wayland debug +handbook
-KEYWORDS: ~amd64 ~arm64 ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~ppc64 ~riscv ~x86
 LICENSE: GPL-2
-MD5: d494e5437ce681bf2f200c54b4610535
-PATH: pkgs-kde-apps/krfb-26.08.3-1.gpkg.tar
+MD5: edef71d6bebeae9d3cf4301842f31363
+PATH: pkgs-kde-apps/krfb-26.08.3-2.gpkg.tar
 PROVIDES: x86_64: libkrfbprivate.so.5.0 pw.so x11.so xcb.so xdp.so
-RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.11.3=[dbus,network,wayland,widgets,X] >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwallet-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=net-libs/libvncserver-0.9.14 x11-libs/libX11 x11-libs/libxcb x11-libs/libXtst x11-libs/xcb-util-image dev-libs/wayland kde-plasma/kpipewire:6 kde-plasma/kwayland:6 >=media-video/pipewire-0.3 sys-apps/xdg-desktop-portal[screencast(+)] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: >=dev-qt/qtbase-6.11.2:6/6.12.1=[dbus,network,wayland,widgets,X] >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/kdnssd-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwallet-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=net-libs/libvncserver-0.9.14 x11-libs/libX11 x11-libs/libxcb x11-libs/libXtst x11-libs/xcb-util-image dev-libs/wayland kde-plasma/kpipewire:6 kde-plasma/kwayland:6 >=media-video/pipewire-0.3 sys-apps/xdg-desktop-portal[screencast(+)] || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6DNSSD.so.6 libKF6I18n.so.6 libKF6Notifications.so.6 libKF6StatusNotifierItem.so.6 libKF6Wallet.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libKPipeWire.so.6 libKPipeWireDmaBuf.so.6 libKWaylandClient.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Widgets.so.6 libX11.so.6 libXtst.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libvncserver.so.1 libwayland-client.so.0 libxcb-damage.so.0 libxcb-image.so.0 libxcb-shm.so.0 libxcb.so.1
-SHA1: ebedf36c99ce5c762e635cbab736b94d1a81269f
+SHA1: 7324f4bfcf23992e88a43737210b0fffa7bc0007
 SIZE: 1454080
 SLOT: 6
 USE: abi_x86_64 amd64 elibc_glibc handbook kernel_linux wayland
-MTIME: 1793961429
+MTIME: 1795582355
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1793956841
+BUILD_ID: 2
+BUILD_TIME: 1795580788
 CPV: kde-apps/kruler-26.08.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libxcb dev-qt/qtbase:6
+DEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.12.1=[X] x11-libs/libxcb dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: X debug +handbook
-KEYWORDS: ~amd64 ~arm64 ~loong ~ppc64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~loong ~ppc64 ~riscv ~x86
 LICENSE: GPL-2+ FDL-1.2
-MD5: c0385fecfc74c9d7dae38c6f8a1a0cdc
-PATH: pkgs-kde-apps/kruler-26.08.3-1.gpkg.tar
-RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libxcb || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+MD5: d375ccc29a08091c7addbc1cc488715c
+PATH: pkgs-kde-apps/kruler-26.08.3-2.gpkg.tar
+RDEPEND: >=dev-qt/qtbase-6.11.2:6[gui,widgets] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[X] >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.12.1=[X] x11-libs/libxcb || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6I18n.so.6 libKF6Notifications.so.6 libKF6StatusNotifierItem.so.6 libKF6WidgetsAddons.so.6 libKF6WindowSystem.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
-SHA1: ca8ddb1bd5913f5a9ce89f5e4f52db76a9294971
+SHA1: 8879c1d137b4a58e17af1fef60aaa6e3f6a0e253
 SIZE: 348160
 SLOT: 6
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
-MTIME: 1793956842
+MTIME: 1795580790
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -21696,24 +21742,24 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 >=kde-frameworks/kdoctools-6.27.0:6 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1793958494
+BUILD_ID: 2
+BUILD_TIME: 1795581127
 CPV: kde-apps/ktouch-26.08.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: dev-libs/libxml2:2/16= >=dev-qt/qtbase-6.11.2:6[gui,sql,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb x11-libs/libxkbfile >=kde-frameworks/kwindowsystem-6.27.0:6 dev-qt/qtbase:6
+DEPEND: dev-libs/libxml2:2/16= >=dev-qt/qtbase-6.11.2:6[gui,sql,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.12.1=[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb x11-libs/libxkbfile >=kde-frameworks/kwindowsystem-6.27.0:6 dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: X debug +handbook
-KEYWORDS: ~amd64 ~arm64 ~riscv ~x86
+KEYWORDS: amd64 arm64 ~riscv ~x86
 LICENSE: GPL-2
-MD5: 9e84ec2df2428b3a4cd62d98715f0236
-PATH: pkgs-kde-apps/ktouch-26.08.3-1.gpkg.tar
-RDEPEND: dev-libs/libxml2:2/16= >=dev-qt/qtbase-6.11.2:6[gui,sql,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.11.3=[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb x11-libs/libxkbfile >=dev-qt/qt5compat-6.11.2:6[qml] >=kde-apps/kqtquickcharts-26.08.3:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/ktouch:5 >=sys-libs/glibc-2.43-r4
+MD5: b32e6d38d58224751be733c158f6cdd6
+PATH: pkgs-kde-apps/ktouch-26.08.3-2.gpkg.tar
+RDEPEND: dev-libs/libxml2:2/16= >=dev-qt/qtbase-6.11.2:6[gui,sql,widgets,xml] >=dev-qt/qtdeclarative-6.11.2:6 >=kde-frameworks/kcmutils-6.27.0:6 >=kde-frameworks/kcompletion-6.27.0:6 >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kconfigwidgets-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kitemviews-6.27.0:6 >=kde-frameworks/kservice-6.27.0:6 >=kde-frameworks/ktextwidgets-6.27.0:6 >=kde-frameworks/kwidgetsaddons-6.27.0:6 >=kde-frameworks/kxmlgui-6.27.0:6 >=dev-qt/qtbase-6.11.2:6/6.12.1=[X] x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libxcb x11-libs/libxkbfile >=dev-qt/qt5compat-6.11.2:6[qml] >=kde-apps/kqtquickcharts-26.08.3:6 || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 !kde-apps/ktouch:5 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6ColorScheme.so.6 libKF6Completion.so.6 libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6ConfigWidgets.so.6 libKF6CoreAddons.so.6 libKF6I18n.so.6 libKF6ItemViews.so.6 libKF6KCMUtils.so.6 libKF6TextWidgets.so.6 libKF6WidgetsAddons.so.6 libKF6XmlGui.so.6 libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6QuickWidgets.so.6 libQt6Sql.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libX11.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libxcb-xkb.so.1 libxcb.so.1 libxml2.so.16
-SHA1: d7284ab91d162adb3a2bd84fe0069337118001a4
+SHA1: fcd857aafb20250fe950145d917f4d3274d5a6d7
 SIZE: 4874240
 USE: X abi_x86_64 amd64 elibc_glibc handbook kernel_linux
-MTIME: 1793958497
+MTIME: 1795581131
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -25937,25 +25983,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-qt/qtbase-6.11.2:6[wayland] dev-util/wayland-scanner app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
-BUILD_ID: 1
-BUILD_TIME: 1793961152
+BUILD_ID: 2
+BUILD_TIME: 1795582660
 CPV: kde-misc/kclock-26.08.3
 DEFINED_PHASES: compile configure info install nofetch postinst postrm preinst prepare test unpack
-DEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/8= >=dev-libs/plasma-wayland-protocols-1.8 >=dev-libs/wayland-protocols-1.21 dev-qt/qtbase:6
+DEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.12.1=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/8= >=dev-libs/plasma-wayland-protocols-1.8 >=dev-libs/wayland-protocols-1.21 dev-qt/qtbase:6
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: debug
-KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
+KEYWORDS: amd64 arm64 ~ppc64 ~x86
 LICENSE: CC0-1.0 CC-BY-4.0 GPL-2+ GPL-3+ LGPL-2.1+
-MD5: a5e0909904c3c4a085766a81f818ce4b
-PATH: pkgs-kde-misc/kclock-26.08.3-1.gpkg.tar
+MD5: 38d4cc8887dae9a6c01034db8de7e3a3
+PATH: pkgs-kde-misc/kclock-26.08.3-2.gpkg.tar
 PROVIDES: x86_64: org.kde.plasma.kclock_1x2.so
-RDEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.11.3=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/8= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: dev-libs/kirigami-addons:6 dev-libs/wayland >=dev-qt/qtbase-6.11.2:6/6.12.1=[gui,network,wayland,widgets] >=dev-qt/qtdeclarative-6.11.2:6 >=dev-qt/qtmultimedia-6.11.2:6[qml] >=kde-frameworks/kconfig-6.27.0:6 >=kde-frameworks/kcoreaddons-6.27.0:6 >=kde-frameworks/kcrash-6.27.0:6 >=kde-frameworks/kdbusaddons-6.27.0:6 >=kde-frameworks/ki18n-6.27.0:6 >=kde-frameworks/kio-6.27.0:6 >=kde-frameworks/kirigami-6.27.0:6 >=kde-frameworks/kjobwidgets-6.27.0:6 >=kde-frameworks/knotifications-6.27.0:6 >=kde-frameworks/kstatusnotifieritem-6.27.0:6 >=kde-frameworks/ksvg-6.27.0:6 >=kde-frameworks/kwindowsystem-6.27.0:6[wayland] kde-plasma/libplasma:6/8= || ( kde-frameworks/breeze-icons:* kde-frameworks/oxygen-icons:* ) >=kde-frameworks/kf-env-6 dev-qt/qtbase:6 >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: libKF6ConfigCore.so.6 libKF6ConfigGui.so.6 libKF6CoreAddons.so.6 libKF6Crash.so.6 libKF6DBusAddons.so.6 libKF6I18n.so.6 libKF6I18nQml.so.6 libKF6JobWidgets.so.6 libKF6KIOGui.so.6 libKF6Notifications.so.6 libKF6Service.so.6 libKF6StatusNotifierItem.so.6 libKF6Svg.so.6 libKF6WindowSystem.so.6 libPlasma.so.8 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Multimedia.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6QuickControls2.so.6 libQt6WaylandClient.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6 libwayland-client.so.0
-SHA1: d66278934c5d52e561115ea7c300af1b8e9b08d2
-SIZE: 798720
+SHA1: f2d9587b07b0db26c46f63bdc54fabd6a43c36c1
+SIZE: 870400
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793961154
+MTIME: 1795582661
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -35395,26 +35441,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: kde-frameworks/extra-cmake-modules:0 dev-lang/swig dev-lang/swig app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 1
-BUILD_TIME: 1795413983
+BUILD_ID: 2
+BUILD_TIME: 1795582775
 CPV: media-video/obs-studio-33.0.2
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test unpack
-DEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.3=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/61.63.63=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator
+DEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.12.1=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/61.63.63=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: +alsa browser decklink fdk jack lua mpegts nvenc pulseaudio python qsv screencast sndio speex test-input truetype v4l vlc wayland websocket +lua_single_target_luajit python_single_target_python3_12 python_single_target_python3_13 python_single_target_python3_14
 KEYWORDS: ~amd64 ~arm64 ~ppc64 ~x86
 LICENSE: Boost-1.0 GPL-2+ MIT Unlicense
-MD5: dce62e29a7221a752b185b4a314e6276
-PATH: pkgs-media-video/obs-studio-33.0.2-1.gpkg.tar
+MD5: b76e37acc32bc8afd963e2c90ca92340
+PATH: pkgs-media-video/obs-studio-33.0.2-2.gpkg.tar
 PROVIDES: x86_64: _obspython.so frontend-tools.so image-source.so libEGL.so libGLESv2.so libcef.so libobs-frontend-api.so.30 libobs-opengl.so.30 libobs-scripting.so.30 libobs.so.30 libvk_swiftshader.so libvulkan.so.1 linux-alsa.so linux-capture.so linux-jack.so linux-pipewire.so linux-pulseaudio.so linux-v4l2.so obs-browser.so obs-ffmpeg.so obs-filters.so obs-outputs.so obs-transitions.so obs-vst.so obs-websocket.so obs-x264.so obslua.so rtmp-services.so text-freetype2.so
-RDEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.11.3=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/61.63.63=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator >=sys-libs/glibc-2.43-r4
-REPO_REVISIONS: {"gentoo": "9d7653b314150a7283453019fcd209cda74b7050"}
+RDEPEND: dev-cpp/nlohmann_json dev-libs/glib:2 dev-libs/jansson:0/4= dev-libs/simde dev-libs/uthash dev-qt/qtbase:6/6.12.1=[dbus,network,widgets,X,xml(+)] dev-qt/qtsvg:6 media-libs/libglvnd[X] media-libs/libva media-libs/rnnoise media-libs/x264:0/164= >=media-video/ffmpeg-6.1:0/61.63.63=[opus,x264] net-misc/curl net-libs/mbedtls:3/16.21.7= sys-apps/dbus sys-apps/pciutils sys-apps/util-linux virtual/zlib:0/1= x11-libs/libdrm x11-libs/libX11 x11-libs/libxcb:0/1.12= x11-libs/libXcomposite x11-libs/libXfixes x11-libs/libxkbcommon media-libs/alsa-lib >=app-accessibility/at-spi2-core-2.46.0:2 dev-libs/expat dev-libs/glib dev-libs/nspr dev-libs/nss media-libs/alsa-lib media-libs/fontconfig media-libs/mesa[gbm(+)] net-print/cups x11-libs/cairo x11-libs/libXcursor x11-libs/libXdamage x11-libs/libXext x11-libs/libXi x11-libs/libxkbcommon x11-libs/libXrandr x11-libs/libXrender x11-libs/libXScrnSaver x11-libs/libxshmfence x11-libs/libXtst x11-libs/pango virtual/jack dev-lang/luajit:2/2.1.1787165859= net-libs/librist net-libs/srt media-libs/libpulse dev-lang/python:3.14 media-video/pipewire:0/0.4= media-libs/speexdsp media-libs/fontconfig media-libs/freetype media-libs/libv4l virtual/udev dev-libs/wayland dev-qt/qtbase:6[wayland] x11-libs/libxkbcommon dev-cpp/asio dev-cpp/websocketpp dev-libs/qr-code-generator >=sys-libs/glibc-2.43-r4
 REQUIRES: x86_64: ld-linux-x86-64.so.2 libEGL.so.1 libGLX.so.0 libOpenGL.so.0 libQt6Core.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Svg.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libX11-xcb.so.1 libX11.so.6 libXcomposite.so.1 libXdamage.so.1 libXext.so.6 libXfixes.so.3 libXrandr.so.2 libasound.so.2 libatk-1.0.so.0 libatk-bridge-2.0.so.0 libatspi.so.0 libavcodec.so.63 libavdevice.so.63 libavformat.so.63 libavutil.so.61 libc.so.6 libcups.so.2 libcurl.so.4 libdbus-1.so.3 libdrm.so.2 libexpat.so.1 libfontconfig.so.1 libfreetype.so.6 libgbm.so.1 libgcc_s.so.1 libgio-2.0.so.0 libglib-2.0.so.0 libgobject-2.0.so.0 libjack.so.0 libjansson.so.4 libluajit-5.1.so.2 libm.so.6 libmbedcrypto-3.so.16 libmbedtls-3.so.21 libmbedx509-3.so.7 libnspr4.so libnss3.so libnssutil3.so libpci.so.3 libpipewire-0.3.so.0 libpulse.so.0 libpython3.14.so.1.0 libqrcodegencpp.so.1 librist.so.4 librnnoise.so.0 libsmime3.so libspeexdsp.so.1 libsrt.so.1.5 libstdc++.so.6 libswresample.so.7 libswscale.so.10 libudev.so.1 libuuid.so.1 libv4l2.so.0 libva-drm.so.2 libva.so.2 libwayland-client.so.0 libwayland-egl.so.1 libx264.so.164 libxcb-composite.so.0 libxcb-randr.so.0 libxcb-shm.so.0 libxcb-xfixes.so.0 libxcb-xinerama.so.0 libxcb-xinput.so.0 libxcb.so.1 libxkbcommon.so.0 libz.so.1
-SHA1: be155190017fd618854086dff34a0874237c395e
-SIZE: 152606720
+SHA1: 909f981bc95d206a0f709e109249238fc51844b6
+SIZE: 152596480
 USE: abi_x86_64 alsa amd64 browser elibc_glibc jack kernel_linux lua lua_single_target_luajit mpegts pulseaudio python python_single_target_python3_14 screencast speex truetype v4l wayland websocket
-MTIME: 1795413988
+MTIME: 1795582780
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 

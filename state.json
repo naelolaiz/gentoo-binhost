@@ -1081,8 +1081,16 @@
    "path": "pkgs-kde-apps/krfb-26.08.2-2.gpkg.tar"
   },
   {
+   "at": 1795582893,
+   "path": "pkgs-kde-apps/krfb-26.08.3-1.gpkg.tar"
+  },
+  {
    "at": 1795262431,
    "path": "pkgs-kde-apps/kruler-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795582893,
+   "path": "pkgs-kde-apps/kruler-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -1123,6 +1131,10 @@
   {
    "at": 1795262431,
    "path": "pkgs-kde-apps/ktouch-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795582893,
+   "path": "pkgs-kde-apps/ktouch-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -1351,6 +1363,10 @@
   {
    "at": 1795262431,
    "path": "pkgs-kde-misc/kclock-26.08.2-3.gpkg.tar"
+  },
+  {
+   "at": 1795582893,
+   "path": "pkgs-kde-misc/kclock-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1794975808,
@@ -1995,6 +2011,10 @@
   {
    "at": 1794396352,
    "path": "pkgs-media-video/mpv-0.42.0-2.gpkg.tar"
+  },
+  {
+   "at": 1795582893,
+   "path": "pkgs-media-video/obs-studio-33.0.2-1.gpkg.tar"
   },
   {
    "at": 1794716645,
