@@ -281,6 +281,10 @@
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-8.gpkg.tar"
   },
   {
+   "at": 1795584427,
+   "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-9.gpkg.tar"
+  },
+  {
    "at": 1794975808,
    "path": "pkgs-app-emulation/wine-proton-11.0.2-1.gpkg.tar"
   },
@@ -295,6 +299,10 @@
   {
    "at": 1794393247,
    "path": "pkgs-app-portage/gentoolkit-0.8.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795584427,
+   "path": "pkgs-app-text/calibre-8.9.0-29.gpkg.tar"
   },
   {
    "at": 1794376442,
@@ -1053,6 +1061,10 @@
    "path": "pkgs-kde-apps/konqueror-26.08.2-2.gpkg.tar"
   },
   {
+   "at": 1795584427,
+   "path": "pkgs-kde-apps/konqueror-26.08.3-1.gpkg.tar"
+  },
+  {
    "at": 1795262431,
    "path": "pkgs-kde-apps/konquest-26.08.2-1.gpkg.tar"
   },
@@ -1271,6 +1283,10 @@
   {
    "at": 1795262431,
    "path": "pkgs-kde-apps/yakuake-26.08.2-2.gpkg.tar"
+  },
+  {
+   "at": 1795584427,
+   "path": "pkgs-kde-apps/yakuake-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1794574427,
@@ -2331,6 +2347,10 @@
   {
    "at": 1795262431,
    "path": "pkgs-www-client/falkon-26.08.2-3.gpkg.tar"
+  },
+  {
+   "at": 1795584427,
+   "path": "pkgs-www-client/falkon-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1794387024,
