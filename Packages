@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795588471
-PACKAGES: 1907
+TIMESTAMP: 1795599950
+PACKAGES: 1908
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15623,6 +15623,31 @@ SHA1: d41d9d9a502c61334c1d9f1c902b2fe686877cad
 SIZE: 96788480
 USE: abi_x86_64 amd64 clang designer doc elibc_glibc help kernel_linux keyring llvm_slot_23 plugin-dev qmldesigner serialterminal svg tracing
 MTIME: 1795412297
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=dev-qt/qttools-6.7.3:6[linguist] >=dev-qt/qttools-6.7.3:6[qdoc,qtattributionsscanner] app-alternatives/ninja >=dev-build/cmake-3.28.5
+BUILD_ID: 1
+BUILD_TIME: 1795599744
+CPV: dev-qt/qt-creator-21.0.0
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare setup test
+DEPEND: app-arch/libarchive:0/13= dev-cpp/yaml-cpp:0/0.9= >=dev-qt/qtbase-6.7.3:6/6.12.1=[concurrent,dbus,gui,network,ssl,widgets,xml] >=dev-qt/qtdeclarative-6.7.3:6/6.12.1= >=dev-qt/qthttpserver-6.7.3:6 >=dev-qt/qttasktree-6.7.3:6 llvm-core/clang:23/23.1= llvm-core/llvm:23/23.1= >=dev-qt/qttools-6.7.3:6[designer] >=dev-qt/qttools-6.7.3:6[assistant] app-crypt/libsecret dev-libs/glib:2 >=dev-qt/qtquick3d-6.7.3:6/6.12.1= >=dev-qt/qtsvg-6.7.3:6 >=dev-qt/qtwebsockets-6.7.3:6 >=dev-qt/qtserialport-6.7.3:6 >=dev-qt/qtsvg-6.7.3:6 app-arch/zstd:0/1= dev-libs/elfutils >=dev-qt/qtcanvaspainter-6.7.3:6 >=dev-qt/qtcharts-6.7.3:6 >=dev-qt/qtshadertools-6.7.3:6
+EAPI: 8
+IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
+IUSE: +clang designer doc +help keyring plugin-dev qmldesigner serialterminal +svg test +tracing webengine +llvm_slot_23 llvm_slot_20 llvm_slot_21 llvm_slot_22
+KEYWORDS: ~amd64
+LICENSE: GPL-3
+MD5: 67b20fe99272a9fbeb19560f10ac1906
+PATH: pkgs-dev-qt/qt-creator-21.0.0-1.gpkg.tar
+PROVIDES: x86_64: libAcpClient.so libAcpLib.so.21 libAdvancedDockingSystem.so.21 libAndroid.so libAnt.so libAppStatisticsMonitor.so libAutoTest.so libAutotoolsProjectManager.so libAxivion.so libBareMetal.so libBazaar.so libBeautifier.so libBinEditor.so libBoot2Qt.so libCMakeLang.so.21 libCMakeProjectManager.so libCPlusPlus.so.21 libCVS.so libCargo.so libClangCodeModel.so libClangFormat.so libClangTools.so libClassView.so libClearCase.so libCmdBridgeClient.so.21 libCoco.so libCodePaster.so libCommonTraceFormat.so.21 libCompilationDatabaseProjectManager.so libCompilerExplorer.so libConan.so libCopilot.so libCore.so libCppEditor.so libCppcheck.so libDebugger.so libDesigner.so libDevContainer.so.21 libDevContainerPlugin.so libDiffEditor.so libDocker.so libDotnet.so libEffectComposer.so libEmacsKeys.so libExtensionManager.so libExtensionSystem.so.21 libFakeVim.so libFossil.so libGLSL.so.21 libGLSLEditor.so libGNProjectManager.so libGenericProjectManager.so libGit.so libGitLab.so libGradle.so libHarmonyOS.so libHelloWorld.so libHelp.so libImageViewer.so libIncrediBuild.so libIos.so libKSyntaxHighlighting.so.21 libLanguageClient.so libLanguageServerProtocol.so.21 libLanguageUtils.so.21 libLearning.so libLua.so libLuaLanguageClient.so libMacros.so libMcpServer.so libMcpServerLib.so.21 libMcuSupport.so libMercurial.so libMesonProjectManager.so libModelEditor.so libModeling.so.21 libMultiPropertyEditor.so libNanotrace.so.21 libNim.so libParsing.so.21 libPerforce.so libProParser.so.21 libProfiler.so libProjectExplorer.so libPython.so libQDoc.so libQbsProjectManager.so libQmakeProjectManager.so libQmlDebug.so.21 libQmlDesigner.so libQmlDesignerCore.so.21 libQmlEditorWidgets.so.21 libQmlJS.so.21 libQmlJSEditor.so libQmlJSTools.so libQmlPreview.so libQmlProjectManager.so libQnx.so libQtApplicationManagerIntegration.so libQtSupport.so libRemote.so libResourceEditor.so libRstLang.so.21 libSafeRenderer.so libScreenRecorder.so libScxmlEditor.so libSerialTerminal.so libSilverSearcher.so libSqlite.so.21 libSquish.so libSubversion.so libSwift.so libTerminal.so libTerminalLib.so.21 libTextEditor.so libTodo.so libTracing.so.21 libUpdateInfo.so libUtils.so.21 libValgrind.so libVcpkg.so libVcsBase.so libWebAssembly.so libWelcome.so libZenMode.so libZephyr.so libcomponentsplugin.so libptracepreload.so.21 libqlitehtml.so.21 libqmlpreviewplugin.so libqtkeychain.so.21 libqtquickplugin.so
+RDEPEND: app-arch/libarchive:0/13= dev-cpp/yaml-cpp:0/0.9= >=dev-qt/qtbase-6.7.3:6/6.12.1=[concurrent,dbus,gui,network,ssl,widgets,xml] >=dev-qt/qtdeclarative-6.7.3:6/6.12.1= >=dev-qt/qthttpserver-6.7.3:6 >=dev-qt/qttasktree-6.7.3:6 llvm-core/clang:23/23.1= llvm-core/llvm:23/23.1= >=dev-qt/qttools-6.7.3:6[designer] >=dev-qt/qttools-6.7.3:6[assistant] app-crypt/libsecret dev-libs/glib:2 >=dev-qt/qtquick3d-6.7.3:6/6.12.1= >=dev-qt/qtsvg-6.7.3:6 >=dev-qt/qtwebsockets-6.7.3:6 >=dev-qt/qtserialport-6.7.3:6 >=dev-qt/qtsvg-6.7.3:6 app-arch/zstd:0/1= dev-libs/elfutils >=dev-qt/qtcanvaspainter-6.7.3:6 >=dev-qt/qtcharts-6.7.3:6 >=dev-qt/qtshadertools-6.7.3:6 >=dev-qt/qtimageformats-6.7.3:6 >=dev-qt/qtquicktimeline-6.7.3:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "48005c2480e15993b3e41c70ffe884a21c480a77"}
+REQUIRES: x86_64: libLLVM.so.23.1 libQt6CanvasPainter.so.6 libQt6Charts.so.6 libQt6Concurrent.so.6 libQt6Core.so.6 libQt6DBus.so.6 libQt6Designer.so.6 libQt6DesignerComponents.so.6 libQt6Gui.so.6 libQt6Help.so.6 libQt6HttpServer.so.6 libQt6Network.so.6 libQt6PrintSupport.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Quick3D.so.6 libQt6Quick3DAssetImport.so.6 libQt6Quick3DAssetUtils.so.6 libQt6Quick3DParticles.so.6 libQt6Quick3DRuntimeRender.so.6 libQt6Quick3DUtils.so.6 libQt6QuickWidgets.so.6 libQt6SerialPort.so.6 libQt6Sql.so.6 libQt6Svg.so.6 libQt6SvgWidgets.so.6 libQt6TaskTree.so.6 libQt6Test.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libarchive.so.13 libc.so.6 libclang-cpp.so.23.1 libdw.so.1 libelf.so.1 libgcc_s.so.1 libglib-2.0.so.0 libm.so.6 libstdc++.so.6 libyaml-cpp.so.0.9
+RESTRICT: test
+SHA1: 16dc2ec3dea1f2896cc3284b443af9ed18884f64
+SIZE: 104263680
+USE: abi_x86_64 amd64 clang designer doc elibc_glibc help kernel_linux keyring llvm_slot_23 plugin-dev qmldesigner serialterminal svg tracing
+MTIME: 1795599771
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
