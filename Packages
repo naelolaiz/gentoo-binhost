@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795588164
-PACKAGES: 1906
+TIMESTAMP: 1795588471
+PACKAGES: 1907
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -15749,6 +15749,31 @@ SIZE: 19916800
 SLOT: 6/6.12.1
 USE: X abi_x86_64 amd64 concurrent cups dbus elibc_glibc gtk gui icu kernel_linux libinput libproxy network nls opengl sql sqlite ssl udev vulkan wayland widgets xml zstd
 MTIME: 1795494865
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: ~dev-qt/qtshadertools-6.12.1 app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795588227
+CPV: dev-qt/qtcanvaspainter-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[gui,widgets] ~dev-qt/qtdeclarative-6.12.1:6
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 077d524ed3327925aaaac1fa71e407a4
+PATH: pkgs-dev-qt/qtcanvaspainter-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6Canvas2D.so.6 libQt6CanvasPainter.so.6 libcanvas2dplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[gui,widgets] ~dev-qt/qtdeclarative-6.12.1:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "48005c2480e15993b3e41c70ffe884a21c480a77"}
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6Widgets.so.6 libc.so.6 libm.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: 26cb06547283a7d1d83912076a39933e6b82eecd
+SIZE: 675840
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795588228
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
