@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795604909
-PACKAGES: 1909
+TIMESTAMP: 1795605819
+PACKAGES: 1910
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -39773,6 +39773,30 @@ SIZE: 22169600
 SLOT: 2/2.16-r1
 USE: abi_x86_64 amd64 branding device-mapper elibc_glibc fonts grub_platforms_efi-64 grub_platforms_pc kernel_linux mount nls sdl themes truetype
 MTIME: 1791278158
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: || ( dev-lang/python:3.15 dev-lang/python:3.14 dev-lang/python:3.13 dev-lang/python:3.12 ) >=sys-devel/flex-2.5.35 sys-devel/bison sys-apps/help2man sys-apps/texinfo media-libs/freetype:2 virtual/pkgconfig media-libs/freetype:2 virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795605783
+CPV: sys-boot/grub-2.16-r2
+DEFINED_PHASES: compile configure install postinst prepare setup test unpack
+DEPEND: app-arch/xz-utils >=sys-libs/ncurses-5.2-r5:0/6= >=sys-fs/lvm2-2.02.45 sys-fs/fuse:3/4= media-libs/freetype:2/2=
+EAPI: 8
+IUSE: +branding +device-mapper doc efiemu +fonts mount nls protect sdl test +themes truetype libzfs grub_platforms_coreboot grub_platforms_efi-32 grub_platforms_efi-64 grub_platforms_emu grub_platforms_ieee1275 grub_platforms_loongson grub_platforms_multiboot grub_platforms_qemu grub_platforms_qemu-mips grub_platforms_pc grub_platforms_uboot grub_platforms_xen grub_platforms_xen-32 grub_platforms_xen-pvh secureboot verify-sig
+KEYWORDS: amd64 arm arm64 ~loong ppc ppc64 ~riscv ~sparc x86
+LICENSE: GPL-3+ BSD MIT GPL-2-with-font-exception CC-BY-SA-3.0 BitstreamVera
+MD5: 181c8f10a64f739f485745c23e80a19a
+PATH: pkgs-sys-boot/grub-2.16-r2-1.gpkg.tar
+RDEPEND: app-arch/xz-utils >=sys-libs/ncurses-5.2-r5:0/6= >=sys-fs/lvm2-2.02.45 sys-fs/fuse:3/4= media-libs/freetype:2/2= >=sys-boot/grub-themes-gentoo-1.0-r1 sys-boot/efibootmgr !sys-boot/grub:0 sys-devel/gettext >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "48005c2480e15993b3e41c70ffe884a21c480a77"}
+REQUIRES: x86_64: libc.so.6 libdevmapper.so.1.02 libfreetype.so.6 libfuse3.so.4 liblzma.so.5
+RESTRICT: test
+SHA1: a36f213969fd446d42e126d0462cfd2c35f2114b
+SIZE: 22364160
+SLOT: 2/2.16-r2
+USE: abi_x86_64 amd64 branding device-mapper elibc_glibc fonts grub_platforms_efi-64 grub_platforms_pc kernel_linux mount nls sdl themes truetype
+MTIME: 1795605786
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
