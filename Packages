@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795580133
-PACKAGES: 1911
+TIMESTAMP: 1795580446
+PACKAGES: 1912
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -1146,6 +1146,28 @@ SHA1: d6f2fab5b45b1123f433c82ec8eab9067c1dcc63
 SIZE: 102400
 USE: abi_x86_64 amd64 elibc_glibc extra kernel_linux
 MTIME: 1792736834
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-go/go-md2man >=dev-lang/go-1.26.6 virtual/pkgconfig >=dev-lang/go-1.24.11:0/1.27.4= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 3
+BUILD_TIME: 1795580065
+CPV: app-containers/containerd-2.4.2
+DEFINED_PHASES: compile install prepare unpack
+DEPEND: sys-libs/libseccomp
+EAPI: 8
+IUSE: apparmor btrfs device-mapper +cri +seccomp selinux test
+KEYWORDS: amd64 ~arm arm64 ppc64 ~riscv ~x86
+LICENSE: Apache-2.0
+MD5: 7af558d29be583b5c70b15d014c804eb
+PATH: pkgs-app-containers/containerd-2.4.2-3.gpkg.tar
+RDEPEND: sys-libs/libseccomp >=app-containers/runc-1.4.3[seccomp] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+RESTRICT: test
+SHA1: fac54837656058eed534a0074321f59c45d65620
+SIZE: 35235840
+USE: abi_x86_64 amd64 cri elibc_glibc kernel_linux seccomp
+MTIME: 1795580068
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
