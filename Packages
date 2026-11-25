@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1795620176
+TIMESTAMP: 1795621031
 PACKAGES: 1899
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -35191,24 +35191,26 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: dev-qt/qttools:6[linguist]
-BUILD_ID: 2
-BUILD_TIME: 1793175337
+BUILD_ID: 3
+BUILD_TIME: 1795620940
 CPV: media-video/smplayer-25.6.0_p20250903-r1
 DEFINED_PHASES: compile configure install postinst postrm preinst prepare
-DEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6/6.11.3=[dbus,gui,network,ssl,widgets,xml] dev-qt/qtdeclarative:6 virtual/zlib:0/1= x11-libs/libX11
+DEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6/6.12.1=[dbus,gui,network,ssl,widgets,xml] dev-qt/qtdeclarative:6 virtual/zlib:0/1= x11-libs/libX11
 EAPI: 8
 IDEPEND: dev-util/desktop-file-utils x11-misc/shared-mime-info
 IUSE: bidi debug
 KEYWORDS: amd64 ~arm ~hppa ~ppc ~ppc64 x86
 LICENSE: GPL-2+ BSD-2
-MD5: beb9fe4d38bf907ec349983fe144e303
-PATH: pkgs-media-video/smplayer-25.6.0_p20250903-r1-2.gpkg.tar
-RDEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6/6.11.3=[dbus,gui,network,ssl,widgets,xml] dev-qt/qtdeclarative:6 virtual/zlib:0/1= x11-libs/libX11 || ( media-video/mpv[libass(+),X] media-video/mplayer[libass,png,X] ) >=sys-libs/glibc-2.43-r4
+MD5: af35bcc84b4222c0cf8503761d2c8d09
+PATH: pkgs-media-video/smplayer-25.6.0_p20250903-r1-3.gpkg.tar
+RDEPEND: dev-qt/qt5compat:6 dev-qt/qtbase:6/6.12.1=[dbus,gui,network,ssl,widgets,xml] dev-qt/qtdeclarative:6 virtual/zlib:0/1= x11-libs/libX11 || ( media-video/mpv[libass(+),X] media-video/mplayer[libass,png,X] ) >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "48005c2480e15993b3e41c70ffe884a21c480a77"}
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Core5Compat.so.6 libQt6DBus.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Widgets.so.6 libQt6Xml.so.6 libX11.so.6 libc.so.6 libgcc_s.so.1 libstdc++.so.6 libz.so.1
-SHA1: 2e598882bbc4a96031b2381d1ab2f64e81c04097
+SHA1: 5b966397fb4a0613918f4735524cc9fe5fb564ec
 SIZE: 4628480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793175339
+USER_PATCHES: 94974a7b80dc9e5cf548d21c1a24c6d2a5745c1b6a79c13c043b3bc56cd1f81c
+MTIME: 1795620941
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
