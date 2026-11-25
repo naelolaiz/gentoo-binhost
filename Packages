@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795605819
-PACKAGES: 1910
+TIMESTAMP: 1795606741
+PACKAGES: 1913
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -13531,6 +13531,28 @@ SHA1: dd5d93fb7ceafc55eb87d3f94001143afb0d8d33
 SIZE: 563200
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1795151823
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795606344
+CPV: dev-python/regex-2026.11.23
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: doc python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15 debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos
+LICENSE: Apache-2.0
+MD5: 1438f8bcdf3eae538fff3d55db0c3a51
+PATH: pkgs-dev-python/regex-2026.11.23-1.gpkg.tar
+PROVIDES: x86_64: _regex.cpython-314-x86_64-linux-gnu.so
+RDEPEND: dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6
+SHA1: 3f6a0fb3c9a2f009c50d17982b70e0c70b684bd5
+SIZE: 563200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795606344
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -37285,6 +37307,28 @@ MTIME: 1793711792
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/hatchling[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795606689
+CPV: net-misc/yt-dlp-2026.11.23
+DEFINED_PHASES: compile configure install postinst prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: +deno test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: amd64 arm arm64 ~hppa ppc ppc64 ~riscv x86 ~arm64-macos ~x64-macos
+LICENSE: Unlicense
+MD5: 044a279c2faa7d00d43217ae6840e200
+PATH: pkgs-net-misc/yt-dlp-2026.11.23-1.gpkg.tar
+RDEPEND: dev-python/pycryptodome[python_targets_python3_14(-)] =dev-python/yt-dlp-ejs-0.8*[python_targets_python3_14(-)] >=dev-lang/deno-bin-2.9.8 dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "48005c2480e15993b3e41c70ffe884a21c480a77"}
+RESTRICT: test
+SHA1: c18348e476f80b79b6a20258eca0f1b6052c988d
+SIZE: 7690240
+USE: abi_x86_64 amd64 deno elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795606691
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-libs/libpcre2:* >=kde-frameworks/extra-cmake-modules-6.27.0:*
 BUILD_ID: 1
 BUILD_TIME: 1793961276
@@ -38420,6 +38464,28 @@ SHA1: ef9f5ba714f5ad6d7c9a1ece61739cc86fc494fc
 SIZE: 21524480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1795323395
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: >=dev-lang/go-1.26.10 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.4= app-arch/unzip virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795606635
+CPV: sci-ml/ollama-0.40.18
+DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
+DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/1.0.0=
+EAPI: 8
+KEYWORDS: ~amd64
+LICENSE: MIT
+MD5: 47c4e2ec75449f211c3add97a80a7db6
+PATH: pkgs-sci-ml/ollama-0.40.18-1.gpkg.tar
+PROVIDES: x86_64: libllama-common.so.1 libllama-quantize-impl.so libllama-server-impl.so libllama.so.1 libmtmd.so.1
+RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/1.0.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.1 libggml.so.1 libm.so.6 libstdc++.so.6
+RESTRICT: mirror test
+SHA1: cc6c9119bf0bfcbee263fbfd74f3b36b9006794b
+SIZE: 22036480
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795606637
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
