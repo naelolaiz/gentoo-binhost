@@ -238,10 +238,6 @@
    "path": "pkgs-app-emulation/virtualbox-7.2.22-2.gpkg.tar"
   },
   {
-   "at": 1794396590,
-   "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-6.gpkg.tar"
-  },
-  {
    "at": 1794975805,
    "path": "pkgs-app-emulation/virtualbox-modules-7.2.22-7.gpkg.tar"
   },
@@ -262,100 +258,20 @@
    "path": "pkgs-app-misc/francis-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794393247,
-   "path": "pkgs-app-portage/gentoolkit-0.8.2-1.gpkg.tar"
-  },
-  {
    "at": 1795584427,
    "path": "pkgs-app-text/calibre-8.9.0-29.gpkg.tar"
-  },
-  {
-   "at": 1794376442,
-   "path": "pkgs-app-text/doxygen-1.18.0-r1-4.gpkg.tar"
-  },
-  {
-   "at": 1794377096,
-   "path": "pkgs-app-text/gspell-1.14.5-1.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-app-text/zathura-2026.07.18-1.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-app-text/zathura-cb-2026.07.18-1.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-app-text/zathura-djvu-2026.07.18-1.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-app-text/zathura-pdf-mupdf-2026.07.18-1.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-app-text/zathura-ps-2026.07.18-1.gpkg.tar"
   },
   {
    "at": 1795262431,
    "path": "pkgs-dev-build/dolphin-plugins-makefileactions-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794395434,
-   "path": "pkgs-dev-cpp/cairomm-1.18.1-1.gpkg.tar"
-  },
-  {
    "at": 1795405894,
    "path": "pkgs-dev-cpp/eigen-3.4.1-r1-2.gpkg.tar"
   },
   {
-   "at": 1794387696,
-   "path": "pkgs-dev-cpp/glibmm-2.66.8-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1794396352,
-   "path": "pkgs-dev-cpp/gtkmm-4.22.0-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-dev-cpp/pangomm-2.46.5-1.gpkg.tar"
-  },
-  {
    "at": 1794808402,
    "path": "pkgs-dev-cpp/simdutf-9.2.1-2.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.13.16-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.13.17-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.13.17_p1-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.14.8-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.14.9-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.14.9_p1-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.15.0-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-dev-lang/python-3.15.1-1.gpkg.tar"
   },
   {
    "at": 1794808402,
@@ -366,28 +282,12 @@
    "path": "pkgs-dev-libs/expat-2.8.5-2.gpkg.tar"
   },
   {
-   "at": 1794394476,
-   "path": "pkgs-dev-libs/girara-2026.07.18-1.gpkg.tar"
-  },
-  {
-   "at": 1794387024,
-   "path": "pkgs-dev-libs/gumbo-0.14.1-1.gpkg.tar"
-  },
-  {
    "at": 1795262431,
    "path": "pkgs-dev-libs/kweathercore-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794376442,
-   "path": "pkgs-dev-libs/libei-1.6.0-r1-1.gpkg.tar"
-  },
-  {
    "at": 1795606791,
    "path": "pkgs-dev-libs/libfmt-12.2.0-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-dev-libs/libxmlb-0.3.29-1.gpkg.tar"
   },
   {
    "at": 1794574427,
@@ -414,20 +314,12 @@
    "path": "pkgs-dev-libs/simdjson-5.0.7-r1-1.gpkg.tar"
   },
   {
-   "at": 1794375786,
-   "path": "pkgs-dev-libs/spdlog-1.17.0-4.gpkg.tar"
-  },
-  {
    "at": 1795606791,
    "path": "pkgs-dev-python/filelock-4.0.12-1.gpkg.tar"
   },
   {
    "at": 1795606791,
    "path": "pkgs-dev-python/filelock-4.0.9-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-dev-python/numpy-2.5.4-1.gpkg.tar"
   },
   {
    "at": 1795414038,
@@ -440,10 +332,6 @@
   {
    "at": 1795101457,
    "path": "pkgs-dev-python/pyqt-builder-1.20.1-1.gpkg.tar"
-  },
-  {
-   "at": 1794394476,
-   "path": "pkgs-dev-python/scipy-1.18.1-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -468,10 +356,6 @@
   {
    "at": 1794808400,
    "path": "pkgs-dev-qt/qtmultimedia-6.11.3-4.gpkg.tar"
-  },
-  {
-   "at": 1794393859,
-   "path": "pkgs-dev-util/android-tools-36.0.1-2.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -534,24 +418,12 @@
    "path": "pkgs-games-puzzle/skladnik-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794376442,
-   "path": "pkgs-gnome-base/gsettings-desktop-schemas-50.1-1.gpkg.tar"
-  },
-  {
    "at": 1795101457,
    "path": "pkgs-gui-apps/sddm-gentoo-config-0-r1-2.gpkg.tar"
   },
   {
-   "at": 1794393247,
-   "path": "pkgs-gui-libs/gtk4-layer-shell-1.3.0-1.gpkg.tar"
-  },
-  {
    "at": 1795573798,
    "path": "pkgs-gui-libs/kddockwidgets-2.5.1-2.gpkg.tar"
-  },
-  {
-   "at": 1794393247,
-   "path": "pkgs-gui-libs/libadwaita-1.9.4-1.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -1670,10 +1542,6 @@
    "path": "pkgs-kde-plasma/sddm-kcm-6.8.1-2.gpkg.tar"
   },
   {
-   "at": 1794396593,
-   "path": "pkgs-kde-plasma/spectacle-6.7.5-2.gpkg.tar"
-  },
-  {
    "at": 1795584430,
    "path": "pkgs-kde-plasma/spectacle-6.7.5-r1-1.gpkg.tar"
   },
@@ -1782,10 +1650,6 @@
    "path": "pkgs-llvm-runtimes/openmp-23.1.4-1.gpkg.tar"
   },
   {
-   "at": 1794390474,
-   "path": "pkgs-media-gfx/gimp-3.2.8-1.gpkg.tar"
-  },
-  {
    "at": 1794571809,
    "path": "pkgs-media-gfx/gimp-3.2.8-2.gpkg.tar"
   },
@@ -1822,32 +1686,12 @@
    "path": "pkgs-media-gfx/qrca-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794387696,
-   "path": "pkgs-media-libs/babl-0.1.128-1.gpkg.tar"
-  },
-  {
-   "at": 1794389246,
-   "path": "pkgs-media-libs/gegl-0.4.72-1.gpkg.tar"
-  },
-  {
    "at": 1794803058,
    "path": "pkgs-media-libs/gegl-0.4.72-3.gpkg.tar"
   },
   {
    "at": 1794807625,
    "path": "pkgs-media-libs/gegl-0.4.72-5.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-media-libs/gexiv2-0.14.7-r2-1.gpkg.tar"
-  },
-  {
-   "at": 1794375473,
-   "path": "pkgs-media-libs/libbluray-1.4.1-1.gpkg.tar"
-  },
-  {
-   "at": 1794375473,
-   "path": "pkgs-media-libs/libdvdread-7.1.1-1.gpkg.tar"
   },
   {
    "at": 1794896385,
@@ -1878,16 +1722,8 @@
    "path": "pkgs-media-libs/libheif-1.23.7-9.gpkg.tar"
   },
   {
-   "at": 1794395434,
-   "path": "pkgs-media-libs/libplacebo-7.387.0-2.gpkg.tar"
-  },
-  {
    "at": 1795101457,
    "path": "pkgs-media-libs/libsdl3-3.4.16-3.gpkg.tar"
-  },
-  {
-   "at": 1794376442,
-   "path": "pkgs-media-libs/libva-2.24.1-r1-1.gpkg.tar"
   },
   {
    "at": 1794808235,
@@ -1898,10 +1734,6 @@
    "path": "pkgs-media-libs/opencv-4.14.0-2.gpkg.tar"
   },
   {
-   "at": 1794375473,
-   "path": "pkgs-media-libs/rubberband-4.0.0-r1-4.gpkg.tar"
-  },
-  {
    "at": 1794573021,
    "path": "pkgs-media-libs/sdl2-image-2.8.8-5.gpkg.tar"
   },
@@ -1910,36 +1742,12 @@
    "path": "pkgs-media-libs/taglib-2.3.2-1.gpkg.tar"
   },
   {
-   "at": 1794377096,
-   "path": "pkgs-media-plugins/gst-plugins-jack-1.26.11-1.gpkg.tar"
-  },
-  {
-   "at": 1794384156,
-   "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-4.gpkg.tar"
-  },
-  {
    "at": 1794569662,
    "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-5.gpkg.tar"
   },
   {
    "at": 1794618838,
    "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-6.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-media-plugins/gst-plugins-lv2-1.26.11-1.gpkg.tar"
-  },
-  {
-   "at": 1794376777,
-   "path": "pkgs-media-plugins/gst-plugins-wavpack-1.26.11-1.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-media-plugins/mda-lv2-1.2.10-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1794396352,
-   "path": "pkgs-media-sound/a2jmidid-12-1.gpkg.tar"
   },
   {
    "at": 1794896065,
@@ -1954,20 +1762,12 @@
    "path": "pkgs-media-sound/elisa-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794375145,
-   "path": "pkgs-media-sound/jack-example-tools-4-4.gpkg.tar"
-  },
-  {
    "at": 1795262431,
    "path": "pkgs-media-sound/kasts-26.08.2-1.gpkg.tar"
   },
   {
    "at": 1795262431,
    "path": "pkgs-media-sound/krecorder-26.08.2-1.gpkg.tar"
-  },
-  {
-   "at": 1794396352,
-   "path": "pkgs-media-sound/sonic-visualiser-5.2.1-2.gpkg.tar"
   },
   {
    "at": 1794569350,
@@ -1984,10 +1784,6 @@
   {
    "at": 1794571496,
    "path": "pkgs-media-video/ffmpeg-compat-6.1.6-7.gpkg.tar"
-  },
-  {
-   "at": 1794396352,
-   "path": "pkgs-media-video/mpv-0.42.0-2.gpkg.tar"
   },
   {
    "at": 1795582893,
@@ -2010,20 +1806,12 @@
    "path": "pkgs-media-video/pipewire-1.6.11-13.gpkg.tar"
   },
   {
-   "at": 1794375473,
-   "path": "pkgs-media-video/pipewire-1.6.11-7.gpkg.tar"
-  },
-  {
    "at": 1794569973,
    "path": "pkgs-media-video/pipewire-1.6.11-8.gpkg.tar"
   },
   {
    "at": 1794617374,
    "path": "pkgs-media-video/pipewire-1.6.11-9.gpkg.tar"
-  },
-  {
-   "at": 1794375145,
-   "path": "pkgs-media-video/wireplumber-0.5.19-1.gpkg.tar"
   },
   {
    "at": 1794573021,
@@ -2050,24 +1838,8 @@
    "path": "pkgs-net-libs/libquotient-0.9.6.1-6.gpkg.tar"
   },
   {
-   "at": 1794395434,
-   "path": "pkgs-net-libs/librist-0.2.11-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-net-libs/libslirp-4.9.3-1.gpkg.tar"
-  },
-  {
    "at": 1795588164,
    "path": "pkgs-net-libs/nodejs-26.13.1-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-net-libs/webkit-gtk-2.54.1-r400-1.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-net-libs/webkit-gtk-2.54.1-r600-1.gpkg.tar"
   },
   {
    "at": 1794552342,
@@ -2082,14 +1854,6 @@
    "path": "pkgs-net-misc/kio-zeroconf-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794377096,
-   "path": "pkgs-net-misc/networkmanager-1.58.1-r3-2.gpkg.tar"
-  },
-  {
-   "at": 1794396593,
-   "path": "pkgs-net-misc/yt-dlp-2026.08.19-1.gpkg.tar"
-  },
-  {
    "at": 1794975808,
    "path": "pkgs-net-misc/yt-dlp-2026.10.21-1.gpkg.tar"
   },
@@ -2100,10 +1864,6 @@
   {
    "at": 1795262431,
    "path": "pkgs-net-p2p/ktorrent-26.08.2-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-net-print/cups-pk-helper-0.2.7-r1-1.gpkg.tar"
   },
   {
    "at": 1795572581,
@@ -2158,18 +1918,6 @@
    "path": "pkgs-sci-ml/ollama-0.40.8-1.gpkg.tar"
   },
   {
-   "at": 1794376442,
-   "path": "pkgs-sys-apps/bubblewrap-0.13.0-1.gpkg.tar"
-  },
-  {
-   "at": 1794388623,
-   "path": "pkgs-sys-apps/fwupd-2.1.9-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-sys-apps/fwupd-efi-1.9-1.gpkg.tar"
-  },
-  {
    "at": 1795101457,
    "path": "pkgs-sys-apps/pkgcore-0.12.45-1.gpkg.tar"
   },
@@ -2186,28 +1934,8 @@
    "path": "pkgs-sys-apps/portage-3.0.83-1.gpkg.tar"
   },
   {
-   "at": 1794393247,
-   "path": "pkgs-sys-apps/usbutils-019-1.gpkg.tar"
-  },
-  {
-   "at": 1794376442,
-   "path": "pkgs-sys-apps/xdg-dbus-proxy-0.1.9-1.gpkg.tar"
-  },
-  {
    "at": 1795262431,
    "path": "pkgs-sys-apps/xdg-desktop-portal-1.22.1-1.gpkg.tar"
-  },
-  {
-   "at": 1794378985,
-   "path": "pkgs-sys-apps/xdg-desktop-portal-1.22.1-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1794389246,
-   "path": "pkgs-sys-apps/xdg-desktop-portal-gtk-1.15.3-1.gpkg.tar"
-  },
-  {
-   "at": 1794375473,
-   "path": "pkgs-sys-auth/rtkit-0.14-1.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -2262,14 +1990,6 @@
    "path": "pkgs-sys-libs/kpmcore-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794393247,
-   "path": "pkgs-sys-power/power-profiles-daemon-0.30-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-sys-power/upower-1.91.3-1.gpkg.tar"
-  },
-  {
    "at": 1794975808,
    "path": "pkgs-virtual/dist-kernel-7.2.11-1.gpkg.tar"
   },
@@ -2306,44 +2026,12 @@
    "path": "pkgs-www-client/falkon-26.08.3-1.gpkg.tar"
   },
   {
-   "at": 1794387024,
-   "path": "pkgs-x11-apps/setxkbmap-1.3.5-1.gpkg.tar"
-  },
-  {
-   "at": 1794393247,
-   "path": "pkgs-x11-apps/xev-1.2.7-1.gpkg.tar"
-  },
-  {
    "at": 1794512167,
    "path": "pkgs-x11-libs/libX11-1.8.13-2.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-x11-libs/libXrender-0.9.12-9.gpkg.tar"
-  },
-  {
-   "at": 1794378985,
-   "path": "pkgs-x11-libs/libnotify-0.8.9-1.gpkg.tar"
-  },
-  {
-   "at": 1794387696,
-   "path": "pkgs-x11-misc/appmenu-gtk-module-25.04-1.gpkg.tar"
-  },
-  {
-   "at": 1794394805,
-   "path": "pkgs-x11-misc/makedepend-1.0.10-1.gpkg.tar"
-  },
-  {
-   "at": 1794388623,
-   "path": "pkgs-x11-misc/xdg-user-dirs-0.20-1.gpkg.tar"
-  },
-  {
-   "at": 1794389246,
-   "path": "pkgs-x11-misc/xdg-user-dirs-gtk-0.16-1.gpkg.tar"
-  },
-  {
-   "at": 1794375145,
-   "path": "pkgs-x11-themes/adwaita-icon-theme-50.0-r1-1.gpkg.tar"
   }
  ]
 }
