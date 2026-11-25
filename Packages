@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795582893
-PACKAGES: 1915
+TIMESTAMP: 1795583206
+PACKAGES: 1917
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -12985,6 +12985,28 @@ MTIME: 1792991369
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: >=dev-python/pyqt-builder-1.21[python_targets_python3_14(-)] >=dev-python/sip-6.15[python_targets_python3_14(-)] dev-qt/qtbase:6 dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/sip[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795582870
+CPV: dev-python/pyqt6-webengine-6.140.1
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: >=dev-python/pyqt6-6.12.0[gui,ssl,webchannel,python_targets_python3_14(-)] dev-qt/qtbase:6[gui,widgets] >=dev-qt/qtwebengine-6.140:6[widgets] dev-python/pyqt6[printsupport,widgets] dev-lang/python:3.14
+EAPI: 8
+IUSE: debug quick +widgets python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15 debug
+KEYWORDS: ~amd64 ~arm64
+LICENSE: GPL-3
+MD5: 6c867ad744061b5e90852bfb69662ea7
+PATH: pkgs-dev-python/pyqt6-webengine-6.140.1-1.gpkg.tar
+PROVIDES: x86_64: QtWebEngineCore.abi3.so QtWebEngineWidgets.abi3.so
+RDEPEND: >=dev-python/pyqt6-6.12.0[gui,ssl,webchannel,python_targets_python3_14(-)] dev-qt/qtbase:6[gui,widgets] >=dev-qt/qtwebengine-6.140:6[widgets] dev-python/pyqt6[printsupport,widgets] dev-lang/python:3.14 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6WebEngineCore.so.6 libQt6WebEngineWidgets.so.6 libQt6Widgets.so.6 libc.so.6 libstdc++.so.6
+SHA1: d96670bf0f37e7fdcf118dc539f4b66b606176ad
+SIZE: 225280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14 widgets
+MTIME: 1795582871
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: >=dev-python/setuptools-scm-6.2.3[python_targets_python3_14(-)] dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/setuptools[python_targets_python3_14(-)]
 BUILD_ID: 1
 BUILD_TIME: 1791278626
@@ -17089,6 +17111,30 @@ SIZE: 112640
 SLOT: 6/6.11.3
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1793174537
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5 dev-lang/perl virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795582841
+CPV: dev-qt/qtwebview-6.12.1
+DEFINED_PHASES: compile configure install prepare test unpack
+DEPEND: ~dev-qt/qtbase-6.12.1:6[gui] ~dev-qt/qtdeclarative-6.12.1:6 dev-qt/qtwebengine:6/6.140.0=[qml]
+EAPI: 8
+IUSE: custom-cflags test
+KEYWORDS: ~amd64 ~arm64
+LICENSE: || ( GPL-2 GPL-3 LGPL-3 ) FDL-1.3
+MD5: 819920790499079292f54533968135cf
+PATH: pkgs-dev-qt/qtwebview-6.12.1-1.gpkg.tar
+PROVIDES: x86_64: libQt6WebView.so.6 libQt6WebViewQuick.so.6 libqtwebview_webengine.so libqtwebviewquickplugin.so
+RDEPEND: ~dev-qt/qtbase-6.12.1:6[gui] ~dev-qt/qtdeclarative-6.12.1:6 dev-qt/qtwebengine:6/6.140.0=[qml] >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Qml.so.6 libQt6Quick.so.6 libQt6WebEngineCore.so.6 libQt6WebEngineQuick.so.6 libc.so.6 libstdc++.so.6
+RESTRICT: test
+SHA1: fd1a05a7159bb7a915c490f9425ac3e928327970
+SIZE: 112640
+SLOT: 6/6.12.1
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795582843
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -36268,26 +36314,27 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: app-alternatives/ninja >=dev-build/cmake-3.28.5
-BUILD_ID: 6
-BUILD_TIME: 1793711270
+BUILD_ID: 7
+BUILD_TIME: 1795583139
 CPV: net-libs/libquotient-0.9.6.1
 DEFINED_PHASES: compile configure install prepare test
-DEPEND: dev-libs/olm dev-libs/openssl:0/4= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.11.3=[gui,network,sql,ssl] dev-qt/qtmultimedia:6
+DEPEND: dev-libs/olm dev-libs/openssl:0/4= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.12.1=[gui,network,sql,ssl] dev-qt/qtmultimedia:6
 EAPI: 8
 IUSE: test
 KEYWORDS: amd64 arm64 ~ppc64 ~x86
 LICENSE: LGPL-2+
-MD5: 498b32f4d7b5bc198f5da7ea233231ce
-PATH: pkgs-net-libs/libquotient-0.9.6.1-6.gpkg.tar
+MD5: c56af81351e8c5b3fa624118e106fb7e
+PATH: pkgs-net-libs/libquotient-0.9.6.1-7.gpkg.tar
 PROVIDES: x86_64: libQuotientQt6.so.0.9
-RDEPEND: dev-libs/olm dev-libs/openssl:0/4= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.11.3=[gui,network,sql,ssl] dev-qt/qtmultimedia:6 >=sys-libs/glibc-2.43-r4
+RDEPEND: dev-libs/olm dev-libs/openssl:0/4= >=dev-libs/qtkeychain-0.14.2:0/1=[qt6(+)] dev-qt/qtbase:6/6.12.1=[gui,network,sql,ssl] dev-qt/qtmultimedia:6 >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "72c292a26348fe3752c8792d99f52983dbf84b71"}
 REQUIRES: x86_64: libQt6Core.so.6 libQt6Gui.so.6 libQt6Network.so.6 libQt6Sql.so.6 libc.so.6 libcrypto.so.4 libm.so.6 libolm.so.3 libqt6keychain.so.1 libstdc++.so.6
 RESTRICT: test
-SHA1: e7540a018130aa79ff6a184363c42a84f8e984ad
+SHA1: 2c58c660dadf3387ee15a4fc893e91b9a885a0b4
 SIZE: 1341440
 SLOT: 0/0.9.6.1
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1793711271
+MTIME: 1795583139
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
