@@ -13,9 +13,11 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 - `media-video/smplayer` builds against Qt 6.12 again.  Qt 6.12's `uic`
   rejects empty `<connection>` blocks in four `.ui` files (Gentoo bug 983380,
   upstream `smplayer-dev/smplayer#1420`).  The builder applies the upstream
-  patch to `smplayer-25.6.0_p20250903-r1` via `/etc/portage/patches/`;
-  machines need no change.  The weekly workaround check reports when a newer
-  ebuild revision or version is in the tree.
+  patch to `smplayer-25.6.0_p20250903-r1` via a `post_src_prepare` hook in
+  `/etc/portage/env/` (not `/etc/portage/patches/`, so Portage does not mark
+  the binary with `USER_PATCHES`); machines need no change.  The weekly
+  workaround check reports when a newer ebuild revision or version is in the
+  tree.
 - `app-containers/podman` is now preferred over `app-containers/docker` in
   the builder (`app-containers/podman` is listed in `21-desktop-more` and
   `app-containers/docker` is masked in the builder so `|| ( docker podman )`

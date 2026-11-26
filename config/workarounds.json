@@ -99,15 +99,15 @@
     "key": "smplayer-qt612-ui",
     "title": "Remove the smplayer Qt 6.12 UI patch — a newer ebuild may include the fix",
     "body_lines": [
-      "`scripts/container-build.sh` (`write_build_workarounds`) drops an upstream patch into",
-      "`/etc/portage/patches/media-video/smplayer-25.6.0_p20250903-r1/` because Qt 6.12's `uic`",
-      "rejects empty `<connection>` blocks in four `.ui` files (Gentoo bug 983380, upstream",
-      "`smplayer-dev/smplayer#1420`, fixed in commit `9844cdde`).",
+      "`scripts/container-build.sh` (`write_build_workarounds`) applies an upstream patch via a",
+      "`post_src_prepare` hook at `/etc/portage/env/media-video/smplayer-25.6.0_p20250903-r1`",
+      "because Qt 6.12's `uic` rejects empty `<connection>` blocks in four `.ui` files (Gentoo",
+      "bug 983380, upstream `smplayer-dev/smplayer#1420`, fixed in commit `9844cdde`).",
       "",
       "A `media-video/smplayer` ebuild **newer than `25.6.0_p20250903-r1` is now in the tree**.",
       "",
-      "Please verify that the new ebuild builds without the user patch, then remove the patch",
-      "and this entry.  Machines need no change: the patch only affects how the builder compiles."
+      "Please verify that the new ebuild builds without the patch hook, then remove the hook",
+      "and this entry.  Machines need no change: the hook only affects how the builder compiles."
     ],
     "check": {
       "type": "ebuild-gt",
