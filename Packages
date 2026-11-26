@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795662894
-PACKAGES: 1900
+TIMESTAMP: 1795664409
+PACKAGES: 1902
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -14660,6 +14660,28 @@ MTIME: 1791079912
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
+BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.98.1:* >=dev-lang/rust-1.98.1:* )
+BUILD_ID: 1
+BUILD_TIME: 1795664110
+CPV: dev-python/uv-0.13.10
+DEFINED_PHASES: compile configure install prepare pretend setup test unpack
+DEPEND: app-arch/zstd:0/1=
+EAPI: 8
+IUSE: test debug
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT ) Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB openssl
+MD5: 9e4a75c286b8ac8ebf09dd06eef92b17
+PATH: pkgs-dev-python/uv-0.13.10-1.gpkg.tar
+RDEPEND: app-arch/zstd:0/1= >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: ld-linux-x86-64.so.2 libc.so.6 libgcc_s.so.1 libm.so.6 libzstd.so.1
+RESTRICT: test
+SHA1: 7ff40fbb52f4e8adb9fd672ad238bb83c5f76a79
+SIZE: 18216960
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795664120
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
 BDEPEND: virtual/pkgconfig || ( >=dev-lang/rust-bin-1.97.1:* >=dev-lang/rust-1.97.1:* )
 BUILD_ID: 1
 BUILD_TIME: 1792679930
@@ -14793,6 +14815,28 @@ SHA1: 6a3bc3d9e273fc4e8e77d07022989860081c07e2
 SIZE: 17960960
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1795097189
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795664126
+CPV: dev-python/uv-build-0.13.10
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 python_targets_python3_15
+KEYWORDS: ~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~x86
+LICENSE: || ( Apache-2.0 MIT )
+MD5: a0d46c935100cb6cc6b6d456fa3c56db
+PATH: pkgs-dev-python/uv-build-0.13.10-1.gpkg.tar
+RDEPEND: >=dev-python/uv-0.13.10 dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "d198a7671c4290e9122b34d43984bc3109ee271d"}
+RESTRICT: test
+SHA1: 5f0d5bfb133e236b7111a4b1104c89f1dd92fcce
+SIZE: 51200
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795664126
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
