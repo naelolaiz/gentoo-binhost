@@ -250,10 +250,13 @@ EOF
   write_build_workarounds
 }
 
-# Compiler settings and user patches for single packages that do not build as
+# Compiler settings and ebuild hooks for single packages that do not build as
 # the tree has them.  They change how a package is compiled, not what a
-# machine needs to accept its binary, so they stay out of the profile.  Each
-# one has an entry in config/workarounds.json that reports when it can go.
+# machine needs to accept its binary, so they stay out of the profile.  Do not
+# use /etc/portage/patches/ here: Portage records a USER_PATCHES digest in the
+# binary package and machines reject it under --binpkg-respect-user-patches.
+# Each workaround has an entry in config/workarounds.json that reports when it
+# can go.
 write_build_workarounds() {
   mkdir -p /etc/portage/env /etc/portage/package.env
   # libfmt 12.2 made <fmt/core.h> stop including <fmt/format.h>; VTK's
@@ -266,10 +269,18 @@ write_build_workarounds() {
 
   # Qt 6.12's uic rejects empty <connection> blocks in .ui files (Gentoo bug
   # 983380, upstream smplayer-dev/smplayer#1420, fixed in commit 9844cdde).
-  # Scoped to the exact ebuild revision so a fixed -r2 or newer snapshot is
-  # left untouched.
-  mkdir -p /etc/portage/patches/media-video/smplayer-25.6.0_p20250903-r1
-  cat > /etc/portage/patches/media-video/smplayer-25.6.0_p20250903-r1/qt612-empty-connections.patch <<'EOF'
+  # Applied via a post_src_prepare hook under /etc/portage/env/ rather than
+  # /etc/portage/patches/ so Portage does not record USER_PATCHES in the
+  # binpkg (which machines would reject).  Scoped to the exact ebuild revision
+  # so a fixed -r2 or newer snapshot is left untouched.
+  mkdir -p /etc/portage/env/media-video
+  cat > /etc/portage/env/media-video/smplayer-25.6.0_p20250903-r1 <<'EOF'
+post_src_prepare() {
+  cd "${S}" || die
+  eapply /etc/portage/env/binhost-smplayer-qt612.patch
+}
+EOF
+  cat > /etc/portage/env/binhost-smplayer-qt612.patch <<'EOF'
 diff --git a/src/eqslider.ui b/src/eqslider.ui
 index a3bee67d4..bec0316c8 100644
 --- a/src/eqslider.ui
