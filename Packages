@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795621031
-PACKAGES: 1899
+TIMESTAMP: 1795662894
+PACKAGES: 1900
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -14436,6 +14436,28 @@ SHA1: 7a3519c476045d25b26dd047ed980145647f77d2
 SIZE: 215040
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
 MTIME: 1792209380
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: dev-lang/python:3.14 >=dev-python/gpep517-16[python_targets_python3_14(-)] dev-python/flit-core[python_targets_python3_14(-)]
+BUILD_ID: 1
+BUILD_TIME: 1795662578
+CPV: dev-python/tomlkit-0.15.3
+DEFINED_PHASES: compile configure install prepare test
+DEPEND: dev-lang/python:3.14
+EAPI: 8
+IUSE: test python_targets_pypy3_12 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14t python_targets_python3_14 python_targets_python3_15t python_targets_python3_15
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~arm64-macos ~x64-macos ~x64-solaris
+LICENSE: MIT
+MD5: 625358dd68e22e6eaea4a71903860d9c
+PATH: pkgs-dev-python/tomlkit-0.15.3-1.gpkg.tar
+RDEPEND: dev-lang/python:3.14
+REPO_REVISIONS: {"gentoo": "d198a7671c4290e9122b34d43984bc3109ee271d"}
+RESTRICT: test
+SHA1: 153c4a28790bd272df752b9b63a6955b1bfdf87a
+SIZE: 225280
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux python_targets_python3_14
+MTIME: 1795662579
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
