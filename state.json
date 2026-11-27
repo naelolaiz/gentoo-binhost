@@ -16,6 +16,10 @@
   "dev-libs/simdjson-5.1.0": 1795606791,
   "dev-python/filelock-4.1.0": 1795152222,
   "dev-python/filelock-4.1.1": 1795152222,
+  "dev-python/fonttools-4.66.1": 1795755625,
+  "dev-python/markdown-3.11": 1795755625,
+  "dev-python/markdown-3.11.1": 1795755625,
+  "dev-python/pip-26.3": 1795755625,
   "dev-python/platformdirs-4.12.3": 1795152222,
   "dev-python/platformdirs-4.12.4": 1795152222,
   "dev-python/platformdirs-4.13.0": 1795152222,
@@ -28,7 +32,6 @@
   "dev-python/pypdf-6.21.0": 1795152222,
   "dev-python/python-discovery-1.6.1": 1795152222,
   "dev-python/python-discovery-1.6.2": 1795152222,
-  "dev-python/sip-6.17.1": 1794464824,
   "dev-python/soupsieve-2.10": 1794808402,
   "dev-python/soupsieve-3.0.1": 1794808402,
   "dev-python/tomlkit-0.15.1": 1795665794,
@@ -42,76 +45,10 @@
   "dev-python/virtualenv-21.14.8": 1795152222,
   "dev-python/wcwidth-0.9.1": 1795414038,
   "dev-python/wcwidth-0.9.2": 1795414038,
-  "dev-qt/qtgraphs-6.11.2": 1794464824,
-  "dev-qt/qthttpserver-6.11.2": 1794464824,
-  "dev-qt/qtimageformats-6.11.2": 1794464824,
-  "dev-qt/qtserialport-6.11.2": 1794464824,
-  "dev-qt/qttasktree-6.11.2": 1794464824,
-  "dev-qt/qttools-6.11.2": 1794464824,
-  "dev-qt/qtwayland-6.11.2": 1794464824,
   "dev-util/perf-7.2": 1795101457,
   "dev-util/perf-7.3": 1795101457,
   "kde-frameworks/oxygen-icons-6.32.0": 1795101457,
-  "kde-plasma/aurorae-6.8.2": 1794464824,
-  "kde-plasma/bluedevil-6.8.2": 1794464824,
-  "kde-plasma/breeze-6.8.2": 1794464824,
-  "kde-plasma/breeze-grub-6.8.2": 1794464824,
-  "kde-plasma/breeze-gtk-6.8.2": 1794464824,
-  "kde-plasma/kactivitymanagerd-6.8.2": 1794464824,
-  "kde-plasma/kde-cli-tools-6.8.2": 1794464824,
-  "kde-plasma/kde-cli-tools-common-6.8.2": 1794464824,
-  "kde-plasma/kde-gtk-config-6.8.2": 1794464824,
-  "kde-plasma/kdecoration-6.8.2": 1794464824,
-  "kde-plasma/kdeplasma-addons-6.8.2": 1794464824,
-  "kde-plasma/kdesu-gui-6.8.2": 1794464824,
-  "kde-plasma/keditfiletype-6.8.2": 1794464824,
-  "kde-plasma/kglobalacceld-6.8.2": 1794464824,
-  "kde-plasma/kinfocenter-6.8.2": 1794464824,
-  "kde-plasma/kmenuedit-6.8.2": 1794464824,
-  "kde-plasma/knighttime-6.8.2": 1794464824,
-  "kde-plasma/kpipewire-6.8.2": 1794464824,
-  "kde-plasma/kscreen-6.8.2": 1794464824,
-  "kde-plasma/kscreenlocker-6.8.2": 1794464824,
-  "kde-plasma/ksshaskpass-6.8.2": 1794464824,
-  "kde-plasma/ksystemstats-6.8.2": 1794464824,
-  "kde-plasma/kup-6.8.2": 1794464824,
-  "kde-plasma/kwallet-pam-6.8.2": 1794464824,
-  "kde-plasma/kwayland-6.8.2": 1794464824,
-  "kde-plasma/kwin-6.8.2-r2": 1794464824,
-  "kde-plasma/kwrited-6.8.2": 1794464824,
-  "kde-plasma/layer-shell-qt-6.8.2": 1794464824,
-  "kde-plasma/libkscreen-6.8.2": 1794464824,
-  "kde-plasma/libksysguard-6.8.2": 1794464824,
-  "kde-plasma/libplasma-6.8.2": 1794464824,
-  "kde-plasma/milou-6.8.2": 1794464824,
-  "kde-plasma/ocean-sound-theme-6.8.2": 1794464824,
-  "kde-plasma/oxygen-6.8.2": 1794464824,
-  "kde-plasma/oxygen-sounds-6.8.2": 1794464824,
-  "kde-plasma/plasma-activities-6.8.2": 1794464824,
-  "kde-plasma/plasma-activities-stats-6.8.2": 1794464824,
-  "kde-plasma/plasma-browser-integration-6.8.2": 1794464824,
-  "kde-plasma/plasma-desktop-6.8.2": 1794464824,
-  "kde-plasma/plasma-disks-6.8.2": 1794464824,
-  "kde-plasma/plasma-integration-6.8.2": 1794464824,
-  "kde-plasma/plasma-meta-6.8.2": 1794464824,
-  "kde-plasma/plasma-nm-6.8.2": 1794464824,
-  "kde-plasma/plasma-pa-6.8.2": 1794464824,
-  "kde-plasma/plasma-systemmonitor-6.8.2": 1794464824,
-  "kde-plasma/plasma-vault-6.8.2": 1794464824,
-  "kde-plasma/plasma-welcome-6.8.2": 1794464824,
-  "kde-plasma/plasma-workspace-6.8.2-r1": 1794464824,
-  "kde-plasma/plasma-workspace-wallpapers-6.8.2": 1794464824,
-  "kde-plasma/plasma5support-6.8.2": 1794464824,
-  "kde-plasma/polkit-kde-agent-6.8.2": 1794464824,
-  "kde-plasma/powerdevil-6.8.2": 1794464824,
-  "kde-plasma/print-manager-6.8.2": 1794464824,
-  "kde-plasma/qqc2-breeze-style-6.8.2": 1794464824,
-  "kde-plasma/sddm-kcm-6.8.2": 1794464824,
-  "kde-plasma/spectacle-6.8.2": 1794464824,
-  "kde-plasma/systemsettings-6.8.2": 1794464824,
-  "kde-plasma/union-6.8.2-r1": 1794464824,
   "kde-plasma/union-6.8.3": 1795584430,
-  "kde-plasma/xdg-desktop-portal-kde-6.8.2": 1794464824,
   "llvm-core/clang-23.1.5-r1": 1795323481,
   "llvm-core/clang-common-23.1.5": 1795323481,
   "llvm-core/lld-23.1.5": 1795323481,
@@ -121,6 +58,8 @@
   "llvm-runtimes/compiler-rt-sanitizers-23.1.5": 1795323481,
   "llvm-runtimes/openmp-23.1.5": 1795323481,
   "media-gfx/imagemagick-7.1.2.32": 1795152222,
+  "media-gfx/imagemagick-7.1.2.35": 1795755625,
+  "media-libs/freetype-2.14.3": 1795755625,
   "media-libs/mlt-7.40.0": 1795606791,
   "media-video/ffmpeg-8.1.3": 1794717560,
   "media-video/ffmpeg-9.0.2": 1794717560,
@@ -132,13 +71,12 @@
   "sci-ml/ollama-0.40.16": 1795323481,
   "sci-ml/ollama-0.40.17": 1795606791,
   "sys-boot/grub-2.16-r1": 1795606791,
-  "sys-kernel/gentoo-kernel-7.3.3": 1794464824,
-  "sys-kernel/gentoo-kernel-bin-7.3.3": 1794464824,
   "sys-kernel/gentoo-kernel-bin-7.3.4": 1795262431,
   "sys-kernel/gentoo-kernel-bin-7.3.5": 1795262431,
-  "virtual/dist-kernel-7.3.3": 1794464824,
+  "sys-kernel/gentoo-kernel-bin-7.3.5_p1": 1795755625,
   "virtual/dist-kernel-7.3.4": 1795262431,
   "virtual/dist-kernel-7.3.5": 1795262431,
+  "virtual/dist-kernel-7.3.5_p1": 1795755625,
   "x11-base/xorg-server-21.1.25": 1794637860,
   "x11-base/xwayland-24.1.14": 1794637860,
   "x11-terms/ghostty-1.4.0": 1794637860,
@@ -331,6 +269,10 @@
    "path": "pkgs-dev-python/sip-6.17.0-r1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-dev-python/sip-6.17.1-1.gpkg.tar"
+  },
+  {
    "at": 1795412524,
    "path": "pkgs-dev-qt/qt-creator-20.0.2-4.gpkg.tar"
   },
@@ -339,8 +281,20 @@
    "path": "pkgs-dev-qt/qtbase-6.11.3-2.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-dev-qt/qtgraphs-6.11.2-1.gpkg.tar"
+  },
+  {
    "at": 1795604909,
    "path": "pkgs-dev-qt/qtgraphs-6.12.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-dev-qt/qthttpserver-6.11.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-dev-qt/qtimageformats-6.11.2-1.gpkg.tar"
   },
   {
    "at": 1794896385,
@@ -349,6 +303,22 @@
   {
    "at": 1794808400,
    "path": "pkgs-dev-qt/qtmultimedia-6.11.3-4.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-dev-qt/qtserialport-6.11.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-dev-qt/qttasktree-6.11.2-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-dev-qt/qttools-6.11.2-4.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-dev-qt/qtwayland-6.11.2-1.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -1199,12 +1169,24 @@
    "path": "pkgs-kde-plasma/aurorae-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/aurorae-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/bluedevil-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/bluedevil-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/breeze-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/breeze-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795584430,
@@ -1215,16 +1197,32 @@
    "path": "pkgs-kde-plasma/breeze-grub-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/breeze-grub-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/breeze-gtk-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/breeze-gtk-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kactivitymanagerd-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kactivitymanagerd-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kde-cli-tools-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kde-cli-tools-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795500332,
@@ -1235,20 +1233,40 @@
    "path": "pkgs-kde-plasma/kde-cli-tools-common-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kde-cli-tools-common-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kde-gtk-config-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kde-gtk-config-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kdecoration-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kdecoration-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kdeplasma-addons-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kdeplasma-addons-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kdesu-gui-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kdesu-gui-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795502480,
@@ -1259,24 +1277,48 @@
    "path": "pkgs-kde-plasma/keditfiletype-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/keditfiletype-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kglobalacceld-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kglobalacceld-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kinfocenter-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kinfocenter-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kmenuedit-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kmenuedit-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/knighttime-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/knighttime-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kpipewire-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kpipewire-6.8.2-4.gpkg.tar"
   },
   {
    "at": 1794569973,
@@ -1311,12 +1353,20 @@
    "path": "pkgs-kde-plasma/kscreen-6.8.1-2.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kscreen-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1795575019,
    "path": "pkgs-kde-plasma/kscreen-6.8.3-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kscreenlocker-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kscreenlocker-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795584430,
@@ -1327,20 +1377,40 @@
    "path": "pkgs-kde-plasma/ksshaskpass-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/ksshaskpass-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/ksystemstats-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/ksystemstats-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kup-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kup-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kwallet-pam-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kwallet-pam-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/kwayland-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kwayland-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795503094,
@@ -1363,6 +1433,10 @@
    "path": "pkgs-kde-plasma/kwin-6.8.2-r1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kwin-6.8.2-r2-1.gpkg.tar"
+  },
+  {
    "at": 1794633049,
    "path": "pkgs-kde-plasma/kwin-6.8.3-1.gpkg.tar"
   },
@@ -1375,8 +1449,16 @@
    "path": "pkgs-kde-plasma/kwrited-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/kwrited-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/layer-shell-qt-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/layer-shell-qt-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795501869,
@@ -1387,6 +1469,10 @@
    "path": "pkgs-kde-plasma/libkscreen-6.8.1-2.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/libkscreen-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1795503094,
    "path": "pkgs-kde-plasma/libkscreen-6.8.3-1.gpkg.tar"
   },
@@ -1395,8 +1481,16 @@
    "path": "pkgs-kde-plasma/libksysguard-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/libksysguard-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/libplasma-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/libplasma-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795500940,
@@ -1407,8 +1501,16 @@
    "path": "pkgs-kde-plasma/milou-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/milou-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/ocean-sound-theme-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/ocean-sound-theme-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795584430,
@@ -1417,6 +1519,10 @@
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/oxygen-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/oxygen-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795575019,
@@ -1431,16 +1537,32 @@
    "path": "pkgs-kde-plasma/oxygen-sounds-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/oxygen-sounds-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-activities-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-activities-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-activities-stats-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-activities-stats-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-browser-integration-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-browser-integration-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795584430,
@@ -1451,6 +1573,10 @@
    "path": "pkgs-kde-plasma/plasma-desktop-6.8.1-2.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-desktop-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1795579214,
    "path": "pkgs-kde-plasma/plasma-desktop-6.8.3-1.gpkg.tar"
   },
@@ -1459,8 +1585,16 @@
    "path": "pkgs-kde-plasma/plasma-disks-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-disks-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-integration-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-integration-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795543592,
@@ -1475,24 +1609,48 @@
    "path": "pkgs-kde-plasma/plasma-meta-6.8.1-2.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-meta-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-nm-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-nm-6.8.2-2.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-pa-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-pa-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-systemmonitor-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-systemmonitor-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-vault-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-vault-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma-welcome-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-welcome-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1503,6 +1661,10 @@
    "path": "pkgs-kde-plasma/plasma-workspace-6.8.2-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-workspace-6.8.2-r1-1.gpkg.tar"
+  },
+  {
    "at": 1795547244,
    "path": "pkgs-kde-plasma/plasma-workspace-6.8.3-1.gpkg.tar"
   },
@@ -1511,28 +1673,56 @@
    "path": "pkgs-kde-plasma/plasma-workspace-wallpapers-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma-workspace-wallpapers-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/plasma5support-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/plasma5support-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/polkit-kde-agent-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/polkit-kde-agent-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/powerdevil-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/powerdevil-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/print-manager-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/print-manager-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/qqc2-breeze-style-6.8.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/qqc2-breeze-style-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/sddm-kcm-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/sddm-kcm-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795584430,
@@ -1543,12 +1733,20 @@
    "path": "pkgs-kde-plasma/spectacle-6.8.1-2.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/spectacle-6.8.2-1.gpkg.tar"
+  },
+  {
    "at": 1795579526,
    "path": "pkgs-kde-plasma/spectacle-6.8.3-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/systemsettings-6.8.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/systemsettings-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1794512167,
@@ -1559,12 +1757,20 @@
    "path": "pkgs-kde-plasma/union-6.8.2-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/union-6.8.2-r1-1.gpkg.tar"
+  },
+  {
    "at": 1795584430,
    "path": "pkgs-kde-plasma/wacomtablet-6.7.5-1.gpkg.tar"
   },
   {
    "at": 1794512167,
    "path": "pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.1-2.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-kde-plasma/xdg-desktop-portal-kde-6.8.2-1.gpkg.tar"
   },
   {
    "at": 1795543905,
@@ -1951,6 +2157,10 @@
    "path": "pkgs-sys-kernel/gentoo-kernel-7.3.1-1.gpkg.tar"
   },
   {
+   "at": 1795755625,
+   "path": "pkgs-sys-kernel/gentoo-kernel-7.3.3-1.gpkg.tar"
+  },
+  {
    "at": 1794975808,
    "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.2.11-1.gpkg.tar"
   },
@@ -1969,6 +2179,10 @@
   {
    "at": 1795584430,
    "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.3.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-sys-kernel/gentoo-kernel-bin-7.3.3-1.gpkg.tar"
   },
   {
    "at": 1794975808,
@@ -2009,6 +2223,10 @@
   {
    "at": 1795584430,
    "path": "pkgs-virtual/dist-kernel-7.3.1-1.gpkg.tar"
+  },
+  {
+   "at": 1795755625,
+   "path": "pkgs-virtual/dist-kernel-7.3.3-1.gpkg.tar"
   },
   {
    "at": 1794717557,
