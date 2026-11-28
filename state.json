@@ -206,24 +206,8 @@
    "path": "pkgs-dev-libs/libfmt-12.2.0-1.gpkg.tar"
   },
   {
-   "at": 1794574427,
-   "path": "pkgs-dev-libs/nss-3.130-1.gpkg.tar"
-  },
-  {
-   "at": 1794574427,
-   "path": "pkgs-dev-libs/nss-3.131-1.gpkg.tar"
-  },
-  {
-   "at": 1794574427,
-   "path": "pkgs-dev-libs/nss-3.131.1-1.gpkg.tar"
-  },
-  {
    "at": 1795501869,
    "path": "pkgs-dev-libs/qcoro-0.13.0-5.gpkg.tar"
-  },
-  {
-   "at": 1794574427,
-   "path": "pkgs-dev-libs/simdjson-5.0.7-r1-1.gpkg.tar"
   },
   {
    "at": 1795606791,
@@ -384,10 +368,6 @@
   {
    "at": 1795262431,
    "path": "pkgs-kde-apps/dolphin-26.08.2-3.gpkg.tar"
-  },
-  {
-   "at": 1794634900,
-   "path": "pkgs-kde-apps/dolphin-26.08.3-1.gpkg.tar"
   },
   {
    "at": 1795579214,
@@ -998,20 +978,8 @@
    "path": "pkgs-kde-apps/yakuake-26.08.3-1.gpkg.tar"
   },
   {
-   "at": 1794574427,
-   "path": "pkgs-kde-frameworks/baloo-6.31.0-r1-1.gpkg.tar"
-  },
-  {
    "at": 1795498192,
    "path": "pkgs-kde-frameworks/kdbusaddons-6.32.0-1.gpkg.tar"
-  },
-  {
-   "at": 1794569662,
-   "path": "pkgs-kde-frameworks/kfilemetadata-6.31.0-4.gpkg.tar"
-  },
-  {
-   "at": 1794617989,
-   "path": "pkgs-kde-frameworks/kfilemetadata-6.31.0-5.gpkg.tar"
   },
   {
    "at": 1794716645,
@@ -1050,10 +1018,6 @@
    "path": "pkgs-kde-frameworks/kidletime-6.32.0-1.gpkg.tar"
   },
   {
-   "at": 1794571809,
-   "path": "pkgs-kde-frameworks/kimageformats-6.31.0-1.gpkg.tar"
-  },
-  {
    "at": 1795500332,
    "path": "pkgs-kde-frameworks/kio-6.32.0-1.gpkg.tar"
   },
@@ -1068,10 +1032,6 @@
   {
    "at": 1795503094,
    "path": "pkgs-kde-frameworks/kstatusnotifieritem-6.32.0-1.gpkg.tar"
-  },
-  {
-   "at": 1794574427,
-   "path": "pkgs-kde-frameworks/ktexteditor-6.31.0-1.gpkg.tar"
   },
   {
    "at": 1795499111,
@@ -1206,14 +1166,6 @@
    "path": "pkgs-kde-plasma/kpipewire-6.8.2-4.gpkg.tar"
   },
   {
-   "at": 1794569973,
-   "path": "pkgs-kde-plasma/kpipewire-6.8.3-1.gpkg.tar"
-  },
-  {
-   "at": 1794617989,
-   "path": "pkgs-kde-plasma/kpipewire-6.8.3-2.gpkg.tar"
-  },
-  {
    "at": 1794716645,
    "path": "pkgs-kde-plasma/kpipewire-6.8.3-3.gpkg.tar"
   },
@@ -1288,10 +1240,6 @@
   {
    "at": 1795755625,
    "path": "pkgs-kde-plasma/kwin-6.8.2-r2-1.gpkg.tar"
-  },
-  {
-   "at": 1794633049,
-   "path": "pkgs-kde-plasma/kwin-6.8.3-1.gpkg.tar"
   },
   {
    "at": 1795755625,
@@ -1534,14 +1482,6 @@
    "path": "pkgs-llvm-runtimes/openmp-23.1.4-1.gpkg.tar"
   },
   {
-   "at": 1794571809,
-   "path": "pkgs-media-gfx/gimp-3.2.8-2.gpkg.tar"
-  },
-  {
-   "at": 1794571809,
-   "path": "pkgs-media-gfx/imagemagick-7.1.2.35-1.gpkg.tar"
-  },
-  {
    "at": 1795100236,
    "path": "pkgs-media-gfx/inkscape-1.4.4-r1-2.gpkg.tar"
   },
@@ -1578,14 +1518,6 @@
    "path": "pkgs-media-libs/libheif-1.23.7-10.gpkg.tar"
   },
   {
-   "at": 1794569662,
-   "path": "pkgs-media-libs/libheif-1.23.7-4.gpkg.tar"
-  },
-  {
-   "at": 1794617989,
-   "path": "pkgs-media-libs/libheif-1.23.7-5.gpkg.tar"
-  },
-  {
    "at": 1794716645,
    "path": "pkgs-media-libs/libheif-1.23.7-6.gpkg.tar"
   },
@@ -1614,20 +1546,8 @@
    "path": "pkgs-media-libs/opencv-4.14.0-2.gpkg.tar"
   },
   {
-   "at": 1794573021,
-   "path": "pkgs-media-libs/sdl2-image-2.8.8-5.gpkg.tar"
-  },
-  {
    "at": 1795606791,
    "path": "pkgs-media-libs/taglib-2.3.2-1.gpkg.tar"
-  },
-  {
-   "at": 1794569662,
-   "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-5.gpkg.tar"
-  },
-  {
-   "at": 1794618838,
-   "path": "pkgs-media-plugins/gst-plugins-libav-1.26.11-6.gpkg.tar"
   },
   {
    "at": 1794896065,
@@ -1650,16 +1570,8 @@
    "path": "pkgs-media-sound/krecorder-26.08.2-1.gpkg.tar"
   },
   {
-   "at": 1794569350,
-   "path": "pkgs-media-video/ffmpeg-8.1.3-6.gpkg.tar"
-  },
-  {
    "at": 1794805801,
    "path": "pkgs-media-video/ffmpeg-8.1.3-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1794571496,
-   "path": "pkgs-media-video/ffmpeg-compat-6.1.6-7.gpkg.tar"
   },
   {
    "at": 1795582893,
@@ -1682,24 +1594,12 @@
    "path": "pkgs-media-video/pipewire-1.6.11-13.gpkg.tar"
   },
   {
-   "at": 1794569973,
-   "path": "pkgs-media-video/pipewire-1.6.11-8.gpkg.tar"
-  },
-  {
-   "at": 1794617374,
-   "path": "pkgs-media-video/pipewire-1.6.11-9.gpkg.tar"
-  },
-  {
    "at": 1795621031,
    "path": "pkgs-media-video/smplayer-25.6.0_p20250903-r1-2.gpkg.tar"
   },
   {
    "at": 1795665791,
    "path": "pkgs-media-video/smplayer-25.6.0_p20250903-r1-3.gpkg.tar"
-  },
-  {
-   "at": 1794573021,
-   "path": "pkgs-net-dns/avahi-0.9_rc5-3.gpkg.tar"
   },
   {
    "at": 1795262431,
@@ -1724,14 +1624,6 @@
   {
    "at": 1795588164,
    "path": "pkgs-net-libs/nodejs-26.13.1-r1-1.gpkg.tar"
-  },
-  {
-   "at": 1794552342,
-   "path": "pkgs-net-libs/webkit-gtk-2.54.2-r400-1.gpkg.tar"
-  },
-  {
-   "at": 1794568740,
-   "path": "pkgs-net-libs/webkit-gtk-2.54.2-r600-1.gpkg.tar"
   },
   {
    "at": 1795262431,
