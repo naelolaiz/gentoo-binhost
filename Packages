@@ -1,5 +1,5 @@
 VERSION: 0
-TIMESTAMP: 1795843127
+TIMESTAMP: 1795843736
 PACKAGES: 1844
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
@@ -36881,24 +36881,25 @@ REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
 BDEPEND: >=dev-lang/go-1.26.10 dev-libs/stb app-alternatives/ninja >=dev-build/cmake-3.28.5 >=dev-lang/go-1.24.11:0/1.27.4= app-arch/unzip virtual/pkgconfig
-BUILD_ID: 1
-BUILD_TIME: 1795606635
+BUILD_ID: 2
+BUILD_TIME: 1795843532
 CPV: sci-ml/ollama-0.40.18
 DEFINED_PHASES: compile configure install postinst preinst prepare test unpack
-DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/1.0.0=
+DEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/1.1.1=
 EAPI: 8
 KEYWORDS: ~amd64
 LICENSE: MIT
-MD5: 47c4e2ec75449f211c3add97a80a7db6
-PATH: pkgs-sci-ml/ollama-0.40.18-1.gpkg.tar
+MD5: dc1440cf27c7dc7f253b623dda7461e7
+PATH: pkgs-sci-ml/ollama-0.40.18-2.gpkg.tar
 PROVIDES: x86_64: libllama-common.so.1 libllama-quantize-impl.so libllama-server-impl.so libllama.so.1 libmtmd.so.1
-RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/1.0.0= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
+RDEPEND: acct-group/ollama acct-user/ollama >=sci-ml/ggml-0.29.0:0/1.1.1= net-misc/curl:0/0= >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "ce1b46d9b01ae4bdb7115727727a07e6d4e626a4"}
 REQUIRES: x86_64: libc.so.6 libgcc_s.so.1 libggml-base.so.1 libggml.so.1 libm.so.6 libstdc++.so.6
 RESTRICT: mirror test
-SHA1: cc6c9119bf0bfcbee263fbfd74f3b36b9006794b
+SHA1: 21d9de05146ac955946759d13f5c064d87aefb5c
 SIZE: 22036480
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
-MTIME: 1795606637
+MTIME: 1795843535
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
