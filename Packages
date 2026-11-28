@@ -1,6 +1,6 @@
 VERSION: 0
-TIMESTAMP: 1795843736
-PACKAGES: 1844
+TIMESTAMP: 1795846073
+PACKAGES: 1846
 URI: https://github.com/naelolaiz/gentoo-binhost/releases/download
 ACCEPT_KEYWORDS: amd64 ~amd64
 ACCEPT_LICENSE: @FREE @BINARY-REDISTRIBUTABLE
@@ -2875,6 +2875,31 @@ SIZE: 105615360
 SLOT: 11.22
 USE: X abi_x86_64 alsa amd64 bluetooth cups dbus elibc_glibc ffmpeg fontconfig gecko gphoto2 gstreamer kernel_linux mingw mono nls opencl opengl pulseaudio sdl ssl strip truetype udev usb v4l vulkan wayland wow64
 MTIME: 1794637793
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: sys-devel/bison sys-devel/flex virtual/pkgconfig dev-lang/nasm sys-devel/gettext dev-util/wayland-scanner sys-devel/gnuconfig >=app-portage/elt-patches-20250306 || ( >=dev-build/automake-1.20:1.20 >=dev-build/automake-1.19:1.19 ) || ( >=dev-build/autoconf-2.73:2.73 >=dev-build/autoconf-2.72-r1:2.72 ) >=dev-build/libtool-2.4.7-r3 || ( sys-devel/binutils:* llvm-core/lld:* ) dev-lang/perl dev-util/mingw64-toolchain[abi_x86_32]
+BUILD_ID: 1
+BUILD_TIME: 1795845913
+CPV: app-emulation/wine-vanilla-11.23
+DEFINED_PHASES: compile configure install postinst postrm preinst prepare pretend
+DEPEND: x11-libs/libXcomposite[abi_x86_64(-)] x11-libs/libXcursor[abi_x86_64(-)] x11-libs/libXfixes[abi_x86_64(-)] x11-libs/libXi[abi_x86_64(-)] x11-libs/libXrandr[abi_x86_64(-)] x11-libs/libXrender[abi_x86_64(-)] x11-libs/libXxf86vm[abi_x86_64(-)] net-print/cups[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libsdl2[haptic,joystick,abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] media-libs/freetype[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/vulkan-loader[X,wayland,abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] media-video/ffmpeg:0/61.63.63=[abi_x86_64(-)] media-libs/libgphoto2:0/6=[abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] media-libs/gst-plugins-base:1.0[abi_x86_64(-)] media-libs/gstreamer:1.0[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] virtual/libudev:0/1=[abi_x86_64(-)] dev-libs/libusb:1[abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] >=sys-kernel/linux-headers-6.14 x11-base/xorg-proto net-wireless/bluez dev-util/opencl-headers
+EAPI: 8
+IDEPEND: >=app-eselect/eselect-wine-2
+IUSE: +X +alsa bluetooth cups +dbus dos ffmpeg +fontconfig +gecko gphoto2 +gstreamer kerberos +mono netapi nls odbc opencl +opengl pcap perl pulseaudio samba scanner +sdl selinux smartcard +ssl +truetype udev usb v4l vaapi +vulkan wayland xinerama +abi_x86_64 arm64ec crossdev-mingw custom-cflags +mingw +strip abi_x86_32 +wow64
+KEYWORDS: -* ~amd64 ~arm64 ~x86
+LICENSE: LGPL-2.1+ BSD BSD-2 IJG MIT OPENLDAP ZLIB gsm libpng2 libtiff public-domain
+MD5: 98775924093b182ae013e5b47b1fcfa5
+PATH: pkgs-app-emulation/wine-vanilla-11.23-1.gpkg.tar
+PROVIDES: x86_64: avicap32.so crypt32.so ctapi32.so dnsapi.so dwrite.so gphoto2.so localspl.so mountmgr.so msv1_0.so netapi32.so nsiproxy.so ntdll.so odbc32.so opencl.so opengl32.so qcap.so secur32.so win32u.so winealsa.so winebth.so winebus.so wined3d.so winedmo.so winegstreamer.so wineps.so winepulse.so wineusb.so winevulkan.so winewayland.so winex11.so winspool.so ws2_32.so
+RDEPEND: x11-libs/libXcomposite[abi_x86_64(-)] x11-libs/libXcursor[abi_x86_64(-)] x11-libs/libXfixes[abi_x86_64(-)] x11-libs/libXi[abi_x86_64(-)] x11-libs/libXrandr[abi_x86_64(-)] x11-libs/libXrender[abi_x86_64(-)] x11-libs/libXxf86vm[abi_x86_64(-)] net-print/cups[abi_x86_64(-)] sys-apps/dbus[abi_x86_64(-)] media-libs/fontconfig[abi_x86_64(-)] media-libs/libglvnd[X,abi_x86_64(-)] media-libs/libsdl2[haptic,joystick,abi_x86_64(-)] net-libs/gnutls:0/30.30=[abi_x86_64(-)] media-libs/freetype[abi_x86_64(-)] media-libs/libv4l[abi_x86_64(-)] media-libs/vulkan-loader[X,wayland,abi_x86_64(-)] x11-libs/libX11[abi_x86_64(-)] x11-libs/libXext[abi_x86_64(-)] media-libs/alsa-lib[abi_x86_64(-)] media-video/ffmpeg:0/61.63.63=[abi_x86_64(-)] media-libs/libgphoto2:0/6=[abi_x86_64(-)] dev-libs/glib:2[abi_x86_64(-)] media-libs/gst-plugins-base:1.0[abi_x86_64(-)] media-libs/gstreamer:1.0[abi_x86_64(-)] virtual/opencl[abi_x86_64(-)] media-libs/libpulse[abi_x86_64(-)] virtual/libudev:0/1=[abi_x86_64(-)] dev-libs/libusb:1[abi_x86_64(-)] dev-libs/wayland[abi_x86_64(-)] x11-libs/libxkbcommon[abi_x86_64(-)] app-emulation/wine-desktop-common app-emulation/wine-gecko:2.47.4[abi_x86_64(-)] app-emulation/wine-gecko[abi_x86_32] media-plugins/gst-plugins-meta:1.0[abi_x86_64(-)] app-emulation/wine-mono:11.3.0 >=sys-libs/glibc-2.43-r4
+REQUIRES: x86_64: libOpenCL.so.1 libX11.so.6 libXext.so.6 libasound.so.2 libavcodec.so.63 libavformat.so.63 libavutil.so.61 libc.so.6 libgcc_s.so.1 libglib-2.0.so.0 libgobject-2.0.so.0 libgphoto2.so.6 libgphoto2_port.so.12 libgstaudio-1.0.so.0 libgstbase-1.0.so.0 libgstreamer-1.0.so.0 libgsttag-1.0.so.0 libgstvideo-1.0.so.0 libm.so.6 libpulse.so.0 libresolv.so.2 libudev.so.1 libusb-1.0.so.0 libwayland-client.so.0 libwayland-egl.so.1 libxkbcommon.so.0 libxkbregistry.so.0
+RESTRICT: test
+SHA1: 9057d57417fcb12f4a8a93159610b0d0ba1108c6
+SIZE: 106004480
+SLOT: 11.23
+USE: X abi_x86_64 alsa amd64 bluetooth cups dbus elibc_glibc ffmpeg fontconfig gecko gphoto2 gstreamer kernel_linux mingw mono nls opencl opengl pulseaudio sdl ssl strip truetype udev usb v4l vulkan wayland wow64
+MTIME: 1795845929
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
@@ -38612,6 +38637,29 @@ SHA1: 87a0d7c12581906eb5218d2aa8661c0662f5f5e1
 SIZE: 491520
 USE: abi_x86_64 amd64 elibc_glibc kernel_linux
 MTIME: 1794118131
+REPO: gentoo
+CHOST: x86_64-pc-linux-gnu
+
+BDEPEND: app-text/asciidoc app-text/docbook-xml-dtd:4.5 >=app-text/docbook-xsl-stylesheets-1.75.2 >=dev-libs/libxslt-1.1.26 virtual/pkgconfig virtual/pkgconfig
+BUILD_ID: 1
+BUILD_TIME: 1795846029
+CPV: sys-kernel/dracut-113
+DEFINED_PHASES: compile configure install postinst preinst setup test
+DEPEND: >=sys-apps/kmod-23
+EAPI: 8
+IUSE: asciidoctor dracut-cpio selinux systemd test debug
+KEYWORDS: ~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86
+LICENSE: GPL-2
+MD5: 3b19a7b93df4fd45b37bd2ea5c961399
+PATH: pkgs-sys-kernel/dracut-113-1.gpkg.tar
+RDEPEND: >=sys-apps/kmod-23 app-alternatives/cpio >=app-shells/bash-4.0:0 sys-apps/coreutils[xattr(-)] >=sys-apps/kmod-23[tools] || ( >=sys-apps/sysvinit-2.87-r3 sys-apps/openrc[sysv-utils(-)] sys-apps/systemd[sysv-utils(+)] sys-apps/s6-linux-init[sysv-utils(-)] sys-apps/dinit[sysv-utils(-)] ) >=sys-apps/util-linux-2.21 virtual/pkgconfig[native-symlinks(+)] virtual/udev >=sys-libs/glibc-2.43-r4
+REPO_REVISIONS: {"gentoo": "ce1b46d9b01ae4bdb7115727727a07e6d4e626a4"}
+REQUIRES: x86_64: libc.so.6 libkmod.so.2
+RESTRICT: test
+SHA1: 44ec85c5f93c0dee7e2b4203228cb3a53fe1396d
+SIZE: 512000
+USE: abi_x86_64 amd64 elibc_glibc kernel_linux
+MTIME: 1795846030
 REPO: gentoo
 CHOST: x86_64-pc-linux-gnu
 
